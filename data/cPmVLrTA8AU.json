@@ -362,5 +362,116 @@
   "source": "captions-grouped"
  },
  "source": "youtube",
- "added": "2026-10-13T05:07:29+00:00"
+ "added": "2026-10-13T05:07:29+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:38:19",
+  "lines": {
+   "3": [
+    [
+     "he's thinking about how do we now deploy it to the main",
+     null
+    ],
+    [
+     "code base.",
+     "codebase."
+    ],
+    [
+     "We went to Broadway shows. We",
+     null
+    ],
+    [
+     "explored",
+     "explore"
+    ],
+    [
+     "the city.",
+     null
+    ]
+   ],
+   "17": [
+    [
+     "our trading going forward. I think",
+     null
+    ],
+    [
+     "Algo]",
+     "alga [music]"
+    ],
+    [
+     "developer at HRT is a pretty unique title. We take it to",
+     null
+    ]
+   ],
+   "40": [
+    [
+     "How to think about high-level",
+     "highle"
+    ],
+    [
+     "projects. And this is the first year where we're allowing interns to use AI tooling. And it's a pretty big game",
+     null
+    ]
+   ]
+  },
+  "fixes": 4,
+  "checked_seconds": 70.9,
+  "usd": 0.0103,
+  "version": 2,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:19",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:46",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:16",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:32",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:45",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:58",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }

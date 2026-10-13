@@ -428,5 +428,329 @@
   "source": "captions-grouped"
  },
  "source": "youtube",
- "added": "2026-10-13T05:16:16+00:00"
+ "added": "2026-10-13T05:16:16+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:38:59",
+  "lines": {
+   "3": [
+    [
+     "and he was always the leader.",
+     null
+    ],
+    [
+     "You know",
+     ""
+    ],
+    [
+     "Even the eldest brother would have to",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "listen to him. Well, he's always the rebellious one.",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "\"Hey Pa, maybe you should call this person and see",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "if this person can help you as well.\" We dropped him off at the MRT.",
+     null
+    ]
+   ],
+   "11": [
+    [
+     "And that's where the news broke to us that Jon has passed and that he took his own life. There's no way",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "in relating to the day's events",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "Yeah. The denial was unbearable but I couldn’t accept it.",
+     null
+    ],
+    [
+     "Yeah Could you recognize his body",
+     ""
+    ],
+    [
+     "When I saw the feet then I realised it was really him.",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "I just literally crawled up to him and say, \"Son, Pa is here.\" And that's all I could say. - [Producer] So sorry",
+     null
+    ],
+    [
+     "I",
+     "you"
+    ],
+    [
+     "had to",
+     null
+    ],
+    [
+     "push you-",
+     "go through that. -"
+    ]
+   ],
+   "21": [
+    [
+     "Well, I'm sorry too. I was supposed to work out",
+     null
+    ],
+    [
+     "the it yeah",
+     ""
+    ],
+    [
+     "all the details. How long the wake is going to be.",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "Because... The day before, we are talking about his future talking about how he",
+     null
+    ],
+    [
+     "you know he",
+     ""
+    ],
+    [
+     "will continue to finish his degree",
+     null
+    ]
+   ],
+   "24": [
+    [
+     "you know",
+     ""
+    ],
+    [
+     "his job and everything. And then, and then",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "when we're at the mortuary we're talking about how to prepare his death.",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "I remember that",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "during the wake, the funeral itself it was an open casket that everybody could see. We want to be very honest with them (family and friends) that",
+     null
+    ]
+   ],
+   "33": [
+    [
+     "I was spiralling. Yeah, to the point that I... I just felt that the darkness was just killing me.",
+     null
+    ],
+    [
+     "Yeah",
+     ""
+    ],
+    [
+     "I could almost see myself on edge, right?",
+     null
+    ]
+   ],
+   "45": [
+    [
+     "It's a very common question that we ask ourselves. Because over time, memories fade, right? - [Producer] What are",
+     null
+    ],
+    [
+     "like",
+     ""
+    ],
+    [
+     "your favourite memories",
+     null
+    ]
+   ],
+   "47": [
+    [
+     "I would always get very angry and then",
+     null
+    ],
+    [
+     "you know",
+     ""
+    ],
+    [
+     "went out to the living room and say that \"Hey guys, do you know what time it is?\"",
+     null
+    ]
+   ],
+   "67": [
+    [
+     "we'll",
+     "will"
+    ],
+    [
+     "be there. Yeah.",
+     null
+    ],
+    [
+     "If I saw him again what would be the first thing I would say to him",
+     ""
+    ],
+    [
+     "I'm going to repeat that short phrase that when I saw him lying in the morgue. I would say",
+     null
+    ]
+   ]
+  },
+  "fixes": 17,
+  "checked_seconds": 263.3,
+  "usd": 0.0383,
+  "version": 2,
+  "flagged": [
+   [
+    "1:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:49",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:59",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:30",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:21",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:09",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "10:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "15:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }

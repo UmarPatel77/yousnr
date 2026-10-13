@@ -536,5 +536,340 @@
   "source": "captions-grouped"
  },
  "source": "youtube",
- "added": "2026-10-13T06:01:45+00:00"
+ "added": "2026-10-13T06:01:45+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:39:59",
+  "lines": {
+   "0": [
+    [
+     "Oh,",
+     "Well,"
+    ],
+    [
+     "good morning.",
+     null
+    ],
+    [
+     "Man",
+     "And"
+    ],
+    [
+     "I still get uh a little nervous about doing these videos, but still kind of dealing with uh my shyness",
+     null
+    ]
+   ],
+   "3": [
+    [
+     "my doctor's appointment is",
+     null
+    ],
+    [
+     "canceled,",
+     "cancelled,"
+    ],
+    [
+     "which is really annoying because I used a vacation day to uh to",
+     null
+    ]
+   ],
+   "5": [
+    [
+     "I'm working a full day or I'm not working basically. So, I had to use a vacation day. So, I decided, hey, if",
+     null
+    ],
+    [
+     "I",
+     "uh"
+    ],
+    [
+     "don't really",
+     null
+    ]
+   ],
+   "13": [
+    [
+     "some kids that",
+     null
+    ],
+    [
+     "were into",
+     "weren't too"
+    ],
+    [
+     "that were in some sort of alternative programs. No matter who you were, no matter what your",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "doing a speech. And [sighs] another thing, gosh, I was actually um the um I don't want to say",
+     null
+    ],
+    [
+     "valedictorian but,",
+     "validictorian,"
+    ]
+   ],
+   "31": [
+    [
+     "college they made me be the graduation speaker because I don't we didn't have a",
+     null
+    ],
+    [
+     "valedictorian.",
+     "validictorian."
+    ],
+    [
+     "We had a lot of people get really good",
+     null
+    ]
+   ],
+   "34": [
+    [
+     "ever see this video, but that'd be really funny. Got my favorite shirt on today. cat shirt. I feel like Superman",
+     null
+    ],
+    [
+     "I",
+     ""
+    ],
+    [
+     "could just",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "for a very long time is um as as part of my college uh I was actually taking some classes with um the",
+     null
+    ],
+    [
+     "ROTC program",
+     "ROC"
+    ]
+   ],
+   "61": [
+    [
+     "went to had an",
+     null
+    ],
+    [
+     "ROTC",
+     "ROC"
+    ],
+    [
+     "program and so I was taking a couple classes with the",
+     null
+    ],
+    [
+     "ROTC.",
+     "ROC."
+    ],
+    [
+     "I was never like officially",
+     null
+    ]
+   ],
+   "67": [
+    [
+     "a",
+     null
+    ],
+    [
+     "",
+     "[sighs and gasps]"
+    ],
+    [
+     "Bill Murray and um the guy the actor who was in Mr. Holland's Opus? Who was that? Uh Bill",
+     null
+    ]
+   ],
+   "75": [
+    [
+     "You might not make any friends. It it can be a terrible thing. Shyness and um gosh,",
+     null
+    ],
+    [
+     "Out",
+     ""
+    ],
+    [
+     "you know, outgoing people, people who",
+     null
+    ]
+   ],
+   "76": [
+    [
+     "are outgoing don't have that problem. probably",
+     null
+    ],
+    [
+     "Maybe",
+     ""
+    ],
+    [
+     "they have other problems. Shy people have their own problems and",
+     null
+    ]
+   ]
+  },
+  "fixes": 14,
+  "checked_seconds": 275.4,
+  "usd": 0.0401,
+  "version": 2,
+  "flagged": [
+   [
+    "0:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:07",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:48",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "5:36",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "6:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "10:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "10:55",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:16",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:26",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:12",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "12:22",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "13:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:59",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }

@@ -635,5 +635,350 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-13T21:56:46+00:00"
+ "added": "2026-10-13T21:56:46+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:37:38",
+  "lines": {
+   "2": [
+    [
+     "And before I get into the lies that we tell about productivity, I just want to say, as with every pizza miss, some of the things sold out immediately and flew off the shelves. Some of the things",
+     null
+    ],
+    [
+     "didn't",
+     "did"
+    ]
+   ],
+   "8": [
+    [
+     "it all at the same time as",
+     null
+    ],
+    [
+     "Pizzamas.",
+     "Pizza Miss."
+    ],
+    [
+     "I think a normal response to all of that would be, \"Oh my god, John Green is such a hard worker. It must take so much",
+     null
+    ]
+   ],
+   "10": [
+    [
+     "'Cause",
+     ""
+    ],
+    [
+     "People say this about me a lot. And look, I do unfortunately take pride in the fact that there is a website at days since Hank Green last started a new",
+     null
+    ]
+   ],
+   "12": [
+    [
+     "weeks of",
+     null
+    ],
+    [
+     "pizza-themed four by three",
+     "pizza themed 4x3"
+    ],
+    [
+     "puzzles didn't hit the threshold. I hope people have been enjoying them nonetheless. Though today's was hard. Sometimes they got to",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "That was a mess. But I think",
+     null
+    ],
+    [
+     "it is",
+     "that it's"
+    ],
+    [
+     "extremely important to understand that your brain and society are going to tell you a lie about this. And not about me,",
+     null
+    ]
+   ],
+   "18": [
+    [
+     "much of the advice I see about productivity is not about how to find useful things that feel valuable to work on. It's about",
+     null
+    ],
+    [
+     "Kanban",
+     "conbon"
+    ],
+    [
+     "boards and",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "the",
+     null
+    ],
+    [
+     "Vlogbrothers",
+     "Vlog Brothers"
+    ],
+    [
+     "things I am most proud of is that every year we make bets on educational creators by giving them a little piece of the",
+     null
+    ],
+    [
+     "Vlogbrothers",
+     "Vlog Brothers"
+    ],
+    [
+     "ad revenue. And that's kind of a crazy",
+     null
+    ]
+   ],
+   "71": [
+    [
+     "Which means paying artists and product designers to make absolutely amazing",
+     null
+    ],
+    [
+     "Pizzamas",
+     "pizza"
+    ],
+    [
+     "stuff, which this is your last chance to get ever, and then the profit",
+     null
+    ]
+   ],
+   "77": [
+    [
+     "think that I produce things because like",
+     null
+    ],
+    [
+     "Pizzamas",
+     "pizza"
+    ],
+    [
+     "matters to me,",
+     null
+    ],
+    [
+     "Nerdfighteria",
+     "Nerd Fightiteria"
+    ],
+    [
+     "matters to me. John, you matter to me.",
+     null
+    ]
+   ],
+   "78": [
+    [
+     "Cancer treatment and crash course and",
+     null
+    ],
+    [
+     "SciShow",
+     "sideshow"
+    ],
+    [
+     "and 4x3 and the media environment all matter to me and I have opportunities to work on or communicate",
+     null
+    ]
+   ],
+   "98": [
+    [
+     "The things we made are very weird, and I get that maybe not all of them are",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "sell out, but that's okay.",
+     null
+    ],
+    [
+     "Gotta",
+     "Got to"
+    ],
+    [
+     "take risks in this",
+     null
+    ]
+   ]
+  },
+  "fixes": 14,
+  "checked_seconds": 224.6,
+  "usd": 0.0326,
+  "version": 2,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:55",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:19",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:33",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:54",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:19",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "2:28",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "2:44",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "2:58",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "3:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:59",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:43",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:44",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "9:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
