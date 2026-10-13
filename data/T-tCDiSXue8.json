@@ -633,5 +633,384 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-13T22:27:22+00:00"
+ "added": "2026-10-13T22:27:22+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T18:27:23",
+  "lines": {
+   "5": [
+    [
+     "want to live, look at the average salary requirements are they asking for a degree for a top level degree. How much are you",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "be working? Just all of these things related to the job. Then",
+     null
+    ]
+   ],
+   "8": [
+    [
+     "does it cost? So in Romania, for example, you could live in a place like this where you're probably",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "live if you don't have too much money. Or you can live in a place like this where you",
+     null
+    ]
+   ],
+   "13": [
+    [
+     "that's",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "translate to quality of life or things that you can afford. So, you're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "see that let's take Romania as an example. The difference between making like 800 or 900 per month",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "and free time and all of these things, you're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "realize it's quite important. But how do we get there? So I'm",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "run some Romanian numbers as an example. You can do it for your",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "long you work in one of these",
+     null
+    ],
+    [
+     "no skill",
+     "no-kill"
+    ],
+    [
+     "jobs like a cashier. So you're pretty much just wasting your time, but at least you're getting money in return.",
+     null
+    ]
+   ],
+   "27": [
+    [
+     "even ordering a pizza,",
+     null
+    ],
+    [
+     "is gonna",
+     "it's going to"
+    ],
+    [
+     "be a luxury for you. So, you're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "be in a pretty tough spot. So, some people end up like that and they stay like that their whole lives. And then some people",
+     null
+    ]
+   ],
+   "33": [
+    [
+     "But let's say something that you don't mind doing for money. You don't really need to find something that you would love to do for money because you're probably not",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "find it or it's",
+     null
+    ]
+   ],
+   "35": [
+    [
+     "programming or",
+     null
+    ],
+    [
+     "cybersecurity",
+     "cyber security"
+    ],
+    [
+     "or whatever else. You want to work remotely from your PC. Already you're going to have much more competition. But here's the thing that people don't actually do.",
+     null
+    ]
+   ],
+   "41": [
+    [
+     "special. It's kind of like the basic requirement for pretty much every job now because everyone has a degree. It doesn't really separate you or get you an easy job. There's plenty of people with degrees that",
+     null
+    ],
+    [
+     "can't",
+     "can"
+    ],
+    [
+     "find jobs for",
+     null
+    ]
+   ],
+   "44": [
+    [
+     "Maybe they want you to know how to use Excel. Maybe they ask for experience or projects. You can do projects that get you experience that replicates what you",
+     null
+    ],
+    [
+     "would",
+     ""
+    ],
+    [
+     "do at that job. Just put in a bit of",
+     null
+    ]
+   ],
+   "58": [
+    [
+     "learn something to improve at a",
+     null
+    ],
+    [
+     "skill,",
+     "scale,"
+    ],
+    [
+     "whatever. That is going to be the difference between this and this. And you might wonder, well, how could like 1",
+     null
+    ]
+   ],
+   "60": [
+    [
+     "people don't do it. They think that school is all they need. They relax. They come home. They scroll",
+     null
+    ],
+    [
+     "TikTok They play games.",
+     "Tik Tok."
+    ]
+   ],
+   "75": [
+    [
+     "they work in a programming job. They're sitting there",
+     null
+    ],
+    [
+     "laid back.",
+     "laidback."
+    ],
+    [
+     "They enjoy work. They only work a couple hours a day.",
+     null
+    ]
+   ],
+   "76": [
+    [
+     "They don't have a schedule. They can work at day or at night. They have plenty of days off. Their bosses are really",
+     null
+    ],
+    [
+     "chill.",
+     "chilled."
+    ],
+    [
+     "And then you have people with horrible managers, really bad",
+     null
+    ]
+   ]
+  },
+  "fixes": 17,
+  "checked_seconds": 216.0,
+  "usd": 0.0314,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:34",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:50",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:58",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:33",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:59",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:28",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:30",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:28",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:37",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:44",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:43",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:33",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "9:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:04",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
