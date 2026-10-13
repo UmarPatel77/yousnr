@@ -644,5 +644,142 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-13T17:29:49+00:00"
+ "added": "2026-10-13T17:29:49+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:25:12",
+  "lines": {
+   "20": [
+    [
+     "for me is that my parents um",
+     null
+    ],
+    [
+     "fucked",
+     "[ __ ]"
+    ],
+    [
+     "up my nervous system so much that now I have these two things that I have to deal with on the daily basis. And what's",
+     null
+    ]
+   ],
+   "36": [
+    [
+     "Why would I talk to someone that's threatened to kill me? Why would I talk to someone that would go shave my dog for no reason? That makes no",
+     null
+    ],
+    [
+     "fucking sense",
+     "[ __ ]"
+    ]
+   ],
+   "49": [
+    [
+     "the physical things and the science? Can you look at that for a second instead of being like, \"Oh my gosh, it's spiritual.\"",
+     null
+    ],
+    [
+     "Madeline",
+     "Maline"
+    ],
+    [
+     "and I do not have a",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "Like that was a weird experience. Like what the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "Like I didn't know all about that. That was scary, you know?",
+     null
+    ]
+   ],
+   "84": [
+    [
+     "you and all I want in my life is to see",
+     null
+    ],
+    [
+     "Madeline.",
+     "Matteline."
+    ]
+   ]
+  },
+  "fixes": 5,
+  "checked_seconds": 105.0,
+  "usd": 0.0153,
+  "flagged": [
+   [
+    "0:56",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:22",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:43",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "4:38",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "6:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:42",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "10:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:36",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "11:07",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
