@@ -1,0 +1,639 @@
+{
+ "id": "Fj-INVmmILo",
+ "title": "The Productivity Lie",
+ "channel": "vlogbrothers",
+ "published": "20261009",
+ "description": "Last Chance at Pizzamas Dot Com: https://pizzamas.com/\n\nThe Everything We Have Too Much Of Bundle: https://pizzamas.com/products/everything-we-have-too-much-of-bundle\n\nProductivity when applied to individual creativity, I think, is exactly backward. I think we all should want to make stuff...but the hard part isn't doing it as efficiently as possible...you can do whatever you want once you're making stuff...the hard part is figuring out how to get yourself making. Focusing on \"productivity\" in that situation is crazy talk...instead, you need to figure out what opportunities you have and what matters to you. \n\n----\nSubscribe to our newsletter! https://werehere.beehiiv.com/subscribe\nPreorder John's new novel Hollywood, Ending (out September 22!): https://hollywoodendingbook.com\nLearn more about our project to help Partners in Health radically reduce maternal mortality in Sierra Leone: https://www.pih.org/hankandjohn\nIf you're able to donate $2,000 or more to this effort, please join our matching fund: https://pih.org/hankandjohnmatch\nIf you're in Canada, you can donate here: https://pihcanada.org/hankandjohn",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: The final day of Pizzamas"
+  },
+  {
+   "start": 55,
+   "title": "Chapter 2: The myth of productivity"
+  },
+  {
+   "start": 156,
+   "title": "Chapter 3: Working on things that matter"
+  },
+  {
+   "start": 268,
+   "title": "Chapter 4: Building skills and opportunity"
+  },
+  {
+   "start": 408,
+   "title": "Chapter 5: External motivation and care"
+  },
+  {
+   "start": 622,
+   "title": "Chapter 6: Redefining our outputs"
+  }
+ ],
+ "duration": 764,
+ "category": "People & Blogs",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 4.0,
+   "text": "Good morning, John. I'm sorry to say that it is the final day of Pizza Miss.",
+   "label": "0:00"
+  },
+  {
+   "start": 4.0,
+   "dur": 10.0,
+   "text": "John, first of all, you've done great. I don't know if everybody else is aware how hard you have had to work to be doing all of the things you're doing at the same time, but it's very impressive.",
+   "label": "0:04"
+  },
+  {
+   "start": 14.0,
+   "dur": 7.0,
+   "text": "And before I get into the lies that we tell about productivity, I just want to say, as with every pizza miss, some of the things sold out immediately and flew off the shelves. Some of the things did",
+   "label": "0:14"
+  },
+  {
+   "start": 21.0,
+   "dur": 10.0,
+   "text": "not sell as well. And so, I had an idea, and I don't know if this is going to work. We got a new bundle. It's called the Everything We Have Too Much of Bundle. It's got everything we have too much of and we are selling it at cost.",
+   "label": "0:21"
+  },
+  {
+   "start": 31.0,
+   "dur": 8.0,
+   "text": "Think that there's like a dollar of profit in here, but we have overall we have a profitable pizza miss. So everything that we sell is actually at this point profit if you think of it",
+   "label": "0:31"
+  },
+  {
+   "start": 39.0,
+   "dur": 10.0,
+   "text": "that way cuz the things we've sold lots of have outpaced the things that we have sold less of. I think that we have like 200 of the everything we have too much of bundle. So maybe this will sell out quickly. I don't know. Crazy thing.",
+   "label": "0:39"
+  },
+  {
+   "start": 49.0,
+   "dur": 6.0,
+   "text": "After Pizza Miss ends, I'm flying to San Diego to see you, John. I will be there for the Hollywood ending stop on Sunday.",
+   "label": "0:49"
+  },
+  {
+   "start": 55.0,
+   "dur": 8.0,
+   "text": "John, I've been thinking about what you've been up to for the last few weeks. It's very impressive. The touring, the flying, the press junkets, the podcast recordings, and then doing",
+   "label": "0:55"
+  },
+  {
+   "start": 63.0,
+   "dur": 8.0,
+   "text": "it all at the same time as Pizza Miss. I think a normal response to all of that would be, \"Oh my god, John Green is such a hard worker. It must take so much",
+   "label": "1:03"
+  },
+  {
+   "start": 71.0,
+   "dur": 8.0,
+   "text": "self-control and determination to be so productive, to be able to do so much.\" I know you, John, and I know myself, and I don't think that's what's happening.",
+   "label": "1:11"
+  },
+  {
+   "start": 79.0,
+   "dur": 7.0,
+   "text": "People say this about me a lot. And look, I do unfortunately take pride in the fact that there is a website at days since Hank Green last started a new",
+   "label": "1:19"
+  },
+  {
+   "start": 86.0,
+   "dur": 7.0,
+   "text": "thing.com. It's currently at 42 days, which is significantly higher than average. And I suppose that two full",
+   "label": "1:26"
+  },
+  {
+   "start": 93.0,
+   "dur": 7.0,
+   "text": "weeks of pizza themed 4x3 puzzles didn't hit the threshold. I hope people have been enjoying them nonetheless. Though today's was hard. Sometimes they got to",
+   "label": "1:33"
+  },
+  {
+   "start": 100.0,
+   "dur": 9.0,
+   "text": "be hard. According to that website though, the average number of days between me starting new things over the last 20 years has been about 50 days. If",
+   "label": "1:40"
+  },
+  {
+   "start": 109.0,
+   "dur": 5.0,
+   "text": "you look at just the last 5 years, it's less than 30. Also, don't look at 2023.",
+   "label": "1:49"
+  },
+  {
+   "start": 114.0,
+   "dur": 8.0,
+   "text": "That was a mess. But I think that it's extremely important to understand that your brain and society are going to tell you a lie about this. And not about me,",
+   "label": "1:54"
+  },
+  {
+   "start": 122.0,
+   "dur": 9.0,
+   "text": "a thing about everyone. Like I have worked hard, but the amount that I produce does not tell you how hard it was to make myself work. It might",
+   "label": "2:02"
+  },
+  {
+   "start": 131.0,
+   "dur": 8.0,
+   "text": "actually be sometimes the opposite of that. But I think that it is mostly attributable to having opportunities to work on things that matter to me. So",
+   "label": "2:11"
+  },
+  {
+   "start": 139.0,
+   "dur": 9.0,
+   "text": "much of the advice I see about productivity is not about how to find useful things that feel valuable to work on. It's about conbon boards and",
+   "label": "2:19"
+  },
+  {
+   "start": 148.0,
+   "dur": 8.0,
+   "text": "pomodoro timers and trying to hack your brain. How to maximize the efficacy of the time that you spend working. This seems totally backward to me. I think I",
+   "label": "2:28"
+  },
+  {
+   "start": 156.0,
+   "dur": 8.0,
+   "text": "have like credibility to legitimately talk on this. I've looked at research on it, but also I've lived it. Now, of course, those tools can be useful. I use",
+   "label": "2:36"
+  },
+  {
+   "start": 164.0,
+   "dur": 7.0,
+   "text": "conbon boards, but I don't use them to be productive. I do it because I'd rather be making videos than managing",
+   "label": "2:44"
+  },
+  {
+   "start": 171.0,
+   "dur": 7.0,
+   "text": "videos. So, the tools can like to some extent maybe turn something annoying into something that's a little bit more fun and rewarding. But mostly, it's just",
+   "label": "2:51"
+  },
+  {
+   "start": 178.0,
+   "dur": 8.0,
+   "text": "making it so that I spend less time on the parts I don't like. So, let me say this very clearly. As a person who is famously overproductive,",
+   "label": "2:58"
+  },
+  {
+   "start": 186.0,
+   "dur": 7.0,
+   "text": "the thing that has mattered most to my productivity, to my ability to create things, is the opportunity to work on",
+   "label": "3:06"
+  },
+  {
+   "start": 193.0,
+   "dur": 8.0,
+   "text": "things that matter to me. Once I have that, I have the opportunity to work on something that matters to me. I will find all kinds of ways to get the work",
+   "label": "3:13"
+  },
+  {
+   "start": 201.0,
+   "dur": 9.0,
+   "text": "done. Even if it is unpleasant, even if it means staying up late, even if it means creating a whole app that's basically a Pomodoro timer, but it's a",
+   "label": "3:21"
+  },
+  {
+   "start": 210.0,
+   "dur": 7.0,
+   "text": "bean that lives in your phone. Speaking of which, FYI, if you're about to sign up for a lifetime subscription to Focus Friend, I would suggest you wait a week or so. And also, if you don't have",
+   "label": "3:30"
+  },
+  {
+   "start": 217.0,
+   "dur": 3.0,
+   "text": "notifications turned on right now, maybe do that just for the next couple weeks.",
+   "label": "3:37"
+  },
+  {
+   "start": 220.0,
+   "dur": 3.0,
+   "text": "Secrets just for you. It's not that big of a secret. We have a sale coming up.",
+   "label": "3:40"
+  },
+  {
+   "start": 223.0,
+   "dur": 9.0,
+   "text": "Now, I do really need to find the thing that matters to me in the specific way that will cause me to do it. And the difference between that and a thing that",
+   "label": "3:43"
+  },
+  {
+   "start": 232.0,
+   "dur": 3.0,
+   "text": "matters to me in a way that will not inspire action is very confusing to me.",
+   "label": "3:52"
+  },
+  {
+   "start": 235.0,
+   "dur": 9.0,
+   "text": "I don't understand it. It's also not super flattering. I think that there's interplay between a lot of different things going on in my head. We're not going to get into all of that in this video. Though, now that I'm saying it, I",
+   "label": "3:55"
+  },
+  {
+   "start": 244.0,
+   "dur": 7.0,
+   "text": "am interested in it. My point is, how do I make myself do this is often a much worse starting point than what would",
+   "label": "4:04"
+  },
+  {
+   "start": 251.0,
+   "dur": 9.0,
+   "text": "make this into a thing that I'd do. But back to having the opportunity to work on something that matters to me. There are two things in that sentence that I",
+   "label": "4:11"
+  },
+  {
+   "start": 260.0,
+   "dur": 8.0,
+   "text": "can have an effect on. I can try to increase opportunity and I can try to find more things that matter to me. Now, as I'm saying this, this isn't in the",
+   "label": "4:20"
+  },
+  {
+   "start": 268.0,
+   "dur": 8.0,
+   "text": "script, but like I don't want this to be a guide to be more productive, but I do want it to be a guide for how to make things in a world that is sometimes",
+   "label": "4:28"
+  },
+  {
+   "start": 276.0,
+   "dur": 8.0,
+   "text": "hostile to making. And not just in a way that's like for you, but in a way that's for society. Like, if everybody in the world watched this video, I think it'd",
+   "label": "4:36"
+  },
+  {
+   "start": 284.0,
+   "dur": 11.0,
+   "text": "be better for the world cuz we would get out of this frame that like making stuff is entirely contingent upon the individual to figure out when in fact it is all about what we do for each other.",
+   "label": "4:44"
+  },
+  {
+   "start": 295.0,
+   "dur": 8.0,
+   "text": "So, I think that the harder variable here, the harder thing to do is increasing opportunity. That's about building skills for one thing, and that",
+   "label": "4:55"
+  },
+  {
+   "start": 303.0,
+   "dur": 3.0,
+   "text": "can be hard to do without opportunities for doing things that matter to you.",
+   "label": "5:03"
+  },
+  {
+   "start": 306.0,
+   "dur": 7.0,
+   "text": "Like, if it doesn't matter to you, it's hard to build the skill. This is why it's easier to get good at a video game than a musical instrument, because the",
+   "label": "5:06"
+  },
+  {
+   "start": 313.0,
+   "dur": 7.0,
+   "text": "video game makes it matter to you more than the instrument does. So, mattering really helps in the building of skills.",
+   "label": "5:13"
+  },
+  {
+   "start": 320.0,
+   "dur": 9.0,
+   "text": "And I've been lucky enough to have a lot of relationships that make things feel like they matter, like a brother or a boss or employees or a teacher or a",
+   "label": "5:20"
+  },
+  {
+   "start": 329.0,
+   "dur": 8.0,
+   "text": "mentor or a large community of internet nerds. Shout out to y'all. And that has allowed me to build skills and have tools and connections. That has further",
+   "label": "5:29"
+  },
+  {
+   "start": 337.0,
+   "dur": 5.0,
+   "text": "increased opportunity and also have money. Like I'm like Clockwise TV. If you don't know about that, that's okay.",
+   "label": "5:37"
+  },
+  {
+   "start": 342.0,
+   "dur": 8.0,
+   "text": "That's cost a lot of money. I couldn't have done it without a bunch of investors and I didn't want to do it with investors, but I had the money. I think that this is true of everybody who",
+   "label": "5:42"
+  },
+  {
+   "start": 350.0,
+   "dur": 9.0,
+   "text": "has made stuff. Like having the opportunity to do things that matter to me is the greatest gift I can imagine having been given. Which is why one of",
+   "label": "5:50"
+  },
+  {
+   "start": 359.0,
+   "dur": 8.0,
+   "text": "the Vlog Brothers things I am most proud of is that every year we make bets on educational creators by giving them a little piece of the Vlog Brothers ad revenue. And that's kind of a crazy",
+   "label": "5:59"
+  },
+  {
+   "start": 367.0,
+   "dur": 8.0,
+   "text": "thing to do, but it's also like actually the most rational thing to do because it's just so much better to have a little bit more opportunity buzzing",
+   "label": "6:07"
+  },
+  {
+   "start": 375.0,
+   "dur": 9.0,
+   "text": "around in the world. But of course, this opportunity thing is way more than money. I have been the beneficiary of so much guidance and support. I don't think",
+   "label": "6:15"
+  },
+  {
+   "start": 384.0,
+   "dur": 8.0,
+   "text": "I do things like that enough. I remember thinking when I was sick when I was thinking I might not be as far from the end of my life as I thought that I was.",
+   "label": "6:24"
+  },
+  {
+   "start": 392.0,
+   "dur": 8.0,
+   "text": "That was one of my big regrets that I hadn't done that work more. And you need to keep that in mind because I didn't have that many regrets. But that was one. So that's the first thing, the",
+   "label": "6:32"
+  },
+  {
+   "start": 400.0,
+   "dur": 8.0,
+   "text": "opportunity. And I'm sure there's much more to say there, but we have to move on to the second thing, which is finding things that matter, things that will actually cause you to take action. Cuz I",
+   "label": "6:40"
+  },
+  {
+   "start": 408.0,
+   "dur": 5.0,
+   "text": "have always had the opportunity to go to the gym every day. And yet I I haven't.",
+   "label": "6:48"
+  },
+  {
+   "start": 413.0,
+   "dur": 7.0,
+   "text": "But I've also had people take chances on me, whether that's like a whole audience of people or someone with money or a",
+   "label": "6:53"
+  },
+  {
+   "start": 420.0,
+   "dur": 7.0,
+   "text": "teacher like Dr. Grove, who when I got a D on my first midterm in my first chemistry class as a chemistry major,",
+   "label": "7:00"
+  },
+  {
+   "start": 427.0,
+   "dur": 7.0,
+   "text": "sat me down and did not ask me whether I wanted to change majors. We went through the test, took him 15 minutes, he told me what I needed to work on. I'm only",
+   "label": "7:07"
+  },
+  {
+   "start": 434.0,
+   "dur": 6.0,
+   "text": "making a video right now because people have made me feel like something I make might be worthy of their attention.",
+   "label": "7:14"
+  },
+  {
+   "start": 440.0,
+   "dur": 7.0,
+   "text": "There is no way I would otherwise be doing this. So, I was just telling the story of Dr. Grove helping me out, but I remember the first time I tutored",
+   "label": "7:20"
+  },
+  {
+   "start": 447.0,
+   "dur": 8.0,
+   "text": "someone else in chemistry and it just went terribly. I could picture the scene like a photograph in my mind and I was like why? What went wrong? What did I do",
+   "label": "7:27"
+  },
+  {
+   "start": 455.0,
+   "dur": 8.0,
+   "text": "so bad here? Feeling the obligation to a human person with a name and a life and who was not me. Like what did obligation",
+   "label": "7:35"
+  },
+  {
+   "start": 463.0,
+   "dur": 8.0,
+   "text": "to myself mean compared to my obligation to Christina or Ethan or Connor. If those people failed their chemistry tests, I felt like that was on me. Like",
+   "label": "7:43"
+  },
+  {
+   "start": 471.0,
+   "dur": 8.0,
+   "text": "their grades mattered to me more than my grades mattered. So I learned chemistry like I never had before so that I could help them. And maybe they felt obligated",
+   "label": "7:51"
+  },
+  {
+   "start": 479.0,
+   "dur": 8.0,
+   "text": "by my care to try and do better themselves. And if so, everyone liked that. It brought both of us up and out and into working harder in the world.",
+   "label": "7:59"
+  },
+  {
+   "start": 487.0,
+   "dur": 9.0,
+   "text": "Not because we had more grit, but because we felt more obligation to each other. If I am good at something in this loop, it is finding things that matter",
+   "label": "8:07"
+  },
+  {
+   "start": 496.0,
+   "dur": 8.0,
+   "text": "to me. I am perhaps too good at that. A lot of things matter to me. I actually have a personal system for how to make something matter to me, which is wild.",
+   "label": "8:16"
+  },
+  {
+   "start": 504.0,
+   "dur": 9.0,
+   "text": "But if you look around, most things don't matter to most people, but they can and they should because things are interesting. And this is tricky. One of",
+   "label": "8:24"
+  },
+  {
+   "start": 513.0,
+   "dur": 8.0,
+   "text": "the things that has always mattered most to me in terms of inspiring me to take action is money since we're being",
+   "label": "8:33"
+  },
+  {
+   "start": 521.0,
+   "dur": 8.0,
+   "text": "honest. I don't know. I think a lot of people feel this way, even if it might be taboo to say so. But the good news is beyond making life less stressful, which",
+   "label": "8:41"
+  },
+  {
+   "start": 529.0,
+   "dur": 9.0,
+   "text": "is important to me, I don't actually need to receive the money. It doesn't need to hit my bank account. Which means raising money for Partners in Health is also something I find very rewarding.",
+   "label": "8:49"
+  },
+  {
+   "start": 538.0,
+   "dur": 8.0,
+   "text": "Which means paying artists and product designers to make absolutely amazing pizza stuff, which this is your last chance to get ever, and then the profit",
+   "label": "8:58"
+  },
+  {
+   "start": 546.0,
+   "dur": 9.0,
+   "text": "gets donated to Partners and Health. All of that is motivating to me. I honestly think a huge piece of productivity is external, and it is a thing that we can",
+   "label": "9:06"
+  },
+  {
+   "start": 555.0,
+   "dur": 8.0,
+   "text": "give to each other. People care about the feelings and thoughts of people so much. so much that often we are afraid of it and we hide from it. But give",
+   "label": "9:15"
+  },
+  {
+   "start": 563.0,
+   "dur": 4.0,
+   "text": "people chances and pay attention when someone might be taking a chance on you.",
+   "label": "9:23"
+  },
+  {
+   "start": 567.0,
+   "dur": 8.0,
+   "text": "Pretending it all rests on the individual to figure it out defies everything that I have experienced as a person who makes things in the world,",
+   "label": "9:27"
+  },
+  {
+   "start": 575.0,
+   "dur": 9.0,
+   "text": "but also everything we know about the science of what actually cultivates creation. I don't want to produce things because productivity matters to me. I",
+   "label": "9:35"
+  },
+  {
+   "start": 584.0,
+   "dur": 7.0,
+   "text": "think that I produce things because like pizza matters to me, Nerd Fightiteria matters to me. John, you matter to me.",
+   "label": "9:44"
+  },
+  {
+   "start": 591.0,
+   "dur": 8.0,
+   "text": "Cancer treatment and crash course and sideshow and 4x3 and the media environment all matter to me and I have opportunities to work on or communicate",
+   "label": "9:51"
+  },
+  {
+   "start": 599.0,
+   "dur": 8.0,
+   "text": "about those things because a whole lot of people have taught me and trusted me and helped me. But let me tell you something. If it was about how much",
+   "label": "9:59"
+  },
+  {
+   "start": 607.0,
+   "dur": 7.0,
+   "text": "self-control I had, how much grit or determination I had, I would not be making more things. I would be making",
+   "label": "10:07"
+  },
+  {
+   "start": 614.0,
+   "dur": 8.0,
+   "text": "fewer things. And that brings me to the biggest lie that we tell about productivity or laziness. You can tell",
+   "label": "10:14"
+  },
+  {
+   "start": 622.0,
+   "dur": 7.0,
+   "text": "nothing about a person's self-control or grit or fortitude from the amount of work they got done. At times I have like",
+   "label": "10:22"
+  },
+  {
+   "start": 629.0,
+   "dur": 8.0,
+   "text": "worked a lot of hours while being quite lazy. It's because those hours were easy hours because like scrolling Tumblr used",
+   "label": "10:29"
+  },
+  {
+   "start": 637.0,
+   "dur": 10.0,
+   "text": "to be part of my job. Editing video is pure easy introduction to a flow state for me. It relaxes me. It recharges me.",
+   "label": "10:37"
+  },
+  {
+   "start": 647.0,
+   "dur": 9.0,
+   "text": "That's work. No, it is literally more relaxing than watching a TV show. It is much more likely that if I am working hard, I'm getting much less done. When",
+   "label": "10:47"
+  },
+  {
+   "start": 656.0,
+   "dur": 8.0,
+   "text": "something is very hard, when I'm exercising a lot of grit and determination, it is exhausting. It has lots of false starts. Different people",
+   "label": "10:56"
+  },
+  {
+   "start": 664.0,
+   "dur": 8.0,
+   "text": "who matter to the situation are disagreeing with each other. That hard stuff is extremely important and I'll do it, but it doesn't look like",
+   "label": "11:04"
+  },
+  {
+   "start": 672.0,
+   "dur": 9.0,
+   "text": "productivity and it requires way more self-control. I really wish that we were all more careful about this, about how quickly we turn what people produce into",
+   "label": "11:12"
+  },
+  {
+   "start": 681.0,
+   "dur": 7.0,
+   "text": "ideas about who they are or how they are, or even worse, how often we do that to ourselves. I know that I'm not my",
+   "label": "11:21"
+  },
+  {
+   "start": 688.0,
+   "dur": 9.0,
+   "text": "outputs. And when I'm working well, I know that I'm making things not just because like having made something feels good, though it does, but because things",
+   "label": "11:28"
+  },
+  {
+   "start": 697.0,
+   "dur": 8.0,
+   "text": "matter to me and I have the opportunity to work on them. And that opportunity is part something that I was given and part something that I worked for. And of",
+   "label": "11:37"
+  },
+  {
+   "start": 705.0,
+   "dur": 8.0,
+   "text": "course, I have my opinions on which it was more of. I feel like it was more given to me than was worked for. But the mattering part is also part something",
+   "label": "11:45"
+  },
+  {
+   "start": 713.0,
+   "dur": 8.0,
+   "text": "that I was given and part something that I worked for. None of it is or should be me making stuff because the goal is to make stuff. The thing that matters most",
+   "label": "11:53"
+  },
+  {
+   "start": 721.0,
+   "dur": 9.0,
+   "text": "is Christina who's there and I've done a terrible job tutoring her and I want to do better. And it's Dr. Grove who saw that I got a D on my midterm and didn't",
+   "label": "12:01"
+  },
+  {
+   "start": 730.0,
+   "dur": 8.0,
+   "text": "say, \"Hey, maybe chemistry isn't for you.\" He said, \"Here are the things you need to work on.\" We all mattered to each other and that made us all work harder for each other. Do not think that",
+   "label": "12:10"
+  },
+  {
+   "start": 738.0,
+   "dur": 8.0,
+   "text": "productivity and laziness are about strategy. I think they are about the opportunities and the passions that we",
+   "label": "12:18"
+  },
+  {
+   "start": 746.0,
+   "dur": 11.0,
+   "text": "find for ourselves and that we give to each other. John, I'll see you on Tuesday. It is your last chance, everybody. The sales are live. You can find more about them in the description.",
+   "label": "12:26"
+  },
+  {
+   "start": 757.0,
+   "dur": null,
+   "text": "The things we made are very weird, and I get that maybe not all of them are going to sell out, but that's okay. Got to take risks in this",
+   "label": "12:37"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-10-13T21:56:46+00:00"
+}
