@@ -1,0 +1,951 @@
+{
+ "id": "06MiFKudGtE",
+ "title": "How to Become an Expert at Programming",
+ "channel": "EscPoint",
+ "published": "20260705",
+ "description": "https://discord.gg/kkY8ctjgXy - My Discord\nhttps://github.com/VertexF - My github link\nhttps://github.com/VertexF/Void - My current game engine\nhttps://track.toggl.com/timer - Toggle track timer\nhttps://github.com/GiantRobotLemur - My friends github link\nhttps://docs.google.com/spreadsheets/d/1_GaKz-wTyx_kFOg0hs6LsC6HedpZJnxArnRitnyjeek/edit?gid=0#gid=0 - Programming google sheet template\nhttps://www.media.mit.edu/publications/your-brain-on-chatgpt/ - Your brain on ChatGPT\nhttps://www.youtube.com/watch?v=SlRn51k510k - Rocket League video about ranks\nhttps://www.youtube.com/watch?v=hSTy_BInQs8 - Obsidain set up\nhttps://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo - Crash course computer science\n\nResources for learning below\nhttps://www.youtube.com/watch?v=ZwM2kMKgtdU - It all just practice\n\nhttps://www.youtube.com/@javidx9 - Fantastic beginner and intermediate level projects to learn along side your C++ studies.\n\nComputer fundimentals\nOperating System : Three Easy Pieces - https://pages.cs.wisc.edu/~remzi/OSTEP/ Books: Part 1 and 2 are great for this pretty easy to follow, requires Linux of WLS for Windows users.\n\nGraphics theory\nhttps://learnopengl.com/ - Maybe learn OpenGL before vulkan just to learn graphics theory. You're gonna be here for thousands of hours anyway.\nFoundations of Game Engine Development Volume 1 - A great maths book\nFoundations of Game Engine Development Volume 2 or Real time rendering - Both are pretty complete resources on the foundational graphic techniques\nhttps://google.github.io/filament/main/filament.html - At least do everything for the standard BRDF physical based rendering.\nhttps://www.pbrt.org/ - If you want to build an offline renderer that's purely a ray tracer.\nGPU ZEN 03 and 04 - Advanced Rendering Techniques\nhttps://www.youtube.com/@simondev758 - Great videos Simon goes over a lot of great techniques.\nhttps://www.youtube.com/@Acerola_t - Great videos on more graphics techinques, advice and such.\nhttps://www.youtube.com/@oskar_schramm - More great graphics techinques videos about things.\n\nVulkan resource - Make sure all your vulkan resources are working with Vulkan 1.3\nAVOID DO NOT USE THIS https://vulkan-tutorial.com/ \nhttps://www.howtovulkan.com/ - This is good introduction\nhttps://vkguide.dev/ - Another introduction just more in depth\nVulkan 3D Graphics Rendering Cookbook - A very gental introduction with something cool recieps \nMastering graphics with Vulkan - Pre vulkan 1.3 but has great techniques\nhttps://www.youtube.com/@zeuxcg for more advanced mesh shading stuff, use this over other things listed for mesh shading.\n\nGame engine resources\nGame Engine Architecture https://www.gameenginebook.com/ - Take this seriously you'll thank yourself in the future, this IS the road map for making game engines.\nhttps://www.youtube.com/@MollyRocket - Casey has a 662 playlist on making a game engine from scratch and other great programming content\nhttps://www.youtube.com/@TravisVroman - Travis has a great series were he does educational livestream on making a game engine from scratch in vulkan and C\n\nThere are of course people I've missed or resources but these are the resources I've personally used. Add your own to the comments below.",
+ "chapters": [],
+ "duration": 1070,
+ "category": "Science & Technology",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.28,
+   "text": "Hello. I want to talk about how to build expertise in this video. It takes a very long time to become an",
+   "label": "0:00"
+  },
+  {
+   "start": 5.28,
+   "dur": 7.56,
+   "text": "expert at something, and almost everyone who starts at something never becomes an expert. I want to cut through some of the noise",
+   "label": "0:05"
+  },
+  {
+   "start": 11.96,
+   "dur": 7.28,
+   "text": "here. There are countless online resources telling you to do this and that. There are salesmen and CEOs trying to",
+   "label": "0:11"
+  },
+  {
+   "start": 17.8,
+   "dur": 7.8,
+   "text": "tell you that you don't need to try anymore because AI is here, and everyone is trying to sell you a solution to give",
+   "label": "0:17"
+  },
+  {
+   "start": 23.24,
+   "dur": 9.8,
+   "text": "you a nice neat shortcut to success. And the real secret here is that there isn't a secret. I'm making this video because I get",
+   "label": "0:23"
+  },
+  {
+   "start": 31.4,
+   "dur": 7.96,
+   "text": "variants of this question, \"How do I learn C++ and Vulcan when I'm streaming?\" This is a completely valid question,",
+   "label": "0:31"
+  },
+  {
+   "start": 37.72,
+   "dur": 7.12,
+   "text": "and I do answer it. And I do have a roadmap for the people who are interested in the description of this video.",
+   "label": "0:37"
+  },
+  {
+   "start": 43.8,
+   "dur": 7.2,
+   "text": "But, I don't think that's what people are asking, honestly. What I think people are asking, most of the time when they ask me how to learn",
+   "label": "0:43"
+  },
+  {
+   "start": 49.4,
+   "dur": 9.16,
+   "text": "C++ and Vulcan, is how do I get really good at this? How do I get really skilled, and how do I become an expert?",
+   "label": "0:49"
+  },
+  {
+   "start": 56.48,
+   "dur": 7.44,
+   "text": "This is a total different question, and something I wish to tackle. This video is generally for newer",
+   "label": "0:56"
+  },
+  {
+   "start": 62.12,
+   "dur": 9.24,
+   "text": "programmers who aren't already very good at something. I'll try to explain my system and what I use personally to show how I'm trying to",
+   "label": "1:02"
+  },
+  {
+   "start": 69.28,
+   "dur": 7.76,
+   "text": "become an expert. I should be completely straight with you, though. I honestly don't feel like I'm an expert.",
+   "label": "1:09"
+  },
+  {
+   "start": 75.12,
+   "dur": 8.48,
+   "text": "Even in my own system, I'm nowhere near done, and I'm always trying to get better. I honestly don't really feel that",
+   "label": "1:15"
+  },
+  {
+   "start": 81.32,
+   "dur": 8.68,
+   "text": "qualified to make this video, but I don't see anyone else making this in the programming space. So, I hope it helps out people in my",
+   "label": "1:21"
+  },
+  {
+   "start": 88.0,
+   "dur": 11.32,
+   "text": "community at the very least. So, I need to start with AI. Some of you may be thinking, \"Why can't I just use AI to become an expert?\"",
+   "label": "1:28"
+  },
+  {
+   "start": 97.64,
+   "dur": 8.6,
+   "text": "It comes down to this. When you're starting out, you need to be a beginner, and AI is taking that away from you.",
+   "label": "1:37"
+  },
+  {
+   "start": 103.72,
+   "dur": 9.56,
+   "text": "You need to fail and struggle. You need to learn the basics and grow. Learning the basics deeply, which is all",
+   "label": "1:43"
+  },
+  {
+   "start": 111.32,
+   "dur": 8.64,
+   "text": "about learning how and why things work, is important for mastery. If you don't understand why something",
+   "label": "1:51"
+  },
+  {
+   "start": 116.76,
+   "dur": 9.6,
+   "text": "works, you haven't learned anything. Please let yourself be a beginner. If you start yourself at the middle,",
+   "label": "1:56"
+  },
+  {
+   "start": 123.8,
+   "dur": 8.96,
+   "text": "you're going to be no use to anyone. Now, AI unfortunately works. Which is why people use it, especially",
+   "label": "2:03"
+  },
+  {
+   "start": 131.64,
+   "dur": 9.76,
+   "text": "for coding. It adds a ceiling and a floor to your coding ability. Most beginners, when they're starting",
+   "label": "2:11"
+  },
+  {
+   "start": 139.44,
+   "dur": 7.92,
+   "text": "out, realize if they ask the AI questions about programming, they can get the answer and solve the problem that they're working on very",
+   "label": "2:19"
+  },
+  {
+   "start": 146.08,
+   "dur": 8.0,
+   "text": "easily. Right now, it can actually do some interesting things. But I talk about this in my community,",
+   "label": "2:26"
+  },
+  {
+   "start": 152.16,
+   "dur": 9.0,
+   "text": "this is a trap, especially if you're a beginner. The reason being, it adds a hard ceiling to your skill.",
+   "label": "2:32"
+  },
+  {
+   "start": 158.44,
+   "dur": 8.88,
+   "text": "Which is the reason why I don't use it. So, why don't I use AI? From what I understood from this study, there are",
+   "label": "2:38"
+  },
+  {
+   "start": 165.4,
+   "dur": 11.08,
+   "text": "two bad things that happen when you're using AI, even if you're already skilled. LLMs reduce cognitive function when",
+   "label": "2:45"
+  },
+  {
+   "start": 174.12,
+   "dur": 9.2,
+   "text": "you're engaging with a task. In this study, researchers asked people to write essays. There were three",
+   "label": "2:54"
+  },
+  {
+   "start": 180.4,
+   "dur": 8.4,
+   "text": "groups, one that could use ChatGPT, one that couldn't use anything, and one that could use internet search.",
+   "label": "3:00"
+  },
+  {
+   "start": 186.72,
+   "dur": 7.92,
+   "text": "When the ChatGPT group switched with the group that couldn't use anything, the ChatGPT group couldn't quote back",
+   "label": "3:06"
+  },
+  {
+   "start": 192.92,
+   "dur": 9.8,
+   "text": "anything they'd written in their essay, even though they were no longer using ChatGPT. This is because of cognitive offloading.",
+   "label": "3:12"
+  },
+  {
+   "start": 200.76,
+   "dur": 9.32,
+   "text": "AI allows you to stop thinking effectively. This study also showed that the ChatGPT group used more homogeneous and less",
+   "label": "3:20"
+  },
+  {
+   "start": 208.36,
+   "dur": 8.68,
+   "text": "varied language than the other group that didn't use ChatGPT. So, what does that mean for programmers?",
+   "label": "3:28"
+  },
+  {
+   "start": 215.2,
+   "dur": 6.92,
+   "text": "Well, the study suggests that for programmers, the first thing is that all your solutions will start to become more",
+   "label": "3:35"
+  },
+  {
+   "start": 220.6,
+   "dur": 9.52,
+   "text": "homogeneous. And it's very possible that you'll start to forget code more easily when relying heavily on AI. Just like the ChatGPT",
+   "label": "3:40"
+  },
+  {
+   "start": 228.2,
+   "dur": 8.52,
+   "text": "group when it came to their essays. This is a classic example, but when I ask ChatGPT to write quick sort, which",
+   "label": "3:48"
+  },
+  {
+   "start": 234.24,
+   "dur": 8.52,
+   "text": "is a solved problem in programming, and it's something that anyone can memorize to using their own code,",
+   "label": "3:54"
+  },
+  {
+   "start": 240.28,
+   "dur": 8.84,
+   "text": "ChatGPT gives the worst version of quick sort by selecting the highest array value as a pivot point, rather than a",
+   "label": "4:00"
+  },
+  {
+   "start": 247.16,
+   "dur": 7.2,
+   "text": "random value or the median between three points. It suggests that you can do this at the bottom of the prompt, but this",
+   "label": "4:07"
+  },
+  {
+   "start": 253.12,
+   "dur": 9.48,
+   "text": "isn't good enough. Now, you could say that this quick sort implementation is fine. It works. It does its job and does what it needs to",
+   "label": "4:13"
+  },
+  {
+   "start": 261.799,
+   "dur": 7.681,
+   "text": "do. But when it comes to game engine development or graphics programming, it's good enough doesn't cut it.",
+   "label": "4:21"
+  },
+  {
+   "start": 267.84,
+   "dur": 7.2,
+   "text": "Because your code needs to be extremely fast. And studies like the one I mentioned earlier shows that the chances of the",
+   "label": "4:27"
+  },
+  {
+   "start": 273.36,
+   "dur": 7.36,
+   "text": "programmer actually knowing how to fix this go down. With heavy reliance on AI, it's less likely that the person is",
+   "label": "4:33"
+  },
+  {
+   "start": 279.44,
+   "dur": 7.16,
+   "text": "actually going to remember what they even wrote. This, of course, is a solved problem like I mentioned earlier.",
+   "label": "4:39"
+  },
+  {
+   "start": 285.04,
+   "dur": 6.36,
+   "text": "This is only going to get worse with more novel problems. I really hope you haven't missed the point here by",
+   "label": "4:45"
+  },
+  {
+   "start": 290.36,
+   "dur": 6.6,
+   "text": "thinking that I should have used a better AI or some kind of AI agent. Because this thing is always going to",
+   "label": "4:50"
+  },
+  {
+   "start": 296.04,
+   "dur": 9.92,
+   "text": "happen. No matter the tools that you use, and I assume that people who are interested in programming Vulcan or C++,",
+   "label": "4:56"
+  },
+  {
+   "start": 304.08,
+   "dur": 7.52,
+   "text": "or some kind of game engine and graphics want to write their code themselves. Now, wouldn't it be nice if you could",
+   "label": "5:04"
+  },
+  {
+   "start": 309.72,
+   "dur": 8.8,
+   "text": "sit there and write the code without any assistance with AI? That's the benefit of building expertise.",
+   "label": "5:09"
+  },
+  {
+   "start": 316.56,
+   "dur": 8.24,
+   "text": "You can only do this if you let yourself be a beginner. Leave AI alone, despite what other people tell you to",
+   "label": "5:16"
+  },
+  {
+   "start": 323.24,
+   "dur": 9.84,
+   "text": "do, and you'll be able to build that expertise in the long run, becoming a better programmer. Why did I bring up AI? Well, like I",
+   "label": "5:23"
+  },
+  {
+   "start": 331.32,
+   "dur": 7.48,
+   "text": "said, I always get this question about how to learn C++ or Vulcan. I think what people are really asking is how do I",
+   "label": "5:31"
+  },
+  {
+   "start": 336.8,
+   "dur": 6.44,
+   "text": "become a great programmer to either make a game or make money. So, because I keep getting this type of",
+   "label": "5:36"
+  },
+  {
+   "start": 341.8,
+   "dur": 5.92,
+   "text": "question, I asked my friend who I've worked with for a number of years professionally. He's an extremely good",
+   "label": "5:41"
+  },
+  {
+   "start": 346.32,
+   "dur": 8.8,
+   "text": "programmer, in my He's very fast at writing high-quality code. And so, I asked him the basic question of how do you learn C++? This",
+   "label": "5:46"
+  },
+  {
+   "start": 353.36,
+   "dur": 8.6,
+   "text": "is what he said. I find this question really hard. C++ apparently is one of the hardest languages to learn.",
+   "label": "5:53"
+  },
+  {
+   "start": 359.56,
+   "dur": 11.8,
+   "text": "But, when I learned it in 1997, I'd learned BBC Basic, 32-bit ARM assembly, and C before that. I essentially learned C++ from the",
+   "label": "5:59"
+  },
+  {
+   "start": 368.48,
+   "dur": 10.76,
+   "text": "Visual C++ 5 manual, mostly to learn the differences between C and C++, and using library books. There was plenty I got wrong.",
+   "label": "6:08"
+  },
+  {
+   "start": 377.4,
+   "dur": 7.519,
+   "text": "The C++ compilers weren't very standard compliant back in those days, so there were other hurdles to get over.",
+   "label": "6:17"
+  },
+  {
+   "start": 382.84,
+   "dur": 9.24,
+   "text": "So, I learned C++ from the bits and the bytes upwards, and I think having that low-level view has paid off.",
+   "label": "6:22"
+  },
+  {
+   "start": 389.8,
+   "dur": 10.64,
+   "text": "If you want to learn to write C++ well, I'd guess I'd say take your time. Learn C first, with a half eye on",
+   "label": "6:29"
+  },
+  {
+   "start": 397.4,
+   "dur": 10.56,
+   "text": "low-level stuff, like memory, addresses, bits, bytes, IO. Then, I'd look into the shiny and helpful things that C++ builds on top of",
+   "label": "6:37"
+  },
+  {
+   "start": 406.16,
+   "dur": 10.68,
+   "text": "that. If you wanted to learn C++ quickly, I'd say don't bother. You could perhaps learn C# or Java quickly, and move down a level to C++",
+   "label": "6:46"
+  },
+  {
+   "start": 415.32,
+   "dur": 10.44,
+   "text": "after that. But, I don't know how that would work. I'd suggest watching some of the Crash Course videos on computer science, parts",
+   "label": "6:55"
+  },
+  {
+   "start": 422.84,
+   "dur": 9.079,
+   "text": "3 to 14, as a grounding. I'll provide that and his GitHub below. If you're interested in emulators, he",
+   "label": "7:02"
+  },
+  {
+   "start": 430.16,
+   "dur": 11.24,
+   "text": "has a great project working on an Acorn Archimedes RISC PC emulator, and a hobby operating system. To reflect back on what my friend said,",
+   "label": "7:10"
+  },
+  {
+   "start": 439.16,
+   "dur": 9.0,
+   "text": "if you want to learn C++ quickly, I'd perhaps say don't bother. This is what this video is about. You're not going to master these",
+   "label": "7:19"
+  },
+  {
+   "start": 446.2,
+   "dur": 8.16,
+   "text": "concepts quickly, and to circle this back to AI usage, you are being told all the time, you don't have to take a long",
+   "label": "7:26"
+  },
+  {
+   "start": 452.32,
+   "dur": 7.36,
+   "text": "time to learn these difficult things. There's always a quick solution, a hack, a cheat that you could use.",
+   "label": "7:32"
+  },
+  {
+   "start": 458.12,
+   "dur": 8.24,
+   "text": "If you want to learn it quickly, don't bother. This also applies to some online resources and books, too. This idea is",
+   "label": "7:38"
+  },
+  {
+   "start": 464.72,
+   "dur": 9.68,
+   "text": "everywhere. There's this fantastic article that also reiterates this point. Teach yourself programming in 10 years.",
+   "label": "7:44"
+  },
+  {
+   "start": 472.24,
+   "dur": 8.28,
+   "text": "This was written as a reaction to books that were coming out at the time that were titled something like teach",
+   "label": "7:52"
+  },
+  {
+   "start": 477.6,
+   "dur": 8.96,
+   "text": "yourself this language in 24 hours. It talks about how true expertise takes 10 years to develop by citing some",
+   "label": "7:57"
+  },
+  {
+   "start": 485.52,
+   "dur": 8.88,
+   "text": "studies. So, what's the rush? Let yourself be a beginner. You're going to have to build experience, no matter what you do, if",
+   "label": "8:05"
+  },
+  {
+   "start": 492.44,
+   "dur": 9.479,
+   "text": "you want to learn to code well. To reflect a little bit on my own learning experience, I have bought all these books to study.",
+   "label": "8:12"
+  },
+  {
+   "start": 500.12,
+   "dur": 8.36,
+   "text": "I've some that yet to finish, and I have read some of them completely. I go over these again and again and",
+   "label": "8:20"
+  },
+  {
+   "start": 505.96,
+   "dur": 9.04,
+   "text": "again in my notes to try and get better as a programmer. This is all very important to keep in mind when you're writing a game from",
+   "label": "8:25"
+  },
+  {
+   "start": 512.84,
+   "dur": 8.6,
+   "text": "scratch using 3D graphics that have some kind of interesting gameplay to go with it, because it's extremely difficult.",
+   "label": "8:32"
+  },
+  {
+   "start": 519.88,
+   "dur": 10.24,
+   "text": "This is about as difficult as writing an operating system. Doing this badly is easy. Doing this well is extremely difficult.",
+   "label": "8:39"
+  },
+  {
+   "start": 527.64,
+   "dur": 9.56,
+   "text": "I have written five renderers and game engines. I have written a couple more games like the Minecraft clone",
+   "label": "8:47"
+  },
+  {
+   "start": 535.08,
+   "dur": 9.759,
+   "text": "and a few little SDL games, and I have a lot of unfinished projects that I won't show. I'm actively trying to improve daily.",
+   "label": "8:55"
+  },
+  {
+   "start": 543.52,
+   "dur": 7.04,
+   "text": "To help with this, I came up with a system to gamify programming and studying. My hope with sharing my system is that",
+   "label": "9:03"
+  },
+  {
+   "start": 549.2,
+   "dur": 8.52,
+   "text": "you'll be inspired to do something on your own. Keep yourself accountable and be honest with what you're actually doing.",
+   "label": "9:09"
+  },
+  {
+   "start": 555.76,
+   "dur": 10.079,
+   "text": "Just be warned, this will not be for everyone, and that's completely fine. I love Rocket League. It's my favorite",
+   "label": "9:15"
+  },
+  {
+   "start": 563.839,
+   "dur": 5.921,
+   "text": "competitive video game. Admittedly, I haven't been able to play it in a while because I've been focusing on",
+   "label": "9:23"
+  },
+  {
+   "start": 568.2,
+   "dur": 8.16,
+   "text": "programming. I like it because it's not like any other competitive video game. You can have the best aim in the world,",
+   "label": "9:28"
+  },
+  {
+   "start": 575.28,
+   "dur": 5.8,
+   "text": "but when you start playing Rocket League, because it's so different, you're just going to be in the beginner ranks like",
+   "label": "9:35"
+  },
+  {
+   "start": 579.88,
+   "dur": 8.64,
+   "text": "everyone else. No one has a huge advantage starting out because it's so different. So I use this game's ranking system to gamify",
+   "label": "9:39"
+  },
+  {
+   "start": 587.28,
+   "dur": 9.0,
+   "text": "programming. I used to really like looking into the metrics of how to improve efficiently at Rocket League. And I found this video by",
+   "label": "9:47"
+  },
+  {
+   "start": 594.08,
+   "dur": 6.6,
+   "text": "Waitin Pilkin, \"How long does it take to reach each rank in Rocket League?\" In this video, he broke down the",
+   "label": "9:54"
+  },
+  {
+   "start": 599.12,
+   "dur": 7.28,
+   "text": "differences between ranks using statistics, which he was able to gather from his community when they filled out",
+   "label": "9:59"
+  },
+  {
+   "start": 604.16,
+   "dur": 8.32,
+   "text": "questionnaires based on their rank. And importantly, he found on average how long it takes to reach each rank in the",
+   "label": "10:04"
+  },
+  {
+   "start": 610.4,
+   "dur": 10.64,
+   "text": "game. And the highest rank, Supersonic Legend, takes 4,450 hours to reach. Using the exponential growth curve that",
+   "label": "10:10"
+  },
+  {
+   "start": 618.92,
+   "dur": 10.24,
+   "text": "Waitin provided in his video, I estimated that it would take 8,274 hours on average to be able to compete",
+   "label": "10:18"
+  },
+  {
+   "start": 626.6,
+   "dur": 10.08,
+   "text": "in the RLCS major tournaments. So I decided on November the 11th, 2024, to count how many hours I code to see if",
+   "label": "10:26"
+  },
+  {
+   "start": 634.28,
+   "dur": 10.88,
+   "text": "I could reach 8,274 hours before I die starting from zero. My goal with reaching 8,274 hours is that I'll hopefully be able to",
+   "label": "10:34"
+  },
+  {
+   "start": 643.56,
+   "dur": 9.84,
+   "text": "look back and see that I've actually become an expert in this field. I'm aware though that when I reach 8,274",
+   "label": "10:43"
+  },
+  {
+   "start": 650.88,
+   "dur": 9.68,
+   "text": "hours, I'll still have more room to grow to get better and better. I like this because it gives me milestones to reach using the same",
+   "label": "10:50"
+  },
+  {
+   "start": 658.72,
+   "dur": 7.44,
+   "text": "number of hours used in Rocket League, but with programming. I added some lower-level ranks because it would take",
+   "label": "10:58"
+  },
+  {
+   "start": 663.8,
+   "dur": 6.72,
+   "text": "73 hours of programming to get bronze one, which is the lowest rank in Rocket League, and I felt that would take too",
+   "label": "11:03"
+  },
+  {
+   "start": 669.2,
+   "dur": 9.08,
+   "text": "long. The highest ranks I calculated come from six mans, which is where semi-professional Rocket League players",
+   "label": "11:09"
+  },
+  {
+   "start": 675.72,
+   "dur": 8.76,
+   "text": "go to take the game more seriously. If you have reached the highest rank in Rocket League, you're likely already",
+   "label": "11:15"
+  },
+  {
+   "start": 682.04,
+   "dur": 11.04,
+   "text": "rank C in six mans. So I decided to add B, B+, A, X, and S. S rank is only achieved by Rocket League",
+   "label": "11:22"
+  },
+  {
+   "start": 690.36,
+   "dur": 7.64,
+   "text": "players that in this season are playing in majors. Which is the highest league of play outside of the",
+   "label": "11:30"
+  },
+  {
+   "start": 696.36,
+   "dur": 9.08,
+   "text": "championship itself. I'm aware that the rank names are a little silly, but it's what works for me. I should also note that I'd been working",
+   "label": "11:36"
+  },
+  {
+   "start": 703.8,
+   "dur": 7.04,
+   "text": "as a professional C++ developer for years when I decided to do this. But I felt I wasn't very good at",
+   "label": "11:43"
+  },
+  {
+   "start": 709.12,
+   "dur": 8.36,
+   "text": "programming at the time. And that's why I began on this quest. And for those who are interested, I had",
+   "label": "11:49"
+  },
+  {
+   "start": 714.84,
+   "dur": 11.24,
+   "text": "been dabbling in C++ since 2011. I really started to take it more seriously in 2017. And then really seriously in 2024.",
+   "label": "11:54"
+  },
+  {
+   "start": 724.48,
+   "dur": 8.48,
+   "text": "Why did I decide to do this and count hours? Well, there's no way of measuring skill between programmers like in competitive",
+   "label": "12:04"
+  },
+  {
+   "start": 730.68,
+   "dur": 6.28,
+   "text": "games like Rocket League or chess. There's also no way of knowing if what I'm actually doing is improving my",
+   "label": "12:10"
+  },
+  {
+   "start": 735.52,
+   "dur": 7.88,
+   "text": "ability or not. So, I decided to focus on the thing that I have control over. How much time I spend deliberately",
+   "label": "12:15"
+  },
+  {
+   "start": 741.84,
+   "dur": 9.96,
+   "text": "trying. That being said, you could theoretically cheat at this. I could say that I'm working 16 hours a",
+   "label": "12:21"
+  },
+  {
+   "start": 748.72,
+   "dur": 11.96,
+   "text": "day every day and reach 8,274 hours relatively quickly. This would be in my opinion very stupid. Because I made up the system. This would",
+   "label": "12:28"
+  },
+  {
+   "start": 758.76,
+   "dur": 9.64,
+   "text": "be like cheating on an exam I made myself take. So, I made some rules to follow. I only count times when I'm either",
+   "label": "12:38"
+  },
+  {
+   "start": 766.76,
+   "dur": 9.24,
+   "text": "deliberately studying programming or actually programming. Just having the IDE open doesn't count. Turning on my PC doesn't count.",
+   "label": "12:46"
+  },
+  {
+   "start": 774.24,
+   "dur": 6.44,
+   "text": "Talking about programming that doesn't directly solve the problem doesn't count. Going to the toilet doesn't",
+   "label": "12:54"
+  },
+  {
+   "start": 779.04,
+   "dur": 7.32,
+   "text": "count. Randomly thinking about programming while I'm doing my chores doesn't count. Any meeting that doesn't deliberately",
+   "label": "12:59"
+  },
+  {
+   "start": 784.8,
+   "dur": 7.64,
+   "text": "involve solving the problem doesn't count. Waiting for long compilation times to finish doesn't count. Making",
+   "label": "13:04"
+  },
+  {
+   "start": 790.48,
+   "dur": 7.12,
+   "text": "this video doesn't count. If I'm not deliberately trying to improve at programming or actually doing it, it",
+   "label": "13:10"
+  },
+  {
+   "start": 795.8,
+   "dur": 9.28,
+   "text": "doesn't count. There are a few exceptions, though. I can watch or listen to some educational entertainment for 30 minutes",
+   "label": "13:15"
+  },
+  {
+   "start": 803.76,
+   "dur": 9.08,
+   "text": "about programming. Audiobooks about programming I've already read are good if I've already studied them",
+   "label": "13:23"
+  },
+  {
+   "start": 810.96,
+   "dur": 8.08,
+   "text": "and I have actively been doing something for about 4 hours the day before. Minor distractions are allowed because",
+   "label": "13:30"
+  },
+  {
+   "start": 817.36,
+   "dur": 7.2,
+   "text": "it would take too long to stop and start the timer than just getting back to work. And it goes without saying using",
+   "label": "13:37"
+  },
+  {
+   "start": 822.92,
+   "dur": 8.64,
+   "text": "AI to help with code doesn't count at all. To track all this I use a timer called ToggleTrack. It's a website that allows you to track",
+   "label": "13:42"
+  },
+  {
+   "start": 830.48,
+   "dur": 6.88,
+   "text": "how long you've been doing something for. It also has a free phone app that can sync with your account online.",
+   "label": "13:50"
+  },
+  {
+   "start": 836.0,
+   "dur": 7.0,
+   "text": "So it syncs between my phone and my browser very easily making it very easy to stop and start this timer.",
+   "label": "13:56"
+  },
+  {
+   "start": 841.6,
+   "dur": 8.36,
+   "text": "There is a paid for version but this is for tracking invoices which I don't actually need. So to keep track of things over a longer",
+   "label": "14:01"
+  },
+  {
+   "start": 847.76,
+   "dur": 7.84,
+   "text": "period of time I take the total times of work that I've done each day and put them in a Google Excel spreadsheet. And",
+   "label": "14:07"
+  },
+  {
+   "start": 854.0,
+   "dur": 8.08,
+   "text": "I add them all up together. If you want to use exactly what I've been using to track something that you're trying to learn I've left a",
+   "label": "14:14"
+  },
+  {
+   "start": 860.44,
+   "dur": 8.72,
+   "text": "template for you guys to have in the description of this video. The ranks are again based on Rocket League but feel free to change the ranks",
+   "label": "14:20"
+  },
+  {
+   "start": 867.16,
+   "dur": 8.96,
+   "text": "yourself. As you can see I'm only Champion 3 Division 2. So I'm not even halfway to reaching my goal.",
+   "label": "14:27"
+  },
+  {
+   "start": 873.92,
+   "dur": 7.32,
+   "text": "And it honestly feels like that. This is generally because as you get better at something you realize there",
+   "label": "14:33"
+  },
+  {
+   "start": 879.36,
+   "dur": 9.84,
+   "text": "are more things you don't know. So actually can make you less confident overall as you improve. So how do I go about practice?",
+   "label": "14:39"
+  },
+  {
+   "start": 887.08,
+   "dur": 9.04,
+   "text": "Well I have two general goals. One, to become a better programmer and two, make a game in my game engine for people to",
+   "label": "14:47"
+  },
+  {
+   "start": 893.64,
+   "dur": 8.24,
+   "text": "play. These two goals help me decide what I should be doing throughout the day. In the morning I usually get up and do",
+   "label": "14:53"
+  },
+  {
+   "start": 899.8,
+   "dur": 7.16,
+   "text": "some revision. This is especially important if I've studied something the day before. I use this note-taking app called",
+   "label": "14:59"
+  },
+  {
+   "start": 905.88,
+   "dur": 9.64,
+   "text": "Obsidian and I keep it synced between devices using Git by my GitHub. I use the setup described by Odysseus in",
+   "label": "15:05"
+  },
+  {
+   "start": 913.24,
+   "dur": 8.24,
+   "text": "this video called Obsidian the king of learning tools full guide and setup. So to do revision I either go to index",
+   "label": "15:13"
+  },
+  {
+   "start": 920.4,
+   "dur": 10.08,
+   "text": "pages just something I have in mind I need to revise, or just click through this node network, which comes with Obsidian.",
+   "label": "15:20"
+  },
+  {
+   "start": 928.52,
+   "dur": 7.88,
+   "text": "After some revision, I either stream for 6 plus hours uh where I code or study or do something else.",
+   "label": "15:28"
+  },
+  {
+   "start": 935.0,
+   "dur": 7.84,
+   "text": "It depends on the day. If I'm studying, I'm either reading a book, article, or watching videos. And when I do this, I'm taking notes in",
+   "label": "15:35"
+  },
+  {
+   "start": 941.64,
+   "dur": 9.92,
+   "text": "Obsidian so I can revise them for tomorrow. When I'm taking these notes, I try my best to rephrase them in my own words.",
+   "label": "15:41"
+  },
+  {
+   "start": 949.4,
+   "dur": 7.36,
+   "text": "That's how the learning process happens. The friction and thinking in trying to translate the words into something I",
+   "label": "15:49"
+  },
+  {
+   "start": 955.52,
+   "dur": 10.64,
+   "text": "understand. So, using AI to take notes would be a complete waste of time because I'm not thinking. Taking notes like this is slower, and I",
+   "label": "15:55"
+  },
+  {
+   "start": 964.4,
+   "dur": 8.12,
+   "text": "don't get through resources as fast as someone else. The goal of this is so I never have to go back to that resource again, which",
+   "label": "16:04"
+  },
+  {
+   "start": 970.64,
+   "dur": 8.2,
+   "text": "means it's faster in the long run. Outside of that, I write code or debug, which is pretty straightforward.",
+   "label": "16:10"
+  },
+  {
+   "start": 977.04,
+   "dur": 7.56,
+   "text": "I've been averaging 4 hours and 25 minutes of deliberate practice every day under my system. It doesn't matter if I",
+   "label": "16:17"
+  },
+  {
+   "start": 982.8,
+   "dur": 8.6,
+   "text": "miss a day here or there, as long as I eventually hit 8,274 hours. But I really try to avoid missing days,",
+   "label": "16:22"
+  },
+  {
+   "start": 989.92,
+   "dur": 8.0,
+   "text": "and this year I haven't missed a single day. I've at least done something, even if it's just been for a couple of minutes.",
+   "label": "16:29"
+  },
+  {
+   "start": 996.48,
+   "dur": 7.76,
+   "text": "So, hopefully now you have an idea of what's required of you to become an expert at programming. It's all just practice,",
+   "label": "16:36"
+  },
+  {
+   "start": 1002.52,
+   "dur": 9.08,
+   "text": "and that's all it is, and it's all it will ever be. Like I said earlier, I provided a very basic road map in the description of",
+   "label": "16:42"
+  },
+  {
+   "start": 1009.48,
+   "dur": 9.2,
+   "text": "this video and in my Discord. I'm learning Vulcan, C++, and graphics programming, and other game development-related",
+   "label": "16:49"
+  },
+  {
+   "start": 1016.44,
+   "dur": 9.32,
+   "text": "stuff. Now, watching this video, I hope you guys don't feel down at all. If you need someone to say it,",
+   "label": "16:56"
+  },
+  {
+   "start": 1024.079,
+   "dur": 8.441,
+   "text": "I really do believe in you. Anyone can actually become an expert, truly. It's just lack of effort why people",
+   "label": "17:04"
+  },
+  {
+   "start": 1030.439,
+   "dur": 9.041,
+   "text": "don't get there. So, you can do this. Well, that's all I have for this video. Good luck out there. You're going to",
+   "label": "17:10"
+  },
+  {
+   "start": 1038.319,
+   "dur": 5.241,
+   "text": "need it. All right. See you in the next one. Bye.",
+   "label": "17:18"
+  }
+ ],
+ "track": {
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "generated": true,
+  "source": "captions-grouped"
+ },
+ "source": "youtube",
+ "added": "2026-10-13T22:10:35+00:00"
+}

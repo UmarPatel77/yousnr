@@ -106,8 +106,18 @@ class OverBudget(Exception):
 
 # ---------------------------------------------------------------- words
 
+CENSOR = "<censored>"                      # YouTube's bleep: "[ __ ]"
+
+
+def unbleep_marks(text):
+    """Make YouTube's '[ __ ]' one token so it can be lined up against what was actually said."""
+    return re.sub(r"\[\s*_+\s*\]", "[__]", text)
+
+
 def norm(tok):
     """Comparison form of a word: lowercase, no punctuation, spelled-out numbers as digits."""
+    if tok.startswith("[__]"):
+        return CENSOR
     if tok.startswith(("[", "(")) or tok.startswith(">>"):
         return ""
     t = tok.lower().replace("’", "'").replace("‘", "'")
@@ -129,7 +139,7 @@ def tokens_of(segments):
     surf, line_of, first = [], [], []
     for i, s in enumerate(segments):
         first.append(len(surf))
-        for w in s["text"].split():
+        for w in unbleep_marks(s["text"]).split():
             surf.append(w)
             line_of.append(i)
     return surf, [norm(w) for w in surf], line_of, first
@@ -144,7 +154,7 @@ def edits_between(p_norm, x_norm, x_surf):
         if op == "equal":
             continue
         old, new = _core(p_norm[i1:i2]), _core(x_norm[j1:j2])
-        if old == new:
+        if old == new or (not new and old and all(o == CENSOR for o in old)):
             continue
         surf = [s for s, n in zip(x_surf[j1:j2], x_norm[j1:j2]) if n and n not in FILLERS]
         out.append((i1, i2, tuple(new), surf))
@@ -175,10 +185,14 @@ def vote(p_norm, sources, edge_guard=True):
     accepted = []
     for (i1, i2, core), c in cands.items():
         w_change = sum(WEIGHT.get(s, 1.0) for s in c["who"])
-        keep = WEIGHT["youtube"] + sum(
+        bleep = bool(_core(p_norm[i1:i2])) and all(x == CENSOR for x in _core(p_norm[i1:i2]))
+        keep = 0.0 if bleep else WEIGHT["youtube"] + sum(
             WEIGHT.get(name, 1.0) for name, eds in proposals.items()
             if name not in c["who"] and not any(overlaps(i1, i2, e[0], e[1]) for e in eds))
-        if len(c["who"]) >= 2 and w_change > keep:
+        need = 1 if bleep else 2
+        if bleep and c["who"] == ["captions"]:
+            continue
+        if len(c["who"]) >= need and w_change > keep:
             best = max(c["who"], key=lambda s: WEIGHT.get(s, 1.0))
             accepted.append((w_change, i1, i2, c["surf"][best], sorted(c["who"])))
     accepted.sort(key=lambda a: -a[0])
@@ -198,6 +212,8 @@ def _transplant(p_words, new_words):
     """Put the engine's words in, keeping YouTube's punctuation and capitalisation around them."""
     if not new_words:
         return ""
+    if p_words and all(w.startswith("[__]") for w in p_words):          # a bleep: just the word(s)
+        return " ".join(_strip_punct(w) or w for w in new_words) + p_words[-1][4:]
     lead = re.match(r"^[^\w'$£€]*", p_words[0]).group(0) if p_words else ""
     trail = re.search(r"[^\w'%]*$", p_words[-1]).group(0) if p_words else ""
     words = [_strip_punct(w) or w for w in new_words]
@@ -221,14 +237,14 @@ def pieces_by_line(segments, edits, surf, line_of):
             old = surf[i1:i2]
             line = line_of[min(i1, n - 1)]
             shown = _transplant(old, new) if old else " ".join(_strip_punct(w) or w for w in new)
-            out[line].append([shown, " ".join(old)])
+            out[line].append([shown, " ".join(old).replace("[__]", "[ __ ]")])
             changed.add(line)
             if i2 > i1:
                 i = i2
                 continue
         if i >= n:
             break
-        out[line_of[i]].append([surf[i], None])
+        out[line_of[i]].append([surf[i].replace("[__]", "[ __ ]"), None])
         i += 1
     lines = {}
     for k in sorted(changed):
@@ -295,6 +311,9 @@ def flag_lines(segments, caption_words, meta, duration):
         for i1, i2, core, s in edits_between(p_norm, c_norm, c_surf):
             for i in (range(i1, i2) if i2 > i1 else (i1 - 1, i1)):
                 add(i, 2, "YouTube's two transcripts disagree")
+    for i, n in enumerate(p_norm):                      # 0. YouTube bleeped a word: find out what it was
+        if n == CENSOR:
+            add(i, 5, "bleeped by YouTube")
     seen = {}
     for i, w in enumerate(surf):                        # 2. risky words
         core = _strip_punct(w)
@@ -458,7 +477,8 @@ def _transcribe(engine, path, terms):
             up = requests.post("https://api.assemblyai.com/v2/upload", headers=h, data=fh, timeout=900)
         if up.status_code != 200:
             raise RuntimeError(f"AssemblyAI upload HTTP {up.status_code}: {up.text[:200]}")
-        body = {"audio_url": up.json()["upload_url"], "speech_models": ["universal-3-5-pro", "universal-2"]}
+        body = {"audio_url": up.json()["upload_url"], "speech_models": ["universal-3-5-pro", "universal-2"],
+                "filter_profanity": False}
         if terms:
             body["keyterms_prompt"] = terms
         r = requests.post("https://api.assemblyai.com/v2/transcript", headers=h, json=body, timeout=60)
@@ -486,7 +506,7 @@ def caption_words(vid, lang="en"):
         tr = tl.find_transcript([lang, "en"])
     out = []
     for s in tr.fetch().snippets:
-        ws = html.unescape(s.text).split()
+        ws = unbleep_marks(html.unescape(s.text)).split()
         for i, w in enumerate(ws):
             out.append((s.start + s.duration * i / max(1, len(ws)), w))
     return out

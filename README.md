@@ -109,6 +109,7 @@ YouTube sometimes refuses plain caption downloads from a home connection ("429 T
 YouTube's transcript is the starting point; YouSNR then fixes words it most likely got wrong, keeping YouTube's lines, timestamps and chapters. Corrected words have a faint highlight (hover to see YouTube's word), and the **YouTube's original** switch shows YouTube's exact text.
 
 - **Every new video (selective, a few cents):** lines where YouTube's two recognizers disagree (transcript panel vs. caption file), plus risky words (unusual acronyms, rare words, names not in the title/description), are cut from the audio and sent to **ElevenLabs Scribe v2** and **AssemblyAI Universal-3.5 Pro**, with key terms taken from the title, description and chapters. A word changes only when at least two sources agree on the change and they outweigh the sources that back YouTube. One engine's slip is never enough.
+- **Bleeps:** YouTube's auto-transcripts replace swear words with `[ __ ]`. Those lines are always checked first, and the word the engines hear is put back. YouTube gets no vote there, since it never knew the word, so one engine is enough, and the more accurate one wins if they disagree.
 - **Popular videos (full):** after `YOUSNR_FULL_AT_VIEWS` views (default 20), the whole audio goes to both engines and the same vote runs over every word.
 - **Budget:** `YOUSNR_MONTHLY_BUDGET` (USD, default 5). Work that would go over it is skipped. `python yousnr.py usage` shows spending.
 
