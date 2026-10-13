@@ -1,0 +1,366 @@
+{
+ "id": "cPmVLrTA8AU",
+ "title": "The HRT Internship: Algo Dev & Software Engineering",
+ "channel": "Hudson River Trading",
+ "published": "20261006",
+ "chapters": [],
+ "duration": 340,
+ "segments": [
+  {
+   "start": 0.654,
+   "dur": 9.346,
+   "text": "[music] HRT's mindset is that we are looking for very smart people who are driven to work on extremely hard problems. It truly is",
+   "label": "0:00"
+  },
+  {
+   "start": 7.839,
+   "dur": 9.121,
+   "text": "such an incredible learning experience. Suddenly like, wo, I have access to all of this code. It's the first time I'd",
+   "label": "0:07"
+  },
+  {
+   "start": 14.719,
+   "dur": 6.001,
+   "text": "ever written code to actually run live and [music] do things. >> I've just completed my project and now",
+   "label": "0:14"
+  },
+  {
+   "start": 19.359,
+   "dur": 5.121,
+   "text": "he's thinking about how do we now deploy it to the main codebase. We went to Broadway shows. We explore the city.",
+   "label": "0:19"
+  },
+  {
+   "start": 24.235,
+   "dur": 4.964,
+   "text": "[music] >> There are intern events almost every single day. >> There's no like separation. And there's",
+   "label": "0:24"
+  },
+  {
+   "start": 27.92,
+   "dur": 5.92,
+   "text": "like full-timers that will sit with the interns. >> We had great access to like basically all of the leaders.",
+   "label": "0:27"
+  },
+  {
+   "start": 32.399,
+   "dur": 5.84,
+   "text": ">> Every single employee here feels like they're here to support you. [music] >> The interns that we're looking for",
+   "label": "0:32"
+  },
+  {
+   "start": 36.399,
+   "dur": 8.68,
+   "text": "today, they're going to shape how the company thinks about various types of trading and we want to turn them into",
+   "label": "0:36"
+  },
+  {
+   "start": 41.52,
+   "dur": 9.84,
+   "text": "future star researchers. [music] >> We have two primary tracks that you can choose from for the summer internship",
+   "label": "0:41"
+  },
+  {
+   "start": 49.44,
+   "dur": 7.36,
+   "text": "program. There's the algo developer track as well as the software [music] engineering track. The ALGO developer",
+   "label": "0:49"
+  },
+  {
+   "start": 54.719,
+   "dur": 7.601,
+   "text": "interns are learning all about the research and trading happening at HRT. The software engineering interns have an",
+   "label": "0:54"
+  },
+  {
+   "start": 60.64,
+   "dur": 7.92,
+   "text": "opportunity to work on a variety of engineering projects ranging [music] from our trading infrastructure to our",
+   "label": "1:00"
+  },
+  {
+   "start": 66.72,
+   "dur": 7.92,
+   "text": "research and development environment. Our internship program total is 11 weeks. You [music] start and you are in",
+   "label": "1:06"
+  },
+  {
+   "start": 72.64,
+   "dur": 8.24,
+   "text": "one week of training and then you are working on two different project [music] rotations. The first five weeks is spent",
+   "label": "1:12"
+  },
+  {
+   "start": 78.159,
+   "dur": 6.561,
+   "text": "with one mentor working on one project and then halfway through the internship you would switch to work on a second",
+   "label": "1:18"
+  },
+  {
+   "start": 84.159,
+   "dur": 6.721,
+   "text": "project. >> We put a lot of care into [music] making sure that the projects here are going to have proper impact within the firm.",
+   "label": "1:24"
+  },
+  {
+   "start": 89.6,
+   "dur": 7.92,
+   "text": "There's a real chance that you're going to do work that no one as HRT has done yet [music] and you could really affect",
+   "label": "1:29"
+  },
+  {
+   "start": 94.4,
+   "dur": 9.679,
+   "text": "our trading going forward. I think alga [music] developer at HRT is a pretty unique title. We take it to",
+   "label": "1:34"
+  },
+  {
+   "start": 102.56,
+   "dur": 6.48,
+   "text": "mean like the combination of three different things. You're [music] a quantitative researcher. You're a",
+   "label": "1:42"
+  },
+  {
+   "start": 106.96,
+   "dur": 8.08,
+   "text": "software engineer and you're a trader. One component of HRT's ALGO internship is [music] you get to build a trading",
+   "label": "1:46"
+  },
+  {
+   "start": 112.799,
+   "dur": 7.36,
+   "text": "strategy from scratch. You learn how to read the data. You learn how to combine the signals. You learn how to build",
+   "label": "1:52"
+  },
+  {
+   "start": 118.479,
+   "dur": 6.801,
+   "text": "predictive [music] models. You are given real money to trade and you actually put up live trading [music] at the end of",
+   "label": "1:58"
+  },
+  {
+   "start": 123.759,
+   "dur": 9.601,
+   "text": "the internship. And I'm pretty sure there's no other internship on Earth that has this live trading component.",
+   "label": "2:03"
+  },
+  {
+   "start": 130.959,
+   "dur": 7.761,
+   "text": "As a quantitative trading firm, software engineering and engineering at large is at the core of our culture. Somebody",
+   "label": "2:10"
+  },
+  {
+   "start": 136.48,
+   "dur": 7.621,
+   "text": "could be writing C++ to improve our trading technology stack. And somebody might be writing Python in order to",
+   "label": "2:16"
+  },
+  {
+   "start": 142.4,
+   "dur": 6.559,
+   "text": "manage our huge distributed cluster and [music] services to make research better. As a student, you might have",
+   "label": "2:22"
+  },
+  {
+   "start": 147.12,
+   "dur": 7.6,
+   "text": "worked primarily on more theoretical work. But here at HRT, we're really interested in pragmatic, practical",
+   "label": "2:27"
+  },
+  {
+   "start": 152.879,
+   "dur": 8.801,
+   "text": "deliverables. In fact, lots of the projects that we assign to interns end up being shipped. We run our internships",
+   "label": "2:32"
+  },
+  {
+   "start": 159.68,
+   "dur": 6.8,
+   "text": "in our three [music] main offices, New York, London, and Singapore. The New York office is our biggest office, so",
+   "label": "2:39"
+  },
+  {
+   "start": 165.2,
+   "dur": 6.88,
+   "text": "you do get [music] to meet a lot of full-timers. The London internship is really exciting because they'll",
+   "label": "2:45"
+  },
+  {
+   "start": 170.48,
+   "dur": 7.2,
+   "text": "kickstart their summer in the New York office for 6 [music] weeks before they return to the London office for the",
+   "label": "2:50"
+  },
+  {
+   "start": 175.68,
+   "dur": 7.12,
+   "text": "remaining 5 weeks of the program. And then the biggest perk in my opinion [music] of the Singapore internship is",
+   "label": "2:55"
+  },
+  {
+   "start": 181.12,
+   "dur": 6.64,
+   "text": "that that office itself is very close-knit. So, I think the interns really get to see what being part of",
+   "label": "3:01"
+  },
+  {
+   "start": 185.92,
+   "dur": 6.48,
+   "text": "that office full-time looks like. The same open and collaborative culture exists in every single location. So",
+   "label": "3:05"
+  },
+  {
+   "start": 191.262,
+   "dur": 10.018,
+   "text": "[music] interns experience the same technical growth and opportunities in all spots. >> HRT is a learn by [music] doing",
+   "label": "3:11"
+  },
+  {
+   "start": 198.72,
+   "dur": 8.799,
+   "text": "environment. So there's one mentor for each project. >> You are maybe the [music] most important thing that your intern mentor is",
+   "label": "3:18"
+  },
+  {
+   "start": 205.92,
+   "dur": 5.647,
+   "text": "thinking about during the summer. Um they're making sure that you're making good progress. They're making sure that",
+   "label": "3:25"
+  },
+  {
+   "start": 210.08,
+   "dur": 7.12,
+   "text": "they can unblock you whenever you [music] have things that you're stuck on. It's amazing the amount of like",
+   "label": "3:30"
+  },
+  {
+   "start": 214.879,
+   "dur": 8.241,
+   "text": "personal attention that goes into each individual [music] intern's experience. >> You have resources in compute in",
+   "label": "3:34"
+  },
+  {
+   "start": 221.44,
+   "dur": 6.159,
+   "text": "mentorship. You'll learn [music] how to do things with your own hands, but you'll also learn how to think about",
+   "label": "3:41"
+  },
+  {
+   "start": 225.44,
+   "dur": 9.12,
+   "text": "highle projects. And this is the first year where we're allowing interns to use AI tooling. And it's a pretty big game",
+   "label": "3:45"
+  },
+  {
+   "start": 232.56,
+   "dur": 9.28,
+   "text": "changer. I think the overall volume of output this year has been a lot higher because of people using AI tools. So",
+   "label": "3:52"
+  },
+  {
+   "start": 238.72,
+   "dur": 9.04,
+   "text": "HRT's interns are also going to be exposed to ongoing classroom [music] style learnings. So story time is a way",
+   "label": "3:58"
+  },
+  {
+   "start": 246.159,
+   "dur": 7.44,
+   "text": "to get that conversation started. >> Our interns will come in at 9:30 [music] in the morning and they'll hear a",
+   "label": "4:06"
+  },
+  {
+   "start": 251.439,
+   "dur": 7.92,
+   "text": "different HRT talk about something that they've done in the past or a current market event or whatever's on their mind",
+   "label": "4:11"
+  },
+  {
+   "start": 257.6,
+   "dur": 5.52,
+   "text": "and it gives you a lot of perspective about the various types of trading that we do and [music] the things that we",
+   "label": "4:17"
+  },
+  {
+   "start": 262.72,
+   "dur": 7.798,
+   "text": "think about. >> I love story time. Story time is my favorite of the day. You always walk out having learned something new either",
+   "label": "4:22"
+  },
+  {
+   "start": 268.56,
+   "dur": 8.079,
+   "text": "about the world or about math or about [music] markets and it's always fun. >> We also have lots of talks from",
+   "label": "4:28"
+  },
+  {
+   "start": 274.88,
+   "dur": 6.8,
+   "text": "different members of a leadership team about different areas. Everything from like the business of trading through to",
+   "label": "4:34"
+  },
+  {
+   "start": 280.343,
+   "dur": 8.937,
+   "text": "[music] sort of deep dives on technical research topics. >> There is an ethos at HRT of leadership making themselves available for interns.",
+   "label": "4:40"
+  },
+  {
+   "start": 287.6,
+   "dur": 6.72,
+   "text": ">> People are really busy. My mentor is really busy, but like he takes time out of his day and like talks to me all the",
+   "label": "4:47"
+  },
+  {
+   "start": 292.56,
+   "dur": 5.84,
+   "text": "time and like there's really like no culture of shame. You can just ask anything and somebody's [music] going to",
+   "label": "4:52"
+  },
+  {
+   "start": 296.88,
+   "dur": 7.2,
+   "text": "help you. When you're at lunch, like you're sitting in the cafeteria with anybody. Lunch is probably like one of",
+   "label": "4:56"
+  },
+  {
+   "start": 302.479,
+   "dur": 7.041,
+   "text": "the more efficient hours of the workday, which is like very counterintuitive. You get this like [music] environment where",
+   "label": "5:02"
+  },
+  {
+   "start": 307.68,
+   "dur": 10.0,
+   "text": "people are like sharing ideas with each other and like actually generating alpha for one another. >> HRT does a really good job at fostering",
+   "label": "5:07"
+  },
+  {
+   "start": 315.68,
+   "dur": 8.0,
+   "text": "like a community amongst the interns. People are essentially friends more than colleagues. It's been unbelievable. I",
+   "label": "5:15"
+  },
+  {
+   "start": 322.08,
+   "dur": 7.6,
+   "text": "mean, I've spent like every moment I can outside of the internship exploring New York. >> To be in a place where people are smart",
+   "label": "5:22"
+  },
+  {
+   "start": 327.6,
+   "dur": 9.319,
+   "text": "and interested and interesting and fun and kind to one another is just like what more could you want?",
+   "label": "5:27"
+  }
+ ],
+ "track": {
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "generated": true,
+  "source": "captions-grouped"
+ },
+ "source": "youtube",
+ "added": "2026-10-13T05:07:29+00:00"
+}
