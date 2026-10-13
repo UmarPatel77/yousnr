@@ -20,12 +20,6 @@ input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);b
 input:focus{border-color:var(--accent)}
 button{border:0;background:var(--fg);color:var(--bg);border-radius:20px;padding:0 18px;font:500 14px Roboto,Arial,sans-serif;cursor:pointer}
 code{background:var(--chip);padding:1px 6px;border-radius:4px}
-ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
-li a{display:flex;flex-direction:column;padding:12px 4px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
-li a:hover .t{color:var(--accent)}
-.t{font-weight:500;font-size:15px}
-.c{color:var(--mute);font-size:13px}
-.empty{padding:12px 4px;color:var(--mute)}
 </style>
 </head>
 <body>
@@ -33,9 +27,6 @@ li a:hover .t{color:var(--accent)}
   <h1><span class="you">You</span><span class="snr">SNR</span></h1>
   <p><strong>All signal, no noise.</strong> Swap <code>tube</code> for <code>snr</code> in any YouTube link to read the video instead of watching it.</p>
   <form id="f"><input id="u" placeholder="Paste a YouTube link or video ID" autocomplete="off"><button>Open</button></form>
-  <ul>
-{{LIST}}
-  </ul>
 </div>
 <script>
 document.getElementById('f').onsubmit=function(e){e.preventDefault();
