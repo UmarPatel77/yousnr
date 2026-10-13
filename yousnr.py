@@ -145,7 +145,7 @@ class DirectDownloadPaused(Exception):
     pass
 
 
-def get_transcript(vid, lang="en", browser=False, show=False):
+def get_transcript(vid, lang="en", browser=False, show=False, player=False):
     """Fetch one video end to end and save it. Returns the saved record."""
     chapters, segs, track = [], None, None
     if browser:
@@ -159,6 +159,8 @@ def get_transcript(vid, lang="en", browser=False, show=False):
     if not segs:
         global DIRECT_BLOCKED_UNTIL
         try:
+            if player:
+                raise DirectDownloadPaused("using the video player (--player)")
             if time.time() < DIRECT_BLOCKED_UNTIL:
                 raise DirectDownloadPaused("direct downloads paused after YouTube refused one")
             segs, track = fetch_captions_fallback(vid, [lang, "en"])
@@ -507,7 +509,7 @@ _TRACKS_JS = r"""() => { try {
 } catch (e) { return null } }"""
 
 
-def fetch_player_captions(vid, show=False):
+def fetch_player_captions(vid, show=False, save_raw=False):
     from playwright.sync_api import sync_playwright
     got = []
 
@@ -581,6 +583,16 @@ def fetch_player_captions(vid, show=False):
 
     if not got:
         raise RuntimeError("the video player didn't load any captions")
+    if save_raw:
+        out = ROOT / "debug" / "raw"
+        out.mkdir(parents=True, exist_ok=True)
+        for i, (u, b) in enumerate(got):
+            q = urllib.parse.parse_qs(urllib.parse.urlparse(u).query)
+            tag = f"{vid}.player{i}.{(q.get('lang') or ['x'])[0]}{'.auto' if (q.get('kind') or [''])[0] == 'asr' else ''}"
+            fmt = (q.get("fmt") or ["default"])[0]
+            (out / f"{tag}.{fmt}.txt").write_text(b, encoding="utf-8")
+            (out / f"{tag}.url.txt").write_text(re.sub(r"(pot|signature|sparams|ei|key)=[^&]+", r"\1=…", u), encoding="utf-8")
+            say(f"saved debug/raw/{tag}.{fmt}.txt ({len(b):,} chars)")
     url, body = max(got, key=lambda g: len(g[1]))
     cues = parse_caption_body(body)
     if not cues:
@@ -1058,6 +1070,7 @@ def main():
     a = sub.add_parser("add"); a.add_argument("videos", nargs="+"); a.add_argument("--lang", default="en")
     a.add_argument("--debug", action="store_true", help="save YouTube's replies and a screenshot to debug/")
     a.add_argument("--browser", action="store_true", help="read YouTube's panel through a hidden browser first")
+    a.add_argument("--player", action="store_true", help="get captions through the video player, like a viewer turning on CC")
     a.add_argument("--show", action="store_true", help="with --browser: show the browser window")
     p = sub.add_parser("paste"); p.add_argument("video"); p.add_argument("file", nargs="?", help="omit to read the clipboard")
     p.add_argument("--title", default=""); p.add_argument("--channel", default="")
@@ -1071,6 +1084,8 @@ def main():
     sv.add_argument("--no-tunnel", action="store_true", help="don't start the Cloudflare Tunnel")
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
     r.add_argument("videos", nargs="+"); r.add_argument("--lang", default="en")
+    r.add_argument("--player", action="store_true", help="also save what YouTube's web player loads when CC is on")
+    r.add_argument("--show", action="store_true", help="with --player: show the browser window")
     args = ap.parse_args()
 
     if args.cmd == "raw":
@@ -1080,7 +1095,12 @@ def main():
             try:
                 dump_raw(vid, args.lang)
             except Exception as e:
-                print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+                print(f"  direct download failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+            if args.player:
+                try:
+                    fetch_player_captions(vid, show=args.show, save_raw=True)
+                except Exception as e:
+                    print(f"  player capture failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
         return
 
     if args.cmd == "add":
@@ -1092,7 +1112,7 @@ def main():
             vid = video_id(v)
             print(f"{vid}:")
             try:
-                get_transcript(vid, args.lang, browser=args.browser, show=args.show)
+                get_transcript(vid, args.lang, browser=args.browser, show=args.show, player=args.player)
             except Exception as e:
                 failed += 1
                 print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
