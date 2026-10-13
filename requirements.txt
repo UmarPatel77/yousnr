@@ -1,0 +1,4 @@
+youtube-transcript-api
+yt-dlp
+playwright
+requests

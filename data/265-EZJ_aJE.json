@@ -1,0 +1,2548 @@
+{
+ "id": "265-EZJ_aJE",
+ "title": "My 4.5 years as a quant dev",
+ "channel": "Coding Jesus (getcracked.io)",
+ "published": "20260923",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "my initial career goals"
+  },
+  {
+   "start": 80,
+   "title": "pivot to crypto"
+  },
+  {
+   "start": 150,
+   "title": "my first job"
+  },
+  {
+   "start": 185,
+   "title": "my first programming language at my job"
+  },
+  {
+   "start": 360,
+   "title": "taking the risk to transition to swe"
+  },
+  {
+   "start": 422,
+   "title": "transition from q/kdb to C++"
+  },
+  {
+   "start": 620,
+   "title": "my first leetcode"
+  },
+  {
+   "start": 720,
+   "title": "my first swe interview as a self taught dev"
+  },
+  {
+   "start": 790,
+   "title": "hustling for a position."
+  },
+  {
+   "start": 1018,
+   "title": "my first quant dev job"
+  },
+  {
+   "start": 2100,
+   "title": "why I stopped posting on YouTube"
+  },
+  {
+   "start": 2160,
+   "title": "2023 interview cycle"
+  },
+  {
+   "start": 2310,
+   "title": "2024 interview cycle"
+  },
+  {
+   "start": 2370,
+   "title": "life after quant"
+  },
+  {
+   "start": 2445,
+   "title": "anxiety and jumping back into the job market"
+  },
+  {
+   "start": 2510,
+   "title": "leaving chicago"
+  },
+  {
+   "start": 2580,
+   "title": "building my business abroad"
+  },
+  {
+   "start": 2620,
+   "title": "mentorship program"
+  },
+  {
+   "start": 2670,
+   "title": "whats next"
+  }
+ ],
+ "segments": [
+  {
+   "start": 0.24,
+   "dur": 7.92,
+   "text": "Hey guys. So, a while back I made a video about my journey into the world of coding, how I taught myself how to code,",
+   "label": "0:00"
+  },
+  {
+   "start": 6.72,
+   "dur": 7.36,
+   "text": "and then that led to me breaking into the quant industry. But now, 5 years later on YouTube, I want to talk about",
+   "label": "0:06"
+  },
+  {
+   "start": 12.32,
+   "dur": 8.56,
+   "text": "what the journey in the quant industry is like, where I'm going now, and how I broke in to begin with. So, I want to",
+   "label": "0:12"
+  },
+  {
+   "start": 18.56,
+   "dur": 8.879,
+   "text": "start with my experience in university. That's where everything really started. I went to Queens University in Kingston,",
+   "label": "0:18"
+  },
+  {
+   "start": 24.96,
+   "dur": 8.32,
+   "text": "Ontario, and I studied commerce as my major. I didn't come from a computer science background and I studied in",
+   "label": "0:24"
+  },
+  {
+   "start": 31.599,
+   "dur": 8.8,
+   "text": "Canada. That's where Queens University is at. The town that I was in, Kingston was essentially 80% students throughout",
+   "label": "0:31"
+  },
+  {
+   "start": 38.32,
+   "dur": 7.44,
+   "text": "the entire year. And at the time, I really thought I wanted to go into investment banking. I won the national",
+   "label": "0:38"
+  },
+  {
+   "start": 44.079,
+   "dur": 8.241,
+   "text": "investment banking competition. I was clearly dedicated. I studied hard, got the best grades that I could. But to put",
+   "label": "0:44"
+  },
+  {
+   "start": 50.32,
+   "dur": 7.919,
+   "text": "it simply, I just was not a culture fit for that industry. At least that's how I felt after interviewing there and",
+   "label": "0:50"
+  },
+  {
+   "start": 56.399,
+   "dur": 7.681,
+   "text": "working an internship there during my second year of university. Now, I already proved to myself that I was good",
+   "label": "0:56"
+  },
+  {
+   "start": 62.399,
+   "dur": 8.08,
+   "text": "enough for it by winning the national investment banking competition, which was the top award in the space at the",
+   "label": "1:02"
+  },
+  {
+   "start": 67.84,
+   "dur": 9.12,
+   "text": "time. But no firm really wanted somebody who had a scruffy beard, long hair, and who didn't live and breathe hockey or",
+   "label": "1:07"
+  },
+  {
+   "start": 75.36,
+   "dur": 8.32,
+   "text": "basketball. At least that was my impression interviewing the space. So instead of pursuing what I thought would",
+   "label": "1:15"
+  },
+  {
+   "start": 81.759,
+   "dur": 8.641,
+   "text": "make me the most money, I decided to pursue what I was interested in and that was cryptocurrency. During my last year",
+   "label": "1:21"
+  },
+  {
+   "start": 88.479,
+   "dur": 7.841,
+   "text": "of university, all my friends had internships lined up, had big career gigs in consulting, the big four,",
+   "label": "1:28"
+  },
+  {
+   "start": 94.4,
+   "dur": 10.0,
+   "text": "Mckenzie, investment banking, Lazards, Goldman Sachs, all that stuff. And I had nothing lined up. All I had was a really",
+   "label": "1:34"
+  },
+  {
+   "start": 102.079,
+   "dur": 9.281,
+   "text": "strong interest in cryptocurrency, which at the time was super hot, but has since wavered a little. What I decided to do",
+   "label": "1:42"
+  },
+  {
+   "start": 109.28,
+   "dur": 7.76,
+   "text": "with that interest was stop waiting for employers to find me and just take my interest to an employer. So I reached",
+   "label": "1:49"
+  },
+  {
+   "start": 115.92,
+   "dur": 7.92,
+   "text": "out to what was the largest cryptocurrency derivatives exchange in the world at the time, BitMEX. And I did",
+   "label": "1:55"
+  },
+  {
+   "start": 122.159,
+   "dur": 8.401,
+   "text": "so by just first hitting up the research department via Twitter. I used to read their articles all the time. And before",
+   "label": "2:02"
+  },
+  {
+   "start": 128.72,
+   "dur": 7.599,
+   "text": "interviewing, they said, \"We're down to interview you. Just build us something and let's talk about it in an interview",
+   "label": "2:08"
+  },
+  {
+   "start": 133.84,
+   "dur": 7.84,
+   "text": "setting.\" That was my gateway into the research team. So, I essentially put together a PowerPoint about a topic I",
+   "label": "2:13"
+  },
+  {
+   "start": 139.76,
+   "dur": 9.36,
+   "text": "found interesting, presented it to the head of research over a Zoom call, and a week later, he said, \"All right, you're",
+   "label": "2:19"
+  },
+  {
+   "start": 145.68,
+   "dur": 9.68,
+   "text": "in.\" So, fast forward, they offered me an internship position where they sponsored my living and paid me a pretty",
+   "label": "2:25"
+  },
+  {
+   "start": 153.2,
+   "dur": 9.679,
+   "text": "decent intern salary to work in their Hong Kong office. At the time, it was like 30 people, super rugged, like super",
+   "label": "2:33"
+  },
+  {
+   "start": 160.239,
+   "dur": 10.321,
+   "text": "entrepreneurial vibes. the flight was paid. Uh the board as in the living was paid. And I would be sitting in a small",
+   "label": "2:40"
+  },
+  {
+   "start": 167.2,
+   "dur": 9.36,
+   "text": "office in the middle of Hong Kong, you know, with those group of 30 people. Literally like a billionaire sitting on",
+   "label": "2:47"
+  },
+  {
+   "start": 174.319,
+   "dur": 7.521,
+   "text": "my right and a billionaire on my left and then the dev team and then like a bit of HR and the research team and",
+   "label": "2:54"
+  },
+  {
+   "start": 180.16,
+   "dur": 9.28,
+   "text": "maybe the structured products team. Now between research and structured products work, when I had spare time, I started",
+   "label": "3:00"
+  },
+  {
+   "start": 185.84,
+   "dur": 9.36,
+   "text": "coding. In particular, I used Q/KDB to complete tasks that were rudimentary and that could be easily automated.",
+   "label": "3:05"
+  },
+  {
+   "start": 193.44,
+   "dur": 9.68,
+   "text": "Remember, this was before AI even existed. And out of every language possible, they were using probably the",
+   "label": "3:13"
+  },
+  {
+   "start": 199.68,
+   "dur": 9.919,
+   "text": "most esoteric and just crazy to understand one out there. You see, most languages C++, Python, they're all",
+   "label": "3:19"
+  },
+  {
+   "start": 207.36,
+   "dur": 8.72,
+   "text": "public. There's a committee that develops them. But Q is a private programming language. It's developed by",
+   "label": "3:27"
+  },
+  {
+   "start": 214.08,
+   "dur": 9.2,
+   "text": "KX Systems. And in order to use the 64-bit version of that language, you had to pay Q. For those that don't know,",
+   "label": "3:34"
+  },
+  {
+   "start": 221.12,
+   "dur": 9.92,
+   "text": "it's built on top of K, which is built on top of APL. It's a very tur array oriented programming language created by",
+   "label": "3:41"
+  },
+  {
+   "start": 228.239,
+   "dur": 8.801,
+   "text": "a man named Arthur Whitney. Now, I never understood how people can go about creating programming languages to this",
+   "label": "3:48"
+  },
+  {
+   "start": 234.959,
+   "dur": 8.48,
+   "text": "extent. Like Q is a super small programming language. It fits in L1 cache. These people, they're just next",
+   "label": "3:54"
+  },
+  {
+   "start": 240.879,
+   "dur": 13.36,
+   "text": "level. But coming back to the topic at hand, it's interesting that I grew a interest in Q/KDB because I was never interested in",
+   "label": "4:00"
+  },
+  {
+   "start": 251.84,
+   "dur": 8.399,
+   "text": "programming while in school and I think that's because I was really intimidated by how much further ahead my friends",
+   "label": "4:11"
+  },
+  {
+   "start": 257.6,
+   "dur": 9.52,
+   "text": "were in languages like Python than I was and so I never made an active effort to just go and learn. And that fear",
+   "label": "4:17"
+  },
+  {
+   "start": 265.04,
+   "dur": 9.68,
+   "text": "prevented me from ever taking on any coding related classes in school. But here I was in a new country and a new",
+   "label": "4:25"
+  },
+  {
+   "start": 272.08,
+   "dur": 9.92,
+   "text": "language picking up one of the most tur programming languages in the world and it didn't really seem intimidating at",
+   "label": "4:32"
+  },
+  {
+   "start": 279.919,
+   "dur": 8.081,
+   "text": "all. Over time, I slowly started doing more work related to Q and KDB. I built an internal database to track BitMEX",
+   "label": "4:39"
+  },
+  {
+   "start": 286.479,
+   "dur": 9.601,
+   "text": "addresses and transactions that was used by the research team to gain a sense of their onchain footprint. This was doable",
+   "label": "4:46"
+  },
+  {
+   "start": 294.0,
+   "dur": 8.8,
+   "text": "because BitMEX addresses were all vanity addresses, meaning they were generated to start with distinct characters which",
+   "label": "4:54"
+  },
+  {
+   "start": 300.4,
+   "dur": 9.84,
+   "text": "were 3bmex. I got to a point where I started coding for the majority of my time at the organization and I slowly but surely",
+   "label": "5:00"
+  },
+  {
+   "start": 308.16,
+   "dur": 7.36,
+   "text": "fell in love with the unique programming language which was Q and KDB. I actually felt quite cool because none of my",
+   "label": "5:08"
+  },
+  {
+   "start": 313.759,
+   "dur": 7.44,
+   "text": "friends were coding in that language. I was even able to convince the organization to pay for classes that",
+   "label": "5:13"
+  },
+  {
+   "start": 319.52,
+   "dur": 8.16,
+   "text": "would teach me more intermediate and advanced levels of Q and KDB. So I really got to a point where I wanted to",
+   "label": "5:19"
+  },
+  {
+   "start": 326.24,
+   "dur": 7.36,
+   "text": "lean in and dedicate more time to coding. The head of risk also noticed that my proficiency and interest in the",
+   "label": "5:26"
+  },
+  {
+   "start": 331.6,
+   "dur": 8.24,
+   "text": "language was increasing and essentially offered me a position on his team. Now, at the time, I was in a graduate",
+   "label": "5:31"
+  },
+  {
+   "start": 338.4,
+   "dur": 7.44,
+   "text": "rotational program going between research, structured products, and other divisions, and that didn't really allow",
+   "label": "5:38"
+  },
+  {
+   "start": 344.0,
+   "dur": 8.08,
+   "text": "me to move into a programming related role. So, I just needed to take a bet. I needed to take a bet on whether the head",
+   "label": "5:44"
+  },
+  {
+   "start": 350.4,
+   "dur": 8.4,
+   "text": "of risk had enough pull in the organization to convince the COO that I should leave the graduate rotational",
+   "label": "5:50"
+  },
+  {
+   "start": 356.08,
+   "dur": 10.48,
+   "text": "program and join the riskbased development team. Now, I decided to take that bet because my newfound level of",
+   "label": "5:56"
+  },
+  {
+   "start": 364.16,
+   "dur": 8.64,
+   "text": "excitement had just outstripped and outweighed the mundaness of hopping between research and structured",
+   "label": "6:04"
+  },
+  {
+   "start": 370.24,
+   "dur": 9.36,
+   "text": "products. Unfortunately for me, or maybe fortunately given what it resulted in, the COO essentially told me that I will",
+   "label": "6:10"
+  },
+  {
+   "start": 377.68,
+   "dur": 7.359,
+   "text": "never code, that I should never want to aspire to be a software engineer, and that I would be fired if I did not take",
+   "label": "6:17"
+  },
+  {
+   "start": 383.68,
+   "dur": 6.4,
+   "text": "the role as a structured products analyst at the end of the graduate rotational program. So the next day I",
+   "label": "6:23"
+  },
+  {
+   "start": 389.039,
+   "dur": 5.361,
+   "text": "had a discussion with the head of structured products. I told him, \"Listen, dude, I'm not interested in",
+   "label": "6:29"
+  },
+  {
+   "start": 392.24,
+   "dur": 8.0,
+   "text": "this work.\" At the time, I essentially quit because I was too green to formally resign and do it the right way. So",
+   "label": "6:32"
+  },
+  {
+   "start": 398.24,
+   "dur": 8.0,
+   "text": "around 2 hours after letting him know that, I was essentially pulled back into the office by the COO and formally",
+   "label": "6:38"
+  },
+  {
+   "start": 403.68,
+   "dur": 8.799,
+   "text": "fired. At the time, there was a lot of political upheaval in Hong Kong. There were rumors going around about the",
+   "label": "6:43"
+  },
+  {
+   "start": 409.759,
+   "dur": 9.28,
+   "text": "cough, if you know what I mean. So my dad told me, \"Get the f out of Hong Kong. Come live with us for the time",
+   "label": "6:49"
+  },
+  {
+   "start": 416.319,
+   "dur": 8.16,
+   "text": "being.\" And so that's what I did. I left Hong Kong, but I took my passion for software engineering and development",
+   "label": "6:56"
+  },
+  {
+   "start": 422.16,
+   "dur": 7.52,
+   "text": "with me. Now, I wasn't sure what I needed to be doing. I would knew that I was interested in financial markets",
+   "label": "7:02"
+  },
+  {
+   "start": 427.759,
+   "dur": 8.321,
+   "text": "because I lived and breathed them during my time at BitMX in Hong Kong, but I knew that the job market for Q and KDB",
+   "label": "7:07"
+  },
+  {
+   "start": 434.479,
+   "dur": 9.921,
+   "text": "plus developers was limited to essentially like the top 10 15% of Q developers. They were making like",
+   "label": "7:14"
+  },
+  {
+   "start": 440.4,
+   "dur": 9.919,
+   "text": "upwards of 500K. And so that was super competitive, especially given just how niche the language was. What I ended up",
+   "label": "7:20"
+  },
+  {
+   "start": 448.4,
+   "dur": 8.239,
+   "text": "doing was doing my research and I found that C++ was a language to learn if you wanted a software engineering career in",
+   "label": "7:28"
+  },
+  {
+   "start": 454.72,
+   "dur": 8.08,
+   "text": "anything markets related. So I essentially locked myself in my parents' guest room, bought C++, a beginner's",
+   "label": "7:34"
+  },
+  {
+   "start": 460.72,
+   "dur": 8.879,
+   "text": "guide, and went to work starting there for 7 to 8 hours a day. Now, at the time, there was naturally a lot of",
+   "label": "7:40"
+  },
+  {
+   "start": 467.68,
+   "dur": 8.16,
+   "text": "guessing because there wasn't anybody online that was talking about careers in software engineering, in particular in",
+   "label": "7:47"
+  },
+  {
+   "start": 473.52,
+   "dur": 8.32,
+   "text": "the quanter finance space. So, part of my journey was what inspired me to create this channel, a channel that I",
+   "label": "7:53"
+  },
+  {
+   "start": 480.08,
+   "dur": 8.48,
+   "text": "wish I had available back when I was learning from scratch. My studying was essentially all over the place because I",
+   "label": "8:00"
+  },
+  {
+   "start": 486.56,
+   "dur": 8.72,
+   "text": "didn't have that virtual mentor. I didn't have any guidance. I didn't even have Chad GPT to like remotely help me",
+   "label": "8:06"
+  },
+  {
+   "start": 492.319,
+   "dur": 10.0,
+   "text": "guess what was important. And so my learning was all over the place. And most of every minute I spent I spent",
+   "label": "8:12"
+  },
+  {
+   "start": 499.919,
+   "dur": 9.201,
+   "text": "studying naturally. I bought some more books, bought some books on GameDev. I built a little 2D C++ cavetory game via",
+   "label": "8:19"
+  },
+  {
+   "start": 506.96,
+   "dur": 7.84,
+   "text": "an online video tutorials on YouTube. And I went through what we all go through, learn cpp.com. I picked up, you",
+   "label": "8:26"
+  },
+  {
+   "start": 513.519,
+   "dur": 8.481,
+   "text": "know, various books on database technologies. And essentially, I tried to make myself as much of a professional",
+   "label": "8:33"
+  },
+  {
+   "start": 518.959,
+   "dur": 9.44,
+   "text": "C++ developer as I could as an amateur C++ enjoyer. I remember there was actually this like tadada moment when I",
+   "label": "8:38"
+  },
+  {
+   "start": 526.72,
+   "dur": 8.799,
+   "text": "spoke to a friend of mine who at the time worked for Akuna Capital uh about learning C++. He was in a role that was",
+   "label": "8:46"
+  },
+  {
+   "start": 534.0,
+   "dur": 8.0,
+   "text": "kind of like a hybrid between a trader and a developer. He's now working at Citadel Security, super cracked, super",
+   "label": "8:54"
+  },
+  {
+   "start": 539.12,
+   "dur": 8.56,
+   "text": "smart guy. And his encouragement at such a formative part of my journey was actually one of the reasons why I",
+   "label": "8:59"
+  },
+  {
+   "start": 545.6,
+   "dur": 10.16,
+   "text": "decided to keep going. You see, I remember walking him through my learning plan, and he naturally asked me like a",
+   "label": "9:05"
+  },
+  {
+   "start": 553.44,
+   "dur": 9.36,
+   "text": "couple of questions. For example, what's the difference between a reference and a pointer? And despite that being so",
+   "label": "9:13"
+  },
+  {
+   "start": 560.48,
+   "dur": 7.76,
+   "text": "simple looking back at it, when we were going through those concepts, and it wasn't just that, to be fair, he was",
+   "label": "9:20"
+  },
+  {
+   "start": 566.32,
+   "dur": 8.079,
+   "text": "surprised at how quickly I was able to pick up those distinctions. Now, this isn't to toot my own horn, to say, \"Oh,",
+   "label": "9:26"
+  },
+  {
+   "start": 573.44,
+   "dur": 6.88,
+   "text": "look at me. I know the difference between a reference and a pointer.\" It's just to emphasize the importance of",
+   "label": "9:33"
+  },
+  {
+   "start": 578.24,
+   "dur": 8.4,
+   "text": "having somebody in your corner to give you that shot in the arm or correct your direction when needed. [snorts] Around 2",
+   "label": "9:38"
+  },
+  {
+   "start": 584.959,
+   "dur": 7.921,
+   "text": "months in, that's when another friend of mine that works at Meta on the DevOps side told me that I need to start",
+   "label": "9:44"
+  },
+  {
+   "start": 590.399,
+   "dur": 10.321,
+   "text": "picking up lead code because that would be one of the gates I would need to pass if I wanted to land a role in the space.",
+   "label": "9:50"
+  },
+  {
+   "start": 597.92,
+   "dur": 12.4,
+   "text": "Now, this was where I took the biggest gut punch because I remember my first question being the rearrange bits or not rearrange, it was",
+   "label": "9:57"
+  },
+  {
+   "start": 608.0,
+   "dur": 9.12,
+   "text": "reverse bits uh in a given integer. So, you have a 32-bit integer and they wanted you to reverse the bits in that",
+   "label": "10:08"
+  },
+  {
+   "start": 613.44,
+   "dur": 10.48,
+   "text": "integer. And I was just totally devastated by that question. I think I spent two hours on that problem and I",
+   "label": "10:13"
+  },
+  {
+   "start": 620.959,
+   "dur": 9.521,
+   "text": "asked myself, what the hell was I doing these last two months if I can't even reverse bits? I was embarrassed and",
+   "label": "10:20"
+  },
+  {
+   "start": 628.16,
+   "dur": 8.799,
+   "text": "honestly I felt really really deflated. But instead of just quitting, I reminded myself why I was doing this to begin",
+   "label": "10:28"
+  },
+  {
+   "start": 634.48,
+   "dur": 10.56,
+   "text": "with and just decided to look at the answers. I then set a rule for myself. Essentially any easy if I spent more",
+   "label": "10:34"
+  },
+  {
+   "start": 642.48,
+   "dur": 7.52,
+   "text": "than 30 minutes on it and any medium, if I spent more than 40 minutes on it, I would just straight up look at the",
+   "label": "10:42"
+  },
+  {
+   "start": 648.16,
+   "dur": 8.08,
+   "text": "answer. I try to learn the topic cuz clearly I didn't know it well enough. And then I would reapply that topic on",
+   "label": "10:48"
+  },
+  {
+   "start": 654.32,
+   "dur": 8.56,
+   "text": "that question and several other related questions. A week or two after that regrouped with a friend of mine, the",
+   "label": "10:54"
+  },
+  {
+   "start": 660.8,
+   "dur": 8.0,
+   "text": "same person you know from DevOps at Meta and we did a mock interview together. And I remember doing quite decently. He",
+   "label": "11:00"
+  },
+  {
+   "start": 667.04,
+   "dur": 7.28,
+   "text": "gave me the problem of determining the count of nested parenthesis, the one where you need to use a stack to go",
+   "label": "11:07"
+  },
+  {
+   "start": 672.32,
+   "dur": 9.12,
+   "text": "about doing it and you have the angled brackets, the the rounded brackets, etc. And I solved the problem. Now, there",
+   "label": "11:12"
+  },
+  {
+   "start": 679.839,
+   "dur": 7.44,
+   "text": "were still other issues like the way that I was vocalizing, the way that I was naming variables, the way that I was",
+   "label": "11:19"
+  },
+  {
+   "start": 684.88,
+   "dur": 8.72,
+   "text": "describing my approach, but it wasn't all over for me, right? That's what that's the important takeaway for me for",
+   "label": "11:24"
+  },
+  {
+   "start": 691.279,
+   "dur": 7.361,
+   "text": "that experience. I proceeded grinding for another month to month and a half just going through lead code problems",
+   "label": "11:31"
+  },
+  {
+   "start": 696.959,
+   "dur": 8.081,
+   "text": "and that's when I started applying to places that I was relatively interested in working at. One of them was",
+   "label": "11:36"
+  },
+  {
+   "start": 703.04,
+   "dur": 7.359,
+   "text": "Soundhound AI or at the time it was just called Soundhound. Not I don't even remember if they added AI. Anyways, uh",
+   "label": "11:43"
+  },
+  {
+   "start": 709.2,
+   "dur": 8.16,
+   "text": "Soundhound was the name of the company at the time and I remember absolutely smashing the questions that I got",
+   "label": "11:49"
+  },
+  {
+   "start": 714.959,
+   "dur": 8.88,
+   "text": "largely because a bunch of them were easys and mediums that I've seen before or was able to reason through. Now,",
+   "label": "11:54"
+  },
+  {
+   "start": 722.079,
+   "dur": 8.721,
+   "text": "there was this one question that I will never forget and that is the one that the lead architect asked me who I'd",
+   "label": "12:02"
+  },
+  {
+   "start": 729.04,
+   "dur": 8.16,
+   "text": "essentially be working under and he asked me this in a behavioral round. He said, \"Is this just a little phase for",
+   "label": "12:09"
+  },
+  {
+   "start": 735.36,
+   "dur": 7.68,
+   "text": "you or are you genuinely interested in software engineering?\" And that felt like a slap across the face because I",
+   "label": "12:15"
+  },
+  {
+   "start": 741.6,
+   "dur": 9.359,
+   "text": "essentially had to do what most candidates do in four years in like 5 months. Now, what I really wanted to",
+   "label": "12:21"
+  },
+  {
+   "start": 748.56,
+   "dur": 9.6,
+   "text": "tell him was, \"Dude, would you lock yourself in a room for 7 to eight hours a day? You know, maybe taking a break",
+   "label": "12:28"
+  },
+  {
+   "start": 755.44,
+   "dur": 8.0,
+   "text": "once a week for like 5 hours on a Sunday to teach yourself programming with almost zero guidance. if you didn't",
+   "label": "12:35"
+  },
+  {
+   "start": 761.92,
+   "dur": 6.8,
+   "text": "absolutely feel passionate about the space. That's what I wanted to tell him, but obviously I couldn't tell him that.",
+   "label": "12:41"
+  },
+  {
+   "start": 766.8,
+   "dur": 6.719,
+   "text": "Instead, what I said was, \"Yeah, I find this really fun and engaging, and I see myself building a long-term career in",
+   "label": "12:46"
+  },
+  {
+   "start": 771.68,
+   "dur": 8.8,
+   "text": "the space.\" And that was good enough for him because a day later, they sent me an offer letter. Now, honestly, I was",
+   "label": "12:51"
+  },
+  {
+   "start": 777.44,
+   "dur": 10.0,
+   "text": "shocked. I was elated. And I felt like somebody finally recognized my work and dedication to the craft. But at the same",
+   "label": "12:57"
+  },
+  {
+   "start": 784.72,
+   "dur": 9.679,
+   "text": "time, I was also conflicted. You see, I was conflicted because at the time I was also interviewing at another trading",
+   "label": "13:04"
+  },
+  {
+   "start": 791.519,
+   "dur": 9.521,
+   "text": "firm in Chicago, a trading firm that I reached out to to see whether they have positions for somebody whose background",
+   "label": "13:11"
+  },
+  {
+   "start": 798.079,
+   "dur": 9.2,
+   "text": "was more similar to mine. So, in both the BitX case and in this trading company case, I essentially hustled my",
+   "label": "13:18"
+  },
+  {
+   "start": 805.12,
+   "dur": 8.88,
+   "text": "way into the position. They they didn't have an open position. I went out of my way to make one and I was finding",
+   "label": "13:25"
+  },
+  {
+   "start": 812.32,
+   "dur": 7.519,
+   "text": "myself, you know, in the final stages of their interview process. So, while I was in Chicago interviewing, you know, they",
+   "label": "13:32"
+  },
+  {
+   "start": 817.76,
+   "dur": 8.8,
+   "text": "flew me out, put me in a hotel. I literally had to make excuses to the Soundhound recruiter why I couldn't sign",
+   "label": "13:37"
+  },
+  {
+   "start": 823.92,
+   "dur": 10.56,
+   "text": "the offer yet because he was calling me every day asking me what I intended to do. I remember one day calling him back,",
+   "label": "13:43"
+  },
+  {
+   "start": 832.88,
+   "dur": 7.36,
+   "text": "elated that I was able to secure the Chicago offer. And I told him that I would be rejecting Soundhound's offer",
+   "label": "13:52"
+  },
+  {
+   "start": 838.56,
+   "dur": 7.04,
+   "text": "because I wanted to see my career develop in the US where I knew that I'd be able to make progressively more",
+   "label": "13:58"
+  },
+  {
+   "start": 843.92,
+   "dur": 7.2,
+   "text": "money, climb my way up the corporate ladder in an industry that to me was more rewarding and more aligned with my",
+   "label": "14:03"
+  },
+  {
+   "start": 848.959,
+   "dur": 8.721,
+   "text": "goals. Now, the Soundhound offer that was in Toronto and I did not want to stay in Toronto. My biggest takeaway, by",
+   "label": "14:08"
+  },
+  {
+   "start": 856.0,
+   "dur": 7.6,
+   "text": "the way, guys, from that round in Chicago, because a lot of people ask me like, \"How do I how do I get over the",
+   "label": "14:16"
+  },
+  {
+   "start": 861.36,
+   "dur": 7.599,
+   "text": "hurdle of that final interview?\" My biggest takeaway is that these companies, they're really struggling to",
+   "label": "14:21"
+  },
+  {
+   "start": 866.639,
+   "dur": 9.041,
+   "text": "find talent despite the fact that their pipeline is clogged with talent. That's because the profile guys that these",
+   "label": "14:26"
+  },
+  {
+   "start": 874.16,
+   "dur": 9.119,
+   "text": "candidates or these firms are looking for. So they their ideal candidate, it's not the same profile of that applicant",
+   "label": "14:34"
+  },
+  {
+   "start": 881.199,
+   "dur": 7.281,
+   "text": "sitting in their lead generation funnel. And I think the biggest two characteristics that pushed me over the",
+   "label": "14:41"
+  },
+  {
+   "start": 886.079,
+   "dur": 8.721,
+   "text": "edge despite being self-taught were initiative and perseverance. The first is perseverance. Okay. I think",
+   "label": "14:46"
+  },
+  {
+   "start": 893.199,
+   "dur": 7.76,
+   "text": "I showed them that I was able to commit myself deeply to something that I felt passionate about and I brought actual",
+   "label": "14:53"
+  },
+  {
+   "start": 898.88,
+   "dur": 8.319,
+   "text": "examples of that perseverance when I was talking to them. For example, I was Jane Street's top puzzle solver at the time",
+   "label": "14:58"
+  },
+  {
+   "start": 905.6,
+   "dur": 7.919,
+   "text": "and this is before you can, you know, spin up Fable 5 or Fable whatever and use AI to one-shot some of these Jane",
+   "label": "15:05"
+  },
+  {
+   "start": 910.959,
+   "dur": 9.201,
+   "text": "Street puzzles. I think I completed nine out of 10 puzzles that year and tied with a number another member on their",
+   "label": "15:10"
+  },
+  {
+   "start": 918.399,
+   "dur": 8.481,
+   "text": "leaderboard, right, for the most amount of puzzles solved. The second thing was initiative, right? First perseverance,",
+   "label": "15:18"
+  },
+  {
+   "start": 924.48,
+   "dur": 8.719,
+   "text": "then initiative. So during the final round, I brought my laptop. They asked me if I had any questions for them, like",
+   "label": "15:24"
+  },
+  {
+   "start": 931.519,
+   "dur": 7.521,
+   "text": "any interviewer asks at the end of a round, and I asked them, \"Hey, do you want to see this 2D C++ game that I",
+   "label": "15:31"
+  },
+  {
+   "start": 936.959,
+   "dur": 8.88,
+   "text": "built?\" Now, this was a remake of a popular game called Cave Story, and it was written entirely in C++ using a",
+   "label": "15:36"
+  },
+  {
+   "start": 942.639,
+   "dur": 9.681,
+   "text": "graphics library called SFML. I was able to answer the four W's that most of these firms are looking for you to",
+   "label": "15:42"
+  },
+  {
+   "start": 949.6,
+   "dur": 8.88,
+   "text": "answer via my project creation. And those four W's are what did you do? Why did you do it? What mistakes did you",
+   "label": "15:49"
+  },
+  {
+   "start": 957.04,
+   "dur": 8.159,
+   "text": "make? And what would you have done differently if you could go back in time? And after answering them, they",
+   "label": "15:57"
+  },
+  {
+   "start": 963.839,
+   "dur": 6.8,
+   "text": "just sat there and they genuinely enjoyed playing the game. I think they spent like 5 minutes going through the",
+   "label": "16:03"
+  },
+  {
+   "start": 968.48,
+   "dur": 9.44,
+   "text": "game, walking through levels, and talking to me about those four W's in particular. A day or two later, I had",
+   "label": "16:08"
+  },
+  {
+   "start": 975.12,
+   "dur": 8.719,
+   "text": "the offer. My candidacy literally crushed almost every limiting belief that I see people today have when",
+   "label": "16:15"
+  },
+  {
+   "start": 982.0,
+   "dur": 9.36,
+   "text": "they're looking to break into quant. I hear things like, \"I'll need visas in a sponsorship.\" I needed visa sponsorship. I still got",
+   "label": "16:22"
+  },
+  {
+   "start": 989.519,
+   "dur": 8.32,
+   "text": "the position. So what if you need visa sponsorship? I hear things like, \"I don't have a CS degree.\" I never learned",
+   "label": "16:29"
+  },
+  {
+   "start": 995.44,
+   "dur": 8.24,
+   "text": "CS formally. I'm self-taught. I hear things like, \"I need a PhD.\" I didn't have a PhD. I still don't have a PhD. I",
+   "label": "16:35"
+  },
+  {
+   "start": 1002.48,
+   "dur": 7.44,
+   "text": "hear things like, \"Well, I'm not the smartest person in the room.\" I wasn't either. Oh, I could never compete with",
+   "label": "16:42"
+  },
+  {
+   "start": 1007.68,
+   "dur": 9.12,
+   "text": "math olympiads. I'm not a math olympiad. Like, I did math in university. I took a couple of courses. That's it. And so on",
+   "label": "16:47"
+  },
+  {
+   "start": 1014.16,
+   "dur": 8.16,
+   "text": "and so forth. Every limiting belief I essentially shattered with my candidacy. And that's where my journey in the quant",
+   "label": "16:54"
+  },
+  {
+   "start": 1020.639,
+   "dur": 8.4,
+   "text": "space really began. So, let's talk about that now. I remember joining as a junior developer and my first task was to",
+   "label": "17:00"
+  },
+  {
+   "start": 1027.439,
+   "dur": 7.12,
+   "text": "increase the amount of logging we were performing on an application that intermittently started shutting down.",
+   "label": "17:07"
+  },
+  {
+   "start": 1032.799,
+   "dur": 8.081,
+   "text": "You see, the application was a parser for a popular exchange's RFQ feed. And for those of you that don't know, RFQ",
+   "label": "17:12"
+  },
+  {
+   "start": 1038.72,
+   "dur": 7.839,
+   "text": "stands for request for quote. So essentially, a broker will say, I want you guys to give me a quote, a bid in an",
+   "label": "17:18"
+  },
+  {
+   "start": 1044.88,
+   "dur": 9.679,
+   "text": "ask for this instrument. Tell me where you're at, and I might buy or sell, you know, to you given that information. We",
+   "label": "17:24"
+  },
+  {
+   "start": 1051.679,
+   "dur": 10.401,
+   "text": "received that information as XML data in a really janky format that was not document documented via some like",
+   "label": "17:31"
+  },
+  {
+   "start": 1058.88,
+   "dur": 10.88,
+   "text": "third-party data adapter. Now, I needed to study the schema, parse the legs of each trade, and categorize it as, for",
+   "label": "17:38"
+  },
+  {
+   "start": 1066.96,
+   "dur": 10.079,
+   "text": "example, an iron condor or a butterfly or whatever other instrument type it was classified as. You see, the way that the",
+   "label": "17:46"
+  },
+  {
+   "start": 1074.24,
+   "dur": 8.48,
+   "text": "quant trading space structures products is that they give you progressively harder things to do to see how much they",
+   "label": "17:54"
+  },
+  {
+   "start": 1080.64,
+   "dur": 7.36,
+   "text": "can push you given your current title and set of responsibilities. So, naturally, the next project that I was",
+   "label": "18:00"
+  },
+  {
+   "start": 1086.24,
+   "dur": 8.64,
+   "text": "going to be working on was allowing traders to create their own userdefined spreads on the CME instead of just",
+   "label": "18:06"
+  },
+  {
+   "start": 1092.64,
+   "dur": 10.64,
+   "text": "parsing other people's requests for quotes on instruments via ice chat. So the CME in contrast with ICE is a much",
+   "label": "18:12"
+  },
+  {
+   "start": 1101.52,
+   "dur": 10.0,
+   "text": "larger and more structured exch ex exchange. So naturally it was a logical extension from working on that you know",
+   "label": "18:21"
+  },
+  {
+   "start": 1108.559,
+   "dur": 11.041,
+   "text": "ICE instrument parsing on that front. So in this case instead of instruments being created and sent to me to parse I",
+   "label": "18:28"
+  },
+  {
+   "start": 1116.48,
+   "dur": 10.16,
+   "text": "have to take traders inputs via guey and create instruments on the CME in two stages. You see, when you create any",
+   "label": "18:36"
+  },
+  {
+   "start": 1124.799,
+   "dur": 7.521,
+   "text": "future spread or futures only related instrument on the CME, all you have to do is pick a collection of futures and",
+   "label": "18:44"
+  },
+  {
+   "start": 1130.64,
+   "dur": 8.08,
+   "text": "send it to the exchange and it would create that userdefined spread for you if that instrument didn't already exist.",
+   "label": "18:50"
+  },
+  {
+   "start": 1136.799,
+   "dur": 6.961,
+   "text": "There were only a couple of other rules like if the inverse of that future spread existed, then it would reject",
+   "label": "18:56"
+  },
+  {
+   "start": 1142.16,
+   "dur": 7.28,
+   "text": "your request and just ask you to trade the opposite direction of that inverse future spread. You know, a bunch of",
+   "label": "19:02"
+  },
+  {
+   "start": 1147.28,
+   "dur": 10.32,
+   "text": "other fancy rules. But getting back to this, anything to do with a future tied to an option or series of option had to",
+   "label": "19:07"
+  },
+  {
+   "start": 1155.44,
+   "dur": 7.599,
+   "text": "happen in two stages. You'd have to detect whether or not the instrument or collection of instruments that the",
+   "label": "19:15"
+  },
+  {
+   "start": 1160.559,
+   "dur": 9.521,
+   "text": "trader has selected contained a single future and an option in combination. If it had both of those in combination, now",
+   "label": "19:20"
+  },
+  {
+   "start": 1168.08,
+   "dur": 7.2,
+   "text": "the game changed a little. If it does, you'd have to create the underlying future spread first. And once you",
+   "label": "19:28"
+  },
+  {
+   "start": 1173.679,
+   "dur": 8.801,
+   "text": "receive confirmation from the exchange that it has been created, you then had to tack on the options to that future",
+   "label": "19:33"
+  },
+  {
+   "start": 1179.919,
+   "dur": 9.441,
+   "text": "spread such that the full option bearing instrument you wanted could be created. Now this project was my gateway to the",
+   "label": "19:39"
+  },
+  {
+   "start": 1187.28,
+   "dur": 8.16,
+   "text": "world of concurrency as a junior as it relates to quantitative development because it required you to apply a lot",
+   "label": "19:47"
+  },
+  {
+   "start": 1192.96,
+   "dur": 8.8,
+   "text": "of business logic on one thread while continuously receiving information from the exchange on another. My tooling work",
+   "label": "19:52"
+  },
+  {
+   "start": 1200.16,
+   "dur": 7.519,
+   "text": "then expanded to latency related applications like our electronic eye. Something that's very important to keep",
+   "label": "20:00"
+  },
+  {
+   "start": 1205.6,
+   "dur": 10.16,
+   "text": "in mind when trying to be as competitive as you want in the space as it relates to that like market scanning electronic",
+   "label": "20:05"
+  },
+  {
+   "start": 1212.32,
+   "dur": 11.76,
+   "text": "eye is ticktorade latency. I developed a tool that not only needed to parse PCAP data but also internal bin logs to find",
+   "label": "20:12"
+  },
+  {
+   "start": 1220.96,
+   "dur": 9.04,
+   "text": "trades that we made via our FPGAs. It essentially correlated market data packets that triggered that trade with",
+   "label": "20:20"
+  },
+  {
+   "start": 1227.919,
+   "dur": 8.961,
+   "text": "order entry requests that left our systems and then compared those two network tap timestamps, computing the",
+   "label": "20:27"
+  },
+  {
+   "start": 1234.559,
+   "dur": 9.6,
+   "text": "latency that resulted from them while streaming all of that information to Graphfana via Elastic Stack and Influx",
+   "label": "20:34"
+  },
+  {
+   "start": 1241.44,
+   "dur": 10.32,
+   "text": "DB. Fast forward a little, I started being fielded not just projects related to tooling and visualization, but also",
+   "label": "20:41"
+  },
+  {
+   "start": 1248.88,
+   "dur": 9.52,
+   "text": "riskrelated projects. For example, I worked on an application monitor. What is that? You see, quant trading firms",
+   "label": "20:48"
+  },
+  {
+   "start": 1256.48,
+   "dur": 8.0,
+   "text": "are very particular about controlling risk. They oftent times have kill switches, literal physical laptops that",
+   "label": "20:56"
+  },
+  {
+   "start": 1262.72,
+   "dur": 8.24,
+   "text": "a trader can interface with a small little guey. And essentially, he can shut down any application that has order",
+   "label": "21:02"
+  },
+  {
+   "start": 1268.64,
+   "dur": 9.36,
+   "text": "entry capabilities if they feel like it's going haywire. Now what that little guey would do is it would just connect",
+   "label": "21:08"
+  },
+  {
+   "start": 1275.6,
+   "dur": 8.64,
+   "text": "to one large application monitor which is something that I ended up owning in the organization. That application",
+   "label": "21:15"
+  },
+  {
+   "start": 1281.52,
+   "dur": 8.56,
+   "text": "monitor acts like this large server that connects to every order entry related application because those are the ones",
+   "label": "21:21"
+  },
+  {
+   "start": 1288.48,
+   "dur": 9.199,
+   "text": "that can make trades and can cause cascading losses. That application monitor communicates to every riskbearing order entry app. Every",
+   "label": "21:28"
+  },
+  {
+   "start": 1296.159,
+   "dur": 7.841,
+   "text": "single one. It's important to understand that. And I was responsible for managing that application monitor and correctly",
+   "label": "21:36"
+  },
+  {
+   "start": 1301.84,
+   "dur": 8.24,
+   "text": "configuring it for new applications and adding features to that application monitor whenever new forms of",
+   "label": "21:41"
+  },
+  {
+   "start": 1307.52,
+   "dur": 9.279,
+   "text": "quantifiable risk were introduced that should lead to us disabling a given order entry application. For instance,",
+   "label": "21:47"
+  },
+  {
+   "start": 1314.88,
+   "dur": 11.44,
+   "text": "if the CME's redundant fill reconciliation tool called drop copy stopped heartbeating, application monitor would pick up on it and block",
+   "label": "21:54"
+  },
+  {
+   "start": 1323.679,
+   "dur": 9.521,
+   "text": "all automated risk gateways associated with that drop copy fill path. Above and beyond that, I moved towards more",
+   "label": "22:03"
+  },
+  {
+   "start": 1330.64,
+   "dur": 8.72,
+   "text": "traderf facing risk limit generation applications, ones that would require maybe parsing XML or JSON and updating",
+   "label": "22:10"
+  },
+  {
+   "start": 1337.76,
+   "dur": 9.12,
+   "text": "risk limits throughout the organization. Those risk limits were compared to actual physical risk inventory that the",
+   "label": "22:17"
+  },
+  {
+   "start": 1343.919,
+   "dur": 8.88,
+   "text": "firm held via various portfolios and I was responsible for maintaining that risk crunching and risk calculating",
+   "label": "22:23"
+  },
+  {
+   "start": 1350.72,
+   "dur": 8.319,
+   "text": "application as well not just the entry path which would you know parse a JSON and turn those into actual limits. When",
+   "label": "22:30"
+  },
+  {
+   "start": 1356.88,
+   "dur": 10.56,
+   "text": "one metric was triggered it would send an alert to a trader's guey application that would notify him or her as to what",
+   "label": "22:36"
+  },
+  {
+   "start": 1364.32,
+   "dur": 8.32,
+   "text": "their risk level was. Now, I remember the frustration that I experienced sometimes interfacing with traders, not",
+   "label": "22:44"
+  },
+  {
+   "start": 1371.28,
+   "dur": 6.48,
+   "text": "because they're bad people, but because there would always be, you know, various do this, do that, change this, change",
+   "label": "22:51"
+  },
+  {
+   "start": 1376.559,
+   "dur": 6.641,
+   "text": "that, please, and everybody would have like a different opinion as to what should be changed. For example, maybe",
+   "label": "22:56"
+  },
+  {
+   "start": 1381.28,
+   "dur": 8.879,
+   "text": "the Slack alert, you know, was generating a sound that wasn't loud enough. Or maybe, you know, the time it",
+   "label": "23:01"
+  },
+  {
+   "start": 1387.36,
+   "dur": 11.439,
+   "text": "took for one risk to transition from uh orange risk to red risk or one tier to another was too long or too short. That",
+   "label": "23:07"
+  },
+  {
+   "start": 1396.0,
+   "dur": 8.88,
+   "text": "then expanded to exposure to market data consuming applications and market data publishing applications. For example, I",
+   "label": "23:16"
+  },
+  {
+   "start": 1402.4,
+   "dur": 9.92,
+   "text": "worked on a market data aggregator like tool which essentially took snapshots of our order books over time and persisted",
+   "label": "23:22"
+  },
+  {
+   "start": 1408.96,
+   "dur": 10.32,
+   "text": "and persisted not only our own theo calculations for futures into those one second buckets but also entire snapshots",
+   "label": "23:28"
+  },
+  {
+   "start": 1416.96,
+   "dur": 10.0,
+   "text": "of order books to be used to run historical back tests on. and researchers would be the primary consumer of that information in whatever",
+   "label": "23:36"
+  },
+  {
+   "start": 1424.96,
+   "dur": 8.0,
+   "text": "structured or unstructured database that I decided to save it in. Now, the reason that this data pipeline was needed to",
+   "label": "23:44"
+  },
+  {
+   "start": 1431.12,
+   "dur": 8.32,
+   "text": "begin with was because our data infrastructure pipeline wasn't robust at the time. Researchers were reading",
+   "label": "23:51"
+  },
+  {
+   "start": 1437.28,
+   "dur": 8.399,
+   "text": "parquet files saved on network drives and that was extremely slow. And so, in building out this data pipeline, I was",
+   "label": "23:57"
+  },
+  {
+   "start": 1443.919,
+   "dur": 9.12,
+   "text": "able to reduce their back test data retrieval times by 90%. And that's a massive increase in a world where being",
+   "label": "24:03"
+  },
+  {
+   "start": 1450.24,
+   "dur": 10.72,
+   "text": "quick and iterating even quicker is just very very very important. It then moved to market data related applications like",
+   "label": "24:10"
+  },
+  {
+   "start": 1458.159,
+   "dur": 9.361,
+   "text": "a resting order detector. You guys see quant firms often try to categorize orders. They do that to understand the",
+   "label": "24:18"
+  },
+  {
+   "start": 1465.44,
+   "dur": 8.8,
+   "text": "nature of the order flow. That categorization will provide traders with additional information that they can",
+   "label": "24:25"
+  },
+  {
+   "start": 1471.679,
+   "dur": 9.281,
+   "text": "then use to gain an advantage or trade against. For example, if you can classify an order with relative",
+   "label": "24:31"
+  },
+  {
+   "start": 1478.24,
+   "dur": 9.2,
+   "text": "certainty that it is a paper order, not a electronically submitted order, you can then act on that information. Paper",
+   "label": "24:38"
+  },
+  {
+   "start": 1485.44,
+   "dur": 8.32,
+   "text": "orders, they're placed manually by hedge funds, pension funds, or large retail traders. Now, being able to categorize",
+   "label": "24:45"
+  },
+  {
+   "start": 1491.679,
+   "dur": 7.921,
+   "text": "them, it involves a deep understanding of the market data exchange protocol that we were interfacing with alongside,",
+   "label": "24:51"
+  },
+  {
+   "start": 1498.159,
+   "dur": 7.681,
+   "text": "you know, trading engine related behavior. For example, you know, an insight that I garnered while reading",
+   "label": "24:58"
+  },
+  {
+   "start": 1504.08,
+   "dur": 9.76,
+   "text": "documentation is that orders that survive an exchange's close are usually solid enough indicators that there was a",
+   "label": "25:04"
+  },
+  {
+   "start": 1510.64,
+   "dur": 9.919,
+   "text": "human intention in placing those orders because they weren't pruned at the close. Whereas orders like fill or kill",
+   "label": "25:10"
+  },
+  {
+   "start": 1517.679,
+   "dur": 8.321,
+   "text": "or fill and kill, those sorts of orders don't even get persisted long enough for them to be classified as paper. I then",
+   "label": "25:17"
+  },
+  {
+   "start": 1524.48,
+   "dur": 7.36,
+   "text": "transition to build out the firm's pricing sheets. Now this is another market data consumption application but",
+   "label": "25:24"
+  },
+  {
+   "start": 1529.52,
+   "dur": 10.72,
+   "text": "instead of being a back-end server like uh you know the resting order detector it was now a front-end guey related uh",
+   "label": "25:29"
+  },
+  {
+   "start": 1537.52,
+   "dur": 10.56,
+   "text": "consumption field. So essentially traders have option class expirations and those expirations are partitioned",
+   "label": "25:37"
+  },
+  {
+   "start": 1544.799,
+   "dur": 12.161,
+   "text": "option series grouped by strike. Now the options pricing sheet displays various pricing volume and Greeks metrics via",
+   "label": "25:44"
+  },
+  {
+   "start": 1554.24,
+   "dur": 9.919,
+   "text": "graphical user interface for a series of strikes and expirations or maturities. Because the volume of data that was",
+   "label": "25:54"
+  },
+  {
+   "start": 1562.08,
+   "dur": 9.28,
+   "text": "being fed to these guies were so large, I needed to implement several optimizations including for example to",
+   "label": "26:02"
+  },
+  {
+   "start": 1569.039,
+   "dur": 8.721,
+   "text": "only subscribe to options that were in view on that particular guey. Because imagine you're subscribed to a stream of",
+   "label": "26:09"
+  },
+  {
+   "start": 1575.76,
+   "dur": 7.44,
+   "text": "like hundreds maybe thousands of options. That's a lot of data. It's a lot of different uh pieces of",
+   "label": "26:15"
+  },
+  {
+   "start": 1581.52,
+   "dur": 10.56,
+   "text": "information for your screen to draw and that'll get really slow. So for example, a trader might be subscribed to or",
+   "label": "26:21"
+  },
+  {
+   "start": 1588.96,
+   "dur": 9.52,
+   "text": "interested in a given maturity or given option class expiration, but their screen is only showing 20 of those 100",
+   "label": "26:28"
+  },
+  {
+   "start": 1595.84,
+   "dur": 9.6,
+   "text": "strikes at any given time. So instead of subscribing to Greeks or market data for an entire option class expiration at",
+   "label": "26:35"
+  },
+  {
+   "start": 1603.279,
+   "dur": 8.721,
+   "text": "once, you need to be able to detect when a given strike is actually in the viewport in view and then unsubscribe",
+   "label": "26:43"
+  },
+  {
+   "start": 1610.0,
+   "dur": 8.4,
+   "text": "from strikes that aren't and resubscribe to strikes that are as a trader, you know, goes up and down, you know, and",
+   "label": "26:50"
+  },
+  {
+   "start": 1616.24,
+   "dur": 9.2,
+   "text": "scrolls the option chain. Now also imagine amongst various expireies as a trader moves the window up and down he",
+   "label": "26:56"
+  },
+  {
+   "start": 1623.52,
+   "dur": 9.44,
+   "text": "also moves it side to side and he scrolls between expireies that he's enabled. So when an entire expiry now",
+   "label": "27:03"
+  },
+  {
+   "start": 1630.4,
+   "dur": 8.639,
+   "text": "leaves the page because you know the user has scrolled horizontally past it. We also need to unsubscribe from all",
+   "label": "27:10"
+  },
+  {
+   "start": 1636.559,
+   "dur": 8.081,
+   "text": "strikes associated with that OCE. Now by the time I reached my 4 and a half year mark at that organization, I was also",
+   "label": "27:16"
+  },
+  {
+   "start": 1642.96,
+   "dur": 8.719,
+   "text": "working on direct market access applications or in other words our automated marketmaking algorithms. I was",
+   "label": "27:22"
+  },
+  {
+   "start": 1649.279,
+   "dur": 9.201,
+   "text": "responsible for multiple layers of this application from hedging our delta to entire back-end logic loops to even",
+   "label": "27:29"
+  },
+  {
+   "start": 1656.96,
+   "dur": 9.04,
+   "text": "front-end development to communicate changes and take inputs to and from our traders. Applications like these guys,",
+   "label": "27:36"
+  },
+  {
+   "start": 1663.36,
+   "dur": 9.919,
+   "text": "they require database buildouts, guey changes, and hedging logic additions that are only given to trusted senior",
+   "label": "27:43"
+  },
+  {
+   "start": 1670.72,
+   "dur": 8.4,
+   "text": "developers with years of experience and years of proving themselves at these organizations. You see, you're not going",
+   "label": "27:50"
+  },
+  {
+   "start": 1677.2,
+   "dur": 7.199,
+   "text": "to give this level of responsibility to any developer. You need to make sure that their code is airtight, that they",
+   "label": "27:57"
+  },
+  {
+   "start": 1683.12,
+   "dur": 7.679,
+   "text": "know what they're doing, that they know how to test their code as well. Because imagine a rogue trading agent starts",
+   "label": "28:03"
+  },
+  {
+   "start": 1688.799,
+   "dur": 8.641,
+   "text": "submitting a bunch of orders. That's a recipe for disaster. Now when you start moving into this domain, now you're",
+   "label": "28:08"
+  },
+  {
+   "start": 1695.6,
+   "dur": 10.4,
+   "text": "working with more advanced concepts like core pinning, CPU isolation and you know Linux level API calls like task set to",
+   "label": "28:15"
+  },
+  {
+   "start": 1704.159,
+   "dur": 9.041,
+   "text": "be able to maintain the CPU's cache affinity. And at this level almost everything guys it's questioned and",
+   "label": "28:24"
+  },
+  {
+   "start": 1710.96,
+   "dur": 8.319,
+   "text": "everything is expected to be optimized. For example, I was working on the guey side with another senior developer and",
+   "label": "28:30"
+  },
+  {
+   "start": 1717.279,
+   "dur": 7.76,
+   "text": "while working on it from day one, I had to make sure that it was a thin client. By that I mean that we can only send and",
+   "label": "28:37"
+  },
+  {
+   "start": 1723.44,
+   "dur": 8.719,
+   "text": "receive the minimum amount of information to be required to control the autotrader to make sure that it only",
+   "label": "28:43"
+  },
+  {
+   "start": 1730.399,
+   "dur": 7.601,
+   "text": "receives the information that it needs to make decisions or rather the information that the trader needs to",
+   "label": "28:50"
+  },
+  {
+   "start": 1735.44,
+   "dur": 10.0,
+   "text": "view to make decisions. Now, this meant, for example, opting for incremental updates and only sending snapshots of",
+   "label": "28:55"
+  },
+  {
+   "start": 1743.039,
+   "dur": 8.88,
+   "text": "the state of the algorithm on key events like connections. It also involved speaking to other developers who owned",
+   "label": "29:03"
+  },
+  {
+   "start": 1750.32,
+   "dur": 8.479,
+   "text": "other applications that I needed to interface with like our hedging system. And it involved needing a deep",
+   "label": "29:10"
+  },
+  {
+   "start": 1756.88,
+   "dur": 8.88,
+   "text": "understanding of concurrency. For example, dealing with in-flight quotes, always making sure your market data path",
+   "label": "29:16"
+  },
+  {
+   "start": 1763.6,
+   "dur": 8.319,
+   "text": "is hot. How do you notify the main evaluation loop that new market data arrived and whatever evaluation it was",
+   "label": "29:23"
+  },
+  {
+   "start": 1769.52,
+   "dur": 9.6,
+   "text": "just doing, it needs to stop and restart? Think about also how you handle cases where you receive acknowledgements",
+   "label": "29:29"
+  },
+  {
+   "start": 1776.48,
+   "dur": 7.76,
+   "text": "for quotes that you never sent. What should your application do? Should it terminate? Should it try to reconcile",
+   "label": "29:36"
+  },
+  {
+   "start": 1782.64,
+   "dur": 6.8,
+   "text": "its state? How do you account for inflight quotes to begin with when the next iteration of your algorithm tells",
+   "label": "29:42"
+  },
+  {
+   "start": 1788.0,
+   "dur": 5.84,
+   "text": "you that, hey, the quotes you just sent that you haven't received an acknowledgement for, yeah, those were",
+   "label": "29:48"
+  },
+  {
+   "start": 1792.24,
+   "dur": 8.559,
+   "text": "wrong. Back out of those. we need to cancel them. And then once you've answered all of those questions, how do",
+   "label": "29:52"
+  },
+  {
+   "start": 1798.72,
+   "dur": 10.0,
+   "text": "you build this application in a way that's testable given some dummy test data whose form you haven't even thought",
+   "label": "29:58"
+  },
+  {
+   "start": 1805.36,
+   "dur": 10.96,
+   "text": "up of yet? Throughout all of this, guys, what I realized is that being strong technically is not enough for a role in",
+   "label": "30:05"
+  },
+  {
+   "start": 1814.48,
+   "dur": 5.84,
+   "text": "quant. You're going to be doing a lot more than coding. You're communicating. You're interacting with people. You're",
+   "label": "30:14"
+  },
+  {
+   "start": 1819.12,
+   "dur": 7.52,
+   "text": "managing budgets. You're managing emotions. You're leading teams, right? You're speaking to people across various",
+   "label": "30:19"
+  },
+  {
+   "start": 1824.88,
+   "dur": 9.039,
+   "text": "time zones. You need to coordinate your agenda, how you work, when you work, how you structure your work. Let me give you",
+   "label": "30:24"
+  },
+  {
+   "start": 1830.96,
+   "dur": 10.24,
+   "text": "an example. I was responsible for two internship classes and I led the hiring decisions after each internship came to",
+   "label": "30:30"
+  },
+  {
+   "start": 1838.799,
+   "dur": 8.0,
+   "text": "its conclusion. I had to oversee the intern summer internship projects. And if one of the interns didn't complete",
+   "label": "30:38"
+  },
+  {
+   "start": 1845.12,
+   "dur": 8.4,
+   "text": "their project, guess who that reflected poorly on? Yes, the intern, but also on me. During the first summer that I was",
+   "label": "30:45"
+  },
+  {
+   "start": 1851.44,
+   "dur": 8.4,
+   "text": "responsible for interns, I oversaw their addition of a translation layer to our internal exchange simulator application.",
+   "label": "30:51"
+  },
+  {
+   "start": 1858.24,
+   "dur": 7.28,
+   "text": "What is this application? It's essentially a tool that we'd spin up in our dev environment to mimic an exchange",
+   "label": "30:58"
+  },
+  {
+   "start": 1864.0,
+   "dur": 10.559,
+   "text": "without actually needing to connect to the CME's test net, for example. And so, initially, this internal simulator",
+   "label": "31:04"
+  },
+  {
+   "start": 1871.12,
+   "dur": 11.039,
+   "text": "application would use Protobuff and gRPC and communicating with our own internal tooling. But that year, my boss wanted",
+   "label": "31:11"
+  },
+  {
+   "start": 1878.72,
+   "dur": 11.439,
+   "text": "us to outfit that simulator-like application with the CME's simple binary encoding order entry translation layer.",
+   "label": "31:18"
+  },
+  {
+   "start": 1887.6,
+   "dur": 9.6,
+   "text": "In other words, he wanted that internal simulator to be configured in a way that it could accept both our messages",
+   "label": "31:27"
+  },
+  {
+   "start": 1894.799,
+   "dur": 10.24,
+   "text": "derived from our own internal Protobuff based protocol and the CME's formatted messages. The second year that I oversaw",
+   "label": "31:34"
+  },
+  {
+   "start": 1903.2,
+   "dur": 9.359,
+   "text": "interns, I actually had them work on the same application but on the other side. So they outfitted simulator to support",
+   "label": "31:43"
+  },
+  {
+   "start": 1909.519,
+   "dur": 8.961,
+   "text": "MDP3 which is the CME's market data layer. And all this had to be configurable via that internal simulator",
+   "label": "31:49"
+  },
+  {
+   "start": 1916.159,
+   "dur": 11.52,
+   "text": "applications configuration file. That first summer though in particular I also realized that a big difficulty in the",
+   "label": "31:56"
+  },
+  {
+   "start": 1923.12,
+   "dur": 10.64,
+   "text": "space is also about how do you as a you know quantitative developer quantitative trader quantitative researcher how do",
+   "label": "32:03"
+  },
+  {
+   "start": 1931.2,
+   "dur": 9.839,
+   "text": "you deliver hard information one of our interns for example he wasn't going to make the cut and wasn't going to receive",
+   "label": "32:11"
+  },
+  {
+   "start": 1938.24,
+   "dur": 7.919,
+   "text": "a new grad offer HR asked me do you want us to break the news or do you want to break the news yourself now I could have",
+   "label": "32:18"
+  },
+  {
+   "start": 1944.48,
+   "dur": 8.4,
+   "text": "taken the easy route I could have just said hey HR you know do your go talk to him. But instead, what I did was",
+   "label": "32:24"
+  },
+  {
+   "start": 1950.96,
+   "dur": 8.64,
+   "text": "confront what was difficult for me. I had to think of the best, most generous, and most kind way to tell somebody that,",
+   "label": "32:30"
+  },
+  {
+   "start": 1957.76,
+   "dur": 9.919,
+   "text": "\"Listen, bro, you're just not good enough.\" And that was very difficult. The next day, I sat him in a room, you",
+   "label": "32:37"
+  },
+  {
+   "start": 1964.96,
+   "dur": 10.079,
+   "text": "know, HR was there, told him exactly what we would have wanted and where he fell short and told him that because of",
+   "label": "32:44"
+  },
+  {
+   "start": 1973.2,
+   "dur": 7.839,
+   "text": "that, we just couldn't extend him a return offer. And I say this not to dampen the mood, but just to communicate",
+   "label": "32:53"
+  },
+  {
+   "start": 1979.2,
+   "dur": 8.959,
+   "text": "how important it is to strengthen your interpersonal skills because that's a side of this industry that oftentimes",
+   "label": "32:59"
+  },
+  {
+   "start": 1985.039,
+   "dur": 8.081,
+   "text": "gets overlooked. During my third year, I also took on two junior developers. My boss saw that I did really good with the",
+   "label": "33:05"
+  },
+  {
+   "start": 1991.6,
+   "dur": 6.72,
+   "text": "interns and he's like, \"All right, well, here's two new junior developers. Have fun and go mentor them.\" And so I",
+   "label": "33:11"
+  },
+  {
+   "start": 1996.48,
+   "dur": 9.039,
+   "text": "mentored them from that third year all the way to the end of my tenure at that organization. That means that we I you",
+   "label": "33:16"
+  },
+  {
+   "start": 2003.2,
+   "dur": 7.839,
+   "text": "know led standups, spoke to them, assigned them projects, broke down their tasks, reported their progress back to",
+   "label": "33:23"
+  },
+  {
+   "start": 2009.6,
+   "dur": 9.76,
+   "text": "my boss, and if they were not making progress, guess who that looked bad upon? Me, right? Above and beyond that,",
+   "label": "33:29"
+  },
+  {
+   "start": 2017.6,
+   "dur": 7.12,
+   "text": "I also got involved on interview panels where I would be oftent times interviewing people that were smarter",
+   "label": "33:37"
+  },
+  {
+   "start": 2022.64,
+   "dur": 7.6,
+   "text": "than me and more senior than me. And that's why it's so easy for me to get on a live stream, play a video game while",
+   "label": "33:42"
+  },
+  {
+   "start": 2028.64,
+   "dur": 6.159,
+   "text": "interviewing somebody that I've never met because I've done it time and time again. It's almost like second nature.",
+   "label": "33:48"
+  },
+  {
+   "start": 2033.44,
+   "dur": 7.68,
+   "text": "It's like dribbling a ball for an NBA player. I've just sat through so many interviews on both sides of the table.",
+   "label": "33:53"
+  },
+  {
+   "start": 2039.279,
+   "dur": 8.88,
+   "text": "But all of that did not come without road bumps. It didn't. In fact, some of you guys watching this video will",
+   "label": "33:59"
+  },
+  {
+   "start": 2045.36,
+   "dur": 9.6,
+   "text": "remember back in 2022, I think it was, yeah, around 2022, I stopped posting on YouTube and I stopped for almost a year",
+   "label": "34:05"
+  },
+  {
+   "start": 2052.72,
+   "dur": 7.84,
+   "text": "and a half. It's something that I slightly regret, but at the time I still think that I made the right choice. Now,",
+   "label": "34:12"
+  },
+  {
+   "start": 2058.72,
+   "dur": 9.679,
+   "text": "you're probably asking, CJ, why did you stop posting? What happened? What's it related to? It was related to the",
+   "label": "34:18"
+  },
+  {
+   "start": 2064.48,
+   "dur": 9.599,
+   "text": "content of a video. Back then, of course, when I started, you know, my tenor in the industry, I also started",
+   "label": "34:24"
+  },
+  {
+   "start": 2071.119,
+   "dur": 8.881,
+   "text": "making quant related content. And as I mentioned, I wanted to be that person that I wish I had when I was first",
+   "label": "34:31"
+  },
+  {
+   "start": 2077.839,
+   "dur": 9.76,
+   "text": "grinding towards the objective of breaking to quant. But in one video in particular, I accidentally misspoke. Or",
+   "label": "34:37"
+  },
+  {
+   "start": 2085.44,
+   "dur": 11.6,
+   "text": "rather, I made a video that my boss thought crossed some line that led into the world of proprietary information.",
+   "label": "34:45"
+  },
+  {
+   "start": 2093.919,
+   "dur": 8.561,
+   "text": "At the time, I talked in that video about a strategy that all trading firms were running. So, I thought to myself,",
+   "label": "34:53"
+  },
+  {
+   "start": 2100.56,
+   "dur": 8.559,
+   "text": "like, well, if all trading firms are running it, then how can this be proprietary? But my boss had a, you",
+   "label": "35:00"
+  },
+  {
+   "start": 2106.96,
+   "dur": 9.36,
+   "text": "know, different opinion about it. Turns out still crossed the line, a line that he didn't like. And so I got pulled into",
+   "label": "35:06"
+  },
+  {
+   "start": 2113.68,
+   "dur": 9.2,
+   "text": "a room with HR. And my boss essentially said, \"Here's a piece of paper. It says that if you say something that you're",
+   "label": "35:13"
+  },
+  {
+   "start": 2120.4,
+   "dur": 7.679,
+   "text": "not allowed to say again, then you're going to be fired. We're going to give this one a clean pass, but you have one",
+   "label": "35:20"
+  },
+  {
+   "start": 2126.8,
+   "dur": 6.72,
+   "text": "more chance, and we're letting you know upfront.\" Now, it also came with a preamble that we don't care what you",
+   "label": "35:26"
+  },
+  {
+   "start": 2132.079,
+   "dur": 9.441,
+   "text": "post on social media. Just make sure that it's not sensitive. But that was enough to scare me into not posting for",
+   "label": "35:32"
+  },
+  {
+   "start": 2138.8,
+   "dur": 10.0,
+   "text": "a very very very long time. It was also the first hint that I would be pursuing an avenue of content creation that was",
+   "label": "35:38"
+  },
+  {
+   "start": 2146.96,
+   "dur": 7.68,
+   "text": "at odds with kind of the secretive nature of this industry cuz let's be real, a lot of firms don't like the fact",
+   "label": "35:46"
+  },
+  {
+   "start": 2153.359,
+   "dur": 8.48,
+   "text": "that you might have a social media presence. But regardless, I persisted. And when 2023 rolled around, I decided",
+   "label": "35:53"
+  },
+  {
+   "start": 2159.92,
+   "dur": 7.679,
+   "text": "to interview. It was my first time interviewing in probably two and a half to three years, but I wanted to see what",
+   "label": "35:59"
+  },
+  {
+   "start": 2165.599,
+   "dur": 8.321,
+   "text": "opportunities there were out there. Now, a friend of mine in Chicago referred me to another organization, one that was",
+   "label": "36:05"
+  },
+  {
+   "start": 2171.44,
+   "dur": 8.24,
+   "text": "larger, can probably pay me more, and I went through several rounds there. At every single checkpoint, I was told just",
+   "label": "36:11"
+  },
+  {
+   "start": 2178.079,
+   "dur": 11.28,
+   "text": "how much of a breath of fresh air I was and how well I was doing and that, you know, HR is validating my correctness in",
+   "label": "36:18"
+  },
+  {
+   "start": 2187.28,
+   "dur": 8.4,
+   "text": "the process. And then I got to the final round and I was really excited and I thought I smashed it. I really did.",
+   "label": "36:27"
+  },
+  {
+   "start": 2194.16,
+   "dur": 7.28,
+   "text": "Spoke to a couple of people. I thought I went well. I was like waiting for that phone call. And then I got the phone",
+   "label": "36:34"
+  },
+  {
+   "start": 2199.44,
+   "dur": 8.399,
+   "text": "call and that phone call started with the word that nobody wants to hear and that word was unfortunately. [laughter]",
+   "label": "36:39"
+  },
+  {
+   "start": 2205.92,
+   "dur": 8.4,
+   "text": "I was told that I didn't make it. But none of it really made sense to me as to why. So I did a little digging. That's",
+   "label": "36:45"
+  },
+  {
+   "start": 2212.24,
+   "dur": 7.359,
+   "text": "when I came to an understanding or my second understanding that my public presence and the secrecy of these",
+   "label": "36:52"
+  },
+  {
+   "start": 2218.4,
+   "dur": 7.76,
+   "text": "trading firms, they were just fundamentally at odds. And I knew that because my referral mentioned that HR",
+   "label": "36:58"
+  },
+  {
+   "start": 2224.56,
+   "dur": 7.92,
+   "text": "did not approve of my social media presence and activities. Now, they didn't tell him that outright, but he",
+   "label": "37:04"
+  },
+  {
+   "start": 2230.4,
+   "dur": 10.32,
+   "text": "heard that through the grapevine. They misconstrued at the time what was my like resume review business as trying to",
+   "label": "37:10"
+  },
+  {
+   "start": 2238.24,
+   "dur": 8.48,
+   "text": "aid their competitors in the space. Now, I don't understand how you come to that conclusion because it doesn't seem like",
+   "label": "37:18"
+  },
+  {
+   "start": 2244.56,
+   "dur": 8.559,
+   "text": "a conclusion that was reasoned into, but hey, that's the conclusion that they ended up in. And that's essentially the",
+   "label": "37:24"
+  },
+  {
+   "start": 2250.32,
+   "dur": 10.48,
+   "text": "conclusion that I needed to accept. Now, that 2023 incident or the interview round, whatever you want to call it,",
+   "label": "37:30"
+  },
+  {
+   "start": 2258.56,
+   "dur": 9.279,
+   "text": "that was the second signal that this continued presence on social media, it wasn't in line with the vision of some",
+   "label": "37:38"
+  },
+  {
+   "start": 2265.599,
+   "dur": 8.161,
+   "text": "of these staff members in some of these organizations that had their pants on a little too tight. Guys, you see, this",
+   "label": "37:45"
+  },
+  {
+   "start": 2272.079,
+   "dur": 6.881,
+   "text": "industry is usually split up, in my opinion, into like a couple of different types of firms. Let's just say there are",
+   "label": "37:52"
+  },
+  {
+   "start": 2276.88,
+   "dur": 7.28,
+   "text": "two specific types. Firms that are run by the old guard and firms that are run by the new guard. Firms that are run by",
+   "label": "37:56"
+  },
+  {
+   "start": 2282.48,
+   "dur": 7.04,
+   "text": "the new guard are relatively young and flexible. They're into social media. They consume it every day and they",
+   "label": "38:02"
+  },
+  {
+   "start": 2288.0,
+   "dur": 6.079,
+   "text": "understand that it's just another natural part of the fabric of our lives now. It's not going anywhere. They're",
+   "label": "38:08"
+  },
+  {
+   "start": 2292.96,
+   "dur": 7.2,
+   "text": "not going to punish you for talking about your favorite recipe online or, you know, even making comments about,",
+   "label": "38:12"
+  },
+  {
+   "start": 2298.24,
+   "dur": 6.96,
+   "text": "oh, you know, movie reviews and what you like. In fact, they'll probably see it as a bonus because they want to hire",
+   "label": "38:18"
+  },
+  {
+   "start": 2303.44,
+   "dur": 8.24,
+   "text": "people that are passionate and driven. And if that's you, even better. But then there's the old guard which essentially",
+   "label": "38:23"
+  },
+  {
+   "start": 2309.52,
+   "dur": 8.96,
+   "text": "holds diverging views on how you should conduct yourself both in private and in public. Regardless, I took everything",
+   "label": "38:29"
+  },
+  {
+   "start": 2316.56,
+   "dur": 9.519,
+   "text": "that I learned and was asked of me in that 2023 cycle and then applied it a year later in the 2024 cycle when I had",
+   "label": "38:36"
+  },
+  {
+   "start": 2323.28,
+   "dur": 10.319,
+   "text": "offers on the table in this industry at multiple different places. Now I was ecstatic but I was also conflicted",
+   "label": "38:43"
+  },
+  {
+   "start": 2331.359,
+   "dur": 9.521,
+   "text": "because I was sitting on more than one offer but I knew that I wanted to pursue something greater than just me and a",
+   "label": "38:51"
+  },
+  {
+   "start": 2339.28,
+   "dur": 10.96,
+   "text": "little platform which I built called getcrack.io was starting to gain traction. It was something that I felt genuine passion",
+   "label": "38:59"
+  },
+  {
+   "start": 2346.96,
+   "dur": 9.2,
+   "text": "for and had fun building. Why? Because in those 4 and 1/2 years working in quant, the thing that stood out to me",
+   "label": "39:06"
+  },
+  {
+   "start": 2354.24,
+   "dur": 7.68,
+   "text": "the most that I felt like I was making the biggest impact on was not market data applications or risk applications",
+   "label": "39:14"
+  },
+  {
+   "start": 2360.32,
+   "dur": 7.44,
+   "text": "or internal tooling or order entry applications. It was actually about the people that I was helping. I was",
+   "label": "39:20"
+  },
+  {
+   "start": 2366.079,
+   "dur": 7.841,
+   "text": "mentoring people. I was guiding them. I was leading the next generation. And that felt genuinely rewarding. And I",
+   "label": "39:26"
+  },
+  {
+   "start": 2371.839,
+   "dur": 8.081,
+   "text": "took that passion and interest onto YouTube in my live streams where I brought people on. They'd call in. A lot",
+   "label": "39:31"
+  },
+  {
+   "start": 2378.32,
+   "dur": 9.92,
+   "text": "of them would ask to be grilled and they'd ask me to ask them C++ interview questions. And that experience",
+   "label": "39:38"
+  },
+  {
+   "start": 2385.839,
+   "dur": 9.041,
+   "text": "bifurcated a bit of my audience. Some of my audience felt like I was bashing other developers, whereas a larger part",
+   "label": "39:45"
+  },
+  {
+   "start": 2392.24,
+   "dur": 10.56,
+   "text": "of my community not only thought it was a useful exercise, but some even found it comedic and enjoyable content to",
+   "label": "39:52"
+  },
+  {
+   "start": 2399.2,
+   "dur": 9.919,
+   "text": "watch. After all, if you can't perform well in a mock interview without showing your face, with literally nobody knowing",
+   "label": "39:59"
+  },
+  {
+   "start": 2406.88,
+   "dur": 10.4,
+   "text": "who you are in a zero stakes environment, then how can you expect to perform well in a real final round at a",
+   "label": "40:06"
+  },
+  {
+   "start": 2415.119,
+   "dur": 8.0,
+   "text": "target firm that you're actually looking to break into? I would rather, and I say this all the time on these live streams,",
+   "label": "40:15"
+  },
+  {
+   "start": 2421.28,
+   "dur": 8.16,
+   "text": "I would rather you screw up with me. I'd have me then teach you that concept, then have you screw up on that final",
+   "label": "40:21"
+  },
+  {
+   "start": 2427.44,
+   "dur": 10.0,
+   "text": "round where it actually matters because you don't want to screw up when it matters. So, after resigning in November",
+   "label": "40:27"
+  },
+  {
+   "start": 2433.92,
+   "dur": 10.4,
+   "text": "of 2024, I decided to sit out that brief garden leaf period after which I would essentially be working on Get Cracked",
+   "label": "40:33"
+  },
+  {
+   "start": 2441.52,
+   "dur": 12.48,
+   "text": "full-time. Now, a couple months passed, May 2025 rolls around and a really big fear crept its full weight into my",
+   "label": "40:41"
+  },
+  {
+   "start": 2450.32,
+   "dur": 10.56,
+   "text": "chest. And that was the fear of now being essentially independent, being an entrepreneur, of untying myself from an",
+   "label": "40:50"
+  },
+  {
+   "start": 2458.72,
+   "dur": 9.359,
+   "text": "employer, from a stable income, from a predictable 9 to5. And that got to me and so I started looking for another",
+   "label": "40:58"
+  },
+  {
+   "start": 2465.92,
+   "dur": 10.24,
+   "text": "position. Now, I knew that I didn't want to work in quant after already resigning because I knew that it wouldn't allow me",
+   "label": "41:05"
+  },
+  {
+   "start": 2473.52,
+   "dur": 10.88,
+   "text": "to work a full-time job while also juggling this burgeoning business. And so, I started looking elsewhere. I knew",
+   "label": "41:13"
+  },
+  {
+   "start": 2482.079,
+   "dur": 9.441,
+   "text": "that I wanted to stick to C++. And I actually landed a position paying a decent around $300,000 at a Fortune 100",
+   "label": "41:22"
+  },
+  {
+   "start": 2489.68,
+   "dur": 8.48,
+   "text": "company on their bidding technology team. Now, I was actually reached out to about this position and it was sold to",
+   "label": "41:29"
+  },
+  {
+   "start": 2496.319,
+   "dur": 9.52,
+   "text": "me in a way that didn't really reflect the actual work that I'd be doing on the job. So, two months later, with a bit of",
+   "label": "41:36"
+  },
+  {
+   "start": 2503.2,
+   "dur": 8.48,
+   "text": "restored confidence, some therapy, I was able to take Get Cracked and build it into something actually feasible as a",
+   "label": "41:43"
+  },
+  {
+   "start": 2510.079,
+   "dur": 8.24,
+   "text": "business endeavor. And that's when I decided to resign from that position. I then spent the next 2 to 3 months in",
+   "label": "41:50"
+  },
+  {
+   "start": 2516.0,
+   "dur": 8.8,
+   "text": "Chicago. I was freezing my ass off and I was wondering what the hell am I doing here? Right? It's cold. nine months of",
+   "label": "41:56"
+  },
+  {
+   "start": 2522.079,
+   "dur": 8.481,
+   "text": "the year. I am very far from family. I don't have any family in the States at all. [snorts] I didn't feel like my",
+   "label": "42:02"
+  },
+  {
+   "start": 2528.48,
+   "dur": 9.76,
+   "text": "environment was very businessfriendly in general. And I was still a green card holder. And in theory, I could just have",
+   "label": "42:08"
+  },
+  {
+   "start": 2536.16,
+   "dur": 8.32,
+   "text": "gotten up and moved to Miami. And in fact, yes, Miami was one of my top choices when considering where to move.",
+   "label": "42:16"
+  },
+  {
+   "start": 2542.0,
+   "dur": 8.8,
+   "text": "But I just decided to take a bigger gamble and that's when I moved to the UAE. And that's where I am right now. I",
+   "label": "42:22"
+  },
+  {
+   "start": 2548.8,
+   "dur": 9.279,
+   "text": "moved there during a period of very tense conflict. But honestly, I don't regret it at all. You see, a good friend",
+   "label": "42:28"
+  },
+  {
+   "start": 2555.52,
+   "dur": 9.12,
+   "text": "of mine, a YouTuber, Tech with Tim, he built his own presence here after leaving his birthplace, which is Canada.",
+   "label": "42:35"
+  },
+  {
+   "start": 2562.64,
+   "dur": 7.679,
+   "text": "He encouraged me to come visit, and so I did. I came for a month, kind of gained the lay of the land, decided whether or",
+   "label": "42:42"
+  },
+  {
+   "start": 2568.88,
+   "dur": 8.64,
+   "text": "not living here would be the right place or right choice for me, and essentially just committed to it. All this while,",
+   "label": "42:48"
+  },
+  {
+   "start": 2575.839,
+   "dur": 8.0,
+   "text": "you know, leaning in 110% of my business, bolstering its content, you know, continuously producing YouTube",
+   "label": "42:55"
+  },
+  {
+   "start": 2581.28,
+   "dur": 8.559,
+   "text": "content, adding learning trees, quizzes, building relationships with external recruiters that I'd be fueling",
+   "label": "43:01"
+  },
+  {
+   "start": 2586.72,
+   "dur": 9.68,
+   "text": "candidates to, and also employing four full-time, you know, employees essentially like people whose livelihood",
+   "label": "43:06"
+  },
+  {
+   "start": 2593.76,
+   "dur": 8.16,
+   "text": "and now rely on me and my platform and my ability to deliver. That also required a degree of risk-taking and",
+   "label": "43:13"
+  },
+  {
+   "start": 2600.0,
+   "dur": 8.88,
+   "text": "sacrifice that I just was was not used to prior when everything was planned for me and paychecks came in like a steady",
+   "label": "43:20"
+  },
+  {
+   "start": 2606.0,
+   "dur": 9.119,
+   "text": "rhythm. For instance, I decided to spend a considerable amount of time and money branching into hardware engineering",
+   "label": "43:26"
+  },
+  {
+   "start": 2612.0,
+   "dur": 11.119,
+   "text": "interview prep content because I didn't see any of that online or any of that online in a way that I felt was",
+   "label": "43:32"
+  },
+  {
+   "start": 2620.72,
+   "dur": 7.84,
+   "text": "material. I wanted to build a community and I wanted to build one around content that's never been seen before. And",
+   "label": "43:40"
+  },
+  {
+   "start": 2627.119,
+   "dur": 8.24,
+   "text": "that's what I did and that's what I've continued to do. And if that part was not exhausting enough, I also decided to",
+   "label": "43:47"
+  },
+  {
+   "start": 2633.04,
+   "dur": 8.559,
+   "text": "release a mentorship program that I call Get Cracky Elite. It's a 90-day Quant Accelerator program in which we work",
+   "label": "43:53"
+  },
+  {
+   "start": 2639.28,
+   "dur": 8.16,
+   "text": "with aspiring Quant developers, traders, and researchers to place them in roles in the industry. We match them with",
+   "label": "43:59"
+  },
+  {
+   "start": 2645.76,
+   "dur": 8.88,
+   "text": "industryleading coaches currently working in the space. They have private one-on-one coaching calls, town halls",
+   "label": "44:05"
+  },
+  {
+   "start": 2651.839,
+   "dur": 9.921,
+   "text": "with other coaches, a flagship project, a personalized roadmap, accountability check-ins alongside LinkedIn rebrands,",
+   "label": "44:11"
+  },
+  {
+   "start": 2659.359,
+   "dur": 7.841,
+   "text": "resume rewrites. We also field them to our external recruitment partners to help them get placed, so on and so",
+   "label": "44:19"
+  },
+  {
+   "start": 2665.359,
+   "dur": 7.921,
+   "text": "forth. We have a bunch of candidates from all backgrounds and teners in the program today. And that brings me to",
+   "label": "44:25"
+  },
+  {
+   "start": 2671.2,
+   "dur": 9.119,
+   "text": "where I am today. I'm sitting in my apartment in the UAE speaking out of camera, not really knowing what next",
+   "label": "44:31"
+  },
+  {
+   "start": 2678.56,
+   "dur": 7.519,
+   "text": "week's going to bring. But regardless, I'm excited about it. I'm excited because I know that despite the",
+   "label": "44:38"
+  },
+  {
+   "start": 2684.56,
+   "dur": 13.44,
+   "text": "sacrifice, you know, as long as I put 110% into everything that I do, things will work out well. At least I hope they will. And",
+   "label": "44:44"
+  },
+  {
+   "start": 2693.44,
+   "dur": 4.56,
+   "text": "with that, thanks for watching. Cheers.",
+   "label": "44:53"
+  }
+ ],
+ "track": {
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "generated": true,
+  "source": "captions-grouped"
+ },
+ "source": "youtube",
+ "added": "2026-10-13T04:44:55+00:00"
+}

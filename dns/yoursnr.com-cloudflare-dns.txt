@@ -1,0 +1,8 @@
+;; yoursnr.com DNS: redirect everything to yousnr.com. Cloudflare: yoursnr.com → DNS → Records →
+;; Import and Export → Import this file, with "Proxy imported DNS records" CHECKED (orange cloud; the redirect needs it).
+;; Delete any A, AAAA or CNAME records already there for yoursnr.com and www first. 192.0.2.1 is a placeholder:
+;; Cloudflare answers every request itself, so traffic never reaches it.
+;; Then: Rules → Redirect Rules → Create rule → All incoming requests → Dynamic,
+;;   expression concat("https://yousnr.com", http.request.uri.path), status 301, Preserve query string ON.
+yoursnr.com.	1	IN	A	192.0.2.1 ; cf_tags=cf-proxied:true
+www.yoursnr.com.	1	IN	A	192.0.2.1 ; cf_tags=cf-proxied:true

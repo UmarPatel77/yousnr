@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouSNR — all signal, no noise</title>
+<meta name="description" content="YouSNR: the signal from the tube. Read any YouTube video as a transcript, with timestamps and chapters.">
+<link rel="canonical" href="https://yousnr.com/">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--line:#e5e5e5;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--line:#3f3f3f;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:40px 16px 64px}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.5px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+p{color:var(--mute);margin:0 0 20px}
+form{display:flex;gap:8px;margin-bottom:28px}
+input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:10px 16px;font:15px Roboto,Arial,sans-serif;outline:none;min-width:0}
+input:focus{border-color:var(--accent)}
+button{border:0;background:var(--fg);color:var(--bg);border-radius:20px;padding:0 18px;font:500 14px Roboto,Arial,sans-serif;cursor:pointer}
+code{background:var(--chip);padding:1px 6px;border-radius:4px}
+ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+li a{display:flex;flex-direction:column;padding:12px 4px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
+li a:hover .t{color:var(--accent)}
+.t{font-weight:500;font-size:15px}
+.c{color:var(--mute);font-size:13px}
+.empty{padding:12px 4px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span class="you">You</span><span class="snr">SNR</span></h1>
+  <p><strong>All signal, no noise.</strong> Swap <code>tube</code> for <code>snr</code> in any YouTube link to read the video instead of watching it.</p>
+  <form id="f"><input id="u" placeholder="Paste a YouTube link or video ID" autocomplete="off"><button>Open</button></form>
+  <ul>
+{{LIST}}
+  </ul>
+</div>
+<script>
+document.getElementById('f').onsubmit=function(e){e.preventDefault();
+  var s=document.getElementById('u').value.trim(),m=s.match(/(?:v=|\/)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])/)||s.match(/^([A-Za-z0-9_-]{11})$/);
+  if(m)location.href='/'+m[1]+'/';};
+</script>
+</body>
+</html>

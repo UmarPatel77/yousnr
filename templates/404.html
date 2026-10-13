@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouSNR</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#fff;--fg:#0f0f0f;--mute:#606060;--line:#e5e5e5;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--line:#3f3f3f;--accent:#3ea6ff}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/22px Roboto,Arial,sans-serif}
+.wrap{max-width:560px;margin:14vh auto 0;padding:0 16px;text-align:center}
+.brand{font-size:22px;margin-bottom:28px;display:inline-block;color:inherit;text-decoration:none}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+h2{font-size:20px;margin:0 0 8px}
+a{color:var(--accent)}
+.mute{color:var(--mute)}
+.thumb{width:240px;max-width:80%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin:0 auto 18px;display:block;background:var(--line)}
+.bar{height:3px;width:200px;margin:18px auto 0;background:var(--line);border-radius:2px;overflow:hidden;position:relative}
+.bar::after{content:"";position:absolute;left:-40%;width:40%;height:100%;background:var(--accent);animation:slide 1.1s ease-in-out infinite}
+@keyframes slide{to{left:100%}}
+</style>
+</head>
+<body>
+<div class="wrap" id="msg"><p class="mute">Loading…</p></div>
+<script>
+// GitHub Pages serves this file for every path that doesn't exist, so it acts as the router.
+// It understands the YouTube URL shapes people type or paste after swapping the domain:
+//   /ID   /watch?v=ID   /shorts/ID   /embed/ID   /live/ID   /youtu.be/ID   /https://www.youtube.com/watch?v=ID
+// Known videos redirect to their static page. New ones are fetched live from the YouSNR server.
+(function(){
+  var ID=/^[A-Za-z0-9_-]{11}$/, loc=window.location;
+  var local=/^(localhost|127\.0\.0\.1)$/.test(loc.hostname);
+  var API=local?'':'https://api.yousnr.com';
+  var params=new URLSearchParams(loc.search), id=params.get('v');
+  if(!id||!ID.test(id)){
+    var parts=decodeURIComponent(loc.pathname+loc.search).split(/[\/?&=#]+/).filter(Boolean);
+    id=null;
+    for(var i=parts.length-1;i>=0;i--){if(ID.test(parts[i])){id=parts[i];break}}
+  }
+  var t=(params.get('t')||'').replace(/s$/,''), hash=/^\d+$/.test(t)?'#t='+t:(loc.hash||'');
+  var box=document.getElementById('msg');
+  var brand='<a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a>';
+  function show(h){box.innerHTML=brand+h}
+  if(!id){show('<h2>Page not found</h2><p><a href="/">Go to the home page</a></p>');return}
+  var yt='<a href="https://www.youtube.com/watch?v='+id+'">Watch it on YouTube</a>';
+
+  function live(){
+    var thumb='<img class="thumb" src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" alt="" onerror="this.remove()">';
+    show(thumb+'<h2>Getting the transcript…</h2><p class="mute">First time anyone has opened this video here. '+
+      'This takes a few seconds; after that it’s instant for everyone.</p><div class="bar"></div><p class="mute" id="secs"></p>');
+    var t0=Date.now(),timer=setInterval(function(){var s=document.getElementById('secs');if(s)s.textContent=Math.round((Date.now()-t0)/1000)+'s'},1000);
+    var ctl=window.AbortController?new AbortController():null;
+    setTimeout(function(){if(ctl)ctl.abort()},150000);
+    fetch(API+'/api/page/'+id,ctl?{signal:ctl.signal}:{}).then(function(r){
+      if(r.ok)return r.text().then(function(html){
+        clearInterval(timer);
+        history.replaceState(null,'','/'+id+'/'+hash);
+        document.open();document.write(html);document.close();
+      });
+      return r.json().catch(function(){return {}}).then(function(j){clearInterval(timer);fail(j.error,j.retry)});
+    }).catch(function(){clearInterval(timer);fail('offline')});
+  }
+
+  function fail(kind,retry){
+    var mins=retry?Math.max(1,Math.round(retry/60)):5;
+    var m={
+      no_captions:['This video has no captions','So there’s no transcript to show.'],
+      unavailable:['This video isn’t available','It may be private, removed, age-restricted or region-locked.'],
+      busy:['Busy right now','YouTube asked us to slow down. Try again in about '+mins+' minute'+(mins==1?'':'s')+'.'],
+      slow_down:['That’s a lot of new videos','You’ve opened many new videos in a short time. Try again in a bit.'],
+      offline:['The transcript server is offline','New videos can’t be fetched right now. Videos already on YouSNR still work. Try again later.'],
+      failed:['Something went wrong','Couldn’t get this transcript. Try again in a minute.']
+    }[kind]||['Something went wrong','Couldn’t get this transcript. Try again in a minute.'];
+    show('<h2>'+m[0]+'</h2><p class="mute">'+m[1]+'</p><p>'+yt+' · <a href="/">Browse transcripts</a></p>');
+  }
+
+  fetch('/ids.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(ids){
+    if(ids.indexOf(id)>=0){loc.replace('/'+id+'/'+hash);return}
+    live();
+  }).catch(live);
+})();
+</script>
+</body>
+</html>

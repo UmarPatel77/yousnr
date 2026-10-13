@@ -1,0 +1,7 @@
+;; yousnr.com DNS for GitHub Pages (UmarPatel77/yousnr). Cloudflare: yousnr.com → DNS → Records →
+;; Import and Export → Import this file, with "Proxy imported DNS records" UNCHECKED (DNS only, grey cloud).
+;; First: replace PASTE_CODE_HERE with the code from https://github.com/settings/pages_verified_domains/new
+;; (domain yousnr.com), and delete any A, AAAA or CNAME records already there for yousnr.com and www.
+yousnr.com.	1	IN	CNAME	umarpatel77.github.io. ; cf_tags=cf-proxied:false
+www.yousnr.com.	1	IN	CNAME	umarpatel77.github.io. ; cf_tags=cf-proxied:false
+_github-pages-challenge-umarpatel77.yousnr.com.	1	IN	TXT	"PASTE_CODE_HERE"
