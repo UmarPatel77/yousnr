@@ -32,7 +32,7 @@ Commands:
 
 | Command | What it does |
 |---|---|
-| `python yousnr.py add <video>` | add a video (`--show` to watch the browser if the backup kicks in) |
+| `python yousnr.py add <video>` | add a video, exactly as YouTube's transcript panel shows it (`--show` to watch, `--captions` for the faster caption-file version) |
 | `python yousnr.py remove <video>` | delete a video from the site |
 | `python yousnr.py serve` | on-demand server + tunnel (what `start-yousnr.bat` runs); close to turn off |
 | `python yousnr.py build` | rebuild all pages after editing `templates/` |
@@ -103,8 +103,12 @@ YouTube sometimes refuses plain caption downloads from a home connection ("429 T
 
 `python yousnr.py remove <id>` deletes a video from the site, for example one saved from a bad paste.
 
-### Line grouping
-YouTube's transcript panel glues caption cues together until a line reaches about 100 characters (`PANEL_MIN_CHARS`), and stamps each line with its first cue's start time. That matches every panel line checked so far, for both auto-generated and creator captions. Some videos' panels use a newer transcription than the downloadable caption file. For those, the words can differ slightly; `add --browser` reads the panel itself.
+### Where the text comes from
+By default YouSNR reads **YouTube's own transcript panel** ("Show transcript" → *In this video* → Transcript). It opens the video in a hidden Chrome window (YouSNR's own profile, see `signin`), clicks *Show transcript*, and keeps YouTube's reply (`youtubei/v1/get_panel`): the same lines, timestamps and chapter headings you see on YouTube. If a hidden window doesn't work, it retries once with a normal window parked off-screen.
+
+Since 2026 the panel often shows a newer transcription than the downloadable caption file (different words, different line breaks), so the panel is the only exact source.
+
+If the panel can't be read, it falls back to the caption file, glued into ~100-character lines the way the old panel did (`PANEL_MIN_CHARS`). If YouTube rate-limits caption downloads, it gets them through the video player instead. `--captions` skips the panel and uses the caption file only, which is faster.
 
 ## One-time setup
 

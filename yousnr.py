@@ -146,17 +146,23 @@ class DirectDownloadPaused(Exception):
     pass
 
 
-def get_transcript(vid, lang="en", browser=False, show=False, player=False):
+def get_transcript(vid, lang="en", browser=True, show=False, player=False):
     """Fetch one video end to end and save it. Returns the saved record."""
     chapters, segs, track = [], None, None
     if browser:
-        try:
-            segs, chapters, track, how = fetch_browser(vid, show=show)
-            print(f"  transcript: {how}, {len(segs)} lines")
-        except ImportError:
-            print("  (browser mode needs:  python -m pip install --user playwright)")
-        except Exception as e:
-            print(f"  browser method failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+        for attempt in ((False,) if show else (False, True)):
+            try:
+                segs, chapters, track, how = fetch_browser(vid, show=show, offscreen=attempt)
+                print(f"  transcript: {how}, {len(segs)} lines (exactly YouTube's transcript panel)")
+                break
+            except ImportError:
+                print("  (the transcript-panel method needs:  python -m pip install --user playwright)")
+                break
+            except Exception as e:
+                print(f"  transcript panel {'(off-screen window) ' if attempt else ''}failed: "
+                      f"{e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+        if not segs:
+            print("  falling back to the caption file")
     if not segs:
         global DIRECT_BLOCKED_UNTIL
         try:
@@ -252,14 +258,15 @@ def _text(o):
 PROFILE = ROOT / "browser-profile"     # YouSNR's own browser profile (cookies, optional YouTube sign-in)
 
 
-def _launch(p, show):
+def _launch(p, show, offscreen=False):
     """Open YouSNR's own Chrome/Edge profile, looking like a normal browser rather than an automated one.
-    Returns a browser context; close it with .close()."""
+    offscreen: a normal (non-headless) window parked off the screen. Returns a context; close with .close()."""
     PROFILE.mkdir(exist_ok=True)
-    opts = dict(headless=not show, locale="en-US", viewport={"width": 1280, "height": 900},
-                ignore_default_args=["--enable-automation"],
-                args=["--mute-audio", "--autoplay-policy=user-gesture-required",
-                      "--disable-blink-features=AutomationControlled"])
+    args = ["--mute-audio", "--autoplay-policy=user-gesture-required", "--disable-blink-features=AutomationControlled"]
+    if offscreen and not show:
+        args += ["--window-position=-32000,-32000", "--window-size=1280,900"]
+    opts = dict(headless=not (show or offscreen), locale="en-US", viewport={"width": 1280, "height": 900},
+                ignore_default_args=["--enable-automation"], args=args)
     last = None
     for channel in ("chrome", "msedge", None):        # your installed Chrome, else Edge, else Playwright's
         try:
@@ -301,7 +308,7 @@ def signin():
 # Timestamps that are NOT transcript lines: video length on thumbnails, the player clock, chapter
 # lists, timestamps in the description and comments. Ignore those everywhere.
 _STAMPS_JS = r"""
-const SKIP = '#movie_player, .html5-video-player, #related, #secondary-inner > :not(ytd-engagement-panel-section-list-renderer), ' +
+const SKIP = '#movie_player, .html5-video-player, #related, ' +
   'ytd-watch-next-secondary-results-renderer, #comments, ytd-comments, ytd-thumbnail, yt-thumbnail-view-model, ' +
   'ytd-thumbnail-overlay-time-status-renderer, ytd-macro-markers-list-renderer, ytd-macro-markers-list-item-renderer, ' +
   '[target-id*="macro-markers"], [target-id*="chapters"], #description, ytd-text-inline-expander, ' +
@@ -347,7 +354,7 @@ _OPEN_JS = r"""() => {
 }"""
 
 
-def fetch_browser(vid, show=False):
+def fetch_browser(vid, show=False, offscreen=False):
     from playwright.sync_api import sync_playwright
     replies, log = [], []
 
@@ -356,8 +363,8 @@ def fetch_browser(vid, show=False):
         print(f"    · {msg}")
 
     with sync_playwright() as p:
-        browser = ctx = _launch(p, show)
-        say(f"opened {ctx._yousnr_name}" + ("" if show else " (hidden)"))
+        browser = ctx = _launch(p, show, offscreen)
+        say(f"opened {ctx._yousnr_name}" + ("" if show else " (off-screen)" if offscreen else " (hidden)"))
         if BASE.startswith("https://www.youtube.com"):
             ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
         page = ctx.new_page()
@@ -482,8 +489,53 @@ def fetch_browser(vid, show=False):
     return segs, chapters, track, how
 
 
+def _parse_get_panel(resp):
+    """YouTube's 2026 transcript panel ("In this video" → Transcript), delivered by youtubei/v1/get_panel:
+    sections of macroMarkersPanelItemViewModel → timelineItemViewModel → transcriptSegmentViewModel,
+    each section headed by a timelineChapterViewModel."""
+    segs, chapters = [], []
+    sections = [v for k, v in _walk(resp) if k == "itemSectionRenderer" and isinstance(v, dict)]
+    for sec in sections:
+        hdr = None
+        for k, v in _walk(sec.get("header") or {}):
+            if k == "timelineChapterViewModel" and isinstance(v, dict):
+                hdr = clean(_text(v.get("title")))
+                break
+        first = True
+        for it in sec.get("contents") or []:
+            m = (it or {}).get("macroMarkersPanelItemViewModel") or {}
+            tl = (m.get("item") or {}).get("timelineItemViewModel") or {}
+            we = next((v for k, v in _walk(m.get("onTap") or {}) if k == "watchEndpoint" and isinstance(v, dict)), {})
+            for ci in tl.get("contentItems") or []:
+                t = (ci or {}).get("transcriptSegmentViewModel")
+                if not t:
+                    continue
+                text = clean(_text(t.get("simpleText")) or _text(t.get("text")) or _text(t))
+                label = t.get("timestamp") or tl.get("timestamp") or ""
+                if not text:
+                    continue
+                if "startTimeSeconds" in we:
+                    start = float(we["startTimeSeconds"])
+                elif re.fullmatch(r"(\d+:)?\d{1,2}:\d{2}", label):
+                    start = float(parse_ts(label))
+                else:
+                    continue
+                if hdr and first:
+                    chapters.append({"start": int(start), "title": hdr})
+                    first = False
+                segs.append({"start": start, "dur": None, "text": text, "label": label or ts(start)})
+    segs.sort(key=lambda x: x["start"])
+    for a, b in zip(segs, segs[1:]):
+        a["dur"] = round(b["start"] - a["start"], 3)
+    return segs, chapters
+
+
 def _parse_panel(resp):
     segs, chapters, label = [], [], ""
+    if any(k == "transcriptSegmentViewModel" for k, _ in _walk(resp)):
+        segs, chapters = _parse_get_panel(resp)
+        if segs:
+            return segs, chapters, label
     lists = [v for k, v in _walk(resp) if k == "initialSegments" and isinstance(v, list)]
     items = [next(iter(i.items())) for i in (lists[0] if lists else []) if isinstance(i, dict) and i]
     if not items:   # unknown newer layout: any object carrying startMs + text
@@ -906,7 +958,7 @@ BLOCKED = {"RequestBlocked", "IpBlocked", "TooManyRequests", "PoTokenRequired"}
 
 
 class Fetcher:
-    def __init__(self, lang="en", browser=False):
+    def __init__(self, lang="en", browser=True):
         self.lang = lang
         self.browser = browser
         self.lock = threading.Lock()
@@ -1048,7 +1100,7 @@ def stop_tunnel(proc):
             proc.kill()
 
 
-def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True, browser=False):
+def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True, browser=True):
     import http.server
     fetcher = Fetcher(lang, browser)
     local = {f"http://localhost:{port}", f"http://127.0.0.1:{port}"}
@@ -1130,9 +1182,10 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("add"); a.add_argument("videos", nargs="+"); a.add_argument("--lang", default="en")
     a.add_argument("--debug", action="store_true", help="save YouTube's replies and a screenshot to debug/")
-    a.add_argument("--browser", action="store_true", help="read YouTube's panel through a hidden browser first")
+    a.add_argument("--browser", action="store_true", help=argparse.SUPPRESS)   # now the default
+    a.add_argument("--captions", action="store_true", help="skip the transcript panel; use the caption file only (faster)")
     a.add_argument("--player", action="store_true", help="get captions through the video player, like a viewer turning on CC")
-    a.add_argument("--show", action="store_true", help="with --browser: show the browser window")
+    a.add_argument("--show", action="store_true", help="show the browser window while it works")
     p = sub.add_parser("paste"); p.add_argument("video"); p.add_argument("file", nargs="?", help="omit to read the clipboard")
     p.add_argument("--title", default=""); p.add_argument("--channel", default="")
     p.add_argument("--no-meta", action="store_true", help="don't look up title/channel online")
@@ -1144,7 +1197,7 @@ def main():
     sv.add_argument("--port", type=int, default=8787); sv.add_argument("--lang", default="en")
     sv.add_argument("--no-push", action="store_true", help="don't publish new pages to GitHub")
     sv.add_argument("--no-tunnel", action="store_true", help="don't start the Cloudflare Tunnel")
-    sv.add_argument("--browser", action="store_true", help="read YouTube's transcript panel (exact text) before falling back to captions")
+    sv.add_argument("--captions", action="store_true", help="skip the transcript panel; use the caption file only (faster)")
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
     r.add_argument("videos", nargs="+"); r.add_argument("--lang", default="en")
     r.add_argument("--player", action="store_true", help="also save what YouTube's web player loads when CC is on")
@@ -1175,7 +1228,7 @@ def main():
             vid = video_id(v)
             print(f"{vid}:")
             try:
-                get_transcript(vid, args.lang, browser=args.browser, show=args.show, player=args.player)
+                get_transcript(vid, args.lang, browser=not args.captions, show=args.show, player=args.player)
             except Exception as e:
                 failed += 1
                 print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
@@ -1223,7 +1276,7 @@ def main():
         write_indexes(index)
 
     if args.cmd == "serve":
-        serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel, browser=args.browser)
+        serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel, browser=not args.captions)
 
 
 if __name__ == "__main__":
