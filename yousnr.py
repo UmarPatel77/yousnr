@@ -8,6 +8,7 @@ YouSNR (yousnr.com) — static YouTube-style transcript pages for GitHub Pages.
   python yousnr.py build                                    rebuild every page from data/
   python yousnr.py serve [--port 8787]                      on-demand server: any video, fetched on first visit
   python yousnr.py remove <url-or-id> [more ...]            delete videos from the site
+  python yousnr.py signin                                   sign YouSNR's browser in to YouTube (optional)
 
 Data lives in data/<ID>.json; the site is generated into docs/ (GitHub Pages source).
 Run `add` from your own computer: YouTube blocks most cloud/CI IPs, including GitHub Actions.
@@ -248,15 +249,50 @@ def _text(o):
     return ""
 
 
+PROFILE = ROOT / "browser-profile"     # YouSNR's own browser profile (cookies, optional YouTube sign-in)
+
+
 def _launch(p, show):
-    args = ["--mute-audio", "--autoplay-policy=user-gesture-required"]
+    """Open YouSNR's own Chrome/Edge profile, looking like a normal browser rather than an automated one.
+    Returns a browser context; close it with .close()."""
+    PROFILE.mkdir(exist_ok=True)
+    opts = dict(headless=not show, locale="en-US", viewport={"width": 1280, "height": 900},
+                ignore_default_args=["--enable-automation"],
+                args=["--mute-audio", "--autoplay-policy=user-gesture-required",
+                      "--disable-blink-features=AutomationControlled"])
+    last = None
     for channel in ("chrome", "msedge", None):        # your installed Chrome, else Edge, else Playwright's
         try:
-            return p.chromium.launch(channel=channel, headless=not show, args=args) if channel \
-                else p.chromium.launch(headless=not show, args=args)
+            ctx = p.chromium.launch_persistent_context(str(PROFILE), channel=channel, **opts) if channel \
+                else p.chromium.launch_persistent_context(str(PROFILE), **opts)
+            ctx._yousnr_name = channel or "chromium"
+            return ctx
+        except Exception as e:
+            last = e
+            if "already in use" in str(e) or "ProcessSingleton" in str(e) or "lock" in str(e).lower():
+                raise RuntimeError("YouSNR's browser profile is already open (another YouSNR window?)") from None
+    raise RuntimeError(f"no browser found: install Chrome, or run  python -m playwright install chromium ({last})")
+
+
+def signin():
+    """Open YouSNR's browser profile so you can sign in to YouTube once; it remembers it."""
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        ctx = _launch(p, show=True)
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
+        page.goto("https://accounts.google.com/ServiceLogin?service=youtube&continue=https://www.youtube.com/")
+        print("Sign in to YouTube in the window that opened (a spare Google account is fine).")
+        print("When YouTube shows you signed in, just close that browser window.")
+        try:
+            while ctx.pages:
+                ctx.pages[0].wait_for_timeout(1000)
         except Exception:
-            continue
-    raise RuntimeError("no browser found: install Chrome, or run  python -m playwright install chromium")
+            pass
+        try:
+            ctx.close()
+        except Exception:
+            pass
+    print("Saved. YouSNR's browser will stay signed in.")
 
 
 # Find the transcript on screen without relying on YouTube's element names: collect every
@@ -306,9 +342,8 @@ def fetch_browser(vid, show=False):
         print(f"    · {msg}")
 
     with sync_playwright() as p:
-        browser = _launch(p, show)
-        say(f"opened {browser.browser_type.name} {browser.version}" + ("" if show else " (hidden)"))
-        ctx = browser.new_context(locale="en-US", viewport={"width": 1280, "height": 900})
+        browser = ctx = _launch(p, show)
+        say(f"opened {ctx._yousnr_name}" + ("" if show else " (hidden)"))
         if BASE.startswith("https://www.youtube.com"):
             ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
         page = ctx.new_page()
@@ -517,9 +552,8 @@ def fetch_player_captions(vid, show=False, save_raw=False):
         print(f"    · {msg}")
 
     with sync_playwright() as p:
-        browser = _launch(p, show)
+        browser = ctx = _launch(p, show)
         try:
-            ctx = browser.new_context(locale="en-US", viewport={"width": 1280, "height": 900})
             if BASE.startswith("https://www.youtube.com"):
                 ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
             page = ctx.new_page()
@@ -846,8 +880,9 @@ BLOCKED = {"RequestBlocked", "IpBlocked", "TooManyRequests", "PoTokenRequired"}
 
 
 class Fetcher:
-    def __init__(self, lang="en"):
+    def __init__(self, lang="en", browser=False):
         self.lang = lang
+        self.browser = browser
         self.lock = threading.Lock()
         self.last_fetch = 0.0
         self.cooldown_until = 0.0
@@ -891,7 +926,7 @@ class Fetcher:
                 time.sleep(wait)
             self.last_fetch = time.time()
             try:
-                d = get_transcript(vid, self.lang)
+                d = get_transcript(vid, self.lang, browser=self.browser)
             except Exception as e:
                 name = e.__class__.__name__
                 msg = str(e)
@@ -987,9 +1022,9 @@ def stop_tunnel(proc):
             proc.kill()
 
 
-def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True):
+def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True, browser=False):
     import http.server
-    fetcher = Fetcher(lang)
+    fetcher = Fetcher(lang, browser)
     local = {f"http://localhost:{port}", f"http://127.0.0.1:{port}"}
     write_indexes()
 
@@ -1076,12 +1111,14 @@ def main():
     p.add_argument("--title", default=""); p.add_argument("--channel", default="")
     p.add_argument("--no-meta", action="store_true", help="don't look up title/channel online")
     sub.add_parser("build")
+    sub.add_parser("signin", help="sign YouSNR's browser in to YouTube (optional, helps the panel load)")
     rm = sub.add_parser("remove", help="delete videos from the site")
     rm.add_argument("videos", nargs="+")
     sv = sub.add_parser("serve", help="on-demand server for any video (run on your own computer)")
     sv.add_argument("--port", type=int, default=8787); sv.add_argument("--lang", default="en")
     sv.add_argument("--no-push", action="store_true", help="don't publish new pages to GitHub")
     sv.add_argument("--no-tunnel", action="store_true", help="don't start the Cloudflare Tunnel")
+    sv.add_argument("--browser", action="store_true", help="read YouTube's transcript panel (exact text) before falling back to captions")
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
     r.add_argument("videos", nargs="+"); r.add_argument("--lang", default="en")
     r.add_argument("--player", action="store_true", help="also save what YouTube's web player loads when CC is on")
@@ -1144,6 +1181,9 @@ def main():
     if args.cmd == "build":
         build()
 
+    if args.cmd == "signin":
+        signin()
+
     if args.cmd == "remove":
         import shutil
         index = _load_index()
@@ -1157,7 +1197,7 @@ def main():
         write_indexes(index)
 
     if args.cmd == "serve":
-        serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel)
+        serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel, browser=args.browser)
 
 
 if __name__ == "__main__":
