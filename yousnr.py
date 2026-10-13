@@ -929,7 +929,53 @@ def publisher(fetcher, every):
             last = time.time() - every + 60       # retry in about a minute
 
 
-def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1"):
+TUNNEL_TOKEN_FILE = ROOT / "tunnel-token.txt"   # never commit this (it's in .gitignore)
+
+
+def start_tunnel():
+    """Run the Cloudflare Tunnel alongside the server, so closing the window turns both off."""
+    import shutil
+    if not TUNNEL_TOKEN_FILE.exists():
+        print("  tunnel: off (no tunnel-token.txt), so only this computer can reach the server")
+        return None
+    token = TUNNEL_TOKEN_FILE.read_text(encoding="utf-8").strip().split()[-1]   # tolerate a pasted full command
+    exe = (os.environ.get("YOUSNR_CLOUDFLARED") or shutil.which("cloudflared")
+           or next((c for c in (r"C:\Program Files (x86)\cloudflared\cloudflared.exe",
+                                r"C:\Program Files\cloudflared\cloudflared.exe") if Path(c).exists()), None))
+    if not exe:
+        print("  tunnel: cloudflared isn't installed. Run:  winget install --id Cloudflare.cloudflared")
+        return None
+    proc = subprocess.Popen([exe, "tunnel", "--no-autoupdate", "run", "--token", token],
+                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True,
+                            encoding="utf-8", errors="replace")
+
+    def watch():
+        connected = False
+        log = (ROOT / "tunnel.log").open("w", encoding="utf-8")
+        for line in proc.stderr:
+            log.write(line)
+            log.flush()
+            if "Registered tunnel connection" in line and not connected:
+                connected = True
+                print("  tunnel: connected, api.yousnr.com is live")
+            elif " ERR " in line and "Unauthorized" in line:
+                print("  tunnel: the token in tunnel-token.txt was rejected; copy it again from Cloudflare")
+        print("  tunnel: stopped (see tunnel.log)")
+    threading.Thread(target=watch, daemon=True).start()
+    print("  tunnel: connecting…")
+    return proc
+
+
+def stop_tunnel(proc):
+    if proc and proc.poll() is None:
+        proc.terminate()
+        try:
+            proc.wait(timeout=10)
+        except Exception:
+            proc.kill()
+
+
+def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True):
     import http.server
     fetcher = Fetcher(lang)
     local = {f"http://localhost:{port}", f"http://127.0.0.1:{port}"}
@@ -992,14 +1038,16 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     srv = http.server.ThreadingHTTPServer((host, port), Handler)
-    print(f"YouSNR server on http://localhost:{port}")
-    print(f"  try:  http://localhost:{port}/watch?v=265-EZJ_aJE")
-    print(f"  public via Cloudflare Tunnel: api.yousnr.com -> http://localhost:{port}")
-    print("  Ctrl+C to stop\n")
+    print(f"YouSNR is ON   (close this window to turn it off)")
+    print(f"  local:  http://localhost:{port}/watch?v=265-EZJ_aJE")
+    proc = start_tunnel() if tunnel else None
+    print()
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
         print("stopped")
+    finally:
+        stop_tunnel(proc)
 
 
 # ---------------------------------------------------------------- CLI
@@ -1020,6 +1068,7 @@ def main():
     sv = sub.add_parser("serve", help="on-demand server for any video (run on your own computer)")
     sv.add_argument("--port", type=int, default=8787); sv.add_argument("--lang", default="en")
     sv.add_argument("--no-push", action="store_true", help="don't publish new pages to GitHub")
+    sv.add_argument("--no-tunnel", action="store_true", help="don't start the Cloudflare Tunnel")
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
     r.add_argument("videos", nargs="+"); r.add_argument("--lang", default="en")
     args = ap.parse_args()
@@ -1088,7 +1137,7 @@ def main():
         write_indexes(index)
 
     if args.cmd == "serve":
-        serve(args.port, args.lang, push=not args.no_push)
+        serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel)
 
 
 if __name__ == "__main__":

@@ -34,7 +34,7 @@ Commands:
 |---|---|
 | `python yousnr.py add <video>` | add a video (`--show` to watch the browser if the backup kicks in) |
 | `python yousnr.py remove <video>` | delete a video from the site |
-| `python yousnr.py serve` | on-demand server (what `start-yousnr.bat` runs) |
+| `python yousnr.py serve` | on-demand server + tunnel (what `start-yousnr.bat` runs); close to turn off |
 | `python yousnr.py build` | rebuild all pages after editing `templates/` |
 | `python yousnr.py paste <video> [file]` | build from a transcript copied off YouTube |
 | `python yousnr.py raw <video>` | save raw caption files to `debug/raw/` for troubleshooting |
@@ -89,11 +89,14 @@ Safety limits (top of the server section in `yousnr.py`):
 
 Test locally first: run `serve`, then open http://localhost:8787/watch?v=265-EZJ_aJE.
 
-### Cloudflare Tunnel (free)
+### Cloudflare Tunnel (free), switched on and off with the server
 1. Cloudflare dashboard → **Zero Trust** → **Networks → Tunnels** → **Create a tunnel** → Cloudflared → name it `yousnr`.
-2. Pick **Windows**. Install cloudflared (`winget install --id Cloudflare.cloudflared`), then run the `cloudflared.exe service install <token>` command it shows, in a Command Prompt opened **as administrator**. It runs as a Windows service and starts with the computer.
-3. **Public hostname:** subdomain `api`, domain `yousnr.com`, type `HTTP`, URL `localhost:8787` → Save.
-4. Check https://api.yousnr.com/api/health. It should say `"ok": true`.
+2. Install cloudflared: `winget install --id Cloudflare.cloudflared`
+3. The dashboard shows an install command like `cloudflared.exe service install eyJhIjoi…`. **Don't run it.** Copy the long token (the part starting `eyJ`) into a new file called `tunnel-token.txt` in this folder. Pasting the whole command also works. Keep this file private: it's in `.gitignore`, so it never gets pushed.
+4. **Public hostname** (newer dashboards call it *Published application routes*): subdomain `api`, domain `yousnr.com`, type `HTTP`, URL `localhost:8787` → Save.
+5. Double-click `start-yousnr.bat`. The window shows `tunnel: connected, api.yousnr.com is live`. Check https://api.yousnr.com/api/health.
+
+**On/off:** double-click `start-yousnr.bat` to turn it on, and close its window to turn it off (server and tunnel together). While it's off, everything already on yousnr.com still works; new videos show "the transcript server is offline". `python yousnr.py serve --no-tunnel` runs the server for this computer only.
 
 ### When YouTube rate-limits you
 YouTube sometimes refuses plain caption downloads from a home connection ("429 Too Many Requests"), sometimes for hours. When that happens, the script opens the video in a hidden Chrome or Edge, turns CC on, and keeps the caption file the player loads. Real browsers keep getting captions during these blocks. Needs `python -m pip install --user playwright`. After one refusal it uses the player for the next hour without retrying the direct download.
