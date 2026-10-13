@@ -441,5 +441,71 @@
   "source": "captions-grouped"
  },
  "source": "youtube",
- "added": "2026-10-13T06:46:23+00:00"
+ "added": "2026-10-13T06:46:23+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T19:34:59",
+  "lines": {
+   "33": [
+    [
+     "might be with the sort of information,",
+     null
+    ],
+    [
+     "quote-unquote",
+     "quote unquote"
+    ],
+    [
+     "information, that I kept in these things. So, Notion",
+     null
+    ]
+   ]
+  },
+  "fixes": 1,
+  "checked_seconds": 56.3,
+  "usd": 0.0082,
+  "version": 2,
+  "flagged": [
+   [
+    "2:22",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:37",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:53",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:56",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
