@@ -298,18 +298,34 @@ def signin():
 # Find the transcript on screen without relying on YouTube's element names: collect every
 # element whose own text is a timestamp, find the smallest container holding most of them
 # (that's the transcript list, not the ~20 chapter stamps in the description), read it.
-_DOM_JS = r"""() => {
-  const re = /^(\d+:)?\d{1,2}:\d{2}$/;
-  const stamps = [];
+# Timestamps that are NOT transcript lines: video length on thumbnails, the player clock, chapter
+# lists, timestamps in the description and comments. Ignore those everywhere.
+_STAMPS_JS = r"""
+const SKIP = '#movie_player, .html5-video-player, #related, #secondary-inner > :not(ytd-engagement-panel-section-list-renderer), ' +
+  'ytd-watch-next-secondary-results-renderer, #comments, ytd-comments, ytd-thumbnail, yt-thumbnail-view-model, ' +
+  'ytd-thumbnail-overlay-time-status-renderer, ytd-macro-markers-list-renderer, ytd-macro-markers-list-item-renderer, ' +
+  '[target-id*="macro-markers"], [target-id*="chapters"], #description, ytd-text-inline-expander, ' +
+  'ytd-structured-description-content-renderer, ytd-watch-metadata';
+function transcriptStamps() {
+  const re = /^(\d+:)?\d{1,2}:\d{2}$/, out = [];
   const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   for (let n; (n = walk.nextNode());) {
     const el = n.parentElement;
-    if (el && re.test(n.nodeValue.trim()) && el.getClientRects().length) stamps.push(el);
+    if (el && re.test(n.nodeValue.trim()) && el.getClientRects().length && !el.closest(SKIP)) out.push(el);
   }
-  if (stamps.length < 5) return {count: stamps.length, text: ''};
+  const inPanel = out.filter(e => e.closest('ytd-engagement-panel-section-list-renderer'));
+  return inPanel.length >= 3 ? inPanel : out;
+}
+"""
+
+# Find the transcript on screen without relying on YouTube's element names: the smallest container
+# holding most of the remaining timestamps is the transcript list. Read it.
+_DOM_JS = "() => {" + _STAMPS_JS + r"""
+  const stamps = transcriptStamps();
+  if (stamps.length < 3) return {count: stamps.length, text: ''};
   const counts = new Map();
   for (const st of stamps) for (let e = st; e && e !== document.body; e = e.parentElement) counts.set(e, (counts.get(e) || 0) + 1);
-  const need = Math.max(5, Math.floor(stamps.length * 0.7));
+  const need = Math.max(3, Math.floor(stamps.length * 0.7));
   let best = null, bestDepth = -1;
   for (const [e, c] of counts) {
     if (c < need) continue;
@@ -319,12 +335,10 @@ _DOM_JS = r"""() => {
   return {count: stamps.length, text: best ? best.innerText : ''};
 }"""
 
-_COUNT_JS = r"""() => {
-  const re = /^(\d+:)?\d{1,2}:\d{2}$/; let c = 0;
-  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  for (let n; (n = walk.nextNode());) if (re.test(n.nodeValue.trim()) && n.parentElement && n.parentElement.getClientRects().length) c++;
-  return c;
-}"""
+_COUNT_JS = "() => {" + _STAMPS_JS + " return transcriptStamps().length; }"
+
+_DURATION_JS = r"""() => { try { const r = window.ytInitialPlayerResponse || document.getElementById('movie_player').getPlayerResponse();
+  return +r.videoDetails.lengthSeconds || 0; } catch (e) { const v = document.querySelector('video'); return v && isFinite(v.duration) ? v.duration : 0; } }"""
 
 _OPEN_JS = r"""() => {
   const p = document.querySelector('ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-searchable-transcript"]');
@@ -374,7 +388,7 @@ def fetch_browser(vid, show=False):
             except Exception:
                 return -1
 
-        best, dom, base_stamps = ([], [], ""), None, 0
+        best, dom, base_stamps, duration = ([], [], ""), None, 0, 0
         try:
             page.goto(f"{BASE}/watch?v={vid}&hl=en", wait_until="domcontentloaded", timeout=60000)
             try:
@@ -384,6 +398,10 @@ def fetch_browser(vid, show=False):
                 say("video page loaded, but no description box found")
             page.evaluate("() => { const v = document.querySelector('video'); if (v) v.pause(); }")
             base_stamps = max(count(), 0)
+            try:
+                duration = page.evaluate(_DURATION_JS) or 0
+            except Exception:
+                duration = 0
 
             def opened():
                 if any(_parse_panel(body)[0] for _, body in replies):
@@ -409,6 +427,10 @@ def fetch_browser(vid, show=False):
                     say(f"clicked {name}")
                 except Exception:
                     say(f"no {name} to click")
+                if name.startswith('"...more"'):             # the description itself has timestamps:
+                    page.wait_for_timeout(800)                # don't mistake those for the transcript
+                    base_stamps = max(count(), base_stamps)
+                    continue
                 for _ in range(12):
                     if closed or opened():
                         break
@@ -447,6 +469,10 @@ def fetch_browser(vid, show=False):
     if not segs and dom:
         how = "browser (read from the panel on screen)"
         segs, chapters = parse_pasted(dom.get("text", ""))
+        last = segs[-1]["start"] if segs else 0
+        if segs and (len(chapters) > max(3, len(segs) // 2) or (duration > 120 and last < duration * 0.5)):
+            raise RuntimeError(f"what's on screen doesn't look like the transcript ({len(segs)} lines up to "
+                               f"{ts(last)} of {ts(duration)}, {len(chapters)} headings)")
         for s in segs:
             s["label"] = ts(s["start"])
     if not segs:
