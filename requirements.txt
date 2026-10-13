@@ -1,4 +1,6 @@
 youtube-transcript-api
-yt-dlp
+yt-dlp[default]
 playwright
 requests
+imageio-ffmpeg
+wordfreq

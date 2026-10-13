@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
-@media (prefers-color-scheme:dark){:root{--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
 a{color:inherit;text-decoration:none}
@@ -56,6 +56,10 @@ a{color:inherit;text-decoration:none}
 .chap .ct{font-weight:500}
 .chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
 mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
 .flash{background:var(--hit)!important}
 .hidden{display:none!important}
 .foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
@@ -82,6 +86,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
         <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
         <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
         <span class="tools">
+          <button class="tool hidden" id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
           <button class="tool" id="tog">Hide timestamps</button>
           <button class="tool" id="copy">Copy</button>
           <button class="tool" id="txt">.txt</button>
@@ -528,7 +533,23 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
   var segs=[].slice.call(body.querySelectorAll('.seg'));
-  segs.forEach(function(a){a._t=a.querySelector('.tx').textContent});
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/265-EZJ_aJE')}catch(e){}
   document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
 
   // tabs
@@ -553,7 +574,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
     segs.forEach(function(a){
       var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
-      if(!v){tx.textContent=t;a.classList.remove('hidden');return}
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
       if(i<0){a.classList.add('hidden');return}
       n++;a.classList.remove('hidden');
       var out='',last=0,lt=t.toLowerCase();

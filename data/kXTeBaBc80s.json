@@ -894,5 +894,501 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-13T05:16:43+00:00"
+ "added": "2026-10-13T05:16:43+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T13:50:45",
+  "lines": {
+   "0": [
+    [
+     "Um, hi everyone. I uh I'm making this video. This is",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "be a sad video. I'm probably going to",
+     null
+    ]
+   ],
+   "3": [
+    [
+     "anyone that",
+     null
+    ],
+    [
+     "knew",
+     "know"
+    ],
+    [
+     "Lauren or knows my family. But yeah, my uh my younger sister Lauren, she passed away about",
+     null
+    ]
+   ],
+   "4": [
+    [
+     "like",
+     null
+    ],
+    [
+     "",
+     "u"
+    ],
+    [
+     "like a month ago now. And I just want to tell",
+     null
+    ],
+    [
+     "you all",
+     "y'all"
+    ],
+    [
+     "about it and where I'm at. I know. I don't know why.",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "feeling good mentally. So, I just remember like lingering like,",
+     null
+    ],
+    [
+     "\"Lauren,",
+     "\"Len,"
+    ],
+    [
+     "can I talk to you before you go?\" And then I went in",
+     null
+    ],
+    [
+     "her",
+     "a"
+    ],
+    [
+     "room and I just sat with her and asked her about what she's doing.",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "And my younger sister",
+     null
+    ],
+    [
+     "Erin's",
+     "Aaron's"
+    ],
+    [
+     "at college. She's 21 and she uh called my mom to wake her up, which is why my mom was up. We didn't know anything. Me, my",
+     null
+    ]
+   ],
+   "47": [
+    [
+     "I'm so proud of her. She got a job and started making money and I'm so proud of her and she was just working through all the troubles in her life and just she she did it with",
+     null
+    ],
+    [
+     "a",
+     "this"
+    ],
+    [
+     "smile on her face.",
+     null
+    ]
+   ],
+   "51": [
+    [
+     "family were really close. Lauren and I like we would just hang out every night together. We would eat ice cream together and get food and",
+     null
+    ],
+    [
+     "we'd",
+     "we would"
+    ],
+    [
+     "grocery shop. We did a lot together.",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "Erin,",
+     "Aaron,"
+    ],
+    [
+     "my youngest sister, her and Lauren were really close. So, it's really hard for",
+     null
+    ],
+    [
+     "Erin,",
+     "Aaron,"
+    ],
+    [
+     "too. It's hard for my mom, dad, my older brother, Michael. He's 28. It's just really hard",
+     null
+    ]
+   ],
+   "53": [
+    [
+     "for my family right now, just because",
+     null
+    ],
+    [
+     "we",
+     ""
+    ],
+    [
+     "we're all so close. Lauren was so influential. She was such a leader. The",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "me, we all went to church.",
+     null
+    ],
+    [
+     "Homily,",
+     "Halmly,"
+    ],
+    [
+     "I was just begging the Lord to have mercy for Lauren. And the second reading was just all about mercy. And I cried in church.",
+     null
+    ]
+   ],
+   "78": [
+    [
+     "she loved music. Every time her Spotify",
+     null
+    ],
+    [
+     "wrapped",
+     "rap"
+    ],
+    [
+     "had like the most hours of anybody.",
+     null
+    ]
+   ],
+   "83": [
+    [
+     "with where what like where I'm",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "go with my life and she was always making sure I'm okay. And she sent parag saying how much she cared about me and apologizing for some little stupid",
+     null
+    ]
+   ],
+   "84": [
+    [
+     "argument we got in and she told me she loved me. We didn't say",
+     null
+    ],
+    [
+     "I",
+     ""
+    ],
+    [
+     "love you that much to each other. I don't know why. We just we we're just like really close",
+     null
+    ]
+   ],
+   "109": [
+    [
+     "I'm like,",
+     null
+    ],
+    [
+     "\"Lauren,",
+     "\"Loren,"
+    ],
+    [
+     "why are you taking so long to get ready for bed? Like, let's just let's just sing it.\" And she got annoyed with me for being impatient. But then we sat on her bed and I played",
+     null
+    ]
+   ],
+   "116": [
+    [
+     "lot. Mike did.",
+     null
+    ],
+    [
+     "Lauren was",
+     "born as"
+    ],
+    [
+     "a leader in our family. She was family to so many. She was friends of so many. And she was such a beautiful, beautiful soul. I pray to",
+     null
+    ]
+   ],
+   "136": [
+    [
+     "Hey, Lauren. You just graduate. Wait, hold on. Let's do it this way. You just graduated. How",
+     null
+    ],
+    [
+     "do",
+     ""
+    ],
+    [
+     "you how do you feel? Feel",
+     null
+    ],
+    [
+     "fucking",
+     ""
+    ],
+    [
+     "amazing.",
+     null
+    ]
+   ],
+   "137": [
+    [
+     "Yeah. Show that",
+     null
+    ],
+    [
+     "shit",
+     ""
+    ],
+    [
+     "Show that Jo. Jo. Mom, any words to Lauren? So proud.",
+     null
+    ]
+   ]
+  },
+  "fixes": 21,
+  "checked_seconds": 318.0,
+  "usd": 0.0461,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:25",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:34",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:52",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:48",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:30",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:50",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:20",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "7:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:35",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "8:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "10:14",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:27",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:48",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "10:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "13:07",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "13:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "13:39",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "14:08",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "14:17",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "15:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "18:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "18:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }

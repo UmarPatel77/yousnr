@@ -9,12 +9,19 @@ YouSNR (yousnr.com) — static YouTube-style transcript pages for GitHub Pages.
   python yousnr.py serve [--port 8787]                      on-demand server: any video, fetched on first visit
   python yousnr.py remove <url-or-id> [more ...]            delete videos from the site
   python yousnr.py signin                                   sign YouSNR's browser in to YouTube (optional)
+  python yousnr.py correct <video> [--full]                 fix likely mistakes with speech recognition
+  python yousnr.py usage | bakeoff <video>                  spending this month | compare the engines
 
 Data lives in data/<ID>.json; the site is generated into docs/ (GitHub Pages source).
 Run `add` from your own computer: YouTube blocks most cloud/CI IPs, including GitHub Actions.
 """
 import argparse, datetime, html, json, os, re, subprocess, sys, threading, time, urllib.parse, urllib.request
 from pathlib import Path
+
+try:
+    import correct as acc                      # accuracy layer (correct.py next to this file)
+except Exception:                              # pragma: no cover
+    acc = None
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -215,7 +222,7 @@ def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow
                 raise RuntimeError("429 Too Many Requests (direct and player both refused)") if name == "DirectDownloadPaused" else e
             print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
     d = meta
-    d.pop("description", None)
+    d["description"] = (d.get("description") or "")[:5000]
     if chapters:
         d["chapters"] = chapters
     d.update(segments=segs, track=track, source="youtube")
@@ -891,8 +898,24 @@ def render_page(d):
     e = html.escape
     vid = d["id"]
     chapters = sorted(d.get("chapters") or [], key=lambda c: c["start"])
+    fixed = (d.get("corrected") or {}).get("lines") or {}
+    nfix = sum(1 for pieces in fixed.values() for _, o in pieces if o is not None)
+
+    def text_html(i, s):
+        pieces = fixed.get(str(i))
+        if not pieces:
+            return e(s["text"])
+        out = []
+        for shown, orig in pieces:
+            if orig is None:
+                out.append(e(shown))
+            else:
+                tip = f'YouTube: {orig}' if orig else "YouTube's transcript leaves this out"
+                out.append(f'<span class="fix" data-o="{e(orig)}" title="{e(tip)}">{e(shown)}</span>')
+        return " ".join(out)
+
     rows, ci = [], 0
-    for s in d["segments"]:
+    for i, s in enumerate(d["segments"]):
         while ci < len(chapters) and chapters[ci]["start"] <= s["start"]:
             rows.append(f'<h2 class="ch" id="ch{ci}">{e(chapters[ci]["title"])}</h2>')
             ci += 1
@@ -900,7 +923,7 @@ def render_page(d):
         rows.append(
             f'<a class="seg" href="https://www.youtube.com/watch?v={vid}&amp;t={t}s" target="_blank" rel="noopener" '
             f'data-s="{s["start"]}" data-d="{s.get("dur") or ""}">'
-            f'<span class="ts">{e(s.get("label") or ts(s["start"]))}</span><span class="tx">{e(s["text"])}</span></a>')
+            f'<span class="ts">{e(s.get("label") or ts(s["start"]))}</span><span class="tx">{text_html(i, s)}</span></a>')
     toc = "".join(
         f'<a class="chap" href="#ch{i}" data-ch="{i}"><span class="ct">{e(c["title"])}</span>'
         f'<span class="ts">{ts(c["start"])}</span></a>' for i, c in enumerate(chapters))
@@ -927,7 +950,27 @@ def render_page(d):
                .replace("{{TRACK}}", e(track))
                .replace("{{TOC}}", toc)
                .replace("{{TOC_CLASS}}", "" if chapters else "hidden")
+               .replace("{{FIXNOTE}}", (f'<span class="fixnote"> · {nfix} word{"s" if nfix != 1 else ""} corrected</span>'
+                                         if nfix else ""))
+               .replace("{{FIXCLASS}}", "" if nfix else "hidden")
                .replace("{{ROWS}}", "\n".join(rows)))
+
+
+def run_correction(vid, mode="selective", engines=None, log=print):
+    """Correct one saved video and republish its page. Returns the summary, or None if not possible."""
+    if acc is None or not acc.available():
+        return None
+    f = DATA / f"{vid}.json"
+    if not f.exists():
+        raise RuntimeError(f"{vid} isn't on the site yet")
+    d = json.loads(f.read_text(encoding="utf-8"))
+    r = acc.correct(d, mode=mode, engines=engines, meta=d, log=log)
+    save(d)
+    write_page(d)
+    log(f"  corrections ({mode}): {r['fixes']} word change(s); checked {r['checked_seconds']:.0f}s of audio "
+        f"with {', '.join(r['engines']) or 'no engine'}; cost ${r['usd']:.3f} "
+        f"(this month ${acc.spent_this_month():.2f} of ${acc.settings()['budget']:.2f})")
+    return r
 
 
 INDEX = DATA / "_index.json"
@@ -1020,6 +1063,60 @@ UNAVAILABLE = {"VideoUnavailable", "VideoUnplayable", "AgeRestricted", "InvalidV
 BLOCKED = {"RequestBlocked", "IpBlocked", "TooManyRequests", "PoTokenRequired"}
 
 
+class Corrector:
+    """Background worker: selective check for every new video, full re-transcription once it's popular."""
+    VIEWS = DATA / "_views.json"
+
+    def __init__(self, fetcher):
+        self.fetcher = fetcher
+        self.jobs, self.queued = [], set()
+        self.cv = threading.Condition()
+        try:
+            self.views = json.loads(self.VIEWS.read_text(encoding="utf-8"))
+        except Exception:
+            self.views = {}
+        self.enabled = acc is not None and bool(acc.available())
+        if self.enabled:
+            threading.Thread(target=self.loop, daemon=True).start()
+
+    def enqueue(self, vid, mode):
+        if not self.enabled or (vid, mode) in self.queued:
+            return
+        with self.cv:
+            self.queued.add((vid, mode))
+            self.jobs.append((vid, mode))
+            self.cv.notify()
+
+    def viewed(self, vid):
+        f = DATA / f"{vid}.json"
+        if not f.exists():
+            return
+        n = self.views[vid] = self.views.get(vid, 0) + 1
+        self.VIEWS.write_text(json.dumps(self.views), encoding="utf-8")
+        if self.enabled and n >= acc.settings()["full_at"]:
+            try:
+                mode = (json.loads(f.read_text(encoding="utf-8")).get("corrected") or {}).get("mode")
+            except Exception:
+                mode = None
+            if mode != "full":
+                self.enqueue(vid, "full")
+
+    def loop(self):
+        while True:
+            with self.cv:
+                while not self.jobs:
+                    self.cv.wait()
+                vid, mode = self.jobs.pop(0)
+            try:
+                print(f"{time.strftime('%H:%M:%S')}  {vid}  checking words ({mode})")
+                if run_correction(vid, mode, log=lambda m: print(m)):
+                    self.fetcher.pending.append(vid)
+            except Exception as e:
+                print(f"  correction skipped: {e.__class__.__name__}: {str(e)[:200]}")
+            finally:
+                self.queued.discard((vid, mode))
+
+
 class Fetcher:
     def __init__(self, lang="en", browser=True):
         self.lang = lang
@@ -1084,6 +1181,8 @@ class Fetcher:
                 print(f"  failed: {name}: {msg.splitlines()[0] if msg else ''}")
                 return 502, "application/json", json.dumps({"error": "failed"})
             self.pending.append(vid)
+            if getattr(self, "corrector", None):
+                self.corrector.enqueue(vid, "selective")
             return 200, "text/html; charset=utf-8", render_page(d)
         finally:
             self.lock.release()
@@ -1219,16 +1318,30 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
                 return self._send(404, "application/json", json.dumps({"error": "not_found"}))
             return super().do_GET()        # local preview of the site, like GitHub Pages
 
+        def do_POST(self):
+            m = re.fullmatch(r"/api/view/([A-Za-z0-9_-]{11})", urllib.parse.urlparse(self.path).path)
+            if m:
+                corrector.viewed(m.group(1))
+                return self._send(204, "text/plain", "")
+            return self._send(404, "application/json", json.dumps({"error": "not_found"}))
+
         def send_error(self, code, message=None, explain=None):
             if code == 404:
                 return self._send(404, "text/html; charset=utf-8", (DOCS / "404.html").read_text(encoding="utf-8"))
             return super().send_error(code, message, explain)
 
+    corrector = fetcher.corrector = Corrector(fetcher)
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     srv = http.server.ThreadingHTTPServer((host, port), Handler)
     print(f"YouSNR is ON   (close this window to turn it off)")
     print(f"  local:  http://localhost:{port}/watch?v=265-EZJ_aJE")
+    if corrector.enabled:
+        st = acc.settings()
+        print(f"  corrections: on ({', '.join(acc.available())}); budget ${acc.spent_this_month():.2f} of "
+              f"${st['budget']:.2f} used this month; full re-transcription at {st['full_at']} views")
+    else:
+        print("  corrections: off (set ELEVENLABS_API_KEY / ASSEMBLYAI_API_KEY to turn on)")
     proc = start_tunnel() if tunnel else None
     print()
     try:
@@ -1250,12 +1363,20 @@ def main():
     a.add_argument("--captions", action="store_true", help="skip the transcript panel; use the caption file only (faster)")
     a.add_argument("--player", action="store_true", help="get captions through the video player, like a viewer turning on CC")
     a.add_argument("--allow-music", action="store_true", help="add it even if YouTube marks it as music")
+    a.add_argument("--no-correct", action="store_true", help="skip the speech-recognition check")
     a.add_argument("--show", action="store_true", help="show the browser window while it works")
     p = sub.add_parser("paste"); p.add_argument("video"); p.add_argument("file", nargs="?", help="omit to read the clipboard")
     p.add_argument("--title", default=""); p.add_argument("--channel", default="")
     p.add_argument("--no-meta", action="store_true", help="don't look up title/channel online")
     sub.add_parser("build")
     sub.add_parser("signin", help="sign YouSNR's browser in to YouTube (optional, helps the panel load)")
+    co = sub.add_parser("correct", help="fix likely mistakes in YouTube's words (selective, or --full)")
+    co.add_argument("videos", nargs="+"); co.add_argument("--full", action="store_true")
+    co.add_argument("--engines", default="", help="e.g. elevenlabs,assemblyai (default: every engine with a key)")
+    sub.add_parser("usage", help="speech-recognition spending this month")
+    bo = sub.add_parser("bakeoff", help="compare the engines with YouTube on a few minutes of a video")
+    bo.add_argument("video"); bo.add_argument("--minutes", type=float, default=5)
+    bo.add_argument("--start", default="", help="where to start, e.g. 10:00 (default: middle of the video)")
     rm = sub.add_parser("remove", help="delete videos from the site")
     rm.add_argument("videos", nargs="+")
     sv = sub.add_parser("serve", help="on-demand server for any video (run on your own computer)")
@@ -1298,6 +1419,12 @@ def main():
             except Exception as e:
                 failed += 1
                 print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+                continue
+            if not args.no_correct and acc is not None and acc.available():
+                try:
+                    run_correction(vid)
+                except Exception as e:
+                    print(f"  correction skipped: {e.__class__.__name__}: {str(e)[:200]}")
         print(f"Site updated ({len(_load_index())} videos)")
         sys.exit(1 if failed else 0)
 
@@ -1328,6 +1455,47 @@ def main():
 
     if args.cmd == "signin":
         signin()
+
+    if args.cmd == "correct":
+        if acc is None or not acc.available():
+            sys.exit("Set ELEVENLABS_API_KEY and/or ASSEMBLYAI_API_KEY first (see README), then open a new window.")
+        engines = [e.strip() for e in args.engines.split(",") if e.strip()] or None
+        for v in args.videos:
+            vid = video_id(v)
+            print(f"{vid}:")
+            try:
+                run_correction(vid, "full" if args.full else "selective", engines)
+            except Exception as e:
+                print(f"  failed: {e.__class__.__name__}: {str(e)[:300]}")
+        write_indexes()
+
+    if args.cmd == "usage":
+        if acc is None:
+            sys.exit("correct.py is missing")
+        u = acc._load_usage()
+        st = acc.settings()
+        m = u.get(acc._month(), {})
+        print(f"This month: ${m.get('usd', 0):.3f} of ${st['budget']:.2f} budget")
+        for eng, sec in (m.get("seconds") or {}).items():
+            print(f"  {eng}: {sec / 60:.1f} minutes of audio")
+        for row in (m.get("log") or [])[-15:]:
+            print("  " + "  ".join(str(x) for x in row))
+        print(f"Engines with keys: {', '.join(acc.available()) or 'none'}; primary: {st['primary']}; "
+              f"full re-transcription at {st['full_at']} views")
+
+    if args.cmd == "bakeoff":
+        vid = video_id(args.video)
+        f = DATA / f"{vid}.json"
+        if not f.exists():
+            sys.exit(f"Add the video first:  python yousnr.py add {vid}")
+        d = json.loads(f.read_text(encoding="utf-8"))
+        rep = acc.bakeoff(d, minutes=args.minutes, start=parse_ts(args.start) if args.start else None)
+        print(f"{vid}: {ts(rep['from'])}–{ts(rep['to'])}, each engine compared with YouTube's transcript")
+        for eng, r in rep["engines"].items():
+            print(f"\n  {eng}: {r['differences']} differences in {r['words']} words")
+            for lab, yt, heard in r["examples"]:
+                print(f"    {lab:>7}  YouTube: {yt!r:<28} {eng}: {heard!r}")
+        print(f"\nListen at those timestamps on YouTube to judge which engine is right more often.")
 
     if args.cmd == "remove":
         import shutil

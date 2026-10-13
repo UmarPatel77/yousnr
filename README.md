@@ -33,6 +33,8 @@ Commands:
 | Command | What it does |
 |---|---|
 | `python yousnr.py add <video>` | add a video, exactly as YouTube's transcript panel shows it (`--show` to watch, `--captions` for the faster caption-file version) |
+| `python yousnr.py correct <video> [--full]` | fix likely mistakes with speech recognition (runs automatically for new videos) |
+| `python yousnr.py usage` / `bakeoff <video>` | spending this month / compare the engines on your videos |
 | `python yousnr.py remove <video>` | delete a video from the site |
 | `python yousnr.py serve` | on-demand server + tunnel (what `start-yousnr.bat` runs); close to turn off |
 | `python yousnr.py build` | rebuild all pages after editing `templates/` |
@@ -102,6 +104,22 @@ Test locally first: run `serve`, then open http://localhost:8787/watch?v=265-EZJ
 YouTube sometimes refuses plain caption downloads from a home connection ("429 Too Many Requests"), sometimes for hours. When that happens, the script opens the video in a hidden Chrome or Edge, turns CC on, and keeps the caption file the player loads. Real browsers keep getting captions during these blocks. Needs `python -m pip install --user playwright`. After one refusal it uses the player for the next hour without retrying the direct download.
 
 `python yousnr.py remove <id>` deletes a video from the site, for example one saved from a bad paste.
+
+### Corrections (speech recognition on top of YouTube's text)
+YouTube's transcript is the starting point; YouSNR then fixes words it most likely got wrong, keeping YouTube's lines, timestamps and chapters. Corrected words have a faint highlight (hover to see YouTube's word), and the **YouTube's original** switch shows YouTube's exact text.
+
+- **Every new video (selective, a few cents):** lines where YouTube's two recognizers disagree (transcript panel vs. caption file), plus risky words (unusual acronyms, rare words, names not in the title/description), are cut from the audio and sent to **ElevenLabs Scribe v2** and **AssemblyAI Universal-3.5 Pro**, with key terms taken from the title, description and chapters. A word changes only when at least two sources agree on the change and they outweigh the sources that back YouTube. One engine's slip is never enough.
+- **Popular videos (full):** after `YOUSNR_FULL_AT_VIEWS` views (default 20), the whole audio goes to both engines and the same vote runs over every word.
+- **Budget:** `YOUSNR_MONTHLY_BUDGET` (USD, default 5). Work that would go over it is skipped. `python yousnr.py usage` shows spending.
+
+Setup (once): put the keys in your Windows account, never in this folder, then open a new window:
+```
+setx ELEVENLABS_API_KEY "..."
+setx ASSEMBLYAI_API_KEY "..."
+winget install DenoLand.Deno            # helps yt-dlp download YouTube audio
+python -m pip install --user -U -r requirements.txt
+```
+Commands: `python yousnr.py correct <video> [--full]`, `python yousnr.py bakeoff <video> [--minutes 5]` (compares the engines with YouTube on a stretch of a video), `python yousnr.py usage`. `add --no-correct` skips corrections. Optional settings: `setx YOUSNR_MONTHLY_BUDGET 10`, `setx YOUSNR_FULL_AT_VIEWS 50`, `setx YOUSNR_PRIMARY assemblyai`.
 
 ### No music videos
 Videos YouTube flags as music (official music videos and songs), videos in the "Music" category, and auto-generated "- Topic" artist channels are skipped before anything is fetched. Visitors see "Music videos aren't on YouSNR", and the server remembers that for 30 days. `add --allow-music` overrides it for one video.

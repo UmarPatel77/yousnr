@@ -7,3 +7,6 @@ tunnel-token.txt
 tunnel.log
 browser-profile/
 *.zip
+cache/
+data/_usage.json
+data/_views.json
