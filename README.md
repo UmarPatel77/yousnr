@@ -103,6 +103,9 @@ YouTube sometimes refuses plain caption downloads from a home connection ("429 T
 
 `python yousnr.py remove <id>` deletes a video from the site, for example one saved from a bad paste.
 
+### No music videos
+Videos YouTube flags as music (official music videos and songs), videos in the "Music" category, and auto-generated "- Topic" artist channels are skipped before anything is fetched. Visitors see "Music videos aren't on YouSNR", and the server remembers that for 30 days. `add --allow-music` overrides it for one video.
+
 ### Where the text comes from
 By default YouSNR reads **YouTube's own transcript panel** ("Show transcript" → *In this video* → Transcript). It opens the video in a hidden Chrome window (YouSNR's own profile, see `signin`), clicks *Show transcript*, and keeps YouTube's reply (`youtubei/v1/get_panel`): the same lines, timestamps and chapter headings you see on YouTube. If a hidden window doesn't work, it retries once with a normal window parked off-screen.
 

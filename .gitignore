@@ -6,3 +6,4 @@ data/_missing.json
 tunnel-token.txt
 tunnel.log
 browser-profile/
+*.zip

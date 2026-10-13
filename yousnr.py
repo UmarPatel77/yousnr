@@ -106,7 +106,8 @@ def fetch_metadata(vid):
             mf = (pr.get("microformat") or {}).get("playerMicroformatRenderer") or {}
             meta.update(title=vd["title"], channel=vd.get("author", ""),
                         published=(mf.get("publishDate") or mf.get("uploadDate") or "")[:10].replace("-", ""),
-                        description=vd.get("shortDescription", ""), duration=int(vd.get("lengthSeconds") or 0))
+                        description=vd.get("shortDescription", ""), duration=int(vd.get("lengthSeconds") or 0),
+                        category=mf.get("category", ""), music_type=vd.get("musicVideoType", ""))
             meta["chapters"] = chapters_from_description(meta["description"])
             return meta
     except Exception:
@@ -123,6 +124,8 @@ def fetch_metadata(vid):
             description=info.get("description") or "",
             duration=info.get("duration"),
             chapters=[{"start": int(c["start_time"]), "title": c["title"]} for c in info.get("chapters") or []],
+            category=(info.get("categories") or [""])[0],
+            music_type="MUSIC_VIDEO_TYPE" if info.get("track") and info.get("artist") else "",
         )
     except Exception as e:  # last resort: oEmbed gives title + channel
         print(f"  metadata via yt-dlp failed ({e.__class__.__name__}); trying oEmbed", file=sys.stderr)
@@ -146,11 +149,30 @@ class DirectDownloadPaused(Exception):
     pass
 
 
-def get_transcript(vid, lang="en", browser=True, show=False, player=False):
+class MusicVideo(Exception):
+    pass
+
+
+def is_music(meta):
+    """YouTube's own music flag (official music videos, songs/'Art Tracks'), or the uploader's 'Music' category."""
+    return bool(meta.get("music_type")) or (meta.get("category") or "").lower() == "music" \
+        or (meta.get("channel") or "").endswith(" - Topic")
+
+
+def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow_music=False):
     """Fetch one video end to end and save it. Returns the saved record."""
+    meta = fetch_metadata(vid)
+    if not allow_music and is_music(meta):
+        if meta.get("music_type"):
+            why = f"YouTube flags it as {meta['music_type']}"
+        elif (meta.get("category") or "").lower() == "music":
+            why = "category: Music"
+        else:
+            why = "a '- Topic' music channel"
+        raise MusicVideo(f"music video, skipped ({why})")
     chapters, segs, track = [], None, None
     if browser:
-        for attempt in ((False,) if show else (False, True)):
+        for attempt in ((False,) if show else (True, False)):
             try:
                 segs, chapters, track, how = fetch_browser(vid, show=show, offscreen=attempt)
                 print(f"  transcript: {how}, {len(segs)} lines (exactly YouTube's transcript panel)")
@@ -192,7 +214,7 @@ def get_transcript(vid, lang="en", browser=True, show=False, player=False):
                 print(f"  player method failed too: {e2.__class__.__name__}: {str(e2).splitlines()[0] if str(e2) else ''}")
                 raise RuntimeError("429 Too Many Requests (direct and player both refused)") if name == "DirectDownloadPaused" else e
             print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
-    d = fetch_metadata(vid)
+    d = meta
     d.pop("description", None)
     if chapters:
         d["chapters"] = chapters
@@ -258,38 +280,75 @@ def _text(o):
 PROFILE = ROOT / "browser-profile"     # YouSNR's own browser profile (cookies, optional YouTube sign-in)
 
 
+class _Session:
+    """A browser window for one job: .ctx is the context, .close() shuts everything down."""
+    def __init__(self, ctx, browser, name):
+        self.ctx, self.browser, self.name = ctx, browser, name
+
+    def close(self):
+        for x in (self.ctx, self.browser):
+            try:
+                if x is not None:
+                    x.close()
+            except Exception:
+                pass
+
+
 def _launch(p, show, offscreen=False):
-    """Open YouSNR's own Chrome/Edge profile, looking like a normal browser rather than an automated one.
-    offscreen: a normal (non-headless) window parked off the screen. Returns a context; close with .close()."""
-    PROFILE.mkdir(exist_ok=True)
+    """Open Chrome/Edge looking like a normal browser rather than an automated one.
+    offscreen: a normal (non-headless) window parked off the screen.
+    Uses YouSNR's saved profile only after `signin`; otherwise a fresh throwaway profile each time,
+    so a stray Chrome left open can never block it."""
     args = ["--mute-audio", "--autoplay-policy=user-gesture-required", "--disable-blink-features=AutomationControlled"]
     if offscreen and not show:
         args += ["--window-position=-32000,-32000", "--window-size=1280,900"]
-    opts = dict(headless=not (show or offscreen), locale="en-US", viewport={"width": 1280, "height": 900},
-                ignore_default_args=["--enable-automation"], args=args)
+    headless = not (show or offscreen)
+    common = dict(headless=headless, ignore_default_args=["--enable-automation"], args=args)
+    view = dict(locale="en-US", viewport={"width": 1280, "height": 900})
+    channels = ("chrome", "msedge", None)              # your installed Chrome, else Edge, else Playwright's
+
+    if (PROFILE / ".signed-in").exists():
+        for channel in channels:
+            try:
+                kw = dict(common, **view, **({"channel": channel} if channel else {}))
+                ctx = p.chromium.launch_persistent_context(str(PROFILE), **kw)
+                ctx.pages[0].evaluate("1") if ctx.pages else ctx.new_page().close()   # make sure it's alive
+                return _Session(ctx, None, (channel or "chromium") + ", signed-in profile")
+            except Exception:
+                continue
+        print("    · signed-in profile is busy or broken; using a fresh one")
+
     last = None
-    for channel in ("chrome", "msedge", None):        # your installed Chrome, else Edge, else Playwright's
+    for channel in channels:
         try:
-            ctx = p.chromium.launch_persistent_context(str(PROFILE), channel=channel, **opts) if channel \
-                else p.chromium.launch_persistent_context(str(PROFILE), **opts)
-            ctx._yousnr_name = channel or "chromium"
-            return ctx
+            browser = p.chromium.launch(**common, **({"channel": channel} if channel else {}))
+            return _Session(browser.new_context(**view), browser, channel or "chromium")
         except Exception as e:
             last = e
-            if "already in use" in str(e) or "ProcessSingleton" in str(e) or "lock" in str(e).lower():
-                raise RuntimeError("YouSNR's browser profile is already open (another YouSNR window?)") from None
+    if offscreen and not show:                       # no screen to put a window on: go fully hidden
+        return _launch(p, False, False)
     raise RuntimeError(f"no browser found: install Chrome, or run  python -m playwright install chromium ({last})")
 
 
 def signin():
-    """Open YouSNR's browser profile so you can sign in to YouTube once; it remembers it."""
+    """Open YouSNR's saved browser profile so you can sign in to YouTube once; later runs reuse it."""
     from playwright.sync_api import sync_playwright
+    PROFILE.mkdir(exist_ok=True)
     with sync_playwright() as p:
-        ctx = _launch(p, show=True)
+        ctx = None
+        for channel in ("chrome", "msedge", None):
+            try:
+                ctx = p.chromium.launch_persistent_context(
+                    str(PROFILE), headless=False, ignore_default_args=["--enable-automation"],
+                    args=["--disable-blink-features=AutomationControlled"], **({"channel": channel} if channel else {}))
+                break
+            except Exception:
+                continue
+        if ctx is None:
+            sys.exit("Couldn't open Chrome or Edge.")
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.goto("https://accounts.google.com/ServiceLogin?service=youtube&continue=https://www.youtube.com/")
-        print("Sign in to YouTube in the window that opened (a spare Google account is fine).")
-        print("When YouTube shows you signed in, just close that browser window.")
+        print("Sign in to YouTube in the window that opened, then close that window.")
         try:
             while ctx.pages:
                 ctx.pages[0].wait_for_timeout(1000)
@@ -299,12 +358,10 @@ def signin():
             ctx.close()
         except Exception:
             pass
-    print("Saved. YouSNR's browser will stay signed in.")
+    (PROFILE / ".signed-in").write_text("1", encoding="utf-8")
+    print("Saved. YouSNR will use this signed-in profile from now on (delete the browser-profile folder to undo).")
 
 
-# Find the transcript on screen without relying on YouTube's element names: collect every
-# element whose own text is a timestamp, find the smallest container holding most of them
-# (that's the transcript list, not the ~20 chapter stamps in the description), read it.
 # Timestamps that are NOT transcript lines: video length on thumbnails, the player clock, chapter
 # lists, timestamps in the description and comments. Ignore those everywhere.
 _STAMPS_JS = r"""
@@ -363,11 +420,16 @@ def fetch_browser(vid, show=False, offscreen=False):
         print(f"    · {msg}")
 
     with sync_playwright() as p:
-        browser = ctx = _launch(p, show, offscreen)
-        say(f"opened {ctx._yousnr_name}" + ("" if show else " (off-screen)" if offscreen else " (hidden)"))
-        if BASE.startswith("https://www.youtube.com"):
-            ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
-        page = ctx.new_page()
+        browser = _launch(p, show, offscreen)
+        ctx = browser.ctx
+        say(f"opened {browser.name}" + ("" if show else " (off-screen window)" if offscreen else " (hidden)"))
+        try:
+            if BASE.startswith("https://www.youtube.com"):
+                ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
+            page = ctx.new_page()
+        except Exception:
+            browser.close()
+            raise RuntimeError("the browser closed as soon as it opened") from None
         closed = []
         page.on("close", lambda *_: closed.append(True))
         page.on("crash", lambda *_: say("the YouTube tab crashed"))
@@ -630,7 +692,8 @@ def fetch_player_captions(vid, show=False, save_raw=False):
         print(f"    · {msg}")
 
     with sync_playwright() as p:
-        browser = ctx = _launch(p, show)
+        browser = _launch(p, show, offscreen=not show)
+        ctx = browser.ctx
         try:
             if BASE.startswith("https://www.youtube.com"):
                 ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
@@ -986,7 +1049,7 @@ class Fetcher:
         if f.exists():
             return 200, "text/html; charset=utf-8", render_page(json.loads(f.read_text(encoding="utf-8")))
         miss = self.missing.get(vid)
-        if miss and time.time() - miss["at"] < MISSING_RETRY:
+        if miss and time.time() - miss["at"] < (30 * 86400 if miss["reason"] == "music" else MISSING_RETRY):
             return 404, "application/json", json.dumps({"error": miss["reason"]})
         if time.time() < self.cooldown_until:
             return 503, "application/json", json.dumps({"error": "busy", "retry": int(self.cooldown_until - time.time())})
@@ -1012,7 +1075,8 @@ class Fetcher:
                     self.cooldown_until = time.time() + BLOCK_COOLDOWN
                     print(f"  YouTube says slow down ({name}); pausing new fetches for {BLOCK_COOLDOWN // 60} min")
                     return 503, "application/json", json.dumps({"error": "busy", "retry": BLOCK_COOLDOWN})
-                reason = "no_captions" if name in NO_TRANSCRIPT else "unavailable" if name in UNAVAILABLE else None
+                reason = ("music" if name == "MusicVideo" else "no_captions" if name in NO_TRANSCRIPT
+                          else "unavailable" if name in UNAVAILABLE else None)
                 if reason:
                     self.missing[vid] = {"reason": reason, "at": time.time()}
                     MISSING.write_text(json.dumps(self.missing), encoding="utf-8")
@@ -1185,6 +1249,7 @@ def main():
     a.add_argument("--browser", action="store_true", help=argparse.SUPPRESS)   # now the default
     a.add_argument("--captions", action="store_true", help="skip the transcript panel; use the caption file only (faster)")
     a.add_argument("--player", action="store_true", help="get captions through the video player, like a viewer turning on CC")
+    a.add_argument("--allow-music", action="store_true", help="add it even if YouTube marks it as music")
     a.add_argument("--show", action="store_true", help="show the browser window while it works")
     p = sub.add_parser("paste"); p.add_argument("video"); p.add_argument("file", nargs="?", help="omit to read the clipboard")
     p.add_argument("--title", default=""); p.add_argument("--channel", default="")
@@ -1228,7 +1293,8 @@ def main():
             vid = video_id(v)
             print(f"{vid}:")
             try:
-                get_transcript(vid, args.lang, browser=not args.captions, show=args.show, player=args.player)
+                get_transcript(vid, args.lang, browser=not args.captions, show=args.show, player=args.player,
+                               allow_music=args.allow_music)
             except Exception as e:
                 failed += 1
                 print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
