@@ -947,5 +947,284 @@
   "source": "captions-grouped"
  },
  "source": "youtube",
- "added": "2026-10-13T22:10:35+00:00"
+ "added": "2026-10-13T22:10:35+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T21:03:29",
+  "lines": {
+   "5": [
+    [
+     "variants of this question, \"How do I learn C++ and",
+     null
+    ],
+    [
+     "Vulkan",
+     "Vulcan"
+    ],
+    [
+     "when I'm streaming?\" This is a completely valid question,",
+     null
+    ]
+   ],
+   "8": [
+    [
+     "C++ and",
+     null
+    ],
+    [
+     "Vulkan,",
+     "Vulcan,"
+    ],
+    [
+     "is how do I get really good at this? How do I get really skilled, and how do I become an expert?",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "anything",
+     null
+    ],
+    [
+     "they had",
+     "they'd"
+    ],
+    [
+     "written in their essay, even though they were no longer using ChatGPT. This is because of cognitive offloading.",
+     null
+    ]
+   ],
+   "45": [
+    [
+     "happen. No matter the tools that you use, and I assume that people who are interested in programming",
+     null
+    ],
+    [
+     "Vulkan",
+     "Vulcan"
+    ],
+    [
+     "or C++,",
+     null
+    ]
+   ],
+   "79": [
+    [
+     "and a few little SDL games, and I have a lot of unfinished projects that I won't show.",
+     null
+    ],
+    [
+     "I am",
+     "I'm"
+    ],
+    [
+     "actively trying to improve daily.",
+     null
+    ]
+   ],
+   "86": [
+    [
+     "everyone else. No one has a huge advantage starting out because it's so different. So I",
+     null
+    ],
+    [
+     "used",
+     "use"
+    ],
+    [
+     "this game's ranking system to gamify",
+     null
+    ]
+   ],
+   "135": [
+    [
+     "Obsidian and I keep it synced between devices using Git",
+     null
+    ],
+    [
+     "via",
+     "by"
+    ],
+    [
+     "my GitHub. I use the setup described by Odysseus in",
+     null
+    ]
+   ]
+  },
+  "fixes": 7,
+  "checked_seconds": 237.4,
+  "usd": 0.0345,
+  "version": 2,
+  "flagged": [
+   [
+    "0:11",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:31",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:49",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:45",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:00",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:06",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:12",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:56",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:59",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "6:37",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "7:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:10",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "8:47",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "8:55",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:03",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:39",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:54",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "10:10",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:18",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:26",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "12:46",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "13:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:56",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:07",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "15:05",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "15:13",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "15:20",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
