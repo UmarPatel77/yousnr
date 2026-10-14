@@ -2876,7 +2876,7 @@
      null
     ],
     [
-     "[fucking pitter-patter And then?",
+     "fucking pitter-patter And then?",
      "[ __ ] pitter patter?"
     ]
    ],
@@ -3192,8 +3192,18 @@
    ],
    "258": [
     [
-     "[Shit Fuck What]",
-     "[ __ ] [music] [ __ ]"
+     "Shit Fuck",
+     "[ __ ]"
+    ],
+    [
+     "[music]",
+     null
+    ]
+   ],
+   "259": [
+    [
+     "What",
+     "[ __ ]"
     ]
    ],
    "262": [
@@ -3388,7 +3398,7 @@
      null
     ],
     [
-     "[fuck Human-like",
+     "fuck Human-like",
      "[ __ ] Humanike"
     ],
     [
@@ -3561,10 +3571,10 @@
     ]
    ]
   },
-  "fixes": 101,
+  "fixes": 102,
   "checked_seconds": 950.4,
   "usd": 0.1383,
-  "version": 2,
+  "version": 3,
   "flagged": [
    [
     "0:12",

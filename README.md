@@ -27,6 +27,7 @@ These URL shapes all work: `/ID`, `/watch?v=ID`, `/shorts/ID`, `/embed/ID`, `/li
    `--force` replaces what's on GitHub with this folder. GitHub Pages settings stay as they are.
 3. **Run the server**: double-click `start-yousnr.bat`, then open http://localhost:8787/watch?v=cPmVLrTA8AU
 4. **Go public**: set up the Cloudflare Tunnel (below), then anyone can use `yousnr.com/watch?v=ANY_ID`.
+5. **Always on** (optional): `python yousnr.py autostart on` (or double-click `yousnr-on.bat`). No window to keep open; see *Always on* below.
 
 Commands:
 
@@ -34,9 +35,12 @@ Commands:
 |---|---|
 | `python yousnr.py add <video>` | add a video, exactly as YouTube's transcript panel shows it (`--show` to watch, `--captions` for the faster caption-file version) |
 | `python yousnr.py correct <video> [--full]` | fix likely mistakes with speech recognition (runs automatically for new videos) |
+| `python yousnr.py upgrade [--dry-run]` | bring older videos up to the current checking rules (the server also does this in the background; layout-only updates are free) |
 | `python yousnr.py usage` / `bakeoff <video>` | spending this month / compare the engines on your videos |
 | `python yousnr.py remove <video>` | delete a video from the site |
-| `python yousnr.py serve` | on-demand server + tunnel (what `start-yousnr.bat` runs); close to turn off |
+| `python yousnr.py serve` | on-demand server + tunnel in this window (what `start-yousnr.bat` runs); close to turn off |
+| `python yousnr.py autostart on` / `off` | always on: runs with no window and turns on by itself when you sign in to Windows |
+| `python yousnr.py start` / `stop` / `status` | turn the background server on / off now, or see if it's on (`yousnr-on.bat`, `yousnr-off.bat`, `yousnr-status.bat`) |
 | `python yousnr.py build` | rebuild all pages after editing `templates/` |
 | `python yousnr.py paste <video> [file]` | build from a transcript copied off YouTube |
 | `python yousnr.py raw <video>` | save raw caption files to `debug/raw/` for troubleshooting |
@@ -79,7 +83,7 @@ Run this on a computer at home that stays on:
 python yousnr.py serve
 ```
 
-or double-click `start-yousnr.bat`, which restarts the server if it ever stops.
+or double-click `start-yousnr.bat`, which restarts the server if it ever stops. To run it without a window, see *Always on* below.
 
 Someone opens `yousnr.com/watch?v=ANY_ID`. If that video isn't on the site yet, the page asks your computer, at `api.yousnr.com` through a Cloudflare Tunnel. Your computer fetches the captions from YouTube, groups them the way YouTube's transcript panel does, and sends the page back. That takes a few seconds. Every few minutes it also pushes new pages to GitHub, so after that they're static and instant for everyone, even with your computer off.
 
@@ -98,7 +102,74 @@ Test locally first: run `serve`, then open http://localhost:8787/watch?v=265-EZJ
 4. **Public hostname** (newer dashboards call it *Published application routes*): subdomain `api`, domain `yousnr.com`, type `HTTP`, URL `localhost:8787` → Save.
 5. Double-click `start-yousnr.bat`. The window shows `tunnel: connected, api.yousnr.com is live`. Check https://api.yousnr.com/api/health.
 
-**On/off:** double-click `start-yousnr.bat` to turn it on, and close its window to turn it off (server and tunnel together). While it's off, everything already on yousnr.com still works; new videos show "the transcript server is offline". `python yousnr.py serve --no-tunnel` runs the server for this computer only.
+**On/off:** double-click `start-yousnr.bat` to turn it on, and close its window to turn it off (server and tunnel together). Or run it with no window at all (*Always on*, next). While it's off, everything already on yousnr.com still works; new videos show "the transcript server is offline". `python yousnr.py serve --no-tunnel` runs the server for this computer only.
+
+### Always on (no window)
+
+```
+python yousnr.py autostart on
+```
+
+This turns YouSNR on now, in the background, and puts a shortcut in Windows' Startup folder so it turns on by itself every time you sign in. There's no window to keep open. The server, the tunnel, the corrections and the GitHub pushes all keep running, and if the server ever crashes it's started again within seconds.
+
+| | |
+|---|---|
+| `python yousnr.py status` | on or off, tunnel connected, reachable from the internet, spending this month, last lines of the log |
+| `python yousnr.py stop` | turn it off now. It finishes a paid word check that's under way and publishes waiting pages first |
+| `python yousnr.py start` | turn it back on now |
+| `python yousnr.py autostart off` | stop turning on at sign-in (it's also listed in Task Manager → Startup apps) |
+
+The `.bat` files do the same with a double-click: `yousnr-on.bat` (autostart on), `yousnr-off.bat`, `yousnr-status.bat`.
+
+What it would have printed goes to `yousnr.log` in this folder, with the date and time on each line (renamed to `yousnr.log.old` past 5 MB). Only one YouSNR runs at a time: if the background one is on, `start-yousnr.bat` says so and stops. Process IDs live in `run/`.
+
+**The computer has to stay on and awake.** Sleep or hibernate means it's off: no server, no tunnel, no word checks. Pages already on yousnr.com keep working; new videos show "server offline" until it wakes, and then YouSNR picks up where it left off by itself.
+
+While plugged in, YouSNR stops Windows from sleeping on its own (the screen can still turn off). On battery it doesn't interfere, so a laptop never runs itself flat. To keep a laptop running with the lid closed while plugged in, and never sleep or hibernate on its own while plugged in:
+
+```
+powercfg /setacvalueindex SCHEME_CURRENT SUB_BUTTONS LIDACTION 0
+powercfg /setactive SCHEME_CURRENT
+powercfg /change standby-timeout-ac 0
+powercfg /change hibernate-timeout-ac 0
+```
+
+Choosing Sleep or Hibernate yourself still works. If the laptop has a battery charge limit (often called Conservation mode, Battery Health Charging or similar, in the maker's app), turn it on so being plugged in all the time doesn't wear the battery.
+
+After a restart (Windows updates), YouSNR comes back when you sign in. Settings → Accounts → Sign-in options → *Use my sign-in info to automatically finish setting up after an update* lets Windows sign back in by itself after update restarts. For a dedicated mini PC, also turn on the BIOS setting *Restore on AC power loss* (or *Power On after power failure*) so it starts again after a power cut.
+
+Your API keys are read from your Windows user settings (what `setx` saved), so the background version finds them even if you set them after signing in.
+
+### On a free cloud server instead (Oracle Cloud + Cloudflare WARP)
+
+So your laptop can sleep. Oracle's Always Free tier gives you a small ARM server for free (2 cores, 12 GB since June 2026). YouTube blocks data-centre addresses, so the server sends **only its YouTube traffic** through Cloudflare's free WARP (proxy mode). Everything else (SSH, GitHub, the speech APIs, the tunnel) goes direct. Whether YouTube lets WARP through can change at any time: `check-youtube` tells you.
+
+**Only one place runs YouSNR at a time.** Both would answer api.yousnr.com and push to GitHub. Turn the laptop's off before turning the server's on.
+
+1. **Server.** Sign up at oracle.com/cloud/free (home region: Canada Southeast (Toronto); it can't be changed later). Then Compute → Instances → Create instance: image *Canonical Ubuntu 24.04*, shape *Ampere VM.Standard.A1.Flex* with 2 OCPUs and 12 GB, *Generate a key pair for me* → **Save private key**. Create, then copy the *Public IP address*. "Out of capacity" means try again later.
+2. **Connect** from PowerShell: `ssh -i <the .key file> ubuntu@<public IP>`
+3. **Set up** (about 10 minutes):
+   ```
+   git clone https://github.com/UmarPatel77/yousnr.git ~/yousnr
+   bash ~/yousnr/deploy/oracle-setup.sh
+   ```
+   It installs everything, connects WARP in proxy mode, runs `check-youtube`, and prints a deploy key.
+4. **GitHub deploy key:** repo → Settings → Deploy keys → Add deploy key, paste the key it printed, tick *Allow write access*. This key can push to this repo only.
+5. **API keys:** `nano ~/.config/yousnr.env` and paste them after the `=` signs (private file, outside the project).
+6. **Switch over.** On the laptop: `python yousnr.py stop` and `python yousnr.py autostart off`. Then copy the tunnel token and this month's spending to the server:
+   ```
+   scp -i <key> tunnel-token.txt ubuntu@<IP>:yousnr/
+   scp -i <key> data/_usage.json data/_views.json ubuntu@<IP>:yousnr/data/
+   ```
+   On the server: `source ~/.bashrc`, `yousnr autostart on`, `yousnr status`.
+
+On the server, `yousnr` is a shortcut for `python yousnr.py` (with the right Python). `yousnr status | stop | start | check-youtube` work as on Windows; the log is `~/yousnr/yousnr.log`.
+
+**Updates:** apply the zip on the laptop and push as usual, then run `bash ~/yousnr/deploy/update.sh` on the server (from PowerShell: `ssh -i <key> ubuntu@<IP> "bash ~/yousnr/deploy/update.sh"`).
+
+**If YouTube blocks WARP** (`check-youtube` fails steps 1–4): get a new WARP address with `warp-cli disconnect; warp-cli registration delete; bash ~/yousnr/deploy/oracle-setup.sh` (the setup puts WARP back in proxy mode before connecting, so SSH keeps working). If that keeps failing, a paid residential proxy works the same way: put its address in `YOUSNR_PROXY` in `~/.config/yousnr.env` (e.g. `http://user:pass@host:port`), or go back to the laptop (`python yousnr.py autostart on`).
+
+**Oracle may reclaim idle free servers** (very low CPU, network and memory over 7 days). If you get that email, upgrade the account to Pay As You Go: Always Free resources stay free.
 
 ### When YouTube rate-limits you
 YouTube sometimes refuses plain caption downloads from a home connection ("429 Too Many Requests"), sometimes for hours. When that happens, the script opens the video in a hidden Chrome or Edge, turns CC on, and keeps the caption file the player loads. Real browsers keep getting captions during these blocks. Needs `python -m pip install --user playwright`. After one refusal it uses the player for the next hour without retrying the direct download.
@@ -121,6 +192,15 @@ winget install DenoLand.Deno            # helps yt-dlp download YouTube audio
 python -m pip install --user -U -r requirements.txt
 ```
 Commands: `python yousnr.py correct <video> [--full]`, `python yousnr.py bakeoff <video> [--minutes 5]` (compares the engines with YouTube on a stretch of a video), `python yousnr.py usage`. `add --no-correct` skips corrections. Optional settings: `setx YOUSNR_MONTHLY_BUDGET 10`, `setx YOUSNR_FULL_AT_VIEWS 50`, `setx YOUSNR_PRIMARY assemblyai`.
+
+### Upgrades for older videos
+Each improvement to the checking rules gets a version (v1 first check, v2 restore bleeped words, v3 keep tags like `[music]` in place and split a fix that spans two lines; v3 is free because it only lays out the saved fixes again). Every video remembers which version it was checked with. When the rules improve, the server upgrades older videos in the background:
+- **Only what changed is paid for.** A rule says which videos it affects; v2 only touches videos with `[ __ ]`, and only those lines. Earlier fixes are kept. Videos a rule doesn't affect get their version updated for free.
+- **Videos being read go first.** When someone opens an outdated page, it jumps the queue.
+- **The rest go slowly:** `YOUSNR_UPGRADES_PER_HOUR` (default 6), most-viewed first.
+- **The budget is respected.** When the monthly budget runs out, upgrades pause until the 1st of next month.
+
+`python yousnr.py upgrade --dry-run` shows how many videos need what, and the estimated cost. `python yousnr.py upgrade [--limit N]` runs them now.
 
 ### No music videos
 Videos YouTube flags as music (official music videos and songs), videos in the "Music" category, and auto-generated "- Topic" artist channels are skipped before anything is fetched. Visitors see "Music videos aren't on YouSNR", and the server remembers that for 30 days. `add --allow-music` overrides it for one video.

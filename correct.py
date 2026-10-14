@@ -96,7 +96,16 @@ def charge(engine, seconds, vid, mode):
         m.setdefault("log", []).append([datetime.datetime.now().isoformat(timespec="seconds"), vid, mode, engine,
                                         round(seconds, 1), round(c, 4)])
         DATA.mkdir(exist_ok=True)
-        USAGE.write_text(json.dumps(u, indent=1), encoding="utf-8")
+        tmp = USAGE.with_name(USAGE.name + ".tmp")          # all-or-nothing, so a power cut can't lose the tally
+        tmp.write_text(json.dumps(u, indent=1), encoding="utf-8")
+        for i in range(20):
+            try:
+                os.replace(tmp, USAGE)
+                break
+            except PermissionError:
+                time.sleep(0.05 * (i + 1))
+        else:
+            USAGE.write_text(json.dumps(u, indent=1), encoding="utf-8")
         return c
 
 
@@ -112,6 +121,14 @@ CENSOR = "<censored>"                      # YouTube's bleep: "[ __ ]"
 def unbleep_marks(text):
     """Make YouTube's '[ __ ]' one token so it can be lined up against what was actually said."""
     return re.sub(r"\[\s*_+\s*\]", "[__]", text)
+
+
+_WORD = re.compile(r"\[[^\[\]]{0,60}\]\S*|\([^()]{0,60}\)\S*|\S+")
+
+
+def words_of(text):
+    """Split a line into words, keeping a tag like [sighs and gasps] or (laughs) as one word."""
+    return _WORD.findall(unbleep_marks(text))
 
 
 def norm(tok):
@@ -139,7 +156,7 @@ def tokens_of(segments):
     surf, line_of, first = [], [], []
     for i, s in enumerate(segments):
         first.append(len(surf))
-        for w in unbleep_marks(s["text"]).split():
+        for w in words_of(s["text"]):
             surf.append(w)
             line_of.append(i)
     return surf, [norm(w) for w in surf], line_of, first
@@ -156,6 +173,10 @@ def edits_between(p_norm, x_norm, x_surf):
         old, new = _core(p_norm[i1:i2]), _core(x_norm[j1:j2])
         if old == new or (not new and old and all(o == CENSOR for o in old)):
             continue
+        while i1 < i2 and p_norm[i1] == "":      # sound tags like [music] at either end stay as they are
+            i1 += 1
+        while i2 > i1 and p_norm[i2 - 1] == "":
+            i2 -= 1
         surf = [s for s, n in zip(x_surf[j1:j2], x_norm[j1:j2]) if n and n not in FILLERS]
         out.append((i1, i2, tuple(new), surf))
     return out
@@ -214,12 +235,51 @@ def _transplant(p_words, new_words):
         return ""
     if p_words and all(w.startswith("[__]") for w in p_words):          # a bleep: just the word(s)
         return " ".join(_strip_punct(w) or w for w in new_words) + p_words[-1][4:]
-    lead = re.match(r"^[^\w'$£€]*", p_words[0]).group(0) if p_words else ""
-    trail = re.search(r"[^\w'%]*$", p_words[-1]).group(0) if p_words else ""
+    lead = trail = ""
+    if p_words:
+        lead = "" if p_words[0].startswith("[__]") else re.match(r"^[^\w'$£€]*", p_words[0]).group(0)
+        trail = p_words[-1][4:] if p_words[-1].startswith("[__]") else re.search(r"[^\w'%]*$", p_words[-1]).group(0)
     words = [_strip_punct(w) or w for w in new_words]
+    words = [w for w in words if w]
+    if not words:
+        return ""
     if p_words and _strip_punct(p_words[0])[:1].isupper() and words[0][:1].islower():
         words[0] = words[0][0].upper() + words[0][1:]
     return lead + " ".join(words) + trail
+
+
+def _split_edit(i1, i2, new, surf, line_of):
+    """One fix can cover words from two lines, or have a sound tag like [music] inside it. Split it so
+    each line gets its share of the new words and tags stay where they were.
+    Returns [(line, shown, youtube_text_or_None)] in order."""
+    parts = []                                   # ["tag", i] or ["run", [i, ...]]
+    for i in range(i1, i2):
+        if norm(surf[i]) == "":
+            parts.append(["tag", i])
+        elif parts and parts[-1][0] == "run" and line_of[parts[-1][1][-1]] == line_of[i]:
+            parts[-1][1].append(i)
+        else:
+            parts.append(["run", [i]])
+    runs = [p for p in parts if p[0] == "run"]
+    words = [w for w in ([_strip_punct(w) for w in new]) if w]
+    out = []
+    if not runs:                                 # only tags were there: the new words go in front of them
+        if words:
+            out.append((line_of[i1], " ".join(words), ""))
+        return out + [(line_of[p[1]], surf[p[1]], None) for p in parts]
+    total, cum, given = sum(len(r[1]) for r in runs), 0, 0
+    share = {}
+    for r in runs:                               # new words shared out by how many words each piece replaces
+        cum += len(r[1])
+        upto = int(len(words) * cum / total + 0.5)
+        share[id(r)], given = words[given:upto], upto
+    for p in parts:
+        if p[0] == "tag":
+            out.append((line_of[p[1]], surf[p[1]].replace("[__]", "[ __ ]"), None))
+        else:
+            old = [surf[i] for i in p[1]]
+            out.append((line_of[p[1][0]], _transplant(old, share[id(p)]), " ".join(old).replace("[__]", "[ __ ]")))
+    return out
 
 
 def pieces_by_line(segments, edits, surf, line_of):
@@ -234,14 +294,18 @@ def pieces_by_line(segments, edits, surf, line_of):
         e = starts.pop(i, None)
         if e:
             i1, i2, new, who = e
-            old = surf[i1:i2]
-            line = line_of[min(i1, n - 1)]
-            shown = _transplant(old, new) if old else " ".join(_strip_punct(w) or w for w in new)
-            out[line].append([shown, " ".join(old).replace("[__]", "[ __ ]")])
-            changed.add(line)
             if i2 > i1:
+                for line, shown, orig in _split_edit(i1, i2, new, surf, line_of):
+                    out[line].append([shown, orig])
+                    if orig is not None:
+                        changed.add(line)
                 i = i2
                 continue
+            words = [w for w in (_strip_punct(w) for w in new) if w]
+            if words:                              # a word YouTube left out
+                line = line_of[min(i1, n - 1)]
+                out[line].append([" ".join(words), ""])
+                changed.add(line)
         if i >= n:
             break
         out[line_of[i]].append([surf[i].replace("[__]", "[ __ ]"), None])
@@ -256,6 +320,22 @@ def pieces_by_line(segments, edits, surf, line_of):
                 merged.append([text, orig])
         lines[str(k)] = merged
     return lines
+
+
+def relayout(d):
+    """Re-apply a video's saved fixes with the current layout rules. Free: no audio is checked again.
+    Returns True if what the page shows changes."""
+    c = d.get("corrected")
+    if not c or not c.get("lines"):
+        return False
+    segs = d["segments"]
+    surf, _, line_of, _ = tokens_of(segs)
+    lines = pieces_by_line(segs, edits_from_pieces(segs, c["lines"]), surf, line_of)
+    if lines == c["lines"]:
+        return False
+    c["lines"] = lines
+    c["fixes"] = sum(1 for pieces in lines.values() for _, o in pieces if o is not None)
+    return True
 
 
 # ---------------------------------------------------------------- what to check
@@ -386,6 +466,8 @@ def download_audio(vid):
             return f
     opts = {"format": "bestaudio[ext=m4a]/bestaudio/best", "outtmpl": str(out / f"{vid}.%(ext)s"),
             "quiet": True, "no_warnings": True, "noprogress": True}
+    if os.environ.get("YOUSNR_PROXY", "").strip():          # YouTube only: see yt_proxy() in yousnr.py
+        opts["proxy"] = os.environ["YOUSNR_PROXY"].strip()
     try:
         with yt_dlp.YoutubeDL(opts) as y:
             info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=True)
@@ -397,7 +479,7 @@ def download_audio(vid):
 
 def to_wav(src, dst):
     subprocess.run([ffmpeg(), "-y", "-loglevel", "error", "-i", str(src), "-ac", "1", "-ar", "16000", str(dst)],
-                   check=True, capture_output=True)
+                   check=True, capture_output=True, creationflags=0x08000000 if os.name == "nt" else 0)
     return dst
 
 
@@ -499,23 +581,102 @@ def _transcribe(engine, path, terms):
 def caption_words(vid, lang="en"):
     """YouTube's caption file (its older recognizer) as [(time, word)], times spread across each cue."""
     from youtube_transcript_api import YouTubeTranscriptApi
-    tl = YouTubeTranscriptApi().list(vid)
+    px = os.environ.get("YOUSNR_PROXY", "").strip().replace("socks5://", "socks5h://", 1)
+    if px:
+        from youtube_transcript_api.proxies import GenericProxyConfig
+        tl = YouTubeTranscriptApi(proxy_config=GenericProxyConfig(http_url=px, https_url=px)).list(vid)
+    else:
+        tl = YouTubeTranscriptApi().list(vid)
     try:
         tr = tl.find_generated_transcript([lang, "en"])
     except Exception:
         tr = tl.find_transcript([lang, "en"])
     out = []
     for s in tr.fetch().snippets:
-        ws = unbleep_marks(html.unescape(s.text)).split()
+        ws = words_of(html.unescape(s.text))
         for i, w in enumerate(ws):
             out.append((s.start + s.duration * i / max(1, len(ws)), w))
     return out
 
 
+# ---------------------------------------------------------------- rule versions (upgrades for old videos)
+# Every improvement to the checking rules gets a version. Each video remembers the version it was checked
+# with. A rule says which videos it affects (cheap test on the index entry) and which kinds of suspicious
+# line it needs re-checked, so upgrading an old video only pays for the lines that rule is about.
+
+BLEEP = "bleeped by YouTube"
+RULES = [
+    {"version": 1, "what": "first check of suspicious lines", "reasons": None,
+     "applies": lambda e: True},
+    {"version": 2, "what": "restore words YouTube bleeped as [ __ ]", "reasons": {BLEEP},
+     "applies": lambda e: e.get("bleeps", 0) > 0},
+    {"version": 3, "what": "keep tags like [music] and split fixes that cross two lines (free)", "reasons": set(),
+     "applies": lambda e: False},        # nothing to pay for: saved fixes are just laid out again
+]
+CURRENT = max(r["version"] for r in RULES)
+
+
+def version_of(d):
+    c = d.get("corrected")
+    if not c:
+        return 0
+    if "version" in c:
+        return c["version"]
+    return 2 if any(BLEEP in (r or []) for _, r in c.get("flagged") or []) else 1   # before versions existed
+
+
+def bleep_count(d):
+    return sum(len(re.findall(r"\[\s*_+\s*\]", s.get("text", ""))) for s in d.get("segments") or [])
+
+
+def pending(entry):
+    """Rules a video (index entry with 'v' and 'bleeps') still needs, oldest first."""
+    v = entry.get("v", 0)
+    return [r for r in RULES if r["version"] > v and r["applies"](entry)]
+
+
+def reasons_for(rules):
+    """None = check every kind of suspicious line; otherwise just these kinds."""
+    if any(r["reasons"] is None for r in rules):
+        return None
+    out = set()
+    for r in rules:
+        out |= r["reasons"]
+    return out
+
+
+def _overlaps(a1, a2, b1, b2):
+    if a1 == a2 or b1 == b2:
+        return a1 == b1 or (b1 < a1 < b2) or (a1 < b1 < a2)
+    return a1 < b2 and b1 < a2
+
+
+def edits_from_pieces(segments, lines):
+    """Rebuild earlier fixes (as edits over YouTube's words) from what was saved for the page."""
+    surf, p_norm, line_of, first = tokens_of(segments)
+    edits, cursor = [], 0
+    for k, pieces in sorted((lines or {}).items(), key=lambda kv: int(kv[0])):
+        k = int(k)
+        if k >= len(first):
+            continue
+        i = max(first[k], cursor)      # an older fix may have used up the first words of this line
+        for text, orig in pieces:
+            if orig is None:
+                i += len(words_of(text))
+            else:
+                n_old = len(words_of(orig)) if orig else 0
+                edits.append((i, i + n_old, text.split(), ["earlier"]))
+                i += n_old
+        cursor = i
+    return edits
+
+
 # ---------------------------------------------------------------- the two modes
 
-def correct(d, mode="selective", engines=None, meta=None, log=print, captions=None, budget_check=True):
-    """Work out corrections for one saved video record d. Returns d['corrected'] (also stored in d)."""
+def correct(d, mode="selective", engines=None, meta=None, log=print, captions=None, budget_check=True,
+            only_reasons=None):
+    """Work out corrections for one saved video record d. Returns d['corrected'] (also stored in d).
+    only_reasons: an upgrade. Re-check only those kinds of suspicious line and keep earlier fixes."""
     vid, segs = d["id"], d["segments"]
     meta = dict(meta or {}, title=(meta or {}).get("title") or d.get("title", ""),
                 channel=(meta or {}).get("channel") or d.get("channel", ""))
@@ -528,7 +689,9 @@ def correct(d, mode="selective", engines=None, meta=None, log=print, captions=No
     terms = context_terms(meta, meta["chapters"])
     CACHE.mkdir(exist_ok=True)
     result = {"mode": mode, "engines": [], "at": datetime.datetime.now().isoformat(timespec="seconds"),
-              "lines": {}, "fixes": 0, "checked_seconds": 0, "usd": 0.0}
+              "lines": {}, "fixes": 0, "checked_seconds": 0, "usd": 0.0, "version": CURRENT}
+    prev = d.get("corrected") or {}
+    old_edits = edits_from_pieces(segs, prev.get("lines")) if only_reasons is not None else []
 
     if mode == "full":
         est = sum(cost(e, duration) for e in engines)
@@ -562,6 +725,8 @@ def correct(d, mode="selective", engines=None, meta=None, log=print, captions=No
             edits = adopt(p_norm, xn, xs)
         result["checked_seconds"] = duration
     else:
+        if captions is None and only_reasons is not None and "YouTube's two transcripts disagree" not in only_reasons:
+            captions = []                     # this upgrade doesn't need YouTube's caption file
         if captions is None:
             try:
                 captions = caption_words(vid)
@@ -570,8 +735,15 @@ def correct(d, mode="selective", engines=None, meta=None, log=print, captions=No
                 captions = []
                 log(f"    · no caption file to compare against ({e.__class__.__name__}); using risky-word checks only")
         flagged = flag_lines(segs, captions, meta, duration)
+        if only_reasons is not None:
+            flagged = [f for f in flagged if set(f[2]) & only_reasons]
         if not flagged:
-            log("    · nothing looks suspicious")
+            log("    · nothing to check" if only_reasons is not None else "    · nothing looks suspicious")
+            if only_reasons is not None and prev:
+                prev.update(version=CURRENT)
+                d["corrected"] = prev
+                relayout(d)
+                return prev
             d["corrected"] = result
             return result
         wins = windows_for(segs, [k for _, k, _ in flagged], duration)
@@ -615,6 +787,15 @@ def correct(d, mode="selective", engines=None, meta=None, log=print, captions=No
                 edits.append((a + i1, a + i2, new, who))
         result["checked_seconds"] = round(secs, 1)
         result["flagged"] = [[segs[k]["label"] if segs[k].get("label") else k, r] for _, k, r in flagged][:200]
+    if only_reasons is not None and prev:     # upgrade: keep earlier fixes that the new ones don't replace
+        edits = [e for e in old_edits if not any(_overlaps(e[0], e[1], n[0], n[1]) for n in edits)] + list(edits)
+        edits.sort(key=lambda e: (e[0], e[1]))
+        result["mode"] = prev.get("mode", result["mode"])
+        result["engines"] = sorted(set(prev.get("engines") or []) | set(result["engines"]))
+        result["usd"] += prev.get("usd", 0.0)
+        result["checked_seconds"] = round(prev.get("checked_seconds", 0) + result["checked_seconds"], 1)
+        result["flagged"] = (prev.get("flagged") or []) + result.get("flagged", [])
+        result["flagged"] = result["flagged"][:300]
     result["lines"] = pieces_by_line(segs, edits, surf, line_of)
     result["fixes"] = len(edits)
     result["usd"] = round(result["usd"], 4)

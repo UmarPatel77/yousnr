@@ -399,11 +399,11 @@
      null
     ],
     [
-     "Algo]",
-     "alga [music]"
+     "Algo",
+     "alga"
     ],
     [
-     "developer at HRT is a pretty unique title. We take it to",
+     "[music] developer at HRT is a pretty unique title. We take it to",
      null
     ]
    ],
@@ -421,7 +421,7 @@
   "fixes": 4,
   "checked_seconds": 70.9,
   "usd": 0.0103,
-  "version": 2,
+  "version": 3,
   "flagged": [
    [
     "0:00",

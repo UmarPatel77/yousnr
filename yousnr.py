@@ -11,6 +11,10 @@ YouSNR (yousnr.com) — static YouTube-style transcript pages for GitHub Pages.
   python yousnr.py signin                                   sign YouSNR's browser in to YouTube (optional)
   python yousnr.py correct <video> [--full]                 fix likely mistakes with speech recognition
   python yousnr.py usage | bakeoff <video>                  spending this month | compare the engines
+  python yousnr.py upgrade [--dry-run]                      bring older videos up to the current checking rules
+  python yousnr.py autostart on|off                         always on: start with Windows, no window
+  python yousnr.py start | stop | status                    turn the background server on / off / check it
+  python yousnr.py check-youtube [video]                    can this computer reach YouTube? (cloud servers)
 
 Data lives in data/<ID>.json; the site is generated into docs/ (GitHub Pages source).
 Run `add` from your own computer: YouTube blocks most cloud/CI IPs, including GitHub Actions.
@@ -29,6 +33,153 @@ DOCS = ROOT / "docs"
 TEMPLATES = ROOT / "templates"
 SITE = "https://yousnr.com"
 ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
+
+NOWIN = 0x08000000 if os.name == "nt" else 0      # CREATE_NO_WINDOW: helper programs never flash a black window
+RUN = ROOT / "run"                                # process IDs and the stop signal for background mode (not committed)
+LOG = ROOT / "yousnr.log"                         # what background mode would have printed
+
+
+def write_atomic(path, text):
+    """Write a file so a reader (or a sudden power-off) never sees half of it."""
+    path = Path(path)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    for i in range(20):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:          # Windows: another thread is reading it this instant
+            time.sleep(0.05 * (i + 1))
+    path.write_text(text, encoding="utf-8")
+    tmp.unlink(missing_ok=True)
+
+
+class LogFile:
+    """Stands in for the screen when YouSNR runs in the background: every line goes to yousnr.log
+    with the date and time. The file is opened and closed for each line, so you can open it in
+    Notepad any time, and it's renamed to yousnr.log.old when it passes 5 MB."""
+    closed = False
+    encoding = "utf-8"
+
+    def __init__(self, path=LOG, max_bytes=5_000_000):
+        self.path, self.max, self.buf, self.lock = Path(path), max_bytes, "", threading.Lock()
+
+    def write(self, s):
+        with self.lock:
+            self.buf += s
+            if "\n" not in self.buf:
+                return len(s)
+            *lines, self.buf = self.buf.split("\n")
+            stamp = time.strftime("%Y-%m-%d %H:%M:%S")
+            text = "".join(f"{stamp}  {l.rstrip()}\n" if l.strip() else "\n" for l in lines)
+            try:
+                if self.path.exists() and self.path.stat().st_size > self.max:
+                    os.replace(self.path, self.path.with_name(self.path.name + ".old"))
+            except OSError:
+                pass
+            try:
+                with open(self.path, "a", encoding="utf-8") as f:
+                    f.write(text)
+            except OSError:
+                pass
+        return len(s)
+
+    def flush(self):
+        pass
+
+    def isatty(self):
+        return False
+
+    def fileno(self):
+        import io
+        raise io.UnsupportedOperation("fileno")
+
+
+def use_log_file(path=LOG):
+    sys.stdout = sys.stderr = LogFile(path)
+
+
+def load_windows_user_env():
+    """Keys saved with `setx` live in the registry. A window opened earlier, or a program started by
+    Windows at sign-in, may not have them yet, so read them from there when they're missing."""
+    if os.name != "nt":
+        return
+    try:
+        import winreg
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+            i = 0
+            while True:
+                try:
+                    name, value, kind = winreg.EnumValue(k, i)
+                except OSError:
+                    break
+                i += 1
+                if (name.upper().startswith("YOUSNR_") or name.upper().endswith("_API_KEY")) and name not in os.environ:
+                    os.environ[name] = os.path.expandvars(value) if kind == winreg.REG_EXPAND_SZ else str(value)
+    except Exception:
+        pass
+
+
+def load_env_file():
+    """On a Linux server the keys live in ~/.config/yousnr.env (private, outside the project); the service
+    reads it, and so do commands you type, like `status` or `correct`."""
+    f = Path(os.environ.get("YOUSNR_ENV_FILE") or Path.home() / ".config" / "yousnr.env")
+    try:
+        lines = f.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return
+    for line in lines:
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            k, v = k.strip(), v.strip().strip('"').strip("'")
+            if k and v and k not in os.environ:
+                os.environ[k] = v
+
+
+def read_pid(f):
+    try:
+        return int(Path(f).read_text(encoding="utf-8").split()[0])
+    except Exception:
+        return None
+
+
+def process_name(pid):
+    """What's running under this process ID ('python.exe', 'cloudflared.exe', a command line on Linux), or None."""
+    if not pid:
+        return None
+    if os.name == "nt":
+        try:
+            r = subprocess.run(["tasklist", "/FI", f"PID eq {pid}", "/FO", "CSV", "/NH"],
+                               capture_output=True, text=True, timeout=20, creationflags=NOWIN)
+        except Exception:
+            return None
+        m = re.match(r'"([^"]+)","(\d+)"', r.stdout.strip())
+        return m.group(1).lower() if m and int(m.group(2)) == pid else None
+    try:
+        cmd = Path(f"/proc/{pid}/cmdline").read_bytes().replace(b"\0", b" ").decode("utf-8", "replace").strip()
+        return cmd or None
+    except Exception:
+        return None
+
+
+def alive(pidfile, looks_like):
+    """The process ID in pidfile, if that process is still running and is the kind we expect."""
+    pid = read_pid(pidfile)
+    name = process_name(pid)
+    return pid if name and any(w in name for w in looks_like) else None
+
+
+def kill(pid, tree=False):
+    if os.name == "nt":
+        subprocess.run(["taskkill", "/PID", str(pid), "/F"] + (["/T"] if tree else []),
+                       capture_output=True, timeout=30, creationflags=NOWIN)
+    else:
+        import signal
+        try:
+            os.kill(pid, signal.SIGKILL)
+        except OSError:
+            pass
 
 
 # ---------------------------------------------------------------- helpers
@@ -88,6 +239,27 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
 
+def yt_proxy():
+    """YOUSNR_PROXY sends only the YouTube traffic through a proxy, e.g. Cloudflare WARP on a cloud
+    server (socks5://127.0.0.1:40000), because YouTube blocks data-centre addresses. The speech
+    APIs, GitHub and the Cloudflare Tunnel still go direct. Empty (the default) = no proxy."""
+    return os.environ.get("YOUSNR_PROXY", "").strip()
+
+
+def yt_requests_proxies():
+    p = yt_proxy().replace("socks5://", "socks5h://", 1)      # socks5h: the proxy looks up names too
+    return {"http": p, "https": p} if p else {}
+
+
+def transcript_api():
+    from youtube_transcript_api import YouTubeTranscriptApi
+    px = yt_requests_proxies()
+    if not px:
+        return YouTubeTranscriptApi()
+    from youtube_transcript_api.proxies import GenericProxyConfig
+    return YouTubeTranscriptApi(proxy_config=GenericProxyConfig(http_url=px["http"], https_url=px["https"]))
+
+
 def _json_after(page, marker):
     i = page.find(marker)
     if i < 0:
@@ -106,6 +278,7 @@ def fetch_metadata(vid):
         sess = requests.Session()
         sess.headers.update({"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
         sess.cookies.set("SOCS", "CAI", domain=".youtube.com")
+        sess.proxies.update(yt_requests_proxies())
         page = sess.get(f"https://www.youtube.com/watch?v={vid}&hl=en", timeout=20).text
         pr = _json_after(page, "ytInitialPlayerResponse = ") or {}
         vd = pr.get("videoDetails") or {}
@@ -122,6 +295,8 @@ def fetch_metadata(vid):
     try:
         import yt_dlp
         opts = {"quiet": True, "no_warnings": True, "skip_download": True}
+        if yt_proxy():
+            opts["proxy"] = yt_proxy()
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
         meta.update(
@@ -137,10 +312,10 @@ def fetch_metadata(vid):
     except Exception as e:  # last resort: oEmbed gives title + channel
         print(f"  metadata via yt-dlp failed ({e.__class__.__name__}); trying oEmbed", file=sys.stderr)
         try:
+            import requests
             url = "https://www.youtube.com/oembed?format=json&url=" + urllib.parse.quote(
                 f"https://www.youtube.com/watch?v={vid}")
-            with urllib.request.urlopen(url, timeout=15) as r:
-                o = json.load(r)
+            o = requests.get(url, timeout=15, proxies=yt_requests_proxies()).json()
             meta.update(title=o.get("title", ""), channel=o.get("author_name", ""))
         except Exception as e2:
             print(f"  oEmbed failed too ({e2.__class__.__name__})", file=sys.stderr)
@@ -311,6 +486,12 @@ def _launch(p, show, offscreen=False):
         args += ["--window-position=-32000,-32000", "--window-size=1280,900"]
     headless = not (show or offscreen)
     common = dict(headless=headless, ignore_default_args=["--enable-automation"], args=args)
+    if yt_proxy():                                   # Playwright wants the login apart from the address
+        u = urllib.parse.urlsplit(yt_proxy())
+        common["proxy"] = {"server": f"{u.scheme}://{u.hostname}" + (f":{u.port}" if u.port else "")}
+        if u.username:
+            common["proxy"].update(username=urllib.parse.unquote(u.username),
+                                   password=urllib.parse.unquote(u.password or ""))
     view = dict(locale="en-US", viewport={"width": 1280, "height": 900})
     channels = ("chrome", "msedge", None)              # your installed Chrome, else Edge, else Playwright's
 
@@ -790,7 +971,7 @@ def fetch_player_captions(vid, show=False, save_raw=False):
 def fetch_captions_fallback(vid, langs):
     """Plan B: the caption file (finer-grained than the panel), regrouped to roughly match it."""
     from youtube_transcript_api import YouTubeTranscriptApi
-    tl = YouTubeTranscriptApi().list(vid)
+    tl = transcript_api().list(vid)
     try:
         tr = tl.find_manually_created_transcript(langs)
     except Exception:
@@ -825,7 +1006,7 @@ def group_cues(raw, min_chars=PANEL_MIN_CHARS):
 def dump_raw(vid, lang="en"):
     """Save the caption track in every format YouTube offers, to work out how the panel groups lines."""
     from youtube_transcript_api import YouTubeTranscriptApi
-    tl = YouTubeTranscriptApi().list(vid)
+    tl = transcript_api().list(vid)
     out = ROOT / "debug" / "raw"
     out.mkdir(parents=True, exist_ok=True)
     tracks = list(tl)
@@ -858,7 +1039,7 @@ def read_clipboard():
     for cmd in (["powershell", "-NoProfile", "-Command", "Get-Clipboard -Raw"], ["pbpaste"],
                 ["xclip", "-selection", "clipboard", "-o"]):
         try:
-            return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", timeout=10).stdout
+            return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", timeout=10, creationflags=NOWIN).stdout
         except Exception:
             continue
     sys.exit("Couldn't read the clipboard. Save the transcript to a .txt file and pass its name instead.")
@@ -900,6 +1081,7 @@ def render_page(d):
     chapters = sorted(d.get("chapters") or [], key=lambda c: c["start"])
     fixed = (d.get("corrected") or {}).get("lines") or {}
     nfix = sum(1 for pieces in fixed.values() for _, o in pieces if o is not None)
+    checking = not d.get("corrected") and acc is not None and bool(acc.available())   # word check still to come
 
     def text_html(i, s):
         pieces = fixed.get(str(i))
@@ -951,9 +1133,74 @@ def render_page(d):
                .replace("{{TOC}}", toc)
                .replace("{{TOC_CLASS}}", "" if chapters else "hidden")
                .replace("{{FIXNOTE}}", (f'<span class="fixnote"> · {nfix} word{"s" if nfix != 1 else ""} corrected</span>'
-                                         if nfix else ""))
+                                         if nfix else CHECKING_NOTE if checking else ""))
                .replace("{{FIXCLASS}}", "" if nfix else "hidden")
                .replace("{{ROWS}}", "\n".join(rows)))
+
+
+def index_entry(d):
+    e = {"title": d.get("title", ""), "channel": d.get("channel", ""), "added": d.get("added", "")}
+    if acc is not None:
+        e.update(v=acc.version_of(d), bleeps=acc.bleep_count(d), dur=d.get("duration") or 0)
+    return e
+
+
+def ensure_index_fields():
+    """One-time: fill in rule version / bleep count for videos saved before the upgrade queue existed."""
+    if acc is None:
+        return _load_index()
+    index, changed = _load_index(), 0
+    for vid, e in index.items():
+        if "v" in e and "bleeps" in e:
+            continue
+        f = DATA / f"{vid}.json"
+        if f.exists():
+            index[vid] = dict(e, **{k: v for k, v in index_entry(json.loads(f.read_text(encoding="utf-8"))).items()
+                                   if k in ("v", "bleeps", "dur")})
+            changed += 1
+    if changed:
+        with _save_lock:                       # re-read, so a video saved meanwhile isn't dropped
+            now = _load_index()
+            for vid, e in index.items():
+                if vid in now:
+                    now[vid] = dict(now[vid], **{k: e[k] for k in ("v", "bleeps", "dur") if k in e})
+            write_atomic(INDEX, json.dumps(now, ensure_ascii=False, indent=0))
+            index = now
+    return index
+
+
+def run_upgrade(vid, log=print):
+    """Bring one video up to the current checking rules, paying only for what the new rules need.
+    Returns 'stamped' (nothing to pay for), the correction summary, or None."""
+    if acc is None:
+        return None
+    f = DATA / f"{vid}.json"
+    if not f.exists():
+        return None
+    d = json.loads(f.read_text(encoding="utf-8"))
+    entry = {"v": acc.version_of(d), "bleeps": acc.bleep_count(d)}
+    rules = acc.pending(entry)
+    if not rules:
+        if entry["v"] < acc.CURRENT and d.get("corrected"):
+            d["corrected"]["version"] = acc.CURRENT
+            relaid = acc.relayout(d)                   # free: saved fixes laid out with the current rules
+            save(d, quiet=True)
+            if relaid:
+                write_page(d)
+                log(f"  {vid}: fixes laid out again (free)")
+                return "relaid"
+            return "stamped"
+        return None
+    if not acc.available():
+        return None
+    reasons = acc.reasons_for(rules)
+    log(f"  upgrade: {'; '.join(r['what'] for r in rules)}")
+    r = acc.correct(d, mode="selective", meta=d, log=log, only_reasons=reasons if d.get("corrected") else None)
+    save(d, quiet=True)
+    write_page(d)
+    log(f"  upgraded to rules v{acc.CURRENT}: {r['fixes']} fix(es) in total; this run cost "
+        f"${acc.spent_this_month():.2f} of ${acc.settings()['budget']:.2f} used this month")
+    return r
 
 
 def run_correction(vid, mode="selective", engines=None, log=print):
@@ -974,6 +1221,8 @@ def run_correction(vid, mode="selective", engines=None, log=print):
 
 
 INDEX = DATA / "_index.json"
+CHECKING_NOTE = ('<span class="fixnote"> · double-checking words with speech recognition; '
+                 'reload in a few minutes for the corrected version</span>')
 
 
 def _load_index():
@@ -1016,9 +1265,9 @@ def build():
             continue
         d = json.loads(f.read_text(encoding="utf-8"))
         write_page(d)
-        index[d["id"]] = {"title": d.get("title", ""), "channel": d.get("channel", ""), "added": d.get("added", "")}
+        index[d["id"]] = index_entry(d)
     DATA.mkdir(exist_ok=True)
-    INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=0), encoding="utf-8")
+    write_atomic(INDEX, json.dumps(index, ensure_ascii=False, indent=0))
     n = write_indexes(index)
     print(f"Built {n} page(s) into docs/")
 
@@ -1026,19 +1275,20 @@ def build():
 _save_lock = threading.Lock()
 
 
-def save(d):
+def save(d, quiet=False):
     DATA.mkdir(exist_ok=True)
     f = DATA / f"{d['id']}.json"
     if f.exists():
         d.setdefault("added", json.loads(f.read_text(encoding="utf-8")).get("added"))
     if not d.get("added"):
         d["added"] = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
-    f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_atomic(f, json.dumps(d, ensure_ascii=False, indent=1))
     with _save_lock:
         index = _load_index()
-        index[d["id"]] = {"title": d.get("title", ""), "channel": d.get("channel", ""), "added": d["added"]}
-        INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=0), encoding="utf-8")
-    print(f"  saved data/{d['id']}.json  ({len(d['segments'])} lines, {len(d.get('chapters', []))} chapters)")
+        index[d["id"]] = index_entry(d)
+        write_atomic(INDEX, json.dumps(index, ensure_ascii=False, indent=0))
+    if not quiet:
+        print(f"  saved data/{d['id']}.json  ({len(d['segments'])} lines, {len(d.get('chapters', []))} chapters)")
 
 
 # ---------------------------------------------------------------- server
@@ -1060,27 +1310,37 @@ BLOCKED = {"RequestBlocked", "IpBlocked", "TooManyRequests", "PoTokenRequired"}
 
 
 class Corrector:
-    """Background worker: selective check for every new video, full re-transcription once it's popular."""
+    """Background worker. In order of priority:
+      1. new videos: selective check
+      2. videos someone is reading that were checked with older rules: upgrade, jumps the queue
+      3. popular videos: full re-transcription
+      4. idle time: upgrade older videos a few per hour, most-viewed first
+    Never goes over the monthly budget; when it's used up, background upgrades wait for next month."""
     VIEWS = DATA / "_views.json"
 
     def __init__(self, fetcher):
         self.fetcher = fetcher
         self.jobs, self.queued = [], set()
         self.cv = threading.Condition()
+        self.failed, self.done_this_hour, self.hour = {}, 0, int(time.time() // 3600)
+        self.paused_until = 0.0
+        self.stopping, self.busy = False, None
         try:
             self.views = json.loads(self.VIEWS.read_text(encoding="utf-8"))
         except Exception:
             self.views = {}
         self.enabled = acc is not None and bool(acc.available())
+        self.per_hour = int(os.environ.get("YOUSNR_UPGRADES_PER_HOUR", "6"))
         if self.enabled:
             threading.Thread(target=self.loop, daemon=True).start()
+            threading.Thread(target=self.backfill, daemon=True).start()
 
-    def enqueue(self, vid, mode):
+    def enqueue(self, vid, mode, front=False):
         if not self.enabled or (vid, mode) in self.queued:
             return
         with self.cv:
             self.queued.add((vid, mode))
-            self.jobs.append((vid, mode))
+            (self.jobs.insert(0, (vid, mode)) if front else self.jobs.append((vid, mode)))
             self.cv.notify()
 
     def viewed(self, vid):
@@ -1088,8 +1348,13 @@ class Corrector:
         if not f.exists():
             return
         n = self.views[vid] = self.views.get(vid, 0) + 1
-        self.VIEWS.write_text(json.dumps(self.views), encoding="utf-8")
-        if self.enabled and n >= acc.settings()["full_at"]:
+        write_atomic(self.VIEWS, json.dumps(self.views))
+        if not self.enabled or time.time() < self.paused_until:
+            return
+        e = _load_index().get(vid) or {}
+        if e and acc.pending(e) and self.failed.get(vid, 0) < time.time() - 86400:
+            self.enqueue(vid, "upgrade", front=True)          # someone's reading an outdated page
+        if n >= acc.settings()["full_at"]:
             try:
                 mode = (json.loads(f.read_text(encoding="utf-8")).get("corrected") or {}).get("mode")
             except Exception:
@@ -1097,20 +1362,79 @@ class Corrector:
             if mode != "full":
                 self.enqueue(vid, "full")
 
+    def backfill(self):
+        time.sleep(20)
+        ensure_index_fields()
+        while True:
+            try:
+                self._backfill_once()
+            except Exception as e:
+                print(f"  upgrade scan failed: {e.__class__.__name__}: {e}")
+            time.sleep(60)
+
+    def _backfill_once(self):
+        hour = int(time.time() // 3600)
+        if hour != self.hour:
+            self.hour, self.done_this_hour = hour, 0
+        if self.jobs or time.time() < self.paused_until:
+            return
+        index = _load_index()
+        stamped = 0
+        for vid, e in index.items():                          # free: rule changes that don't affect a video
+            if e.get("v", 0) < acc.CURRENT and e.get("v", 0) > 0 and not acc.pending(e) and stamped < 200:
+                r = run_upgrade(vid)
+                if r in ("stamped", "relaid"):
+                    stamped += 1
+                if r == "relaid":
+                    self.fetcher.pending.append(vid)
+        if self.done_this_hour >= self.per_hour:
+            return
+        todo = [vid for vid, e in index.items() if acc.pending(e)
+                and self.failed.get(vid, 0) < time.time() - 86400 and (vid, "upgrade") not in self.queued]
+        if todo:
+            todo.sort(key=lambda v: (-self.views.get(v, 0), index[v].get("added") or ""), reverse=False)
+            self.done_this_hour += 1
+            self.enqueue(todo[0], "upgrade")
+
+    def finish(self, timeout):
+        """Turning off: start nothing new, and give a paid check that's under way time to finish."""
+        with self.cv:
+            self.stopping = True
+            self.cv.notify_all()
+        if self.busy:
+            print(f"  finishing the word check on {self.busy} first (up to {timeout // 60} min)…")
+        end = time.time() + timeout
+        while self.busy and time.time() < end:
+            time.sleep(0.5)
+
     def loop(self):
         while True:
             with self.cv:
-                while not self.jobs:
+                while not self.jobs and not self.stopping:
                     self.cv.wait()
+                if self.stopping:
+                    return
                 vid, mode = self.jobs.pop(0)
+                self.busy = vid
             try:
+                if time.time() < self.paused_until:
+                    continue
                 print(f"{time.strftime('%H:%M:%S')}  {vid}  checking words ({mode})")
-                if run_correction(vid, mode, log=lambda m: print(m)):
-                    self.fetcher.pending.append(vid)
+                r = run_upgrade(vid, log=print) if mode == "upgrade" else run_correction(vid, mode, log=print)
+                if r and r != "stamped":
+                    self.fetcher.pending.append(vid)            # "relaid" or a real correction
             except Exception as e:
-                print(f"  correction skipped: {e.__class__.__name__}: {str(e)[:200]}")
+                if e.__class__.__name__ == "OverBudget":
+                    now = datetime.date.today()
+                    nxt = datetime.date(now.year + (now.month == 12), now.month % 12 + 1, 1)
+                    self.paused_until = time.mktime(nxt.timetuple())
+                    print(f"  monthly budget reached: corrections pause until {nxt} ({e})")
+                else:
+                    self.failed[vid] = time.time()
+                    print(f"  correction skipped: {e.__class__.__name__}: {str(e)[:200]}")
             finally:
                 self.queued.discard((vid, mode))
+                self.busy = None
 
 
 class Fetcher:
@@ -1172,7 +1496,7 @@ class Fetcher:
                           else "unavailable" if name in UNAVAILABLE else None)
                 if reason:
                     self.missing[vid] = {"reason": reason, "at": time.time()}
-                    MISSING.write_text(json.dumps(self.missing), encoding="utf-8")
+                    write_atomic(MISSING, json.dumps(self.missing))
                     return 404, "application/json", json.dumps({"error": reason})
                 print(f"  failed: {name}: {msg.splitlines()[0] if msg else ''}")
                 return 502, "application/json", json.dumps({"error": "failed"})
@@ -1184,83 +1508,208 @@ class Fetcher:
             self.lock.release()
 
 
+_publish_lock = threading.Lock()
+
+
+def publish(fetcher, quiet_if_none=True):
+    """Commit and push the pages made since the last push. Returns True if nothing is left waiting."""
+    with _publish_lock:
+        if not fetcher.pending:
+            return True
+        ids, fetcher.pending = fetcher.pending[:], []
+        env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
+
+        def git(*a):
+            return subprocess.run(["git", *a], cwd=ROOT, env=env, capture_output=True, text=True, timeout=180,
+                                  creationflags=NOWIN)
+        lock = ROOT / ".git" / "index.lock"           # left behind if the computer lost power mid-commit
+        if lock.exists() and time.time() - lock.stat().st_mtime > 600:
+            lock.unlink(missing_ok=True)
+        try:
+            git("add", "-A", "data", "docs")
+            c = git("commit", "-m", f"add {len(ids)} transcript(s): {' '.join(ids[:10])}")
+            if c.returncode != 0 and "nothing to commit" in (c.stdout + c.stderr):
+                return True
+            r = git("push")
+            if r.returncode != 0 and re.search(r"rejected|fetch first|non-fast-forward", r.stderr + r.stdout):
+                m = git("pull", "--no-rebase", "--no-edit")      # someone else pushed (a code update): merge, retry
+                if m.returncode == 0:
+                    r = git("push")
+                else:
+                    git("merge", "--abort")
+        except subprocess.TimeoutExpired:
+            r = None
+        if r is not None and r.returncode == 0:
+            print(f"  published {len(ids)} new page(s) to GitHub")
+            return True
+        err = "timed out" if r is None else (r.stderr or r.stdout).strip().splitlines()[-1:]
+        print(f"  git push failed (will retry): {err}")
+        fetcher.pending = ids + fetcher.pending
+        return False
+
+
 def publisher(fetcher, every):
     """Commit and push new pages to GitHub in batches, so they become static and instant."""
     if not (ROOT / ".git").exists():
         print("  (not a git repo: new pages won't be published to GitHub)")
         return
-    env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
     last = 0.0
     while True:
         time.sleep(15)
         if not fetcher.pending or time.time() - last < every:
             continue
-        ids, fetcher.pending = fetcher.pending[:], []
         last = time.time()
-
-        def git(*a):
-            return subprocess.run(["git", *a], cwd=ROOT, env=env, capture_output=True, text=True, timeout=180)
-        git("add", "-A", "data", "docs")
-        c = git("commit", "-m", f"add {len(ids)} transcript(s): {' '.join(ids[:10])}")
-        if c.returncode != 0 and "nothing to commit" in (c.stdout + c.stderr):
-            continue
-        r = git("push")
-        if r.returncode == 0:
-            print(f"  published {len(ids)} new page(s) to GitHub")
-        else:
-            print(f"  git push failed (will retry): {(r.stderr or r.stdout).strip().splitlines()[-1:]}")
-            fetcher.pending = ids + fetcher.pending
+        if not publish(fetcher):
             last = time.time() - every + 60       # retry in about a minute
 
 
 TUNNEL_TOKEN_FILE = ROOT / "tunnel-token.txt"   # never commit this (it's in .gitignore)
 
 
-def start_tunnel():
-    """Run the Cloudflare Tunnel alongside the server, so closing the window turns both off."""
-    import shutil
-    if not TUNNEL_TOKEN_FILE.exists():
-        print("  tunnel: off (no tunnel-token.txt), so only this computer can reach the server")
-        return None
-    token = TUNNEL_TOKEN_FILE.read_text(encoding="utf-8").strip().split()[-1]   # tolerate a pasted full command
-    exe = (os.environ.get("YOUSNR_CLOUDFLARED") or shutil.which("cloudflared")
-           or next((c for c in (r"C:\Program Files (x86)\cloudflared\cloudflared.exe",
-                                r"C:\Program Files\cloudflared\cloudflared.exe") if Path(c).exists()), None))
-    if not exe:
-        print("  tunnel: cloudflared isn't installed. Run:  winget install --id Cloudflare.cloudflared")
-        return None
-    proc = subprocess.Popen([exe, "tunnel", "--no-autoupdate", "run", "--token", token],
-                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True,
-                            encoding="utf-8", errors="replace")
+TUNNEL = {"state": "off"}                       # shown by `status`
 
-    def watch():
-        connected = False
-        log = (ROOT / "tunnel.log").open("w", encoding="utf-8")
-        for line in proc.stderr:
-            log.write(line)
-            log.flush()
-            if "Registered tunnel connection" in line and not connected:
-                connected = True
-                print("  tunnel: connected, api.yousnr.com is live")
-            elif " ERR " in line and "Unauthorized" in line:
+
+class Tunnel:
+    """Runs cloudflared next to the server and restarts it if it ever stops."""
+    PID = RUN / "tunnel.pid"
+
+    def __init__(self):
+        self.proc, self.stopping = None, threading.Event()
+
+    def start(self):
+        import shutil
+        if not TUNNEL_TOKEN_FILE.exists():
+            print("  tunnel: off (no tunnel-token.txt), so only this computer can reach the server")
+            return self
+        token = TUNNEL_TOKEN_FILE.read_text(encoding="utf-8").strip().split()[-1]   # tolerate a pasted full command
+        exe = (os.environ.get("YOUSNR_CLOUDFLARED") or shutil.which("cloudflared")
+               or next((c for c in (r"C:\Program Files (x86)\cloudflared\cloudflared.exe",
+                                    r"C:\Program Files\cloudflared\cloudflared.exe") if Path(c).exists()), None))
+        if not exe:
+            print("  tunnel: cloudflared isn't installed. Run:  winget install --id Cloudflare.cloudflared")
+            return self
+        old = alive(self.PID, ("cloudflared",))       # left over from a crash or power cut
+        if old:
+            kill(old)
+        TUNNEL["state"] = "connecting"
+        threading.Thread(target=self._run, args=(exe, token), daemon=True).start()
+        print("  tunnel: connecting…")
+        return self
+
+    def _run(self, exe, token):
+        fails, first = 0, True
+        while not self.stopping.is_set():
+            t0, connected, rejected = time.time(), False, False
+            RUN.mkdir(exist_ok=True)
+            self.proc = subprocess.Popen([exe, "tunnel", "--no-autoupdate", "run", "--token", token],
+                                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+                                         text=True, encoding="utf-8", errors="replace", creationflags=NOWIN)
+            self.PID.write_text(str(self.proc.pid), encoding="utf-8")
+            with (ROOT / "tunnel.log").open("w" if first else "a", encoding="utf-8") as log:
+                first = False
+                for line in self.proc.stderr:
+                    log.write(line)
+                    log.flush()
+                    if "Registered tunnel connection" in line and not connected:
+                        connected = True
+                        TUNNEL["state"] = "connected"
+                        print("  tunnel: connected, api.yousnr.com is live")
+                    elif " ERR " in line and "Unauthorized" in line:
+                        rejected = True
+            self.proc.wait()
+            self.PID.unlink(missing_ok=True)
+            if self.stopping.is_set():
+                break
+            if rejected:
+                TUNNEL["state"] = "token rejected"
                 print("  tunnel: the token in tunnel-token.txt was rejected; copy it again from Cloudflare")
-        print("  tunnel: stopped (see tunnel.log)")
-    threading.Thread(target=watch, daemon=True).start()
-    print("  tunnel: connecting…")
-    return proc
+                break
+            fails = fails + 1 if time.time() - t0 < 300 else 0
+            wait = min(600, 15 * 2 ** max(0, min(fails, 6) - 1))
+            TUNNEL["state"] = "restarting"
+            print(f"  tunnel: stopped (see tunnel.log); starting it again in {wait} s")
+            self.stopping.wait(wait)
+        TUNNEL["state"] = "off"
+
+    def stop(self):
+        self.stopping.set()
+        p = self.proc
+        if p and p.poll() is None:
+            p.terminate()
+            try:
+                p.wait(timeout=10)
+            except Exception:
+                p.kill()
+        self.PID.unlink(missing_ok=True)
 
 
-def stop_tunnel(proc):
-    if proc and proc.poll() is None:
-        proc.terminate()
-        try:
-            proc.wait(timeout=10)
-        except Exception:
-            proc.kill()
+def keep_awake(stop):
+    """Windows: while plugged in, don't let the computer fall asleep on its own while YouSNR is on.
+    On battery Windows sleeps and hibernates as usual, so a laptop never runs itself flat. The screen can
+    still turn off, and choosing Sleep or Hibernate yourself always works. YOUSNR_KEEP_AWAKE=0 turns this off.
+    Runs as its own thread (Windows ties the request to the thread that made it)."""
+    if os.name != "nt" or os.environ.get("YOUSNR_KEEP_AWAKE", "1") == "0":
+        return
+    try:
+        import ctypes
+
+        class PowerStatus(ctypes.Structure):
+            _fields_ = [("ACLineStatus", ctypes.c_ubyte), ("BatteryFlag", ctypes.c_ubyte),
+                        ("BatteryLifePercent", ctypes.c_ubyte), ("SystemStatusFlag", ctypes.c_ubyte),
+                        ("BatteryLifeTime", ctypes.c_ulong), ("BatteryFullLifeTime", ctypes.c_ulong)]
+        k32 = ctypes.windll.kernel32
+        setstate = k32.SetThreadExecutionState
+        setstate.argtypes, setstate.restype = [ctypes.c_uint32], ctypes.c_uint32
+        ES_CONTINUOUS, ES_SYSTEM_REQUIRED = 0x80000000, 0x00000001
+    except Exception:
+        return
+    awake = None
+    while not stop.is_set():
+        ps = PowerStatus()
+        plugged = not k32.GetSystemPowerStatus(ctypes.byref(ps)) or ps.ACLineStatus != 0   # 255 = desktop/unknown
+        if plugged != awake:
+            setstate(ES_CONTINUOUS | (ES_SYSTEM_REQUIRED if plugged else 0))
+            print("  plugged in: keeping this computer from sleeping on its own" if plugged else
+                  "  on battery: Windows can sleep or hibernate as usual (YouSNR pauses while it does)")
+            awake = plugged
+        stop.wait(60)
+    setstate(ES_CONTINUOUS)
+
+
+SERVER_PID = RUN / "server.pid"
+BG_PID = RUN / "background.pid"
+STOP = RUN / "stop"                  # `python yousnr.py stop` creates this; the server sees it and shuts down cleanly
+PY_NAMES = ("python", "yousnr")      # what our own processes look like in the task list
+EXIT_ALREADY_RUNNING, EXIT_TURNED_OFF = 3, 4
 
 
 def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.1", tunnel=True, browser=True):
     import http.server
+
+    class Server(http.server.ThreadingHTTPServer):
+        daemon_threads = True
+        allow_reuse_address = os.name != "nt"      # on Windows that would let two servers share the port
+
+    srv = Server((host, port), None, bind_and_activate=False)
+    try:                                            # claim the port first: only one YouSNR at a time
+        srv.server_bind()
+        srv.server_activate()
+    except OSError:
+        srv.server_close()
+        if alive(BG_PID, PY_NAMES):
+            print("YouSNR is already running in the background, so there's nothing to start.\n"
+                  "  python yousnr.py status    see what it's doing\n"
+                  "  python yousnr.py stop      turn it off (then this window version can run)")
+        else:
+            print(f"Port {port} is already in use: YouSNR is probably already running in another window.")
+        sys.exit(EXIT_ALREADY_RUNNING)
+    RUN.mkdir(exist_ok=True)
+    STOP.unlink(missing_ok=True)
+    background = isinstance(sys.stdout, LogFile)
+    how = "service" if os.environ.get("INVOCATION_ID") else "background" if background else "window"
+    SERVER_PID.write_text(f"{os.getpid()} {how}", encoding="utf-8")
+    started = time.time()
+
     fetcher = Fetcher(lang, browser)
     local = {f"http://localhost:{port}", f"http://127.0.0.1:{port}"}
     write_indexes()
@@ -1301,7 +1750,8 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
             path = urllib.parse.urlparse(self.path).path
             if path == "/api/health":
                 return self._send(200, "application/json", json.dumps(
-                    {"ok": True, "videos": len(_load_index()), "paused_for": max(0, int(fetcher.cooldown_until - time.time()))}))
+                    {"ok": True, "videos": len(_load_index()), "paused_for": max(0, int(fetcher.cooldown_until - time.time())),
+                     "tunnel": TUNNEL["state"], "up": int(time.time() - started)}))
             m = re.fullmatch(r"/api/page/([A-Za-z0-9_-]{11})", path)
             if m:
                 vid = m.group(1)
@@ -1326,11 +1776,12 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
                 return self._send(404, "text/html; charset=utf-8", (DOCS / "404.html").read_text(encoding="utf-8"))
             return super().send_error(code, message, explain)
 
+    srv.RequestHandlerClass = Handler
     corrector = fetcher.corrector = Corrector(fetcher)
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
-    srv = http.server.ThreadingHTTPServer((host, port), Handler)
-    print(f"YouSNR is ON   (close this window to turn it off)")
+    print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(
+        how, "   (close this window to turn it off)"))
     print(f"  local:  http://localhost:{port}/watch?v=265-EZJ_aJE")
     if corrector.enabled:
         st = acc.settings()
@@ -1338,19 +1789,400 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
               f"${st['budget']:.2f} used this month; full re-transcription at {st['full_at']} views")
     else:
         print("  corrections: off (set ELEVENLABS_API_KEY / ASSEMBLYAI_API_KEY to turn on)")
-    proc = start_tunnel() if tunnel else None
+    awake_stop = threading.Event()
+    threading.Thread(target=keep_awake, args=(awake_stop,), daemon=True).start()
+    tun = Tunnel().start() if tunnel else None
     print()
+
+    asked_to_stop = threading.Event()
+    try:                                       # `systemctl stop` on a server: finish up like `stop` does
+        import signal
+        signal.signal(signal.SIGTERM, lambda *_: threading.Thread(target=srv.shutdown, daemon=True).start())
+    except Exception:
+        pass
+
+    def watch_for_stop():
+        while not STOP.exists():
+            time.sleep(1)
+        asked_to_stop.set()
+        srv.shutdown()
+    threading.Thread(target=watch_for_stop, daemon=True).start()
+
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
-        print("stopped")
+        pass
     finally:
-        stop_tunnel(proc)
+        print("turning off…")
+        srv.server_close()
+        if corrector.enabled:
+            corrector.finish(150)
+        if push and fetcher.pending and (ROOT / ".git").exists():
+            print(f"  publishing {len(fetcher.pending)} waiting page(s) first")
+            publish(fetcher)
+        if tun:
+            tun.stop()
+        awake_stop.set()
+        if read_pid(SERVER_PID) == os.getpid():
+            SERVER_PID.unlink(missing_ok=True)
+        STOP.unlink(missing_ok=True)
+        print("YouSNR is OFF")
+    if asked_to_stop.is_set():
+        sys.exit(EXIT_TURNED_OFF)
+
+
+# ---------------------------------------------------------------- always on
+# `autostart on` puts a shortcut in Windows' Startup folder. At sign-in it runs the keeper
+# (`background`) with no window. The keeper starts the server hidden, writes everything to
+# yousnr.log, and starts the server again if it ever stops. `stop` / `start` / `status` control it.
+
+def python_for(windowless):
+    """pythonw.exe runs with no window at all; python.exe started with NOWIN gets an invisible console
+    that everything it starts (git, ffmpeg, cloudflared, the browser driver) shares, so nothing pops up."""
+    exe = Path(sys.executable)
+    if os.name != "nt":
+        return str(exe)
+    other = exe.with_name("pythonw.exe" if windowless else "python.exe")
+    return str(other) if other.exists() else str(exe)
+
+
+def health(port=8787, url=None, timeout=3):
+    try:
+        if url:
+            opener = urllib.request.build_opener()
+        else:
+            url, opener = f"http://127.0.0.1:{port}/api/health", urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(urllib.request.Request(url, headers={"User-Agent": "yousnr-status"}), timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:
+        return None
+
+
+def startup_folder():
+    try:
+        import ctypes
+        buf = ctypes.create_unicode_buffer(260)
+        ctypes.windll.shell32.SHGetFolderPathW(None, 7, None, 0, buf)      # 7 = the Startup folder
+        if buf.value:
+            return Path(buf.value)
+    except Exception:
+        pass
+    return Path(os.environ.get("APPDATA", "")) / "Microsoft" / "Windows" / "Start Menu" / "Programs" / "Startup"
+
+
+def autostart_on():
+    return os.name == "nt" and (startup_folder() / "YouSNR.lnk").exists()
+
+
+def run_background(port=8787):
+    """The keeper: what the sign-in shortcut runs. No window; restarts the server if it stops."""
+    use_log_file()
+    RUN.mkdir(exist_ok=True)
+    other = alive(BG_PID, PY_NAMES)
+    if other and other != os.getpid():
+        return
+    BG_PID.write_text(str(os.getpid()), encoding="utf-8")
+    py = python_for(windowless=False)
+    fails, noted = 0, False
+
+    def copy(stream):
+        for line in stream:
+            sys.stdout.write("  " + line)
+    try:
+        print(f"keeper started (process {os.getpid()})")
+        while True:
+            t0 = time.time()
+            p = subprocess.Popen([py, "-X", "utf8", str(ROOT / "yousnr.py"), "serve", "--port", str(port), "--log", str(LOG)],
+                                 cwd=ROOT, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+                                 text=True, encoding="utf-8", errors="replace", creationflags=NOWIN)
+            threading.Thread(target=copy, args=(p.stderr,), daemon=True).start()
+            code = p.wait()
+            if code == EXIT_TURNED_OFF or read_pid(BG_PID) != os.getpid():
+                break
+            if code == EXIT_ALREADY_RUNNING:
+                if not noted:
+                    print("another YouSNR is already running (in a window?); taking over when it closes")
+                    noted = True
+                time.sleep(60)
+                continue
+            noted = False
+            fails = fails + 1 if time.time() - t0 < 600 else 0
+            wait = min(300, 10 * 2 ** max(0, min(fails, 6) - 1))       # 10 s, then longer if it keeps failing
+            print(f"the server stopped unexpectedly (exit code {code}); starting it again in {wait} s")
+            time.sleep(wait)
+    finally:
+        if read_pid(BG_PID) == os.getpid():
+            BG_PID.unlink(missing_ok=True)
+        print("keeper stopped")
+
+
+SERVICE = Path("/etc/systemd/system/yousnr.service")      # installed by deploy/oracle-setup.sh
+
+
+def as_service():
+    return os.name != "nt" and SERVICE.exists()
+
+
+def systemctl(*a):
+    try:
+        r = subprocess.run(["sudo", "-n", "systemctl", *a], capture_output=True, text=True, timeout=300)
+    except Exception as e:
+        print(f"  couldn't run systemctl: {e}")
+        return False
+    if r.returncode != 0 and (r.stderr or r.stdout).strip():
+        print("  " + (r.stderr or r.stdout).strip().splitlines()[-1])
+    return r.returncode == 0
+
+
+def start_background(port=8787):
+    if as_service():
+        if health(port):
+            print("YouSNR is already on.  (yousnr status)")
+            return True
+        print("Turning YouSNR on…", flush=True)
+        systemctl("start", "yousnr")
+        for _ in range(90):
+            time.sleep(1)
+            if health(port):
+                print("YouSNR is ON.")
+                return True
+        print("It's still starting. Check in a minute with:  yousnr status")
+        return False
+    if health(port) or alive(BG_PID, PY_NAMES) or alive(SERVER_PID, PY_NAMES):
+        print("YouSNR is already on.  (python yousnr.py status)")
+        return True
+    RUN.mkdir(exist_ok=True)
+    STOP.unlink(missing_ok=True)
+    cmd = [python_for(windowless=True), str(ROOT / "yousnr.py"), "background", "--port", str(port)]
+    kw = dict(cwd=ROOT, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, close_fds=True)
+    if os.name == "nt":
+        flags = 0x00000008 | 0x00000200                  # DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP
+        try:                                              # + BREAKAWAY_FROM_JOB: keeps running after this window closes
+            subprocess.Popen(cmd, creationflags=flags | 0x01000000, **kw)
+        except OSError:
+            subprocess.Popen(cmd, creationflags=flags, **kw)
+    else:
+        subprocess.Popen(cmd, start_new_session=True, **kw)
+    print("Turning YouSNR on in the background…", flush=True)
+    for _ in range(90):
+        time.sleep(1)
+        if health(port):
+            print("YouSNR is ON. No window needed; you can close this one.")
+            print("  python yousnr.py status    what it's doing      python yousnr.py stop    turn it off")
+            return True
+    print("It's still starting. Check in a minute with:  python yousnr.py status   (details in yousnr.log)")
+    return False
+
+
+def stop_background(wait=240):
+    if as_service():
+        print("Turning YouSNR off (it finishes what it's doing first)…", flush=True)
+        systemctl("stop", "yousnr")
+        LogFile().write("turned off with `yousnr stop`\n")
+        print("YouSNR is OFF.  Turn it on again with:  yousnr start")
+        if systemctl("is-enabled", "--quiet", "yousnr"):
+            print("  It turns on again when the server restarts. To stop that too:  yousnr autostart off")
+        return
+    keeper = alive(BG_PID, PY_NAMES)
+    if keeper:
+        kill(keeper)                  # the keeper only restarts the server; it has nothing to save
+    BG_PID.unlink(missing_ok=True)
+    server = alive(SERVER_PID, PY_NAMES)
+    if server:
+        RUN.mkdir(exist_ok=True)
+        STOP.write_text("stop", encoding="utf-8")
+        print("Turning YouSNR off (it finishes what it's doing first)…", flush=True)
+        end = time.time() + wait
+        while time.time() < end and process_name(server):
+            time.sleep(1)
+        if process_name(server):
+            kill(server, tree=True)
+            print("  it didn't finish in time, so it was stopped")
+    tunnel = alive(Tunnel.PID, ("cloudflared",))
+    if tunnel:
+        kill(tunnel)
+    for f in (SERVER_PID, STOP, Tunnel.PID):
+        f.unlink(missing_ok=True)
+    if keeper or server:
+        LogFile().write("turned off with `python yousnr.py stop`\n")
+    if not (keeper or server):
+        print("YouSNR was already off.")
+        return
+    print("YouSNR is OFF.")
+    print("  Videos already on yousnr.com still work; new ones show \"server offline\" until it's on again.")
+    if autostart_on():
+        print("  It turns on again the next time you sign in to Windows. To stop that too:  python yousnr.py autostart off")
+
+
+def _ago(secs):
+    secs = int(secs)
+    return (f"{secs // 86400} d {secs % 86400 // 3600} h" if secs >= 86400 else
+            f"{secs // 3600} h {secs % 3600 // 60} min" if secs >= 3600 else f"{secs // 60} min")
+
+
+def show_status(port=8787, lines=15):
+    keeper, server, h = alive(BG_PID, PY_NAMES), alive(SERVER_PID, PY_NAMES), health(port)
+    try:
+        how = SERVER_PID.read_text(encoding="utf-8").split()[1]
+    except Exception:
+        how = "background" if keeper else "window"
+    if h:
+        print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(how, "  (in a window)")
+              + f", for {_ago(h.get('up', 0))}")
+        n = h.get("videos", 0)
+        print(f"  {n} video{'' if n == 1 else 's'} on the site")
+        public = health(url="https://api.yousnr.com/api/health", timeout=10)
+        print(f"  tunnel: {h.get('tunnel', '?')}; reachable from the internet: {'yes' if public else 'no'}")
+        if h.get("paused_for"):
+            print(f"  new videos paused for {max(1, h['paused_for'] // 60)} more min (YouTube asked us to slow down)")
+    elif keeper or server:
+        print("YouSNR is STARTING (or stuck). If this lasts more than a few minutes, see yousnr.log.")
+    else:
+        print("YouSNR is OFF")
+    if os.name == "nt":
+        print(f"  turns on when you sign in to Windows: {'yes' if autostart_on() else 'no'}")
+    elif as_service():
+        en = subprocess.run(["systemctl", "is-enabled", "yousnr"], capture_output=True, text=True).stdout.strip()
+        print(f"  starts when the server starts: {'yes' if en == 'enabled' else 'no'}")
+    if yt_proxy():
+        print(f"  YouTube traffic goes through {yt_proxy()}  (check-youtube tests it)")
+    if acc is not None and acc.available():
+        st = acc.settings()
+        print(f"  corrections: {', '.join(acc.available())}; ${acc.spent_this_month():.2f} of ${st['budget']:.2f} used this month")
+    else:
+        print("  corrections: off (no ElevenLabs / AssemblyAI key found)")
+    if LOG.exists() and lines:
+        tail = LOG.read_text(encoding="utf-8", errors="replace").splitlines()[-lines:]
+        print(f"\nLast {len(tail)} lines of yousnr.log:")
+        for line in tail:
+            print("  " + line)
+
+
+def set_autostart(on):
+    if as_service():
+        if systemctl("enable" if on else "disable", "yousnr"):
+            print("YouSNR now starts by itself whenever the server starts." if on else
+                  "YouSNR no longer starts by itself when the server starts.")
+        if on:
+            start_background()
+        return
+    if os.name != "nt":
+        print("autostart is for Windows. On a Linux server, run deploy/oracle-setup.sh (it sets up a service).")
+        return
+    lnk = startup_folder() / "YouSNR.lnk"
+    if not on:
+        lnk.unlink(missing_ok=True)
+        print("YouSNR no longer turns on when you sign in to Windows.")
+        if health() or alive(BG_PID, PY_NAMES):
+            print("  It's still on right now.  python yousnr.py stop  turns it off.")
+        return
+    env = dict(os.environ, YS_LNK=str(lnk), YS_TARGET=python_for(windowless=True),
+               YS_ARGS=f'"{ROOT / "yousnr.py"}" background', YS_DIR=str(ROOT))
+    ps = ("$s=(New-Object -ComObject WScript.Shell).CreateShortcut($env:YS_LNK); $s.TargetPath=$env:YS_TARGET; "
+          "$s.Arguments=$env:YS_ARGS; $s.WorkingDirectory=$env:YS_DIR; $s.WindowStyle=7; "
+          "$s.Description='YouSNR transcript server (no window)'; $s.Save()")
+    r = subprocess.run(["powershell", "-NoProfile", "-NonInteractive", "-Command", ps], env=env,
+                       capture_output=True, text=True, timeout=60, creationflags=NOWIN)
+    if not lnk.exists():
+        sys.exit(f"Couldn't create the startup shortcut: {(r.stderr or r.stdout).strip()[:300]}")
+    print("YouSNR now turns on by itself, with no window, whenever you sign in to Windows.")
+    print(f"  (shortcut: {lnk}; you can also switch it in Task Manager > Startup apps)")
+    start_background()
+
+
+# ---------------------------------------------------------------- can this computer reach YouTube?
+
+def check_youtube(vid="cPmVLrTA8AU", direct=False, browser=True):
+    """Try each way YouSNR talks to YouTube and say which work. On a cloud server, this is how you
+    find out whether Cloudflare WARP gets past YouTube's block on data-centre addresses."""
+    import requests
+    if direct:
+        os.environ["YOUSNR_PROXY"] = ""
+    px = yt_requests_proxies()
+    print(f"Checking YouTube access {'through ' + yt_proxy() if yt_proxy() else 'directly (no proxy)'}, "
+          f"with video {vid}\n")
+    passed = []
+
+    def result(n, ok, text):
+        passed.append(ok)
+        print(f"  {n}. {'OK  ' if ok else 'FAIL'}  {text}")
+
+    try:
+        t = requests.get("https://www.cloudflare.com/cdn-cgi/trace", proxies=px, timeout=20).text
+        kv = dict(line.split("=", 1) for line in t.splitlines() if "=" in line)
+        print(f"  0. YouTube sees the address {kv.get('ip', '?')}  (Cloudflare WARP: {kv.get('warp', 'off')})")
+    except Exception as e:
+        if yt_proxy():
+            print(f"  0. FAIL  couldn't get out through the proxy: {e.__class__.__name__}: {str(e)[:150]}")
+            print("\nIs WARP connected?  warp-cli status   (then: warp-cli connect)")
+            return False
+        print(f"  0. (couldn't look up this computer's address: {e.__class__.__name__})")
+
+    try:                                                   # 1. the watch page (title, music check, chapters)
+        r = requests.get(f"https://www.youtube.com/watch?v={vid}&hl=en", proxies=px, timeout=25,
+                         headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}, cookies={"SOCS": "CAI"})
+        pr = _json_after(r.text, "ytInitialPlayerResponse = ") or {}
+        ps = pr.get("playabilityStatus") or {}
+        title = (pr.get("videoDetails") or {}).get("title", "")
+        reason = " ".join(str(ps.get(k) or "") for k in ("reason", "messages")).strip()
+        if ps.get("status") == "OK":
+            result(1, True, f"watch page: \"{title}\"")
+        elif "bot" in reason.lower() or "sign in" in reason.lower():
+            result(1, False, "watch page: YouTube says \"Sign in to confirm you're not a bot\"")
+        else:
+            result(1, False, f"watch page: HTTP {r.status_code}, {ps.get('status') or 'no player data'} {reason[:120]}")
+    except Exception as e:
+        result(1, False, f"watch page: {e.__class__.__name__}: {str(e)[:150]}")
+
+    try:                                                   # 2. caption files (backup + word-check comparison)
+        tracks = list(transcript_api().list(vid))
+        result(2, True, f"caption files: {len(tracks)} track(s)")
+    except Exception as e:
+        result(2, False, f"caption files: {e.__class__.__name__}: {(str(e).strip().splitlines() or [''])[0][:150]}")
+
+    try:                                                   # 3. yt-dlp (audio for word checks)
+        import yt_dlp
+        class Quiet:
+            def debug(self, m): pass
+            warning = info = error = debug
+        opts = {"quiet": True, "no_warnings": True, "skip_download": True, "logger": Quiet()}
+        if yt_proxy():
+            opts["proxy"] = yt_proxy()
+        with yt_dlp.YoutubeDL(opts) as y:
+            info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
+        audio = [f for f in info.get("formats") or [] if f.get("vcodec") == "none" and f.get("acodec") != "none"]
+        result(3, bool(audio), f"audio for word checks: {len(audio)} audio format(s)")
+    except Exception as e:
+        msg = str(e).replace("ERROR: ", "").strip().splitlines()[0] if str(e).strip() else e.__class__.__name__
+        result(3, False, f"audio for word checks: {msg[:170]}")
+
+    if browser:                                            # 4. the real thing: YouTube's transcript panel
+        try:
+            segs, chapters, track, how = fetch_browser(vid, offscreen=True)
+            result(4, bool(segs), f"transcript panel in a browser: {len(segs)} lines ({how})")
+        except Exception as e:
+            result(4, False, f"transcript panel in a browser: {e.__class__.__name__}: {(str(e).splitlines() or [''])[0][:150]}")
+
+    print()
+    if all(passed):
+        print("All good: this computer can run YouSNR.")
+    elif passed and passed[-1] and browser:
+        print("The transcript panel works, so new videos will work. Failed steps above only affect the backups"
+              + (" and word checks" if len(passed) > 2 and not passed[2] else "") + ".")
+    elif yt_proxy():
+        print("YouTube is blocking this computer even through the proxy. On the cloud server, get a new WARP "
+              "address and check again:\n  warp-cli disconnect; warp-cli registration delete; "
+              "bash ~/yousnr/deploy/oracle-setup.sh")
+    else:
+        print("YouTube is blocking this computer (or it's offline).")
+    return all(passed)
 
 
 # ---------------------------------------------------------------- CLI
 
 def main():
+    load_windows_user_env()
+    load_env_file()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("add"); a.add_argument("videos", nargs="+"); a.add_argument("--lang", default="en")
@@ -1370,6 +2202,9 @@ def main():
     co.add_argument("videos", nargs="+"); co.add_argument("--full", action="store_true")
     co.add_argument("--engines", default="", help="e.g. elevenlabs,assemblyai (default: every engine with a key)")
     sub.add_parser("usage", help="speech-recognition spending this month")
+    up = sub.add_parser("upgrade", help="bring older videos up to the current checking rules")
+    up.add_argument("--dry-run", action="store_true", help="only show what would be done and the estimated cost")
+    up.add_argument("--limit", type=int, default=0, help="at most this many paid upgrades this run")
     bo = sub.add_parser("bakeoff", help="compare the engines with YouTube on a few minutes of a video")
     bo.add_argument("video"); bo.add_argument("--minutes", type=float, default=5)
     bo.add_argument("--start", default="", help="where to start, e.g. 10:00 (default: middle of the video)")
@@ -1380,6 +2215,19 @@ def main():
     sv.add_argument("--no-push", action="store_true", help="don't publish new pages to GitHub")
     sv.add_argument("--no-tunnel", action="store_true", help="don't start the Cloudflare Tunnel")
     sv.add_argument("--captions", action="store_true", help="skip the transcript panel; use the caption file only (faster)")
+    sv.add_argument("--log", nargs="?", const=str(LOG), default="", help="write to yousnr.log instead of the screen")
+    for name, text in (("start", "turn YouSNR on in the background (no window)"),
+                       ("stop", "turn YouSNR off"),
+                       ("status", "is it on, is the tunnel up, spending, last lines of the log"),
+                       ("background", "the always-on keeper that `start` and the sign-in shortcut run")):
+        c = sub.add_parser(name, help=text)
+        c.add_argument("--port", type=int, default=8787)
+    ck = sub.add_parser("check-youtube", help="can this computer get transcripts from YouTube? (tests the proxy too)")
+    ck.add_argument("video", nargs="?", default="cPmVLrTA8AU")
+    ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
+    ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
+    au = sub.add_parser("autostart", help="on: turn on by itself whenever you sign in to Windows; off: don't")
+    au.add_argument("switch", choices=["on", "off"])
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
     r.add_argument("videos", nargs="+"); r.add_argument("--lang", default="en")
     r.add_argument("--player", action="store_true", help="also save what YouTube's web player loads when CC is on")
@@ -1465,6 +2313,56 @@ def main():
                 print(f"  failed: {e.__class__.__name__}: {str(e)[:300]}")
         write_indexes()
 
+    if args.cmd == "upgrade":
+        if acc is None:
+            sys.exit("correct.py is missing")
+        index = ensure_index_fields()
+        try:
+            views = json.loads((DATA / "_views.json").read_text(encoding="utf-8"))
+        except Exception:
+            views = {}
+        free = [v for v, e in index.items() if 0 < e.get("v", 0) < acc.CURRENT and not acc.pending(e)]
+        paid = [(v, acc.pending(e)) for v, e in index.items() if acc.pending(e)]
+        paid.sort(key=lambda x: -views.get(x[0], 0))
+        price = sum(acc.PRICE_PER_HOUR[e] for e in (acc.available() or list(acc.ENGINES)))
+        est_secs = 0.0
+        for vid, rules in paid:
+            e = index[vid]
+            if acc.reasons_for(rules) is None:          # never checked: ~1/5 of the video gets sent
+                est_secs += 0.2 * (e.get("dur") or 900)
+            else:                                       # bleeps: a short clip around each
+                est_secs += e.get("bleeps", 0) * (9 + 2 * acc.PAD + acc.GAP)
+        print(f"Checking rules: v{acc.CURRENT}. Videos: {len(index)}.")
+        for r in acc.RULES:
+            n = sum(1 for _, rules in paid if r in rules)
+            if n:
+                print(f"  v{r['version']} {r['what']}: {n} video(s) need it")
+        print(f"  {len(free)} video(s) only need their version updated (free)")
+        print(f"  estimated cost for all paid upgrades: ~${est_secs / 3600 * price:.2f} "
+              f"({est_secs / 60:.0f} min of audio x {len(acc.available()) or 2} engines); "
+              f"this month so far ${acc.spent_this_month():.2f} of ${acc.settings()['budget']:.2f}")
+        if args.dry_run:
+            sys.exit(0)
+        relaid = sum(1 for vid in free if run_upgrade(vid) == "relaid")
+        if free:
+            print(f"Free updates done ({len(free)} video(s); {relaid} page(s) changed).")
+        if not acc.available():
+            sys.exit("Set the API keys to run paid upgrades.")
+        done = 0
+        for vid, rules in paid:
+            if args.limit and done >= args.limit:
+                break
+            print(f"{vid}:")
+            try:
+                if run_upgrade(vid) not in (None, "stamped", "relaid"):
+                    done += 1
+            except Exception as e:
+                print(f"  stopped: {e.__class__.__name__}: {str(e)[:200]}")
+                if e.__class__.__name__ == "OverBudget":
+                    break
+        write_indexes()
+        print(f"Upgraded {done} video(s). Publish with: git add . ; git commit -m \"Upgrade transcripts\" ; git push")
+
     if args.cmd == "usage":
         if acc is None:
             sys.exit("correct.py is missing")
@@ -1502,11 +2400,25 @@ def main():
             shutil.rmtree(DOCS / vid, ignore_errors=True)
             index.pop(vid, None)
             print(f"removed {vid}")
-        INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=0), encoding="utf-8")
+        write_atomic(INDEX, json.dumps(index, ensure_ascii=False, indent=0))
         write_indexes(index)
 
     if args.cmd == "serve":
+        if args.log or sys.stdout is None:          # pythonw has no screen to print to
+            use_log_file(args.log or LOG)
         serve(args.port, args.lang, push=not args.no_push, tunnel=not args.no_tunnel, browser=not args.captions)
+    if args.cmd == "background":
+        run_background(args.port)
+    if args.cmd == "start":
+        start_background(args.port)
+    if args.cmd == "stop":
+        stop_background()
+    if args.cmd == "status":
+        show_status(args.port)
+    if args.cmd == "autostart":
+        set_autostart(args.switch == "on")
+    if args.cmd == "check-youtube":
+        sys.exit(0 if check_youtube(video_id(args.video), direct=args.direct, browser=not args.no_browser) else 1)
 
 
 if __name__ == "__main__":

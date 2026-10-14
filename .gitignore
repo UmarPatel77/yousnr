@@ -10,3 +10,7 @@ browser-profile/
 cache/
 data/_usage.json
 data/_views.json
+run/
+yousnr.log
+yousnr.log.old
+*.tmp

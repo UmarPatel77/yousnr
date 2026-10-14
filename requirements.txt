@@ -4,3 +4,4 @@ playwright
 requests
 imageio-ffmpeg
 wordfreq
+PySocks

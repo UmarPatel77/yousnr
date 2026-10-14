@@ -515,13 +515,13 @@
      null
     ],
     [
-     "push you-",
-     "go through that. -"
+     "push you.",
+     "go through that."
     ]
    ],
    "21": [
     [
-     "Well, I'm sorry too. I was supposed to work out",
+     "- Well, I'm sorry too. I was supposed to work out",
      null
     ],
     [
@@ -643,7 +643,7 @@
   "fixes": 17,
   "checked_seconds": 263.3,
   "usd": 0.0383,
-  "version": 2,
+  "version": 3,
   "flagged": [
    [
     "1:05",

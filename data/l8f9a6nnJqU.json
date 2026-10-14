@@ -675,20 +675,6 @@
      null
     ]
    ],
-   "67": [
-    [
-     "a",
-     null
-    ],
-    [
-     "",
-     "[sighs and gasps]"
-    ],
-    [
-     "Bill Murray and um the guy the actor who was in Mr. Holland's Opus? Who was that? Uh Bill",
-     null
-    ]
-   ],
    "75": [
     [
      "You might not make any friends. It it can be a terrible thing. Shyness and um gosh,",
@@ -718,10 +704,10 @@
     ]
    ]
   },
-  "fixes": 14,
+  "fixes": 13,
   "checked_seconds": 275.4,
   "usd": 0.0401,
-  "version": 2,
+  "version": 3,
   "flagged": [
    [
     "0:02",
