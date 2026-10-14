@@ -2351,5 +2351,1797 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-14T01:46:11+00:00"
+ "added": "2026-10-14T01:46:11+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-13T21:46:11",
+  "lines": {
+   "2": [
+    [
+     "Repetition Menial",
+     "Manial"
+    ],
+    [
+     "labor and monotony is not something most people enjoy, but job simulators follow a certain formula.",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "Get up. Get up. No.",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "The thing is, I used to use a dead rat as an alarm clock. Actually, piles and piles of trash and thousands of tasty little cockroaches",
+     null
+    ],
+    [
+     "rummaging around every",
+     "rumaging"
+    ]
+   ],
+   "26": [
+    [
+     "Dude, why is there a con? What the",
+     null
+    ],
+    [
+     "fu",
+     "[ __ ]"
+    ],
+    [
+     "There are a couple of mechanics that are absolutely crucial to your survival",
+     null
+    ]
+   ],
+   "35": [
+    [
+     "Whoa. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "was that? That's weird. A random MRE just showed up in that room and I didn't put there and I went to eat it and it just vanished. And",
+     null
+    ]
+   ],
+   "41": [
+    [
+     "Take the quad out to grab the hash codes.",
+     null
+    ],
+    [
+     "Oh",
+     ""
+    ],
+    [
+     "Come back.",
+     null
+    ],
+    [
+     "Fuck",
+     "[ __ ]"
+    ],
+    [
+     "Process a signal.",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "See, in other job simulators, the most engaging part about it is growth. You go from a struggling small business to a massive busy",
+     null
+    ],
+    [
+     "superstore.",
+     "supertore."
+    ],
+    [
+     "In Voices of the",
+     null
+    ]
+   ],
+   "51": [
+    [
+     "Whoa!",
+     "Wo!"
+    ],
+    [
+     "Wait, wait. There was a",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "mannequin here. There was a mannequin here. 100%. And I didn't move it. There",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "was 1 million% a",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "mannequin here, bro. There used to be a mannequin in here. There used to be What? You're correct.",
+     null
+    ]
+   ],
+   "53": [
+    [
+     "I'm not, bro. Bro, I'm not even",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "with you.",
+     null
+    ]
+   ],
+   "54": [
+    [
+     "I'm not even",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "with you. There was 100% a mannequin right there. I have it.",
+     null
+    ],
+    [
+     "I've",
+     "I"
+    ],
+    [
+     "recorded it. I'm not crazy.",
+     null
+    ]
+   ],
+   "55": [
+    [
+     "No, you're stupid. There's no mannequin there, Angel. I promise you there was a",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "mannequin there. It it it was 100% there",
+     null
+    ]
+   ],
+   "57": [
+    [
+     "was full of fucking",
+     "[ __ ]"
+    ],
+    [
+     "mannequins. There was",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ]
+   ],
+   "60": [
+    [
+     "So,",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "these signals.",
+     null
+    ],
+    [
+     "Fuck",
+     "[ __ ]"
+    ],
+    [
+     "these hash codes. I want to figure out why there's a",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "corpse in the basement.",
+     null
+    ]
+   ],
+   "62": [
+    [
+     "Why does a fucking",
+     "[ __ ]"
+    ],
+    [
+     "station like this need mannequins, bro? First, we know that we are Dr. Kell and that we need to send signals back to headquarters every day.",
+     null
+    ]
+   ],
+   "66": [
+    [
+     "Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "I'm in. I'm in. I'm in. I'm in. I'm in. Keen fun. It's",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "It's German, bro.",
+     null
+    ]
+   ],
+   "71": [
+    [
+     "Not to mention this Stonehenge-looking",
+     "Stonehedge looking"
+    ],
+    [
+     "place that has a human skull and a note in Latin that roughly translates to, \"Devil of the Plains, go back to where",
+     null
+    ]
+   ],
+   "89": [
+    [
+     "Okay. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "That's a bug, right?",
+     null
+    ]
+   ],
+   "90": [
+    [
+     "Holy",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "Why is it giving me chills, dude?",
+     null
+    ]
+   ],
+   "91": [
+    [
+     "Dude, that actually just gave me",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "chills. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "No sound, no music. It just ends. And",
+     null
+    ]
+   ],
+   "93": [
+    [
+     "me the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "out. I I I had goosebumps and was just sitting there and I I didn't even I didn't even know what was going on. I was so confused. cuz I",
+     null
+    ]
+   ],
+   "97": [
+    [
+     "At this point, the",
+     null
+    ],
+    [
+     "strangeness",
+     "stranges"
+    ],
+    [
+     "only began to ramp up exponentially. The signals became increasingly interesting. And for the first time, I saw something besides",
+     null
+    ]
+   ],
+   "98": [
+    [
+     "a planet or asteroid on this little radio detector. Oh, that's",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "fast.",
+     null
+    ]
+   ],
+   "102": [
+    [
+     "Oh, wait a minute. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "All the grass is dying and the sun was censored.",
+     null
+    ]
+   ],
+   "103": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "This also made bits of flesh fall off my skin when I stood in direct sunlight. flesh gift. I can eat",
+     null
+    ]
+   ],
+   "105": [
+    [
+     "where the mannequins went. Oh, what the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "Okay, maybe I just hallucinated that. Then the sky turned red.",
+     null
+    ]
+   ],
+   "113": [
+    [
+     "no way. No way. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "Alpha hideout. I'll drop it.",
+     null
+    ]
+   ],
+   "122": [
+    [
+     "All right. That's",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "weird as",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "and this one.",
+     null
+    ]
+   ],
+   "127": [
+    [
+     "Whoa.",
+     "WA."
+    ],
+    [
+     "This thing has up to a 5080",
+     null
+    ],
+    [
+     "and",
+     "in"
+    ],
+    [
+     "an Intel Ultra 9 series 3 processor. Okay, not only am I processing 7,200 signals a",
+     null
+    ]
+   ],
+   "128": [
+    [
+     "second now, but I can play my favorite games on a glorious 3K OLED monitor. And since",
+     null
+    ],
+    [
+     "They",
+     "I"
+    ],
+    [
+     "somehow managed to jam all this processing power into this ultra thin",
+     null
+    ]
+   ],
+   "134": [
+    [
+     "the go, make sure to check out the new ROG",
+     null
+    ],
+    [
+     "Zephyrus",
+     "Zephorus"
+    ],
+    [
+     "G14 using the link in my description or the pinned comment.",
+     null
+    ]
+   ],
+   "138": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "is that? Whoa.",
+     null
+    ]
+   ],
+   "139": [
+    [
+     "What? That",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "just disappeared in front of my eyes. There was two pyramids right here and then they Oh. Oh, you see it?",
+     null
+    ]
+   ],
+   "141": [
+    [
+     "what what did you hear that",
+     null
+    ],
+    [
+     "[fucking pitter-patter And then?",
+     "[ __ ] pitter patter?"
+    ]
+   ],
+   "143": [
+    [
+     "a fucking",
+     "[ __ ]"
+    ],
+    [
+     "campsite [music]",
+     null
+    ]
+   ],
+   "147": [
+    [
+     "That's just",
+     "that [ __ ] is"
+    ],
+    [
+     "two spaceships hanging out, bro.",
+     null
+    ]
+   ],
+   "150": [
+    [
+     "Is this implying that the aliens built this Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "Oh, I shouldn't have touched that.",
+     null
+    ]
+   ],
+   "154": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "Go. Go.",
+     null
+    ]
+   ],
+   "156": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "was that, dude? And see, this seems to have escalated very quickly. But what you don't see are the",
+     null
+    ]
+   ],
+   "161": [
+    [
+     "Oh, what the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "Are you",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "kidding me?",
+     null
+    ]
+   ],
+   "166": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "And after climbing up into it, it looked like somebody had been hiding in here for a while.",
+     null
+    ]
+   ],
+   "173": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "f fuck",
+     "[ __ ]"
+    ],
+    [
+     "Oh, wait.",
+     null
+    ]
+   ],
+   "181": [
+    [
+     "See out Shit Yep it",
+     "[ __ ]"
+    ]
+   ],
+   "194": [
+    [
+     "Where's this",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "radioactive material, bro?",
+     null
+    ]
+   ],
+   "205": [
+    [
+     "Bro, you seeing this",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "Where is it?",
+     null
+    ]
+   ],
+   "214": [
+    [
+     "What? Oh,",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "off.",
+     null
+    ]
+   ],
+   "241": [
+    [
+     "at all these drives, too. Look how many",
+     null
+    ],
+    [
+     "fucking Ooh",
+     "[ __ ]"
+    ],
+    [
+     "Look at that. Um, I have this altar.",
+     null
+    ]
+   ],
+   "242": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ]
+   ],
+   "244": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "dude? Oh my",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "god.",
+     null
+    ]
+   ],
+   "245": [
+    [
+     "I saw I saw this thing on the",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "detector. Why is it getting pink here?",
+     null
+    ]
+   ],
+   "246": [
+    [
+     "Oh,",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "What is it doing?",
+     null
+    ]
+   ],
+   "248": [
+    [
+     "Oh, wait. It's collecting the It's collecting the",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "orb things.",
+     null
+    ]
+   ],
+   "249": [
+    [
+     "Oh my god. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "So, that just happened. I'm fairly",
+     null
+    ]
+   ],
+   "258": [
+    [
+     "[Shit Fuck What]",
+     "[ __ ] [music] [ __ ]"
+    ]
+   ],
+   "262": [
+    [
+     "Okay, cave is",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "boring. It's just",
+     null
+    ],
+    [
+     "bullshit",
+     "[ __ ]"
+    ],
+    [
+     "I I I couldn't get out and I was.",
+     null
+    ]
+   ],
+   "267": [
+    [
+     "That's probably not good. But as I woke up, holy",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "I I just slept out in the",
+     null
+    ]
+   ],
+   "276": [
+    [
+     "Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "Uh-oh. Okay, I might have spoken a bit too soon. This was no longer just random sightings and strange",
+     null
+    ]
+   ],
+   "281": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "dude? That that genuinely just scared the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "out of me.",
+     null
+    ]
+   ],
+   "282": [
+    [
+     "All right. That's genuinely the most freaky",
+     null
+    ],
+    [
+     "fucking shit",
+     "[ __ ] [ __ ]"
+    ],
+    [
+     "ever. What? All right. What?",
+     null
+    ]
+   ],
+   "286": [
+    [
+     "here. So, at this point, I have one question. Why the",
+     null
+    ],
+    [
+     "f",
+     "[ __ ]"
+    ],
+    [
+     "haven't we left?",
+     null
+    ]
+   ],
+   "291": [
+    [
+     "of all of this bullshit",
+     "[ __ ]"
+    ],
+    [
+     "So why can't I send them back to HQ?",
+     null
+    ]
+   ],
+   "292": [
+    [
+     "So let's leave. I'm packing my",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "and getting out of here.",
+     null
+    ]
+   ],
+   "296": [
+    [
+     "While trying to maintain some sense of",
+     null
+    ],
+    [
+     "normalcy",
+     "normaly"
+    ],
+    [
+     "by just processing signals, Transformer 3 went down right after I just restarted it.",
+     null
+    ]
+   ],
+   "299": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "is that? That is That is extremely unusual.",
+     null
+    ]
+   ],
+   "300": [
+    [
+     "Well, no, wait. Genuinely, what the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "is this thing? There's a little purple dude. What are you?",
+     null
+    ]
+   ],
+   "303": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ]
+   ],
+   "304": [
+    [
+     "Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ]
+   ],
+   "311": [
+    [
+     "What the",
+     null
+    ],
+    [
+     "[fuck Human-like",
+     "[ __ ] Humanike"
+    ],
+    [
+     "person",
+     null
+    ],
+    [
+     "understand",
+     ""
+    ],
+    [
+     "understandable communication. No enemy receive gift.",
+     null
+    ]
+   ],
+   "315": [
+    [
+     "I'm",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "get away from that. I have my gun.",
+     null
+    ],
+    [
+     "Fuck",
+     "[ __ ]"
+    ],
+    [
+     "you.",
+     null
+    ]
+   ],
+   "319": [
+    [
+     "Okay. Sick.",
+     null
+    ],
+    [
+     "Fucking",
+     "[ __ ]"
+    ],
+    [
+     "awesome, dude.",
+     null
+    ]
+   ],
+   "324": [
+    [
+     "Holy",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "I finally did it. [music] After finally taking down this flame tank, just 2 days later, they send in an entire battalion of them.",
+     null
+    ]
+   ],
+   "325": [
+    [
+     "Oh, hell no, son. What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "is that? Whoa.",
+     null
+    ]
+   ],
+   "326": [
+    [
+     "Along with an army of cybernetic",
+     null
+    ],
+    [
+     "boars.",
+     "boores."
+    ],
+    [
+     "What the",
+     null
+    ],
+    [
+     "fuck",
+     "[ __ ]"
+    ],
+    [
+     "are those?",
+     null
+    ]
+   ],
+   "327": [
+    [
+     "But with the heroic help of the more friendly invisible aliens, they were defeated. Oh",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "I got one on me. Shoot it, guys.",
+     null
+    ]
+   ],
+   "344": [
+    [
+     "place, we need to break the game doing a bit of illegal hacker man",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "So, let's clip out of the map and go into this gray box right underneath the base.",
+     null
+    ]
+   ],
+   "352": [
+    [
+     "they made it back to the base where they described hearing footsteps, glowing",
+     null
+    ],
+    [
+     "shit",
+     "[ __ ]"
+    ],
+    [
+     "and well, they said, \"He keeps",
+     null
+    ]
+   ],
+   "360": [
+    [
+     "And their safety excuse for us not being able to have two-way communication with them [music] is complete",
+     null
+    ],
+    [
+     "bullshit",
+     "[ __ ]"
+    ],
+    [
+     "That means that likely we are the experiment.",
+     null
+    ]
+   ],
+   "367": [
+    [
+     "our hacker man abilities again, we can see that it's a",
+     null
+    ],
+    [
+     "fucking",
+     "[ __ ]"
+    ],
+    [
+     "corpse.",
+     null
+    ]
+   ]
+  },
+  "fixes": 101,
+  "checked_seconds": 950.4,
+  "usd": 0.1383,
+  "version": 2,
+  "flagged": [
+   [
+    "0:12",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:09",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "2:53",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "3:01",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:25",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:32",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "4:22",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:34",
+    [
+     "bleeped by YouTube",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:22",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "5:38",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "6:05",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:26",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:57",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:04",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:11",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:15",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:21",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:33",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "7:45",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "8:01",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "8:48",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "9:32",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "10:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:59",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "12:12",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "12:20",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "12:38",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "13:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:18",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "13:48",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "14:00",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "14:17",
+    [
+     "bleeped by YouTube",
+     "rare word"
+    ]
+   ],
+   [
+    "15:27",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "16:05",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "16:34",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "16:51",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "17:11",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "17:31",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "17:40",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "17:59",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "18:08",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "18:15",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "18:31",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "18:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "18:58",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "19:08",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "19:30",
+    [
+     "bleeped by YouTube",
+     "rare word"
+    ]
+   ],
+   [
+    "19:44",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "19:51",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "20:05",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "20:34",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "20:47",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "21:31",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "22:02",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "23:22",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "24:13",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "24:45",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "26:27",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "27:52",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "29:14",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "32:44",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "32:55",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "33:01",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "33:10",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "33:16",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "33:30",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "33:37",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "34:37",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "34:39",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "35:02",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "35:43",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "36:50",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "37:29",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "37:39",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "38:11",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "38:56",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "39:04",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "39:52",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "40:24",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "40:32",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "40:59",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "41:13",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "42:26",
+    [
+     "bleeped by YouTube",
+     "rare word"
+    ]
+   ],
+   [
+    "43:22",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "44:09",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "44:42",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "44:54",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "45:06",
+    [
+     "bleeped by YouTube",
+     "rare word"
+    ]
+   ],
+   [
+    "45:12",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "48:18",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "49:24",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "50:30",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "51:38",
+    [
+     "bleeped by YouTube"
+    ]
+   ],
+   [
+    "52:38",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
 }
