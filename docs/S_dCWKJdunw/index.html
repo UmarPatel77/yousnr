@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jonathan Blow on being lied to by people he hired — Transcript | YouSNR</title>
+<meta name="description" content="How do you handle team members writing code in a way you don&#x27;t entirely agree with? Um, I used to let that slide and just give people a lot of independence…">
+<link rel="canonical" href="https://yousnr.com/S_dCWKJdunw/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Jonathan Blow on being lied to by people he hired — Transcript">
+<meta property="og:description" content="How do you handle team members writing code in a way you don&#x27;t entirely agree with? Um, I used to let that slide and just give people a lot of independence…">
+<meta property="og:image" content="https://i.ytimg.com/vi/S_dCWKJdunw/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/S_dCWKJdunw/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Jonathan Blow on being lied to by people he hired</h1>
+      <div class="meta">Jonathan Blow highlights<span class="pub"> · Sep 2, 2026</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=S_dCWKJdunw" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · double-checking words with speech recognition; reload in a few minutes for the corrected version</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab hidden" role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool hidden" id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"></div>
+    <div class="body" id="body">
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="7.0"><span class="ts">0:00</span><span class="tx">How do you handle team members writing code in a way you don&#x27;t entirely agree with? Um,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=7s" target="_blank" rel="noopener" data-s="7.0" data-d="7.0"><span class="ts">0:07</span><span class="tx">I used to let that slide and just give people a lot of independence, but what I&#x27;ve discovered is that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=14s" target="_blank" rel="noopener" data-s="14.0" data-d="12.0"><span class="ts">0:14</span><span class="tx">that used to work in the olden days and it doesn&#x27;t work that well anymore because people just don&#x27;t people just don&#x27;t work as hard in a remote scenario.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=26s" target="_blank" rel="noopener" data-s="26.0" data-d="7.0"><span class="ts">0:26</span><span class="tx">So what I do is I give them feedback now and uh people will eventually get fired</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=33s" target="_blank" rel="noopener" data-s="33.0" data-d="8.0"><span class="ts">0:33</span><span class="tx">if their code is not good enough. You definitely need some patience. Yeah, but the the here&#x27;s the problem. Here&#x27;s the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=41s" target="_blank" rel="noopener" data-s="41.0" data-d="9.0"><span class="ts">0:41</span><span class="tx">problem. When you have a remote company, if you give somebody eight months to ramp up and get better,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=50s" target="_blank" rel="noopener" data-s="50.0" data-d="8.0"><span class="ts">0:50</span><span class="tx">then you&#x27;re paying somebody for eight months who&#x27;s working five jobs and lying to you about how they&#x27;re trying to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=58s" target="_blank" rel="noopener" data-s="58.0" data-d="12.0"><span class="ts">0:58</span><span class="tx">understand and get better and all that, right? So, you just can&#x27;t tolerate that Like, someone needs to ramp up in one month or two months or they&#x27;re gone.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=70s" target="_blank" rel="noopener" data-s="70.0" data-d="8.0"><span class="ts">1:10</span><span class="tx">And that&#x27;s just the new reality of the situation because paying a programmer for eight months is $200,000.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=78s" target="_blank" rel="noopener" data-s="78.0" data-d="2.0"><span class="ts">1:18</span><span class="tx">That&#x27;s expensive.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=80s" target="_blank" rel="noopener" data-s="80.0" data-d="7.0"><span class="ts">1:20</span><span class="tx">So, you just can&#x27;t you can&#x27;t do it. And I&#x27;m sorry, you know, for people who genuinely need that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=87s" target="_blank" rel="noopener" data-s="87.0" data-d="7.0"><span class="ts">1:27</span><span class="tx">ramp up time. I&#x27;m sorry, but it&#x27;s one of those things where the the abusive people</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=94s" target="_blank" rel="noopener" data-s="94.0" data-d="8.0"><span class="ts">1:34</span><span class="tx">have just changed the play field for the honest people. Right? If you&#x27;re honest and you need more of a ramp up, we just</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=102s" target="_blank" rel="noopener" data-s="102.0" data-d="11.0"><span class="ts">1:42</span><span class="tx">can&#x27;t do it anymore because we do it five times in a row and Lucy keeps pulling away the football right when we&#x27;re about to kick it.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=113s" target="_blank" rel="noopener" data-s="113.0" data-d="4.0"><span class="ts">1:53</span><span class="tx">Eight months ramp up time. I mean, you&#x27;d be surprised.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=117s" target="_blank" rel="noopener" data-s="117.0" data-d="9.0"><span class="ts">1:57</span><span class="tx">Like, so games are complicated. Every game has its own way of doing things. uh we ask people to not only get used to a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=126s" target="_blank" rel="noopener" data-s="126.0" data-d="7.0"><span class="ts">2:06</span><span class="tx">new game but a new engine and a new programming language right so like historically I would give people a while</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=133s" target="_blank" rel="noopener" data-s="133.0" data-d="9.0"><span class="ts">2:13</span><span class="tx">just to acclimate but like at this point no it&#x27;s like I&#x27;m sorry it has to be two months or less</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=142s" target="_blank" rel="noopener" data-s="142.0" data-d="8.0"><span class="ts">2:22</span><span class="tx">and that&#x27;s just the reality and if that makes it harder to find people who can do that which it does</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=150s" target="_blank" rel="noopener" data-s="150.0" data-d="7.0"><span class="ts">2:30</span><span class="tx">then that just drastically limits who we can hire. But that&#x27;s just the re I&#x27;ve been like I&#x27;ve been with on this</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=157s" target="_blank" rel="noopener" data-s="157.0" data-d="9.0"><span class="ts">2:37</span><span class="tx">matter so many times. I It&#x27;s And it&#x27;s so disrespectful and horrible. Like I simply don&#x27;t have the patience for it anymore.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=166s" target="_blank" rel="noopener" data-s="166.0" data-d="8.0"><span class="ts">2:46</span><span class="tx">I I just have better things to do in life than pretend like people aren&#x27;t being dishonest. And</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=174s" target="_blank" rel="noopener" data-s="174.0" data-d="11.0"><span class="ts">2:54</span><span class="tx">you know, $200,000 for eight months is too much. Well, we have to pay for people&#x27;s health insurance and all sorts of just weird taxes and stuff in the US.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=185s" target="_blank" rel="noopener" data-s="185.0" data-d="7.0"><span class="ts">3:05</span><span class="tx">So, you know, if your programmer&#x27;s salary is like $200,000 a year,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=192s" target="_blank" rel="noopener" data-s="192.0" data-d="9.0"><span class="ts">3:12</span><span class="tx">eight months is twothirds of that, right? Which is going to be what? Um, like 135,000.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=201s" target="_blank" rel="noopener" data-s="201.0" data-d="7.0"><span class="ts">3:21</span><span class="tx">And you add all this other And then hiring them was expensive. you may may have had to pay a fee to a head</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=208s" target="_blank" rel="noopener" data-s="208.0" data-d="8.0"><span class="ts">3:28</span><span class="tx">hunter, right? Which is typically, you know, it depends. A lot of those deals actually are like if you keep them</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=216s" target="_blank" rel="noopener" data-s="216.0" data-d="7.0"><span class="ts">3:36</span><span class="tx">past a year, but sometimes it&#x27;s six months or whatever. Um</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=223s" target="_blank" rel="noopener" data-s="223.0" data-d="8.0"><span class="ts">3:43</span><span class="tx">just all time all types of like there&#x27;s the overhead that goes into like badgering the person who&#x27;s not working</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=231s" target="_blank" rel="noopener" data-s="231.0" data-d="9.0"><span class="ts">3:51</span><span class="tx">and like everybody pretending like it&#x27;s worth all this time and attention that you&#x27;re giving them when in reality they just aren&#x27;t ever going to rise to the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=240s" target="_blank" rel="noopener" data-s="240.0" data-d="6.0"><span class="ts">4:00</span><span class="tx">occasion. Like when you run a company you see all these things, right?</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=246s" target="_blank" rel="noopener" data-s="246.0" data-d="8.0"><span class="ts">4:06</span><span class="tx">Three months probation is pretty standard. Yeah, 3 months would be a lot better than what we have done and we will probably move to that. Pay someone</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=254s" target="_blank" rel="noopener" data-s="254.0" data-d="7.0"><span class="ts">4:14</span><span class="tx">from Europe. We do have someone from Europe and we pay them six figures.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=261s" target="_blank" rel="noopener" data-s="261.0" data-d="10.0"><span class="ts">4:21</span><span class="tx">you you forget like we need good programmers who can do like you know Vulcan and DX12 and stuff like</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=271s" target="_blank" rel="noopener" data-s="271.0" data-d="7.0"><span class="ts">4:31</span><span class="tx">that&#x27;s not your random dude who like gets stuff from GPT4.5</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=S_dCWKJdunw&amp;t=278s" target="_blank" rel="noopener" data-s="278.0" data-d=""><span class="ts">4:38</span><span class="tx">is not that VibeGL. Yeah, we need someone who&#x27;s not a VibeGL programmer.</span></a>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.</div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/S_dCWKJdunw')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById('ch'+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    segs.forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    if(panel.classList.contains('nots'))return segs.map(function(a){return a._t}).join(' ');
+    var out=[];[].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent,el._t);
+    });return out.join('\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('S_dCWKJdunw.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('S_dCWKJdunw.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],hit=segs[0];segs.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>
