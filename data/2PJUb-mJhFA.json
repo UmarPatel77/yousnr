@@ -616,5 +616,510 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-17T04:23:34+00:00"
+ "added": "2026-10-17T04:23:34+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-17T00:23:34",
+  "lines": {
+   "0": [
+    [
+     "Poor Things is a 2023 film directed by",
+     null
+    ],
+    [
+     "Yorgos Lanthimos,",
+     "Yorgosanthamos,"
+    ],
+    [
+     "written by Tony",
+     null
+    ],
+    [
+     "McNamara,",
+     "McNamera,"
+    ],
+    [
+     "and it is based on",
+     null
+    ],
+    [
+     "Alasdair",
+     "Alistair"
+    ]
+   ],
+   "1": [
+    [
+     "Gray's",
+     "Gay's"
+    ],
+    [
+     "1992 novel. It premiered at the Venice Film Festival where it won the Golden Lion, and it went on to gross",
+     null
+    ]
+   ],
+   "3": [
+    [
+     "major award success. It was named one of the top 10 films of 2023 by the National Board",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "Review and the American Film Institute and won four Academy Awards,",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "fan of",
+     null
+    ],
+    [
+     "Yorgos Lanthimos.",
+     "Yorgosanos."
+    ],
+    [
+     "I love so many of his films. I love uh Dog Teeth. I love The",
+     null
+    ]
+   ],
+   "10": [
+    [
+     "keeping all that in mind, I was not a fan of Poor Things. I really wanted to go see it because once again, I love",
+     null
+    ],
+    [
+     "Yorgos Lanthimos",
+     "Yogurt Smith the most"
+    ],
+    [
+     "and I also love",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "Medical student Max",
+     null
+    ],
+    [
+     "McCandles",
+     "Mcandles"
+    ],
+    [
+     "played by",
+     null
+    ],
+    [
+     "Ramy Youssef",
+     "Rama Yusef"
+    ],
+    [
+     "is recruited by the eccentric scientist Godwin Baxter played by",
+     null
+    ],
+    [
+     "Willem Dafoe",
+     "William Defoe"
+    ],
+    [
+     "to observe a strange young",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "life, she is still naive. She's still very young. her",
+     null
+    ],
+    [
+     "brain is not",
+     "braids have"
+    ],
+    [
+     "fully developed. And this is literally the born sexy yesterday trope. A woman in an",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "this film fawn over Bella and try to take advantage of her. And I understand that their attraction to Bella is the very thing the film critiques and",
+     null
+    ],
+    [
+     "satirizes,",
+     "satarizes,"
+    ],
+    [
+     "but it doesn't help that we",
+     null
+    ]
+   ],
+   "33": [
+    [
+     "pleasure, but the film centers most of Bella's development around her growing sexual experience. Bella is",
+     null
+    ],
+    [
+     "well-read.",
+     "well read."
+    ]
+   ],
+   "43": [
+    [
+     "would think, oh, a woman can lay on her back and get $1,000 so easily just by having sex, which is also not how sex",
+     null
+    ],
+    [
+     "work",
+     ""
+    ],
+    [
+     "works.",
+     null
+    ]
+   ],
+   "44": [
+    [
+     "And I want to stress that it is great that Bella feels like she's in control of her life now. And I know that the film is",
+     null
+    ],
+    [
+     "satirizing",
+     "satarizing"
+    ],
+    [
+     "male possessiveness,",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "debates a philosophy with the character Harry",
+     null
+    ],
+    [
+     "Astley,",
+     "Ashley,"
+    ],
+    [
+     "but those are small instances of her looking to expand her mind. Most of the film is centered",
+     null
+    ]
+   ],
+   "50": [
+    [
+     "Harry",
+     null
+    ],
+    [
+     "Astley,",
+     "Ashley,"
+    ],
+    [
+     "who I just mentioned. On the cruise ship, Bella befriends Harry and he is played by Gerard Carmichael, a",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "her guilt, she takes Duncan's money to some crew members, asking if they can give it to the poor. At the brothel, she becomes friends with",
+     null
+    ],
+    [
+     "Toinette,",
+     "Twinette,"
+    ],
+    [
+     "who is",
+     null
+    ]
+   ],
+   "53": [
+    [
+     "played by",
+     null
+    ],
+    [
+     "Suzy Bemba,",
+     "Susie Ba,"
+    ],
+    [
+     "and",
+     null
+    ],
+    [
+     "Toinette",
+     "Twinette"
+    ],
+    [
+     "teaches her about socialism. Now, as a big fan of",
+     null
+    ],
+    [
+     "Yorgos Lanthimos,",
+     "Yorgosanthamos,"
+    ],
+    [
+     "I can confidently say",
+     null
+    ]
+   ],
+   "66": [
+    [
+     "Bella's character",
+     null
+    ],
+    [
+     "more",
+     ""
+    ],
+    [
+     "more deeply more richly to flesh it out a little bit more to make her character more full-fledged as someone who's has more interest in",
+     null
+    ]
+   ],
+   "68": [
+    [
+     "Blessington claims that Bella is his wife and she realizes that she took her own life to escape him. So, Bella agrees to go with Blessington and the reason why she agreed to",
+     null
+    ],
+    [
+     "go",
+     "deal"
+    ],
+    [
+     "with him is",
+     null
+    ]
+   ],
+   "71": [
+    [
+     "Godwin's estate and has Max help her put a goat brain in",
+     null
+    ],
+    [
+     "Blessington's",
+     "blessed his"
+    ],
+    [
+     "head. So the film ends with Bella studying for",
+     null
+    ]
+   ],
+   "80": [
+    [
+     "talk about on",
+     null
+    ],
+    [
+     "TikTok.",
+     "Tik Tok."
+    ],
+    [
+     "How he went to different cities around the US and saw couples and groups of women out having fun gathering at restaurants enjoying",
+     null
+    ]
+   ],
+   "94": [
+    [
+     "empowerment is heavily influenced by the male",
+     null
+    ],
+    [
+     "gaze.",
+     "gays."
+    ],
+    [
+     "It doesn't truly focus on Bella and her needs and desires. I love seeing her be curious, but",
+     null
+    ],
+    [
+     "I'd",
+     "I"
+    ],
+    [
+     "rather her be curious for something outside of sex.",
+     null
+    ]
+   ]
+  },
+  "fixes": 26,
+  "checked_seconds": 232.0,
+  "usd": 0.0338,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:07",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:14",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:52",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:15",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:53",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "2:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:08",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:10",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:30",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:38",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "6:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:26",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:41",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "6:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "6:57",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "7:36",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:31",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:47",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "9:11",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "9:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "10:18",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "12:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
