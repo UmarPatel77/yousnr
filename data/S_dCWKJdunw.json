@@ -232,5 +232,87 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-16T23:58:00+00:00"
+ "added": "2026-10-16T23:58:00+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-10-16T19:58:10",
+  "lines": {
+   "33": [
+    [
+     "you you forget like we need good programmers who can do like you know",
+     null
+    ],
+    [
+     "Vulkan",
+     "Vulcan"
+    ],
+    [
+     "and DX12 and stuff like",
+     null
+    ]
+   ]
+  },
+  "fixes": 1,
+  "checked_seconds": 71.6,
+  "usd": 0.0104,
+  "version": 3,
+  "flagged": [
+   [
+    "1:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:54",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:12",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:21",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:31",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:38",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
