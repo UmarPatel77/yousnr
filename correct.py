@@ -468,6 +468,8 @@ def download_audio(vid):
             "quiet": True, "no_warnings": True, "noprogress": True}
     if os.environ.get("YOUSNR_PROXY", "").strip():          # YouTube only: see yt_proxy() in yousnr.py
         opts["proxy"] = os.environ["YOUSNR_PROXY"].strip()
+        if os.environ.get("YOUSNR_PROXY_IPV4", "").strip().lower() in ("1", "true", "yes", "on"):
+            opts["source_address"] = "0.0.0.0"
     try:
         with yt_dlp.YoutubeDL(opts) as y:
             info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=True)
@@ -581,7 +583,9 @@ def _transcribe(engine, path, terms):
 def caption_words(vid, lang="en"):
     """YouTube's caption file (its older recognizer) as [(time, word)], times spread across each cue."""
     from youtube_transcript_api import YouTubeTranscriptApi
-    px = os.environ.get("YOUSNR_PROXY", "").strip().replace("socks5://", "socks5h://", 1)
+    px = os.environ.get("YOUSNR_PROXY", "").strip()
+    if os.environ.get("YOUSNR_PROXY_IPV4", "").strip().lower() not in ("1", "true", "yes", "on"):
+        px = px.replace("socks5://", "socks5h://", 1)
     if px:
         from youtube_transcript_api.proxies import GenericProxyConfig
         tl = YouTubeTranscriptApi(proxy_config=GenericProxyConfig(http_url=px, https_url=px)).list(vid)

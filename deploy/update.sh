@@ -7,6 +7,7 @@ set -euo pipefail
 APP="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PY="$HOME/yousnr-venv/bin/python"
 cd "$APP"
+was_on="$(systemctl is-active yousnr 2>/dev/null || true)"
 echo "== turning off"
 sudo systemctl stop yousnr || true
 echo "== getting the update"
@@ -20,7 +21,9 @@ if ! git diff --cached --quiet; then
   git push -q
   echo "   published"
 fi
-echo "== turning on"
-sudo systemctl start yousnr
-sleep 8
+if [ "$was_on" = "active" ]; then
+  echo "== turning on"
+  sudo systemctl start yousnr
+  sleep 8
+fi
 "$PY" yousnr.py status

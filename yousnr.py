@@ -246,9 +246,27 @@ def yt_proxy():
     return os.environ.get("YOUSNR_PROXY", "").strip()
 
 
+def yt_ipv4():
+    """YOUSNR_PROXY_IPV4=1: reach YouTube over IPv4 through the proxy (WARP's IPv4 and IPv6 exits can be
+    treated differently by YouTube; `check-youtube` shows which works)."""
+    return os.environ.get("YOUSNR_PROXY_IPV4", "").strip().lower() in ("1", "true", "yes", "on")
+
+
 def yt_requests_proxies():
-    p = yt_proxy().replace("socks5://", "socks5h://", 1)      # socks5h: the proxy looks up names too
-    return {"http": p, "https": p} if p else {}
+    p = yt_proxy()
+    if p and not yt_ipv4():
+        p = p.replace("socks5://", "socks5h://", 1)           # socks5h: the proxy looks up names too
+    return {"http": p, "https": p} if p else {}             # socks5: names looked up here, IPv4 only
+
+
+def yt_dlp_net_opts():
+    """Network options for yt-dlp: the proxy, and IPv4 if asked."""
+    o = {}
+    if yt_proxy():
+        o["proxy"] = yt_proxy()
+    if yt_ipv4():
+        o["source_address"] = "0.0.0.0"
+    return o
 
 
 def transcript_api():
@@ -270,9 +288,28 @@ def _json_after(page, marker):
         return None
 
 
+def meta_from_player(pr):
+    """Title, channel, date, length, category and music flag from YouTube's player data."""
+    vd = (pr or {}).get("videoDetails") or {}
+    if not vd.get("title"):
+        return {}
+    mf = ((pr or {}).get("microformat") or {}).get("playerMicroformatRenderer") or {}
+    m = dict(title=vd["title"], channel=vd.get("author", ""),
+             published=(mf.get("publishDate") or mf.get("uploadDate") or "")[:10].replace("-", ""),
+             description=vd.get("shortDescription", ""), duration=int(vd.get("lengthSeconds") or 0),
+             category=mf.get("category", ""), music_type=vd.get("musicVideoType", ""))
+    m["chapters"] = chapters_from_description(m["description"])
+    return m
+
+
+BROWSER_META = {}     # filled by fetch_browser: what the real browser saw, for when plain requests are blocked
+
+
 def fetch_metadata(vid):
-    """Title, channel, date, chapters. One plain request to the watch page; yt-dlp only if that fails."""
+    """Title, channel, date, chapters. One plain request to the watch page; yt-dlp only if that fails.
+    Where YouTube blocks plain requests (cloud servers), the browser fills these in later."""
     meta = {"id": vid, "title": "", "channel": "", "published": "", "description": "", "chapters": []}
+    bot_check = False
     try:
         import requests
         sess = requests.Session()
@@ -280,23 +317,18 @@ def fetch_metadata(vid):
         sess.cookies.set("SOCS", "CAI", domain=".youtube.com")
         sess.proxies.update(yt_requests_proxies())
         page = sess.get(f"https://www.youtube.com/watch?v={vid}&hl=en", timeout=20).text
-        pr = _json_after(page, "ytInitialPlayerResponse = ") or {}
-        vd = pr.get("videoDetails") or {}
-        if vd.get("title"):
-            mf = (pr.get("microformat") or {}).get("playerMicroformatRenderer") or {}
-            meta.update(title=vd["title"], channel=vd.get("author", ""),
-                        published=(mf.get("publishDate") or mf.get("uploadDate") or "")[:10].replace("-", ""),
-                        description=vd.get("shortDescription", ""), duration=int(vd.get("lengthSeconds") or 0),
-                        category=mf.get("category", ""), music_type=vd.get("musicVideoType", ""))
-            meta["chapters"] = chapters_from_description(meta["description"])
+        m = meta_from_player(_json_after(page, "ytInitialPlayerResponse = ") or {})
+        if m:
+            meta.update(m)
             return meta
+        bot_check = "confirm you" in page and "not a bot" in page
     except Exception:
         pass
     try:
+        if bot_check:                 # yt-dlp would get the same "not a bot" page: skip straight to oEmbed
+            raise RuntimeError("YouTube asked to confirm we're not a bot")
         import yt_dlp
-        opts = {"quiet": True, "no_warnings": True, "skip_download": True}
-        if yt_proxy():
-            opts["proxy"] = yt_proxy()
+        opts = {"quiet": True, "no_warnings": True, "skip_download": True, **yt_dlp_net_opts()}
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
         meta.update(
@@ -341,17 +373,19 @@ def is_music(meta):
         or (meta.get("channel") or "").endswith(" - Topic")
 
 
+def music_why(meta):
+    if meta.get("music_type"):
+        return f"YouTube flags it as {meta['music_type']}"
+    if (meta.get("category") or "").lower() == "music":
+        return "category: Music"
+    return "a '- Topic' music channel"
+
+
 def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow_music=False):
     """Fetch one video end to end and save it. Returns the saved record."""
     meta = fetch_metadata(vid)
     if not allow_music and is_music(meta):
-        if meta.get("music_type"):
-            why = f"YouTube flags it as {meta['music_type']}"
-        elif (meta.get("category") or "").lower() == "music":
-            why = "category: Music"
-        else:
-            why = "a '- Topic' music channel"
-        raise MusicVideo(f"music video, skipped ({why})")
+        raise MusicVideo(f"music video, skipped ({music_why(meta)})")
     chapters, segs, track = [], None, None
     if browser:
         for attempt in ((False,) if show else (True, False)):
@@ -396,6 +430,13 @@ def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow
                 print(f"  player method failed too: {e2.__class__.__name__}: {str(e2).splitlines()[0] if str(e2) else ''}")
                 raise RuntimeError("429 Too Many Requests (direct and player both refused)") if name == "DirectDownloadPaused" else e
             print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
+    seen = BROWSER_META.pop(vid, None)        # what the browser saw fills gaps a blocked plain request left
+    if seen:
+        for k, v in seen.items():
+            if v and not meta.get(k):
+                meta[k] = v
+        if not allow_music and is_music(meta):
+            raise MusicVideo(f"music video, skipped ({music_why(meta)})")
     d = meta
     d["description"] = (d.get("description") or "")[:5000]
     if chapters:
@@ -654,6 +695,14 @@ def fetch_browser(vid, show=False, offscreen=False):
             except Exception:
                 say("video page loaded, but no description box found")
             page.evaluate("() => { const v = document.querySelector('video'); if (v) v.pause(); }")
+            try:
+                m = meta_from_player(page.evaluate(
+                    "() => { const p = window.ytInitialPlayerResponse;"
+                    " return p ? {videoDetails: p.videoDetails || null, microformat: p.microformat || null} : null; }"))
+                if m:
+                    BROWSER_META[vid] = m
+            except Exception:
+                pass
             base_stamps = max(count(), 0)
             try:
                 duration = page.evaluate(_DURATION_JS) or 0
@@ -2099,8 +2148,8 @@ def check_youtube(vid="cPmVLrTA8AU", direct=False, browser=True):
     if direct:
         os.environ["YOUSNR_PROXY"] = ""
     px = yt_requests_proxies()
-    print(f"Checking YouTube access {'through ' + yt_proxy() if yt_proxy() else 'directly (no proxy)'}, "
-          f"with video {vid}\n")
+    print(f"Checking YouTube access {'through ' + yt_proxy() if yt_proxy() else 'directly (no proxy)'}"
+          f"{' over IPv4' if yt_proxy() and yt_ipv4() else ''}, with video {vid}\n")
     passed = []
 
     def result(n, ok, text):
@@ -2145,9 +2194,7 @@ def check_youtube(vid="cPmVLrTA8AU", direct=False, browser=True):
         class Quiet:
             def debug(self, m): pass
             warning = info = error = debug
-        opts = {"quiet": True, "no_warnings": True, "skip_download": True, "logger": Quiet()}
-        if yt_proxy():
-            opts["proxy"] = yt_proxy()
+        opts = {"quiet": True, "no_warnings": True, "skip_download": True, "logger": Quiet(), **yt_dlp_net_opts()}
         with yt_dlp.YoutubeDL(opts) as y:
             info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
         audio = [f for f in info.get("formats") or [] if f.get("vcodec") == "none" and f.get("acodec") != "none"]
