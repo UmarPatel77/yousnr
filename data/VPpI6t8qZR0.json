@@ -655,5 +655,176 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-24T20:24:00+00:00"
+ "added": "2026-10-24T20:24:00+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "assemblyai"
+  ],
+  "at": "2026-10-27T06:23:42",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 238.2,
+  "usd": 0.0172,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:08",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:37",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:47",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:54",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:05",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:13",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:18",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:26",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:43",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:52",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:26",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:48",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:04",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:44",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:08",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:15",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:54",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "6:35",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "6:51",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "12:34",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "13:10",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
