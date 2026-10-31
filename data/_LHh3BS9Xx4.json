@@ -1114,5 +1114,247 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-10-31T18:48:41+00:00"
+ "added": "2026-10-31T18:48:41+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "assemblyai"
+  ],
+  "at": "2026-10-31T14:48:41",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 431.0,
+  "usd": 0.0311,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:25",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:45",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:21",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:14",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:30",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:46",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:19",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:25",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:41",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:08",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:25",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:07",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:16",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:01",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:21",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:50",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "12:48",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:24",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:54",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:03",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:12",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:22",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "15:10",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "15:32",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "16:13",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "17:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "17:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "19:28",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "23:38",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
