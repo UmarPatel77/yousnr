@@ -38,6 +38,7 @@ Commands:
 | `python yousnr.py upgrade [--dry-run]` | bring older videos up to the current checking rules (the server also does this in the background; layout-only updates are free) |
 | `python yousnr.py usage` / `bakeoff <video>` | spending this month / compare the engines on your videos |
 | `python yousnr.py remove <video>` | delete a video from the site |
+| `python yousnr.py forget <video>` | clear a remembered "no captions" result so the next visit tries again (works while the server runs) |
 | `python yousnr.py serve` | on-demand server + tunnel in this window (what `start-yousnr.bat` runs); close to turn off |
 | `python yousnr.py autostart on` / `off` | always on: runs with no window and turns on by itself when you sign in to Windows |
 | `python yousnr.py start` / `stop` / `status` | turn the background server on / off now, or see if it's on (`yousnr-on.bat`, `yousnr-off.bat`, `yousnr-status.bat`) |
@@ -91,7 +92,7 @@ Safety limits (top of the server section in `yousnr.py`):
 - one YouTube fetch at a time, at least 3 s apart
 - 20 new videos per visitor per hour
 - if YouTube says "too many requests", new fetches pause for 15 minutes
-- videos with no captions are remembered for a day
+- videos with no captions are re-checked after 3 hours (30 minutes for uploads from the last two days, since new videos get captions within hours); `forget <video>` clears it at once
 
 Test locally first: run `serve`, then open http://localhost:8787/watch?v=265-EZJ_aJE.
 
@@ -142,7 +143,9 @@ Your API keys are read from your Windows user settings (what `setx` saved), so t
 
 ### On a free cloud server instead (Oracle Cloud + Cloudflare WARP)
 
-So your laptop can sleep. Oracle's Always Free tier gives you a small ARM server for free (2 cores, 12 GB since June 2026). YouTube blocks data-centre addresses, so the server sends **only its YouTube traffic** through Cloudflare's free WARP (proxy mode). Everything else (SSH, GitHub, the speech APIs, the tunnel) goes direct. Whether YouTube lets WARP through can change at any time: `check-youtube` tells you.
+So your laptop can sleep (running since Oct 24, 2026: 2 cores / 12 GB, Ubuntu 24.04, `ssh yousnr`). Oracle's Always Free tier gives you a small ARM server for free (2 cores, 12 GB since June 2026). YouTube blocks data-centre addresses, so the server sends **only its YouTube traffic** through Cloudflare's free WARP (proxy mode). Everything else (SSH, GitHub, the speech APIs, the tunnel) goes direct. Whether YouTube lets WARP through can change at any time: `check-youtube` tells you.
+
+What works through WARP (Oct 2026): the transcript panel in the browser, and yt-dlp audio for word checks over **IPv4** (`YOUSNR_PROXY_IPV4=1`). Plain requests to the watch page and the caption file are still blocked, so titles and lengths come from the browser instead.
 
 **Only one place runs YouSNR at a time.** Both would answer api.yousnr.com and push to GitHub. Turn the laptop's off before turning the server's on.
 
@@ -165,7 +168,9 @@ So your laptop can sleep. Oracle's Always Free tier gives you a small ARM server
 
 On the server, `yousnr` is a shortcut for `python yousnr.py` (with the right Python). `yousnr status | stop | start | check-youtube` work as on Windows; the log is `~/yousnr/yousnr.log`.
 
-**Updates:** apply the zip on the laptop and push as usual, then run `bash ~/yousnr/deploy/update.sh` on the server (from PowerShell: `ssh -i <key> ubuntu@<IP> "bash ~/yousnr/deploy/update.sh"`).
+**Updates:** apply the zip on the laptop and push as usual, then run `bash ~/yousnr/deploy/update.sh` on the server (from PowerShell: `ssh yousnr "bash ~/yousnr/deploy/update.sh"`). It also updates Playwright and its Chromium, yt-dlp and the other packages to their newest versions, so run it now and then even without a code change. If a step fails, it turns YouSNR back on anyway.
+
+**Browser sandbox.** Chromium's sandbox keeps a web page that exploits a browser bug shut away from the server's files and keys (API keys, deploy key, tunnel token). Playwright turns it off unless asked; YouSNR asks. On Ubuntu 23.10+ Playwright's own Chromium also needs an AppArmor rule before it can sandbox itself: `bash ~/yousnr/deploy/browser-sandbox.sh` adds it and tests it (setup and updates run it for you). `yousnr status` shows `browser sandbox: on` or `OFF` and why; the log shows `opened chromium, sandboxed`. `YOUSNR_BROWSER_SANDBOX` in `~/.config/yousnr.env`: `on` (default: if the sandbox can't start, run without it and warn), `required` (never run without it), `off`. Playwright's Chromium is a pre-release build that can be weeks behind Chrome's security fixes, which is one more reason to keep the sandbox on. The browser only ever opens youtube.com watch pages for 11-character video IDs.
 
 **If YouTube blocks WARP** (`check-youtube` fails steps 1–4): get a new WARP address with `warp-cli disconnect; warp-cli registration delete; bash ~/yousnr/deploy/oracle-setup.sh` (the setup puts WARP back in proxy mode before connecting, so SSH keeps working). If that keeps failing, a paid residential proxy works the same way: put its address in `YOUSNR_PROXY` in `~/.config/yousnr.env` (e.g. `http://user:pass@host:port`), or go back to the laptop (`python yousnr.py autostart on`).
 
@@ -206,6 +211,8 @@ Each improvement to the checking rules gets a version (v1 first check, v2 restor
 Videos YouTube flags as music (official music videos and songs), videos in the "Music" category, and auto-generated "- Topic" artist channels are skipped before anything is fetched. Visitors see "Music videos aren't on YouSNR", and the server remembers that for 30 days. `add --allow-music` overrides it for one video.
 
 ### Where the text comes from
+
+**Dubbed videos.** Many videos now have extra audio tracks (YouTube's auto-dubs or the creator's own), and YouTube picks which one to play, and which transcript to show, partly from where it thinks the viewer is. Through a VPN that guess can be wrong (an English video once came back with its Arabic dub's transcript). So YouSNR pins the region (`YOUSNR_YT_REGION`, default `US`) and English interface, switches the player to the **original** audio track, and checks the transcript's language against it. If YouTube still hands over a dubbed-language transcript, it uses the original-language captions instead, and if those can't be fetched it fails rather than publish the wrong language.
 By default YouSNR reads **YouTube's own transcript panel** ("Show transcript" → *In this video* → Transcript). It opens the video in a hidden Chrome window (YouSNR's own profile, see `signin`), clicks *Show transcript*, and keeps YouTube's reply (`youtubei/v1/get_panel`): the same lines, timestamps and chapter headings you see on YouTube. If a hidden window doesn't work, it retries once with a normal window parked off-screen.
 
 Since 2026 the panel often shows a newer transcription than the downloadable caption file (different words, different line breaks), so the panel is the only exact source.

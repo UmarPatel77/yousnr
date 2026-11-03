@@ -6,7 +6,7 @@
 #   bash ~/yousnr/deploy/oracle-setup.sh
 #
 # What it sets up:
-#   - Python packages, a browser (Chromium) and a virtual screen for it (Xvfb)
+#   - Python packages, a browser (Chromium, sandboxed) and a virtual screen for it (Xvfb)
 #   - Deno (yt-dlp needs it for YouTube), ffmpeg, cloudflared (the tunnel to api.yousnr.com)
 #   - Cloudflare WARP in proxy mode: only YouTube traffic goes through it, because YouTube blocks
 #     data-centre addresses. SSH and everything else stay on the normal connection.
@@ -39,9 +39,11 @@ sudo timedatectl set-timezone America/Toronto 2>/dev/null || true   # log times 
 say "2/8  Python packages and the browser"
 [ -x "$PY" ] || python3 -m venv "$VENV"
 "$PY" -m pip install -q --upgrade pip
-"$PY" -m pip install -q -r "$APP/requirements.txt"
+"$PY" -m pip install -q -U -r "$APP/requirements.txt"
 sudo "$PY" -m playwright install-deps chromium
 "$PY" -m playwright install chromium
+# Ubuntu 23.10+ needs an AppArmor rule before Chromium can sandbox itself (see the script)
+bash "$APP/deploy/browser-sandbox.sh" --no-restart || warn "The browser will run without its sandbox (yousnr status shows it)."
 
 say "3/8  Deno (yt-dlp uses it to read YouTube)"
 if ! command -v deno >/dev/null 2>&1; then
@@ -105,8 +107,10 @@ if [ ! -f "$ENVF" ]; then
 ELEVENLABS_API_KEY=
 ASSEMBLYAI_API_KEY=
 YOUSNR_MONTHLY_BUDGET=5
-# Send YouTube traffic through Cloudflare WARP (blank = go direct)
+# Send YouTube traffic through Cloudflare WARP (blank = go direct), over IPv4: YouTube lets
+# WARP's IPv4 addresses download audio for word checks, but not its IPv6 ones (Oct 2026)
 YOUSNR_PROXY=socks5://127.0.0.1:$WARP_PORT
+YOUSNR_PROXY_IPV4=1
 EOF
 fi
 chmod 600 "$ENVF"
@@ -143,6 +147,8 @@ WorkingDirectory=$APP
 EnvironmentFile=$ENVF
 Environment=PATH=$VENV/bin:/usr/local/bin:/usr/bin:/bin
 Environment=PYTHONUNBUFFERED=1
+# make sure WARP is connected (it's in proxy mode, so this never touches SSH)
+ExecStartPre=-/usr/bin/warp-cli --accept-tos connect
 ExecStart=/usr/bin/xvfb-run -a --server-args="-screen 0 1366x900x24" $PY $APP/yousnr.py serve --log
 Restart=always
 RestartSec=10

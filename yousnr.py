@@ -316,7 +316,9 @@ def fetch_metadata(vid):
         sess.headers.update({"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
         sess.cookies.set("SOCS", "CAI", domain=".youtube.com")
         sess.proxies.update(yt_requests_proxies())
-        page = sess.get(f"https://www.youtube.com/watch?v={vid}&hl=en", timeout=20).text
+        sess.cookies.set("PREF", f"hl=en&gl={os.environ.get('YOUSNR_YT_REGION', 'US')}", domain=".youtube.com")
+        page = sess.get(f"https://www.youtube.com/watch?v={vid}&hl=en&gl={os.environ.get('YOUSNR_YT_REGION', 'US')}",
+                        timeout=20).text
         m = meta_from_player(_json_after(page, "ytInitialPlayerResponse = ") or {})
         if m:
             meta.update(m)
@@ -384,6 +386,20 @@ def music_why(meta):
 def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow_music=False):
     """Fetch one video end to end and save it. Returns the saved record."""
     meta = fetch_metadata(vid)
+    try:
+        return _get_transcript(vid, meta, lang, browser, show, player, allow_music)
+    except Exception as e:
+        if not getattr(e, "published", ""):
+            try:
+                e.published = meta.get("published") or (BROWSER_META.get(vid) or {}).get("published") or ""
+            except Exception:
+                pass
+        BROWSER_META.pop(vid, None)
+        LANG_INFO.pop(vid, None)
+        raise
+
+
+def _get_transcript(vid, meta, lang, browser, show, player, allow_music):
     if not allow_music and is_music(meta):
         raise MusicVideo(f"music video, skipped ({music_why(meta)})")
     chapters, segs, track = [], None, None
@@ -430,6 +446,7 @@ def get_transcript(vid, lang="en", browser=True, show=False, player=False, allow
                 print(f"  player method failed too: {e2.__class__.__name__}: {str(e2).splitlines()[0] if str(e2) else ''}")
                 raise RuntimeError("429 Too Many Requests (direct and player both refused)") if name == "DirectDownloadPaused" else e
             print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
+    segs, track = ensure_original_language(vid, segs, track)
     seen = BROWSER_META.pop(vid, None)        # what the browser saw fills gaps a blocked plain request left
     if seen:
         for k, v in seen.items():
@@ -517,8 +534,77 @@ class _Session:
                 pass
 
 
+SANDBOX_FILE = RUN / "browser-sandbox.txt"     # for `status`: did the browser last run sandboxed, and if not why
+_SANDBOX = {}                                    # this process: works=True/False once tried, why=reason it didn't
+
+
+def sandbox_setting():
+    """YOUSNR_BROWSER_SANDBOX: on (default; if this computer can't give Chromium its sandbox, run without
+    it and warn), required (never run the browser without it), off."""
+    v = os.environ.get("YOUSNR_BROWSER_SANDBOX", "on").strip().lower()
+    if v in ("0", "off", "no", "false"):
+        return "off"
+    if v in ("required", "require", "strict"):
+        return "required"
+    return "on"
+
+
+def _sandbox_error(e):
+    s = str(e).lower()
+    return "sandbox" in s or "user namespace" in s
+
+
+def _sandbox_why(e):
+    s = str(e)
+    if "No usable sandbox" in s:
+        return "No usable sandbox: Ubuntu blocks the user namespaces Chromium needs"
+    if "as root" in s:
+        return "running as root"
+    line = next((l.strip() for l in s.splitlines() if "sandbox" in l.lower()), s.strip().splitlines()[0] if s.strip() else "")
+    return line[:160]
+
+
+def _sandbox_fix(why):
+    if "namespace" in why and sys.platform.startswith("linux"):
+        return "  Fix: bash deploy/browser-sandbox.sh"
+    if "root" in why:
+        return "  Fix: run YouSNR as a normal user, not root"
+    return ""
+
+
+def _note_sandbox(on, why=""):
+    try:
+        RUN.mkdir(exist_ok=True)
+        write_atomic(SANDBOX_FILE, ("on" if on else "off" + (f": {why}" if why else "")) + "\n" + time.strftime("%Y-%m-%d %H:%M") + "\n")
+    except Exception:
+        pass
+
+
+def _start_sandboxed(start):
+    """start(sandbox) launches one browser; returns (it, sandboxed). Chromium's sandbox keeps a page that
+    exploits a browser bug shut away from this computer's files and keys. Playwright leaves it off unless
+    asked, so ask; if this computer can't provide it, fall back (once per run, with a warning)."""
+    mode = sandbox_setting()
+    if mode != "off" and _SANDBOX.get("works") is not False:
+        try:
+            it = start(True)
+        except Exception as e:
+            if mode == "required" or not _sandbox_error(e):
+                raise
+            _SANDBOX.update(works=False, why=_sandbox_why(e))
+            print(f"    ! browser sandbox unavailable ({_SANDBOX['why']}); running without it." + _sandbox_fix(_SANDBOX["why"]))
+        else:
+            _SANDBOX["works"] = True
+            _note_sandbox(True)
+            return it, True
+    it = start(False)
+    _note_sandbox(False, "turned off by YOUSNR_BROWSER_SANDBOX=off" if mode == "off" else _SANDBOX.get("why", ""))
+    return it, False
+
+
 def _launch(p, show, offscreen=False):
-    """Open Chrome/Edge looking like a normal browser rather than an automated one.
+    """Open Chrome/Edge looking like a normal browser rather than an automated one, inside Chromium's
+    sandbox when this computer allows it (see _start_sandboxed).
     offscreen: a normal (non-headless) window parked off the screen.
     Uses YouSNR's saved profile only after `signin`; otherwise a fresh throwaway profile each time,
     so a stray Chrome left open can never block it."""
@@ -535,14 +621,22 @@ def _launch(p, show, offscreen=False):
                                    password=urllib.parse.unquote(u.password or ""))
     view = dict(locale="en-US", viewport={"width": 1280, "height": 900})
     channels = ("chrome", "msedge", None)              # your installed Chrome, else Edge, else Playwright's
+    tag = lambda sandboxed: ", sandboxed" if sandboxed else ", no sandbox"
 
     if (PROFILE / ".signed-in").exists():
         for channel in channels:
+            def start(sb, channel=channel):
+                ctx = p.chromium.launch_persistent_context(
+                    str(PROFILE), **common, **view, chromium_sandbox=sb, **({"channel": channel} if channel else {}))
+                try:
+                    ctx.pages[0].evaluate("1") if ctx.pages else ctx.new_page().close()   # make sure it's alive
+                except Exception:
+                    ctx.close()
+                    raise
+                return ctx
             try:
-                kw = dict(common, **view, **({"channel": channel} if channel else {}))
-                ctx = p.chromium.launch_persistent_context(str(PROFILE), **kw)
-                ctx.pages[0].evaluate("1") if ctx.pages else ctx.new_page().close()   # make sure it's alive
-                return _Session(ctx, None, (channel or "chromium") + ", signed-in profile")
+                ctx, sb = _start_sandboxed(start)
+                return _Session(ctx, None, (channel or "chromium") + ", signed-in profile" + tag(sb))
             except Exception:
                 continue
         print("    · signed-in profile is busy or broken; using a fresh one")
@@ -550,12 +644,16 @@ def _launch(p, show, offscreen=False):
     last = None
     for channel in channels:
         try:
-            browser = p.chromium.launch(**common, **({"channel": channel} if channel else {}))
-            return _Session(browser.new_context(**view), browser, channel or "chromium")
+            browser, sb = _start_sandboxed(lambda sb, channel=channel: p.chromium.launch(
+                **common, chromium_sandbox=sb, **({"channel": channel} if channel else {})))
+            return _Session(browser.new_context(**view), browser, (channel or "chromium") + tag(sb))
         except Exception as e:
             last = e
     if offscreen and not show:                       # no screen to put a window on: go fully hidden
         return _launch(p, False, False)
+    if last is not None and _sandbox_error(last) and sandbox_setting() == "required":
+        why = _sandbox_why(last)
+        raise RuntimeError(f"browser sandbox unavailable ({why}) and YOUSNR_BROWSER_SANDBOX=required." + _sandbox_fix(why))
     raise RuntimeError(f"no browser found: install Chrome, or run  python -m playwright install chromium ({last})")
 
 
@@ -567,9 +665,9 @@ def signin():
         ctx = None
         for channel in ("chrome", "msedge", None):
             try:
-                ctx = p.chromium.launch_persistent_context(
-                    str(PROFILE), headless=False, ignore_default_args=["--enable-automation"],
-                    args=["--disable-blink-features=AutomationControlled"], **({"channel": channel} if channel else {}))
+                ctx, _ = _start_sandboxed(lambda sb, channel=channel: p.chromium.launch_persistent_context(
+                    str(PROFILE), headless=False, ignore_default_args=["--enable-automation"], chromium_sandbox=sb,
+                    args=["--disable-blink-features=AutomationControlled"], **({"channel": channel} if channel else {})))
                 break
             except Exception:
                 continue
@@ -630,6 +728,171 @@ _DOM_JS = "() => {" + _STAMPS_JS + r"""
 
 _COUNT_JS = "() => {" + _STAMPS_JS + " return transcriptStamps().length; }"
 
+# YouTube picks dubbed audio and the transcript language partly from where it thinks the viewer is.
+# Through a VPN like Cloudflare WARP that guess can be anywhere (it once served an English video's
+# Arabic auto-dub transcript), so say outright: English interface, this region.
+YT_REGION = os.environ.get("YOUSNR_YT_REGION", "US")
+
+
+def yt_watch_url(vid):
+    return f"{BASE}/watch?v={vid}&hl=en&gl={YT_REGION}"
+
+
+def yt_cookies():
+    return [{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"},
+            {"name": "PREF", "value": f"hl=en&gl={YT_REGION}", "domain": ".youtube.com", "path": "/"}]
+
+
+_PLAYER_INFO_JS = r"""() => { try {
+  const r = window.ytInitialPlayerResponse; if (!r) return null;
+  const seen = {}, audio = [];
+  for (const f of ((r.streamingData || {}).adaptiveFormats || [])) {
+    const a = f.audioTrack;
+    if (a && !seen[a.id]) { seen[a.id] = 1;
+      audio.push({id: a.id || '', name: a.displayName || '', isDefault: !!a.audioIsDefault, dubbed: !!a.isAutoDubbed}); }
+  }
+  const ct = ((r.captions || {}).playerCaptionsTracklistRenderer || {}).captionTracks || [];
+  let c = null; try { c = window.ytcfg && ytcfg.get('INNERTUBE_CONTEXT').client; } catch (e) {}
+  return {videoDetails: r.videoDetails || null, microformat: r.microformat || null, audio: audio,
+          captions: ct.map(x => ({code: x.languageCode || '', kind: x.kind || '',
+                                  name: x.name ? (x.name.simpleText || (x.name.runs || []).map(t => t.text).join('')) : ''})),
+          gl: c ? (c.gl || '') : '', hl: c ? (c.hl || '') : ''};
+} catch (e) { return null } }"""
+
+# Switch the player to the original audio track. YouTube's audio-track objects aren't documented, so
+# match on any of their values (the track id like "en-US.4" or a name containing "original").
+_ORIGINAL_AUDIO_JS = r"""(want) => {
+  const p = document.getElementById('movie_player');
+  if (!p || !p.getAvailableAudioTracks || !p.setAudioTrack) return 'no audio-track controls';
+  const ts = p.getAvailableAudioTracks() || [];
+  const desc = t => { const out = [], seen = new Set();
+    const walk = (o, d) => { if (!o || d > 2 || seen.has(o)) return; seen.add(o);
+      for (const k of Object.keys(o)) { const v = o[k];
+        if (['string', 'number', 'boolean'].includes(typeof v)) out.push(String(v));
+        else if (v && typeof v === 'object') walk(v, d + 1); } };
+    walk(t, 0); return out.join(' '); };
+  const ds = ts.map(desc);
+  let i = want ? ds.findIndex(x => x.includes(want)) : -1;
+  if (i < 0) i = ds.findIndex(x => /original/i.test(x));
+  if (i < 0) return 'original track not found among ' + ts.length;
+  try { p.setAudioTrack(ts[i]); } catch (e) { return 'switch failed: ' + e; }
+  return 'switched to the original audio';
+}"""
+
+LANG_INFO = {}        # filled by fetch_browser: audio and caption tracks, for the language check
+
+
+def audio_tracks(info):
+    """(original, the one YouTube picked for this visitor) from the player's audio tracks, or Nones."""
+    audio = (info or {}).get("audio") or []
+    orig = next((a for a in audio if "original" in a["name"].lower()), None) \
+        or next((a for a in audio if a["id"].endswith(".4")), None)
+    picked = next((a for a in audio if a["isDefault"]), None)
+    return orig, picked
+
+
+def lang_code(track_id):
+    return (track_id or "").split(".")[0].split("-")[0].lower()
+
+
+_SCRIPTS = [("Arabic", "[\u0600-\u06ff\u0750-\u077f]"), ("Cyrillic", "[\u0400-\u04ff]"),
+            ("CJK", "[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]"), ("Devanagari", "[\u0900-\u097f]"),
+            ("Hebrew", "[\u0590-\u05ff]"), ("Greek", "[\u0370-\u03ff]"), ("Thai", "[\u0e00-\u0e7f]"),
+            ("Latin", "[A-Za-z\u00c0-\u024f]")]
+_LANG_SCRIPT = {"ar": "Arabic", "fa": "Arabic", "ur": "Arabic", "ps": "Arabic", "ru": "Cyrillic", "uk": "Cyrillic",
+                "bg": "Cyrillic", "sr": "Cyrillic", "be": "Cyrillic", "kk": "Cyrillic", "mk": "Cyrillic",
+                "mn": "Cyrillic", "zh": "CJK", "ja": "CJK", "ko": "CJK", "hi": "Devanagari", "mr": "Devanagari",
+                "ne": "Devanagari", "he": "Hebrew", "iw": "Hebrew", "yi": "Hebrew", "el": "Greek", "th": "Thai"}
+
+
+def script_of(text):
+    counts = {name: len(re.findall(rx, text)) for name, rx in _SCRIPTS}
+    name, n = max(counts.items(), key=lambda kv: kv[1])
+    return name if n >= 20 else None
+
+
+def language_score(text, code):
+    """Share of words that are among the language's 300 most common: ~0.4+ for that language, low otherwise."""
+    try:
+        from wordfreq import top_n_list
+        common = set(top_n_list(code, 300))
+    except Exception:
+        return None
+    words = re.findall(r"[^\W\d_]+", text.lower())[:400]
+    return sum(w in common for w in words) / len(words) if words else None
+
+
+def wrong_language(segs, code, other_codes=()):
+    """Why the transcript isn't in the video's original language `code`, or None if it looks right."""
+    text = " ".join(s["text"] for s in segs[:80])
+    want, got = _LANG_SCRIPT.get(code, "Latin"), script_of(text)
+    if got and got != want:
+        return f"it's in {got} script, but the original audio is {code}"
+    if got == "Latin" and want == "Latin":
+        own = language_score(text, code)
+        if own is not None and own < 0.4:             # ~0.7 when it really is that language
+            for other in other_codes:
+                if other != code and _LANG_SCRIPT.get(other, "Latin") == "Latin":
+                    sc = language_score(text, other)
+                    if sc is not None and sc > max(0.35, 2 * own):
+                        return f"it reads as {other}, but the original audio is {code}"
+    return None
+
+
+def fetch_original_captions(vid, code):
+    """The original-language caption file, grouped like the panel: via youtube-transcript-api, else yt-dlp."""
+    try:
+        tl = transcript_api().list(vid)
+        tr = next((t for t in tl if lang_code(t.language_code) == code and not t.is_generated), None) \
+            or next((t for t in tl if lang_code(t.language_code) == code), None)
+        if tr:
+            raw = [(x.start, x.duration, clean(x.text)) for x in tr.fetch().snippets if clean(x.text)]
+            if raw:
+                return group_cues(raw), {"language": tr.language, "language_code": tr.language_code,
+                                         "generated": tr.is_generated, "source": "captions-grouped"}
+    except Exception:
+        pass
+    import yt_dlp
+    opts = {"quiet": True, "no_warnings": True, "skip_download": True, **yt_dlp_net_opts()}
+    with yt_dlp.YoutubeDL(opts) as y:
+        info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
+        for pool, generated in (("subtitles", False), ("automatic_captions", True)):
+            tracks = info.get(pool) or {}
+            key = next((k for k in tracks if k == f"{code}-orig"), None) \
+                or next((k for k in tracks if lang_code(k) == code), None)
+            if not key or not tracks[key]:
+                continue
+            fmt = next((f for f in tracks[key] if f.get("ext") == "json3"), tracks[key][0])
+            body = y.urlopen(fmt["url"]).read().decode("utf-8", "replace")
+            raw = parse_caption_body(body)
+            if raw:
+                return group_cues(raw), {"language": key, "language_code": key, "generated": generated,
+                                         "source": "yt-dlp-captions-grouped"}
+    raise RuntimeError(f"no {code} captions found")
+
+
+def ensure_original_language(vid, segs, track):
+    """If YouTube handed us a dubbed-language transcript, swap in the original-language captions."""
+    info = LANG_INFO.pop(vid, None)
+    orig, _ = audio_tracks(info)
+    if not orig or len((info or {}).get("audio") or []) < 2:
+        return segs, track                        # one audio track: nothing to mix up
+    code = lang_code(orig["id"])
+    others = {lang_code(a["id"]) for a in info["audio"]} | {lang_code(c["code"]) for c in info.get("captions") or []}
+    why = wrong_language(segs, code, sorted(others - {code}))
+    if not why:
+        if track is not None:
+            track.setdefault("language_code", code)
+        return segs, track
+    print(f"  transcript is in the wrong language ({why}); getting the original {code} captions instead")
+    try:
+        segs, track = fetch_original_captions(vid, code)
+    except Exception as e:
+        raise RuntimeError(f"YouTube gave a dubbed-language transcript and the original {code} captions "
+                           f"couldn't be fetched ({e.__class__.__name__}: {str(e)[:120]})") from None
+    print(f"  transcript: original {code} captions grouped like YouTube's panel ({len(segs)} lines)")
+    return segs, track
+
 _DURATION_JS = r"""() => { try { const r = window.ytInitialPlayerResponse || document.getElementById('movie_player').getPlayerResponse();
   return +r.videoDetails.lengthSeconds || 0; } catch (e) { const v = document.querySelector('video'); return v && isFinite(v.duration) ? v.duration : 0; } }"""
 
@@ -654,7 +917,7 @@ def fetch_browser(vid, show=False, offscreen=False):
         say(f"opened {browser.name}" + ("" if show else " (off-screen window)" if offscreen else " (hidden)"))
         try:
             if BASE.startswith("https://www.youtube.com"):
-                ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
+                ctx.add_cookies(yt_cookies())
             page = ctx.new_page()
         except Exception:
             browser.close()
@@ -688,7 +951,7 @@ def fetch_browser(vid, show=False, offscreen=False):
 
         best, dom, base_stamps, duration = ([], [], ""), None, 0, 0
         try:
-            page.goto(f"{BASE}/watch?v={vid}&hl=en", wait_until="domcontentloaded", timeout=60000)
+            page.goto(yt_watch_url(vid), wait_until="domcontentloaded", timeout=60000)
             try:
                 page.wait_for_selector("#description, ytd-watch-metadata", timeout=20000)
                 say("video page loaded")
@@ -696,13 +959,24 @@ def fetch_browser(vid, show=False, offscreen=False):
                 say("video page loaded, but no description box found")
             page.evaluate("() => { const v = document.querySelector('video'); if (v) v.pause(); }")
             try:
-                m = meta_from_player(page.evaluate(
-                    "() => { const p = window.ytInitialPlayerResponse;"
-                    " return p ? {videoDetails: p.videoDetails || null, microformat: p.microformat || null} : null; }"))
-                if m:
-                    BROWSER_META[vid] = m
+                info = page.evaluate(_PLAYER_INFO_JS) or {}
             except Exception:
-                pass
+                info = {}
+            m = meta_from_player(info)
+            if m:
+                BROWSER_META[vid] = m
+            if info:
+                LANG_INFO[vid] = info
+                orig, picked = audio_tracks(info)
+                if len(info.get("audio") or []) > 1:
+                    say(f"{len(info['audio'])} audio tracks; YouTube picked {picked['name'] if picked else '?'} "
+                        f"(original: {orig['name'] if orig else '?'}; region {info.get('gl') or '?'})")
+                    if orig and picked and orig["id"] != picked["id"]:
+                        try:
+                            say(page.evaluate(_ORIGINAL_AUDIO_JS, orig["id"]))
+                            page.wait_for_timeout(1500)
+                        except Exception as e:
+                            say(f"couldn't switch the audio ({e.__class__.__name__})")
             base_stamps = max(count(), 0)
             try:
                 duration = page.evaluate(_DURATION_JS) or 0
@@ -915,6 +1189,8 @@ _PLAY_JS = r"""() => { const p = document.getElementById('movie_player');
 _TRACKS_JS = r"""() => { try {
   const r = window.ytInitialPlayerResponse || (document.getElementById('movie_player').getPlayerResponse());
   if (!r) return null;
+  const ps = r.playabilityStatus || {};
+  if (ps.status && ps.status !== 'OK') return {blocked: ps.status + ' ' + (ps.reason || '')};
   const t = ((r.captions || {}).playerCaptionsTracklistRenderer || {}).captionTracks;
   return (t || []).map(x => ({code: x.languageCode, kind: x.kind || '',
                               name: x.name ? (x.name.simpleText || (x.name.runs || []).map(r => r.text).join('')) : ''}));
@@ -933,7 +1209,7 @@ def fetch_player_captions(vid, show=False, save_raw=False):
         ctx = browser.ctx
         try:
             if BASE.startswith("https://www.youtube.com"):
-                ctx.add_cookies([{"name": "SOCS", "value": "CAI", "domain": ".youtube.com", "path": "/"}])
+                ctx.add_cookies(yt_cookies())
             page = ctx.new_page()
 
             def on_response(r):
@@ -946,12 +1222,14 @@ def fetch_player_captions(vid, show=False, save_raw=False):
                         pass
             page.on("response", on_response)
 
-            page.goto(f"{BASE}/watch?v={vid}&hl=en", wait_until="domcontentloaded", timeout=60000)
+            page.goto(yt_watch_url(vid), wait_until="domcontentloaded", timeout=60000)
             try:
                 page.wait_for_selector("#movie_player, .html5-video-player", timeout=20000)
             except Exception:
                 say("no video player on the page")
             tracks = page.evaluate(_TRACKS_JS)
+            if isinstance(tracks, dict):                  # a bot check or error page, not "no captions"
+                raise RuntimeError(f"YouTube didn't play the video for the browser ({tracks.get('blocked', '')[:120]})")
             if tracks == []:
                 raise TranscriptsDisabled("this video has no captions")
 
@@ -1310,7 +1588,7 @@ def build():
     """Rebuild every page and the index from data/."""
     index = {}
     for f in sorted(DATA.glob("*.json")):
-        if f.name.startswith("_"):
+        if not ID_RE.match(f.stem):           # _index.json etc. (video IDs can start with _ too, so match the ID)
             continue
         d = json.loads(f.read_text(encoding="utf-8"))
         write_page(d)
@@ -1349,7 +1627,9 @@ ALLOWED_ORIGINS = {"https://yousnr.com", "https://www.yousnr.com", "https://your
 PER_VISITOR_PER_HOUR = 20     # new (uncached) videos one visitor can trigger per hour
 MIN_GAP_SECONDS = 3           # pause between YouTube fetches
 BLOCK_COOLDOWN = 15 * 60      # back off this long if YouTube says "too many requests"
-MISSING_RETRY = 24 * 3600     # re-check videos without captions after a day
+MISSING_RETRY = 24 * 3600     # re-check unavailable videos after a day
+NO_CAPTIONS_RETRY = 3 * 3600  # captions can appear later (new uploads get them within hours): re-check sooner
+NEW_UPLOAD_RETRY = 30 * 60    # ...and much sooner for videos from the last two days
 PUSH_EVERY = 5 * 60           # publish new pages to GitHub at most this often
 MISSING = DATA / "_missing.json"
 
@@ -1495,10 +1775,17 @@ class Fetcher:
         self.cooldown_until = 0.0
         self.visitors = {}
         self.pending = []          # IDs fetched since the last push
+        self.missing, self.missing_mtime = {}, 0
+        self._reload_missing()
+
+    def _reload_missing(self):
+        """Pick up `python yousnr.py forget <video>` (it edits the file) without a restart."""
         try:
-            self.missing = json.loads(MISSING.read_text(encoding="utf-8"))
+            mt = MISSING.stat().st_mtime
+            if mt != self.missing_mtime:
+                self.missing, self.missing_mtime = json.loads(MISSING.read_text(encoding="utf-8")), mt
         except Exception:
-            self.missing = {}
+            pass
 
     def _visitor_ok(self, ip):
         now = time.time()
@@ -1514,9 +1801,13 @@ class Fetcher:
         f = DATA / f"{vid}.json"
         if f.exists():
             return 200, "text/html; charset=utf-8", render_page(json.loads(f.read_text(encoding="utf-8")))
+        self._reload_missing()
         miss = self.missing.get(vid)
-        if miss and time.time() - miss["at"] < (30 * 86400 if miss["reason"] == "music" else MISSING_RETRY):
-            return 404, "application/json", json.dumps({"error": miss["reason"]})
+        if miss:
+            limit = miss.get("retry") or {"music": 30 * 86400, "no_captions": NO_CAPTIONS_RETRY}.get(
+                miss.get("reason"), MISSING_RETRY)
+            if time.time() - miss.get("at", 0) < limit:
+                return 404, "application/json", json.dumps({"error": miss["reason"]})
         if time.time() < self.cooldown_until:
             return 503, "application/json", json.dumps({"error": "busy", "retry": int(self.cooldown_until - time.time())})
         if not self._visitor_ok(ip):
@@ -1544,8 +1835,19 @@ class Fetcher:
                 reason = ("music" if name == "MusicVideo" else "no_captions" if name in NO_TRANSCRIPT
                           else "unavailable" if name in UNAVAILABLE else None)
                 if reason:
-                    self.missing[vid] = {"reason": reason, "at": time.time()}
+                    retry = 30 * 86400 if reason == "music" else MISSING_RETRY
+                    if reason == "no_captions":
+                        published = getattr(e, "published", "") or ""
+                        fresh = published and time.strftime("%Y%m%d", time.gmtime(time.time() - 2 * 86400)) <= published
+                        retry = NEW_UPLOAD_RETRY if fresh else NO_CAPTIONS_RETRY
+                    print(f"  {vid}: {reason} ({name}: {msg.splitlines()[0][:150] if msg else ''}); "
+                          f"will check again in {retry // 60} min")
+                    self.missing[vid] = {"reason": reason, "at": time.time(), "retry": retry}
                     write_atomic(MISSING, json.dumps(self.missing))
+                    try:
+                        self.missing_mtime = MISSING.stat().st_mtime
+                    except Exception:
+                        pass
                     return 404, "application/json", json.dumps({"error": reason})
                 print(f"  failed: {name}: {msg.splitlines()[0] if msg else ''}")
                 return 502, "application/json", json.dumps({"error": "failed"})
@@ -2095,6 +2397,17 @@ def show_status(port=8787, lines=15):
         print(f"  starts when the server starts: {'yes' if en == 'enabled' else 'no'}")
     if yt_proxy():
         print(f"  YouTube traffic goes through {yt_proxy()}  (check-youtube tests it)")
+    try:
+        sb, when = (SANDBOX_FILE.read_text(encoding="utf-8").splitlines() + ["", ""])[:2]
+    except Exception:
+        sb, when = "", ""
+    if sb == "on":
+        print(f"  browser sandbox: on  (last browser: {when})")
+    elif sb:
+        print(f"  browser sandbox: OFF  ({sb[4:].strip() or 'off'}; {when})"
+              + (_sandbox_fix(sb).replace("  Fix:", "\n    fix:") + ", then restart YouSNR" if _sandbox_fix(sb) else ""))
+    else:
+        print("  browser sandbox: not checked yet (it is the next time the browser opens)")
     if acc is not None and acc.available():
         st = acc.settings()
         print(f"  corrections: {', '.join(acc.available())}; ${acc.spent_this_month():.2f} of ${st['budget']:.2f} used this month")
@@ -2273,6 +2586,8 @@ def main():
     ck.add_argument("video", nargs="?", default="cPmVLrTA8AU")
     ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
     ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
+    fg = sub.add_parser("forget", help="clear a remembered 'no captions'/'unavailable' result so it's tried again now")
+    fg.add_argument("videos", nargs="+")
     au = sub.add_parser("autostart", help="on: turn on by itself whenever you sign in to Windows; off: don't")
     au.add_argument("switch", choices=["on", "off"])
     r = sub.add_parser("raw", help="save the raw caption track in all formats to debug/raw/")
@@ -2464,6 +2779,16 @@ def main():
         show_status(args.port)
     if args.cmd == "autostart":
         set_autostart(args.switch == "on")
+    if args.cmd == "forget":
+        try:
+            missing = json.loads(MISSING.read_text(encoding="utf-8"))
+        except Exception:
+            missing = {}
+        for v in args.videos:
+            vid = video_id(v)
+            print(f"{vid}: " + ("forgotten, it'll be fetched again on the next visit" if missing.pop(vid, None)
+                                else "nothing remembered for it"))
+        write_atomic(MISSING, json.dumps(missing))
     if args.cmd == "check-youtube":
         sys.exit(0 if check_youtube(video_id(args.video), direct=args.direct, browser=not args.no_browser) else 1)
 

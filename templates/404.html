@@ -64,7 +64,7 @@ a{color:var(--accent)}
   function fail(kind,retry){
     var mins=retry?Math.max(1,Math.round(retry/60)):5;
     var m={
-      no_captions:['This video has no captions','So there’s no transcript to show.'],
+      no_captions:['No captions yet','YouTube didn’t have captions for this video when we checked. New uploads usually get them within a few hours, so try again later.'],
       music:['Music videos aren’t on YouSNR','YouSNR is for talking: podcasts, interviews, essays, explainers.'],
       unavailable:['This video isn’t available','It may be private, removed, age-restricted or region-locked.'],
       busy:['Busy right now','YouTube asked us to slow down. Try again in about '+mins+' minute'+(mins==1?'':'s')+'.'],
