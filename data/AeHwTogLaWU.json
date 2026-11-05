@@ -93,5 +93,25 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-05T04:44:47+00:00"
+ "added": "2026-11-05T04:44:47+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "assemblyai"
+  ],
+  "at": "2026-11-04T23:44:47",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 12.2,
+  "usd": 0.0009,
+  "version": 3,
+  "flagged": [
+   [
+    "0:16",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
