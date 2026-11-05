@@ -365,6 +365,11 @@ class DirectDownloadPaused(Exception):
     pass
 
 
+class TranscriptNotLoaded(RuntimeError):
+    """YouTube showed the video but no way we tried gave us its transcript. Not a "slow down": other
+    videos still work, so this pauses only this video for a while instead of all new videos."""
+
+
 class MusicVideo(Exception):
     pass
 
@@ -437,15 +442,27 @@ def _get_transcript(vid, meta, lang, browser, show, player, allow_music):
                 print(f"  direct caption download refused ({name}); using the video player for the next hour")
             try:
                 segs, track = fetch_player_captions(vid, show=show)
+                print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
             except ImportError:
                 print("  (the player method needs:  python -m pip install --user playwright)")
                 raise e
             except Exception as e2:
                 if e2.__class__.__name__ in NO_TRANSCRIPT:
                     raise
-                print(f"  player method failed too: {e2.__class__.__name__}: {str(e2).splitlines()[0] if str(e2) else ''}")
-                raise RuntimeError("429 Too Many Requests (direct and player both refused)") if name == "DirectDownloadPaused" else e
-            print(f"  transcript: video player captions grouped like YouTube's panel ({len(segs)} lines)")
+                why2 = str(e2).splitlines()[0] if str(e2) else ""
+                print(f"  player method failed too: {e2.__class__.__name__}: {why2}")
+                try:                                   # last resort: the caption file through yt-dlp
+                    segs, track = ytdlp_captions(vid, [lang, "en"])
+                    print(f"  transcript: caption file via yt-dlp, grouped like YouTube's panel ({len(segs)} lines)")
+                except Exception as e3:
+                    print(f"  yt-dlp captions failed too: {e3.__class__.__name__}: "
+                          f"{str(e3).splitlines()[0][:150] if str(e3) else ''}")
+                    if "didn't play the video" in why2:  # the browser itself was turned away: a real block
+                        raise RuntimeError("429 Too Many Requests (direct and player both refused)") \
+                            if name == "DirectDownloadPaused" else e
+                    # The browser got the video fine, so this isn't YouTube saying "slow down" (on a cloud
+                    # server, plain caption downloads are always refused). Don't pause every new video.
+                    raise TranscriptNotLoaded("no transcript from the panel, the player or the caption file") from None
     segs, track = ensure_original_language(vid, segs, track)
     seen = BROWSER_META.pop(vid, None)        # what the browser saw fills gaps a blocked plain request left
     if seen:
@@ -852,23 +869,34 @@ def fetch_original_captions(vid, code):
                                          "generated": tr.is_generated, "source": "captions-grouped"}
     except Exception:
         pass
+    return ytdlp_captions(vid, [code], original_first=False)
+
+
+def ytdlp_captions(vid, codes, original_first=True):
+    """A caption file through yt-dlp (it goes through YOUSNR_PROXY, over IPv4 if asked), grouped like the
+    panel. original_first: try the video's own language before `codes`. Manual captions before automatic."""
     import yt_dlp
     opts = {"quiet": True, "no_warnings": True, "skip_download": True, **yt_dlp_net_opts()}
     with yt_dlp.YoutubeDL(opts) as y:
         info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
-        for pool, generated in (("subtitles", False), ("automatic_captions", True)):
-            tracks = info.get(pool) or {}
-            key = next((k for k in tracks if k == f"{code}-orig"), None) \
-                or next((k for k in tracks if lang_code(k) == code), None)
-            if not key or not tracks[key]:
-                continue
-            fmt = next((f for f in tracks[key] if f.get("ext") == "json3"), tracks[key][0])
-            body = y.urlopen(fmt["url"]).read().decode("utf-8", "replace")
-            raw = parse_caption_body(body)
-            if raw:
-                return group_cues(raw), {"language": key, "language_code": key, "generated": generated,
-                                         "source": "yt-dlp-captions-grouped"}
-    raise RuntimeError(f"no {code} captions found")
+        own = lang_code(info.get("language") or "") if original_first else ""
+        auto = info.get("automatic_captions") or {}
+        if original_first and not own:                 # YouTube's own speech recognition is in the spoken language
+            own = next((lang_code(k[:-5]) for k in auto if k.endswith("-orig")), "")
+        for code in dict.fromkeys(c for c in [own, *codes] if c):
+            for pool, generated in (("subtitles", False), ("automatic_captions", True)):
+                tracks = info.get(pool) or {}
+                key = next((k for k in tracks if k == f"{code}-orig"), None) \
+                    or next((k for k in tracks if lang_code(k) == code), None)
+                if not key or not tracks[key]:
+                    continue
+                fmt = next((f for f in tracks[key] if f.get("ext") == "json3"), tracks[key][0])
+                body = y.urlopen(fmt["url"]).read().decode("utf-8", "replace")
+                raw = parse_caption_body(body)
+                if raw:
+                    return group_cues(raw), {"language": key, "language_code": key, "generated": generated,
+                                             "source": "yt-dlp-captions-grouped"}
+    raise RuntimeError(f"no {'/'.join(c for c in [own, *codes] if c)} captions found")
 
 
 def ensure_original_language(vid, segs, track):
@@ -1626,10 +1654,15 @@ def save(d, quiet=False):
 ALLOWED_ORIGINS = {"https://yousnr.com", "https://www.yousnr.com", "https://yoursnr.com", "https://www.yoursnr.com"}
 PER_VISITOR_PER_HOUR = 20     # new (uncached) videos one visitor can trigger per hour
 MIN_GAP_SECONDS = 3           # pause between YouTube fetches
+JOB_WAIT = 45                 # a page's request waits this long, then hears "still working" and asks again
+                              # (Cloudflare cuts requests at 100 s, which the page would show as "offline")
+JOB_KEEP = 60                 # keep a finished fetch's answer this long for the page that's waiting on it
+MAX_JOBS = 8                  # new videos waiting their turn at once, at most
 BLOCK_COOLDOWN = 15 * 60      # back off this long if YouTube says "too many requests"
 MISSING_RETRY = 24 * 3600     # re-check unavailable videos after a day
 NO_CAPTIONS_RETRY = 3 * 3600  # captions can appear later (new uploads get them within hours): re-check sooner
 NEW_UPLOAD_RETRY = 30 * 60    # ...and much sooner for videos from the last two days
+NOT_LOADED_RETRY = 30 * 60    # YouTube showed the video but not its transcript: try that video again after this
 PUSH_EVERY = 5 * 60           # publish new pages to GitHub at most this often
 MISSING = DATA / "_missing.json"
 
@@ -1770,7 +1803,8 @@ class Fetcher:
     def __init__(self, lang="en", browser=True):
         self.lang = lang
         self.browser = browser
-        self.lock = threading.Lock()
+        self.lock = threading.Lock()                 # one YouTube fetch at a time
+        self.jobs, self.jobs_lock = {}, threading.Lock()   # video ID -> fetch in progress (or just finished)
         self.last_fetch = 0.0
         self.cooldown_until = 0.0
         self.visitors = {}
@@ -1796,24 +1830,59 @@ class Fetcher:
         hits.append(now)
         return True
 
-    def page(self, vid, ip):
-        """Returns (status, content_type, body)."""
+    def page(self, vid, ip, poll=False):
+        """Returns (status, content_type, body, seconds). A new video is fetched in the background; with
+        poll=True this answers 202 ("still working") after JOB_WAIT seconds instead of keeping the request
+        open, because Cloudflare cuts any request that takes over 100 s (the page then just asks again).
+        seconds = how long the answer took to make (the whole fetch, for a fetched video)."""
+        t0 = time.time()
         f = DATA / f"{vid}.json"
         if f.exists():
-            return 200, "text/html; charset=utf-8", render_page(json.loads(f.read_text(encoding="utf-8")))
-        self._reload_missing()
-        miss = self.missing.get(vid)
-        if miss:
-            limit = miss.get("retry") or {"music": 30 * 86400, "no_captions": NO_CAPTIONS_RETRY}.get(
-                miss.get("reason"), MISSING_RETRY)
-            if time.time() - miss.get("at", 0) < limit:
-                return 404, "application/json", json.dumps({"error": miss["reason"]})
-        if time.time() < self.cooldown_until:
-            return 503, "application/json", json.dumps({"error": "busy", "retry": int(self.cooldown_until - time.time())})
-        if not self._visitor_ok(ip):
-            return 429, "application/json", json.dumps({"error": "slow_down"})
-        if not self.lock.acquire(timeout=120):
-            return 503, "application/json", json.dumps({"error": "busy", "retry": 60})
+            return 200, "text/html; charset=utf-8", render_page(json.loads(f.read_text(encoding="utf-8"))), time.time() - t0
+        with self.jobs_lock:
+            now = time.time()
+            for k in [k for k, j in self.jobs.items() if j["done"].is_set() and now - j["end"] > JOB_KEEP]:
+                del self.jobs[k]
+            job = self.jobs.get(vid)
+        if job is None:
+            self._reload_missing()
+            miss = self.missing.get(vid)
+            if miss:
+                limit = miss.get("retry") or {"music": 30 * 86400, "no_captions": NO_CAPTIONS_RETRY,
+                                              "not_loaded": NOT_LOADED_RETRY}.get(
+                    miss.get("reason"), MISSING_RETRY)
+                if time.time() - miss.get("at", 0) < limit:
+                    return 404, "application/json", json.dumps({"error": miss["reason"]}), time.time() - t0
+            if time.time() < self.cooldown_until:
+                return (503, "application/json",
+                        json.dumps({"error": "busy", "retry": int(self.cooldown_until - time.time())}), time.time() - t0)
+            with self.jobs_lock:
+                job = self.jobs.get(vid)                     # someone else may have just started it
+                if job is None:
+                    if sum(not j["done"].is_set() for j in self.jobs.values()) >= MAX_JOBS:
+                        return 503, "application/json", json.dumps({"error": "busy", "retry": 60}), time.time() - t0
+                    if not self._visitor_ok(ip):
+                        return 429, "application/json", json.dumps({"error": "slow_down"}), time.time() - t0
+                    job = self.jobs[vid] = {"done": threading.Event(), "result": None, "start": time.time(), "end": 0}
+                    threading.Thread(target=self._run_job, args=(vid, job), daemon=True).start()
+        if job["done"].wait(JOB_WAIT if poll else 15 * 60):
+            return (*job["result"], job["end"] - job["start"])
+        return 202, "application/json", json.dumps({"working": True, "secs": int(time.time() - job["start"])}), time.time() - t0
+
+    def _run_job(self, vid, job):
+        try:
+            job["result"] = self._fetch(vid)
+        except Exception as e:                               # never leave a page waiting forever
+            print(f"  failed: {e.__class__.__name__}: {str(e).splitlines()[0] if str(e) else ''}")
+            job["result"] = (502, "application/json", json.dumps({"error": "failed"}))
+        finally:
+            job["end"] = time.time()
+            job["done"].set()
+
+    def _fetch(self, vid):
+        """Fetch one new video (one at a time). Returns (status, content_type, body)."""
+        f = DATA / f"{vid}.json"
+        self.lock.acquire()
         try:
             if f.exists():                                  # someone else fetched it while we waited
                 return 200, "text/html; charset=utf-8", render_page(json.loads(f.read_text(encoding="utf-8")))
@@ -1833,9 +1902,10 @@ class Fetcher:
                     print(f"  YouTube says slow down ({name}); pausing new fetches for {BLOCK_COOLDOWN // 60} min")
                     return 503, "application/json", json.dumps({"error": "busy", "retry": BLOCK_COOLDOWN})
                 reason = ("music" if name == "MusicVideo" else "no_captions" if name in NO_TRANSCRIPT
-                          else "unavailable" if name in UNAVAILABLE else None)
+                          else "unavailable" if name in UNAVAILABLE else "not_loaded" if name == "TranscriptNotLoaded"
+                          else None)
                 if reason:
-                    retry = 30 * 86400 if reason == "music" else MISSING_RETRY
+                    retry = 30 * 86400 if reason == "music" else NOT_LOADED_RETRY if reason == "not_loaded" else MISSING_RETRY
                     if reason == "no_captions":
                         published = getattr(e, "published", "") or ""
                         fresh = published and time.strftime("%Y%m%d", time.gmtime(time.time() - 2 * 86400)) <= published
@@ -1969,7 +2039,9 @@ class Tunnel:
                         rejected = True
             self.proc.wait()
             self.PID.unlink(missing_ok=True)
-            if self.stopping.is_set():
+            # When systemd stops the service it signals cloudflared at the same moment as YouSNR,
+            # so give YouSNR a moment to say "we're shutting down" before calling this a crash.
+            if self.stopping.wait(3):
                 break
             if rejected:
                 TUNNEL["state"] = "token rejected"
@@ -2107,9 +2179,10 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
             if m:
                 vid = m.group(1)
                 ip = self.headers.get("CF-Connecting-IP") or self.client_address[0]
-                t0 = time.time()
-                status, ctype, body = fetcher.page(vid, ip)
-                print(f"{time.strftime('%H:%M:%S')}  {vid}  {status}  {time.time() - t0:.1f}s  {ip}")
+                poll = "poll=1" in (urllib.parse.urlparse(self.path).query or "")
+                status, ctype, body, secs = fetcher.page(vid, ip, poll)
+                if status != 202:                    # "still working" answers would just be noise
+                    print(f"{time.strftime('%H:%M:%S')}  {vid}  {status}  {secs:.1f}s  {ip}")
                 return self._send(status, ctype, body)
             if path.startswith("/api/"):
                 return self._send(404, "application/json", json.dumps({"error": "not_found"}))
@@ -2148,7 +2221,11 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
     asked_to_stop = threading.Event()
     try:                                       # `systemctl stop` on a server: finish up like `stop` does
         import signal
-        signal.signal(signal.SIGTERM, lambda *_: threading.Thread(target=srv.shutdown, daemon=True).start())
+        def on_term(*_):
+            if tun:
+                tun.stopping.set()             # systemd signals cloudflared too: don't log that as a crash or restart it
+            threading.Thread(target=srv.shutdown, daemon=True).start()
+        signal.signal(signal.SIGTERM, on_term)
     except Exception:
         pass
 

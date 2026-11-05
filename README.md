@@ -92,6 +92,7 @@ Safety limits (top of the server section in `yousnr.py`):
 - one YouTube fetch at a time, at least 3 s apart
 - 20 new videos per visitor per hour
 - if YouTube says "too many requests", new fetches pause for 15 minutes
+- at most 8 new videos waiting their turn; slow fetches keep going in the background: the page hears "still working" every 45 s and asks again, because Cloudflare cuts any request after 100 s (the page used to show that as "server is offline")
 - videos with no captions are re-checked after 3 hours (30 minutes for uploads from the last two days, since new videos get captions within hours); `forget <video>` clears it at once
 
 Test locally first: run `serve`, then open http://localhost:8787/watch?v=265-EZJ_aJE.
@@ -217,7 +218,7 @@ By default YouSNR reads **YouTube's own transcript panel** ("Show transcript" â†
 
 Since 2026 the panel often shows a newer transcription than the downloadable caption file (different words, different line breaks), so the panel is the only exact source.
 
-If the panel can't be read, it falls back to the caption file, glued into ~100-character lines the way the old panel did (`PANEL_MIN_CHARS`). If YouTube rate-limits caption downloads, it gets them through the video player instead. `--captions` skips the panel and uses the caption file only, which is faster.
+If the panel can't be read, it falls back to the caption file, glued into ~100-character lines the way the old panel did (`PANEL_MIN_CHARS`). If YouTube rate-limits caption downloads, it gets them through the video player instead, and as a last resort through yt-dlp (which gets past the cloud-server block over WARP's IPv4). If YouTube shows the video but none of these give its transcript, only that video waits 30 minutes before the next try ("YouTube didn't give us this transcript"); new videos keep working. A real "slow down" from YouTube (the browser itself turned away, or 429 Too Many Requests) still pauses all new videos for 15 minutes. `--captions` skips the panel and uses the caption file only, which is faster.
 
 ## One-time setup
 

@@ -17,6 +17,7 @@ fi
 turn_back_on() {
   if [ "$was_on" = "active" ] && ! systemctl is-active --quiet yousnr; then
     echo "== turning on"
+    sudo systemctl daemon-reload                      # in case the service file was changed (setup rewrites it)
     sudo systemctl start yousnr
     sleep 8
   fi
@@ -34,7 +35,8 @@ fi
 
 echo "== updating Playwright and its browser, yt-dlp and the rest"
 pw_before="$("$PY" -m pip show playwright 2>/dev/null | awk '/^Version:/{print $2}')"
-"$PY" -m pip install -q -U -r requirements.txt
+"$PY" -m pip install -q -U --disable-pip-version-check pip
+"$PY" -m pip install -q -U --disable-pip-version-check -r requirements.txt
 pw_after="$("$PY" -m pip show playwright 2>/dev/null | awk '/^Version:/{print $2}')"
 if [ "$pw_before" != "$pw_after" ]; then
   echo "   Playwright $pw_before -> $pw_after"
