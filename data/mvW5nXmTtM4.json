@@ -1,0 +1,1335 @@
+{
+ "id": "mvW5nXmTtM4",
+ "title": "How Much Would It Cost To Run House's Team in Real Life?",
+ "channel": "Arthur is Based",
+ "published": "20261103",
+ "description": "Gregory House ran an entire hospital department that existed only to solve the cases no other doctor could crack, and he did it while breaking nearly every rule in the building. When a businessman called it a three-million-dollar black hole, it raised a fascinating question. In this video, we calculate the real-life cost of running House’s team from the ground up, every phase, every expense, every dollar it takes to keep a genius who gets sued more than anyone in the hospital.\n\nWe break it all down. The department built around one tenured, impossible-to-fire diagnostician and his rotating team of fellows. The endless tests, week-long ICU stays, and the private investigator smuggled onto the books as a broken coffee machine. The lawsuits that make House’s tiny team responsible for 40 percent of the hospital’s legal cases. And the price of keeping him, the MRI he destroyed, the clinic hours he never worked, and the hundred-million-dollar donor he cost Cuddy her funding. Add it up and House’s department runs north of 105 million dollars, but almost none of it is the team. Was the businessman right, or is House worth every penny?\n\n#HouseMD #GregoryHouse #HughLaurie #Cuddy #PrincetonPlainsboro #MedicalDrama #HowMuchWouldItCost #TVAnalysis #Fox #EverybodyLies #Wilson",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: The premise of the team"
+  },
+  {
+   "start": 60,
+   "title": "Chapter 2: Department personnel costs"
+  },
+  {
+   "start": 328,
+   "title": "Chapter 3: Medical testing and resources"
+  },
+  {
+   "start": 630,
+   "title": "Chapter 4: Malpractice and legal fees"
+  },
+  {
+   "start": 882,
+   "title": "Chapter 5: Hidden costs of House"
+  },
+  {
+   "start": 1185,
+   "title": "Chapter 6: Final verdict and math"
+  }
+ ],
+ "duration": 1500,
+ "category": "News & Politics",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 3.0,
+   "text": "What is a department of diagnostic medicine?",
+   "label": "0:00"
+  },
+  {
+   "start": 3.0,
+   "dur": 8.0,
+   "text": "Gregory House ran an entire department at Princeton Plainsboro that only existed to solve the cases no other doctor could. And he did it while",
+   "label": "0:03"
+  },
+  {
+   "start": 11.0,
+   "dur": 6.0,
+   "text": "breaking almost every rule in the hospital. And why does he get away with it? It's just a coat. He's very good.",
+   "label": "0:11"
+  },
+  {
+   "start": 17.0,
+   "dur": 7.0,
+   "text": "And when patients were dying from something nobody could name, his team was their last resort. But when a businessman named Edward Voggler gave",
+   "label": "0:17"
+  },
+  {
+   "start": 24.0,
+   "dur": 8.0,
+   "text": "the hospital $100 million and took over its board, he took one look at House's department and didn't like what he saw. It's a financial black hole.",
+   "label": "0:24"
+  },
+  {
+   "start": 32.0,
+   "dur": 5.0,
+   "text": "Vagler throws that $3 million figure out there to prove that House is a waste of money.",
+   "label": "0:32"
+  },
+  {
+   "start": 37.0,
+   "dur": 7.0,
+   "text": "Department cost us 3 million a year, treat one patient a week. He saves one patient per week. But it brings up a fascinating question.",
+   "label": "0:37"
+  },
+  {
+   "start": 44.0,
+   "dur": 8.0,
+   "text": "If you actually tried to run House's team in real life, what would the yearly bill really look like? To answer that, we're going to calculate the real life",
+   "label": "0:44"
+  },
+  {
+   "start": 52.0,
+   "dur": 8.0,
+   "text": "cost of running House's department from the ground up. To find out if Voggler was right or if House [music] is worth every penny. Starting with phase one,",
+   "label": "0:52"
+  },
+  {
+   "start": 60.0,
+   "dur": 8.0,
+   "text": "the department. Before you could even think about solving cases nobody else can, you need a department to solve them in. In a department like houses is a",
+   "label": "1:00"
+  },
+  {
+   "start": 68.0,
+   "dur": 10.0,
+   "text": "very strange thing for a hospital to have. Most big hospitals have cardiology, oncology, and neurology. But almost none of them have a team whose only job is to solve medical mysteries.",
+   "label": "1:08"
+  },
+  {
+   "start": 78.0,
+   "dur": 5.0,
+   "text": "Even Cuddy, the dean of medicine who signs houses paychecks, admits it.",
+   "label": "1:18"
+  },
+  {
+   "start": 83.0,
+   "dur": 8.0,
+   "text": "Departments of diagnostic medicine don't exist. The only reason we have one is because that means the whole department is built around one man. And since the hospital",
+   "label": "1:23"
+  },
+  {
+   "start": 91.0,
+   "dur": 4.0,
+   "text": "only runs it to keep him, House is the first bill we have to cover.",
+   "label": "1:31"
+  },
+  {
+   "start": 95.0,
+   "dur": 7.0,
+   "text": "I am a board certified diagnostician with a double specialty of infectious disease and nefrology. I'm also the only doctor currently employed at this clinic",
+   "label": "1:35"
+  },
+  {
+   "start": 102.0,
+   "dur": 7.0,
+   "text": "who's forced to be here against his will. In real life, there's no such thing as a board certification in diagnostic medicine. Infectious disease",
+   "label": "1:42"
+  },
+  {
+   "start": 109.0,
+   "dur": 8.0,
+   "text": "and nephrology are both branches of internal medicine. So on paper, House is an internist with two specialties who",
+   "label": "1:49"
+  },
+  {
+   "start": 117.0,
+   "dur": 8.0,
+   "text": "happens to be a genius. We're basing our math on real costs from the years the show was on the air. Around 2010, a senior professor in a medical specialty",
+   "label": "1:57"
+  },
+  {
+   "start": 125.0,
+   "dur": 8.0,
+   "text": "made about $270,000 a year, while doctors running specialty departments made closer to $480,000.",
+   "label": "2:05"
+  },
+  {
+   "start": 133.0,
+   "dur": 8.0,
+   "text": "[music] House runs his own department, but infectious disease and nephrology are both on the lower paying end of medicine. So, we're putting him right in",
+   "label": "2:13"
+  },
+  {
+   "start": 141.0,
+   "dur": 7.0,
+   "text": "the middle at [music] roughly $375,000 a year. And once you hire House, you're stuck with him because he has tenure. At",
+   "label": "2:21"
+  },
+  {
+   "start": 148.0,
+   "dur": 8.0,
+   "text": "a teaching hospital, that means you can't fire a doctor without real cause and a formal process. House even says it",
+   "label": "2:28"
+  },
+  {
+   "start": 156.0,
+   "dur": 8.0,
+   "text": "to Vogler's face. Vogler might have the money, but House's tenure, and getting rid of him takes full [music] board approval. But House doesn't work alone.",
+   "label": "2:36"
+  },
+  {
+   "start": 164.0,
+   "dur": 7.0,
+   "text": "He needs a team of doctors to run his tests and argue with him about every case. For our math, we're giving him four doctors, the same size team he had",
+   "label": "2:44"
+  },
+  {
+   "start": 171.0,
+   "dur": 9.0,
+   "text": "for most of the show. In real life, those doctors would be fellows. These are doctors who have already finished residency and are spending a few extra years training in a specialty. Teaching",
+   "label": "2:51"
+  },
+  {
+   "start": 180.0,
+   "dur": 9.0,
+   "text": "hospitals pay them on a fixed scale, no matter how brilliant they are. In 2008, the University of California paid a doctor in their fifth year of training",
+   "label": "3:00"
+  },
+  {
+   "start": 189.0,
+   "dur": 6.0,
+   "text": "about $53,000 a year. for all four. That comes to roughly $212,000.",
+   "label": "3:09"
+  },
+  {
+   "start": 195.0,
+   "dur": 8.0,
+   "text": "And since a fellowship only lasts a few years, a real version of House's team would be losing doctors and bringing in new ones all the time. Getting on to",
+   "label": "3:15"
+  },
+  {
+   "start": 203.0,
+   "dur": 11.0,
+   "text": "that team isn't easy, though. When House needs new doctors, he brings in 40 applicants and starts firing them one by one. And Cuddy has to remind him how many he's actually allowed to keep.",
+   "label": "3:23"
+  },
+  {
+   "start": 214.0,
+   "dur": 1.0,
+   "text": "Did you forget how to count to three?",
+   "label": "3:34"
+  },
+  {
+   "start": 215.0,
+   "dur": 7.0,
+   "text": "I get a budget for three. Doesn't mean I can only hire three. Actually, that's exactly what it means. I cut the permanent salaries by 10%.",
+   "label": "3:35"
+  },
+  {
+   "start": 222.0,
+   "dur": 5.0,
+   "text": "Over 3 years, it'll more than make up for the breakage on the 27 that I'm going to weed out over the next few weeks.",
+   "label": "3:42"
+  },
+  {
+   "start": 227.0,
+   "dur": 8.0,
+   "text": "In other words, 3 years of paying the new team 10% less will cover the cost of everyone he fires along the way. But those applicants get paid while House",
+   "label": "3:47"
+  },
+  {
+   "start": 235.0,
+   "dur": 7.0,
+   "text": "plays his game. So, Cuddy threatens to take the extra pay out of his salary. If they're paid like normal fellows, having 40 doctors on the books at the start",
+   "label": "3:55"
+  },
+  {
+   "start": 242.0,
+   "dur": 8.0,
+   "text": "burns through about $40,000 a week. and Cuddy keeps a tight grip on that salary budget. When he wants Forbin",
+   "label": "4:02"
+  },
+  {
+   "start": 250.0,
+   "dur": 8.0,
+   "text": "back on the team, she offers to cut everyone else's pay by 15% and [music] give the money to him. When Forbin asks for a raise a few years later, she tells",
+   "label": "4:10"
+  },
+  {
+   "start": 258.0,
+   "dur": 9.0,
+   "text": "him salary isn't about fairness, [music] it's about leverage, and he doesn't have any. He only gets one when the rest of the team offers to have it taken out of their own paychecks. But a paycheck is",
+   "label": "4:18"
+  },
+  {
+   "start": 267.0,
+   "dur": 10.0,
+   "text": "only part of what a doctor costs. The hospital also covers health insurance, retirement, and payroll taxes, and that gets added on top of every salary. at the University of Rochester in New York.",
+   "label": "4:27"
+  },
+  {
+   "start": 277.0,
+   "dur": 8.0,
+   "text": "That extra cost came to about 27% of a faculty salary in 2008 and about 25% for doctors in training. For House at his",
+   "label": "4:37"
+  },
+  {
+   "start": 285.0,
+   "dur": 8.0,
+   "text": "four doctors, that adds roughly $155,000 a year. So before House even looks at his first patient, the hospital's",
+   "label": "4:45"
+  },
+  {
+   "start": 293.0,
+   "dur": 10.0,
+   "text": "already paying roughly $742,000 a year just to keep his team in the building. Phase 1 cost tally. [music] House's salary $375,000.",
+   "label": "4:53"
+  },
+  {
+   "start": 303.0,
+   "dur": 9.0,
+   "text": "Four doctors, $212,000. Benefits, $155,000. Phase one total, $742,000.",
+   "label": "5:03"
+  },
+  {
+   "start": 312.0,
+   "dur": 8.0,
+   "text": "But a team of doctors is useless if they can't test anything. Once a patient arrives, House needs the hospital's most expensive equipment, which brings us",
+   "label": "5:12"
+  },
+  {
+   "start": 320.0,
+   "dur": 8.0,
+   "text": "[music] to phase two. Phase two, the tests. Once a case lands on House's desk, his [music] team doesn't just take some blood and send the patient home.",
+   "label": "5:20"
+  },
+  {
+   "start": 328.0,
+   "dur": 6.0,
+   "text": "House solves cases by throwing test after test at the patient until something finally shows up.",
+   "label": "5:28"
+  },
+  {
+   "start": 334.0,
+   "dur": 8.0,
+   "text": "Chase, put her on blood thinners, do an angio. When that comes back negative, MRI the spine. If that's clean, cut her open and biopsy the leg.",
+   "label": "5:34"
+  },
+  {
+   "start": 342.0,
+   "dur": 9.0,
+   "text": "And Cuddy knows how much he depends on those tests. [music] When she wants to force him into the clinic, she pulls his authorization, so he can't order a single scan or lab test until he gives",
+   "label": "5:42"
+  },
+  {
+   "start": 351.0,
+   "dur": 6.0,
+   "text": "in. She even takes away his long-distance calls and his headphones. But the tests are only half of it.",
+   "label": "5:51"
+  },
+  {
+   "start": 357.0,
+   "dur": 7.0,
+   "text": "House's patients are usually far [music] too sick to go home. So, they spend the entire case at a hospital bed while his team figures out what's killing them.",
+   "label": "5:57"
+  },
+  {
+   "start": 364.0,
+   "dur": 8.0,
+   "text": "Since Vogler says the team treats one patient a week, we're giving every patient a oneweek stay. In the real life version of House's team does exactly",
+   "label": "6:04"
+  },
+  {
+   "start": 372.0,
+   "dur": 8.0,
+   "text": "that. In 2008, the National Institutes of Health launched its undiagnosed diseases [music] program to take on cases other doctors couldn't solve. It",
+   "label": "6:12"
+  },
+  {
+   "start": 380.0,
+   "dur": 8.0,
+   "text": "got almost 3,000 inquiries in its first two years and only accepted 326 patients. House is just as picky because",
+   "label": "6:20"
+  },
+  {
+   "start": 388.0,
+   "dur": 7.0,
+   "text": "he only takes the cases he finds interesting. Most of the patients the program accepted were booked for a week-long hospital stay so a team of",
+   "label": "6:28"
+  },
+  {
+   "start": 395.0,
+   "dur": 8.0,
+   "text": "specialists could work through every part of their case. And the NIH didn't try to do it with four doctors. It drew on more than 25 senior specialists from",
+   "label": "6:35"
+  },
+  {
+   "start": 403.0,
+   "dur": 12.0,
+   "text": "across its hospital. [music] And within its first two years, the program's own staff had grown to 12. In 2010, an average day in a New Jersey nonprofit hospital costs about $2,212.",
+   "label": "6:43"
+  },
+  {
+   "start": 415.0,
+   "dur": 8.0,
+   "text": "But houses patients usually crash at some point, and that means intensive care. The ICU is a lot more expensive because a patient there needs constant",
+   "label": "6:55"
+  },
+  {
+   "start": 423.0,
+   "dur": 8.0,
+   "text": "monitoring, [music] and a nurse who might only be looking after one or two people. A day in intensive care costs around $3,518",
+   "label": "7:03"
+  },
+  {
+   "start": 431.0,
+   "dur": 8.0,
+   "text": "back in 2005. So if every patient spends half the week in a regular bed and half in the ICU, each case costs about $20,000.",
+   "label": "7:11"
+  },
+  {
+   "start": 439.0,
+   "dur": 8.0,
+   "text": "Do that for 52 patients a year and houses hospital beds alone costs roughly $1,43,000.",
+   "label": "7:19"
+  },
+  {
+   "start": 447.0,
+   "dur": 9.0,
+   "text": "Then come the scans. These machines are expensive to run and a 2004 report out of Pennsylvania found [music] that a single MRI cost a hospital about",
+   "label": "7:27"
+  },
+  {
+   "start": 456.0,
+   "dur": 7.0,
+   "text": "$800,000 a year to operate. In 2011, the average price of an MRI scan in the United States was [music] about $1,080",
+   "label": "7:36"
+  },
+  {
+   "start": 463.0,
+   "dur": 7.0,
+   "text": "and a CT scan was about $510. Even if House only orders two of each for every patient, which would be a quiet week by",
+   "label": "7:43"
+  },
+  {
+   "start": 470.0,
+   "dur": 8.0,
+   "text": "his standards, that's another $165,000 a year. And House doesn't always order tests for medical reasons. When he bets",
+   "label": "7:50"
+  },
+  {
+   "start": 478.0,
+   "dur": 4.0,
+   "text": "Cuddy that a patient's dad isn't really his dad, he settles it with a DNA test.",
+   "label": "7:58"
+  },
+  {
+   "start": 482.0,
+   "dur": 5.0,
+   "text": "The test actually cracks the case, but Cuddy still isn't happy about the bill.",
+   "label": "8:02"
+  },
+  {
+   "start": 487.0,
+   "dur": 5.0,
+   "text": "to house. A machine the hospital already owns is free, but every test costs money to run.",
+   "label": "8:07"
+  },
+  {
+   "start": 492.0,
+   "dur": 6.0,
+   "text": "You can't order a $3,200 DNA test to win a bet. It's not an actual cost.",
+   "label": "8:12"
+  },
+  {
+   "start": 498.0,
+   "dur": 4.0,
+   "text": "I don't know if you know this, but the hospital actually owns the sequencing machine. I'm serious.",
+   "label": "8:18"
+  },
+  {
+   "start": 502.0,
+   "dur": 2.0,
+   "text": "I'll tell her the parents to submit the bill of insurance.",
+   "label": "8:22"
+  },
+  {
+   "start": 504.0,
+   "dur": 5.0,
+   "text": "And Cuddy makes him pay the $3,200 himself before she hands over his prize.",
+   "label": "8:24"
+  },
+  {
+   "start": 509.0,
+   "dur": 8.0,
+   "text": "He doesn't only use the hospital's machines on patients either. When his patient is a famous novelist, he gets the MRI reprogrammed to read the ribbon",
+   "label": "8:29"
+  },
+  {
+   "start": 517.0,
+   "dur": 4.0,
+   "text": "from her typewriter so he can get his hands on the new book she's been keeping locked away.",
+   "label": "8:37"
+  },
+  {
+   "start": 521.0,
+   "dur": 5.0,
+   "text": "You used a $3 million piece of hospital equipment so you could read a novel. Cool, right?",
+   "label": "8:41"
+  },
+  {
+   "start": 526.0,
+   "dur": 4.0,
+   "text": "But the strangest expense in House's department isn't medical at all.",
+   "label": "8:46"
+  },
+  {
+   "start": 530.0,
+   "dur": 7.0,
+   "text": "Sometimes the fastest way to solve a case is to find out what somebody's hiding. So, House hires a private investigator named Lucas to dig into",
+   "label": "8:50"
+  },
+  {
+   "start": 537.0,
+   "dur": 9.0,
+   "text": "people's lives. After one job, Lucas hands House a bill for $2,300. [music] House can't send that to the hospital as a private investigator's fee. And soon",
+   "label": "8:57"
+  },
+  {
+   "start": 546.0,
+   "dur": 5.0,
+   "text": "after, Cuddi is holding a bill for the exact same amount. That coffee machine was never broken.",
+   "label": "9:06"
+  },
+  {
+   "start": 551.0,
+   "dur": 3.0,
+   "text": "Why does it cost $2,300 to fix [music] a coffee machine?",
+   "label": "9:11"
+  },
+  {
+   "start": 554.0,
+   "dur": 5.0,
+   "text": "When Cuddy finally meets Lucas in person, House spells out where the [music] money's been going.",
+   "label": "9:14"
+  },
+  {
+   "start": 559.0,
+   "dur": 8.0,
+   "text": "She means, \"Are you the private investigator whose bills I've tried to slip through his medical expenses?\" Cuddy shuts it down on the spot and [music] refuses to pay for any more fake",
+   "label": "9:19"
+  },
+  {
+   "start": 567.0,
+   "dur": 9.0,
+   "text": "repairs on vending machines, cryostats, or elevators. That suggests a few of them had already gone through before she caught on. And some of the house's",
+   "label": "9:27"
+  },
+  {
+   "start": 576.0,
+   "dur": 7.0,
+   "text": "favorite tests cost nothing. Instead of ordering another scan, he sends his team to break into the patient's home and search it for anything that could be",
+   "label": "9:36"
+  },
+  {
+   "start": 583.0,
+   "dur": 8.0,
+   "text": "making them sick. It doesn't cost the hospital a scent, but it's the kind of thing that gets a hospital sued. So before a single lawyer gets involved,",
+   "label": "9:43"
+  },
+  {
+   "start": 591.0,
+   "dur": 8.0,
+   "text": "houses, beds, scans, and investigator are already costing the hospital about $1.2 million a year. Phase 2 cost tally.",
+   "label": "9:51"
+  },
+  {
+   "start": 599.0,
+   "dur": 6.0,
+   "text": "[music] Hospital stays $1,43,000. Scans $165,000.",
+   "label": "9:59"
+  },
+  {
+   "start": 605.0,
+   "dur": 9.0,
+   "text": "Private investigator $2,300. Or at least the bill Cuddy caught. Phase 2 total $1,210,300.",
+   "label": "10:05"
+  },
+  {
+   "start": 614.0,
+   "dur": 1.0,
+   "text": "[music]",
+   "label": "10:14"
+  },
+  {
+   "start": 615.0,
+   "dur": 7.0,
+   "text": "But when you're running risky tests and treatments on dying patients, something is eventually going to go wrong. That brings us to the part of House's",
+   "label": "10:15"
+  },
+  {
+   "start": 622.0,
+   "dur": 8.0,
+   "text": "department that keeps the hospital's lawyers busy. [music] Phase three, the lawsuits. If you treat patients the way House does, you're going to get sued a",
+   "label": "10:22"
+  },
+  {
+   "start": 630.0,
+   "dur": 3.0,
+   "text": "lot. And Cuddy planned for that the day she hired him.",
+   "label": "10:30"
+  },
+  {
+   "start": 633.0,
+   "dur": 7.0,
+   "text": "So, when I hired you, I also set aside 50,000 a year for legal expenses. So far, you've come in under budget.",
+   "label": "10:33"
+  },
+  {
+   "start": 640.0,
+   "dur": 7.0,
+   "text": "But it doesn't stay under budget for long. Then Cuddy hires House's ex-girlfriend, Stacy, as general counsel, the hospital's top lawyer. And",
+   "label": "10:40"
+  },
+  {
+   "start": 647.0,
+   "dur": 9.0,
+   "text": "when Stacy asks for someone else to represent him, Cuddy tells her why that's not an option. [music] Because 40% of our lawsuits last year were about House. You can't work with him. He can't work here.",
+   "label": "10:47"
+  },
+  {
+   "start": 656.0,
+   "dur": 9.0,
+   "text": "To understand how crazy that number is, you have to look at how often real doctors get sued. A study of more than 40,000 doctors found that in any given",
+   "label": "10:56"
+  },
+  {
+   "start": 665.0,
+   "dur": 7.0,
+   "text": "year, only about 7% faced a malpractice claim. Even in neurosurgery, [music] the riskiest specialty in the study, it was",
+   "label": "11:05"
+  },
+  {
+   "start": 672.0,
+   "dur": 7.0,
+   "text": "about 19%. At Princeton Plainsboro, one small department is behind 40% of the hospital's lawsuits. When Vogler makes",
+   "label": "11:12"
+  },
+  {
+   "start": 679.0,
+   "dur": 8.0,
+   "text": "his case to the board, his list from just 3 months includes House violating a patients do not resuscitate order and getting charged with assault. He also",
+   "label": "11:19"
+  },
+  {
+   "start": 687.0,
+   "dur": 9.0,
+   "text": "points out that House has had more complaints filed against him than any department of the hospital. In real [music] life, New Jersey requires its doctors to carry malpractice insurance",
+   "label": "11:27"
+  },
+  {
+   "start": 696.0,
+   "dur": 9.0,
+   "text": "worth at least a million dollar per claim. In 2009, one New Jersey insurer was charging internal medicine doctors about $20,200",
+   "label": "11:36"
+  },
+  {
+   "start": 705.0,
+   "dur": 8.0,
+   "text": "a year for that coverage. That's the insurers's list price before any discounts or search charges for a doctor's history. Covering House at his",
+   "label": "11:45"
+  },
+  {
+   "start": 713.0,
+   "dur": 8.0,
+   "text": "four doctors at that [music] price comes to roughly $11,000 a year. But insurance doesn't stop people from suing you. And since House's",
+   "label": "11:53"
+  },
+  {
+   "start": 721.0,
+   "dur": 7.0,
+   "text": "doctors work for the hospital, the hospital usually ends up on the hook for their mistakes, too. [music] When one of Chase's patients dies after he makes a",
+   "label": "12:01"
+  },
+  {
+   "start": 728.0,
+   "dur": 5.0,
+   "text": "mistake, her brother sues both Chase and the hospital, and the papers land on Cuddy's desk.",
+   "label": "12:08"
+  },
+  {
+   "start": 733.0,
+   "dur": 3.0,
+   "text": "Punitive damages in the amount of $10 million.",
+   "label": "12:13"
+  },
+  {
+   "start": 736.0,
+   "dur": 3.0,
+   "text": "Punitives. That means they're alleging gross negligence.",
+   "label": "12:16"
+  },
+  {
+   "start": 739.0,
+   "dur": 9.0,
+   "text": "Punitive damages aren't [music] about paying for what went wrong. They're meant to punish a doctor for being reckless. And they're where the scary numbers come from. [music] In New",
+   "label": "12:19"
+  },
+  {
+   "start": 748.0,
+   "dur": 9.0,
+   "text": "Jersey, they're capped at five times the actual damages or $350,000, [music] whichever is bigger. But that cap only matters once a jury has already",
+   "label": "12:28"
+  },
+  {
+   "start": 757.0,
+   "dur": 8.0,
+   "text": "ruled against you. [music] And the lawyer who filed this one isn't a stranger to House either. Larry Wekcus, he's not [music] crazy. Oh no, I've been sued by him.",
+   "label": "12:37"
+  },
+  {
+   "start": 765.0,
+   "dur": 3.0,
+   "text": "House knows how a case like this ends.",
+   "label": "12:45"
+  },
+  {
+   "start": 768.0,
+   "dur": 7.0,
+   "text": "When he finds out Chase lied about why he made the mistake, he lays out two options. Chase [music] tells the truth, the hospital settles, and the family",
+   "label": "12:48"
+  },
+  {
+   "start": 775.0,
+   "dur": 8.0,
+   "text": "gets some money. If he keeps lying, the family goes after punitive damages and [music] Chase can start looking for another career. Chase tells the review",
+   "label": "12:55"
+  },
+  {
+   "start": 783.0,
+   "dur": 7.0,
+   "text": "committee the truth and gets a oneweek suspension and [music] house ends up with foreman supervising his work for at least a month. In real life, most",
+   "label": "13:03"
+  },
+  {
+   "start": 790.0,
+   "dur": 9.0,
+   "text": "malpractice claims go nowhere. In that same study, about 78% ended without the patient getting paid anything, but the doctor's lawyer still have to be paid.",
+   "label": "13:10"
+  },
+  {
+   "start": 799.0,
+   "dur": 8.0,
+   "text": "Defending a doctor against a single malpractice claim cost an average of about $47,000 in 2010. So, even if House's team only gets hit with three",
+   "label": "13:19"
+  },
+  {
+   "start": 807.0,
+   "dur": 7.0,
+   "text": "new lawsuits a year, the legal bills come to roughly $141,000, that's almost three times the budget",
+   "label": "13:27"
+  },
+  {
+   "start": 814.0,
+   "dur": 8.0,
+   "text": "Curry set aside when she hired him. It is before the hospital pays a single patient. And for a department behind 40% of the hospital's [music] cases, three",
+   "label": "13:34"
+  },
+  {
+   "start": 822.0,
+   "dur": 8.0,
+   "text": "lawsuits a year is a low guess. What a claim does pay out, the average payment in 2010 was about $332,000.",
+   "label": "13:42"
+  },
+  {
+   "start": 830.0,
+   "dur": 8.0,
+   "text": "We're giving House just one of those a year. The people closest to House know it, too. Wilson tells Cuddy that before she was in charge, House was either",
+   "label": "13:50"
+  },
+  {
+   "start": 838.0,
+   "dur": 7.0,
+   "text": "getting fired or buried in malpractice suits. And Foreman puts it best when he asks to take over the department after House leaves.",
+   "label": "13:58"
+  },
+  {
+   "start": 845.0,
+   "dur": 1.0,
+   "text": "Was a genius.",
+   "label": "14:05"
+  },
+  {
+   "start": 846.0,
+   "dur": 6.0,
+   "text": "House was an egotistical pill popping lawsuit magnet and a genius.",
+   "label": "14:06"
+  },
+  {
+   "start": 852.0,
+   "dur": 8.0,
+   "text": "That's the deal the hospital makes with House. The habits that help him solve impossible cases are the same ones that keep getting him sued. Phase [music]",
+   "label": "14:12"
+  },
+  {
+   "start": 860.0,
+   "dur": 7.0,
+   "text": "three cost tally. Malpractice insurance $11,000. Legal defense $141,000.",
+   "label": "14:20"
+  },
+  {
+   "start": 867.0,
+   "dur": 6.0,
+   "text": "Settlements [music] $332,000. Phase three total $574,000.",
+   "label": "14:27"
+  },
+  {
+   "start": 873.0,
+   "dur": 1.0,
+   "text": "[music]",
+   "label": "14:33"
+  },
+  {
+   "start": 874.0,
+   "dur": 8.0,
+   "text": "Now that we've covered everything it takes to keep House's team running for a year, we finally reach the bills that never show up in a budget. Phase 4, the",
+   "label": "14:34"
+  },
+  {
+   "start": 882.0,
+   "dur": 8.0,
+   "text": "price of keeping House. But what does House himself cost when things really go wrong? So far, everything on our list is",
+   "label": "14:42"
+  },
+  {
+   "start": 890.0,
+   "dur": 8.0,
+   "text": "a normal expense for a department like this. Salaries, [music] tests, and lawsuits are just the price of practicing medicine. But House has a",
+   "label": "14:50"
+  },
+  {
+   "start": 898.0,
+   "dur": 4.0,
+   "text": "habit of costing the hospital money in ways [music] nobody could ever plan for.",
+   "label": "14:58"
+  },
+  {
+   "start": 902.0,
+   "dur": 8.0,
+   "text": "Take the MRI machine. One of House's patients is a cop with bullet fragments stuck in his head. And House wants to know if it's safe to put him in the MRI.",
+   "label": "15:02"
+  },
+  {
+   "start": 910.0,
+   "dur": 9.0,
+   "text": "So, he takes a body that was donated to science, shoots it in the head with the same kind of bullet, and runs it through the machine. They have to uh shut down",
+   "label": "15:10"
+  },
+  {
+   "start": 919.0,
+   "dur": 6.0,
+   "text": "the magnet to fix it. MRI is going to be out of commission for at least 2 weeks.",
+   "label": "15:19"
+  },
+  {
+   "start": 925.0,
+   "dur": 1.0,
+   "text": "[sighs]",
+   "label": "15:25"
+  },
+  {
+   "start": 926.0,
+   "dur": 4.0,
+   "text": "It doesn't matter. We obviously can't use it on this patient.",
+   "label": "15:26"
+  },
+  {
+   "start": 930.0,
+   "dur": 8.0,
+   "text": "No, but there are other doctors in this hospital and other patients. [music] That helps explain how they can afford all the fancy equipment. I'm sure not",
+   "label": "15:30"
+  },
+  {
+   "start": 938.0,
+   "dur": 8.0,
+   "text": "pulling my weight. Is doing nothing an option?",
+   "label": "15:38"
+  },
+  {
+   "start": 946.0,
+   "dur": 9.0,
+   "text": "Later, his team tries to scan a patient who's 150 lbs over the machine's weight limit. Foreman warns them that breaking the table will put the hospital out a",
+   "label": "15:46"
+  },
+  {
+   "start": 955.0,
+   "dur": 8.0,
+   "text": "million dollars. And when the patient wakes up and panics inside the machine, the table [music] breaks. You just replace the last MRI you broke.",
+   "label": "15:55"
+  },
+  {
+   "start": 963.0,
+   "dur": 6.0,
+   "text": "Foreman's million dollars was just the table. Cutting yourself calls the hospital's MRI a $3 million machine, and",
+   "label": "16:03"
+  },
+  {
+   "start": 969.0,
+   "dur": 9.0,
+   "text": "real life backs her up. In 2007, a top-end MRI scanner [music] costs around $3 million. So, that's the replacement we're putting on the bill. Then there's",
+   "label": "16:09"
+  },
+  {
+   "start": 978.0,
+   "dur": 11.0,
+   "text": "the work House is paid to do and simply doesn't. Doctors at Princeton Plainsboro owe the walk-in clinic about 3 weeks a year. And by the time Cuddy adds up House's hours, he's 6 years behind.",
+   "label": "16:18"
+  },
+  {
+   "start": 989.0,
+   "dur": 7.0,
+   "text": "That's about 18 weeks of work, or roughly $130,000 a house's time that the hospital paid for and never got. And",
+   "label": "16:29"
+  },
+  {
+   "start": 996.0,
+   "dur": 8.0,
+   "text": "when Cuddy makes him start paying it back at 4 hours a week, House works out that he'll be caught up in 204. But all of that is pocket change compared to",
+   "label": "16:36"
+  },
+  {
+   "start": 1004.0,
+   "dur": 9.0,
+   "text": "Vogler. His $100 million was supposed to help the hospital fight cancer, but it doesn't take him long to want House gone. When Cuddi finally stands up for",
+   "label": "16:44"
+  },
+  {
+   "start": 1013.0,
+   "dur": 5.0,
+   "text": "House, the best deal she can get is more clinic hours and one of his doctors fired.",
+   "label": "16:53"
+  },
+  {
+   "start": 1018.0,
+   "dur": 8.0,
+   "text": "You know why I'm forcing you to fire one of them? Because you need to prove to me that you're a team player. Now, if you did that, you wouldn't need to go through this exercise.",
+   "label": "16:58"
+  },
+  {
+   "start": 1026.0,
+   "dur": 4.0,
+   "text": "In real life, cutting one fellow would have saved the hospital about $53,000",
+   "label": "17:06"
+  },
+  {
+   "start": 1030.0,
+   "dur": 1.0,
+   "text": "[music]",
+   "label": "17:10"
+  },
+  {
+   "start": 1031.0,
+   "dur": 7.0,
+   "text": "a year. But House won't play along. And after weeks of fighting, Vogler walks into a board meeting [music] and makes the hospital choose between them.",
+   "label": "17:11"
+  },
+  {
+   "start": 1038.0,
+   "dur": 4.0,
+   "text": "House goes where I go. You shouldn't personalize this.",
+   "label": "17:18"
+  },
+  {
+   "start": 1042.0,
+   "dur": 8.0,
+   "text": "And by I, I mean my $100 million. How's that for personalizing? [music] Cuddy gets the board to vote Vogler out instead, and he takes his money with",
+   "label": "17:22"
+  },
+  {
+   "start": 1050.0,
+   "dur": 9.0,
+   "text": "him. House calls her a genius for talking four people out of a fortune, but by our math, that fortune could have run his entire team for almost 40 years.",
+   "label": "17:30"
+  },
+  {
+   "start": 1059.0,
+   "dur": 6.0,
+   "text": "Back at House's office, while the team celebrates with champagne, Cuddy reminds them what their win cost.",
+   "label": "17:39"
+  },
+  {
+   "start": 1065.0,
+   "dur": 8.0,
+   "text": "Well, you only cost us $100 million, could have saved some lives, could have [music] made a few jobs, helped a few people. Yippi.",
+   "label": "17:45"
+  },
+  {
+   "start": 1073.0,
+   "dur": 32.0,
+   "text": "And House's worst mistake comes years after. After Cuy breaks up with him, he shows up at her house and sees her through the window, having dinner with her family and a new man.",
+   "label": "17:53"
+  },
+  {
+   "start": 1105.0,
+   "dur": 7.0,
+   "text": "Wilson, who's standing on the lawn, has to jump out of the way and hurts his wrist. The very next day, Cuddy hands in her notice, so the hospital loses its",
+   "label": "18:25"
+  },
+  {
+   "start": 1112.0,
+   "dur": 8.0,
+   "text": "dean of medicine on top of everything else. House flees the country for three months and he's sentenced to a year in prison. Foreman takes over as dean and",
+   "label": "18:32"
+  },
+  {
+   "start": 1120.0,
+   "dur": 11.0,
+   "text": "the only way he can get House out early is to hire him back which doesn't go down well with the board. By then, House's old office belongs to orthopedics and his team has moved on.",
+   "label": "18:40"
+  },
+  {
+   "start": 1131.0,
+   "dur": 1.0,
+   "text": "We don't have the [music] money to pay them.",
+   "label": "18:51"
+  },
+  {
+   "start": 1132.0,
+   "dur": 4.0,
+   "text": "Oh yeah, went to Interior Designers. I understand.",
+   "label": "18:52"
+  },
+  {
+   "start": 1136.0,
+   "dur": 8.0,
+   "text": "You only have Park because she's on neurologies tab. You are making minimum wage. The department the Voggler said cost $3 million a year is now one doctor",
+   "label": "18:56"
+  },
+  {
+   "start": 1144.0,
+   "dur": 9.0,
+   "text": "on another department's budget and a boss working for minimum wage. And even on minimum wage, House still finds a way to put the hospital's money at risk. Not",
+   "label": "19:04"
+  },
+  {
+   "start": 1153.0,
+   "dur": 12.0,
+   "text": "long after, he walks off with a $200,000 skin laser. And Foreman goes looking for it until House wheels it back into the lobby the next morning. [music] Phase 4 cost tally. MRI replacement $3 million.",
+   "label": "19:13"
+  },
+  {
+   "start": 1165.0,
+   "dur": 13.0,
+   "text": "Miss clinic hours $130,000. [music] Vogler's donation $100 million. Phase four total $13,130,000.",
+   "label": "19:25"
+  },
+  {
+   "start": 1178.0,
+   "dur": 7.0,
+   "text": "But let's look at the scoreboard and add up everything it actually takes to run House's team in the real world. Phase five, the math [music] and the final",
+   "label": "19:38"
+  },
+  {
+   "start": 1185.0,
+   "dur": 8.0,
+   "text": "bill. When Vogler asked Cuddy for House's budget, revenue statement, and expense list, she couldn't give him any of them. So, let's put them together for",
+   "label": "19:45"
+  },
+  {
+   "start": 1193.0,
+   "dur": 9.0,
+   "text": "her. First paying house, his four doctors and their benefits cost us $742,000 a year. Then the hospital stays, the",
+   "label": "19:53"
+  },
+  {
+   "start": 1202.0,
+   "dur": 6.0,
+   "text": "scans, and the private investigator added another $1,210,300.",
+   "label": "20:02"
+  },
+  {
+   "start": 1208.0,
+   "dur": 7.0,
+   "text": "After that, the malpractice insurance, the legal bills, and one payout a year ran us another $574,000.",
+   "label": "20:08"
+  },
+  {
+   "start": 1215.0,
+   "dur": 1.0,
+   "text": "[music]",
+   "label": "20:15"
+  },
+  {
+   "start": 1216.0,
+   "dur": 10.0,
+   "text": "Finally, the broken MRI, the miss clinic hours, and Vogler's walkout cost the hospital a massive 103,130,000.",
+   "label": "20:16"
+  },
+  {
+   "start": 1226.0,
+   "dur": 8.0,
+   "text": "When you combine everything, House's department comes to a final bill of roughly $15,656,300.",
+   "label": "20:26"
+  },
+  {
+   "start": 1234.0,
+   "dur": 3.0,
+   "text": "[music]",
+   "label": "20:34"
+  },
+  {
+   "start": 1237.0,
+   "dur": 8.0,
+   "text": "But almost all of that comes from House himself, not his team. Just keeping his team running costs roughly $2,526,300",
+   "label": "20:37"
+  },
+  {
+   "start": 1245.0,
+   "dur": 8.0,
+   "text": "[music] a year. So Vogler's $3 million was pretty close. What he left out is how much of that money comes back.",
+   "label": "20:45"
+  },
+  {
+   "start": 1253.0,
+   "dur": 7.0,
+   "text": "House's patients don't get their care for free. In 2008, private insurers paid hospitals about $1.28 [music] for every",
+   "label": "20:53"
+  },
+  {
+   "start": 1260.0,
+   "dur": 7.0,
+   "text": "dollar a patient's care actually costs, while Medicare paid about 91. [music] So insurance pays for most of that $1.2 $2",
+   "label": "21:00"
+  },
+  {
+   "start": 1267.0,
+   "dur": 8.0,
+   "text": "million in beds and scans. That leaves the salaries and the lawsuits about $1.3 million a year for the hospital to cover",
+   "label": "21:07"
+  },
+  {
+   "start": 1275.0,
+   "dur": 7.0,
+   "text": "on its own, which is less than half of Voggler's number. [music] Split across 52 patients, that's roughly $25,000 for",
+   "label": "21:15"
+  },
+  {
+   "start": 1282.0,
+   "dur": 8.0,
+   "text": "every patient House's team saves. And Cuddy reminds Vogler that House also brings in donations and foundation money. House's patients bring in money",
+   "label": "21:22"
+  },
+  {
+   "start": 1290.0,
+   "dur": 5.0,
+   "text": "of their own, too. When a famous cyclist is in House's care, the cyclist manager hands Cuddy a",
+   "label": "21:30"
+  },
+  {
+   "start": 1295.0,
+   "dur": 0.0,
+   "text": "[music]",
+   "label": "21:35"
+  },
+  {
+   "start": 1295.0,
+   "dur": 5.0,
+   "text": "$50,000 check just to help speed things up. And then there's House's name.",
+   "label": "21:35"
+  },
+  {
+   "start": 1300.0,
+   "dur": 7.0,
+   "text": "[music] Cuy tells him the only reason she hasn't fired him is that his reputation is still worth something to the hospital. That kind of reputation is",
+   "label": "21:40"
+  },
+  {
+   "start": 1307.0,
+   "dur": 8.0,
+   "text": "what gets other doctors sending you their hardest cases. Voggler's whole argument is that House loses money, but to Cuddy, that doesn't mean a department",
+   "label": "21:47"
+  },
+  {
+   "start": 1315.0,
+   "dur": 6.0,
+   "text": "should be shut down, and she tells him so. He loses money. So does opthalmology.",
+   "label": "21:55"
+  },
+  {
+   "start": 1321.0,
+   "dur": 3.0,
+   "text": "Who cares? This is a hospital. You can't just cut a department.",
+   "label": "22:01"
+  },
+  {
+   "start": 1324.0,
+   "dur": 9.0,
+   "text": "Now compare House's team to [music] the real thing. By 2010, the NIH's undiagnosed diseases program was getting $3.5 million a year, right around",
+   "label": "22:04"
+  },
+  {
+   "start": 1333.0,
+   "dur": 8.0,
+   "text": "Voggler's number. In its first two years, 160 patients finished the full week-long stay, and the program found a diagnosis for [music] 39 of them. That's",
+   "label": "22:13"
+  },
+  {
+   "start": 1341.0,
+   "dur": 7.0,
+   "text": "about one in four or roughly 20 solved cases a year. When the NIH expanded the idea to six medical centers in 2014,",
+   "label": "22:21"
+  },
+  {
+   "start": 1348.0,
+   "dur": 8.0,
+   "text": "[music] it set aside $43 million over four years. And even after 10 years and more than 1,100 patients, the original",
+   "label": "22:28"
+  },
+  {
+   "start": 1356.0,
+   "dur": 8.0,
+   "text": "program had found answers for around $30. Meanwhile, by Cuy's count, House's team saves a patient every single week.",
+   "label": "22:36"
+  },
+  {
+   "start": 1364.0,
+   "dur": 8.0,
+   "text": "So, was Voggler right about [music] the team? Not really. When Vogler tried to have House fired, Wilson reminded the board that House had saved hundreds of",
+   "label": "22:44"
+  },
+  {
+   "start": 1372.0,
+   "dur": 11.0,
+   "text": "lives. And for about $1.3 million a year, his team is a pretty good deal for a hospital. But about [music] House himself, Fogler was dead, right? The team costs about $2.5 million a year.",
+   "label": "22:52"
+  },
+  {
+   "start": 1383.0,
+   "dur": 8.0,
+   "text": "While House cost the hospital more than $100 million [music] on his own, and House never cares what his cases cost.",
+   "label": "23:03"
+  },
+  {
+   "start": 1391.0,
+   "dur": 4.0,
+   "text": "When Cuy shuts down his private investigator, House has an answer ready.",
+   "label": "23:11"
+  },
+  {
+   "start": 1395.0,
+   "dur": 3.0,
+   "text": "Information saves lives. Saving lives saves money.",
+   "label": "23:15"
+  },
+  {
+   "start": 1398.0,
+   "dur": 5.0,
+   "text": "No. Saving lives costs money, which is why I'm trying to make sure there's still some left.",
+   "label": "23:18"
+  },
+  {
+   "start": 1403.0,
+   "dur": 9.0,
+   "text": "And when the hospital tries to make a little extra money, House goes the other way. When the budget committee starts charging patients for cable TV, he fights back with the hospital's own supplies.",
+   "label": "23:23"
+  },
+  {
+   "start": 1412.0,
+   "dur": 3.0,
+   "text": "Charging patients for cables bringing in 13 grand a month.",
+   "label": "23:32"
+  },
+  {
+   "start": 1415.0,
+   "dur": 8.0,
+   "text": "Until this injustice is writed, I am going to waste 13 grand a day.",
+   "label": "23:35"
+  },
+  {
+   "start": 1423.0,
+   "dur": 11.0,
+   "text": "$249 down. Then he grabs a box of gloves and starts throwing them on the floor one at a time. House's real shot at bringing in real money comes when a rich philanthropist ends up as his patient.",
+   "label": "23:43"
+  },
+  {
+   "start": 1434.0,
+   "dur": 2.0,
+   "text": "[music] And House seizes Chance.",
+   "label": "23:54"
+  },
+  {
+   "start": 1436.0,
+   "dur": 4.0,
+   "text": "I'll give a million dollars as an endowment to the hospital. Your mark for diagnostics.",
+   "label": "23:56"
+  },
+  {
+   "start": 1440.0,
+   "dur": 9.0,
+   "text": "Wow. I am an opportunistic excon who just gave you a two-minute Saab story as step three in my [music] master plan.",
+   "label": "24:00"
+  },
+  {
+   "start": 1449.0,
+   "dur": 7.0,
+   "text": "And you've offered me a million dollars, which is step 17. But by the end of the case, House has made him sicker with a",
+   "label": "24:09"
+  },
+  {
+   "start": 1456.0,
+   "dur": 5.0,
+   "text": "test he didn't need and picked a fight about the man's family. So [music] the offer is gone.",
+   "label": "24:16"
+  },
+  {
+   "start": 1461.0,
+   "dur": 5.0,
+   "text": "I want to give you money because you're an ass. So why does the hospital keep paying?",
+   "label": "24:21"
+  },
+  {
+   "start": 1466.0,
+   "dur": 8.0,
+   "text": "Because every time someone wants House gone, Cuddy gives the same answer. And when one of the hospital's donors comes to see her, her answer doesn't change.",
+   "label": "24:26"
+  },
+  {
+   "start": 1474.0,
+   "dur": 8.0,
+   "text": "Either your wife is having an affair or she's not having an affair. And you have come here because you rightly think I should fire him. But I can't even if it",
+   "label": "24:34"
+  },
+  {
+   "start": 1482.0,
+   "dur": 3.0,
+   "text": "cost me your money. The son of a is the best doctor we have.",
+   "label": "24:42"
+  },
+  {
+   "start": 1485.0,
+   "dur": 7.0,
+   "text": "Every test has a price. Every [music] mistake has a lawyer. It is almost never house who pays the bill. Expenses in our",
+   "label": "24:45"
+  },
+  {
+   "start": 1492.0,
+   "dur": 4.0,
+   "text": "tally or is $15,656,300",
+   "label": "24:52"
+  },
+  {
+   "start": 1496.0,
+   "dur": 1.0,
+   "text": "[music]",
+   "label": "24:56"
+  },
+  {
+   "start": 1497.0,
+   "dur": null,
+   "text": "spoton? Let us know in the comments below.",
+   "label": "24:57"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-09T04:37:23+00:00"
+}
