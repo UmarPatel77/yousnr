@@ -1331,5 +1331,762 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-09T04:37:23+00:00"
+ "added": "2026-11-09T04:37:23+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-08T23:37:23",
+  "lines": {
+   "6": [
+    [
+     "Department",
+     null
+    ],
+    [
+     "costs",
+     "cost"
+    ],
+    [
+     "us 3 million a year, treat one patient a week. He saves one patient per week. But it brings up a fascinating question.",
+     null
+    ]
+   ],
+   "9": [
+    [
+     "the department. Before you",
+     null
+    ],
+    [
+     "can",
+     "could"
+    ],
+    [
+     "even think about solving cases nobody else can, you need a department to solve them in.",
+     null
+    ],
+    [
+     "And",
+     "In"
+    ],
+    [
+     "a department like houses is a",
+     null
+    ]
+   ],
+   "14": [
+    [
+     "I am a",
+     null
+    ],
+    [
+     "board-certified",
+     "board certified"
+    ],
+    [
+     "diagnostician with a double specialty of infectious disease and",
+     null
+    ],
+    [
+     "nephrology.",
+     "nefrology."
+    ],
+    [
+     "I'm also the only doctor currently employed at this clinic",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "to Vogler's face. Vogler might have the money, but",
+     null
+    ],
+    [
+     "House has",
+     "House's"
+    ],
+    [
+     "tenure, and getting rid of him takes full [music] board approval. But House doesn't work alone.",
+     null
+    ]
+   ],
+   "24": [
+    [
+     "for most of the show. In real life, those doctors would be fellows. These are doctors",
+     null
+    ],
+    [
+     "who've",
+     "who have"
+    ],
+    [
+     "already finished residency and are spending a few extra years training in a specialty. Teaching",
+     null
+    ]
+   ],
+   "45": [
+    [
+     "Chase, put her on blood thinners, do an",
+     null
+    ],
+    [
+     "angiogram.",
+     "angio."
+    ],
+    [
+     "When that comes back negative, MRI the spine. If that's clean, cut her open and biopsy the leg.",
+     null
+    ]
+   ],
+   "49": [
+    [
+     "Since Vogler says the team treats one patient a week, we're giving every patient a oneweek stay.",
+     null
+    ],
+    [
+     "And",
+     "In"
+    ],
+    [
+     "the",
+     null
+    ],
+    [
+     "real-life",
+     "real life"
+    ],
+    [
+     "version of House's team does exactly",
+     null
+    ]
+   ],
+   "58": [
+    [
+     "Do that for 52 patients a year and houses hospital beds alone",
+     null
+    ],
+    [
+     "cost",
+     "costs"
+    ],
+    [
+     "roughly",
+     null
+    ],
+    [
+     "$1,043,000.",
+     "$1,43,000."
+    ]
+   ],
+   "59": [
+    [
+     "Then come the scans. These machines are expensive to run and a 2004 report out of Pennsylvania found [music] that a single MRI",
+     null
+    ],
+    [
+     "costs",
+     "cost"
+    ],
+    [
+     "a hospital about",
+     null
+    ]
+   ],
+   "68": [
+    [
+     "I'll tell her the parents to submit the bill",
+     null
+    ],
+    [
+     "to",
+     "of"
+    ],
+    [
+     "insurance.",
+     null
+    ]
+   ],
+   "76": [
+    [
+     "after,",
+     null
+    ],
+    [
+     "Cuddy",
+     "Cuddi"
+    ],
+    [
+     "is holding a bill for the exact same amount. That coffee machine was never broken.",
+     null
+    ]
+   ],
+   "79": [
+    [
+     "She means, \"Are you the private investigator whose bills I've tried to slip through",
+     null
+    ],
+    [
+     "as",
+     "his"
+    ],
+    [
+     "medical expenses?\" Cuddy shuts it down on the spot and [music] refuses to pay for any more fake",
+     null
+    ]
+   ],
+   "95": [
+    [
+     "about 19%. At",
+     null
+    ],
+    [
+     "Princeton-Plainsboro,",
+     "Princeton Plainsboro,"
+    ],
+    [
+     "one small department is behind 40% of the hospital's lawsuits. When Vogler makes",
+     null
+    ]
+   ],
+   "99": [
+    [
+     "a year for that coverage. That's the",
+     null
+    ],
+    [
+     "insurer's",
+     "insurers's"
+    ],
+    [
+     "list price before any discounts or",
+     null
+    ],
+    [
+     "surcharges",
+     "search charges"
+    ],
+    [
+     "for a doctor's history. Covering House",
+     null
+    ],
+    [
+     "and",
+     "at"
+    ],
+    [
+     "his",
+     null
+    ]
+   ],
+   "100": [
+    [
+     "four doctors at that [music] price comes to roughly",
+     null
+    ],
+    [
+     "$101,000",
+     "$11,000"
+    ],
+    [
+     "a year. But insurance doesn't stop people from suing you. And since House's",
+     null
+    ]
+   ],
+   "115": [
+    [
+     "Curry set aside when she hired him.",
+     null
+    ],
+    [
+     "And it's",
+     "It is"
+    ],
+    [
+     "before the hospital pays a single patient. And for a department behind 40% of the hospital's [music] cases, three",
+     null
+    ]
+   ],
+   "120": [
+    [
+     "House was an egotistical",
+     null
+    ],
+    [
+     "pill-popping",
+     "pill popping"
+    ],
+    [
+     "lawsuit magnet and a genius.",
+     null
+    ]
+   ],
+   "139": [
+    [
+     "real life backs her up. In 2007, a top-end MRI scanner [music]",
+     null
+    ],
+    [
+     "cost",
+     "costs"
+    ],
+    [
+     "around $3 million. So, that's the replacement we're putting on the bill. Then there's",
+     null
+    ]
+   ],
+   "142": [
+    [
+     "when Cuddy makes him start paying it back at 4 hours a week, House works out that he'll be caught up in",
+     null
+    ],
+    [
+     "2054.",
+     "204."
+    ],
+    [
+     "But all of that is pocket change compared to",
+     null
+    ]
+   ],
+   "160": [
+    [
+     "You only have Park because she's on",
+     null
+    ],
+    [
+     "neurology's",
+     "neurologies"
+    ],
+    [
+     "tab. You are making minimum wage. The department",
+     null
+    ],
+    [
+     "that Vogler",
+     "the Voggler"
+    ],
+    [
+     "said cost $3 million a year is now one doctor",
+     null
+    ]
+   ],
+   "163": [
+    [
+     "$3 million Missed",
+     "Miss"
+    ],
+    [
+     "clinic hours $130,000. [music] Vogler's donation $100 million. Phase four total $13,130,000.",
+     null
+    ]
+   ],
+   "188": [
+    [
+     "Vogler's",
+     "Voggler's"
+    ],
+    [
+     "number. In its first two years, 160 patients finished the full week-long stay, and the program found a diagnosis for [music] 39 of them. That's",
+     null
+    ]
+   ],
+   "191": [
+    [
+     "program had found answers for around",
+     null
+    ],
+    [
+     "300.",
+     "$30."
+    ],
+    [
+     "Meanwhile, by",
+     null
+    ],
+    [
+     "Cuddy's",
+     "Cuy's"
+    ],
+    [
+     "count, House's team saves a patient every single week.",
+     null
+    ]
+   ],
+   "203": [
+    [
+     "I'll give a million dollars as an endowment to the hospital.",
+     null
+    ],
+    [
+     "Earmarked",
+     "Your mark"
+    ],
+    [
+     "for diagnostics.",
+     null
+    ]
+   ],
+   "204": [
+    [
+     "Wow. I am an opportunistic excon who just gave you a two-minute",
+     null
+    ],
+    [
+     "Sob",
+     "Saab"
+    ],
+    [
+     "story as step three in my [music] master plan.",
+     null
+    ]
+   ]
+  },
+  "fixes": 33,
+  "checked_seconds": 454.2,
+  "usd": 0.066,
+  "version": 3,
+  "flagged": [
+   [
+    "0:03",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:44",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:35",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "2:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:36",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "2:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:34",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "5:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "7:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:36",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:29",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "9:06",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "9:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:05",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "11:12",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:45",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:37",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "12:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "13:34",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "14:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "15:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:18",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "16:36",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "18:56",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "19:25",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "21:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "21:40",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "22:04",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "22:13",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "22:21",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "22:36",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "23:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "24:45",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:57",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
