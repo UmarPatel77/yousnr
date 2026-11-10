@@ -5,6 +5,8 @@
 YouTube-style transcript pages at `yousnr.com/<videoID>`, hosted free on GitHub Pages.
 No video player, just the transcript, with chapter headings, timestamps, search, copy and .txt/.srt download.
 
+**Paragraphs** switches the transcript from YouTube's lines (which break mid-sentence) to sentence paragraphs: each paragraph starts at the start of a sentence and runs a few sentences, breaking earlier after a question or where a new speaker or topic likely starts ("So,", "Yeah,", "Okay"…), and at chapter headings. When a paragraph starts partway through one of YouTube's lines, its time is estimated from where the words sit in that line and shown with a ~ (about then; it links to that second). Search, Copy, .txt and *Hide timestamps* follow the view; .srt stays in YouTube's lines. The page remembers the choice. It's all done in the page, so every video has it, including new ones.
+
 The trick: swap `tube` for `snr` in any YouTube link:
 
 ```
