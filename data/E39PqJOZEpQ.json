@@ -1,0 +1,692 @@
+{
+ "id": "E39PqJOZEpQ",
+ "title": "Time Value of Money (TVM) - annuities (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230109",
+ "description": "Time Value of Money (TVM) - annuities (for the CFA Level 1 exam), explores using the TVM worksheet on the Texas Instruments BA II Plus calculator to solve for annuity problems.\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [],
+ "duration": 811,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.06,
+   "dur": 10.56,
+   "text": "in this video we're continuing with the series of recordings on time value of money introducing annuities that is sequential",
+   "label": "0:00"
+  },
+  {
+   "start": 8.099,
+   "dur": 12.18,
+   "text": "payments of a level amount which are going to make up our um thus far relatively easy series of investment problems so if annuities is",
+   "label": "0:08"
+  },
+  {
+   "start": 18.779,
+   "dur": 7.321,
+   "text": "something you want to get right in the exam I suggest you keep watching and let's get solving this is the question",
+   "label": "0:18"
+  },
+  {
+   "start": 24.18,
+   "dur": 9.36,
+   "text": "which I want us to have a go at it's rather long and there are some options in it so Mike Mills is retiring today",
+   "label": "0:24"
+  },
+  {
+   "start": 31.38,
+   "dur": 10.679,
+   "text": "his company's benefits officer presents Mike with three alternative options for receiving retirement benefits option one",
+   "label": "0:31"
+  },
+  {
+   "start": 38.28,
+   "dur": 11.459,
+   "text": "and annuity with 15 payments of 180 000 per year with the first payment starting in one year's time from today option two",
+   "label": "0:38"
+  },
+  {
+   "start": 46.44,
+   "dur": 12.599,
+   "text": "an annuity with 15 payments of 170 000 per year with the first payment starting today and the third one 15 payments of 250 000",
+   "label": "0:46"
+  },
+  {
+   "start": 57.059,
+   "dur": 8.401,
+   "text": "per year with the first payment starting in five years time from today and if the interest rate is eight percent and",
+   "label": "0:57"
+  },
+  {
+   "start": 63.899,
+   "dur": 8.521,
+   "text": "assuming that Mills will live long enough to receive all payments under any one of the options which option has the",
+   "label": "1:03"
+  },
+  {
+   "start": 69.479,
+   "dur": 13.381,
+   "text": "greatest uh greatest or present value option one option three or maybe option two um noticed that I intentionally",
+   "label": "1:09"
+  },
+  {
+   "start": 80.42,
+   "dur": 11.8,
+   "text": "change the order in which the options appear in the answers just to potentially trick you into selecting uh",
+   "label": "1:20"
+  },
+  {
+   "start": 89.28,
+   "dur": 13.199,
+   "text": "something which isn't necessarily in um the normal sequence be ready for such a thing in the exam potentially okay we're dealing with",
+   "label": "1:29"
+  },
+  {
+   "start": 99.18,
+   "dur": 12.54,
+   "text": "annuities here so that's a finite set of sequential level payments payments of an equal amount and I'm going to write out",
+   "label": "1:39"
+  },
+  {
+   "start": 108.72,
+   "dur": 8.16,
+   "text": "over here what you will need to do on the time value of money worksheet in your calculators on your Texas",
+   "label": "1:48"
+  },
+  {
+   "start": 115.02,
+   "dur": 9.54,
+   "text": "Instruments calculator to solve these we'll be solving for present values uh we're asked which one has the greater",
+   "label": "1:55"
+  },
+  {
+   "start": 122.04,
+   "dur": 10.14,
+   "text": "present value so we'll be solving for present values it's just a case of um properly inputting these onto your",
+   "label": "2:02"
+  },
+  {
+   "start": 129.78,
+   "dur": 11.4,
+   "text": "calculator so option one let's start with this one for option one I'm going to have the following inputs n is going",
+   "label": "2:09"
+  },
+  {
+   "start": 138.239,
+   "dur": 16.621,
+   "text": "to be 15. now um 180 000 that's what we're going to now use for PMT so you're going to input 180 000",
+   "label": "2:18"
+  },
+  {
+   "start": 151.68,
+   "dur": 15.419,
+   "text": "followed by the PMT key um I over Y is going to equal 8 that's the interest rate and there will be no FV",
+   "label": "2:31"
+  },
+  {
+   "start": 162.8,
+   "dur": 12.76,
+   "text": "but we'll be trying to compute for pvcpt PV so let's have a look at what these inputs on the calculator provide us with",
+   "label": "2:42"
+  },
+  {
+   "start": 172.26,
+   "dur": 11.28,
+   "text": "obviously very critical to clear the time value of money worksheet first so press second followed by FV which has",
+   "label": "2:52"
+  },
+  {
+   "start": 180.84,
+   "dur": 20.46,
+   "text": "clear TVM as its secondary function and let's get the inputs in 15 for n [Music] 180 000. for uh PMT",
+   "label": "3:00"
+  },
+  {
+   "start": 194.4,
+   "dur": 15.059,
+   "text": "and 8 for I over y Computing PV well no surprise here the calculator displays this is a negative figure uh",
+   "label": "3:14"
+  },
+  {
+   "start": 206.099,
+   "dur": 13.621,
+   "text": "because the the pmts the future payments were positive so one million five hundred and forty thousand seven hundred",
+   "label": "3:26"
+  },
+  {
+   "start": 217.26,
+   "dur": 14.64,
+   "text": "and six approximately okay let's move on to the second one so option number two and this is where it becomes a little",
+   "label": "3:37"
+  },
+  {
+   "start": 228.78,
+   "dur": 14.039,
+   "text": "bit more complicated because there are 15 payments in option two of 170 000 each but if you try to use your",
+   "label": "3:48"
+  },
+  {
+   "start": 240.36,
+   "dur": 10.019,
+   "text": "calculator to compute this in in the in the same way as before what you've got to remember is that your calculator when",
+   "label": "4:00"
+  },
+  {
+   "start": 247.739,
+   "dur": 12.18,
+   "text": "working with PMT is always assumes that the first payment in that sequence in the annuity occurs one period from today",
+   "label": "4:07"
+  },
+  {
+   "start": 256.019,
+   "dur": 13.981,
+   "text": "so the problem is if you imagine this on a timeline and this is time zero right now saying there are 15 payments of 170 each",
+   "label": "4:16"
+  },
+  {
+   "start": 267.9,
+   "dur": 8.16,
+   "text": "well your calculator assumes that the first one happens at T times one which is not necessarily the case now two",
+   "label": "4:27"
+  },
+  {
+   "start": 273.96,
+   "dur": 11.22,
+   "text": "things you can do or maybe even more what you could do is you could tell the calculator okay well the payments are",
+   "label": "4:33"
+  },
+  {
+   "start": 280.86,
+   "dur": 11.82,
+   "text": "going to be 170 000 each but in terms of the future ones they're starting um at t plus one there's going to be a",
+   "label": "4:40"
+  },
+  {
+   "start": 289.8,
+   "dur": 12.36,
+   "text": "total of 14 such payments which you'll want the calculator to take into account and compute the PV of these of all these",
+   "label": "4:49"
+  },
+  {
+   "start": 298.259,
+   "dur": 10.981,
+   "text": "payments and then sort of manually just add add the first one whose present value is 170 000 anyway because it",
+   "label": "4:58"
+  },
+  {
+   "start": 307.139,
+   "dur": 12.06,
+   "text": "occurs at time one so that's what I'm going to do first of all I'm going to input into my calculator the following",
+   "label": "5:07"
+  },
+  {
+   "start": 313.86,
+   "dur": 19.44,
+   "text": "um numbers I'm going to have n of 14 I'm going to have a PMT of 170 000. I'm going to have an i over y of 8 and",
+   "label": "5:13"
+  },
+  {
+   "start": 330.12,
+   "dur": 13.74,
+   "text": "I'm going to compute the P of P CPT of PV here and whatever comes out that's not going to be my result yet I'm going",
+   "label": "5:30"
+  },
+  {
+   "start": 338.16,
+   "dur": 13.44,
+   "text": "to add on top of that this extra 170 000 to include the first one which is not captured over here there's also a way to",
+   "label": "5:38"
+  },
+  {
+   "start": 349.74,
+   "dur": 8.28,
+   "text": "work around this in a different manner which I'm going to show you in just a moment now to be honest I don't have to necessarily",
+   "label": "5:49"
+  },
+  {
+   "start": 356.039,
+   "dur": 8.041,
+   "text": "clear the time value of money worksheet from the previous problem because potentially I may want to retain this I",
+   "label": "5:56"
+  },
+  {
+   "start": 362.16,
+   "dur": 17.759,
+   "text": "over y of 8 which is sitting in my calculator so just do 14 for n and make 170 000 my PMT input compute PV again so recompute that one",
+   "label": "6:02"
+  },
+  {
+   "start": 377.28,
+   "dur": 15.96,
+   "text": "and as you can see the answer it's showing me is 1400 and 1520 obviously with a negative sign which doesn't surprise me now I want to",
+   "label": "6:17"
+  },
+  {
+   "start": 391.08,
+   "dur": 12.54,
+   "text": "add 170 000 to that and because I'm looking at a negative figure on my calculator you know adding maybe problematic so what",
+   "label": "6:31"
+  },
+  {
+   "start": 401.039,
+   "dur": 12.0,
+   "text": "you can easily do is just press the plus minus key that will get rid of the minus here so you kind of neutralize the minus",
+   "label": "6:41"
+  },
+  {
+   "start": 409.919,
+   "dur": 15.84,
+   "text": "see it's positive now and just simply add 170 000 to that oops um I didn't want to have that one over there so 170",
+   "label": "6:49"
+  },
+  {
+   "start": 423.0,
+   "dur": 19.199,
+   "text": "000 again what's the result okay the total is one million 571 520 let's write this down one million and",
+   "label": "7:03"
+  },
+  {
+   "start": 435.139,
+   "dur": 14.201,
+   "text": "571 500 and that's a one uh 520 okay and as you can see this result is definitely higher than the previous one right let's",
+   "label": "7:15"
+  },
+  {
+   "start": 446.88,
+   "dur": 9.96,
+   "text": "figure out a different way of solving this it's you know potentially this is an exercise in understanding how your",
+   "label": "7:26"
+  },
+  {
+   "start": 454.08,
+   "dur": 14.399,
+   "text": "calculator treats annuities so let me write alternatively what you could do is you could tell the calculator",
+   "label": "7:34"
+  },
+  {
+   "start": 465.36,
+   "dur": 25.02,
+   "text": "n is 15 PMT is 170 000 but then what your calculator would do is compute the PV of those 15 inputs assuming that the first one over here",
+   "label": "7:45"
+  },
+  {
+   "start": 486.24,
+   "dur": 13.38,
+   "text": "happens one year ahead however you know we are at time zero so it would compute the PV as a time minus",
+   "label": "8:06"
+  },
+  {
+   "start": 496.62,
+   "dur": 13.34,
+   "text": "one so one year before and then you'd need to manually roll this forward by one period to t zero so let's have a look what happens",
+   "label": "8:16"
+  },
+  {
+   "start": 505.86,
+   "dur": 16.46,
+   "text": "when you do N15 PMT of 170 000 but also I over y of eight so this is going to be the first payment of 170 000 and there",
+   "label": "8:25"
+  },
+  {
+   "start": 518.039,
+   "dur": 12.181,
+   "text": "are 15 such payments in total the only thing I need to change over here because everything's sitting in my",
+   "label": "8:38"
+  },
+  {
+   "start": 527.58,
+   "dur": 20.22,
+   "text": "time value of money worksheet I'm going to Simply input 15 for n and compute again the PV so 1455 000",
+   "label": "8:47"
+  },
+  {
+   "start": 543.48,
+   "dur": 18.6,
+   "text": "um 111 but now I'm going to multiply this by a factor of 1.08 let's have a look times 1.08 and as you can see the result which",
+   "label": "9:03"
+  },
+  {
+   "start": 559.44,
+   "dur": 8.339,
+   "text": "comes out is the same as this one million five hundred and seventy one thousand five hundred and twenty so what",
+   "label": "9:19"
+  },
+  {
+   "start": 565.5,
+   "dur": 11.459,
+   "text": "we essentially did is computed the time value um the present value over 15 payments assuming the first one happens one year",
+   "label": "9:25"
+  },
+  {
+   "start": 574.26,
+   "dur": 13.98,
+   "text": "away from today that would mean we're at time -1 and then roll this forward using a factor of 1.08 which reflects the interest rate of",
+   "label": "9:34"
+  },
+  {
+   "start": 585.66,
+   "dur": 9.54,
+   "text": "eight percent to time zero that's another way of thinking about it maybe even easier but you've got to get used",
+   "label": "9:45"
+  },
+  {
+   "start": 592.74,
+   "dur": 16.98,
+   "text": "to this type of thinking so now it's time for option three and with option 3 we're looking at once again 15 payments this time of 250 000",
+   "label": "9:52"
+  },
+  {
+   "start": 607.019,
+   "dur": 14.101,
+   "text": "each but the first one starting in five years time Okay so n equal to um once again number of periods here was",
+   "label": "10:07"
+  },
+  {
+   "start": 618.66,
+   "dur": 15.66,
+   "text": "15. um I over Y is eight and obviously the size of each payment is two hundred and fifty thousand so these should be the inputs",
+   "label": "10:18"
+  },
+  {
+   "start": 632.459,
+   "dur": 10.081,
+   "text": "um a lot of you know I've I've already have an 8 for I over y I actually had an N of 15 just a moment ago but if you're",
+   "label": "10:32"
+  },
+  {
+   "start": 640.62,
+   "dur": 7.02,
+   "text": "in a if you're worried about confusing stuff on your calculator then why not just clear the time value of money",
+   "label": "10:40"
+  },
+  {
+   "start": 646.079,
+   "dur": 11.641,
+   "text": "worksheet because I'm not sure what I entered where so you know let's let's get rid of this um clear the TVM 15 for n 8 for I over y",
+   "label": "10:46"
+  },
+  {
+   "start": 655.8,
+   "dur": 20.279,
+   "text": "now 250 000 for our PMT inputs okay and I'm going to compute PV good when I pressed CPT PV the answer that",
+   "label": "10:55"
+  },
+  {
+   "start": 672.6,
+   "dur": 13.08,
+   "text": "came out is two million one hundred and thirty nine thousand eight hundred and well let's round this up to 870 and the",
+   "label": "11:12"
+  },
+  {
+   "start": 682.14,
+   "dur": 13.5,
+   "text": "thing is where on the timeline does this sit well as I told you when you tell your calculator that there's going to be a",
+   "label": "11:22"
+  },
+  {
+   "start": 691.74,
+   "dur": 12.3,
+   "text": "series of 15 payments what it assumes is we're Computing the PV at a point on the timeline which is one",
+   "label": "11:31"
+  },
+  {
+   "start": 700.98,
+   "dur": 15.599,
+   "text": "year away from the first payment so first payment equal to 250 000 out of that sequence of fifteen is over here and the result that you've",
+   "label": "11:40"
+  },
+  {
+   "start": 713.579,
+   "dur": 12.781,
+   "text": "received over here is one period away so if we know the first payment is supposed to happen five years in five years from today the",
+   "label": "11:53"
+  },
+  {
+   "start": 723.3,
+   "dur": 10.74,
+   "text": "PV is computed as a time four so in order to make this a PV at time 0 which will make it comparable with the other",
+   "label": "12:03"
+  },
+  {
+   "start": 731.519,
+   "dur": 13.681,
+   "text": "computations we need to Discount this back over four periods over four years and you can do this using the TVM or you can",
+   "label": "12:11"
+  },
+  {
+   "start": 741.72,
+   "dur": 18.84,
+   "text": "simply divide this number whatever we've got two million 139 870 by a factor of 1.08 to the power of 4. let's see what",
+   "label": "12:21"
+  },
+  {
+   "start": 757.92,
+   "dur": 12.8,
+   "text": "this gives I'm going to get rid of the negative sign here by by pressing plus minus divide by 1.08 y to the x",
+   "label": "12:37"
+  },
+  {
+   "start": 767.76,
+   "dur": 19.62,
+   "text": "to the power of X key followed by 4 equals one million 572 800 and um 68. let's write this down one million five hundred and seventy two",
+   "label": "12:47"
+  },
+  {
+   "start": 784.2,
+   "dur": 10.86,
+   "text": "thousand eight hundred and sixty okay eight so which which of these is the highest it's definitely not this one",
+   "label": "13:04"
+  },
+  {
+   "start": 791.88,
+   "dur": 12.18,
+   "text": "this one's higher but this one with one five seven two eight six eight is the highest of the three options in terms of",
+   "label": "13:11"
+  },
+  {
+   "start": 801.12,
+   "dur": 10.219,
+   "text": "its present value so the correct answer in this case is option three and that's answer B",
+   "label": "13:21"
+  }
+ ],
+ "track": {
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "generated": true,
+  "source": "captions-grouped"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:50:05+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:50:05",
+  "lines": {
+   "17": [
+    [
+     "to be 15. now um 180 000 that's what we're going to now use for PMT so you're going to input",
+     null
+    ],
+    [
+     "180,000",
+     "180 000"
+    ]
+   ],
+   "19": [
+    [
+     "but we'll be trying to compute for",
+     null
+    ],
+    [
+     "PV CPT",
+     "pvcpt"
+    ],
+    [
+     "PV so let's have a look at what these inputs on the calculator provide us with",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "and 8 for I over y Computing PV well no surprise here the calculator displays this",
+     null
+    ],
+    [
+     "as",
+     "is"
+    ],
+    [
+     "a negative figure uh",
+     null
+    ]
+   ],
+   "40": [
+    [
+     "over y of 8 which is sitting in my calculator so just do 14 for n and make",
+     null
+    ],
+    [
+     "170,000",
+     "170 000"
+    ],
+    [
+     "my PMT input compute PV again so recompute that one",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "when you do",
+     null
+    ],
+    [
+     "N 15",
+     "N15"
+    ],
+    [
+     "PMT of",
+     null
+    ],
+    [
+     "170,000",
+     "170 000"
+    ],
+    [
+     "but also I over y of eight so this is going to be the first payment of",
+     null
+    ],
+    [
+     "170,000",
+     "170 000"
+    ],
+    [
+     "and there",
+     null
+    ]
+   ],
+   "66": [
+    [
+     "now",
+     null
+    ],
+    [
+     "250,000",
+     "250 000"
+    ],
+    [
+     "for our PMT inputs okay and I'm going to compute PV good when I pressed CPT PV the answer that",
+     null
+    ]
+   ]
+  },
+  "fixes": 8,
+  "checked_seconds": 162.8,
+  "usd": 0.0237,
+  "version": 3,
+  "flagged": [
+   [
+    "2:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:18",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:31",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:42",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:52",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:00",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:14",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:26",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:49",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:30",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "6:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:25",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:55",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

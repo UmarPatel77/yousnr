@@ -1,0 +1,965 @@
+{
+ "id": "B9AxD39BbkA",
+ "title": "Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230115",
+ "description": "Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam) examines the steps necessary to compute the present value (PV) of a stream of unequal cash flows.\nWe use this using simple discounting as well as by applying the Cash Flow (CF) worksheet on the Texas Instruments BA II Plus calculator, combined with the NPV function.\n\nIn order to perform long-hand discounting, your calculator should be set to Algebraic Operating System (AOS). If your's is not, follow the steps outlined in this video:\nFormatting the Texas Instruments BA II Plus calculator for the CFA exam:\nhttps://youtu.be/2BHL9PfyUSU\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction"
+  },
+  {
+   "start": 23,
+   "title": "Chapter 2: Problem analysis"
+  },
+  {
+   "start": 69,
+   "title": "Chapter 3: Manual present value method"
+  },
+  {
+   "start": 288,
+   "title": "Chapter 4: Cash flow worksheet method"
+  }
+ ],
+ "duration": 696,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "in this video I want to walk you through acfa level 1 exam style question on the time value of money this is yet another",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 9.0,
+   "text": "in the sequence of TVM questions and problems this time we're going to be dealing with unequal cash flows so if",
+   "label": "0:07"
+  },
+  {
+   "start": 16.0,
+   "dur": 7.0,
+   "text": "this is something you want to get right in the exam do keep watching let's get solving an investment is projected to generate",
+   "label": "0:16"
+  },
+  {
+   "start": 23.0,
+   "dur": 7.0,
+   "text": "the following cash flow stream each cash flow is assumed to occur at the end of the relevant year so you've got the cash",
+   "label": "0:23"
+  },
+  {
+   "start": 30.0,
+   "dur": 7.0,
+   "text": "flows including one negative cash flow there and is subsequently expected to be sold for",
+   "label": "0:30"
+  },
+  {
+   "start": 37.0,
+   "dur": 8.0,
+   "text": "190 000 at the end of the fourth year so that's our final cash flow there if the relevant discount rate is six percent the investment's present value is",
+   "label": "0:37"
+  },
+  {
+   "start": 45.0,
+   "dur": 8.0,
+   "text": "closest to so this is another PV problem but this time uh we can't use uh the",
+   "label": "0:45"
+  },
+  {
+   "start": 53.0,
+   "dur": 7.0,
+   "text": "classic time value of money worksheet with the pmts for example because that only works when you've got equal level",
+   "label": "0:53"
+  },
+  {
+   "start": 60.0,
+   "dur": 9.0,
+   "text": "cash flows which would form an annuity so can't use the TVM worksheet what can we do instead well we can compute the PV",
+   "label": "1:00"
+  },
+  {
+   "start": 69.0,
+   "dur": 8.0,
+   "text": "using our calculator um and doing it relatively quickly by just inputting a value so let me show",
+   "label": "1:09"
+  },
+  {
+   "start": 77.0,
+   "dur": 9.0,
+   "text": "you what I would do in the exam and then I'll show you an alternative way uh using the cash flow worksheet or the cash flow menu but that's an alternative",
+   "label": "1:17"
+  },
+  {
+   "start": 86.0,
+   "dur": 9.0,
+   "text": "approach so what I could do is say PV equals and now I'm going to take each one of these cash flows so the first one",
+   "label": "1:26"
+  },
+  {
+   "start": 95.0,
+   "dur": 9.0,
+   "text": "is ten thousand because it's one year away from today I'll divide it by 1.0 now the interest rate here is six",
+   "label": "1:35"
+  },
+  {
+   "start": 104.0,
+   "dur": 6.0,
+   "text": "percent so 1.06 don't necessarily need the bracket to be honest just using it",
+   "label": "1:44"
+  },
+  {
+   "start": 110.0,
+   "dur": 8.0,
+   "text": "to make things a little bit neater now the second one is a negative cash flow so",
+   "label": "1:50"
+  },
+  {
+   "start": 118.0,
+   "dur": 6.0,
+   "text": "8 000 but divided by 1.06 to the power of 2 seeing as it is two years away from",
+   "label": "1:58"
+  },
+  {
+   "start": 124.0,
+   "dur": 8.0,
+   "text": "today now the third one is positive so twelve thousand divided by 1.06 to the",
+   "label": "2:04"
+  },
+  {
+   "start": 132.0,
+   "dur": 7.0,
+   "text": "power of three and obviously the fourth one would be one hundred and ninety thousand which I'm going to divide by a",
+   "label": "2:12"
+  },
+  {
+   "start": 139.0,
+   "dur": 7.0,
+   "text": "factor of 1.06 to the power of four and if I press equals this should give me",
+   "label": "2:19"
+  },
+  {
+   "start": 146.0,
+   "dur": 8.0,
+   "text": "the right result so let's see what this um will yield on the calculator okay let's do it if you've got your",
+   "label": "2:26"
+  },
+  {
+   "start": 154.0,
+   "dur": 7.0,
+   "text": "calculator set up to algebraic operating system instead of the chain method that's going to",
+   "label": "2:34"
+  },
+  {
+   "start": 161.0,
+   "dur": 8.0,
+   "text": "basically be quite easy if you haven't you need to First format your calculator in accordance with the hints or",
+   "label": "2:41"
+  },
+  {
+   "start": 169.0,
+   "dur": 7.0,
+   "text": "instructions provided in the relevant video I've included a link to this in the description of this recording so",
+   "label": "2:49"
+  },
+  {
+   "start": 176.0,
+   "dur": 8.0,
+   "text": "let's go 10 000 divided by 1.06 okay I've got a plus and a minus here so",
+   "label": "2:56"
+  },
+  {
+   "start": 184.0,
+   "dur": 8.0,
+   "text": "I'm just going to do minus 8000 divided by 1.06 press the x squared key to raise",
+   "label": "3:04"
+  },
+  {
+   "start": 192.0,
+   "dur": 13.0,
+   "text": "this to the power of two plus twelve thousand divided by 1.06 now y to the power of X key and the power 3.",
+   "label": "3:12"
+  },
+  {
+   "start": 205.0,
+   "dur": 4.0,
+   "text": "plus 190 000.",
+   "label": "3:25"
+  },
+  {
+   "start": 209.0,
+   "dur": 10.0,
+   "text": "okay divided by 1.06 y to the power of X key and the power is 4 equals and I've",
+   "label": "3:29"
+  },
+  {
+   "start": 219.0,
+   "dur": 8.0,
+   "text": "got an answer of one six two eight eight seven I didn't need to use any sophisticated functions I just",
+   "label": "3:39"
+  },
+  {
+   "start": 227.0,
+   "dur": 7.0,
+   "text": "made sure that I input everything um precisely and I didn't have to worry",
+   "label": "3:47"
+  },
+  {
+   "start": 234.0,
+   "dur": 7.0,
+   "text": "about the order in which I input because my calculator is set up to do power",
+   "label": "3:54"
+  },
+  {
+   "start": 241.0,
+   "dur": 8.0,
+   "text": "ahead of division or multiplication for example and to do this ahead of additional deduction so",
+   "label": "4:01"
+  },
+  {
+   "start": 249.0,
+   "dur": 8.0,
+   "text": "um if your calculator is in AOS mode that helps greatly to get answers and results like this now this I can see",
+   "label": "4:09"
+  },
+  {
+   "start": 257.0,
+   "dur": 7.0,
+   "text": "corresponds very nicely to you know if we look at the answers to answer B so we",
+   "label": "4:17"
+  },
+  {
+   "start": 264.0,
+   "dur": 7.0,
+   "text": "know that the answer to the question is be already but I now want to show you an alternative way of",
+   "label": "4:24"
+  },
+  {
+   "start": 271.0,
+   "dur": 9.0,
+   "text": "um doing the same computation this works but it's uh potentially um easy to get this wrong if you you",
+   "label": "4:31"
+  },
+  {
+   "start": 280.0,
+   "dur": 8.0,
+   "text": "know if you don't get your inputs right which is absolutely possible under exam conditions so",
+   "label": "4:40"
+  },
+  {
+   "start": 288.0,
+   "dur": 8.0,
+   "text": "let's explore getting to the same answer but using an important function of your calculator so",
+   "label": "4:48"
+  },
+  {
+   "start": 296.0,
+   "dur": 8.0,
+   "text": "that's the CF worksheet and you go to this worksheet by pressing the CF",
+   "label": "4:56"
+  },
+  {
+   "start": 304.0,
+   "dur": 8.0,
+   "text": "key which is sitting right next door to the second key so let's press CF as you can see I've got something there already",
+   "label": "5:04"
+  },
+  {
+   "start": 312.0,
+   "dur": 9.0,
+   "text": "I guess from a previous question that I was doing and the first thing you want to be able to do is potentially just clear this worksheet so in order to",
+   "label": "5:12"
+  },
+  {
+   "start": 321.0,
+   "dur": 10.0,
+   "text": "clear it of any data which may be sitting there press second followed by the c e c key which is at the very",
+   "label": "5:21"
+  },
+  {
+   "start": 331.0,
+   "dur": 8.0,
+   "text": "bottom of your calculator keys on the left hand side and it's got clear work as its secondary function and this key",
+   "label": "5:31"
+  },
+  {
+   "start": 339.0,
+   "dur": 7.0,
+   "text": "will work to clear whatever worksheet you're currently in but you've got to be in the worksheet which is why I pressed",
+   "label": "5:39"
+  },
+  {
+   "start": 346.0,
+   "dur": 7.0,
+   "text": "CF first for it to work and to clear stuff data which is stored under the relevant headings there as you can see",
+   "label": "5:46"
+  },
+  {
+   "start": 353.0,
+   "dur": 10.0,
+   "text": "cf0 all of a sudden became equal to zero so it was effectively cleared it's only the TVM worksheet which has",
+   "label": "5:53"
+  },
+  {
+   "start": 363.0,
+   "dur": 7.0,
+   "text": "its own dedicated clearing function which is the secondary function of the FV key which says clear TVM the other",
+   "label": "6:03"
+  },
+  {
+   "start": 370.0,
+   "dur": 8.0,
+   "text": "worksheets on your calculator need to be cleared when you are specifically in them like here in the CF okay now you",
+   "label": "6:10"
+  },
+  {
+   "start": 378.0,
+   "dur": 8.0,
+   "text": "need to provide the calculator with the inputs we're not looking sorry we're we can't provide the calculator with an input for f c of 0 which is the cash",
+   "label": "6:18"
+  },
+  {
+   "start": 386.0,
+   "dur": 9.0,
+   "text": "flow at time uh zero which is essentially going to be our time value of um our present value sorry the of the of",
+   "label": "6:26"
+  },
+  {
+   "start": 395.0,
+   "dur": 8.0,
+   "text": "the whole project there's nothing happening at Time Zero use the down arrow",
+   "label": "6:35"
+  },
+  {
+   "start": 403.0,
+   "dur": 7.0,
+   "text": "pressed once to get to something which reads c01 so that's the cash flow at",
+   "label": "6:43"
+  },
+  {
+   "start": 410.0,
+   "dur": 10.0,
+   "text": "time one and now make this equal to ten thousand because that's our time one cash info so I'm doing simply",
+   "label": "6:50"
+  },
+  {
+   "start": 420.0,
+   "dur": 6.0,
+   "text": "ten thousand but very critically followed by the enter key",
+   "label": "7:00"
+  },
+  {
+   "start": 426.0,
+   "dur": 8.0,
+   "text": "so you need to press enter for the equal sign to appear over here which means your calculator has accepted the info",
+   "label": "7:06"
+  },
+  {
+   "start": 434.0,
+   "dur": 8.0,
+   "text": "input if you don't press enter it will be ignored it will not be stored now press the second sorry the down arrow",
+   "label": "7:14"
+  },
+  {
+   "start": 442.0,
+   "dur": 9.0,
+   "text": "again and you can see f01 this stands for the frequency of this cash flow so if it happens you know for more than one",
+   "label": "7:22"
+  },
+  {
+   "start": 451.0,
+   "dur": 8.0,
+   "text": "year in a row you could potentially say well two years three years or something like this by default it's set at one and that's what we're going to use we're not",
+   "label": "7:31"
+  },
+  {
+   "start": 459.0,
+   "dur": 10.0,
+   "text": "going to change this and I'm going to press that down arrow again and as you can see we are displayed we we see a C02",
+   "label": "7:39"
+  },
+  {
+   "start": 469.0,
+   "dur": 7.0,
+   "text": "displayed over here and we'll want to make this equal to 8 000 but negative so",
+   "label": "7:49"
+  },
+  {
+   "start": 476.0,
+   "dur": 8.0,
+   "text": "eight thousand follow this up with the plus minus key to turn this into a negative figure but once again finishing",
+   "label": "7:56"
+  },
+  {
+   "start": 484.0,
+   "dur": 9.0,
+   "text": "with enter which puts an equal sign here good",
+   "label": "8:04"
+  },
+  {
+   "start": 493.0,
+   "dur": 9.0,
+   "text": "do the same thing as before so down arrow twice omitting the frequency just leaving it basically at one and this is going to be",
+   "label": "8:13"
+  },
+  {
+   "start": 502.0,
+   "dur": 9.0,
+   "text": "c03 um we need to make this 12 000 and uh follow this up by enter",
+   "label": "8:22"
+  },
+  {
+   "start": 511.0,
+   "dur": 8.0,
+   "text": "with enter and I kind of jumped the gun here because I I wrote equals well first of all you need to input the",
+   "label": "8:31"
+  },
+  {
+   "start": 519.0,
+   "dur": 8.0,
+   "text": "value press enter and this makes the equals sign appear which is just confirmation of the fact that you",
+   "label": "8:39"
+  },
+  {
+   "start": 527.0,
+   "dur": 9.0,
+   "text": "uh your calculator has stored the relevant input press the down arrows twice down arrow twice again we we are",
+   "label": "8:47"
+  },
+  {
+   "start": 536.0,
+   "dur": 8.0,
+   "text": "at c04 and we want to make this the big one 190 000 over here obviously follow this up",
+   "label": "8:56"
+  },
+  {
+   "start": 544.0,
+   "dur": 9.0,
+   "text": "with enter which will once again have the effect of presenting us with the equals key",
+   "label": "9:04"
+  },
+  {
+   "start": 553.0,
+   "dur": 7.0,
+   "text": "enter okay good the nice thing about the cash flow worksheet is you can review your inputs",
+   "label": "9:13"
+  },
+  {
+   "start": 560.0,
+   "dur": 9.0,
+   "text": "um so what you can go do sorry do is go up and down with the uh arrows I'm going to go up just to see whether my you know",
+   "label": "9:20"
+  },
+  {
+   "start": 569.0,
+   "dur": 8.0,
+   "text": "remake of previous inputs were entered correctly this was 12 000 this was minus eight okay we wanted the minus here",
+   "label": "9:29"
+  },
+  {
+   "start": 577.0,
+   "dur": 9.0,
+   "text": "that's fine and this was ten thousand so everything seems to be right I'm happy with it the cash flow",
+   "label": "9:37"
+  },
+  {
+   "start": 586.0,
+   "dur": 6.0,
+   "text": "worksheet is simply a place to store the data but it doesn't actually perform any",
+   "label": "9:46"
+  },
+  {
+   "start": 592.0,
+   "dur": 7.0,
+   "text": "computations yet in order to compute present value we need to go to the menu which is next",
+   "label": "9:52"
+  },
+  {
+   "start": 599.0,
+   "dur": 9.0,
+   "text": "door and that's npv so once you've got these inputs go and press npv",
+   "label": "9:59"
+  },
+  {
+   "start": 608.0,
+   "dur": 7.0,
+   "text": "and over here it's going to ask you for I which as you can probably guess is the rate of interest we want to make this",
+   "label": "10:08"
+  },
+  {
+   "start": 615.0,
+   "dur": 8.0,
+   "text": "equal to six so press six follow this up with enter",
+   "label": "10:15"
+  },
+  {
+   "start": 623.0,
+   "dur": 10.0,
+   "text": "and you guessed it it will have the effect of making I equal to 6. now go down with the down",
+   "label": "10:23"
+  },
+  {
+   "start": 633.0,
+   "dur": 7.0,
+   "text": "arrow and it says npv and at the top of the display it's actually saying I'm ready",
+   "label": "10:33"
+  },
+  {
+   "start": 640.0,
+   "dur": 8.0,
+   "text": "to compute so it's kind of prompting you simply to press the cptq key so press",
+   "label": "10:40"
+  },
+  {
+   "start": 648.0,
+   "dur": 7.0,
+   "text": "CPT compute and it says okay npv equals to",
+   "label": "10:48"
+  },
+  {
+   "start": 655.0,
+   "dur": 7.0,
+   "text": "162 887 which is the same result as we had over here when we used the calculator",
+   "label": "10:55"
+  },
+  {
+   "start": 662.0,
+   "dur": 10.0,
+   "text": "without any of its functions just typing the data and hoping that we don't make any mistake so this is a more certain",
+   "label": "11:02"
+  },
+  {
+   "start": 672.0,
+   "dur": 8.0,
+   "text": "sure way of doing the same computation however it takes a much longer time to do",
+   "label": "11:12"
+  },
+  {
+   "start": 680.0,
+   "dur": 8.0,
+   "text": "nevertheless I guess there will be problems perhaps within the uh corporate issuers section of the exam when you",
+   "label": "11:20"
+  },
+  {
+   "start": 688.0,
+   "dur": null,
+   "text": "need to use this worksheet so it's a good as good a time as any to start using it and getting familiar with it",
+   "label": "11:28"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:51:58+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:52:00",
+  "lines": {
+   "5": [
+    [
+     "expected to be sold for 190,000",
+     "190 000"
+    ],
+    [
+     "at the end of the fourth year so that's our final cash flow there if the relevant discount rate is",
+     null
+    ],
+    [
+     "6%",
+     "six percent"
+    ],
+    [
+     "the investment's present value is",
+     null
+    ]
+   ],
+   "12": [
+    [
+     "is",
+     null
+    ],
+    [
+     "10,000",
+     "ten thousand"
+    ],
+    [
+     "because it's one year away from today I'll divide it by 1.0 now the interest rate here is six",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "today now the third one is positive so",
+     null
+    ],
+    [
+     "12,000",
+     "twelve thousand"
+    ],
+    [
+     "divided by 1.06 to the",
+     null
+    ]
+   ],
+   "17": [
+    [
+     "power of three and obviously the fourth one would be",
+     null
+    ],
+    [
+     "190,000",
+     "one hundred and ninety thousand"
+    ],
+    [
+     "which I'm going to divide by a",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "let's go",
+     null
+    ],
+    [
+     "10,000",
+     "10 000"
+    ],
+    [
+     "divided by 1.06 okay I've got a plus and a minus here so",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "this to the power of two plus",
+     null
+    ],
+    [
+     "12,000",
+     "twelve thousand"
+    ],
+    [
+     "divided by 1.06 now y to the power of X key and the power 3.",
+     null
+    ]
+   ],
+   "26": [
+    [
+     "plus",
+     null
+    ],
+    [
+     "190,000.",
+     "190 000."
+    ]
+   ],
+   "28": [
+    [
+     "got an answer of",
+     null
+    ],
+    [
+     "162,887",
+     "one six two eight eight seven"
+    ],
+    [
+     "I didn't need to use any sophisticated functions I just",
+     null
+    ]
+   ],
+   "39": [
+    [
+     "key which is sitting right next door to the second key so let's press CF",
+     null
+    ],
+    [
+     "And",
+     ""
+    ],
+    [
+     "as you can see I've got something there already",
+     null
+    ]
+   ],
+   "42": [
+    [
+     "bottom of your calculator keys on the",
+     null
+    ],
+    [
+     "left-hand",
+     "left hand"
+    ],
+    [
+     "side and it's got clear work as its secondary function and this key",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "need to provide the calculator with the inputs we're not looking sorry we're we can't provide the calculator with an input for",
+     null
+    ],
+    [
+     "CF0",
+     "f c of 0"
+    ],
+    [
+     "which is the cash",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "time one and now make this equal to",
+     null
+    ],
+    [
+     "10,000",
+     "ten thousand"
+    ],
+    [
+     "because that's our time one cash",
+     null
+    ],
+    [
+     "inflow",
+     "info"
+    ],
+    [
+     "so I'm doing simply",
+     null
+    ]
+   ],
+   "53": [
+    [
+     "10,000",
+     "ten thousand"
+    ],
+    [
+     "but very critically followed by the enter key",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "displayed over here and we'll want to make this equal to",
+     null
+    ],
+    [
+     "8,000",
+     "8 000"
+    ],
+    [
+     "but negative so",
+     null
+    ]
+   ],
+   "60": [
+    [
+     "8,000",
+     "eight thousand"
+    ],
+    [
+     "follow this up with the",
+     null
+    ],
+    [
+     "plus/minus",
+     "plus minus"
+    ],
+    [
+     "key to turn this into a negative figure but once again",
+     null
+    ],
+    [
+     "finish",
+     "finishing"
+    ]
+   ],
+   "63": [
+    [
+     "c03 um we need to make this",
+     null
+    ],
+    [
+     "12,000",
+     "12 000"
+    ],
+    [
+     "and uh follow this up by enter",
+     null
+    ]
+   ],
+   "67": [
+    [
+     "at c04 and we want to make this the big one",
+     null
+    ],
+    [
+     "190,000",
+     "190 000"
+    ],
+    [
+     "over here obviously follow this up",
+     null
+    ]
+   ],
+   "71": [
+    [
+     "remake of previous inputs were entered correctly this was",
+     null
+    ],
+    [
+     "12,000",
+     "12 000"
+    ],
+    [
+     "this was minus eight okay we wanted the minus here",
+     null
+    ]
+   ]
+  },
+  "fixes": 22,
+  "checked_seconds": 202.0,
+  "usd": 0.0294,
+  "version": 3,
+  "flagged": [
+   [
+    "0:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:04",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:25",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:04",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:50",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
+}

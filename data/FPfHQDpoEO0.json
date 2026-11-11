@@ -1,0 +1,496 @@
+{
+ "id": "FPfHQDpoEO0",
+ "title": "Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230117",
+ "description": "Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam) explores two approaches to using the Texas Instruments BA II Plus calculator to deal with more complicated exam questions.\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction to TVM"
+  },
+  {
+   "start": 33,
+   "title": "Chapter 2: Understanding the problem"
+  },
+  {
+   "start": 112,
+   "title": "Chapter 3: Identifying calculator inputs"
+  },
+  {
+   "start": 210,
+   "title": "Chapter 4: Solving for future value"
+  },
+  {
+   "start": 303,
+   "title": "Chapter 5: Alternative solution method"
+  }
+ ],
+ "duration": 415,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "in this video we're going to go through yet another TVM time value of money problem um in a CFA level one exam style",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 8.0,
+   "text": "question we're going to be computing future value well in a previous video or in a couple of previous videos I have",
+   "label": "0:08"
+  },
+  {
+   "start": 16.0,
+   "dur": 9.0,
+   "text": "already done some computations of FV but this is going to be the most complex one where you have to do a bit of thinking to get your inputs right into the TVM",
+   "label": "0:16"
+  },
+  {
+   "start": 25.0,
+   "dur": 8.0,
+   "text": "worksheet on the calculator so if this is something you want to be ready for in the exam and get right keep watching and let's get solving",
+   "label": "0:25"
+  },
+  {
+   "start": 33.0,
+   "dur": 7.0,
+   "text": "so this is the question which I want us to have a go at Jeremy Fallows plans to invest 10 000 per year in a fund",
+   "label": "0:33"
+  },
+  {
+   "start": 40.0,
+   "dur": 7.0,
+   "text": "projected to earn four percent per annum Fallows wants to make the first investment in one year's time and the",
+   "label": "0:40"
+  },
+  {
+   "start": 47.0,
+   "dur": 9.0,
+   "text": "last investment in three years time the amount fellows should expect to pay out of the fund at the end of the fourth year is closest to now this is naturally",
+   "label": "0:47"
+  },
+  {
+   "start": 56.0,
+   "dur": 8.0,
+   "text": "a problem um of finding every future value however using the time value of money worksheet",
+   "label": "0:56"
+  },
+  {
+   "start": 64.0,
+   "dur": 8.0,
+   "text": "you're going to have to play around and think about how to do it logically so as to get the inputs right so what I'm",
+   "label": "1:04"
+  },
+  {
+   "start": 72.0,
+   "dur": 8.0,
+   "text": "doing is drawing my timeline over here Time Zero end of year one end of year two end of year three and this is end of",
+   "label": "1:12"
+  },
+  {
+   "start": 80.0,
+   "dur": 8.0,
+   "text": "year four where he um where generally Jeremy sorry follows wants to be paying out a sales amount in the future over",
+   "label": "1:20"
+  },
+  {
+   "start": 88.0,
+   "dur": 7.0,
+   "text": "here and that's what we're looking for how much will he have in the account at the end of year four in a convention that I've been applying",
+   "label": "1:28"
+  },
+  {
+   "start": 95.0,
+   "dur": 8.0,
+   "text": "to the other problems in this TVM series I'm going to make this a positive figure",
+   "label": "1:35"
+  },
+  {
+   "start": 103.0,
+   "dur": 9.0,
+   "text": "so in order to um figure out how much this is going to be we're going to use the info on the Investments he's going to be making for",
+   "label": "1:43"
+  },
+  {
+   "start": 112.0,
+   "dur": 9.0,
+   "text": "the next three years and I'm going to show these as downward pointing arrows and actually a series of negative 10",
+   "label": "1:52"
+  },
+  {
+   "start": 121.0,
+   "dur": 8.0,
+   "text": "thousands if this amount is supposed to be positive which he takes out in the end this these",
+   "label": "2:01"
+  },
+  {
+   "start": 129.0,
+   "dur": 8.0,
+   "text": "inputs are going to be into the account negative so uh 3 minus ten thousands now",
+   "label": "2:09"
+  },
+  {
+   "start": 137.0,
+   "dur": 7.0,
+   "text": "there is no information about the fact that he's got anything in the account at the beginning so over here you know PV",
+   "label": "2:17"
+  },
+  {
+   "start": 144.0,
+   "dur": 9.0,
+   "text": "is zero and we are provided with a number for uh the rate of return so I over y on our",
+   "label": "2:24"
+  },
+  {
+   "start": 153.0,
+   "dur": 9.0,
+   "text": "calculator this is going to be 4. so let me use these inputs on the calculator um",
+   "label": "2:33"
+  },
+  {
+   "start": 162.0,
+   "dur": 9.0,
+   "text": "as we've got them here the one final one that I still haven't got is the number of periods so that's n equals three and",
+   "label": "2:42"
+  },
+  {
+   "start": 171.0,
+   "dur": 9.0,
+   "text": "we'll make a bit of a qualification to this because if you input 3 as your number of periods you're going you're going to get an answer which is over",
+   "label": "2:51"
+  },
+  {
+   "start": 180.0,
+   "dur": 6.0,
+   "text": "here on the timeline that will come to this in in a moment when we're putting the inputs into the calculator",
+   "label": "3:00"
+  },
+  {
+   "start": 186.0,
+   "dur": 10.0,
+   "text": "before we start using the TVM worksheet let's clear it so that's second FV good now we're ready and look",
+   "label": "3:06"
+  },
+  {
+   "start": 196.0,
+   "dur": 7.0,
+   "text": "um if I've cleared the worksheet I don't need to tell my calculator that PV it's 0 0 is going to be the default figure",
+   "label": "3:16"
+  },
+  {
+   "start": 203.0,
+   "dur": 7.0,
+   "text": "anyway so I'm going to have a 3 for n four",
+   "label": "3:23"
+  },
+  {
+   "start": 210.0,
+   "dur": 7.0,
+   "text": "as in four percent for I over y I'm also going to have 10 000 but let's make this negative by pressing plus",
+   "label": "3:30"
+  },
+  {
+   "start": 217.0,
+   "dur": 8.0,
+   "text": "minus um for the PMT and I'm asking the calculator to compute the FV so cptfv",
+   "label": "3:37"
+  },
+  {
+   "start": 225.0,
+   "dur": 8.0,
+   "text": "and as you can see it's telling me that the relevant result is thirty one thousand two hundred sixteen so CPT",
+   "label": "3:45"
+  },
+  {
+   "start": 233.0,
+   "dur": 7.0,
+   "text": "um FV I got a result of thirty one thousand two hundred sixteen the important thing",
+   "label": "3:53"
+  },
+  {
+   "start": 240.0,
+   "dur": 7.0,
+   "text": "to realize is because you've provided or we've provided an input for n equal to 3",
+   "label": "4:00"
+  },
+  {
+   "start": 247.0,
+   "dur": 7.0,
+   "text": "the FV being displayed here is the FV at the end of year three so that's kind of",
+   "label": "4:07"
+  },
+  {
+   "start": 254.0,
+   "dur": 9.0,
+   "text": "over here however the question asks for the FV at the end of the fourth year so we'll need to roll this forward just by",
+   "label": "4:14"
+  },
+  {
+   "start": 263.0,
+   "dur": 8.0,
+   "text": "one period and we use the same interest rate which we used in the inputs for TVM so",
+   "label": "4:23"
+  },
+  {
+   "start": 271.0,
+   "dur": 8.0,
+   "text": "four percent so I'm going to take this and multiply by 1.04 that's taking it Forward just by",
+   "label": "4:31"
+  },
+  {
+   "start": 279.0,
+   "dur": 7.0,
+   "text": "one period times 1.04 equals 32",
+   "label": "4:39"
+  },
+  {
+   "start": 286.0,
+   "dur": 9.0,
+   "text": "465. okay and this um naturally is compatible with answer a to the",
+   "label": "4:46"
+  },
+  {
+   "start": 295.0,
+   "dur": 8.0,
+   "text": "problem brilliant however because I do want you to feel really really comfortable with your uh with your calculator what I want",
+   "label": "4:55"
+  },
+  {
+   "start": 303.0,
+   "dur": 8.0,
+   "text": "to show you now is an alternative way of doing this what I could tell my calculator so let me write alternatively",
+   "label": "5:03"
+  },
+  {
+   "start": 311.0,
+   "dur": 7.0,
+   "text": "over here is that just changing one input n",
+   "label": "5:11"
+  },
+  {
+   "start": 318.0,
+   "dur": 7.0,
+   "text": "equals to 4 instead of three let's see what would happen four for n",
+   "label": "5:18"
+  },
+  {
+   "start": 325.0,
+   "dur": 8.0,
+   "text": "and let's recompute the FV so compute FV",
+   "label": "5:25"
+  },
+  {
+   "start": 333.0,
+   "dur": 9.0,
+   "text": "and now it displays forty two thousand four hundred and sixty five but what your calculator",
+   "label": "5:33"
+  },
+  {
+   "start": 342.0,
+   "dur": 9.0,
+   "text": "assumes When You Tell It N equals to four n equals four sorry is that there is a series of not just three but one",
+   "label": "5:42"
+  },
+  {
+   "start": 351.0,
+   "dur": 6.0,
+   "text": "two three four payments of ten thousand",
+   "label": "5:51"
+  },
+  {
+   "start": 357.0,
+   "dur": 7.0,
+   "text": "each year and it spits out an FV whose location on the timeline is",
+   "label": "5:57"
+  },
+  {
+   "start": 364.0,
+   "dur": 8.0,
+   "text": "correct because this is an FV at the end of time four but assuming there is an additional fourth payment of 10 000",
+   "label": "6:04"
+  },
+  {
+   "start": 372.0,
+   "dur": 9.0,
+   "text": "which naturally is not the case in this question so what you could do is compute this rather than the other method but",
+   "label": "6:12"
+  },
+  {
+   "start": 381.0,
+   "dur": 9.0,
+   "text": "manually deduct the excess 10 000 the unnecessary 10 000 from over here which will obviously if",
+   "label": "6:21"
+  },
+  {
+   "start": 390.0,
+   "dur": 9.0,
+   "text": "this is 42 000 would get you to 32 465 which we know is the answer anyway that's another way to work around the",
+   "label": "6:30"
+  },
+  {
+   "start": 399.0,
+   "dur": 7.0,
+   "text": "problem which you should be also comfortable with because at the end of the day in the exam you really need to",
+   "label": "6:39"
+  },
+  {
+   "start": 406.0,
+   "dur": 7.0,
+   "text": "understand the logic of the time value of money worksheet on your calculator so play around with these different methods",
+   "label": "6:46"
+  },
+  {
+   "start": 413.0,
+   "dur": null,
+   "text": "and see that they give the same result",
+   "label": "6:53"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:53:49+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:53:49",
+  "lines": {
+   "4": [
+    [
+     "so this is the question which I want us to have a go at Jeremy Fallows plans to invest",
+     null
+    ],
+    [
+     "10,000",
+     "10 000"
+    ],
+    [
+     "per year in a fund",
+     null
+    ]
+   ],
+   "5": [
+    [
+     "projected to earn",
+     null
+    ],
+    [
+     "4%",
+     "four percent"
+    ],
+    [
+     "per annum Fallows wants to make the first investment in one year's time and the",
+     null
+    ]
+   ],
+   "24": [
+    [
+     "um if I've cleared the worksheet I don't need to tell my calculator that PV",
+     null
+    ],
+    [
+     "is",
+     "it's"
+    ],
+    [
+     "0 0 is going to be the default figure",
+     null
+    ]
+   ],
+   "27": [
+    [
+     "minus um for the PMT and I'm asking the calculator to compute the FV so",
+     null
+    ],
+    [
+     "CPT FV",
+     "cptfv"
+    ]
+   ],
+   "28": [
+    [
+     "and as you can see it's telling me that the relevant result is",
+     null
+    ],
+    [
+     "31,216",
+     "thirty one thousand two hundred sixteen"
+    ],
+    [
+     "so CPT",
+     null
+    ]
+   ]
+  },
+  "fixes": 5,
+  "checked_seconds": 84.2,
+  "usd": 0.0123,
+  "version": 3,
+  "flagged": [
+   [
+    "0:16",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:17",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:06",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:16",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:37",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:45",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:25",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
+}

@@ -1,0 +1,227 @@
+{
+ "id": "Oz3O6D9BenE",
+ "title": "Time Value of Money (TVM) - perpetuities (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230111",
+ "description": "Time Value of Money (TVM) - perpetuities (for the CFA Level 1 exam), explores the universal formula for dealing with a constant stream of level cash flows.\nIn order to set your calculator up properly, following the procedure laid out in this video:\nFormatting the Texas Instruments BA II Plus calculator for the CFA exam - yhttps://youtu.be/2BHL9PfyUSU\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction to perpetuities"
+  },
+  {
+   "start": 37,
+   "title": "Chapter 2: Analyzing the exam question"
+  },
+  {
+   "start": 53,
+   "title": "Chapter 3: Visualizing the timeline"
+  },
+  {
+   "start": 91,
+   "title": "Chapter 4: Formula and discounting"
+  },
+  {
+   "start": 159,
+   "title": "Chapter 5: Calculation and solution"
+  }
+ ],
+ "duration": 246,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "in this video we're going to go through another CFA level 1 exam style question on the topic of time value of money this",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 7.0,
+   "text": "time discussing perpetuities uh we're going to introduce a formula which is not only useful for the quantitative",
+   "label": "0:07"
+  },
+  {
+   "start": 14.0,
+   "dur": 8.0,
+   "text": "methods section of the exam but actually very very important for for example equities as well when we tend to assume",
+   "label": "0:14"
+  },
+  {
+   "start": 22.0,
+   "dur": 7.0,
+   "text": "a certain uh flow of future payments in the form of dividends for example so if this is something you want to get right",
+   "label": "0:22"
+  },
+  {
+   "start": 29.0,
+   "dur": 8.0,
+   "text": "in the exam do keep watching and let's get solving so this is the question which I want us to have a go at given a discount rate of",
+   "label": "0:29"
+  },
+  {
+   "start": 37.0,
+   "dur": 8.0,
+   "text": "seven percent the present value of an investment promising to pay 200 euro per year into perpetuity so forever with the",
+   "label": "0:37"
+  },
+  {
+   "start": 45.0,
+   "dur": 8.0,
+   "text": "first payment to be received in three years time is closest to and free options followed okay so let me draw a",
+   "label": "0:45"
+  },
+  {
+   "start": 53.0,
+   "dur": 10.0,
+   "text": "timeline so that we can graphically portray what's going on here um time one sorry Time Zero today end of",
+   "label": "0:53"
+  },
+  {
+   "start": 63.0,
+   "dur": 7.0,
+   "text": "year one end of year two end of year three end of year four and so on and what this question suggests is that",
+   "label": "1:03"
+  },
+  {
+   "start": 70.0,
+   "dur": 8.0,
+   "text": "starting in front in three years time we're going to be receiving um equal payments of 200 per year",
+   "label": "1:10"
+  },
+  {
+   "start": 78.0,
+   "dur": 7.0,
+   "text": "forever into perpetuity and we're asked for the PV",
+   "label": "1:18"
+  },
+  {
+   "start": 85.0,
+   "dur": 6.0,
+   "text": "over here at Time Zero so today so what's going to be our",
+   "label": "1:25"
+  },
+  {
+   "start": 91.0,
+   "dur": 9.0,
+   "text": "formula well the PV of a level set of cash flows is going to be the value of that cash",
+   "label": "1:31"
+  },
+  {
+   "start": 100.0,
+   "dur": 9.0,
+   "text": "flow CF divided by R which is the discount rate however the problem with this is",
+   "label": "1:40"
+  },
+  {
+   "start": 109.0,
+   "dur": 7.0,
+   "text": "it's going to be computed just like with almost every formula that you saw before or you know with what your calculator",
+   "label": "1:49"
+  },
+  {
+   "start": 116.0,
+   "dur": 9.0,
+   "text": "assumes when you type in this or when you compute this it's going to assume that you are standing over here so you",
+   "label": "1:56"
+  },
+  {
+   "start": 125.0,
+   "dur": 7.0,
+   "text": "are one period away from the first of these cash flows so whatever result we get",
+   "label": "2:05"
+  },
+  {
+   "start": 132.0,
+   "dur": 8.0,
+   "text": "we're going to have to perform a little bit of discounting because this is going to give us the PV at time two",
+   "label": "2:12"
+  },
+  {
+   "start": 140.0,
+   "dur": 9.0,
+   "text": "of the cash flows starting in Period three so in order to compute the PV at Time Zero we're going to perform some",
+   "label": "2:20"
+  },
+  {
+   "start": 149.0,
+   "dur": 10.0,
+   "text": "discounting back to time 0 but it's going to be over a period of two years right let's get the data in so the PV",
+   "label": "2:29"
+  },
+  {
+   "start": 159.0,
+   "dur": 8.0,
+   "text": "at time 2 is basically 200 divided by just R not 1 plus r just R so that's",
+   "label": "2:39"
+  },
+  {
+   "start": 167.0,
+   "dur": 10.0,
+   "text": "going to be in the example seven percent so 0.07 and let's see what that is 200 divided",
+   "label": "2:47"
+  },
+  {
+   "start": 177.0,
+   "dur": 8.0,
+   "text": "by 0.07 okay that's 2857.14 okay as you can see this is one",
+   "label": "2:57"
+  },
+  {
+   "start": 185.0,
+   "dur": 9.0,
+   "text": "of the answers but it's not the correct answer to the question that would be the PV at time two and uh we need to Discount this back to time zero so",
+   "label": "3:05"
+  },
+  {
+   "start": 194.0,
+   "dur": 9.0,
+   "text": "divide by a factor of 1.07 so that's basically the one plus the interest rate to the power of two on my calculator",
+   "label": "3:14"
+  },
+  {
+   "start": 203.0,
+   "dur": 8.0,
+   "text": "divide by 1.07 and now you can easily just raise this to the power of 2 by pressing the X",
+   "label": "3:23"
+  },
+  {
+   "start": 211.0,
+   "dur": 6.0,
+   "text": "squared key this obviously assumes you've got your calculator to set out a setup to handle",
+   "label": "3:31"
+  },
+  {
+   "start": 217.0,
+   "dur": 7.0,
+   "text": "such problems using the ALS method instead of the chain if you don't please",
+   "label": "3:37"
+  },
+  {
+   "start": 224.0,
+   "dur": 9.0,
+   "text": "go to the video on formatting your Texas Instruments calculator which is included in the links section in the description of the",
+   "label": "3:44"
+  },
+  {
+   "start": 233.0,
+   "dur": 6.0,
+   "text": "video I press equals and I get 2 400.",
+   "label": "3:53"
+  },
+  {
+   "start": 239.0,
+   "dur": null,
+   "text": "and 96 at least roughly this number and this naturally corresponds to answer C",
+   "label": "3:59"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:50:31+00:00"
+}

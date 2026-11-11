@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam) — Transcript | YouSNR</title>
+<meta name="description" content="in this video we&#x27;re going to go through yet another TVM time value of money problem um in a CFA level one exam style question we&#x27;re going to be computing f…">
+<link rel="canonical" href="https://yousnr.com/FPfHQDpoEO0/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam) — Transcript">
+<meta property="og:description" content="in this video we&#x27;re going to go through yet another TVM time value of money problem um in a CFA level one exam style question we&#x27;re going to be computing f…">
+<meta property="og:image" content="https://i.ytimg.com/vi/FPfHQDpoEO0/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/FPfHQDpoEO0/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam)</h1>
+      <div class="meta">Let me explain<span class="pub"> · Jan 17, 2023</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=FPfHQDpoEO0" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 5 words corrected</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool " id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: Introduction to TVM</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Understanding the problem</span><span class="ts">0:33</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Identifying calculator inputs</span><span class="ts">1:52</span></a><a class="chap" href="#ch3" data-ch="3"><span class="ct">Chapter 4: Solving for future value</span><span class="ts">3:30</span></a><a class="chap" href="#ch4" data-ch="4"><span class="ct">Chapter 5: Alternative solution method</span><span class="ts">5:03</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: Introduction to TVM</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="8.0"><span class="ts">0:00</span><span class="tx">in this video we&#x27;re going to go through yet another TVM time value of money problem um in a CFA level one exam style</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=8s" target="_blank" rel="noopener" data-s="8.0" data-d="8.0"><span class="ts">0:08</span><span class="tx">question we&#x27;re going to be computing future value well in a previous video or in a couple of previous videos I have</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=16s" target="_blank" rel="noopener" data-s="16.0" data-d="9.0"><span class="ts">0:16</span><span class="tx">already done some computations of FV but this is going to be the most complex one where you have to do a bit of thinking to get your inputs right into the TVM</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=25s" target="_blank" rel="noopener" data-s="25.0" data-d="8.0"><span class="ts">0:25</span><span class="tx">worksheet on the calculator so if this is something you want to be ready for in the exam and get right keep watching and let&#x27;s get solving</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Understanding the problem</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=33s" target="_blank" rel="noopener" data-s="33.0" data-d="7.0"><span class="ts">0:33</span><span class="tx">so this is the question which I want us to have a go at Jeremy Fallows plans to invest <span class="fix" data-o="10 000" title="YouTube: 10 000">10,000</span> per year in a fund</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=40s" target="_blank" rel="noopener" data-s="40.0" data-d="7.0"><span class="ts">0:40</span><span class="tx">projected to earn <span class="fix" data-o="four percent" title="YouTube: four percent">4%</span> per annum Fallows wants to make the first investment in one year&#x27;s time and the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=47s" target="_blank" rel="noopener" data-s="47.0" data-d="9.0"><span class="ts">0:47</span><span class="tx">last investment in three years time the amount fellows should expect to pay out of the fund at the end of the fourth year is closest to now this is naturally</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=56s" target="_blank" rel="noopener" data-s="56.0" data-d="8.0"><span class="ts">0:56</span><span class="tx">a problem um of finding every future value however using the time value of money worksheet</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=64s" target="_blank" rel="noopener" data-s="64.0" data-d="8.0"><span class="ts">1:04</span><span class="tx">you&#x27;re going to have to play around and think about how to do it logically so as to get the inputs right so what I&#x27;m</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=72s" target="_blank" rel="noopener" data-s="72.0" data-d="8.0"><span class="ts">1:12</span><span class="tx">doing is drawing my timeline over here Time Zero end of year one end of year two end of year three and this is end of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=80s" target="_blank" rel="noopener" data-s="80.0" data-d="8.0"><span class="ts">1:20</span><span class="tx">year four where he um where generally Jeremy sorry follows wants to be paying out a sales amount in the future over</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=88s" target="_blank" rel="noopener" data-s="88.0" data-d="7.0"><span class="ts">1:28</span><span class="tx">here and that&#x27;s what we&#x27;re looking for how much will he have in the account at the end of year four in a convention that I&#x27;ve been applying</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=95s" target="_blank" rel="noopener" data-s="95.0" data-d="8.0"><span class="ts">1:35</span><span class="tx">to the other problems in this TVM series I&#x27;m going to make this a positive figure</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=103s" target="_blank" rel="noopener" data-s="103.0" data-d="9.0"><span class="ts">1:43</span><span class="tx">so in order to um figure out how much this is going to be we&#x27;re going to use the info on the Investments he&#x27;s going to be making for</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Identifying calculator inputs</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=112s" target="_blank" rel="noopener" data-s="112.0" data-d="9.0"><span class="ts">1:52</span><span class="tx">the next three years and I&#x27;m going to show these as downward pointing arrows and actually a series of negative 10</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=121s" target="_blank" rel="noopener" data-s="121.0" data-d="8.0"><span class="ts">2:01</span><span class="tx">thousands if this amount is supposed to be positive which he takes out in the end this these</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=129s" target="_blank" rel="noopener" data-s="129.0" data-d="8.0"><span class="ts">2:09</span><span class="tx">inputs are going to be into the account negative so uh 3 minus ten thousands now</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=137s" target="_blank" rel="noopener" data-s="137.0" data-d="7.0"><span class="ts">2:17</span><span class="tx">there is no information about the fact that he&#x27;s got anything in the account at the beginning so over here you know PV</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=144s" target="_blank" rel="noopener" data-s="144.0" data-d="9.0"><span class="ts">2:24</span><span class="tx">is zero and we are provided with a number for uh the rate of return so I over y on our</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=153s" target="_blank" rel="noopener" data-s="153.0" data-d="9.0"><span class="ts">2:33</span><span class="tx">calculator this is going to be 4. so let me use these inputs on the calculator um</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=162s" target="_blank" rel="noopener" data-s="162.0" data-d="9.0"><span class="ts">2:42</span><span class="tx">as we&#x27;ve got them here the one final one that I still haven&#x27;t got is the number of periods so that&#x27;s n equals three and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=171s" target="_blank" rel="noopener" data-s="171.0" data-d="9.0"><span class="ts">2:51</span><span class="tx">we&#x27;ll make a bit of a qualification to this because if you input 3 as your number of periods you&#x27;re going you&#x27;re going to get an answer which is over</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=180s" target="_blank" rel="noopener" data-s="180.0" data-d="6.0"><span class="ts">3:00</span><span class="tx">here on the timeline that will come to this in in a moment when we&#x27;re putting the inputs into the calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=186s" target="_blank" rel="noopener" data-s="186.0" data-d="10.0"><span class="ts">3:06</span><span class="tx">before we start using the TVM worksheet let&#x27;s clear it so that&#x27;s second FV good now we&#x27;re ready and look</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=196s" target="_blank" rel="noopener" data-s="196.0" data-d="7.0"><span class="ts">3:16</span><span class="tx">um if I&#x27;ve cleared the worksheet I don&#x27;t need to tell my calculator that PV <span class="fix" data-o="it&#x27;s" title="YouTube: it&#x27;s">is</span> 0 0 is going to be the default figure</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=203s" target="_blank" rel="noopener" data-s="203.0" data-d="7.0"><span class="ts">3:23</span><span class="tx">anyway so I&#x27;m going to have a 3 for n four</span></a>
+<h2 class="ch" id="ch3">Chapter 4: Solving for future value</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=210s" target="_blank" rel="noopener" data-s="210.0" data-d="7.0"><span class="ts">3:30</span><span class="tx">as in four percent for I over y I&#x27;m also going to have 10 000 but let&#x27;s make this negative by pressing plus</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=217s" target="_blank" rel="noopener" data-s="217.0" data-d="8.0"><span class="ts">3:37</span><span class="tx">minus um for the PMT and I&#x27;m asking the calculator to compute the FV so <span class="fix" data-o="cptfv" title="YouTube: cptfv">CPT FV</span></span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=225s" target="_blank" rel="noopener" data-s="225.0" data-d="8.0"><span class="ts">3:45</span><span class="tx">and as you can see it&#x27;s telling me that the relevant result is <span class="fix" data-o="thirty one thousand two hundred sixteen" title="YouTube: thirty one thousand two hundred sixteen">31,216</span> so CPT</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=233s" target="_blank" rel="noopener" data-s="233.0" data-d="7.0"><span class="ts">3:53</span><span class="tx">um FV I got a result of thirty one thousand two hundred sixteen the important thing</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=240s" target="_blank" rel="noopener" data-s="240.0" data-d="7.0"><span class="ts">4:00</span><span class="tx">to realize is because you&#x27;ve provided or we&#x27;ve provided an input for n equal to 3</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=247s" target="_blank" rel="noopener" data-s="247.0" data-d="7.0"><span class="ts">4:07</span><span class="tx">the FV being displayed here is the FV at the end of year three so that&#x27;s kind of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=254s" target="_blank" rel="noopener" data-s="254.0" data-d="9.0"><span class="ts">4:14</span><span class="tx">over here however the question asks for the FV at the end of the fourth year so we&#x27;ll need to roll this forward just by</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=263s" target="_blank" rel="noopener" data-s="263.0" data-d="8.0"><span class="ts">4:23</span><span class="tx">one period and we use the same interest rate which we used in the inputs for TVM so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=271s" target="_blank" rel="noopener" data-s="271.0" data-d="8.0"><span class="ts">4:31</span><span class="tx">four percent so I&#x27;m going to take this and multiply by 1.04 that&#x27;s taking it Forward just by</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=279s" target="_blank" rel="noopener" data-s="279.0" data-d="7.0"><span class="ts">4:39</span><span class="tx">one period times 1.04 equals 32</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=286s" target="_blank" rel="noopener" data-s="286.0" data-d="9.0"><span class="ts">4:46</span><span class="tx">465. okay and this um naturally is compatible with answer a to the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=295s" target="_blank" rel="noopener" data-s="295.0" data-d="8.0"><span class="ts">4:55</span><span class="tx">problem brilliant however because I do want you to feel really really comfortable with your uh with your calculator what I want</span></a>
+<h2 class="ch" id="ch4">Chapter 5: Alternative solution method</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=303s" target="_blank" rel="noopener" data-s="303.0" data-d="8.0"><span class="ts">5:03</span><span class="tx">to show you now is an alternative way of doing this what I could tell my calculator so let me write alternatively</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=311s" target="_blank" rel="noopener" data-s="311.0" data-d="7.0"><span class="ts">5:11</span><span class="tx">over here is that just changing one input n</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=318s" target="_blank" rel="noopener" data-s="318.0" data-d="7.0"><span class="ts">5:18</span><span class="tx">equals to 4 instead of three let&#x27;s see what would happen four for n</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=325s" target="_blank" rel="noopener" data-s="325.0" data-d="8.0"><span class="ts">5:25</span><span class="tx">and let&#x27;s recompute the FV so compute FV</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=333s" target="_blank" rel="noopener" data-s="333.0" data-d="9.0"><span class="ts">5:33</span><span class="tx">and now it displays forty two thousand four hundred and sixty five but what your calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=342s" target="_blank" rel="noopener" data-s="342.0" data-d="9.0"><span class="ts">5:42</span><span class="tx">assumes When You Tell It N equals to four n equals four sorry is that there is a series of not just three but one</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=351s" target="_blank" rel="noopener" data-s="351.0" data-d="6.0"><span class="ts">5:51</span><span class="tx">two three four payments of ten thousand</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=357s" target="_blank" rel="noopener" data-s="357.0" data-d="7.0"><span class="ts">5:57</span><span class="tx">each year and it spits out an FV whose location on the timeline is</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=364s" target="_blank" rel="noopener" data-s="364.0" data-d="8.0"><span class="ts">6:04</span><span class="tx">correct because this is an FV at the end of time four but assuming there is an additional fourth payment of 10 000</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=372s" target="_blank" rel="noopener" data-s="372.0" data-d="9.0"><span class="ts">6:12</span><span class="tx">which naturally is not the case in this question so what you could do is compute this rather than the other method but</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=381s" target="_blank" rel="noopener" data-s="381.0" data-d="9.0"><span class="ts">6:21</span><span class="tx">manually deduct the excess 10 000 the unnecessary 10 000 from over here which will obviously if</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=390s" target="_blank" rel="noopener" data-s="390.0" data-d="9.0"><span class="ts">6:30</span><span class="tx">this is 42 000 would get you to 32 465 which we know is the answer anyway that&#x27;s another way to work around the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=399s" target="_blank" rel="noopener" data-s="399.0" data-d="7.0"><span class="ts">6:39</span><span class="tx">problem which you should be also comfortable with because at the end of the day in the exam you really need to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=406s" target="_blank" rel="noopener" data-s="406.0" data-d="7.0"><span class="ts">6:46</span><span class="tx">understand the logic of the time value of money worksheet on your calculator so play around with these different methods</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=FPfHQDpoEO0&amp;t=413s" target="_blank" rel="noopener" data-s="413.0" data-d=""><span class="ts">6:53</span><span class="tx">and see that they give the same result</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/FPfHQDpoEO0')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=FPfHQDpoEO0&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('FPfHQDpoEO0.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('FPfHQDpoEO0.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>

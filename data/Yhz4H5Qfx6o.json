@@ -1,0 +1,316 @@
+{
+ "id": "Yhz4H5Qfx6o",
+ "title": "Time Value of Money (TVM) - computing PMT (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230116",
+ "description": "Time Value of Money (TVM) - computing PMT (for the CFA Level 1 exam) explores using the TVM worksheet on the Texas Instruments BA II Plus calculator to solve for the size of equal future withdrawals.\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction to problem"
+  },
+  {
+   "start": 24,
+   "title": "Chapter 2: Analyzing the scenario"
+  },
+  {
+   "start": 50,
+   "title": "Chapter 3: Setting up the timeline"
+  },
+  {
+   "start": 161,
+   "title": "Chapter 4: Calculating the result"
+  }
+ ],
+ "duration": 263,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "in this video I want to go through a more complicated TVM time value of money problem it's going to be about Computing",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 9.0,
+   "text": "future value when you've got a series of withdrawals which we're going to treat just like an annuity and if this is something you want to get right do keep",
+   "label": "0:08"
+  },
+  {
+   "start": 17.0,
+   "dur": 7.0,
+   "text": "watching and let's get solving so this is the question that I want us to have a go at Patrick Cox has just",
+   "label": "0:17"
+  },
+  {
+   "start": 24.0,
+   "dur": 9.0,
+   "text": "invested 30 000 in an account earning five percent per annum if the amount left in the account at the end of the sixth year is to equal 15 000 the value",
+   "label": "0:24"
+  },
+  {
+   "start": 33.0,
+   "dur": 10.0,
+   "text": "of the equal withdrawals which Cox may take out of the account at the end of the next six years is closest to okay",
+   "label": "0:33"
+  },
+  {
+   "start": 43.0,
+   "dur": 7.0,
+   "text": "let's draw a timeline to represent the cash flows associated with this problem because the critical",
+   "label": "0:43"
+  },
+  {
+   "start": 50.0,
+   "dur": 8.0,
+   "text": "thing here is obviously to get our head around or heads around you know when things happen so I've got uh time zero",
+   "label": "0:50"
+  },
+  {
+   "start": 58.0,
+   "dur": 7.0,
+   "text": "that's uh right now and I'm going to need right um my timeline to go all the way up to",
+   "label": "0:58"
+  },
+  {
+   "start": 65.0,
+   "dur": 9.0,
+   "text": "year six which is um when he wants to um be able to withdraw or take out fifteen",
+   "label": "1:05"
+  },
+  {
+   "start": 74.0,
+   "dur": 8.0,
+   "text": "thousand over here and I'm representing what he'll be taking out um as",
+   "label": "1:14"
+  },
+  {
+   "start": 82.0,
+   "dur": 8.0,
+   "text": "15 as something positive so this is the amount left and I'm going to treat this as basically",
+   "label": "1:22"
+  },
+  {
+   "start": 90.0,
+   "dur": 9.0,
+   "text": "our future value at time six and the question is all about what is the value of the equal withdrawals that he'll be",
+   "label": "1:30"
+  },
+  {
+   "start": 99.0,
+   "dur": 8.0,
+   "text": "able to take out over the course of the next six years so this is how much will be left but what's",
+   "label": "1:39"
+  },
+  {
+   "start": 107.0,
+   "dur": 7.0,
+   "text": "this how much will he be able to um take out of the account and that's going to be",
+   "label": "1:47"
+  },
+  {
+   "start": 114.0,
+   "dur": 8.0,
+   "text": "obviously PMT on the calculator and that's the thing we're going to have to calculate now for the other inputs PV is",
+   "label": "1:54"
+  },
+  {
+   "start": 122.0,
+   "dur": 7.0,
+   "text": "going to be over here 30 000 so at Time Zero we've got an FV at time six we've got",
+   "label": "2:02"
+  },
+  {
+   "start": 129.0,
+   "dur": 8.0,
+   "text": "pmts now please note that this question does say the value of the equal withdrawals which Cox may take out of the account at the end of the next six",
+   "label": "2:09"
+  },
+  {
+   "start": 137.0,
+   "dur": 9.0,
+   "text": "years so including that outflow over here and that's the amount left after it one more input which we need is the",
+   "label": "2:17"
+  },
+  {
+   "start": 146.0,
+   "dur": 7.0,
+   "text": "interest rate or uh the rate of return for the account that's going to be our I over Y which is",
+   "label": "2:26"
+  },
+  {
+   "start": 153.0,
+   "dur": 8.0,
+   "text": "five percent so simply 5 as the input on the calculator let's go to the TVM worksheet on the",
+   "label": "2:33"
+  },
+  {
+   "start": 161.0,
+   "dur": 7.0,
+   "text": "calculator to get this computed because we're going to work with the time value of money worksheet I suggest we clear it",
+   "label": "2:41"
+  },
+  {
+   "start": 168.0,
+   "dur": 10.0,
+   "text": "first so second FV which has cleared my value of money as its secondary function and now you know in any really order we",
+   "label": "2:48"
+  },
+  {
+   "start": 178.0,
+   "dur": 9.0,
+   "text": "can input these numbers just one additional note remember that when you're working with PV and FD and PMT",
+   "label": "2:58"
+  },
+  {
+   "start": 187.0,
+   "dur": 9.0,
+   "text": "make sure to distinguish between the inflows and outflows so I'm going to make this PV a negative figure so let me",
+   "label": "3:07"
+  },
+  {
+   "start": 196.0,
+   "dur": 7.0,
+   "text": "do this straight away thirty thousand followed by the plus minus key and now PV uh",
+   "label": "3:16"
+  },
+  {
+   "start": 203.0,
+   "dur": 8.0,
+   "text": "and I'm going to have all the withdrawals from the account and the amount left in it as positive numbers",
+   "label": "3:23"
+  },
+  {
+   "start": 211.0,
+   "dur": 7.0,
+   "text": "you could do it the other way around but I find this more intuitive and I'm used to this method five is going to be my I",
+   "label": "3:31"
+  },
+  {
+   "start": 218.0,
+   "dur": 10.0,
+   "text": "over y the number of periods I hadn't previously say this so n is going to equal to 6 and it's going to equal 6. so",
+   "label": "3:38"
+  },
+  {
+   "start": 228.0,
+   "dur": 8.0,
+   "text": "6 for n the PMT is what we're looking for 15 000 is our input for ever V",
+   "label": "3:48"
+  },
+  {
+   "start": 236.0,
+   "dur": 10.0,
+   "text": "and we're getting the calculator to compute so CPT uh the PMT",
+   "label": "3:56"
+  },
+  {
+   "start": 246.0,
+   "dur": 9.0,
+   "text": "okay and I can see that the result comes out as 3700 and 5 and looking at the possible",
+   "label": "4:06"
+  },
+  {
+   "start": 255.0,
+   "dur": null,
+   "text": "answers to the question this seems to correspond with um answer a",
+   "label": "4:15"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:52:24+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:52:26",
+  "lines": {
+   "15": [
+    [
+     "going to be over here",
+     null
+    ],
+    [
+     "30,000",
+     "30 000"
+    ],
+    [
+     "so at Time Zero we've got an FV at time six we've got",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "can input these numbers just one additional note remember that when you're working with PV",
+     null
+    ],
+    [
+     "NFD",
+     "and FD"
+    ],
+    [
+     "and PMT",
+     null
+    ]
+   ]
+  },
+  "fixes": 2,
+  "checked_seconds": 67.8,
+  "usd": 0.0099,
+  "version": 3,
+  "flagged": [
+   [
+    "0:17",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:33",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:54",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:02",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:09",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "2:48",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:58",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

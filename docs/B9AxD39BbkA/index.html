@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam) — Transcript | YouSNR</title>
+<meta name="description" content="in this video I want to walk you through acfa level 1 exam style question on the time value of money this is yet another in the sequence of TVM questions a…">
+<link rel="canonical" href="https://yousnr.com/B9AxD39BbkA/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam) — Transcript">
+<meta property="og:description" content="in this video I want to walk you through acfa level 1 exam style question on the time value of money this is yet another in the sequence of TVM questions a…">
+<meta property="og:image" content="https://i.ytimg.com/vi/B9AxD39BbkA/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/B9AxD39BbkA/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam)</h1>
+      <div class="meta">Let me explain<span class="pub"> · Jan 15, 2023</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=B9AxD39BbkA" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 22 words corrected</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool " id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: Introduction</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Problem analysis</span><span class="ts">0:23</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Manual present value method</span><span class="ts">1:09</span></a><a class="chap" href="#ch3" data-ch="3"><span class="ct">Chapter 4: Cash flow worksheet method</span><span class="ts">4:48</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: Introduction</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="7.0"><span class="ts">0:00</span><span class="tx">in this video I want to walk you through acfa level 1 exam style question on the time value of money this is yet another</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=7s" target="_blank" rel="noopener" data-s="7.0" data-d="9.0"><span class="ts">0:07</span><span class="tx">in the sequence of TVM questions and problems this time we&#x27;re going to be dealing with unequal cash flows so if</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=16s" target="_blank" rel="noopener" data-s="16.0" data-d="7.0"><span class="ts">0:16</span><span class="tx">this is something you want to get right in the exam do keep watching let&#x27;s get solving an investment is projected to generate</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Problem analysis</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=23s" target="_blank" rel="noopener" data-s="23.0" data-d="7.0"><span class="ts">0:23</span><span class="tx">the following cash flow stream each cash flow is assumed to occur at the end of the relevant year so you&#x27;ve got the cash</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=30s" target="_blank" rel="noopener" data-s="30.0" data-d="7.0"><span class="ts">0:30</span><span class="tx">flows including one negative cash flow there and is subsequently expected to be sold for</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=37s" target="_blank" rel="noopener" data-s="37.0" data-d="8.0"><span class="ts">0:37</span><span class="tx"><span class="fix" data-o="190 000" title="YouTube: 190 000">expected to be sold for 190,000</span> at the end of the fourth year so that&#x27;s our final cash flow there if the relevant discount rate is <span class="fix" data-o="six percent" title="YouTube: six percent">6%</span> the investment&#x27;s present value is</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=45s" target="_blank" rel="noopener" data-s="45.0" data-d="8.0"><span class="ts">0:45</span><span class="tx">closest to so this is another PV problem but this time uh we can&#x27;t use uh the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=53s" target="_blank" rel="noopener" data-s="53.0" data-d="7.0"><span class="ts">0:53</span><span class="tx">classic time value of money worksheet with the pmts for example because that only works when you&#x27;ve got equal level</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=60s" target="_blank" rel="noopener" data-s="60.0" data-d="9.0"><span class="ts">1:00</span><span class="tx">cash flows which would form an annuity so can&#x27;t use the TVM worksheet what can we do instead well we can compute the PV</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Manual present value method</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=69s" target="_blank" rel="noopener" data-s="69.0" data-d="8.0"><span class="ts">1:09</span><span class="tx">using our calculator um and doing it relatively quickly by just inputting a value so let me show</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=77s" target="_blank" rel="noopener" data-s="77.0" data-d="9.0"><span class="ts">1:17</span><span class="tx">you what I would do in the exam and then I&#x27;ll show you an alternative way uh using the cash flow worksheet or the cash flow menu but that&#x27;s an alternative</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=86s" target="_blank" rel="noopener" data-s="86.0" data-d="9.0"><span class="ts">1:26</span><span class="tx">approach so what I could do is say PV equals and now I&#x27;m going to take each one of these cash flows so the first one</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=95s" target="_blank" rel="noopener" data-s="95.0" data-d="9.0"><span class="ts">1:35</span><span class="tx">is <span class="fix" data-o="ten thousand" title="YouTube: ten thousand">10,000</span> because it&#x27;s one year away from today I&#x27;ll divide it by 1.0 now the interest rate here is six</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=104s" target="_blank" rel="noopener" data-s="104.0" data-d="6.0"><span class="ts">1:44</span><span class="tx">percent so 1.06 don&#x27;t necessarily need the bracket to be honest just using it</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=110s" target="_blank" rel="noopener" data-s="110.0" data-d="8.0"><span class="ts">1:50</span><span class="tx">to make things a little bit neater now the second one is a negative cash flow so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=118s" target="_blank" rel="noopener" data-s="118.0" data-d="6.0"><span class="ts">1:58</span><span class="tx">8 000 but divided by 1.06 to the power of 2 seeing as it is two years away from</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=124s" target="_blank" rel="noopener" data-s="124.0" data-d="8.0"><span class="ts">2:04</span><span class="tx">today now the third one is positive so <span class="fix" data-o="twelve thousand" title="YouTube: twelve thousand">12,000</span> divided by 1.06 to the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=132s" target="_blank" rel="noopener" data-s="132.0" data-d="7.0"><span class="ts">2:12</span><span class="tx">power of three and obviously the fourth one would be <span class="fix" data-o="one hundred and ninety thousand" title="YouTube: one hundred and ninety thousand">190,000</span> which I&#x27;m going to divide by a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=139s" target="_blank" rel="noopener" data-s="139.0" data-d="7.0"><span class="ts">2:19</span><span class="tx">factor of 1.06 to the power of four and if I press equals this should give me</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=146s" target="_blank" rel="noopener" data-s="146.0" data-d="8.0"><span class="ts">2:26</span><span class="tx">the right result so let&#x27;s see what this um will yield on the calculator okay let&#x27;s do it if you&#x27;ve got your</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=154s" target="_blank" rel="noopener" data-s="154.0" data-d="7.0"><span class="ts">2:34</span><span class="tx">calculator set up to algebraic operating system instead of the chain method that&#x27;s going to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=161s" target="_blank" rel="noopener" data-s="161.0" data-d="8.0"><span class="ts">2:41</span><span class="tx">basically be quite easy if you haven&#x27;t you need to First format your calculator in accordance with the hints or</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=169s" target="_blank" rel="noopener" data-s="169.0" data-d="7.0"><span class="ts">2:49</span><span class="tx">instructions provided in the relevant video I&#x27;ve included a link to this in the description of this recording so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=176s" target="_blank" rel="noopener" data-s="176.0" data-d="8.0"><span class="ts">2:56</span><span class="tx">let&#x27;s go <span class="fix" data-o="10 000" title="YouTube: 10 000">10,000</span> divided by 1.06 okay I&#x27;ve got a plus and a minus here so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=184s" target="_blank" rel="noopener" data-s="184.0" data-d="8.0"><span class="ts">3:04</span><span class="tx">I&#x27;m just going to do minus 8000 divided by 1.06 press the x squared key to raise</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=192s" target="_blank" rel="noopener" data-s="192.0" data-d="13.0"><span class="ts">3:12</span><span class="tx">this to the power of two plus <span class="fix" data-o="twelve thousand" title="YouTube: twelve thousand">12,000</span> divided by 1.06 now y to the power of X key and the power 3.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=205s" target="_blank" rel="noopener" data-s="205.0" data-d="4.0"><span class="ts">3:25</span><span class="tx">plus <span class="fix" data-o="190 000." title="YouTube: 190 000.">190,000.</span></span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=209s" target="_blank" rel="noopener" data-s="209.0" data-d="10.0"><span class="ts">3:29</span><span class="tx">okay divided by 1.06 y to the power of X key and the power is 4 equals and I&#x27;ve</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=219s" target="_blank" rel="noopener" data-s="219.0" data-d="8.0"><span class="ts">3:39</span><span class="tx">got an answer of <span class="fix" data-o="one six two eight eight seven" title="YouTube: one six two eight eight seven">162,887</span> I didn&#x27;t need to use any sophisticated functions I just</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=227s" target="_blank" rel="noopener" data-s="227.0" data-d="7.0"><span class="ts">3:47</span><span class="tx">made sure that I input everything um precisely and I didn&#x27;t have to worry</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=234s" target="_blank" rel="noopener" data-s="234.0" data-d="7.0"><span class="ts">3:54</span><span class="tx">about the order in which I input because my calculator is set up to do power</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=241s" target="_blank" rel="noopener" data-s="241.0" data-d="8.0"><span class="ts">4:01</span><span class="tx">ahead of division or multiplication for example and to do this ahead of additional deduction so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=249s" target="_blank" rel="noopener" data-s="249.0" data-d="8.0"><span class="ts">4:09</span><span class="tx">um if your calculator is in AOS mode that helps greatly to get answers and results like this now this I can see</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=257s" target="_blank" rel="noopener" data-s="257.0" data-d="7.0"><span class="ts">4:17</span><span class="tx">corresponds very nicely to you know if we look at the answers to answer B so we</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=264s" target="_blank" rel="noopener" data-s="264.0" data-d="7.0"><span class="ts">4:24</span><span class="tx">know that the answer to the question is be already but I now want to show you an alternative way of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=271s" target="_blank" rel="noopener" data-s="271.0" data-d="9.0"><span class="ts">4:31</span><span class="tx">um doing the same computation this works but it&#x27;s uh potentially um easy to get this wrong if you you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=280s" target="_blank" rel="noopener" data-s="280.0" data-d="8.0"><span class="ts">4:40</span><span class="tx">know if you don&#x27;t get your inputs right which is absolutely possible under exam conditions so</span></a>
+<h2 class="ch" id="ch3">Chapter 4: Cash flow worksheet method</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=288s" target="_blank" rel="noopener" data-s="288.0" data-d="8.0"><span class="ts">4:48</span><span class="tx">let&#x27;s explore getting to the same answer but using an important function of your calculator so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=296s" target="_blank" rel="noopener" data-s="296.0" data-d="8.0"><span class="ts">4:56</span><span class="tx">that&#x27;s the CF worksheet and you go to this worksheet by pressing the CF</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=304s" target="_blank" rel="noopener" data-s="304.0" data-d="8.0"><span class="ts">5:04</span><span class="tx">key which is sitting right next door to the second key so let&#x27;s press CF <span class="fix" data-o="" title="YouTube&#x27;s transcript leaves this out">And</span> as you can see I&#x27;ve got something there already</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=312s" target="_blank" rel="noopener" data-s="312.0" data-d="9.0"><span class="ts">5:12</span><span class="tx">I guess from a previous question that I was doing and the first thing you want to be able to do is potentially just clear this worksheet so in order to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=321s" target="_blank" rel="noopener" data-s="321.0" data-d="10.0"><span class="ts">5:21</span><span class="tx">clear it of any data which may be sitting there press second followed by the c e c key which is at the very</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=331s" target="_blank" rel="noopener" data-s="331.0" data-d="8.0"><span class="ts">5:31</span><span class="tx">bottom of your calculator keys on the <span class="fix" data-o="left hand" title="YouTube: left hand">left-hand</span> side and it&#x27;s got clear work as its secondary function and this key</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=339s" target="_blank" rel="noopener" data-s="339.0" data-d="7.0"><span class="ts">5:39</span><span class="tx">will work to clear whatever worksheet you&#x27;re currently in but you&#x27;ve got to be in the worksheet which is why I pressed</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=346s" target="_blank" rel="noopener" data-s="346.0" data-d="7.0"><span class="ts">5:46</span><span class="tx">CF first for it to work and to clear stuff data which is stored under the relevant headings there as you can see</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=353s" target="_blank" rel="noopener" data-s="353.0" data-d="10.0"><span class="ts">5:53</span><span class="tx">cf0 all of a sudden became equal to zero so it was effectively cleared it&#x27;s only the TVM worksheet which has</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=363s" target="_blank" rel="noopener" data-s="363.0" data-d="7.0"><span class="ts">6:03</span><span class="tx">its own dedicated clearing function which is the secondary function of the FV key which says clear TVM the other</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=370s" target="_blank" rel="noopener" data-s="370.0" data-d="8.0"><span class="ts">6:10</span><span class="tx">worksheets on your calculator need to be cleared when you are specifically in them like here in the CF okay now you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=378s" target="_blank" rel="noopener" data-s="378.0" data-d="8.0"><span class="ts">6:18</span><span class="tx">need to provide the calculator with the inputs we&#x27;re not looking sorry we&#x27;re we can&#x27;t provide the calculator with an input for <span class="fix" data-o="f c of 0" title="YouTube: f c of 0">CF0</span> which is the cash</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=386s" target="_blank" rel="noopener" data-s="386.0" data-d="9.0"><span class="ts">6:26</span><span class="tx">flow at time uh zero which is essentially going to be our time value of um our present value sorry the of the of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=395s" target="_blank" rel="noopener" data-s="395.0" data-d="8.0"><span class="ts">6:35</span><span class="tx">the whole project there&#x27;s nothing happening at Time Zero use the down arrow</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=403s" target="_blank" rel="noopener" data-s="403.0" data-d="7.0"><span class="ts">6:43</span><span class="tx">pressed once to get to something which reads c01 so that&#x27;s the cash flow at</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=410s" target="_blank" rel="noopener" data-s="410.0" data-d="10.0"><span class="ts">6:50</span><span class="tx">time one and now make this equal to <span class="fix" data-o="ten thousand" title="YouTube: ten thousand">10,000</span> because that&#x27;s our time one cash <span class="fix" data-o="info" title="YouTube: info">inflow</span> so I&#x27;m doing simply</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=420s" target="_blank" rel="noopener" data-s="420.0" data-d="6.0"><span class="ts">7:00</span><span class="tx"><span class="fix" data-o="ten thousand" title="YouTube: ten thousand">10,000</span> but very critically followed by the enter key</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=426s" target="_blank" rel="noopener" data-s="426.0" data-d="8.0"><span class="ts">7:06</span><span class="tx">so you need to press enter for the equal sign to appear over here which means your calculator has accepted the info</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=434s" target="_blank" rel="noopener" data-s="434.0" data-d="8.0"><span class="ts">7:14</span><span class="tx">input if you don&#x27;t press enter it will be ignored it will not be stored now press the second sorry the down arrow</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=442s" target="_blank" rel="noopener" data-s="442.0" data-d="9.0"><span class="ts">7:22</span><span class="tx">again and you can see f01 this stands for the frequency of this cash flow so if it happens you know for more than one</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=451s" target="_blank" rel="noopener" data-s="451.0" data-d="8.0"><span class="ts">7:31</span><span class="tx">year in a row you could potentially say well two years three years or something like this by default it&#x27;s set at one and that&#x27;s what we&#x27;re going to use we&#x27;re not</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=459s" target="_blank" rel="noopener" data-s="459.0" data-d="10.0"><span class="ts">7:39</span><span class="tx">going to change this and I&#x27;m going to press that down arrow again and as you can see we are displayed we we see a C02</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=469s" target="_blank" rel="noopener" data-s="469.0" data-d="7.0"><span class="ts">7:49</span><span class="tx">displayed over here and we&#x27;ll want to make this equal to <span class="fix" data-o="8 000" title="YouTube: 8 000">8,000</span> but negative so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=476s" target="_blank" rel="noopener" data-s="476.0" data-d="8.0"><span class="ts">7:56</span><span class="tx"><span class="fix" data-o="eight thousand" title="YouTube: eight thousand">8,000</span> follow this up with the <span class="fix" data-o="plus minus" title="YouTube: plus minus">plus/minus</span> key to turn this into a negative figure but once again <span class="fix" data-o="finishing" title="YouTube: finishing">finish</span></span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=484s" target="_blank" rel="noopener" data-s="484.0" data-d="9.0"><span class="ts">8:04</span><span class="tx">with enter which puts an equal sign here good</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=493s" target="_blank" rel="noopener" data-s="493.0" data-d="9.0"><span class="ts">8:13</span><span class="tx">do the same thing as before so down arrow twice omitting the frequency just leaving it basically at one and this is going to be</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=502s" target="_blank" rel="noopener" data-s="502.0" data-d="9.0"><span class="ts">8:22</span><span class="tx">c03 um we need to make this <span class="fix" data-o="12 000" title="YouTube: 12 000">12,000</span> and uh follow this up by enter</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=511s" target="_blank" rel="noopener" data-s="511.0" data-d="8.0"><span class="ts">8:31</span><span class="tx">with enter and I kind of jumped the gun here because I I wrote equals well first of all you need to input the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=519s" target="_blank" rel="noopener" data-s="519.0" data-d="8.0"><span class="ts">8:39</span><span class="tx">value press enter and this makes the equals sign appear which is just confirmation of the fact that you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=527s" target="_blank" rel="noopener" data-s="527.0" data-d="9.0"><span class="ts">8:47</span><span class="tx">uh your calculator has stored the relevant input press the down arrows twice down arrow twice again we we are</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=536s" target="_blank" rel="noopener" data-s="536.0" data-d="8.0"><span class="ts">8:56</span><span class="tx">at c04 and we want to make this the big one <span class="fix" data-o="190 000" title="YouTube: 190 000">190,000</span> over here obviously follow this up</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=544s" target="_blank" rel="noopener" data-s="544.0" data-d="9.0"><span class="ts">9:04</span><span class="tx">with enter which will once again have the effect of presenting us with the equals key</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=553s" target="_blank" rel="noopener" data-s="553.0" data-d="7.0"><span class="ts">9:13</span><span class="tx">enter okay good the nice thing about the cash flow worksheet is you can review your inputs</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=560s" target="_blank" rel="noopener" data-s="560.0" data-d="9.0"><span class="ts">9:20</span><span class="tx">um so what you can go do sorry do is go up and down with the uh arrows I&#x27;m going to go up just to see whether my you know</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=569s" target="_blank" rel="noopener" data-s="569.0" data-d="8.0"><span class="ts">9:29</span><span class="tx">remake of previous inputs were entered correctly this was <span class="fix" data-o="12 000" title="YouTube: 12 000">12,000</span> this was minus eight okay we wanted the minus here</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=577s" target="_blank" rel="noopener" data-s="577.0" data-d="9.0"><span class="ts">9:37</span><span class="tx">that&#x27;s fine and this was ten thousand so everything seems to be right I&#x27;m happy with it the cash flow</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=586s" target="_blank" rel="noopener" data-s="586.0" data-d="6.0"><span class="ts">9:46</span><span class="tx">worksheet is simply a place to store the data but it doesn&#x27;t actually perform any</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=592s" target="_blank" rel="noopener" data-s="592.0" data-d="7.0"><span class="ts">9:52</span><span class="tx">computations yet in order to compute present value we need to go to the menu which is next</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=599s" target="_blank" rel="noopener" data-s="599.0" data-d="9.0"><span class="ts">9:59</span><span class="tx">door and that&#x27;s npv so once you&#x27;ve got these inputs go and press npv</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=608s" target="_blank" rel="noopener" data-s="608.0" data-d="7.0"><span class="ts">10:08</span><span class="tx">and over here it&#x27;s going to ask you for I which as you can probably guess is the rate of interest we want to make this</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=615s" target="_blank" rel="noopener" data-s="615.0" data-d="8.0"><span class="ts">10:15</span><span class="tx">equal to six so press six follow this up with enter</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=623s" target="_blank" rel="noopener" data-s="623.0" data-d="10.0"><span class="ts">10:23</span><span class="tx">and you guessed it it will have the effect of making I equal to 6. now go down with the down</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=633s" target="_blank" rel="noopener" data-s="633.0" data-d="7.0"><span class="ts">10:33</span><span class="tx">arrow and it says npv and at the top of the display it&#x27;s actually saying I&#x27;m ready</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=640s" target="_blank" rel="noopener" data-s="640.0" data-d="8.0"><span class="ts">10:40</span><span class="tx">to compute so it&#x27;s kind of prompting you simply to press the cptq key so press</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=648s" target="_blank" rel="noopener" data-s="648.0" data-d="7.0"><span class="ts">10:48</span><span class="tx">CPT compute and it says okay npv equals to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=655s" target="_blank" rel="noopener" data-s="655.0" data-d="7.0"><span class="ts">10:55</span><span class="tx">162 887 which is the same result as we had over here when we used the calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=662s" target="_blank" rel="noopener" data-s="662.0" data-d="10.0"><span class="ts">11:02</span><span class="tx">without any of its functions just typing the data and hoping that we don&#x27;t make any mistake so this is a more certain</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=672s" target="_blank" rel="noopener" data-s="672.0" data-d="8.0"><span class="ts">11:12</span><span class="tx">sure way of doing the same computation however it takes a much longer time to do</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=680s" target="_blank" rel="noopener" data-s="680.0" data-d="8.0"><span class="ts">11:20</span><span class="tx">nevertheless I guess there will be problems perhaps within the uh corporate issuers section of the exam when you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=B9AxD39BbkA&amp;t=688s" target="_blank" rel="noopener" data-s="688.0" data-d=""><span class="ts">11:28</span><span class="tx">need to use this worksheet so it&#x27;s a good as good a time as any to start using it and getting familiar with it</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/B9AxD39BbkA')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=B9AxD39BbkA&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('B9AxD39BbkA.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('B9AxD39BbkA.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>
