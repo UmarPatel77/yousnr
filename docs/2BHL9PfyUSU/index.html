@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formatting the Texas Instruments BA II Plus calculator for the CFA exam — Transcript | YouSNR</title>
+<meta name="description" content="in this video we&#x27;re going to go through the formatting changes which I recommend that you make to your Texas Instruments calculator so as to ensure that it…">
+<link rel="canonical" href="https://yousnr.com/2BHL9PfyUSU/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Formatting the Texas Instruments BA II Plus calculator for the CFA exam — Transcript">
+<meta property="og:description" content="in this video we&#x27;re going to go through the formatting changes which I recommend that you make to your Texas Instruments calculator so as to ensure that it…">
+<meta property="og:image" content="https://i.ytimg.com/vi/2BHL9PfyUSU/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/2BHL9PfyUSU/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Formatting the Texas Instruments BA II Plus calculator for the CFA exam</h1>
+      <div class="meta">Let me explain<span class="pub"> · Jul 7, 2022</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=2BHL9PfyUSU" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · double-checking words with speech recognition; reload in a few minutes for the corrected version</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool hidden" id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: Introduction to calculator</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Identifying default issues</span><span class="ts">0:42</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Accessing formatting menu</span><span class="ts">2:55</span></a><a class="chap" href="#ch3" data-ch="3"><span class="ct">Chapter 4: Changing decimal settings</span><span class="ts">4:26</span></a><a class="chap" href="#ch4" data-ch="4"><span class="ct">Chapter 5: Setting operation order</span><span class="ts">5:31</span></a><a class="chap" href="#ch5" data-ch="5"><span class="ct">Chapter 6: Verifying new settings</span><span class="ts">7:40</span></a><a class="chap" href="#ch6" data-ch="6"><span class="ct">Chapter 7: Resetting default settings</span><span class="ts">9:27</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: Introduction to calculator</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="8.0"><span class="ts">0:00</span><span class="tx">in this video we&#x27;re going to go through the formatting changes which I recommend that you make to your Texas Instruments</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=8s" target="_blank" rel="noopener" data-s="8.0" data-d="10.0"><span class="ts">0:08</span><span class="tx">calculator so as to ensure that it works and functions in the most efficient way with the CFA exam in mind</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=18s" target="_blank" rel="noopener" data-s="18.0" data-d="8.0"><span class="ts">0:18</span><span class="tx">many candidates are not even aware of the availability of the options that I&#x27;m going to present here which is a shame</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=26s" target="_blank" rel="noopener" data-s="26.0" data-d="6.0"><span class="ts">0:26</span><span class="tx">because they subsequently waste lots of time trying to get the calculator to do what they want</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=32s" target="_blank" rel="noopener" data-s="32.0" data-d="10.0"><span class="ts">0:32</span><span class="tx">so if this is something you want to avoid definitely keep watching so if this is your first encounter with</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Identifying default issues</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=42s" target="_blank" rel="noopener" data-s="42.0" data-d="8.0"><span class="ts">0:42</span><span class="tx">the Texas Instruments ba2 Plus or ba2 plus Professional Calculator you will note that it comes pre-programmed to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=50s" target="_blank" rel="noopener" data-s="50.0" data-d="7.0"><span class="ts">0:50</span><span class="tx">display two decimal places even when it is showing you something as simple as</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=57s" target="_blank" rel="noopener" data-s="57.0" data-d="9.0"><span class="ts">0:57</span><span class="tx">the number zero it still displays 0.00 what is more if you attempt to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=66s" target="_blank" rel="noopener" data-s="66.0" data-d="7.0"><span class="ts">1:06</span><span class="tx">perform a simple computation say 10 divided by 6.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=73s" target="_blank" rel="noopener" data-s="73.0" data-d="7.0"><span class="ts">1:13</span><span class="tx">you&#x27;ll get 1.67 a number which is rounded to two decimal places even</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=80s" target="_blank" rel="noopener" data-s="80.0" data-d="9.0"><span class="ts">1:20</span><span class="tx">though the result could be written out in more detail for many areas of the curriculum two decimal places are simply</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=89s" target="_blank" rel="noopener" data-s="89.0" data-d="8.0"><span class="ts">1:29</span><span class="tx">not going to be enough so what I suggest we do is change this setting to something more accurate</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=97s" target="_blank" rel="noopener" data-s="97.0" data-d="7.0"><span class="ts">1:37</span><span class="tx">before we actually do that I just want to ask you to perform a simple operation and that&#x27;s</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=104s" target="_blank" rel="noopener" data-s="104.0" data-d="9.0"><span class="ts">1:44</span><span class="tx">eight plus two times three it should be obvious that the answer</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=113s" target="_blank" rel="noopener" data-s="113.0" data-d="7.0"><span class="ts">1:53</span><span class="tx">ought to be 14. after all the rules of algebra require us to perform</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=120s" target="_blank" rel="noopener" data-s="120.0" data-d="7.0"><span class="ts">2:00</span><span class="tx">multiplication ahead of addition so first multiply two times three to get</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=127s" target="_blank" rel="noopener" data-s="127.0" data-d="7.0"><span class="ts">2:07</span><span class="tx">six and then add the eight however if you try to input the sequence into your</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=134s" target="_blank" rel="noopener" data-s="134.0" data-d="7.0"><span class="ts">2:14</span><span class="tx">calculator so 8 plus 2 times 3 and press</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=141s" target="_blank" rel="noopener" data-s="141.0" data-d="9.0"><span class="ts">2:21</span><span class="tx">the equals key you will most probably see the calculator displaying an answer of 30.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=150s" target="_blank" rel="noopener" data-s="150.0" data-d="7.0"><span class="ts">2:30</span><span class="tx">and the reason for this is that Texas Instruments machines come pre-programmed</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=157s" target="_blank" rel="noopener" data-s="157.0" data-d="10.0"><span class="ts">2:37</span><span class="tx">they are set up to handle operations in the order in which they are keyed in so they first at the eight and the two and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=167s" target="_blank" rel="noopener" data-s="167.0" data-d="8.0"><span class="ts">2:47</span><span class="tx">then multiply the result by three there is of course a way to change that if you want and I will show you now how</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Accessing formatting menu</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=175s" target="_blank" rel="noopener" data-s="175.0" data-d="7.0"><span class="ts">2:55</span><span class="tx">to adjust both the decimal place setting as well as the rule for handling a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=182s" target="_blank" rel="noopener" data-s="182.0" data-d="8.0"><span class="ts">3:02</span><span class="tx">sequence of operations if you look at your calculator you should note that most Keys have a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=190s" target="_blank" rel="noopener" data-s="190.0" data-d="9.0"><span class="ts">3:10</span><span class="tx">primary function that&#x27;s the one printed on the key itself as well as a secondary function which is printed directly above</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=199s" target="_blank" rel="noopener" data-s="199.0" data-d="10.0"><span class="ts">3:19</span><span class="tx">the key for example if you look at the very bottom row of keys you will find the decimal Mark or the dot printed on</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=209s" target="_blank" rel="noopener" data-s="209.0" data-d="7.0"><span class="ts">3:29</span><span class="tx">one of them and directly above the key you will see the where it format so</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=216s" target="_blank" rel="noopener" data-s="216.0" data-d="8.0"><span class="ts">3:36</span><span class="tx">Dot and format so in this case the decimal Mark is the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=224s" target="_blank" rel="noopener" data-s="224.0" data-d="8.0"><span class="ts">3:44</span><span class="tx">primary function but the key also has a secondary function which will allow us to change the calculators formatting</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=232s" target="_blank" rel="noopener" data-s="232.0" data-d="10.0"><span class="ts">3:52</span><span class="tx">conventions the way we activate this secondary function is by pressing the second key</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=242s" target="_blank" rel="noopener" data-s="242.0" data-d="7.0"><span class="ts">4:02</span><span class="tx">which is the leftmost key in the second row from the top followed by the decimal</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=249s" target="_blank" rel="noopener" data-s="249.0" data-d="9.0"><span class="ts">4:09</span><span class="tx">Mark which has formats as its secondary function now let me do this second followed by the decimal Mark at the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=258s" target="_blank" rel="noopener" data-s="258.0" data-d="8.0"><span class="ts">4:18</span><span class="tx">bottom and this gives us access to the formatting options of the calculator</span></a>
+<h2 class="ch" id="ch3">Chapter 4: Changing decimal settings</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=266s" target="_blank" rel="noopener" data-s="266.0" data-d="8.0"><span class="ts">4:26</span><span class="tx">the first thing you should see is the expression DEC equal to two which means that the number of decimal places</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=274s" target="_blank" rel="noopener" data-s="274.0" data-d="9.0"><span class="ts">4:34</span><span class="tx">displayed by the calculator is set to two the factory default my recommendation is that you change</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=283s" target="_blank" rel="noopener" data-s="283.0" data-d="8.0"><span class="ts">4:43</span><span class="tx">this setting to 9. so simply press 9</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=291s" target="_blank" rel="noopener" data-s="291.0" data-d="7.0"><span class="ts">4:51</span><span class="tx">and you should now see the term intern shown at the top of the display</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=298s" target="_blank" rel="noopener" data-s="298.0" data-d="9.0"><span class="ts">4:58</span><span class="tx">the calculator is basically asking you whether you want to confirm that input which you of course want to do so press</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=307s" target="_blank" rel="noopener" data-s="307.0" data-d="9.0"><span class="ts">5:07</span><span class="tx">the enter key and let me do that as well and the moment you press it you will</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=316s" target="_blank" rel="noopener" data-s="316.0" data-d="7.0"><span class="ts">5:16</span><span class="tx">find that you now have DEC equal to 9.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=323s" target="_blank" rel="noopener" data-s="323.0" data-d="8.0"><span class="ts">5:23</span><span class="tx">so the calculator has confirmed the input still within the formatting options</span></a>
+<h2 class="ch" id="ch4">Chapter 5: Setting operation order</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=331s" target="_blank" rel="noopener" data-s="331.0" data-d="7.0"><span class="ts">5:31</span><span class="tx">please locate the down arrow which you will find over here in the very top row</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=338s" target="_blank" rel="noopener" data-s="338.0" data-d="11.0"><span class="ts">5:38</span><span class="tx">of keys I want you to press the down arrow four times one two three four and as we do so we</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=349s" target="_blank" rel="noopener" data-s="349.0" data-d="9.0"><span class="ts">5:49</span><span class="tx">kind of bypass various settings like angle units date conventions or number separators which are simply going to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=358s" target="_blank" rel="noopener" data-s="358.0" data-d="8.0"><span class="ts">5:58</span><span class="tx">ignore as they are not relevant to the CFA exam but if you wish to you may of course explore these settings on your</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=366s" target="_blank" rel="noopener" data-s="366.0" data-d="7.0"><span class="ts">6:06</span><span class="tx">own anyway what you should see now on this screen after you have pressed the down arrow four times</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=373s" target="_blank" rel="noopener" data-s="373.0" data-d="9.0"><span class="ts">6:13</span><span class="tx">uh is the abbreviation chn which stands for chain calculation method this is the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=382s" target="_blank" rel="noopener" data-s="382.0" data-d="9.0"><span class="ts">6:22</span><span class="tx">default setting which tells the calculator to perform operations in the order they are entered</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=391s" target="_blank" rel="noopener" data-s="391.0" data-d="8.0"><span class="ts">6:31</span><span class="tx">like we saw before if you want to change this setting you will need to activate this set function and you should see the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=399s" target="_blank" rel="noopener" data-s="399.0" data-d="7.0"><span class="ts">6:39</span><span class="tx">word set written above the enter key which we have already used because set is a secondary</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=406s" target="_blank" rel="noopener" data-s="406.0" data-d="10.0"><span class="ts">6:46</span><span class="tx">function you gain access to it by pressing the second key followed by enter</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=416s" target="_blank" rel="noopener" data-s="416.0" data-d="9.0"><span class="ts">6:56</span><span class="tx">so let&#x27;s do this second answer and you should have noticed that the term</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=425s" target="_blank" rel="noopener" data-s="425.0" data-d="9.0"><span class="ts">7:05</span><span class="tx">chain or chn has been replaced by ALS AOS stands for algebraic operating</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=434s" target="_blank" rel="noopener" data-s="434.0" data-d="8.0"><span class="ts">7:14</span><span class="tx">system and with this setting your calculator will solve problems according to the standard rules of algebraic</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=442s" target="_blank" rel="noopener" data-s="442.0" data-d="9.0"><span class="ts">7:22</span><span class="tx">hierarchy so it will for example perform multiplication or division operations ahead of addition or subtraction which I</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=451s" target="_blank" rel="noopener" data-s="451.0" data-d="9.0"><span class="ts">7:31</span><span class="tx">believe you will find more convenience so let&#x27;s check whether these changes have in fact taken effect</span></a>
+<h2 class="ch" id="ch5">Chapter 6: Verifying new settings</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=460s" target="_blank" rel="noopener" data-s="460.0" data-d="8.0"><span class="ts">7:40</span><span class="tx">in order to exit the formatting options you need to activate the quit function and quit is the secondary function of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=468s" target="_blank" rel="noopener" data-s="468.0" data-d="9.0"><span class="ts">7:48</span><span class="tx">the CPT or compute key which you will find in the top left corner so press</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=477s" target="_blank" rel="noopener" data-s="477.0" data-d="8.0"><span class="ts">7:57</span><span class="tx">second followed by CPT and this gets you back in the standard</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=485s" target="_blank" rel="noopener" data-s="485.0" data-d="9.0"><span class="ts">8:05</span><span class="tx">calculator mode and already the difference should be noticeable you should now see just zero instead of 0.00</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=494s" target="_blank" rel="noopener" data-s="494.0" data-d="6.0"><span class="ts">8:14</span><span class="tx">and if you try to perform the same computation as before that&#x27;s 10 divided</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=500s" target="_blank" rel="noopener" data-s="500.0" data-d="10.0"><span class="ts">8:20</span><span class="tx">by 6 equals okay now you see the result is being 1.666 and so on basically the calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=510s" target="_blank" rel="noopener" data-s="510.0" data-d="8.0"><span class="ts">8:30</span><span class="tx">displays as many decimal places as it can physically fit in a maximum of 9 but</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=518s" target="_blank" rel="noopener" data-s="518.0" data-d="6.0"><span class="ts">8:38</span><span class="tx">only if those further decimal places are needed for example if you ask it to perform</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=524s" target="_blank" rel="noopener" data-s="524.0" data-d="8.0"><span class="ts">8:44</span><span class="tx">9.3 divided by three let&#x27;s try this equals it will just show you 3.1 without</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=532s" target="_blank" rel="noopener" data-s="532.0" data-d="9.0"><span class="ts">8:52</span><span class="tx">any unnecessary zeros let&#x27;s also check that the algebraic operating system setting has taken effect so I suggest</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=541s" target="_blank" rel="noopener" data-s="541.0" data-d="10.0"><span class="ts">9:01</span><span class="tx">that we repeat the same sequence of operations as before eight plus two times three</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=551s" target="_blank" rel="noopener" data-s="551.0" data-d="9.0"><span class="ts">9:11</span><span class="tx">equals and you should now see 14 the correct answer and not 30 as was the case before</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=560s" target="_blank" rel="noopener" data-s="560.0" data-d="7.0"><span class="ts">9:20</span><span class="tx">so hopefully these changes have worked on your calculator and you will find them convenient</span></a>
+<h2 class="ch" id="ch6">Chapter 7: Resetting default settings</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=567s" target="_blank" rel="noopener" data-s="567.0" data-d="8.0"><span class="ts">9:27</span><span class="tx">if you however ever want to go back to the default settings simply enter the formatting options by pressing second</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=575s" target="_blank" rel="noopener" data-s="575.0" data-d="6.0"><span class="ts">9:35</span><span class="tx">followed by the dot key and then second</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=581s" target="_blank" rel="noopener" data-s="581.0" data-d="8.0"><span class="ts">9:41</span><span class="tx">followed by the CE stroke c key which has</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=589s" target="_blank" rel="noopener" data-s="589.0" data-d="8.0"><span class="ts">9:49</span><span class="tx">CLR work so clear worksheet as its secondary function that key is in the bottom left hand corner of your</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=597s" target="_blank" rel="noopener" data-s="597.0" data-d="7.0"><span class="ts">9:57</span><span class="tx">calculator keys and as I said you will note that the secondary function of that key is something called clear work and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=604s" target="_blank" rel="noopener" data-s="604.0" data-d="7.0"><span class="ts">10:04</span><span class="tx">activating this function whilst in the formatting options restores the default</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=611s" target="_blank" rel="noopener" data-s="611.0" data-d="8.0"><span class="ts">10:11</span><span class="tx">factory settings such as two decimal places which you now see and if I press the down arrow four times we&#x27;re back to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=619s" target="_blank" rel="noopener" data-s="619.0" data-d="7.0"><span class="ts">10:19</span><span class="tx">the chain method of handling a sequence of operations I do however recommend that you go back to the settings which</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=626s" target="_blank" rel="noopener" data-s="626.0" data-d="7.0"><span class="ts">10:26</span><span class="tx">we chose that&#x27;s AOS here so do second followed by enter to activate set and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=2BHL9PfyUSU&amp;t=633s" target="_blank" rel="noopener" data-s="633.0" data-d=""><span class="ts">10:33</span><span class="tx">also make your decimal a number of decimal places displayed equal to 9.</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/2BHL9PfyUSU')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=2BHL9PfyUSU&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('2BHL9PfyUSU.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('2BHL9PfyUSU.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>

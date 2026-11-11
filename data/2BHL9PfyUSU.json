@@ -1,0 +1,523 @@
+{
+ "id": "2BHL9PfyUSU",
+ "title": "Formatting the Texas Instruments BA II Plus calculator for the CFA exam",
+ "channel": "Let me explain",
+ "published": "20220707",
+ "description": "Formatting the Texas Instruments BA II Plus calculator for the CFA exam walks you through the formatting changes which I recommend you make:\n- number of decimal places displayed, and\n- AOS setting instead of Chn\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction to calculator"
+  },
+  {
+   "start": 42,
+   "title": "Chapter 2: Identifying default issues"
+  },
+  {
+   "start": 175,
+   "title": "Chapter 3: Accessing formatting menu"
+  },
+  {
+   "start": 266,
+   "title": "Chapter 4: Changing decimal settings"
+  },
+  {
+   "start": 331,
+   "title": "Chapter 5: Setting operation order"
+  },
+  {
+   "start": 460,
+   "title": "Chapter 6: Verifying new settings"
+  },
+  {
+   "start": 567,
+   "title": "Chapter 7: Resetting default settings"
+  }
+ ],
+ "duration": 640,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "in this video we're going to go through the formatting changes which I recommend that you make to your Texas Instruments",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 10.0,
+   "text": "calculator so as to ensure that it works and functions in the most efficient way with the CFA exam in mind",
+   "label": "0:08"
+  },
+  {
+   "start": 18.0,
+   "dur": 8.0,
+   "text": "many candidates are not even aware of the availability of the options that I'm going to present here which is a shame",
+   "label": "0:18"
+  },
+  {
+   "start": 26.0,
+   "dur": 6.0,
+   "text": "because they subsequently waste lots of time trying to get the calculator to do what they want",
+   "label": "0:26"
+  },
+  {
+   "start": 32.0,
+   "dur": 10.0,
+   "text": "so if this is something you want to avoid definitely keep watching so if this is your first encounter with",
+   "label": "0:32"
+  },
+  {
+   "start": 42.0,
+   "dur": 8.0,
+   "text": "the Texas Instruments ba2 Plus or ba2 plus Professional Calculator you will note that it comes pre-programmed to",
+   "label": "0:42"
+  },
+  {
+   "start": 50.0,
+   "dur": 7.0,
+   "text": "display two decimal places even when it is showing you something as simple as",
+   "label": "0:50"
+  },
+  {
+   "start": 57.0,
+   "dur": 9.0,
+   "text": "the number zero it still displays 0.00 what is more if you attempt to",
+   "label": "0:57"
+  },
+  {
+   "start": 66.0,
+   "dur": 7.0,
+   "text": "perform a simple computation say 10 divided by 6.",
+   "label": "1:06"
+  },
+  {
+   "start": 73.0,
+   "dur": 7.0,
+   "text": "you'll get 1.67 a number which is rounded to two decimal places even",
+   "label": "1:13"
+  },
+  {
+   "start": 80.0,
+   "dur": 9.0,
+   "text": "though the result could be written out in more detail for many areas of the curriculum two decimal places are simply",
+   "label": "1:20"
+  },
+  {
+   "start": 89.0,
+   "dur": 8.0,
+   "text": "not going to be enough so what I suggest we do is change this setting to something more accurate",
+   "label": "1:29"
+  },
+  {
+   "start": 97.0,
+   "dur": 7.0,
+   "text": "before we actually do that I just want to ask you to perform a simple operation and that's",
+   "label": "1:37"
+  },
+  {
+   "start": 104.0,
+   "dur": 9.0,
+   "text": "eight plus two times three it should be obvious that the answer",
+   "label": "1:44"
+  },
+  {
+   "start": 113.0,
+   "dur": 7.0,
+   "text": "ought to be 14. after all the rules of algebra require us to perform",
+   "label": "1:53"
+  },
+  {
+   "start": 120.0,
+   "dur": 7.0,
+   "text": "multiplication ahead of addition so first multiply two times three to get",
+   "label": "2:00"
+  },
+  {
+   "start": 127.0,
+   "dur": 7.0,
+   "text": "six and then add the eight however if you try to input the sequence into your",
+   "label": "2:07"
+  },
+  {
+   "start": 134.0,
+   "dur": 7.0,
+   "text": "calculator so 8 plus 2 times 3 and press",
+   "label": "2:14"
+  },
+  {
+   "start": 141.0,
+   "dur": 9.0,
+   "text": "the equals key you will most probably see the calculator displaying an answer of 30.",
+   "label": "2:21"
+  },
+  {
+   "start": 150.0,
+   "dur": 7.0,
+   "text": "and the reason for this is that Texas Instruments machines come pre-programmed",
+   "label": "2:30"
+  },
+  {
+   "start": 157.0,
+   "dur": 10.0,
+   "text": "they are set up to handle operations in the order in which they are keyed in so they first at the eight and the two and",
+   "label": "2:37"
+  },
+  {
+   "start": 167.0,
+   "dur": 8.0,
+   "text": "then multiply the result by three there is of course a way to change that if you want and I will show you now how",
+   "label": "2:47"
+  },
+  {
+   "start": 175.0,
+   "dur": 7.0,
+   "text": "to adjust both the decimal place setting as well as the rule for handling a",
+   "label": "2:55"
+  },
+  {
+   "start": 182.0,
+   "dur": 8.0,
+   "text": "sequence of operations if you look at your calculator you should note that most Keys have a",
+   "label": "3:02"
+  },
+  {
+   "start": 190.0,
+   "dur": 9.0,
+   "text": "primary function that's the one printed on the key itself as well as a secondary function which is printed directly above",
+   "label": "3:10"
+  },
+  {
+   "start": 199.0,
+   "dur": 10.0,
+   "text": "the key for example if you look at the very bottom row of keys you will find the decimal Mark or the dot printed on",
+   "label": "3:19"
+  },
+  {
+   "start": 209.0,
+   "dur": 7.0,
+   "text": "one of them and directly above the key you will see the where it format so",
+   "label": "3:29"
+  },
+  {
+   "start": 216.0,
+   "dur": 8.0,
+   "text": "Dot and format so in this case the decimal Mark is the",
+   "label": "3:36"
+  },
+  {
+   "start": 224.0,
+   "dur": 8.0,
+   "text": "primary function but the key also has a secondary function which will allow us to change the calculators formatting",
+   "label": "3:44"
+  },
+  {
+   "start": 232.0,
+   "dur": 10.0,
+   "text": "conventions the way we activate this secondary function is by pressing the second key",
+   "label": "3:52"
+  },
+  {
+   "start": 242.0,
+   "dur": 7.0,
+   "text": "which is the leftmost key in the second row from the top followed by the decimal",
+   "label": "4:02"
+  },
+  {
+   "start": 249.0,
+   "dur": 9.0,
+   "text": "Mark which has formats as its secondary function now let me do this second followed by the decimal Mark at the",
+   "label": "4:09"
+  },
+  {
+   "start": 258.0,
+   "dur": 8.0,
+   "text": "bottom and this gives us access to the formatting options of the calculator",
+   "label": "4:18"
+  },
+  {
+   "start": 266.0,
+   "dur": 8.0,
+   "text": "the first thing you should see is the expression DEC equal to two which means that the number of decimal places",
+   "label": "4:26"
+  },
+  {
+   "start": 274.0,
+   "dur": 9.0,
+   "text": "displayed by the calculator is set to two the factory default my recommendation is that you change",
+   "label": "4:34"
+  },
+  {
+   "start": 283.0,
+   "dur": 8.0,
+   "text": "this setting to 9. so simply press 9",
+   "label": "4:43"
+  },
+  {
+   "start": 291.0,
+   "dur": 7.0,
+   "text": "and you should now see the term intern shown at the top of the display",
+   "label": "4:51"
+  },
+  {
+   "start": 298.0,
+   "dur": 9.0,
+   "text": "the calculator is basically asking you whether you want to confirm that input which you of course want to do so press",
+   "label": "4:58"
+  },
+  {
+   "start": 307.0,
+   "dur": 9.0,
+   "text": "the enter key and let me do that as well and the moment you press it you will",
+   "label": "5:07"
+  },
+  {
+   "start": 316.0,
+   "dur": 7.0,
+   "text": "find that you now have DEC equal to 9.",
+   "label": "5:16"
+  },
+  {
+   "start": 323.0,
+   "dur": 8.0,
+   "text": "so the calculator has confirmed the input still within the formatting options",
+   "label": "5:23"
+  },
+  {
+   "start": 331.0,
+   "dur": 7.0,
+   "text": "please locate the down arrow which you will find over here in the very top row",
+   "label": "5:31"
+  },
+  {
+   "start": 338.0,
+   "dur": 11.0,
+   "text": "of keys I want you to press the down arrow four times one two three four and as we do so we",
+   "label": "5:38"
+  },
+  {
+   "start": 349.0,
+   "dur": 9.0,
+   "text": "kind of bypass various settings like angle units date conventions or number separators which are simply going to",
+   "label": "5:49"
+  },
+  {
+   "start": 358.0,
+   "dur": 8.0,
+   "text": "ignore as they are not relevant to the CFA exam but if you wish to you may of course explore these settings on your",
+   "label": "5:58"
+  },
+  {
+   "start": 366.0,
+   "dur": 7.0,
+   "text": "own anyway what you should see now on this screen after you have pressed the down arrow four times",
+   "label": "6:06"
+  },
+  {
+   "start": 373.0,
+   "dur": 9.0,
+   "text": "uh is the abbreviation chn which stands for chain calculation method this is the",
+   "label": "6:13"
+  },
+  {
+   "start": 382.0,
+   "dur": 9.0,
+   "text": "default setting which tells the calculator to perform operations in the order they are entered",
+   "label": "6:22"
+  },
+  {
+   "start": 391.0,
+   "dur": 8.0,
+   "text": "like we saw before if you want to change this setting you will need to activate this set function and you should see the",
+   "label": "6:31"
+  },
+  {
+   "start": 399.0,
+   "dur": 7.0,
+   "text": "word set written above the enter key which we have already used because set is a secondary",
+   "label": "6:39"
+  },
+  {
+   "start": 406.0,
+   "dur": 10.0,
+   "text": "function you gain access to it by pressing the second key followed by enter",
+   "label": "6:46"
+  },
+  {
+   "start": 416.0,
+   "dur": 9.0,
+   "text": "so let's do this second answer and you should have noticed that the term",
+   "label": "6:56"
+  },
+  {
+   "start": 425.0,
+   "dur": 9.0,
+   "text": "chain or chn has been replaced by ALS AOS stands for algebraic operating",
+   "label": "7:05"
+  },
+  {
+   "start": 434.0,
+   "dur": 8.0,
+   "text": "system and with this setting your calculator will solve problems according to the standard rules of algebraic",
+   "label": "7:14"
+  },
+  {
+   "start": 442.0,
+   "dur": 9.0,
+   "text": "hierarchy so it will for example perform multiplication or division operations ahead of addition or subtraction which I",
+   "label": "7:22"
+  },
+  {
+   "start": 451.0,
+   "dur": 9.0,
+   "text": "believe you will find more convenience so let's check whether these changes have in fact taken effect",
+   "label": "7:31"
+  },
+  {
+   "start": 460.0,
+   "dur": 8.0,
+   "text": "in order to exit the formatting options you need to activate the quit function and quit is the secondary function of",
+   "label": "7:40"
+  },
+  {
+   "start": 468.0,
+   "dur": 9.0,
+   "text": "the CPT or compute key which you will find in the top left corner so press",
+   "label": "7:48"
+  },
+  {
+   "start": 477.0,
+   "dur": 8.0,
+   "text": "second followed by CPT and this gets you back in the standard",
+   "label": "7:57"
+  },
+  {
+   "start": 485.0,
+   "dur": 9.0,
+   "text": "calculator mode and already the difference should be noticeable you should now see just zero instead of 0.00",
+   "label": "8:05"
+  },
+  {
+   "start": 494.0,
+   "dur": 6.0,
+   "text": "and if you try to perform the same computation as before that's 10 divided",
+   "label": "8:14"
+  },
+  {
+   "start": 500.0,
+   "dur": 10.0,
+   "text": "by 6 equals okay now you see the result is being 1.666 and so on basically the calculator",
+   "label": "8:20"
+  },
+  {
+   "start": 510.0,
+   "dur": 8.0,
+   "text": "displays as many decimal places as it can physically fit in a maximum of 9 but",
+   "label": "8:30"
+  },
+  {
+   "start": 518.0,
+   "dur": 6.0,
+   "text": "only if those further decimal places are needed for example if you ask it to perform",
+   "label": "8:38"
+  },
+  {
+   "start": 524.0,
+   "dur": 8.0,
+   "text": "9.3 divided by three let's try this equals it will just show you 3.1 without",
+   "label": "8:44"
+  },
+  {
+   "start": 532.0,
+   "dur": 9.0,
+   "text": "any unnecessary zeros let's also check that the algebraic operating system setting has taken effect so I suggest",
+   "label": "8:52"
+  },
+  {
+   "start": 541.0,
+   "dur": 10.0,
+   "text": "that we repeat the same sequence of operations as before eight plus two times three",
+   "label": "9:01"
+  },
+  {
+   "start": 551.0,
+   "dur": 9.0,
+   "text": "equals and you should now see 14 the correct answer and not 30 as was the case before",
+   "label": "9:11"
+  },
+  {
+   "start": 560.0,
+   "dur": 7.0,
+   "text": "so hopefully these changes have worked on your calculator and you will find them convenient",
+   "label": "9:20"
+  },
+  {
+   "start": 567.0,
+   "dur": 8.0,
+   "text": "if you however ever want to go back to the default settings simply enter the formatting options by pressing second",
+   "label": "9:27"
+  },
+  {
+   "start": 575.0,
+   "dur": 6.0,
+   "text": "followed by the dot key and then second",
+   "label": "9:35"
+  },
+  {
+   "start": 581.0,
+   "dur": 8.0,
+   "text": "followed by the CE stroke c key which has",
+   "label": "9:41"
+  },
+  {
+   "start": 589.0,
+   "dur": 8.0,
+   "text": "CLR work so clear worksheet as its secondary function that key is in the bottom left hand corner of your",
+   "label": "9:49"
+  },
+  {
+   "start": 597.0,
+   "dur": 7.0,
+   "text": "calculator keys and as I said you will note that the secondary function of that key is something called clear work and",
+   "label": "9:57"
+  },
+  {
+   "start": 604.0,
+   "dur": 7.0,
+   "text": "activating this function whilst in the formatting options restores the default",
+   "label": "10:04"
+  },
+  {
+   "start": 611.0,
+   "dur": 8.0,
+   "text": "factory settings such as two decimal places which you now see and if I press the down arrow four times we're back to",
+   "label": "10:11"
+  },
+  {
+   "start": 619.0,
+   "dur": 7.0,
+   "text": "the chain method of handling a sequence of operations I do however recommend that you go back to the settings which",
+   "label": "10:19"
+  },
+  {
+   "start": 626.0,
+   "dur": 7.0,
+   "text": "we chose that's AOS here so do second followed by enter to activate set and",
+   "label": "10:26"
+  },
+  {
+   "start": 633.0,
+   "dur": null,
+   "text": "also make your decimal a number of decimal places displayed equal to 9.",
+   "label": "10:33"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:44:23+00:00"
+}
