@@ -1,0 +1,307 @@
+{
+ "id": "u02cjdJ10tI",
+ "title": "Time Value of Money (TVM) - computing the number of periods (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230105",
+ "description": "Time Value of Money - computing the number of periods explores the steps needed to compute N (the number of periods) using the TVM worksheet on the Texas Instruments BA II Plus calculator.\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction to TVM"
+  },
+  {
+   "start": 22,
+   "title": "Chapter 2: Analyzing the exam question"
+  },
+  {
+   "start": 63,
+   "title": "Chapter 3: Inputting financial data"
+  },
+  {
+   "start": 158,
+   "title": "Chapter 4: Computing the result"
+  }
+ ],
+ "duration": 214,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "in this video I want to walk you through another CFA level 1 exam style question devoted to time value of money this time",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 7.0,
+   "text": "we're going to be Computing the number of periods or n so if this is something you want to get right in the exam do",
+   "label": "0:07"
+  },
+  {
+   "start": 14.0,
+   "dur": 8.0,
+   "text": "keep watching and let's get solving okay this is the question which I want us to have a go at if 10 000 euro is",
+   "label": "0:14"
+  },
+  {
+   "start": 22.0,
+   "dur": 7.0,
+   "text": "invested in an account offering a return of eight percent per year approximately how long will it take for the investment",
+   "label": "0:22"
+  },
+  {
+   "start": 29.0,
+   "dur": 7.0,
+   "text": "to double in value 10 years 9 years or 11. okay and this time around I'm not",
+   "label": "0:29"
+  },
+  {
+   "start": 36.0,
+   "dur": 9.0,
+   "text": "going to do a timeline generally speaking when doing uh or when asked to compute and what I suggest you do is you just completely rely on the time value",
+   "label": "0:36"
+  },
+  {
+   "start": 45.0,
+   "dur": 9.0,
+   "text": "of money worksheet even though your curriculum does contain formulas for computing and I think that you shouldn't bother just do time value of money on",
+   "label": "0:45"
+  },
+  {
+   "start": 54.0,
+   "dur": 9.0,
+   "text": "your Texas Instruments calculator so it's just a question of getting the inputs right our PV is going to be 10 000 present",
+   "label": "0:54"
+  },
+  {
+   "start": 63.0,
+   "dur": 8.0,
+   "text": "value however what I would like you to do is make this negative so when providing the relevant input 10 000",
+   "label": "1:03"
+  },
+  {
+   "start": 71.0,
+   "dur": 8.0,
+   "text": "following but followed by the plus minus key and then obviously future value will be double that amount and please note",
+   "label": "1:11"
+  },
+  {
+   "start": 79.0,
+   "dur": 8.0,
+   "text": "that this time I'm suggesting you do the inputs not in the order in which the keys appear on your calculator as I said before in the previous video you can",
+   "label": "1:19"
+  },
+  {
+   "start": 87.0,
+   "dur": 7.0,
+   "text": "provide the inputs in any order your calculator will get it right don't worry so this is going to be twice as much and",
+   "label": "1:27"
+  },
+  {
+   "start": 94.0,
+   "dur": 8.0,
+   "text": "that's going to be twenty thousand and this time I'm obviously not including not sticking a minus in front of that figure remember your calculator works on",
+   "label": "1:34"
+  },
+  {
+   "start": 102.0,
+   "dur": 9.0,
+   "text": "the basis of inputs and outputs inflows and outflows so it can't handle a PV and an FV with the same sign it will get",
+   "label": "1:42"
+  },
+  {
+   "start": 111.0,
+   "dur": 7.0,
+   "text": "confused it will treat them as both being influence or outflows so you must make one of the inputs I suggest the",
+   "label": "1:51"
+  },
+  {
+   "start": 118.0,
+   "dur": 8.0,
+   "text": "first one the investment negative so as to have a positive result at the end of the FV otherwise your calculator will",
+   "label": "1:58"
+  },
+  {
+   "start": 126.0,
+   "dur": 8.0,
+   "text": "display an error term now our interest rate or expected rate of required rate of return is eight percent so we make I",
+   "label": "2:06"
+  },
+  {
+   "start": 134.0,
+   "dur": 8.0,
+   "text": "over y equal to 8 and we're supposed to compute for the number of periods so CPT uh basically n and let's see what that",
+   "label": "2:14"
+  },
+  {
+   "start": 142.0,
+   "dur": 8.0,
+   "text": "gives please note that this time around I'm not showing you kind of the calculator Strokes I'm just saying what you should do for the relevant inputs",
+   "label": "2:22"
+  },
+  {
+   "start": 150.0,
+   "dur": 8.0,
+   "text": "and you should remember how to work with TVM provide the number first and then tell the calculator what it is so let's",
+   "label": "2:30"
+  },
+  {
+   "start": 158.0,
+   "dur": 6.0,
+   "text": "get the calculator let's begin with PV so 10 000 followed by the plus minus key",
+   "label": "2:38"
+  },
+  {
+   "start": 164.0,
+   "dur": 7.0,
+   "text": "and now make this the PV input FV 20 000.",
+   "label": "2:44"
+  },
+  {
+   "start": 171.0,
+   "dur": 7.0,
+   "text": "followed by FV no change to the sign and 8 for I over Y and one thing I didn't say at the beginning but I should have",
+   "label": "2:51"
+  },
+  {
+   "start": 178.0,
+   "dur": 8.0,
+   "text": "told you always before you start working with the calculator it's a really really good idea to press second followed by",
+   "label": "2:58"
+  },
+  {
+   "start": 186.0,
+   "dur": 7.0,
+   "text": "the FV key just to clear the time value of money worksheet of any inputs which may be sitting there from previous",
+   "label": "3:06"
+  },
+  {
+   "start": 193.0,
+   "dur": 9.0,
+   "text": "problems and let's compute for n CPT n",
+   "label": "3:13"
+  },
+  {
+   "start": 202.0,
+   "dur": 7.0,
+   "text": "and I see a result which is very very close to nine um and that will obviously be the answer to",
+   "label": "3:22"
+  },
+  {
+   "start": 209.0,
+   "dur": null,
+   "text": "the question so that's answer B isn't it nine years",
+   "label": "3:29"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:46:42+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:46:42",
+  "lines": {
+   "7": [
+    [
+     "your Texas Instruments calculator so it's just a question of getting the inputs right our PV is going to be",
+     null
+    ],
+    [
+     "10,000",
+     "10 000"
+    ],
+    [
+     "present",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "first one the investment negative so as to have a positive result at the end",
+     null
+    ],
+    [
+     "",
+     "of"
+    ],
+    [
+     "the FV otherwise your calculator will",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "get the calculator let's begin with PV so",
+     null
+    ],
+    [
+     "10,000",
+     "10 000"
+    ],
+    [
+     "followed by the",
+     null
+    ],
+    [
+     "plus-minus",
+     "plus minus"
+    ],
+    [
+     "key",
+     null
+    ]
+   ]
+  },
+  "fixes": 4,
+  "checked_seconds": 59.0,
+  "usd": 0.0086,
+  "version": 3,
+  "flagged": [
+   [
+    "0:54",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:42",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:58",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:14",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:22",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:38",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

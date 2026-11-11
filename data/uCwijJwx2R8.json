@@ -1,0 +1,429 @@
+{
+ "id": "uCwijJwx2R8",
+ "title": "Time Value of Money (TVM) - computing the rate of interest (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230106",
+ "description": "Time Value of Money - computing the rate of interest (for the CFA Level 1 exam) explores the steps needed to solve for I/Y using both the TVM worksheet on the Texas Instruments BA II Plus calculator and the relevant longhand mathematical expression.\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction"
+  },
+  {
+   "start": 30,
+   "title": "Chapter 2: Calculator inputs"
+  },
+  {
+   "start": 110,
+   "title": "Chapter 3: Computing interest"
+  },
+  {
+   "start": 178,
+   "title": "Chapter 4: Formulaic method"
+  }
+ ],
+ "duration": 377,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "in this video we're going to go through yet another time value of money CFA level 1 exam style question this time",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 8.0,
+   "text": "Computing I over y so that's the interest rate or yield necessary to get us from point A to point B in terms of",
+   "label": "0:08"
+  },
+  {
+   "start": 16.0,
+   "dur": 8.0,
+   "text": "money over a certain amount of periods or years so if this is something you want to get right in the exam do keep",
+   "label": "0:16"
+  },
+  {
+   "start": 24.0,
+   "dur": 6.0,
+   "text": "watching and let's get solving and this is the relatively simple short question that we want to have a go at how much",
+   "label": "0:24"
+  },
+  {
+   "start": 30.0,
+   "dur": 9.0,
+   "text": "must an investment earn annually if it is to grow by 50 over a period of nine years so as you can see we're provided",
+   "label": "0:30"
+  },
+  {
+   "start": 39.0,
+   "dur": 8.0,
+   "text": "with the inputs but not given pvnfv as such just we're just told that the investment",
+   "label": "0:39"
+  },
+  {
+   "start": 47.0,
+   "dur": 9.0,
+   "text": "should grow in value by 50 so don't be scared of such a question uh make something up so what we could do for",
+   "label": "0:47"
+  },
+  {
+   "start": 56.0,
+   "dur": 8.0,
+   "text": "example is have a PV for our calculator um equal to 100",
+   "label": "0:56"
+  },
+  {
+   "start": 64.0,
+   "dur": 8.0,
+   "text": "but make sure that the input becomes negative when you type it in at FV which is you know accordingly",
+   "label": "1:04"
+  },
+  {
+   "start": 72.0,
+   "dur": 8.0,
+   "text": "fifty percent higher so um yeah grow for 50 so 150 but this time",
+   "label": "1:12"
+  },
+  {
+   "start": 80.0,
+   "dur": 8.0,
+   "text": "around we're making the FV uh positive uh for reasons which I explained in the previous video so I'm not going to",
+   "label": "1:20"
+  },
+  {
+   "start": 88.0,
+   "dur": 8.0,
+   "text": "repeat myself in this one if you want to go back to the previous one and have a look and the number of periods is naturally",
+   "label": "1:28"
+  },
+  {
+   "start": 96.0,
+   "dur": 7.0,
+   "text": "nine we're not going to have any PMT we're not going to have any payments yet and we're going to get the calculator to",
+   "label": "1:36"
+  },
+  {
+   "start": 103.0,
+   "dur": 7.0,
+   "text": "compute the I over y so let's take the calculator and make",
+   "label": "1:43"
+  },
+  {
+   "start": 110.0,
+   "dur": 9.0,
+   "text": "these inputs so let's always clear the time value of money worksheet first so that's second followed by FV and now",
+   "label": "1:50"
+  },
+  {
+   "start": 119.0,
+   "dur": 10.0,
+   "text": "let's make the inputs 100 negative for PV 150 for FV I'm ignoring PMT I just need",
+   "label": "1:59"
+  },
+  {
+   "start": 129.0,
+   "dur": 8.0,
+   "text": "to have 9 for n and compute I over Y and as you can see my calculator is giving",
+   "label": "2:09"
+  },
+  {
+   "start": 137.0,
+   "dur": 7.0,
+   "text": "an answer of 4.61 and that seems to very nicely",
+   "label": "2:17"
+  },
+  {
+   "start": 144.0,
+   "dur": 9.0,
+   "text": "correspond with answer a doesn't it so a is the correct answer now it doesn't matter whether you choose 100 and 150",
+   "label": "2:24"
+  },
+  {
+   "start": 153.0,
+   "dur": 7.0,
+   "text": "here or maybe 200 and 300 as long as the relationship of fifty percent more is maintained that's going to give you the",
+   "label": "2:33"
+  },
+  {
+   "start": 160.0,
+   "dur": 8.0,
+   "text": "right figure so be ready for such kind of open questions in the exam whether you have to make something up and it's",
+   "label": "2:40"
+  },
+  {
+   "start": 168.0,
+   "dur": 10.0,
+   "text": "absolutely normal now I still want us to or I want to give you the relevant formula for computing the um I over Y",
+   "label": "2:48"
+  },
+  {
+   "start": 178.0,
+   "dur": 8.0,
+   "text": "without using the TVM so let's go back to a an expression which I introduce used in the first video from this TVM",
+   "label": "2:58"
+  },
+  {
+   "start": 186.0,
+   "dur": 8.0,
+   "text": "series and that was fvm the future value at Point N is equal to PV times 1 plus r",
+   "label": "3:06"
+  },
+  {
+   "start": 194.0,
+   "dur": 6.0,
+   "text": "to the power of n and we can easily actually get n from this what we need to",
+   "label": "3:14"
+  },
+  {
+   "start": 200.0,
+   "dur": 7.0,
+   "text": "do is say Okay 1 plus r to the power of n",
+   "label": "3:20"
+  },
+  {
+   "start": 207.0,
+   "dur": 8.0,
+   "text": "equals f v n divided by PV so I basically change the sides flip the sides and then I just kept this term on",
+   "label": "3:27"
+  },
+  {
+   "start": 215.0,
+   "dur": 7.0,
+   "text": "one side now 1 plus r equals",
+   "label": "3:35"
+  },
+  {
+   "start": 222.0,
+   "dur": 8.0,
+   "text": "fvn divided by PV and we take the root with the exponent of the power of n",
+   "label": "3:42"
+  },
+  {
+   "start": 230.0,
+   "dur": 9.0,
+   "text": "and we are therefore left with R equals this much minus one and what you could",
+   "label": "3:50"
+  },
+  {
+   "start": 239.0,
+   "dur": 8.0,
+   "text": "do here is ladies and gentlemen also write this in a in a slightly I'm missing the N here but we could write",
+   "label": "3:59"
+  },
+  {
+   "start": 247.0,
+   "dur": 9.0,
+   "text": "this as and this is going to be easy to put into our calculators is to say okay R equals let's have this in Brackets",
+   "label": "4:07"
+  },
+  {
+   "start": 256.0,
+   "dur": 6.0,
+   "text": "every n divided by PV to the power of 1.",
+   "label": "4:16"
+  },
+  {
+   "start": 262.0,
+   "dur": 11.0,
+   "text": "Over N minus 1. so basically in our little scenario what this becomes is",
+   "label": "4:22"
+  },
+  {
+   "start": 273.0,
+   "dur": 10.0,
+   "text": "R equals 150 divided by 100 to the power of 1 over n",
+   "label": "4:33"
+  },
+  {
+   "start": 283.0,
+   "dur": 8.0,
+   "text": "1 over 9 minus one remember that taking the root to the power of n or with an",
+   "label": "4:43"
+  },
+  {
+   "start": 291.0,
+   "dur": 9.0,
+   "text": "exponent of n is equal to multiplying uh sorry to take raising to the power of 1 over n in this case one over nine let's",
+   "label": "4:51"
+  },
+  {
+   "start": 300.0,
+   "dur": 8.0,
+   "text": "see what this gives I've got my calculator over here so um 150 over 100 that's obviously going to",
+   "label": "5:00"
+  },
+  {
+   "start": 308.0,
+   "dur": 8.0,
+   "text": "be 1.5 now to raised to the relevant power we're going to use that very useful key which I've used a lot of the",
+   "label": "5:08"
+  },
+  {
+   "start": 316.0,
+   "dur": 9.0,
+   "text": "times before in the previous TVM questions y to the power of x so y to the power of X and now 1 over 9",
+   "label": "5:16"
+  },
+  {
+   "start": 325.0,
+   "dur": 9.0,
+   "text": "what I could do is just perhaps Open Bracket do 1 divided by n close bracket",
+   "label": "5:25"
+  },
+  {
+   "start": 334.0,
+   "dur": 9.0,
+   "text": "press equals deduct one and I can see 0.04608 which is basically",
+   "label": "5:34"
+  },
+  {
+   "start": 343.0,
+   "dur": 7.0,
+   "text": "um rounded up to 4.61 percent answer confirmed so in the exam do whatever",
+   "label": "5:43"
+  },
+  {
+   "start": 350.0,
+   "dur": 9.0,
+   "text": "feels more um feels that you're easier with more comfortable with but don't avoid please don't avoid",
+   "label": "5:50"
+  },
+  {
+   "start": 359.0,
+   "dur": 7.0,
+   "text": "this these types of Expressions practice them because ultimately in the exam sometimes you won't be able to use the",
+   "label": "5:59"
+  },
+  {
+   "start": 366.0,
+   "dur": 8.0,
+   "text": "TVM worksheet and you need to understand these types of Transformations for example that this is the same as this it",
+   "label": "6:06"
+  },
+  {
+   "start": 374.0,
+   "dur": null,
+   "text": "will come in useful I guarantee",
+   "label": "6:14"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:48:06+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:48:08",
+  "lines": {
+   "5": [
+    [
+     "with the inputs but not given",
+     null
+    ],
+    [
+     "PV and FV",
+     "pvnfv"
+    ],
+    [
+     "as such just we're just told that the investment",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "series and that was",
+     null
+    ],
+    [
+     "FVN",
+     "fvm"
+    ],
+    [
+     "the future value at Point N is equal to PV times 1 plus r",
+     null
+    ]
+   ]
+  },
+  "fixes": 2,
+  "checked_seconds": 110.8,
+  "usd": 0.0161,
+  "version": 3,
+  "flagged": [
+   [
+    "0:39",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:56",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:04",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:20",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:36",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:50",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:59",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:06",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:07",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:25",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:59",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
+}

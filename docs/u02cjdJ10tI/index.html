@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Value of Money (TVM) - computing the number of periods (for the CFA Level 1 exam) — Transcript | YouSNR</title>
+<meta name="description" content="in this video I want to walk you through another CFA level 1 exam style question devoted to time value of money this time we&#x27;re going to be Computing the n…">
+<link rel="canonical" href="https://yousnr.com/u02cjdJ10tI/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Time Value of Money (TVM) - computing the number of periods (for the CFA Level 1 exam) — Transcript">
+<meta property="og:description" content="in this video I want to walk you through another CFA level 1 exam style question devoted to time value of money this time we&#x27;re going to be Computing the n…">
+<meta property="og:image" content="https://i.ytimg.com/vi/u02cjdJ10tI/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/u02cjdJ10tI/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Time Value of Money (TVM) - computing the number of periods (for the CFA Level 1 exam)</h1>
+      <div class="meta">Let me explain<span class="pub"> · Jan 5, 2023</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=u02cjdJ10tI" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 4 words corrected</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool " id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: Introduction to TVM</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Analyzing the exam question</span><span class="ts">0:22</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Inputting financial data</span><span class="ts">1:03</span></a><a class="chap" href="#ch3" data-ch="3"><span class="ct">Chapter 4: Computing the result</span><span class="ts">2:38</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: Introduction to TVM</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="7.0"><span class="ts">0:00</span><span class="tx">in this video I want to walk you through another CFA level 1 exam style question devoted to time value of money this time</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=7s" target="_blank" rel="noopener" data-s="7.0" data-d="7.0"><span class="ts">0:07</span><span class="tx">we&#x27;re going to be Computing the number of periods or n so if this is something you want to get right in the exam do</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=14s" target="_blank" rel="noopener" data-s="14.0" data-d="8.0"><span class="ts">0:14</span><span class="tx">keep watching and let&#x27;s get solving okay this is the question which I want us to have a go at if 10 000 euro is</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Analyzing the exam question</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=22s" target="_blank" rel="noopener" data-s="22.0" data-d="7.0"><span class="ts">0:22</span><span class="tx">invested in an account offering a return of eight percent per year approximately how long will it take for the investment</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=29s" target="_blank" rel="noopener" data-s="29.0" data-d="7.0"><span class="ts">0:29</span><span class="tx">to double in value 10 years 9 years or 11. okay and this time around I&#x27;m not</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=36s" target="_blank" rel="noopener" data-s="36.0" data-d="9.0"><span class="ts">0:36</span><span class="tx">going to do a timeline generally speaking when doing uh or when asked to compute and what I suggest you do is you just completely rely on the time value</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=45s" target="_blank" rel="noopener" data-s="45.0" data-d="9.0"><span class="ts">0:45</span><span class="tx">of money worksheet even though your curriculum does contain formulas for computing and I think that you shouldn&#x27;t bother just do time value of money on</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=54s" target="_blank" rel="noopener" data-s="54.0" data-d="9.0"><span class="ts">0:54</span><span class="tx">your Texas Instruments calculator so it&#x27;s just a question of getting the inputs right our PV is going to be <span class="fix" data-o="10 000" title="YouTube: 10 000">10,000</span> present</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Inputting financial data</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=63s" target="_blank" rel="noopener" data-s="63.0" data-d="8.0"><span class="ts">1:03</span><span class="tx">value however what I would like you to do is make this negative so when providing the relevant input 10 000</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=71s" target="_blank" rel="noopener" data-s="71.0" data-d="8.0"><span class="ts">1:11</span><span class="tx">following but followed by the plus minus key and then obviously future value will be double that amount and please note</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=79s" target="_blank" rel="noopener" data-s="79.0" data-d="8.0"><span class="ts">1:19</span><span class="tx">that this time I&#x27;m suggesting you do the inputs not in the order in which the keys appear on your calculator as I said before in the previous video you can</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=87s" target="_blank" rel="noopener" data-s="87.0" data-d="7.0"><span class="ts">1:27</span><span class="tx">provide the inputs in any order your calculator will get it right don&#x27;t worry so this is going to be twice as much and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=94s" target="_blank" rel="noopener" data-s="94.0" data-d="8.0"><span class="ts">1:34</span><span class="tx">that&#x27;s going to be twenty thousand and this time I&#x27;m obviously not including not sticking a minus in front of that figure remember your calculator works on</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=102s" target="_blank" rel="noopener" data-s="102.0" data-d="9.0"><span class="ts">1:42</span><span class="tx">the basis of inputs and outputs inflows and outflows so it can&#x27;t handle a PV and an FV with the same sign it will get</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=111s" target="_blank" rel="noopener" data-s="111.0" data-d="7.0"><span class="ts">1:51</span><span class="tx">confused it will treat them as both being influence or outflows so you must make one of the inputs I suggest the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=118s" target="_blank" rel="noopener" data-s="118.0" data-d="8.0"><span class="ts">1:58</span><span class="tx">first one the investment negative so as to have a positive result at the end <span class="fix" data-o="of" title="YouTube: of"></span> the FV otherwise your calculator will</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=126s" target="_blank" rel="noopener" data-s="126.0" data-d="8.0"><span class="ts">2:06</span><span class="tx">display an error term now our interest rate or expected rate of required rate of return is eight percent so we make I</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=134s" target="_blank" rel="noopener" data-s="134.0" data-d="8.0"><span class="ts">2:14</span><span class="tx">over y equal to 8 and we&#x27;re supposed to compute for the number of periods so CPT uh basically n and let&#x27;s see what that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=142s" target="_blank" rel="noopener" data-s="142.0" data-d="8.0"><span class="ts">2:22</span><span class="tx">gives please note that this time around I&#x27;m not showing you kind of the calculator Strokes I&#x27;m just saying what you should do for the relevant inputs</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=150s" target="_blank" rel="noopener" data-s="150.0" data-d="8.0"><span class="ts">2:30</span><span class="tx">and you should remember how to work with TVM provide the number first and then tell the calculator what it is so let&#x27;s</span></a>
+<h2 class="ch" id="ch3">Chapter 4: Computing the result</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=158s" target="_blank" rel="noopener" data-s="158.0" data-d="6.0"><span class="ts">2:38</span><span class="tx">get the calculator let&#x27;s begin with PV so <span class="fix" data-o="10 000" title="YouTube: 10 000">10,000</span> followed by the <span class="fix" data-o="plus minus" title="YouTube: plus minus">plus-minus</span> key</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=164s" target="_blank" rel="noopener" data-s="164.0" data-d="7.0"><span class="ts">2:44</span><span class="tx">and now make this the PV input FV 20 000.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=171s" target="_blank" rel="noopener" data-s="171.0" data-d="7.0"><span class="ts">2:51</span><span class="tx">followed by FV no change to the sign and 8 for I over Y and one thing I didn&#x27;t say at the beginning but I should have</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=178s" target="_blank" rel="noopener" data-s="178.0" data-d="8.0"><span class="ts">2:58</span><span class="tx">told you always before you start working with the calculator it&#x27;s a really really good idea to press second followed by</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=186s" target="_blank" rel="noopener" data-s="186.0" data-d="7.0"><span class="ts">3:06</span><span class="tx">the FV key just to clear the time value of money worksheet of any inputs which may be sitting there from previous</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=193s" target="_blank" rel="noopener" data-s="193.0" data-d="9.0"><span class="ts">3:13</span><span class="tx">problems and let&#x27;s compute for n CPT n</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=202s" target="_blank" rel="noopener" data-s="202.0" data-d="7.0"><span class="ts">3:22</span><span class="tx">and I see a result which is very very close to nine um and that will obviously be the answer to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=u02cjdJ10tI&amp;t=209s" target="_blank" rel="noopener" data-s="209.0" data-d=""><span class="ts">3:29</span><span class="tx">the question so that&#x27;s answer B isn&#x27;t it nine years</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/u02cjdJ10tI')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=u02cjdJ10tI&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('u02cjdJ10tI.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('u02cjdJ10tI.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>

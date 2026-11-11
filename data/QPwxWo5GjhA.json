@@ -1,0 +1,819 @@
+{
+ "id": "QPwxWo5GjhA",
+ "title": "Time Value of Money (TVM) - computing Future Value (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20221224",
+ "description": "Time Value of Money - computing Future Value (for the CFA Level 1 exam)\nexplores the TVM worksheet on the Texas Instruments BA II Plus calculator as well as the formula required to calculate FV.\n\nThis video references:\nhttps://youtu.be/2BHL9PfyUSU - Formatting the Texas Instruments BA II Plus calculator for the CFA exam\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction"
+  },
+  {
+   "start": 54,
+   "title": "Chapter 2: Time Value of Money"
+  },
+  {
+   "start": 488,
+   "title": "Chapter 3: Time Value Worksheet"
+  }
+ ],
+ "duration": 803,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "in this video I want to go back to the very Basics and in the context of CFA level one that means time value of money",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 9.0,
+   "text": "problems so in this recording I'll be Computing the future value of a relatively simple investment and then in subsequent videos we're going to take",
+   "label": "0:07"
+  },
+  {
+   "start": 16.0,
+   "dur": 9.0,
+   "text": "that forward and do more advanced things which are quite representative of what you may expect to find on the exam so if time value of money is something you",
+   "label": "0:16"
+  },
+  {
+   "start": 25.0,
+   "dur": 7.0,
+   "text": "want to get right please keep watching and let's get solving so this is the question which I want us to have a go at",
+   "label": "0:25"
+  },
+  {
+   "start": 32.0,
+   "dur": 7.0,
+   "text": "given a projected rate of return of seven percent per annum what is the estimated value of fifty thousand",
+   "label": "0:32"
+  },
+  {
+   "start": 39.0,
+   "dur": 7.0,
+   "text": "dollars invested today after two and five years of growth with annual compounding and we've got options a b",
+   "label": "0:39"
+  },
+  {
+   "start": 46.0,
+   "dur": 8.0,
+   "text": "and c with two answers so there are essentially two ways in which you can approach time value of",
+   "label": "0:46"
+  },
+  {
+   "start": 54.0,
+   "dur": 7.0,
+   "text": "money problems one is the way in which we basically type all the inputs into the calculator and follow the",
+   "label": "0:54"
+  },
+  {
+   "start": 61.0,
+   "dur": 8.0,
+   "text": "appropriate formula or the second way we use the time value of money worksheet and I'll do that second so for the first",
+   "label": "1:01"
+  },
+  {
+   "start": 69.0,
+   "dur": 7.0,
+   "text": "method um what always helps is if you draw a timeline and on this timeline I'm",
+   "label": "1:09"
+  },
+  {
+   "start": 76.0,
+   "dur": 7.0,
+   "text": "going to draw t0 that's the point of the initial investment so Time Zero I'm also",
+   "label": "1:16"
+  },
+  {
+   "start": 83.0,
+   "dur": 7.0,
+   "text": "going to have T1 over here and T2 that's the end of year two I could",
+   "label": "1:23"
+  },
+  {
+   "start": 90.0,
+   "dur": 7.0,
+   "text": "theoretically have the end of year three four and five as well um however I'm not going to do that",
+   "label": "1:30"
+  },
+  {
+   "start": 97.0,
+   "dur": 7.0,
+   "text": "over here I'm drawing a downward pointing arrow and the downward direction is supposed to",
+   "label": "1:37"
+  },
+  {
+   "start": 104.0,
+   "dur": 8.0,
+   "text": "signify a cash outflow a cash outflow of 50 000. now this is the amount invested in accordance with the question so 50",
+   "label": "1:44"
+  },
+  {
+   "start": 112.0,
+   "dur": 9.0,
+   "text": "000 invested today and let's call this the PV or the present value of the investment and obviously um at least in part one of the question",
+   "label": "1:52"
+  },
+  {
+   "start": 121.0,
+   "dur": 7.0,
+   "text": "we're thinking about what's going to be the future value over here so FV something uh positive that we'll be able",
+   "label": "2:01"
+  },
+  {
+   "start": 128.0,
+   "dur": 9.0,
+   "text": "to take out from the investment in two years time so this is essentially the future value at time two now the uh",
+   "label": "2:08"
+  },
+  {
+   "start": 137.0,
+   "dur": 8.0,
+   "text": "long-hand way of doing this is to say okay what would happen if this grows at the",
+   "label": "2:17"
+  },
+  {
+   "start": 145.0,
+   "dur": 8.0,
+   "text": "um rate of return which is given in the question and that was seven percent well after one year this 50 000 would still",
+   "label": "2:25"
+  },
+  {
+   "start": 153.0,
+   "dur": 7.0,
+   "text": "be worth uh 50 000 although on top of this we would have some accrual of Interest so some are cruel ovary return",
+   "label": "2:33"
+  },
+  {
+   "start": 160.0,
+   "dur": 8.0,
+   "text": "some kind of growth so this would be fifty thousand times seven percent wouldn't it um so this",
+   "label": "2:40"
+  },
+  {
+   "start": 168.0,
+   "dur": 9.0,
+   "text": "seven percent would be from a from an initial value of fifty thousand let's have a look three thousand five hundred",
+   "label": "2:48"
+  },
+  {
+   "start": 177.0,
+   "dur": 7.0,
+   "text": "add it to this okay so giving fifty three thousand five hundred now",
+   "label": "2:57"
+  },
+  {
+   "start": 184.0,
+   "dur": 7.0,
+   "text": "the same thing and you know for many of you this will be obvious but for those of you just starting out with time value",
+   "label": "3:04"
+  },
+  {
+   "start": 191.0,
+   "dur": 7.0,
+   "text": "of money that may not be so obvious if you take fifty thousand and multiply it by a factor of",
+   "label": "3:11"
+  },
+  {
+   "start": 198.0,
+   "dur": 8.0,
+   "text": "1.07 so one plus the rate of return required so let me see fifty thousand times one point zero seven you're going",
+   "label": "3:18"
+  },
+  {
+   "start": 206.0,
+   "dur": 8.0,
+   "text": "to get fifty three thousand five hundred anyway and in the same way we could repeat",
+   "label": "3:26"
+  },
+  {
+   "start": 214.0,
+   "dur": 8.0,
+   "text": "the SE actions and say okay at the end of year two we're still going to have 53",
+   "label": "3:34"
+  },
+  {
+   "start": 222.0,
+   "dur": 7.0,
+   "text": "500 but on top of this interest computed at seven percent so plus seven percent",
+   "label": "3:42"
+  },
+  {
+   "start": 229.0,
+   "dur": 9.0,
+   "text": "interest let's see what that gives on the calculator times 1.0 well I want to do fifty three thousand five hundred sorry times",
+   "label": "3:49"
+  },
+  {
+   "start": 238.0,
+   "dur": 7.0,
+   "text": "0.07 that's going to get give us an extract three thousand",
+   "label": "3:58"
+  },
+  {
+   "start": 245.0,
+   "dur": 8.0,
+   "text": "745 on top of what we already had at the end of the previous year so 53 500",
+   "label": "4:05"
+  },
+  {
+   "start": 253.0,
+   "dur": 7.0,
+   "text": "and I see a total of 57 245 and once again the same logic as",
+   "label": "4:13"
+  },
+  {
+   "start": 260.0,
+   "dur": 7.0,
+   "text": "before applies I could have gotten to the same number I guess by taking the result from over here and multiplying",
+   "label": "4:20"
+  },
+  {
+   "start": 267.0,
+   "dur": 7.0,
+   "text": "that by a factor of 1.07 let's just see if that's true fifty three thousand five hundred",
+   "label": "4:27"
+  },
+  {
+   "start": 274.0,
+   "dur": 8.0,
+   "text": "times 1.07 yeah that gives fifty seven thousand two hundred and forty five and essentially that is the answer to at",
+   "label": "4:34"
+  },
+  {
+   "start": 282.0,
+   "dur": 9.0,
+   "text": "least part of the question what's going to be the future value of the investment at the end of year two this much okay let's turn this into a more",
+   "label": "4:42"
+  },
+  {
+   "start": 291.0,
+   "dur": 6.0,
+   "text": "Universal formula for future value at the end of a certain period in the life",
+   "label": "4:51"
+  },
+  {
+   "start": 297.0,
+   "dur": 8.0,
+   "text": "of our investment so FV and I'm going to write n meaning the",
+   "label": "4:57"
+  },
+  {
+   "start": 305.0,
+   "dur": 8.0,
+   "text": "future value at a certain point in time which we which we are calling n is equal to the present value so how much this is",
+   "label": "5:05"
+  },
+  {
+   "start": 313.0,
+   "dur": 9.0,
+   "text": "worth today times a factor of in Brackets 1 plus the required rate of return so r",
+   "label": "5:13"
+  },
+  {
+   "start": 322.0,
+   "dur": 7.0,
+   "text": "to the power of n and in our case this would be obviously equal to",
+   "label": "5:22"
+  },
+  {
+   "start": 329.0,
+   "dur": 6.0,
+   "text": "future value at the end of year 2 equal to 50 000.",
+   "label": "5:29"
+  },
+  {
+   "start": 335.0,
+   "dur": 7.0,
+   "text": "times 1 plus 7 so 1.07 to the power of 2",
+   "label": "5:35"
+  },
+  {
+   "start": 342.0,
+   "dur": 9.0,
+   "text": "because I've had 2 over here so I'm going to need 2 over here as well now let's see how to do this on the calculator",
+   "label": "5:42"
+  },
+  {
+   "start": 351.0,
+   "dur": 7.0,
+   "text": "I'm assuming you've had the opportunity to format your calculator in the appropriate way um",
+   "label": "5:51"
+  },
+  {
+   "start": 358.0,
+   "dur": 7.0,
+   "text": "there is a separate video on how to format our calculators and I suggest you do that right now if you haven't done it",
+   "label": "5:58"
+  },
+  {
+   "start": 365.0,
+   "dur": 9.0,
+   "text": "and come back to this video once your calculator is appropriately formatted to handle uh quantitative methods problems",
+   "label": "6:05"
+  },
+  {
+   "start": 374.0,
+   "dur": 7.0,
+   "text": "um the link to that video is included in the comments section or in the description of this video so fifty",
+   "label": "6:14"
+  },
+  {
+   "start": 381.0,
+   "dur": 8.0,
+   "text": "thousand times 1.07 and look I'm now pressing the X to",
+   "label": "6:21"
+  },
+  {
+   "start": 389.0,
+   "dur": 7.0,
+   "text": "the power of 2 buttons so x squared button which is going to square the 1.07 if you didn't format your calculator",
+   "label": "6:29"
+  },
+  {
+   "start": 396.0,
+   "dur": 8.0,
+   "text": "before in accordance with my suggestions it wouldn't necessarily do this in the required order and I'm pressing equals",
+   "label": "6:36"
+  },
+  {
+   "start": 404.0,
+   "dur": 7.0,
+   "text": "and as you can see 57 245 that answer comes up okay we can",
+   "label": "6:44"
+  },
+  {
+   "start": 411.0,
+   "dur": 6.0,
+   "text": "therefore I guess quite easily also calculate the future value for this problem",
+   "label": "6:51"
+  },
+  {
+   "start": 417.0,
+   "dur": 8.0,
+   "text": "at the end of year five so fv5 that's going to require 50 000 times",
+   "label": "6:57"
+  },
+  {
+   "start": 425.0,
+   "dur": 6.0,
+   "text": "1.07 but to the power accordingly of five and let's see how we do this on the",
+   "label": "7:05"
+  },
+  {
+   "start": 431.0,
+   "dur": 7.0,
+   "text": "calculator well once again 50 000 times 1.07 and this time because we're not",
+   "label": "7:11"
+  },
+  {
+   "start": 438.0,
+   "dur": 9.0,
+   "text": "squaring we're not raising to the power of two but to the power of five I'm going to use a different key that key is y",
+   "label": "7:18"
+  },
+  {
+   "start": 447.0,
+   "dur": 7.0,
+   "text": "to the power of x this key which sits uh just next door to",
+   "label": "7:27"
+  },
+  {
+   "start": 454.0,
+   "dur": 8.0,
+   "text": "the brackets so press this one and now input the power to which you want to raise in in this case it's five and",
+   "label": "7:34"
+  },
+  {
+   "start": 462.0,
+   "dur": 8.0,
+   "text": "equals and I'm looking at a result of 70 128 and when you take this number and",
+   "label": "7:42"
+  },
+  {
+   "start": 470.0,
+   "dur": 9.0,
+   "text": "this number and check this against the answers to the question you can see that the relevant answer is B",
+   "label": "7:50"
+  },
+  {
+   "start": 479.0,
+   "dur": 9.0,
+   "text": "okay we know what the answer is let me however present a different way for solving this question and this different",
+   "label": "7:59"
+  },
+  {
+   "start": 488.0,
+   "dur": 7.0,
+   "text": "way is going to use or utilize your time value of money worksheet which is absolutely critical for this exam not",
+   "label": "8:08"
+  },
+  {
+   "start": 495.0,
+   "dur": 7.0,
+   "text": "just for the quantitative methods section of it but also for fixed income for Equity Investments to some extent at",
+   "label": "8:15"
+  },
+  {
+   "start": 502.0,
+   "dur": 7.0,
+   "text": "least a lot of corporate finance problems are used are solved using that worksheet now",
+   "label": "8:22"
+  },
+  {
+   "start": 509.0,
+   "dur": 9.0,
+   "text": "your worksheet consists of the third row from the top on your calculator so the one starting with n i over y p v PMT and",
+   "label": "8:29"
+  },
+  {
+   "start": 518.0,
+   "dur": 9.0,
+   "text": "FV and what you need to do here is simply provide the input for the problem but first always absolutely always make",
+   "label": "8:38"
+  },
+  {
+   "start": 527.0,
+   "dur": 8.0,
+   "text": "sure to clear the time value of money worksheet and that means pressing the following sequence of buttons second the",
+   "label": "8:47"
+  },
+  {
+   "start": 535.0,
+   "dur": 9.0,
+   "text": "second key followed by the FV key which has clear TVM on top of it so that's that is its",
+   "label": "8:55"
+  },
+  {
+   "start": 544.0,
+   "dur": 7.0,
+   "text": "secondary function that's why we pressed second followed by FV to access this section or this this uh this function",
+   "label": "9:04"
+  },
+  {
+   "start": 551.0,
+   "dur": 8.0,
+   "text": "okay and now you're in it you're supposed to well now you've got the worksheet cleared um you're supposed to provide the",
+   "label": "9:11"
+  },
+  {
+   "start": 559.0,
+   "dur": 9.0,
+   "text": "relevant inputs and the inputs are going to be as follows we're going to have the number two",
+   "label": "9:19"
+  },
+  {
+   "start": 568.0,
+   "dur": 7.0,
+   "text": "followed by the N button that's the number of periods because I'm trying to compute the future value at the end of",
+   "label": "9:28"
+  },
+  {
+   "start": 575.0,
+   "dur": 9.0,
+   "text": "the year too so two followed by n after that I'm going to have the next",
+   "label": "9:35"
+  },
+  {
+   "start": 584.0,
+   "dur": 9.0,
+   "text": "input which is the rate of return required on the investment that's seven so seven followed by I over y That's the",
+   "label": "9:44"
+  },
+  {
+   "start": 593.0,
+   "dur": 9.0,
+   "text": "rate of return 7 I over y now for PV I'm going to have the 50 000 but I'm going",
+   "label": "9:53"
+  },
+  {
+   "start": 602.0,
+   "dur": 7.0,
+   "text": "to make this a negative number so I'm pressing 50 000 or I'm keying in 50 000.",
+   "label": "10:02"
+  },
+  {
+   "start": 609.0,
+   "dur": 8.0,
+   "text": "and I'm following following this up with the plus minus key which is going to turn my input into a negative figure",
+   "label": "10:09"
+  },
+  {
+   "start": 617.0,
+   "dur": 7.0,
+   "text": "so press PV because I need or I want my calculator to understand that this is a cache outflow this is the amount of",
+   "label": "10:17"
+  },
+  {
+   "start": 624.0,
+   "dur": 8.0,
+   "text": "money we're investing okay so that's money flowing out next I'm going to have",
+   "label": "10:24"
+  },
+  {
+   "start": 632.0,
+   "dur": 9.0,
+   "text": "PMT now PMT because I'm going from left to right so I've got my n I've got my I over y I've got my uh sorry my input I",
+   "label": "10:32"
+  },
+  {
+   "start": 641.0,
+   "dur": 10.0,
+   "text": "wanted to make this PV sorry I should should press the PV button here I did on my calculator but I didn't write it down now if this was generating any interim",
+   "label": "10:41"
+  },
+  {
+   "start": 651.0,
+   "dur": 9.0,
+   "text": "cash flows I would have something called PMT we're going to use that later on in this question there are no such caching flows from the investment so the only",
+   "label": "10:51"
+  },
+  {
+   "start": 660.0,
+   "dur": 9.0,
+   "text": "thing I want my calculator to do now is compute CPT the CPT key which is um at the very top of the calculator key",
+   "label": "11:00"
+  },
+  {
+   "start": 669.0,
+   "dur": 7.0,
+   "text": "is on the left hand side CPT followed by f V",
+   "label": "11:09"
+  },
+  {
+   "start": 676.0,
+   "dur": 8.0,
+   "text": "and your calculator will show you a result 57 245 which is the same result which we",
+   "label": "11:16"
+  },
+  {
+   "start": 684.0,
+   "dur": 8.0,
+   "text": "had um when we did it sort of the long way using the relevant formula now the nice thing about using the time value of",
+   "label": "11:24"
+  },
+  {
+   "start": 692.0,
+   "dur": 8.0,
+   "text": "money worksheet is that it stores the values which you've already input sometimes that works against you if you forget to clear the time value of money",
+   "label": "11:32"
+  },
+  {
+   "start": 700.0,
+   "dur": 9.0,
+   "text": "worksheet if you forget to do this but um essentially because it stores the inputs you can easily just overwrite the",
+   "label": "11:40"
+  },
+  {
+   "start": 709.0,
+   "dur": 9.0,
+   "text": "uh certain inputs and keep the others the same so if I now want to know what will be the future value of this investment at the end of year 5 but",
+   "label": "11:49"
+  },
+  {
+   "start": 718.0,
+   "dur": 8.0,
+   "text": "keeping all the other inputs the same so having a required rate of return of seven percent and the",
+   "label": "11:58"
+  },
+  {
+   "start": 726.0,
+   "dur": 9.0,
+   "text": "same PV I would simply say well let's have 5 for n",
+   "label": "12:06"
+  },
+  {
+   "start": 735.0,
+   "dur": 8.0,
+   "text": "and allow the calculator to compute FV but this time with the changed input for",
+   "label": "12:15"
+  },
+  {
+   "start": 743.0,
+   "dur": 10.0,
+   "text": "n so CBT FV and as you can see it shows me an answer of 70 128 which is",
+   "label": "12:23"
+  },
+  {
+   "start": 753.0,
+   "dur": 8.0,
+   "text": "exactly the same as we wrote out before so in the exam whenever you have one of these relatively simple time value of",
+   "label": "12:33"
+  },
+  {
+   "start": 761.0,
+   "dur": 7.0,
+   "text": "money problems what I would probably do is use this method it's quick although sometimes if you know you're going to",
+   "label": "12:41"
+  },
+  {
+   "start": 768.0,
+   "dur": 8.0,
+   "text": "make several changes because you need to calculate the value at a certain point in time and then add another and just change a single input maybe it's better",
+   "label": "12:48"
+  },
+  {
+   "start": 776.0,
+   "dur": 7.0,
+   "text": "to follow this procedure because your calculator will still store the relevant inputs but before you get or before you",
+   "label": "12:56"
+  },
+  {
+   "start": 783.0,
+   "dur": 7.0,
+   "text": "go to any uh fresh problem um in time of value of money it's always good just to make sure that you clear",
+   "label": "13:03"
+  },
+  {
+   "start": 790.0,
+   "dur": 9.0,
+   "text": "the time value of money worksheet so do second followed by clear TVM and that will remove from your calculator's",
+   "label": "13:10"
+  },
+  {
+   "start": 799.0,
+   "dur": null,
+   "text": "memory anything relating to problems you've already solved",
+   "label": "13:19"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:44:50+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:44:50",
+  "lines": {
+   "28": [
+    [
+     "the",
+     null
+    ],
+    [
+     "These",
+     "SE"
+    ],
+    [
+     "actions and say okay at the end of year two we're still going to have 53",
+     null
+    ]
+   ],
+   "80": [
+    [
+     "so press PV because I need or I want my calculator to understand that this is a",
+     null
+    ],
+    [
+     "cash",
+     "cache"
+    ],
+    [
+     "outflow this is the amount of",
+     null
+    ]
+   ],
+   "85": [
+    [
+     "thing I want my calculator to do now is compute CPT the CPT key which is um at the very top of the calculator",
+     null
+    ],
+    [
+     "keys",
+     "key"
+    ]
+   ],
+   "86": [
+    [
+     "",
+     "is"
+    ],
+    [
+     "on the",
+     null
+    ],
+    [
+     "left-hand",
+     "left hand"
+    ],
+    [
+     "side CPT followed by",
+     null
+    ],
+    [
+     "FV And",
+     "f V"
+    ]
+   ],
+   "95": [
+    [
+     "n so",
+     null
+    ],
+    [
+     "CPT",
+     "CBT"
+    ],
+    [
+     "FV and as you can see it shows me an answer of 70 128 which is",
+     null
+    ]
+   ]
+  },
+  "fixes": 6,
+  "checked_seconds": 134.8,
+  "usd": 0.0196,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:23",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:52",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:34",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:13",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:29",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:53",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "10:17",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "10:32",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:00",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:09",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "11:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "12:23",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Value of Money (TVM) - computing Future Value (for the CFA Level 1 exam) — Transcript | YouSNR</title>
+<meta name="description" content="in this video I want to go back to the very Basics and in the context of CFA level one that means time value of money problems so in this recording I&#x27;ll be…">
+<link rel="canonical" href="https://yousnr.com/QPwxWo5GjhA/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Time Value of Money (TVM) - computing Future Value (for the CFA Level 1 exam) — Transcript">
+<meta property="og:description" content="in this video I want to go back to the very Basics and in the context of CFA level one that means time value of money problems so in this recording I&#x27;ll be…">
+<meta property="og:image" content="https://i.ytimg.com/vi/QPwxWo5GjhA/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/QPwxWo5GjhA/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Time Value of Money (TVM) - computing Future Value (for the CFA Level 1 exam)</h1>
+      <div class="meta">Let me explain<span class="pub"> · Dec 24, 2022</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=QPwxWo5GjhA" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 7 words corrected</span></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool " id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: Introduction</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Time Value of Money</span><span class="ts">0:54</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Time Value Worksheet</span><span class="ts">8:08</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: Introduction</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="7.0"><span class="ts">0:00</span><span class="tx">in this video I want to go back to the very Basics and in the context of CFA level one that means time value of money</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=7s" target="_blank" rel="noopener" data-s="7.0" data-d="9.0"><span class="ts">0:07</span><span class="tx">problems so in this recording I&#x27;ll be Computing the future value of a relatively simple investment and then in subsequent videos we&#x27;re going to take</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=16s" target="_blank" rel="noopener" data-s="16.0" data-d="9.0"><span class="ts">0:16</span><span class="tx">that forward and do more advanced things which are quite representative of what you may expect to find on the exam so if time value of money is something you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=25s" target="_blank" rel="noopener" data-s="25.0" data-d="7.0"><span class="ts">0:25</span><span class="tx">want to get right please keep watching and let&#x27;s get solving so this is the question which I want us to have a go at</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=32s" target="_blank" rel="noopener" data-s="32.0" data-d="7.0"><span class="ts">0:32</span><span class="tx">given a projected rate of return of seven percent per annum what is the estimated value of fifty thousand</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=39s" target="_blank" rel="noopener" data-s="39.0" data-d="7.0"><span class="ts">0:39</span><span class="tx">dollars invested today after two and five years of growth with annual compounding and we&#x27;ve got options a b</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=46s" target="_blank" rel="noopener" data-s="46.0" data-d="8.0"><span class="ts">0:46</span><span class="tx">and c with two answers so there are essentially two ways in which you can approach time value of</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Time Value of Money</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=54s" target="_blank" rel="noopener" data-s="54.0" data-d="7.0"><span class="ts">0:54</span><span class="tx">money problems one is the way in which we basically type all the inputs into the calculator and follow the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=61s" target="_blank" rel="noopener" data-s="61.0" data-d="8.0"><span class="ts">1:01</span><span class="tx">appropriate formula or the second way we use the time value of money worksheet and I&#x27;ll do that second so for the first</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=69s" target="_blank" rel="noopener" data-s="69.0" data-d="7.0"><span class="ts">1:09</span><span class="tx">method um what always helps is if you draw a timeline and on this timeline I&#x27;m</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=76s" target="_blank" rel="noopener" data-s="76.0" data-d="7.0"><span class="ts">1:16</span><span class="tx">going to draw t0 that&#x27;s the point of the initial investment so Time Zero I&#x27;m also</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=83s" target="_blank" rel="noopener" data-s="83.0" data-d="7.0"><span class="ts">1:23</span><span class="tx">going to have T1 over here and T2 that&#x27;s the end of year two I could</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=90s" target="_blank" rel="noopener" data-s="90.0" data-d="7.0"><span class="ts">1:30</span><span class="tx">theoretically have the end of year three four and five as well um however I&#x27;m not going to do that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=97s" target="_blank" rel="noopener" data-s="97.0" data-d="7.0"><span class="ts">1:37</span><span class="tx">over here I&#x27;m drawing a downward pointing arrow and the downward direction is supposed to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=104s" target="_blank" rel="noopener" data-s="104.0" data-d="8.0"><span class="ts">1:44</span><span class="tx">signify a cash outflow a cash outflow of 50 000. now this is the amount invested in accordance with the question so 50</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=112s" target="_blank" rel="noopener" data-s="112.0" data-d="9.0"><span class="ts">1:52</span><span class="tx">000 invested today and let&#x27;s call this the PV or the present value of the investment and obviously um at least in part one of the question</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=121s" target="_blank" rel="noopener" data-s="121.0" data-d="7.0"><span class="ts">2:01</span><span class="tx">we&#x27;re thinking about what&#x27;s going to be the future value over here so FV something uh positive that we&#x27;ll be able</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=128s" target="_blank" rel="noopener" data-s="128.0" data-d="9.0"><span class="ts">2:08</span><span class="tx">to take out from the investment in two years time so this is essentially the future value at time two now the uh</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=137s" target="_blank" rel="noopener" data-s="137.0" data-d="8.0"><span class="ts">2:17</span><span class="tx">long-hand way of doing this is to say okay what would happen if this grows at the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=145s" target="_blank" rel="noopener" data-s="145.0" data-d="8.0"><span class="ts">2:25</span><span class="tx">um rate of return which is given in the question and that was seven percent well after one year this 50 000 would still</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=153s" target="_blank" rel="noopener" data-s="153.0" data-d="7.0"><span class="ts">2:33</span><span class="tx">be worth uh 50 000 although on top of this we would have some accrual of Interest so some are cruel ovary return</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=160s" target="_blank" rel="noopener" data-s="160.0" data-d="8.0"><span class="ts">2:40</span><span class="tx">some kind of growth so this would be fifty thousand times seven percent wouldn&#x27;t it um so this</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=168s" target="_blank" rel="noopener" data-s="168.0" data-d="9.0"><span class="ts">2:48</span><span class="tx">seven percent would be from a from an initial value of fifty thousand let&#x27;s have a look three thousand five hundred</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=177s" target="_blank" rel="noopener" data-s="177.0" data-d="7.0"><span class="ts">2:57</span><span class="tx">add it to this okay so giving fifty three thousand five hundred now</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=184s" target="_blank" rel="noopener" data-s="184.0" data-d="7.0"><span class="ts">3:04</span><span class="tx">the same thing and you know for many of you this will be obvious but for those of you just starting out with time value</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=191s" target="_blank" rel="noopener" data-s="191.0" data-d="7.0"><span class="ts">3:11</span><span class="tx">of money that may not be so obvious if you take fifty thousand and multiply it by a factor of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=198s" target="_blank" rel="noopener" data-s="198.0" data-d="8.0"><span class="ts">3:18</span><span class="tx">1.07 so one plus the rate of return required so let me see fifty thousand times one point zero seven you&#x27;re going</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=206s" target="_blank" rel="noopener" data-s="206.0" data-d="8.0"><span class="ts">3:26</span><span class="tx">to get fifty three thousand five hundred anyway and in the same way we could repeat</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=214s" target="_blank" rel="noopener" data-s="214.0" data-d="8.0"><span class="ts">3:34</span><span class="tx">the <span class="fix" data-o="SE" title="YouTube: SE">These</span> actions and say okay at the end of year two we&#x27;re still going to have 53</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=222s" target="_blank" rel="noopener" data-s="222.0" data-d="7.0"><span class="ts">3:42</span><span class="tx">500 but on top of this interest computed at seven percent so plus seven percent</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=229s" target="_blank" rel="noopener" data-s="229.0" data-d="9.0"><span class="ts">3:49</span><span class="tx">interest let&#x27;s see what that gives on the calculator times 1.0 well I want to do fifty three thousand five hundred sorry times</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=238s" target="_blank" rel="noopener" data-s="238.0" data-d="7.0"><span class="ts">3:58</span><span class="tx">0.07 that&#x27;s going to get give us an extract three thousand</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=245s" target="_blank" rel="noopener" data-s="245.0" data-d="8.0"><span class="ts">4:05</span><span class="tx">745 on top of what we already had at the end of the previous year so 53 500</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=253s" target="_blank" rel="noopener" data-s="253.0" data-d="7.0"><span class="ts">4:13</span><span class="tx">and I see a total of 57 245 and once again the same logic as</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=260s" target="_blank" rel="noopener" data-s="260.0" data-d="7.0"><span class="ts">4:20</span><span class="tx">before applies I could have gotten to the same number I guess by taking the result from over here and multiplying</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=267s" target="_blank" rel="noopener" data-s="267.0" data-d="7.0"><span class="ts">4:27</span><span class="tx">that by a factor of 1.07 let&#x27;s just see if that&#x27;s true fifty three thousand five hundred</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=274s" target="_blank" rel="noopener" data-s="274.0" data-d="8.0"><span class="ts">4:34</span><span class="tx">times 1.07 yeah that gives fifty seven thousand two hundred and forty five and essentially that is the answer to at</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=282s" target="_blank" rel="noopener" data-s="282.0" data-d="9.0"><span class="ts">4:42</span><span class="tx">least part of the question what&#x27;s going to be the future value of the investment at the end of year two this much okay let&#x27;s turn this into a more</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=291s" target="_blank" rel="noopener" data-s="291.0" data-d="6.0"><span class="ts">4:51</span><span class="tx">Universal formula for future value at the end of a certain period in the life</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=297s" target="_blank" rel="noopener" data-s="297.0" data-d="8.0"><span class="ts">4:57</span><span class="tx">of our investment so FV and I&#x27;m going to write n meaning the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=305s" target="_blank" rel="noopener" data-s="305.0" data-d="8.0"><span class="ts">5:05</span><span class="tx">future value at a certain point in time which we which we are calling n is equal to the present value so how much this is</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=313s" target="_blank" rel="noopener" data-s="313.0" data-d="9.0"><span class="ts">5:13</span><span class="tx">worth today times a factor of in Brackets 1 plus the required rate of return so r</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=322s" target="_blank" rel="noopener" data-s="322.0" data-d="7.0"><span class="ts">5:22</span><span class="tx">to the power of n and in our case this would be obviously equal to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=329s" target="_blank" rel="noopener" data-s="329.0" data-d="6.0"><span class="ts">5:29</span><span class="tx">future value at the end of year 2 equal to 50 000.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=335s" target="_blank" rel="noopener" data-s="335.0" data-d="7.0"><span class="ts">5:35</span><span class="tx">times 1 plus 7 so 1.07 to the power of 2</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=342s" target="_blank" rel="noopener" data-s="342.0" data-d="9.0"><span class="ts">5:42</span><span class="tx">because I&#x27;ve had 2 over here so I&#x27;m going to need 2 over here as well now let&#x27;s see how to do this on the calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=351s" target="_blank" rel="noopener" data-s="351.0" data-d="7.0"><span class="ts">5:51</span><span class="tx">I&#x27;m assuming you&#x27;ve had the opportunity to format your calculator in the appropriate way um</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=358s" target="_blank" rel="noopener" data-s="358.0" data-d="7.0"><span class="ts">5:58</span><span class="tx">there is a separate video on how to format our calculators and I suggest you do that right now if you haven&#x27;t done it</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=365s" target="_blank" rel="noopener" data-s="365.0" data-d="9.0"><span class="ts">6:05</span><span class="tx">and come back to this video once your calculator is appropriately formatted to handle uh quantitative methods problems</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=374s" target="_blank" rel="noopener" data-s="374.0" data-d="7.0"><span class="ts">6:14</span><span class="tx">um the link to that video is included in the comments section or in the description of this video so fifty</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=381s" target="_blank" rel="noopener" data-s="381.0" data-d="8.0"><span class="ts">6:21</span><span class="tx">thousand times 1.07 and look I&#x27;m now pressing the X to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=389s" target="_blank" rel="noopener" data-s="389.0" data-d="7.0"><span class="ts">6:29</span><span class="tx">the power of 2 buttons so x squared button which is going to square the 1.07 if you didn&#x27;t format your calculator</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=396s" target="_blank" rel="noopener" data-s="396.0" data-d="8.0"><span class="ts">6:36</span><span class="tx">before in accordance with my suggestions it wouldn&#x27;t necessarily do this in the required order and I&#x27;m pressing equals</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=404s" target="_blank" rel="noopener" data-s="404.0" data-d="7.0"><span class="ts">6:44</span><span class="tx">and as you can see 57 245 that answer comes up okay we can</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=411s" target="_blank" rel="noopener" data-s="411.0" data-d="6.0"><span class="ts">6:51</span><span class="tx">therefore I guess quite easily also calculate the future value for this problem</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=417s" target="_blank" rel="noopener" data-s="417.0" data-d="8.0"><span class="ts">6:57</span><span class="tx">at the end of year five so fv5 that&#x27;s going to require 50 000 times</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=425s" target="_blank" rel="noopener" data-s="425.0" data-d="6.0"><span class="ts">7:05</span><span class="tx">1.07 but to the power accordingly of five and let&#x27;s see how we do this on the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=431s" target="_blank" rel="noopener" data-s="431.0" data-d="7.0"><span class="ts">7:11</span><span class="tx">calculator well once again 50 000 times 1.07 and this time because we&#x27;re not</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=438s" target="_blank" rel="noopener" data-s="438.0" data-d="9.0"><span class="ts">7:18</span><span class="tx">squaring we&#x27;re not raising to the power of two but to the power of five I&#x27;m going to use a different key that key is y</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=447s" target="_blank" rel="noopener" data-s="447.0" data-d="7.0"><span class="ts">7:27</span><span class="tx">to the power of x this key which sits uh just next door to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=454s" target="_blank" rel="noopener" data-s="454.0" data-d="8.0"><span class="ts">7:34</span><span class="tx">the brackets so press this one and now input the power to which you want to raise in in this case it&#x27;s five and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=462s" target="_blank" rel="noopener" data-s="462.0" data-d="8.0"><span class="ts">7:42</span><span class="tx">equals and I&#x27;m looking at a result of 70 128 and when you take this number and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=470s" target="_blank" rel="noopener" data-s="470.0" data-d="9.0"><span class="ts">7:50</span><span class="tx">this number and check this against the answers to the question you can see that the relevant answer is B</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=479s" target="_blank" rel="noopener" data-s="479.0" data-d="9.0"><span class="ts">7:59</span><span class="tx">okay we know what the answer is let me however present a different way for solving this question and this different</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Time Value Worksheet</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=488s" target="_blank" rel="noopener" data-s="488.0" data-d="7.0"><span class="ts">8:08</span><span class="tx">way is going to use or utilize your time value of money worksheet which is absolutely critical for this exam not</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=495s" target="_blank" rel="noopener" data-s="495.0" data-d="7.0"><span class="ts">8:15</span><span class="tx">just for the quantitative methods section of it but also for fixed income for Equity Investments to some extent at</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=502s" target="_blank" rel="noopener" data-s="502.0" data-d="7.0"><span class="ts">8:22</span><span class="tx">least a lot of corporate finance problems are used are solved using that worksheet now</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=509s" target="_blank" rel="noopener" data-s="509.0" data-d="9.0"><span class="ts">8:29</span><span class="tx">your worksheet consists of the third row from the top on your calculator so the one starting with n i over y p v PMT and</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=518s" target="_blank" rel="noopener" data-s="518.0" data-d="9.0"><span class="ts">8:38</span><span class="tx">FV and what you need to do here is simply provide the input for the problem but first always absolutely always make</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=527s" target="_blank" rel="noopener" data-s="527.0" data-d="8.0"><span class="ts">8:47</span><span class="tx">sure to clear the time value of money worksheet and that means pressing the following sequence of buttons second the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=535s" target="_blank" rel="noopener" data-s="535.0" data-d="9.0"><span class="ts">8:55</span><span class="tx">second key followed by the FV key which has clear TVM on top of it so that&#x27;s that is its</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=544s" target="_blank" rel="noopener" data-s="544.0" data-d="7.0"><span class="ts">9:04</span><span class="tx">secondary function that&#x27;s why we pressed second followed by FV to access this section or this this uh this function</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=551s" target="_blank" rel="noopener" data-s="551.0" data-d="8.0"><span class="ts">9:11</span><span class="tx">okay and now you&#x27;re in it you&#x27;re supposed to well now you&#x27;ve got the worksheet cleared um you&#x27;re supposed to provide the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=559s" target="_blank" rel="noopener" data-s="559.0" data-d="9.0"><span class="ts">9:19</span><span class="tx">relevant inputs and the inputs are going to be as follows we&#x27;re going to have the number two</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=568s" target="_blank" rel="noopener" data-s="568.0" data-d="7.0"><span class="ts">9:28</span><span class="tx">followed by the N button that&#x27;s the number of periods because I&#x27;m trying to compute the future value at the end of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=575s" target="_blank" rel="noopener" data-s="575.0" data-d="9.0"><span class="ts">9:35</span><span class="tx">the year too so two followed by n after that I&#x27;m going to have the next</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=584s" target="_blank" rel="noopener" data-s="584.0" data-d="9.0"><span class="ts">9:44</span><span class="tx">input which is the rate of return required on the investment that&#x27;s seven so seven followed by I over y That&#x27;s the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=593s" target="_blank" rel="noopener" data-s="593.0" data-d="9.0"><span class="ts">9:53</span><span class="tx">rate of return 7 I over y now for PV I&#x27;m going to have the 50 000 but I&#x27;m going</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=602s" target="_blank" rel="noopener" data-s="602.0" data-d="7.0"><span class="ts">10:02</span><span class="tx">to make this a negative number so I&#x27;m pressing 50 000 or I&#x27;m keying in 50 000.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=609s" target="_blank" rel="noopener" data-s="609.0" data-d="8.0"><span class="ts">10:09</span><span class="tx">and I&#x27;m following following this up with the plus minus key which is going to turn my input into a negative figure</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=617s" target="_blank" rel="noopener" data-s="617.0" data-d="7.0"><span class="ts">10:17</span><span class="tx">so press PV because I need or I want my calculator to understand that this is a <span class="fix" data-o="cache" title="YouTube: cache">cash</span> outflow this is the amount of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=624s" target="_blank" rel="noopener" data-s="624.0" data-d="8.0"><span class="ts">10:24</span><span class="tx">money we&#x27;re investing okay so that&#x27;s money flowing out next I&#x27;m going to have</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=632s" target="_blank" rel="noopener" data-s="632.0" data-d="9.0"><span class="ts">10:32</span><span class="tx">PMT now PMT because I&#x27;m going from left to right so I&#x27;ve got my n I&#x27;ve got my I over y I&#x27;ve got my uh sorry my input I</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=641s" target="_blank" rel="noopener" data-s="641.0" data-d="10.0"><span class="ts">10:41</span><span class="tx">wanted to make this PV sorry I should should press the PV button here I did on my calculator but I didn&#x27;t write it down now if this was generating any interim</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=651s" target="_blank" rel="noopener" data-s="651.0" data-d="9.0"><span class="ts">10:51</span><span class="tx">cash flows I would have something called PMT we&#x27;re going to use that later on in this question there are no such caching flows from the investment so the only</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=660s" target="_blank" rel="noopener" data-s="660.0" data-d="9.0"><span class="ts">11:00</span><span class="tx">thing I want my calculator to do now is compute CPT the CPT key which is um at the very top of the calculator <span class="fix" data-o="key" title="YouTube: key">keys</span></span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=669s" target="_blank" rel="noopener" data-s="669.0" data-d="7.0"><span class="ts">11:09</span><span class="tx"><span class="fix" data-o="is" title="YouTube: is"></span> on the <span class="fix" data-o="left hand" title="YouTube: left hand">left-hand</span> side CPT followed by <span class="fix" data-o="f V" title="YouTube: f V">FV And</span></span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=676s" target="_blank" rel="noopener" data-s="676.0" data-d="8.0"><span class="ts">11:16</span><span class="tx">and your calculator will show you a result 57 245 which is the same result which we</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=684s" target="_blank" rel="noopener" data-s="684.0" data-d="8.0"><span class="ts">11:24</span><span class="tx">had um when we did it sort of the long way using the relevant formula now the nice thing about using the time value of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=692s" target="_blank" rel="noopener" data-s="692.0" data-d="8.0"><span class="ts">11:32</span><span class="tx">money worksheet is that it stores the values which you&#x27;ve already input sometimes that works against you if you forget to clear the time value of money</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=700s" target="_blank" rel="noopener" data-s="700.0" data-d="9.0"><span class="ts">11:40</span><span class="tx">worksheet if you forget to do this but um essentially because it stores the inputs you can easily just overwrite the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=709s" target="_blank" rel="noopener" data-s="709.0" data-d="9.0"><span class="ts">11:49</span><span class="tx">uh certain inputs and keep the others the same so if I now want to know what will be the future value of this investment at the end of year 5 but</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=718s" target="_blank" rel="noopener" data-s="718.0" data-d="8.0"><span class="ts">11:58</span><span class="tx">keeping all the other inputs the same so having a required rate of return of seven percent and the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=726s" target="_blank" rel="noopener" data-s="726.0" data-d="9.0"><span class="ts">12:06</span><span class="tx">same PV I would simply say well let&#x27;s have 5 for n</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=735s" target="_blank" rel="noopener" data-s="735.0" data-d="8.0"><span class="ts">12:15</span><span class="tx">and allow the calculator to compute FV but this time with the changed input for</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=743s" target="_blank" rel="noopener" data-s="743.0" data-d="10.0"><span class="ts">12:23</span><span class="tx">n so <span class="fix" data-o="CBT" title="YouTube: CBT">CPT</span> FV and as you can see it shows me an answer of 70 128 which is</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=753s" target="_blank" rel="noopener" data-s="753.0" data-d="8.0"><span class="ts">12:33</span><span class="tx">exactly the same as we wrote out before so in the exam whenever you have one of these relatively simple time value of</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=761s" target="_blank" rel="noopener" data-s="761.0" data-d="7.0"><span class="ts">12:41</span><span class="tx">money problems what I would probably do is use this method it&#x27;s quick although sometimes if you know you&#x27;re going to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=768s" target="_blank" rel="noopener" data-s="768.0" data-d="8.0"><span class="ts">12:48</span><span class="tx">make several changes because you need to calculate the value at a certain point in time and then add another and just change a single input maybe it&#x27;s better</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=776s" target="_blank" rel="noopener" data-s="776.0" data-d="7.0"><span class="ts">12:56</span><span class="tx">to follow this procedure because your calculator will still store the relevant inputs but before you get or before you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=783s" target="_blank" rel="noopener" data-s="783.0" data-d="7.0"><span class="ts">13:03</span><span class="tx">go to any uh fresh problem um in time of value of money it&#x27;s always good just to make sure that you clear</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=790s" target="_blank" rel="noopener" data-s="790.0" data-d="9.0"><span class="ts">13:10</span><span class="tx">the time value of money worksheet so do second followed by clear TVM and that will remove from your calculator&#x27;s</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=QPwxWo5GjhA&amp;t=799s" target="_blank" rel="noopener" data-s="799.0" data-d=""><span class="ts">13:19</span><span class="tx">memory anything relating to problems you&#x27;ve already solved</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/QPwxWo5GjhA')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=QPwxWo5GjhA&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('QPwxWo5GjhA.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('QPwxWo5GjhA.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  var m=location.hash.match(/t=(\d+)/);
+  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
+    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+})();
+</script>
+</body>
+</html>

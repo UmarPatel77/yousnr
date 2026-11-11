@@ -1,0 +1,525 @@
+{
+ "id": "IXO4L3lVA-4",
+ "title": "Time Value of Money (TVM) - computing Present Value (for the CFA Level 1 exam)",
+ "channel": "Let me explain",
+ "published": "20230102",
+ "description": "Time Value of Money - computing Present Value (for the CFA Level 1 exam) explores the steps needed to calculate the PV using the Texas Instruments BA II Plus calculator.\n\nThis video references:\nhttps://youtu.be/2BHL9PfyUSU - Formatting the Texas Instruments BA II Plus calculator for the CFA exam\n\nFor a comprehensive directory of all videos featured on this channel, please visit the channel companion website: www.letmeexplain.eu\n\nLet me Explain is a CFA Institute Prep Provider. Only CFA Institute Prep Providers are permitted to make use of CFA Institute copyrighted materials which are the building blocks of the exam. We are also required to create / use updated materials every year and this is validated by CFA Institute. Our products and services substantially cover the relevant curriculum and exam and this is validated by CFA Institute. In our advertising, any statement about the numbers of questions in our products and services relates to unique, original, proprietary questions. CFA Institute Prep Providers are forbidden from including CFA Institute official mock exam questions or any questions other than the end of reading questions within their products and services. CFA Institute does not endorse, promote, review or warrant the accuracy or quality of the product and services offered by Let me Explain. CFA Institute®, CFA® and “Chartered Financial Analyst®” are trademarks owned by CFA Institute.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Problem introduction"
+  },
+  {
+   "start": 25,
+   "title": "Chapter 2: The problem scenario"
+  },
+  {
+   "start": 52,
+   "title": "Chapter 3: Timeline analysis"
+  },
+  {
+   "start": 106,
+   "title": "Chapter 4: Formula calculation"
+  },
+  {
+   "start": 204,
+   "title": "Chapter 5: Calculator formula usage"
+  },
+  {
+   "start": 308,
+   "title": "Chapter 6: TVM worksheet method"
+  }
+ ],
+ "duration": 488,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "in this video I want to go through another relatively basic CFA level 1 exam style question on time value of money this time we're going to be",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 9.0,
+   "text": "Computing present value so essentially discounting using both the official formulas as well as the time value of",
+   "label": "0:08"
+  },
+  {
+   "start": 17.0,
+   "dur": 8.0,
+   "text": "money worksheet so if this is something you want to get right in the exam do keep watching and let's get solving so this is the question which I want us",
+   "label": "0:17"
+  },
+  {
+   "start": 25.0,
+   "dur": 9.0,
+   "text": "to have a go at Andrea Fitch plans to purchase a car where if an estimated twenty thousand for her daughter upon her graduating from high school in four",
+   "label": "0:25"
+  },
+  {
+   "start": 34.0,
+   "dur": 8.0,
+   "text": "years time how much must Fitch invest today in a money market fund expected to earn three percent per year to fund the",
+   "label": "0:34"
+  },
+  {
+   "start": 42.0,
+   "dur": 10.0,
+   "text": "purchase okay so let's start with the um explanations I'm going to draw just like before a timeline",
+   "label": "0:42"
+  },
+  {
+   "start": 52.0,
+   "dur": 6.0,
+   "text": "and on this timeline I'm going to label or have t equal to zero so that's Time",
+   "label": "0:52"
+  },
+  {
+   "start": 58.0,
+   "dur": 10.0,
+   "text": "Zero today and then um end of year one end of year two end of year three and end of year four because Fitch's",
+   "label": "0:58"
+  },
+  {
+   "start": 68.0,
+   "dur": 9.0,
+   "text": "daughter is going to graduate from high school in four years time and that's when she will need an expected twenty",
+   "label": "1:08"
+  },
+  {
+   "start": 77.0,
+   "dur": 8.0,
+   "text": "thousand to buy a car for her um daughter so that's going to be our FV essentially",
+   "label": "1:17"
+  },
+  {
+   "start": 85.0,
+   "dur": 7.0,
+   "text": "and what is more that's the fv4 future value at time to four and what we're looking for it you know in this problem",
+   "label": "1:25"
+  },
+  {
+   "start": 92.0,
+   "dur": 7.0,
+   "text": "is PV how much should she invest today in a fund that earns us you know a",
+   "label": "1:32"
+  },
+  {
+   "start": 99.0,
+   "dur": 7.0,
+   "text": "specific amount per year to um be able to afford this purchase now in the previous video the one on future value",
+   "label": "1:39"
+  },
+  {
+   "start": 106.0,
+   "dur": 7.0,
+   "text": "computations I introduced a formula whereby we said future value at time n",
+   "label": "1:46"
+  },
+  {
+   "start": 113.0,
+   "dur": 9.0,
+   "text": "is equal to PV times 1 plus r to the power of n now let's uh essentially",
+   "label": "1:53"
+  },
+  {
+   "start": 122.0,
+   "dur": 8.0,
+   "text": "use this formula transform it a little bit because this time we know we're looking for PV so I'm doing PV equals f",
+   "label": "2:02"
+  },
+  {
+   "start": 130.0,
+   "dur": 7.0,
+   "text": "v n divided by 1 plus 4 to the power of n and another way of writing the same",
+   "label": "2:10"
+  },
+  {
+   "start": 137.0,
+   "dur": 10.0,
+   "text": "thing down is to say well PV equals f v n times 1 plus 4 to the power of minus n",
+   "label": "2:17"
+  },
+  {
+   "start": 147.0,
+   "dur": 8.0,
+   "text": "so dividing by something raised to the power of n is the same as multiplying by one by that same thing raised to the",
+   "label": "2:27"
+  },
+  {
+   "start": 155.0,
+   "dur": 9.0,
+   "text": "power of minus n and if we now use the data from the question basically to perform the relevant computations let's",
+   "label": "2:35"
+  },
+  {
+   "start": 164.0,
+   "dur": 8.0,
+   "text": "see um we're going to have PV equal to 20 000.",
+   "label": "2:44"
+  },
+  {
+   "start": 172.0,
+   "dur": 6.0,
+   "text": "divided by 1 plus r well R was three percent in this question so",
+   "label": "2:52"
+  },
+  {
+   "start": 178.0,
+   "dur": 9.0,
+   "text": "1.03 to the power of 4 or alternatively using this expression which should absolutely yield the same",
+   "label": "2:58"
+  },
+  {
+   "start": 187.0,
+   "dur": 10.0,
+   "text": "result twenty thousand times 1.03 to the power of minus four let's try to",
+   "label": "3:07"
+  },
+  {
+   "start": 197.0,
+   "dur": 7.0,
+   "text": "do both things on the calculator okay first this computation twenty thousand",
+   "label": "3:17"
+  },
+  {
+   "start": 204.0,
+   "dur": 8.0,
+   "text": "divided by 1.03 to the power I'm pressing the Y to the power of X key which is sitting",
+   "label": "3:24"
+  },
+  {
+   "start": 212.0,
+   "dur": 8.0,
+   "text": "right right next door to the brackets 4 equals and you can see an answer of",
+   "label": "3:32"
+  },
+  {
+   "start": 220.0,
+   "dur": 7.0,
+   "text": "17769 roughly oh maybe 17 000 uh yes",
+   "label": "3:40"
+  },
+  {
+   "start": 227.0,
+   "dur": 9.0,
+   "text": "769.7 let's write this down if you're not getting this answer on your calculator if you're getting something completely different it",
+   "label": "3:47"
+  },
+  {
+   "start": 236.0,
+   "dur": 7.0,
+   "text": "probably means that your calculator is not formatted to handle uh computations using the algebraic operating system so",
+   "label": "3:56"
+  },
+  {
+   "start": 243.0,
+   "dur": 8.0,
+   "text": "what it does is it first divides and then only then raises to the power of four please change that it will be very",
+   "label": "4:03"
+  },
+  {
+   "start": 251.0,
+   "dur": 7.0,
+   "text": "useful for the exam and there's a video which I've linked to in the description",
+   "label": "4:11"
+  },
+  {
+   "start": 258.0,
+   "dur": 8.0,
+   "text": "that will show you how to effectively change the formatting of your calculator so that you can handle these types of",
+   "label": "4:18"
+  },
+  {
+   "start": 266.0,
+   "dur": 9.0,
+   "text": "problems easily now let's try the second way twenty thousand times 1.03 now I'm doing the same thing",
+   "label": "4:26"
+  },
+  {
+   "start": 275.0,
+   "dur": 7.0,
+   "text": "pressing the Y to the power of X key which is going to be very crucial here",
+   "label": "4:35"
+  },
+  {
+   "start": 282.0,
+   "dur": 9.0,
+   "text": "and now the number the the sorry the digit 4 followed by plus minus to change the sign to negative",
+   "label": "4:42"
+  },
+  {
+   "start": 291.0,
+   "dur": 8.0,
+   "text": "and do equals as you can see same result seventeen thousand seven hundred and sixty nine so when we check this against the answers to the question the possible",
+   "label": "4:51"
+  },
+  {
+   "start": 299.0,
+   "dur": 9.0,
+   "text": "answers we can see that the answer is whichever way we do it answer C okay I also want us to try and get the",
+   "label": "4:59"
+  },
+  {
+   "start": 308.0,
+   "dur": 8.0,
+   "text": "same result but this time using the time value of money worksheet which is going to be um extremely important as I said in the",
+   "label": "5:08"
+  },
+  {
+   "start": 316.0,
+   "dur": 6.0,
+   "text": "previous video for your success in this in this exam so what you've got to do basically is provide the calculator with",
+   "label": "5:16"
+  },
+  {
+   "start": 322.0,
+   "dur": 9.0,
+   "text": "all the inputs save one uh you know you're not going to provide the calculator with an input for PV because that's what you'll have to essentially",
+   "label": "5:22"
+  },
+  {
+   "start": 331.0,
+   "dur": 8.0,
+   "text": "compute so um let's try to do it remember always when doing something on the TVM",
+   "label": "5:31"
+  },
+  {
+   "start": 339.0,
+   "dur": 6.0,
+   "text": "worksheet always clear it first so press second",
+   "label": "5:39"
+  },
+  {
+   "start": 345.0,
+   "dur": 8.0,
+   "text": "followed by the FV whose second V key whose secondary function is clear TVM so",
+   "label": "5:45"
+  },
+  {
+   "start": 353.0,
+   "dur": 7.0,
+   "text": "second FV and now you're ready it doesn't really matter what order you do the",
+   "label": "5:53"
+  },
+  {
+   "start": 360.0,
+   "dur": 10.0,
+   "text": "inputs in your calculator doesn't have to first be provided with an input for n then I over y that that's irrelevant now",
+   "label": "6:00"
+  },
+  {
+   "start": 370.0,
+   "dur": 7.0,
+   "text": "it makes sense for me to do it this way because I'm going from left to right on those you know gray uh keys of the time",
+   "label": "6:10"
+  },
+  {
+   "start": 377.0,
+   "dur": 7.0,
+   "text": "value of money so what I'm doing is well the number of years here is four so four",
+   "label": "6:17"
+  },
+  {
+   "start": 384.0,
+   "dur": 10.0,
+   "text": "followed by n I over y That's the annual rate of return that's going to be three okay so",
+   "label": "6:24"
+  },
+  {
+   "start": 394.0,
+   "dur": 9.0,
+   "text": "three followed by I over y I'm emitting PV because that's what I'm going to calculate and I'm emitting PMT",
+   "label": "6:34"
+  },
+  {
+   "start": 403.0,
+   "dur": 8.0,
+   "text": "um there's not going to be any um annual or you know any cyclical payment here that will happen every year",
+   "label": "6:43"
+  },
+  {
+   "start": 411.0,
+   "dur": 7.0,
+   "text": "so that's by default going to be left to zero but I'm going to provide an input for every because I can tell the",
+   "label": "6:51"
+  },
+  {
+   "start": 418.0,
+   "dur": 9.0,
+   "text": "calculator how much we want to have at the end of year four so that's 20 000 followed by the FV key",
+   "label": "6:58"
+  },
+  {
+   "start": 427.0,
+   "dur": 7.0,
+   "text": "20 000 FV okay perfect now I want my calculator to perform the computations",
+   "label": "7:07"
+  },
+  {
+   "start": 434.0,
+   "dur": 8.0,
+   "text": "so that's the CPT key right next door to enter and above the second CPT followed",
+   "label": "7:14"
+  },
+  {
+   "start": 442.0,
+   "dur": 8.0,
+   "text": "by p v okay and my calculator is displaying once again seventeen thousand seven",
+   "label": "7:22"
+  },
+  {
+   "start": 450.0,
+   "dur": 7.0,
+   "text": "hundred and sixty nine point seven except that it's displaying it as a negative number and the reason is very simple it's saying this is how much you",
+   "label": "7:30"
+  },
+  {
+   "start": 457.0,
+   "dur": 8.0,
+   "text": "need to invest that's the cash out so today which will allow you to extract 20 000 inflow in the future",
+   "label": "7:37"
+  },
+  {
+   "start": 465.0,
+   "dur": 9.0,
+   "text": "providing the investment earns three percent per year so just the confirmation that the result is right and in the exam you obviously don't do",
+   "label": "7:45"
+  },
+  {
+   "start": 474.0,
+   "dur": 7.0,
+   "text": "both methods choose either the time value of money worksheet or this um this is quicker once you get",
+   "label": "7:54"
+  },
+  {
+   "start": 481.0,
+   "dur": null,
+   "text": "accustomed to how your calculator works this is just confirmation and anyway the answer is C",
+   "label": "8:01"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-11T17:45:17+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:45:17",
+  "lines": {
+   "3": [
+    [
+     "to have a go at Andrea Fitch plans to purchase a car",
+     null
+    ],
+    [
+     "worth",
+     "where if"
+    ],
+    [
+     "an estimated twenty thousand for her daughter upon her graduating from high school in four",
+     null
+    ]
+   ],
+   "43": [
+    [
+     "followed by the FV whose second",
+     null
+    ],
+    [
+     "FV",
+     "V"
+    ],
+    [
+     "key whose secondary function is clear TVM so",
+     null
+    ]
+   ],
+   "49": [
+    [
+     "three followed by I over y I'm",
+     null
+    ],
+    [
+     "omitting",
+     "emitting"
+    ],
+    [
+     "PV because that's what I'm going to calculate and I'm",
+     null
+    ],
+    [
+     "omitting",
+     "emitting"
+    ],
+    [
+     "PMT",
+     null
+    ]
+   ]
+  },
+  "fixes": 4,
+  "checked_seconds": 80.2,
+  "usd": 0.0117,
+  "version": 3,
+  "flagged": [
+   [
+    "0:25",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:34",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:58",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:17",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:45",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:53",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "6:34",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "7:14",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

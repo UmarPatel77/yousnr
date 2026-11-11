@@ -519,5 +519,314 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-11T17:44:23+00:00"
+ "added": "2026-11-11T17:44:23+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-11T12:44:23",
+  "lines": {
+   "5": [
+    [
+     "the Texas Instruments",
+     null
+    ],
+    [
+     "BA II",
+     "ba2"
+    ],
+    [
+     "Plus or",
+     null
+    ],
+    [
+     "BA II",
+     "ba2"
+    ],
+    [
+     "plus Professional Calculator you will note that it comes pre-programmed to",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "six and then add the eight however if you try to input",
+     null
+    ],
+    [
+     "this",
+     "the"
+    ],
+    [
+     "sequence into your",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "they are set up to handle operations in the order in which they are keyed in so they first",
+     null
+    ],
+    [
+     "add",
+     "at"
+    ],
+    [
+     "the eight and the two and",
+     null
+    ]
+   ],
+   "26": [
+    [
+     "one of them and directly above the key you will see the",
+     null
+    ],
+    [
+     "word",
+     "where it"
+    ],
+    [
+     "format so",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "conventions the way we activate this secondary function is by pressing the",
+     null
+    ],
+    [
+     "2nd",
+     "second"
+    ],
+    [
+     "key",
+     null
+    ]
+   ],
+   "36": [
+    [
+     "and you should now see the term",
+     null
+    ],
+    [
+     "Enter",
+     "intern"
+    ],
+    [
+     "shown at the top of the display",
+     null
+    ]
+   ],
+   "45": [
+    [
+     "own anyway what you should see now on",
+     null
+    ],
+    [
+     "the",
+     "this"
+    ],
+    [
+     "screen after you have pressed the down arrow four times",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "like we saw before if you want to change this setting you will need to activate",
+     null
+    ],
+    [
+     "the",
+     "this"
+    ],
+    [
+     "set function and you should see the",
+     null
+    ]
+   ],
+   "51": [
+    [
+     "so let's do this",
+     null
+    ],
+    [
+     "2nd Enter",
+     "second answer"
+    ],
+    [
+     "and you should have noticed that the term",
+     null
+    ]
+   ],
+   "52": [
+    [
+     "chain or chn has been replaced by",
+     null
+    ],
+    [
+     "AOS",
+     "ALS"
+    ],
+    [
+     "AOS stands for algebraic operating",
+     null
+    ]
+   ],
+   "55": [
+    [
+     "believe you will find more",
+     null
+    ],
+    [
+     "convenient",
+     "convenience"
+    ],
+    [
+     "so let's check whether these changes have in fact taken effect",
+     null
+    ]
+   ],
+   "61": [
+    [
+     "by 6 equals okay now you see the result",
+     null
+    ],
+    [
+     "as",
+     "is"
+    ],
+    [
+     "being 1.666 and so on basically the calculator",
+     null
+    ]
+   ]
+  },
+  "fixes": 13,
+  "checked_seconds": 193.2,
+  "usd": 0.0281,
+  "version": 3,
+  "flagged": [
+   [
+    "0:42",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:44",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:49",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "6:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:05",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "7:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:44",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
