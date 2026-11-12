@@ -65,6 +65,15 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .flash{background:var(--hit)!important}
 .hidden{display:none!important}
 .foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+.pg{margin:12px 16px 4px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:13px;line-height:19px}
+.pg h4{margin:0 0 6px;font-size:15px;line-height:21px;font-weight:700}
+.pg p{margin:6px 0}.pg .mute{color:var(--mute)}.pg a.lk{color:var(--accent)}
+.pgbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--chip);margin:8px 0 6px}
+.pgbar span{display:block;height:100%}
+.pgai{background:#e5484d}.pgas{background:#f5a524}.pghu{background:#30a46c}
+.pgkey{display:flex;gap:4px 14px;flex-wrap:wrap}.pgkey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+.pgflag a{color:var(--accent);margin-right:10px;white-space:nowrap}
+.pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
 @media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
@@ -89,6 +98,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
         <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
         <span class="tools">
           <button class="tool {{FIXCLASS}}" id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool {{PGCLASS}}" id="pgbtn" aria-pressed="false" title="Check whether this transcript reads as AI-written, with Pangram">Pangram</button>
           <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
           <button class="tool" id="tog">Hide timestamps</button>
           <button class="tool" id="copy">Copy</button>
@@ -98,6 +108,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       </div>
       <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
     </div>
+    <div class="pg hidden" id="pg" aria-live="polite"></div>
     <div class="chaps hidden" id="chaps">{{TOC}}</div>
     <div class="body" id="body">
 {{ROWS}}
@@ -106,6 +117,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   </div>
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
+<script type="application/json" id="pgdata">{{PANGRAM}}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -182,8 +194,8 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
       var list=[];
       [].forEach.call(el.querySelector('.tx').childNodes,function(c){
-        if(c.nodeType===3)c.nodeValue.split(/[\s​-‍﻿]+/).forEach(function(w){if(w)list.push({text:w})});
-        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s​-‍﻿]+/g,' ').trim()});
+        if(c.nodeType===3)c.nodeValue.split(/[\s\u200b-\u200d\ufeff]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim()});
       });
       var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
       list.forEach(function(u,k){
@@ -252,6 +264,59 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
   try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
 
+
+  // Pangram: does this transcript read as AI-written? One check per video (on the first ~1,500 words),
+  // saved and shown to everyone after that, with a link to Pangram's own report.
+  var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
+  try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
+  var PGMSG={pangram_budget:'This month’s Pangram checks are used up. Try again next month.',
+    pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
+    slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
+    too_short:'This transcript is too short for Pangram to judge.',offline:'The YouSNR server is offline. Try again later.',
+    not_found:'This video isn’t saved on YouSNR yet. Reload the page and try again.'};
+  function pct(x){return Math.round((x||0)*100)+'%'}
+  function pgCard(r){
+    var ai=r.ai||0,as=r.assisted||0,hu=Math.max(0,1-ai-as),d=new Date(r.checked);
+    var flags=(r.flagged||[]).map(function(f){return '<a href="#t='+Math.floor(f.from)+'" data-t="'+Math.floor(f.from)+'">'+clock(f.from)+'–'+clock(f.to)+'</a>'+(f.kind==='assisted'?' <span class="mute">(AI-assisted)</span>':'')}).join(' ');
+    pg.innerHTML='<h4>Pangram: '+esc(r.headline||r.short||'')+'</h4>'+
+      '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
+      '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
+      (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
+      (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
+      '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
+  }
+  function pgOffer(){
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~1,500 words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    document.getElementById('pggo').onclick=pgRun;
+  }
+  function pgRun(){
+    var t0=Date.now(),blips=0;
+    pg.innerHTML='<h4>Checking with Pangram… <span class="mute" id="pgs">0s</span></h4><p class="mute">Usually takes under a minute.</p>';
+    var timer=setInterval(function(){var s=document.getElementById('pgs');if(s)s.textContent=Math.round((Date.now()-t0)/1000)+'s'},1000);
+    function done(){clearInterval(timer)}
+    function ask(){
+      fetch(api+'/api/pangram/{{ID}}?poll=1',{method:'POST'}).then(function(r){
+        blips=0;
+        if(r.status===202){if(Date.now()-t0>6*60000){done();return pgErr('busy')}return setTimeout(ask,1500)}
+        return r.json().catch(function(){return {}}).then(function(j){done();if(r.ok&&j&&j.checked){pgd=j;pgCard(j)}else pgErr(j.error)});
+      }).catch(function(){if(++blips<3)return setTimeout(ask,4000);done();pgErr('offline')});
+    }
+    ask();
+  }
+  function pgErr(code){
+    pg.innerHTML='<h4>Couldn’t check with Pangram</h4><p class="mute">'+(PGMSG[code]||'Something went wrong. Try again in a minute.')+'</p>';
+  }
+  pgb.onclick=function(){
+    var on=pgb.getAttribute('aria-pressed')!=='true';
+    pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
+    if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
+  };
+  pg.addEventListener('click',function(ev){
+    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+  });
+
   var tog=document.getElementById('tog');
   tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
 
@@ -275,9 +340,14 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   document.getElementById('srt').onclick=function(){dl('{{ID}}.srt',srt())};
 
   // /ID/#t=123 jumps to that line
+  function jumpTo(t){
+    var rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];
+    rows.forEach(function(a){if(+a.dataset.s<=t+0.5)hit=a});
+    body.querySelectorAll('.flash').forEach(function(f){f.classList.remove('flash')});
+    if(hit){show('tr');hit.classList.add('flash');hit.scrollIntoView({block:'center'})}
+  }
   var m=location.hash.match(/t=(\d+)/);
-  if(m){var t=+m[1],rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];rows.forEach(function(a){if(+a.dataset.s<=t)hit=a});
-    if(hit){hit.classList.add('flash');hit.scrollIntoView({block:'center'})}}
+  if(m)jumpTo(+m[1]);
 })();
 </script>
 </body>

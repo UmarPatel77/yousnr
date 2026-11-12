@@ -1437,6 +1437,7 @@ def render_page(d):
     fixed = (d.get("corrected") or {}).get("lines") or {}
     nfix = sum(1 for pieces in fixed.values() for _, o in pieces if o is not None)
     checking = not d.get("corrected") and acc is not None and bool(acc.available())   # word check still to come
+    pg = pangram_result(vid)
 
     def text_html(i, s):
         pieces = fixed.get(str(i))
@@ -1490,6 +1491,8 @@ def render_page(d):
                .replace("{{FIXNOTE}}", (f'<span class="fixnote"> · {nfix} word{"s" if nfix != 1 else ""} corrected</span>'
                                          if nfix else CHECKING_NOTE if checking else ""))
                .replace("{{FIXCLASS}}", "" if nfix else "hidden")
+               .replace("{{PGCLASS}}", "" if (pg or pangram_settings()["key"]) else "hidden")
+               .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
                .replace("{{ROWS}}", "\n".join(rows)))
 
 
@@ -1932,6 +1935,205 @@ class Fetcher:
 _publish_lock = threading.Lock()
 
 
+# ---------------------------------------------------------------- Pangram (AI-text detection)
+# A visitor can ask Pangram whether a transcript reads as AI-written. Each video is checked once, on the
+# first ~1,500 words (Pangram charges per word); the result is saved in data/pangram/ID.json, shown on the
+# page with a link to Pangram's own report, and published like any page. Its own monthly budget.
+PANGRAM_API = "https://text.external-api.pangram.com"
+PG_DIR = DATA / "pangram"
+PG_USAGE = DATA / "_pangram_usage.json"          # this month's spending (kept on this computer only)
+PG_PER_VISITOR_PER_HOUR = 3
+
+
+def pangram_settings():
+    e = os.environ.get
+    return {"key": (e("PANGRAM_API_KEY") or "").strip(), "model": e("YOUSNR_PANGRAM_MODEL") or "pangram-4",
+            "words": int(e("YOUSNR_PANGRAM_WORDS") or 1500), "budget": float(e("YOUSNR_PANGRAM_BUDGET") or 5),
+            "price": float(e("YOUSNR_PANGRAM_PRICE_PER_100_WORDS") or 0.05)}
+
+
+def pangram_result(vid):
+    try:
+        return json.loads((PG_DIR / f"{vid}.json").read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def pangram_spent():
+    try:
+        u = json.loads(PG_USAGE.read_text(encoding="utf-8"))
+        return float(u.get("spent", 0)) if u.get("month") == time.strftime("%Y-%m") else 0.0
+    except Exception:
+        return 0.0
+
+
+def pangram_text(d, max_words):
+    """The words the page shows (corrections included, [tags] left out), whole lines from the start,
+    until max_words. Returns (text, words, [(char offset, line index)], whole transcript?)."""
+    fixed = (d.get("corrected") or {}).get("lines") or {}
+    parts, offsets, words, pos = [], [], 0, 0
+    segs = d["segments"]
+    for i, s in enumerate(segs):
+        pieces = fixed.get(str(i))
+        t = " ".join(p for p, _ in pieces if p) if pieces else s["text"]
+        t = re.sub(r"[\s\u200b-\u200d\ufeff]+", " ", re.sub(r"\[[^\[\]]{0,60}\]", " ", t)).strip()
+        if not t:
+            continue
+        if parts and words + len(t.split()) > max_words:           # stay within the words paid for
+            return " ".join(parts), words, offsets, False
+        offsets.append((pos, i))
+        parts.append(t)
+        pos += len(t) + 1
+        words += len(t.split())
+    return " ".join(parts), words, offsets, True
+
+
+class PangramError(Exception):
+    """.args[0] is the code the page shows a message for; .status the HTTP status."""
+    def __init__(self, code, status=502):
+        super().__init__(code)
+        self.status = status
+
+
+class Pangram:
+    def __init__(self, fetcher):
+        self.fetcher = fetcher
+        self.jobs, self.lock = {}, threading.Lock()       # video ID -> check in progress (or just finished)
+        self.run_lock = threading.Lock()                  # one check at a time
+        self.visitors = {}
+
+    def enabled(self):
+        return bool(pangram_settings()["key"])
+
+    def check(self, vid, ip, poll=True):
+        """Returns (status, body). Starts a check if there's no saved result, then waits up to JOB_WAIT."""
+        r = pangram_result(vid)
+        if r:
+            return 200, json.dumps(r)
+        f = DATA / f"{vid}.json"
+        if not f.exists():
+            return 404, json.dumps({"error": "not_found"})
+        st = pangram_settings()
+        if not st["key"]:
+            return 503, json.dumps({"error": "pangram_off"})
+        with self.lock:
+            now = time.time()
+            for k in [k for k, j in self.jobs.items() if j["done"].is_set() and now - j["end"] > JOB_KEEP]:
+                del self.jobs[k]
+            job = self.jobs.get(vid)
+            if job is None:
+                d = json.loads(f.read_text(encoding="utf-8"))
+                text, words, offsets, whole = pangram_text(d, st["words"])
+                if words < 50:
+                    return 422, json.dumps({"error": "too_short"})
+                cost = -(-words // 100) * st["price"]
+                if pangram_spent() + cost > st["budget"] + 1e-9:
+                    return 402, json.dumps({"error": "pangram_budget"})
+                hits = [t for t in self.visitors.get(ip, []) if now - t < 3600]
+                if len(hits) >= PG_PER_VISITOR_PER_HOUR:
+                    return 429, json.dumps({"error": "slow_down"})
+                self.visitors[ip] = hits + [now]
+                job = self.jobs[vid] = {"done": threading.Event(), "result": None, "start": now, "end": 0}
+                threading.Thread(target=self._run, args=(vid, job, d, text, words, offsets, whole, cost, st),
+                                 daemon=True).start()
+        if job["done"].wait(JOB_WAIT if poll else 120):
+            return job["result"]
+        return 202, json.dumps({"working": True, "secs": int(time.time() - job["start"])})
+
+    def _run(self, vid, job, d, text, words, offsets, whole, cost, st):
+        try:
+            with self.run_lock:
+                res = self._ask(text, st)
+                out = self._summary(d, res, words, offsets, whole, st)
+                PG_DIR.mkdir(parents=True, exist_ok=True)
+                write_atomic(PG_DIR / f"{vid}.json", json.dumps(out, ensure_ascii=False, indent=1))
+                month = time.strftime("%Y-%m")
+                write_atomic(PG_USAGE, json.dumps({"month": month, "spent": round(pangram_spent() + cost, 4)}))
+                write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
+                self.fetcher.pending.append(vid)
+            print(f"{time.strftime('%H:%M:%S')}  {vid}  pangram: {out['headline'] or out['short']} "
+                  f"({round(out['ai'] * 100)}% AI, {round(out['assisted'] * 100)}% AI-assisted; "
+                  f"{words} words, ${cost:.2f}; ${pangram_spent():.2f} of ${st['budget']:.2f} this month)")
+            job["result"] = (200, json.dumps(out))
+        except PangramError as e:
+            print(f"{time.strftime('%H:%M:%S')}  {vid}  pangram failed: {e.args[0]}")
+            job["result"] = (e.status, json.dumps({"error": e.args[0]}))
+        except Exception as e:
+            print(f"{time.strftime('%H:%M:%S')}  {vid}  pangram failed: {e.__class__.__name__}: {str(e)[:200]}")
+            job["result"] = (502, json.dumps({"error": "pangram_failed"}))
+        finally:
+            job["end"] = time.time()
+            job["done"].set()
+
+    @staticmethod
+    def _ask(text, st):
+        import requests
+        h = {"x-api-key": st["key"], "Content-Type": "application/json"}
+        r = requests.post(f"{PANGRAM_API}/task", headers=h, timeout=30,
+                          json={"text": text, "model": st["model"], "public_dashboard_link": True})
+        if r.status_code in (401, 403):
+            print("  Pangram refused the API key (check PANGRAM_API_KEY)")
+            raise PangramError("pangram_off", 503)
+        if r.status_code == 402:
+            print("  Pangram says the account is out of credits")
+            raise PangramError("pangram_credits", 503)
+        if r.status_code == 429:
+            raise PangramError("busy", 503)
+        if r.status_code >= 400:
+            print(f"  Pangram HTTP {r.status_code}: {r.text[:200]}")
+            raise PangramError("pangram_failed")
+        tid = r.json()["task_id"]
+        deadline = time.time() + 240
+        while True:
+            time.sleep(2)
+            g = requests.get(f"{PANGRAM_API}/task/{tid}", headers=h, timeout=30)
+            if g.status_code >= 400:
+                print(f"  Pangram HTTP {g.status_code}: {g.text[:200]}")
+                raise PangramError("pangram_failed")
+            res = g.json()
+            if res.get("stage") == "STAGE_SUCCESS":
+                return res
+            if res.get("stage") == "STAGE_FAILED" or time.time() > deadline:
+                print(f"  Pangram task {res.get('stage') or 'timed out'}: {str(res.get('error') or '')[:200]}")
+                raise PangramError("pangram_failed")
+
+    @staticmethod
+    def _summary(d, res, words, offsets, whole, st):
+        """What the page needs: the verdict, the three shares, which stretches were flagged (as times),
+        and Pangram's shareable report."""
+        import bisect
+        segs, starts = d["segments"], [o for o, _ in offsets]
+
+        def line_at(ix):
+            return offsets[max(0, bisect.bisect_right(starts, max(0, int(ix))) - 1)][1]
+
+        def end_of(i):
+            s = segs[i]
+            return float(s["start"]) + float(s.get("dur") or 0) if s.get("dur") else (
+                float(segs[i + 1]["start"]) if i + 1 < len(segs) else float(s["start"]) + 4)
+        flagged = []
+        for w in res.get("windows") or []:
+            label = (w.get("label") or "").lower()
+            kind = "ai" if label.startswith("ai-gen") or label == "ai" else "assisted" if "assist" in label else None
+            if not kind or w.get("start_index") is None:
+                continue
+            a, b = line_at(w["start_index"]), line_at(max(w["start_index"], (w.get("end_index") or w["start_index"]) - 1))
+            fr, to = float(segs[a]["start"]), end_of(b)
+            if flagged and fr < flagged[-1]["to"] and flagged[-1]["kind"] != kind:
+                fr = flagged[-1]["to"]                    # two kinds share a line: don't overlap the times
+            if flagged and flagged[-1]["kind"] == kind and fr <= flagged[-1]["to"] + 1:
+                flagged[-1]["to"] = max(flagged[-1]["to"], to)
+            elif to > fr:
+                flagged.append({"kind": kind, "from": fr, "to": to, "confidence": w.get("confidence") or ""})
+        last = offsets[-1][1] if offsets else 0
+        return {"checked": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+                "model": str(res.get("version") or st["model"]), "words": words, "whole": whole,
+                "until": end_of(last), "headline": res.get("headline") or "", "short": res.get("prediction_short") or "",
+                "ai": float(res.get("fraction_ai") or 0), "assisted": float(res.get("fraction_ai_assisted") or 0),
+                "human": float(res.get("fraction_human") or 0), "flagged": flagged[:20],
+                "link": res.get("dashboard_link") or res.get("public_dashboard_link") or ""}
+
+
 def publish(fetcher, quiet_if_none=True):
     """Commit and push the pages made since the last push. Returns True if nothing is left waiting."""
     with _publish_lock:
@@ -1948,7 +2150,8 @@ def publish(fetcher, quiet_if_none=True):
             lock.unlink(missing_ok=True)
         try:
             git("add", "-A", "data", "docs")
-            c = git("commit", "-m", f"add {len(ids)} transcript(s): {' '.join(ids[:10])}")
+            uniq = list(dict.fromkeys(ids))
+            c = git("commit", "-m", f"add {len(uniq)} transcript(s): {' '.join(uniq[:10])}")
             if c.returncode != 0 and "nothing to commit" in (c.stdout + c.stderr):
                 return True
             r = git("push")
@@ -1961,7 +2164,7 @@ def publish(fetcher, quiet_if_none=True):
         except subprocess.TimeoutExpired:
             r = None
         if r is not None and r.returncode == 0:
-            print(f"  published {len(ids)} new page(s) to GitHub")
+            print(f"  published {len(dict.fromkeys(ids))} new page(s) to GitHub")
             return True
         err = "timed out" if r is None else (r.stderr or r.stdout).strip().splitlines()[-1:]
         print(f"  git push failed (will retry): {err}")
@@ -2189,10 +2392,16 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
             return super().do_GET()        # local preview of the site, like GitHub Pages
 
         def do_POST(self):
-            m = re.fullmatch(r"/api/view/([A-Za-z0-9_-]{11})", urllib.parse.urlparse(self.path).path)
+            u = urllib.parse.urlparse(self.path)
+            m = re.fullmatch(r"/api/view/([A-Za-z0-9_-]{11})", u.path)
             if m:
                 corrector.viewed(m.group(1))
                 return self._send(204, "text/plain", "")
+            m = re.fullmatch(r"/api/pangram/([A-Za-z0-9_-]{11})", u.path)
+            if m:
+                ip = self.headers.get("CF-Connecting-IP") or self.client_address[0]
+                status, body = pangram.check(m.group(1), ip, "poll=1" in (u.query or ""))
+                return self._send(status, "application/json", body)
             return self._send(404, "application/json", json.dumps({"error": "not_found"}))
 
         def send_error(self, code, message=None, explain=None):
@@ -2202,6 +2411,7 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
 
     srv.RequestHandlerClass = Handler
     corrector = fetcher.corrector = Corrector(fetcher)
+    pangram = Pangram(fetcher)
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(
@@ -2213,6 +2423,9 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
               f"${st['budget']:.2f} used this month; full re-transcription at {st['full_at']} views")
     else:
         print("  corrections: off (set ELEVENLABS_API_KEY / ASSEMBLYAI_API_KEY to turn on)")
+    pst = pangram_settings()
+    print(f"  Pangram checks: on; ${pangram_spent():.2f} of ${pst['budget']:.2f} used this month, first "
+          f"{pst['words']} words per video" if pst["key"] else "  Pangram checks: off (set PANGRAM_API_KEY to turn on)")
     awake_stop = threading.Event()
     threading.Thread(target=keep_awake, args=(awake_stop,), daemon=True).start()
     tun = Tunnel().start() if tunnel else None
@@ -2490,6 +2703,9 @@ def show_status(port=8787, lines=15):
         print(f"  corrections: {', '.join(acc.available())}; ${acc.spent_this_month():.2f} of ${st['budget']:.2f} used this month")
     else:
         print("  corrections: off (no ElevenLabs / AssemblyAI key found)")
+    pst = pangram_settings()
+    print(f"  Pangram checks: ${pangram_spent():.2f} of ${pst['budget']:.2f} used this month" if pst["key"]
+          else "  Pangram checks: off (no PANGRAM_API_KEY)")
     if LOG.exists() and lines:
         tail = LOG.read_text(encoding="utf-8", errors="replace").splitlines()[-lines:]
         print(f"\nLast {len(tail)} lines of yousnr.log:")
