@@ -1,1 +1,54 @@
-{"made": "2026-11-13T01:39:31+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz5Fh2iN4kNEunLDpWaR\"}"}
+{
+ "made": "2026-11-13T02:16:58+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Jeremy Fallows plans to invest 10,000 per year",
+   "t": 36.5,
+   "line": 4
+  },
+  {
+   "text": "downward pointing arrows",
+   "t": 116.1,
+   "line": 14
+  },
+  {
+   "text": "the FV at the end of year three",
+   "t": 249.7,
+   "line": 31
+  },
+  {
+   "text": "roll this forward just by",
+   "t": 261.1,
+   "line": 32
+  },
+  {
+   "text": "times 1.04 equals 32",
+   "t": 281.4,
+   "line": 35
+  },
+  {
+   "text": "just changing one input n",
+   "t": 313.9,
+   "line": 39
+  },
+  {
+   "text": "assuming there is an additional fourth payment of 10 000",
+   "t": 368.0,
+   "line": 46
+  },
+  {
+   "text": "manually deduct the excess 10 000",
+   "t": 381.0,
+   "line": 48
+  },
+  {
+   "text": "understand the logic of the time value of money worksheet",
+   "t": 406.0,
+   "line": 51
+  }
+ ],
+ "cost": 0.00837,
+ "dropped": 0
+}

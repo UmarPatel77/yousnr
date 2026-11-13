@@ -1,0 +1,49 @@
+{
+ "made": "2026-11-13T02:16:43+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "people just don't work as hard in a remote scenario",
+   "t": 21.8,
+   "line": 2
+  },
+  {
+   "text": "working five jobs and lying to you",
+   "t": 53.6,
+   "line": 6
+  },
+  {
+   "text": "Lucy keeps pulling away the football",
+   "t": 107.0,
+   "line": 13
+  },
+  {
+   "text": "so disrespectful and horrible",
+   "t": 159.8,
+   "line": 20
+  },
+  {
+   "text": "pretend like people aren't being dishonest",
+   "t": 170.0,
+   "line": 21
+  },
+  {
+   "text": "Three months probation is pretty standard",
+   "t": 246.0,
+   "line": 31
+  },
+  {
+   "text": "Vulkan and DX12",
+   "t": 267.9,
+   "line": 33
+  },
+  {
+   "text": "not a VibeGL programmer",
+   "t": 280.6,
+   "line": 35
+  }
+ ],
+ "cost": 0.00747,
+ "dropped": 1
+}
