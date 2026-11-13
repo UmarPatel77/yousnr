@@ -1,1 +1,59 @@
-{"made": "2026-11-13T02:15:35+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz81BWuDhUHKqUHAYz5E\"}"}
+{
+ "made": "2026-11-13T02:53:35+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "God would speak to me through the birds",
+   "t": 249.9,
+   "line": 33
+  },
+  {
+   "text": "the song on the radio that was playing was Forever Young",
+   "t": 257.2,
+   "line": 34
+  },
+  {
+   "text": "especially through yellow butterflies",
+   "t": 497.9,
+   "line": 63
+  },
+  {
+   "text": "be quick to forgive",
+   "t": 560.3,
+   "line": 71
+  },
+  {
+   "text": "that's how the saints work when they're in heaven",
+   "t": 601.6,
+   "line": 76
+  },
+  {
+   "text": "\"I need to lock in. I'm going with my friends.\"",
+   "t": 629.3,
+   "line": 80
+  },
+  {
+   "text": "Captain America: Civil War",
+   "t": 816.2,
+   "line": 103
+  },
+  {
+   "text": "Reckless Love",
+   "t": 840.3,
+   "line": 107
+  },
+  {
+   "text": "Long live Lauren. And now we live for Lauren",
+   "t": 995.1,
+   "line": 127
+  },
+  {
+   "text": "I will never stop bringing up her name",
+   "t": 1037.5,
+   "line": 132
+  }
+ ],
+ "cost": 0.01809,
+ "dropped": 0
+}

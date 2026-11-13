@@ -1,0 +1,44 @@
+{
+ "made": "2026-11-13T02:56:38+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "your attention is a currency and your",
+   "t": 18.8,
+   "line": 2
+  },
+  {
+   "text": "content instead of consumed",
+   "t": 48.6,
+   "line": 6
+  },
+  {
+   "text": "There won't be a black bar blinking",
+   "t": 78.0,
+   "line": 9
+  },
+  {
+   "text": "I was there when Notion came out",
+   "t": 197.4,
+   "line": 24
+  },
+  {
+   "text": "In Notion, I used to hold information",
+   "t": 286.0,
+   "line": 34
+  },
+  {
+   "text": "select few pieces of glass that would paint the mosaic",
+   "t": 321.1,
+   "line": 38
+  },
+  {
+   "text": "consider it as an experiment",
+   "t": 332.3,
+   "line": 39
+  }
+ ],
+ "cost": 0.00936,
+ "dropped": 0
+}
