@@ -1,0 +1,526 @@
+{
+ "id": "dLUqBZItYOs",
+ "title": "Jonathan Blow on coroutines and concurrency",
+ "channel": "Jonathan Blow highlights",
+ "published": "20260330",
+ "description": "Original stream: https://www.twitch.tv/videos/2731811294",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: The problem with coroutines"
+  },
+  {
+   "start": 43,
+   "title": "Chapter 2: Threading vs coroutines"
+  },
+  {
+   "start": 90,
+   "title": "Chapter 3: Asynchronous data handling"
+  },
+  {
+   "start": 147,
+   "title": "Chapter 4: The trap of easy abstractions"
+  },
+  {
+   "start": 234,
+   "title": "Chapter 5: Performance and parallelism"
+  },
+  {
+   "start": 305,
+   "title": "Chapter 6: Implementing task systems"
+  },
+  {
+   "start": 372,
+   "title": "Chapter 7: Managing control flow"
+  },
+  {
+   "start": 436,
+   "title": "Chapter 8: State management techniques"
+  },
+  {
+   "start": 535,
+   "title": "Chapter 9: Cooperative scheduling"
+  }
+ ],
+ "duration": 589,
+ "category": "People & Blogs",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "Wondering what I think about stackful stackless. I don't give a about co- routines. I don't I don't know why",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 6.0,
+   "text": "people like them. All HTTP calls and database calls block the thread. Yeah,",
+   "label": "0:07"
+  },
+  {
+   "start": 13.0,
+   "dur": 7.0,
+   "text": "we just have a thread do that. I don't like it doesn't take much to start a",
+   "label": "0:13"
+  },
+  {
+   "start": 20.0,
+   "dur": 6.0,
+   "text": "thread and give it a function and say do this function, right? That's the thing.",
+   "label": "0:20"
+  },
+  {
+   "start": 26.0,
+   "dur": 9.0,
+   "text": "And so the reason I don't care much about co- routines is because they take all this extra infrastructure",
+   "label": "0:26"
+  },
+  {
+   "start": 35.0,
+   "dur": 8.0,
+   "text": "to give you like a small amount of syntactic sugar on top of that. Now this becomes a little bit different if you have a different thesis",
+   "label": "0:35"
+  },
+  {
+   "start": 43.0,
+   "dur": 6.0,
+   "text": "about the language like so for example go has a thesis that it makes sense to",
+   "label": "0:43"
+  },
+  {
+   "start": 49.0,
+   "dur": 8.0,
+   "text": "have a 57 squintillion co- routines most of which are asleep right but I don't",
+   "label": "0:49"
+  },
+  {
+   "start": 57.0,
+   "dur": 8.0,
+   "text": "think that's true that doesn't make much sense to me at all so like I why can't",
+   "label": "0:57"
+  },
+  {
+   "start": 65.0,
+   "dur": 9.0,
+   "text": "you just have a function and say job system please do this you know how do",
+   "label": "1:05"
+  },
+  {
+   "start": 74.0,
+   "dur": 7.0,
+   "text": "you handle recursive dependencies I mean in this language they're just like automatically handled I don't I",
+   "label": "1:14"
+  },
+  {
+   "start": 81.0,
+   "dur": 9.0,
+   "text": "don't know what the problem is you could do async to async I mean I don't think so here's the thing you",
+   "label": "1:21"
+  },
+  {
+   "start": 90.0,
+   "dur": 9.0,
+   "text": "never really want to do anything totally async when you're reading a web page anyway right it's like because if you're going to somewhere to request request",
+   "label": "1:30"
+  },
+  {
+   "start": 99.0,
+   "dur": 8.0,
+   "text": "some data, it's cuz you want to use the data in a second, right? It's just you might want to do three things at the same time because the web is all messed",
+   "label": "1:39"
+  },
+  {
+   "start": 107.0,
+   "dur": 8.0,
+   "text": "up that way. So yeah, you just do the three things at the same time and then you wait until they're all done and then",
+   "label": "1:47"
+  },
+  {
+   "start": 115.0,
+   "dur": 7.0,
+   "text": "you go, right? Like that's fine. That's that's a multi-threaded program thing. I",
+   "label": "1:55"
+  },
+  {
+   "start": 122.0,
+   "dur": 9.0,
+   "text": "just I don't really understand what co- routines really gives you apart from oh I'm in a super high level",
+   "label": "2:02"
+  },
+  {
+   "start": 131.0,
+   "dur": 8.0,
+   "text": "programming language and so I can pretend I that I have this certain infrastructure right but this isn't a super high level programming language in",
+   "label": "2:11"
+  },
+  {
+   "start": 139.0,
+   "dur": 8.0,
+   "text": "that way I mean it's very high level for a systems language but it is a systems language so I mean co- routines and the",
+   "label": "2:19"
+  },
+  {
+   "start": 147.0,
+   "dur": 7.0,
+   "text": "the other reason why I say that I don't think much of them is They're like a lot of things in",
+   "label": "2:27"
+  },
+  {
+   "start": 154.0,
+   "dur": 5.0,
+   "text": "programming languages and frameworks and abstractions and all this stuff, right?",
+   "label": "2:34"
+  },
+  {
+   "start": 159.0,
+   "dur": 8.0,
+   "text": "There's this very very common pattern and the pattern is this thing looks tidy",
+   "label": "2:39"
+  },
+  {
+   "start": 167.0,
+   "dur": 8.0,
+   "text": "and convenient and neat for small easy problems and then doesn't",
+   "label": "2:47"
+  },
+  {
+   "start": 175.0,
+   "dur": 7.0,
+   "text": "help you much for difficult gnarly problems. That's like 98%",
+   "label": "2:55"
+  },
+  {
+   "start": 182.0,
+   "dur": 9.0,
+   "text": "of language features and abstractions and all that, especially in the past 20 years. And the problem is things that",
+   "label": "3:02"
+  },
+  {
+   "start": 191.0,
+   "dur": 12.0,
+   "text": "are easy are already easy. Why do you want to put why do you want to spend the complexity budget of your system on making things that are easy 20% easier?",
+   "label": "3:11"
+  },
+  {
+   "start": 203.0,
+   "dur": 8.0,
+   "text": "I mean, maybe maybe if everything you do is easy, then it makes sense to accelerate that by 20%. But that's usually not how it is. It's usually you",
+   "label": "3:23"
+  },
+  {
+   "start": 211.0,
+   "dur": 9.0,
+   "text": "blast through some easy stuff and then you hit one of the hard things and the hard thing is pretty hard. And like every all the design that I do is to",
+   "label": "3:31"
+  },
+  {
+   "start": 220.0,
+   "dur": 7.0,
+   "text": "help with hard things because that's the limiting factor on what we're able to accomplish is how many hard things are",
+   "label": "3:40"
+  },
+  {
+   "start": 227.0,
+   "dur": 7.0,
+   "text": "we able to do. And co- routines is one of these things that helps you with easy things. And I just I don't care about that.",
+   "label": "3:47"
+  },
+  {
+   "start": 234.0,
+   "dur": 8.0,
+   "text": "The problem is you block the thread holding the connection. What? No.",
+   "label": "3:54"
+  },
+  {
+   "start": 242.0,
+   "dur": 3.0,
+   "text": "What? No. I mean, unless you want to.",
+   "label": "4:02"
+  },
+  {
+   "start": 245.0,
+   "dur": 4.0,
+   "text": "No, you don't have to block the thread holding the connection.",
+   "label": "4:05"
+  },
+  {
+   "start": 249.0,
+   "dur": 10.0,
+   "text": "Implementation wise, it's potentially more performant than a gazillion OS threads if you have a very, very large number of them. But nobody does. Nobody",
+   "label": "4:09"
+  },
+  {
+   "start": 259.0,
+   "dur": 7.0,
+   "text": "does. Like the example that I just gave you. I mean, again, there's there's two separate worlds, right? There's the web",
+   "label": "4:19"
+  },
+  {
+   "start": 266.0,
+   "dur": 9.0,
+   "text": "world where people think about concurrency, but concurrency, as I always say, is kind of a weasel word. In the game world, and in the other high",
+   "label": "4:26"
+  },
+  {
+   "start": 275.0,
+   "dur": 8.0,
+   "text": "performance application world, you care about parallelism. Parallelism is a stronger word than concurrency because",
+   "label": "4:35"
+  },
+  {
+   "start": 283.0,
+   "dur": 8.0,
+   "text": "it means you're actually doing things at the same time. Concurrency means that things may be overlap somewhat. It's a",
+   "label": "4:43"
+  },
+  {
+   "start": 291.0,
+   "dur": 7.0,
+   "text": "very weak word or you know the things maybe are unordered,",
+   "label": "4:51"
+  },
+  {
+   "start": 298.0,
+   "dur": 7.0,
+   "text": "right? Like what? Um so parallelism means oh we're actually using the",
+   "label": "4:58"
+  },
+  {
+   "start": 305.0,
+   "dur": 8.0,
+   "text": "hardware that we have to get the task done more quickly. And if you want parallelism then the number of threads",
+   "label": "5:05"
+  },
+  {
+   "start": 313.0,
+   "dur": 7.0,
+   "text": "that you have should be related to the number of cores that you have. Okay? And there's no reason to create threads for",
+   "label": "5:13"
+  },
+  {
+   "start": 320.0,
+   "dur": 9.0,
+   "text": "everything like in the web example that I just said. You just write a fiveline function or whatever that gets the page",
+   "label": "5:20"
+  },
+  {
+   "start": 329.0,
+   "dur": 10.0,
+   "text": "and puts the result into a known place and you give that to the job system and that fires and and then it's done. You don't create a thread for that, right?",
+   "label": "5:29"
+  },
+  {
+   "start": 339.0,
+   "dur": 8.0,
+   "text": "You don't want to create a thread for that because you don't want tons of things running all the time, right? So one of the things he was trying to",
+   "label": "5:39"
+  },
+  {
+   "start": 347.0,
+   "dur": 6.0,
+   "text": "implement is to park jobs that are past a predetermined deadline.",
+   "label": "5:47"
+  },
+  {
+   "start": 353.0,
+   "dur": 7.0,
+   "text": "Wouldn't co- routines help since Windows dropped user mode scheduling blah blah blah. I don't know anything about user",
+   "label": "5:53"
+  },
+  {
+   "start": 360.0,
+   "dur": 8.0,
+   "text": "mode scheduling in Windows anyway. Um but wouldn't co- routines help there? I mean",
+   "label": "6:00"
+  },
+  {
+   "start": 368.0,
+   "dur": 4.0,
+   "text": "you could do that with co- routines but you can also do it without co- routines.",
+   "label": "6:08"
+  },
+  {
+   "start": 372.0,
+   "dur": 7.0,
+   "text": "like okay there's one very fundamental thing about programming in systems",
+   "label": "6:12"
+  },
+  {
+   "start": 379.0,
+   "dur": 7.0,
+   "text": "languages or many languages but you know like functional style languages give you primitives to deal with the following",
+   "label": "6:19"
+  },
+  {
+   "start": 386.0,
+   "dur": 9.0,
+   "text": "thing that I'm about to say uh when you're programming in system languages especially there's this thing where your control",
+   "label": "6:26"
+  },
+  {
+   "start": 395.0,
+   "dur": 7.0,
+   "text": "flow is interled with like the stack right there's this implicit data",
+   "label": "6:35"
+  },
+  {
+   "start": 402.0,
+   "dur": 8.0,
+   "text": "structure called the stack that has to be there for you to run, you know, and as you call functions and return from",
+   "label": "6:42"
+  },
+  {
+   "start": 410.0,
+   "dur": 7.0,
+   "text": "them, the stack bloops up and down and all that, right? And then the thing about what you're talking about about",
+   "label": "6:50"
+  },
+  {
+   "start": 417.0,
+   "dur": 9.0,
+   "text": "suspending some code naively in a systems language, you're like, \"Oh, I don't know how to do this because I called all these functions and like I'm",
+   "label": "6:57"
+  },
+  {
+   "start": 426.0,
+   "dur": 10.0,
+   "text": "just on the stack somewhere and I don't know what to do.\" Right? But there are two basic ways to handle it. One is",
+   "label": "7:06"
+  },
+  {
+   "start": 436.0,
+   "dur": 6.0,
+   "text": "on most systems languages. We actually don't provide a fundamental way of doing this, but you could implement it",
+   "label": "7:16"
+  },
+  {
+   "start": 442.0,
+   "dur": 8.0,
+   "text": "yourself. But you know in C back in the day, you would use set jump and long jump and figure out the range of the",
+   "label": "7:22"
+  },
+  {
+   "start": 450.0,
+   "dur": 8.0,
+   "text": "stack and you would just copy the stack if you wanted to do that, which is maybe expensive back in the day, but these",
+   "label": "7:30"
+  },
+  {
+   "start": 458.0,
+   "dur": 8.0,
+   "text": "days is very cheap. because stacks are not that big. You could do that. Uh but but I wouldn't prefer to do it that way",
+   "label": "7:38"
+  },
+  {
+   "start": 466.0,
+   "dur": 8.0,
+   "text": "anyway. What I would do is just have so so the the way to become more powerful",
+   "label": "7:46"
+  },
+  {
+   "start": 474.0,
+   "dur": 8.0,
+   "text": "in situations like that is you just disentangle the state of the job that you're trying to do from the stack, right? And that",
+   "label": "7:54"
+  },
+  {
+   "start": 482.0,
+   "dur": 7.0,
+   "text": "just means you have a data structure that represents the task you're trying to do. you have a function that just",
+   "label": "8:02"
+  },
+  {
+   "start": 489.0,
+   "dur": 8.0,
+   "text": "iterates over the upcoming tasks and looks at them and makes progress on them, right? And once you centralize it",
+   "label": "8:09"
+  },
+  {
+   "start": 497.0,
+   "dur": 7.0,
+   "text": "in that function, um you uh you know, you can just yield if something is",
+   "label": "8:17"
+  },
+  {
+   "start": 504.0,
+   "dur": 7.0,
+   "text": "taking too long and whatever and go to the next one. That's kind of like writing your own scheduler, but it's tremendously tremendously tremendously",
+   "label": "8:24"
+  },
+  {
+   "start": 511.0,
+   "dur": 9.0,
+   "text": "simpler because it's only a simple set of well- definfined things that you know everything about. Right? Now, of course,",
+   "label": "8:31"
+  },
+  {
+   "start": 520.0,
+   "dur": 8.0,
+   "text": "that by itself implies some constraints on the code. So, you can't call something that blocks indefinitely",
+   "label": "8:40"
+  },
+  {
+   "start": 528.0,
+   "dur": 7.0,
+   "text": "because you wouldn't be able to yield it, right? But like, you know, it's fine. Just don't do that.",
+   "label": "8:48"
+  },
+  {
+   "start": 535.0,
+   "dur": 2.0,
+   "text": "Concurrency equals using same core.",
+   "label": "8:55"
+  },
+  {
+   "start": 537.0,
+   "dur": 12.0,
+   "text": "That's not true. No, concurrency is not even that well defined. But two things on different cores are concurrent for sure. It's just concurrency.",
+   "label": "8:57"
+  },
+  {
+   "start": 549.0,
+   "dur": 3.0,
+   "text": "Like I said, it's just a weaker word than parallelism.",
+   "label": "9:09"
+  },
+  {
+   "start": 552.0,
+   "dur": 9.0,
+   "text": "I'm saying a timeout fires. No, not necessarily. The what I was outlining is more of a cooperative thing. um like",
+   "label": "9:12"
+  },
+  {
+   "start": 561.0,
+   "dur": 9.0,
+   "text": "you're talking about with co- routines, but co-outines implies a lot of things that are not really necessary if you",
+   "label": "9:21"
+  },
+  {
+   "start": 570.0,
+   "dur": 9.0,
+   "text": "just need to solve this problem within your own system. Like the thing is a co-outine abstraction is it's like built for customers of this",
+   "label": "9:30"
+  },
+  {
+   "start": 579.0,
+   "dur": 8.0,
+   "text": "language feature. And so it does a lot of things to handle a lot of things that people need to do in various cases that",
+   "label": "9:39"
+  },
+  {
+   "start": 587.0,
+   "dur": null,
+   "text": "you don't necessarily need to",
+   "label": "9:47"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel",
+  "language_code": "en"
+ },
+ "source": "youtube",
+ "added": "2026-11-13T19:40:51+00:00"
+}

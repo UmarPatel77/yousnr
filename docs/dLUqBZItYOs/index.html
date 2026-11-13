@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jonathan Blow on coroutines and concurrency — Transcript | YouSNR</title>
+<meta name="description" content="Wondering what I think about stackful stackless. I don&#x27;t give a about co- routines. I don&#x27;t I don&#x27;t know why people like them. All HTTP calls and database …">
+<link rel="canonical" href="https://yousnr.com/dLUqBZItYOs/">
+<meta property="og:site_name" content="YouSNR">
+<meta property="og:title" content="Jonathan Blow on coroutines and concurrency — Transcript">
+<meta property="og:description" content="Wondering what I think about stackful stackless. I don&#x27;t give a about co- routines. I don&#x27;t I don&#x27;t know why people like them. All HTTP calls and database …">
+<meta property="og:image" content="https://i.ytimg.com/vi/dLUqBZItYOs/hqdefault.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--fixbg:rgba(6,95,212,.10);--bg:#fff;--fg:#0f0f0f;--mute:#606060;--chip:#f2f2f2;--chip-on:#0f0f0f;--chip-on-fg:#fff;--hover:#f2f2f2;--line:#e5e5e5;--hit:#fff3a3;--accent:#065fd4}
+@media (prefers-color-scheme:dark){:root{--fixbg:rgba(62,166,255,.18);--bg:#0f0f0f;--fg:#f1f1f1;--mute:#aaa;--chip:#272727;--chip-on:#f1f1f1;--chip-on-fg:#0f0f0f;--hover:#272727;--line:#3f3f3f;--hit:#6b5d00;--accent:#3ea6ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/20px Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 64px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
+.tag{color:var(--mute);font-size:12px}
+.vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
+.vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
+.meta{color:var(--mute);font-size:13px}
+.cut{margin:16px 0 4px;padding:0 0 0 14px;border-left:3px solid var(--fg)}
+.cut figcaption{font:500 11px/16px Roboto,Arial,sans-serif;color:var(--mute);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;cursor:help}
+.cut blockquote{margin:0;font:italic 400 18px/27px Georgia,'Times New Roman',serif;color:var(--fg)}
+.cut blockquote a{color:inherit;text-decoration:none}.cut blockquote a:hover{text-decoration:underline}
+.cut .gap{color:var(--mute);font-style:normal;padding:0 2px}
+.meta a{color:var(--accent)}
+
+.panel{border:1px solid var(--line);border-radius:12px}
+.head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
+.head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
+.tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px}
+.tool{border:0;background:none;color:var(--mute);font:500 12px Roboto,Arial,sans-serif;padding:6px 8px;border-radius:16px;cursor:pointer}
+.tool:hover{background:var(--hover);color:var(--fg)}
+.search{display:flex;gap:8px;align-items:center;margin-top:10px}
+.search input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:20px;padding:7px 14px;font:14px Roboto,Arial,sans-serif;outline:none;min-width:0}
+.search input:focus{border-color:var(--accent)}
+.count{color:var(--mute);font-size:12px;min-width:60px;text-align:right}
+
+.body{padding:4px 0 8px}
+.ch{font-size:16px;line-height:22px;font-weight:700;margin:20px 16px 4px}
+.ch:first-child{margin-top:12px}
+.seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
+.seg:hover{background:var(--hover)}
+.seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.seg .tx{display:block;font-size:14px;line-height:20px}
+.nots .seg .ts{display:none}
+#paras{display:none}.paramode #paras{display:block}.paramode #body>.seg,.paramode #body>.ch{display:none}
+.para{padding:10px 16px}.para .tx{line-height:22px}
+.chaps{padding:8px 4px}
+.chap{display:flex;justify-content:space-between;gap:16px;padding:12px;border-radius:8px}
+.chap:hover{background:var(--hover)}
+.chap .ct{font-weight:500}
+.chap .ts{color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+mark{background:var(--hit);color:inherit;border-radius:2px}
+.fix{background:var(--fixbg);border-radius:3px;padding:0 2px;text-decoration:underline dotted var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px;cursor:help}
+.showorig .fix{text-decoration-color:var(--mute)}
+.fixnote{color:var(--accent)}
+.tool[aria-pressed=true]{background:var(--chip);color:var(--fg)}
+.flash{background:var(--hit)!important}
+.hidden{display:none!important}
+.foot{color:var(--mute);font-size:12px;margin-top:20px;text-align:center}
+.pg{margin:12px 16px 4px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:13px;line-height:19px}
+.pg h4{margin:0 0 6px;font-size:15px;line-height:21px;font-weight:700}
+.pg p{margin:6px 0}.pg .mute{color:var(--mute)}.pg a.lk{color:var(--accent)}
+.pgbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--chip);margin:8px 0 6px}
+.pgbar span{display:block;height:100%}
+.pgai{background:#e5484d}.pgas{background:#f5a524}.pghu{background:#30a46c}
+.pgkey{display:flex;gap:4px 14px;flex-wrap:wrap}.pgkey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+.pgflag a{color:var(--accent);margin-right:10px;white-space:nowrap}
+.pg a.go{display:inline-block;text-decoration:none}
+.pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
+.pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
+@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+
+  <div class="vid">
+    <img src="https://i.ytimg.com/vi/dLUqBZItYOs/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <div>
+      <h1>Jonathan Blow on coroutines and concurrency</h1>
+      <div class="meta">Jonathan Blow highlights<span class="pub"> · Mar 30, 2026</span></div>
+      <div class="meta"><a href="https://www.youtube.com/watch?v=dLUqBZItYOs" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · double-checking words with speech recognition; reload in a few minutes for the corrected version</span></div>
+      
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="head">
+      <h3>In this video</h3>
+      <div class="tabs" role="tablist">
+        <button class="tab " role="tab" id="tab-ch" aria-selected="false">Chapters</button>
+        <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
+        <span class="tools">
+          <button class="tool hidden" id="orig" aria-pressed="false" title="Show the exact words YouTube's transcript has">YouTube's original</button>
+          <button class="tool " id="pgbtn" aria-pressed="false" title="Check whether this transcript reads as AI-written, with Pangram">Pangram</button>
+          <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
+          <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool" id="copy">Copy</button>
+          <button class="tool" id="txt">.txt</button>
+          <button class="tool" id="srt">.srt</button>
+        </span>
+      </div>
+      <div class="search" id="searchbar"><input id="q" type="search" placeholder="Search transcript" autocomplete="off"><span class="count" id="count"></span></div>
+    </div>
+    <div class="pg hidden" id="pg" aria-live="polite"></div>
+    <div class="chaps hidden" id="chaps"><a class="chap" href="#ch0" data-ch="0"><span class="ct">Chapter 1: The problem with coroutines</span><span class="ts">0:00</span></a><a class="chap" href="#ch1" data-ch="1"><span class="ct">Chapter 2: Threading vs coroutines</span><span class="ts">0:43</span></a><a class="chap" href="#ch2" data-ch="2"><span class="ct">Chapter 3: Asynchronous data handling</span><span class="ts">1:30</span></a><a class="chap" href="#ch3" data-ch="3"><span class="ct">Chapter 4: The trap of easy abstractions</span><span class="ts">2:27</span></a><a class="chap" href="#ch4" data-ch="4"><span class="ct">Chapter 5: Performance and parallelism</span><span class="ts">3:54</span></a><a class="chap" href="#ch5" data-ch="5"><span class="ct">Chapter 6: Implementing task systems</span><span class="ts">5:05</span></a><a class="chap" href="#ch6" data-ch="6"><span class="ct">Chapter 7: Managing control flow</span><span class="ts">6:12</span></a><a class="chap" href="#ch7" data-ch="7"><span class="ct">Chapter 8: State management techniques</span><span class="ts">7:16</span></a><a class="chap" href="#ch8" data-ch="8"><span class="ct">Chapter 9: Cooperative scheduling</span><span class="ts">8:55</span></a></div>
+    <div class="body" id="body">
+<h2 class="ch" id="ch0">Chapter 1: The problem with coroutines</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=0s" target="_blank" rel="noopener" data-s="0.0" data-d="7.0"><span class="ts">0:00</span><span class="tx">Wondering what I think about stackful stackless. I don&#x27;t give a about co- routines. I don&#x27;t I don&#x27;t know why</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=7s" target="_blank" rel="noopener" data-s="7.0" data-d="6.0"><span class="ts">0:07</span><span class="tx">people like them. All HTTP calls and database calls block the thread. Yeah,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=13s" target="_blank" rel="noopener" data-s="13.0" data-d="7.0"><span class="ts">0:13</span><span class="tx">we just have a thread do that. I don&#x27;t like it doesn&#x27;t take much to start a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=20s" target="_blank" rel="noopener" data-s="20.0" data-d="6.0"><span class="ts">0:20</span><span class="tx">thread and give it a function and say do this function, right? That&#x27;s the thing.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=26s" target="_blank" rel="noopener" data-s="26.0" data-d="9.0"><span class="ts">0:26</span><span class="tx">And so the reason I don&#x27;t care much about co- routines is because they take all this extra infrastructure</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=35s" target="_blank" rel="noopener" data-s="35.0" data-d="8.0"><span class="ts">0:35</span><span class="tx">to give you like a small amount of syntactic sugar on top of that. Now this becomes a little bit different if you have a different thesis</span></a>
+<h2 class="ch" id="ch1">Chapter 2: Threading vs coroutines</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=43s" target="_blank" rel="noopener" data-s="43.0" data-d="6.0"><span class="ts">0:43</span><span class="tx">about the language like so for example go has a thesis that it makes sense to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=49s" target="_blank" rel="noopener" data-s="49.0" data-d="8.0"><span class="ts">0:49</span><span class="tx">have a 57 squintillion co- routines most of which are asleep right but I don&#x27;t</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=57s" target="_blank" rel="noopener" data-s="57.0" data-d="8.0"><span class="ts">0:57</span><span class="tx">think that&#x27;s true that doesn&#x27;t make much sense to me at all so like I why can&#x27;t</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=65s" target="_blank" rel="noopener" data-s="65.0" data-d="9.0"><span class="ts">1:05</span><span class="tx">you just have a function and say job system please do this you know how do</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=74s" target="_blank" rel="noopener" data-s="74.0" data-d="7.0"><span class="ts">1:14</span><span class="tx">you handle recursive dependencies I mean in this language they&#x27;re just like automatically handled I don&#x27;t I</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=81s" target="_blank" rel="noopener" data-s="81.0" data-d="9.0"><span class="ts">1:21</span><span class="tx">don&#x27;t know what the problem is you could do async to async I mean I don&#x27;t think so here&#x27;s the thing you</span></a>
+<h2 class="ch" id="ch2">Chapter 3: Asynchronous data handling</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=90s" target="_blank" rel="noopener" data-s="90.0" data-d="9.0"><span class="ts">1:30</span><span class="tx">never really want to do anything totally async when you&#x27;re reading a web page anyway right it&#x27;s like because if you&#x27;re going to somewhere to request request</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=99s" target="_blank" rel="noopener" data-s="99.0" data-d="8.0"><span class="ts">1:39</span><span class="tx">some data, it&#x27;s cuz you want to use the data in a second, right? It&#x27;s just you might want to do three things at the same time because the web is all messed</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=107s" target="_blank" rel="noopener" data-s="107.0" data-d="8.0"><span class="ts">1:47</span><span class="tx">up that way. So yeah, you just do the three things at the same time and then you wait until they&#x27;re all done and then</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=115s" target="_blank" rel="noopener" data-s="115.0" data-d="7.0"><span class="ts">1:55</span><span class="tx">you go, right? Like that&#x27;s fine. That&#x27;s that&#x27;s a multi-threaded program thing. I</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=122s" target="_blank" rel="noopener" data-s="122.0" data-d="9.0"><span class="ts">2:02</span><span class="tx">just I don&#x27;t really understand what co- routines really gives you apart from oh I&#x27;m in a super high level</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=131s" target="_blank" rel="noopener" data-s="131.0" data-d="8.0"><span class="ts">2:11</span><span class="tx">programming language and so I can pretend I that I have this certain infrastructure right but this isn&#x27;t a super high level programming language in</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=139s" target="_blank" rel="noopener" data-s="139.0" data-d="8.0"><span class="ts">2:19</span><span class="tx">that way I mean it&#x27;s very high level for a systems language but it is a systems language so I mean co- routines and the</span></a>
+<h2 class="ch" id="ch3">Chapter 4: The trap of easy abstractions</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=147s" target="_blank" rel="noopener" data-s="147.0" data-d="7.0"><span class="ts">2:27</span><span class="tx">the other reason why I say that I don&#x27;t think much of them is They&#x27;re like a lot of things in</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=154s" target="_blank" rel="noopener" data-s="154.0" data-d="5.0"><span class="ts">2:34</span><span class="tx">programming languages and frameworks and abstractions and all this stuff, right?</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=159s" target="_blank" rel="noopener" data-s="159.0" data-d="8.0"><span class="ts">2:39</span><span class="tx">There&#x27;s this very very common pattern and the pattern is this thing looks tidy</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=167s" target="_blank" rel="noopener" data-s="167.0" data-d="8.0"><span class="ts">2:47</span><span class="tx">and convenient and neat for small easy problems and then doesn&#x27;t</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=175s" target="_blank" rel="noopener" data-s="175.0" data-d="7.0"><span class="ts">2:55</span><span class="tx">help you much for difficult gnarly problems. That&#x27;s like 98%</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=182s" target="_blank" rel="noopener" data-s="182.0" data-d="9.0"><span class="ts">3:02</span><span class="tx">of language features and abstractions and all that, especially in the past 20 years. And the problem is things that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=191s" target="_blank" rel="noopener" data-s="191.0" data-d="12.0"><span class="ts">3:11</span><span class="tx">are easy are already easy. Why do you want to put why do you want to spend the complexity budget of your system on making things that are easy 20% easier?</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=203s" target="_blank" rel="noopener" data-s="203.0" data-d="8.0"><span class="ts">3:23</span><span class="tx">I mean, maybe maybe if everything you do is easy, then it makes sense to accelerate that by 20%. But that&#x27;s usually not how it is. It&#x27;s usually you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=211s" target="_blank" rel="noopener" data-s="211.0" data-d="9.0"><span class="ts">3:31</span><span class="tx">blast through some easy stuff and then you hit one of the hard things and the hard thing is pretty hard. And like every all the design that I do is to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=220s" target="_blank" rel="noopener" data-s="220.0" data-d="7.0"><span class="ts">3:40</span><span class="tx">help with hard things because that&#x27;s the limiting factor on what we&#x27;re able to accomplish is how many hard things are</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=227s" target="_blank" rel="noopener" data-s="227.0" data-d="7.0"><span class="ts">3:47</span><span class="tx">we able to do. And co- routines is one of these things that helps you with easy things. And I just I don&#x27;t care about that.</span></a>
+<h2 class="ch" id="ch4">Chapter 5: Performance and parallelism</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=234s" target="_blank" rel="noopener" data-s="234.0" data-d="8.0"><span class="ts">3:54</span><span class="tx">The problem is you block the thread holding the connection. What? No.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=242s" target="_blank" rel="noopener" data-s="242.0" data-d="3.0"><span class="ts">4:02</span><span class="tx">What? No. I mean, unless you want to.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=245s" target="_blank" rel="noopener" data-s="245.0" data-d="4.0"><span class="ts">4:05</span><span class="tx">No, you don&#x27;t have to block the thread holding the connection.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=249s" target="_blank" rel="noopener" data-s="249.0" data-d="10.0"><span class="ts">4:09</span><span class="tx">Implementation wise, it&#x27;s potentially more performant than a gazillion OS threads if you have a very, very large number of them. But nobody does. Nobody</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=259s" target="_blank" rel="noopener" data-s="259.0" data-d="7.0"><span class="ts">4:19</span><span class="tx">does. Like the example that I just gave you. I mean, again, there&#x27;s there&#x27;s two separate worlds, right? There&#x27;s the web</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=266s" target="_blank" rel="noopener" data-s="266.0" data-d="9.0"><span class="ts">4:26</span><span class="tx">world where people think about concurrency, but concurrency, as I always say, is kind of a weasel word. In the game world, and in the other high</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=275s" target="_blank" rel="noopener" data-s="275.0" data-d="8.0"><span class="ts">4:35</span><span class="tx">performance application world, you care about parallelism. Parallelism is a stronger word than concurrency because</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=283s" target="_blank" rel="noopener" data-s="283.0" data-d="8.0"><span class="ts">4:43</span><span class="tx">it means you&#x27;re actually doing things at the same time. Concurrency means that things may be overlap somewhat. It&#x27;s a</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=291s" target="_blank" rel="noopener" data-s="291.0" data-d="7.0"><span class="ts">4:51</span><span class="tx">very weak word or you know the things maybe are unordered,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=298s" target="_blank" rel="noopener" data-s="298.0" data-d="7.0"><span class="ts">4:58</span><span class="tx">right? Like what? Um so parallelism means oh we&#x27;re actually using the</span></a>
+<h2 class="ch" id="ch5">Chapter 6: Implementing task systems</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=305s" target="_blank" rel="noopener" data-s="305.0" data-d="8.0"><span class="ts">5:05</span><span class="tx">hardware that we have to get the task done more quickly. And if you want parallelism then the number of threads</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=313s" target="_blank" rel="noopener" data-s="313.0" data-d="7.0"><span class="ts">5:13</span><span class="tx">that you have should be related to the number of cores that you have. Okay? And there&#x27;s no reason to create threads for</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=320s" target="_blank" rel="noopener" data-s="320.0" data-d="9.0"><span class="ts">5:20</span><span class="tx">everything like in the web example that I just said. You just write a fiveline function or whatever that gets the page</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=329s" target="_blank" rel="noopener" data-s="329.0" data-d="10.0"><span class="ts">5:29</span><span class="tx">and puts the result into a known place and you give that to the job system and that fires and and then it&#x27;s done. You don&#x27;t create a thread for that, right?</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=339s" target="_blank" rel="noopener" data-s="339.0" data-d="8.0"><span class="ts">5:39</span><span class="tx">You don&#x27;t want to create a thread for that because you don&#x27;t want tons of things running all the time, right? So one of the things he was trying to</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=347s" target="_blank" rel="noopener" data-s="347.0" data-d="6.0"><span class="ts">5:47</span><span class="tx">implement is to park jobs that are past a predetermined deadline.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=353s" target="_blank" rel="noopener" data-s="353.0" data-d="7.0"><span class="ts">5:53</span><span class="tx">Wouldn&#x27;t co- routines help since Windows dropped user mode scheduling blah blah blah. I don&#x27;t know anything about user</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=360s" target="_blank" rel="noopener" data-s="360.0" data-d="8.0"><span class="ts">6:00</span><span class="tx">mode scheduling in Windows anyway. Um but wouldn&#x27;t co- routines help there? I mean</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=368s" target="_blank" rel="noopener" data-s="368.0" data-d="4.0"><span class="ts">6:08</span><span class="tx">you could do that with co- routines but you can also do it without co- routines.</span></a>
+<h2 class="ch" id="ch6">Chapter 7: Managing control flow</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=372s" target="_blank" rel="noopener" data-s="372.0" data-d="7.0"><span class="ts">6:12</span><span class="tx">like okay there&#x27;s one very fundamental thing about programming in systems</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=379s" target="_blank" rel="noopener" data-s="379.0" data-d="7.0"><span class="ts">6:19</span><span class="tx">languages or many languages but you know like functional style languages give you primitives to deal with the following</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=386s" target="_blank" rel="noopener" data-s="386.0" data-d="9.0"><span class="ts">6:26</span><span class="tx">thing that I&#x27;m about to say uh when you&#x27;re programming in system languages especially there&#x27;s this thing where your control</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=395s" target="_blank" rel="noopener" data-s="395.0" data-d="7.0"><span class="ts">6:35</span><span class="tx">flow is interled with like the stack right there&#x27;s this implicit data</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=402s" target="_blank" rel="noopener" data-s="402.0" data-d="8.0"><span class="ts">6:42</span><span class="tx">structure called the stack that has to be there for you to run, you know, and as you call functions and return from</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=410s" target="_blank" rel="noopener" data-s="410.0" data-d="7.0"><span class="ts">6:50</span><span class="tx">them, the stack bloops up and down and all that, right? And then the thing about what you&#x27;re talking about about</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=417s" target="_blank" rel="noopener" data-s="417.0" data-d="9.0"><span class="ts">6:57</span><span class="tx">suspending some code naively in a systems language, you&#x27;re like, &quot;Oh, I don&#x27;t know how to do this because I called all these functions and like I&#x27;m</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=426s" target="_blank" rel="noopener" data-s="426.0" data-d="10.0"><span class="ts">7:06</span><span class="tx">just on the stack somewhere and I don&#x27;t know what to do.&quot; Right? But there are two basic ways to handle it. One is</span></a>
+<h2 class="ch" id="ch7">Chapter 8: State management techniques</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=436s" target="_blank" rel="noopener" data-s="436.0" data-d="6.0"><span class="ts">7:16</span><span class="tx">on most systems languages. We actually don&#x27;t provide a fundamental way of doing this, but you could implement it</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=442s" target="_blank" rel="noopener" data-s="442.0" data-d="8.0"><span class="ts">7:22</span><span class="tx">yourself. But you know in C back in the day, you would use set jump and long jump and figure out the range of the</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=450s" target="_blank" rel="noopener" data-s="450.0" data-d="8.0"><span class="ts">7:30</span><span class="tx">stack and you would just copy the stack if you wanted to do that, which is maybe expensive back in the day, but these</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=458s" target="_blank" rel="noopener" data-s="458.0" data-d="8.0"><span class="ts">7:38</span><span class="tx">days is very cheap. because stacks are not that big. You could do that. Uh but but I wouldn&#x27;t prefer to do it that way</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=466s" target="_blank" rel="noopener" data-s="466.0" data-d="8.0"><span class="ts">7:46</span><span class="tx">anyway. What I would do is just have so so the the way to become more powerful</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=474s" target="_blank" rel="noopener" data-s="474.0" data-d="8.0"><span class="ts">7:54</span><span class="tx">in situations like that is you just disentangle the state of the job that you&#x27;re trying to do from the stack, right? And that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=482s" target="_blank" rel="noopener" data-s="482.0" data-d="7.0"><span class="ts">8:02</span><span class="tx">just means you have a data structure that represents the task you&#x27;re trying to do. you have a function that just</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=489s" target="_blank" rel="noopener" data-s="489.0" data-d="8.0"><span class="ts">8:09</span><span class="tx">iterates over the upcoming tasks and looks at them and makes progress on them, right? And once you centralize it</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=497s" target="_blank" rel="noopener" data-s="497.0" data-d="7.0"><span class="ts">8:17</span><span class="tx">in that function, um you uh you know, you can just yield if something is</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=504s" target="_blank" rel="noopener" data-s="504.0" data-d="7.0"><span class="ts">8:24</span><span class="tx">taking too long and whatever and go to the next one. That&#x27;s kind of like writing your own scheduler, but it&#x27;s tremendously tremendously tremendously</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=511s" target="_blank" rel="noopener" data-s="511.0" data-d="9.0"><span class="ts">8:31</span><span class="tx">simpler because it&#x27;s only a simple set of well- definfined things that you know everything about. Right? Now, of course,</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=520s" target="_blank" rel="noopener" data-s="520.0" data-d="8.0"><span class="ts">8:40</span><span class="tx">that by itself implies some constraints on the code. So, you can&#x27;t call something that blocks indefinitely</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=528s" target="_blank" rel="noopener" data-s="528.0" data-d="7.0"><span class="ts">8:48</span><span class="tx">because you wouldn&#x27;t be able to yield it, right? But like, you know, it&#x27;s fine. Just don&#x27;t do that.</span></a>
+<h2 class="ch" id="ch8">Chapter 9: Cooperative scheduling</h2>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=535s" target="_blank" rel="noopener" data-s="535.0" data-d="2.0"><span class="ts">8:55</span><span class="tx">Concurrency equals using same core.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=537s" target="_blank" rel="noopener" data-s="537.0" data-d="12.0"><span class="ts">8:57</span><span class="tx">That&#x27;s not true. No, concurrency is not even that well defined. But two things on different cores are concurrent for sure. It&#x27;s just concurrency.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=549s" target="_blank" rel="noopener" data-s="549.0" data-d="3.0"><span class="ts">9:09</span><span class="tx">Like I said, it&#x27;s just a weaker word than parallelism.</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=552s" target="_blank" rel="noopener" data-s="552.0" data-d="9.0"><span class="ts">9:12</span><span class="tx">I&#x27;m saying a timeout fires. No, not necessarily. The what I was outlining is more of a cooperative thing. um like</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=561s" target="_blank" rel="noopener" data-s="561.0" data-d="9.0"><span class="ts">9:21</span><span class="tx">you&#x27;re talking about with co- routines, but co-outines implies a lot of things that are not really necessary if you</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=570s" target="_blank" rel="noopener" data-s="570.0" data-d="9.0"><span class="ts">9:30</span><span class="tx">just need to solve this problem within your own system. Like the thing is a co-outine abstraction is it&#x27;s like built for customers of this</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=579s" target="_blank" rel="noopener" data-s="579.0" data-d="8.0"><span class="ts">9:39</span><span class="tx">language feature. And so it does a lot of things to handle a lot of things that people need to do in various cases that</span></a>
+<a class="seg" href="https://www.youtube.com/watch?v=dLUqBZItYOs&amp;t=587s" target="_blank" rel="noopener" data-s="587.0" data-d=""><span class="ts">9:47</span><span class="tx">you don&#x27;t necessarily need to</span></a>
+      <div id="paras"></div>
+    </div>
+  </div>
+  <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
+</div>
+<script type="application/json" id="pgdata">null</script>
+<script>
+(function(){
+  var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
+  var segs=[].slice.call(body.querySelectorAll('.seg'));
+  function snap(a){var tx=a.querySelector('.tx');a._h=tx.innerHTML;a._t=tx.textContent.replace(/\s+/g,' ').trim()}
+  segs.forEach(snap);
+
+  // corrected words <-> YouTube's original words
+  var orig=document.getElementById('orig');
+  if(orig)orig.onclick=function(){
+    var on=orig.getAttribute('aria-pressed')!=='true';
+    orig.setAttribute('aria-pressed',on);panel.classList.toggle('showorig',on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    body.querySelectorAll('.fix').forEach(function(f){
+      if(on){f.dataset.n=f.textContent;f.textContent=f.dataset.o;f.title='Corrected: '+(f.dataset.n||'(removed)')}
+      else{f.textContent=f.dataset.n;f.title=f.dataset.o?'YouTube: '+f.dataset.o:'YouTube\u2019s transcript leaves this out'}
+    });
+    segs.forEach(snap);
+    if(panel.classList.contains('paramode'))renderParas();
+  };
+  try{var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com';
+      navigator.sendBeacon(api+'/api/view/dLUqBZItYOs')}catch(e){}
+  document.querySelectorAll('.pub,.trk').forEach(function(s){if(/·\s*$/.test(s.textContent))s.remove()});
+
+  // tabs
+  var tabCh=document.getElementById('tab-ch'),tabTr=document.getElementById('tab-tr'),bar=document.getElementById('searchbar'),tools=document.querySelector('.tools');
+  function show(which){
+    var ch=which==='ch';
+    tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
+    chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+  }
+  tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
+  chaps.addEventListener('click',function(ev){
+    var a=ev.target.closest('.chap');if(!a)return;ev.preventDefault();
+    show('tr');var h=document.getElementById((panel.classList.contains('paramode')?'pch':'ch')+a.dataset.ch);
+    if(h){h.scrollIntoView({block:'start'});window.scrollBy(0,-document.querySelector('.head').offsetHeight)}
+  });
+
+  // search
+  var q=document.getElementById('q'),count=document.getElementById('count');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
+    (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
+      var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
+      if(!v){tx.innerHTML=a._h;a.classList.remove('hidden');return}
+      if(i<0){a.classList.add('hidden');return}
+      n++;a.classList.remove('hidden');
+      var out='',last=0,lt=t.toLowerCase();
+      while(i>=0){out+=esc(t.slice(last,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>';last=i+v.length;i=lt.indexOf(v,last)}
+      tx.innerHTML=out+esc(t.slice(last));
+    });
+    count.textContent=v?(n+' result'+(n==1?'':'s')):'';
+  });
+
+
+  // Paragraphs: the same words regrouped into sentence paragraphs (YouTube's lines break mid-sentence).
+  // A paragraph always starts at the start of a sentence. When that's partway through one of YouTube's
+  // lines, its time is estimated from where the words sit in that line, and shown with a ~.
+  var paras=document.getElementById('paras'),pbtn=document.getElementById('para'),pnote=document.getElementById('pnote'),prow=[];
+  var P_MIN=120,P_TARGET=400,P_NOPUNCT=600,P_AFTERQ=40,P_PAUSE=2;   // characters; seconds
+  var ABBR=/^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|dept|fig|vol|mt|ft|[a-z])\.$/i;
+  var TAGQ=/\b(right|okay|ok|yeah|huh|eh|correct|you know|no)\?["'”’)\]]*$/i;   // "..., right?" isn't a new speaker
+  var TURN=/^["'“‘(]*(so|now|okay|ok|alright|all right|anyway|well|look|listen|yeah|yes|right|exactly|sure|absolutely|first|second|third|finally|next|no,)(\b|$)/i;
+  function clock(t){t=Math.floor(t);var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;
+    return (h?h+':'+(m<10?'0':''):'')+m+':'+(s<10?'0':'')+s}
+  function words(){                        // every word with an estimated start time, in order
+    var out=[],heading=null,n=0;
+    [].forEach.call(body.children,function(el){
+      if(el.classList.contains('ch')){heading=el;return}
+      if(!el.classList.contains('seg'))return;
+      var i=n++,s=+el.dataset.s,nx=segs[i+1]?+segs[i+1].dataset.s:null,d=+el.dataset.d||0;
+      var e=nx!==null&&nx>s?(d?Math.min(nx,s+d):nx):s+(d||4),prev=segs[i-1],pd=prev?+prev.dataset.d||0:0;
+      var list=[];
+      [].forEach.call(el.querySelector('.tx').childNodes,function(c){
+        if(c.nodeType===3)c.nodeValue.split(/[\s\u200b-\u200d\ufeff]+/).forEach(function(w){if(w)list.push({text:w})});
+        else if(c.nodeType===1)list.push({node:c,text:c.textContent.replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim()});
+      });
+      var total=0,pos=0;list.forEach(function(u){total+=u.text.length+1});
+      list.forEach(function(u,k){
+        u.t=s+(total?(e-s)*pos/total:0);u.seg=i;u.first=k===0;pos+=u.text.length+1;
+        u.gap=k===0&&prev&&pd?s-(+prev.dataset.s+pd):0;
+        if(k===0&&heading){u.heading=heading;heading=null}
+        out.push(u);
+      });
+    });
+    return out;
+  }
+  function endsSentence(p,u){              // does the word p end a sentence, given the next word u?
+    var w=p.text.split(' ').pop();
+    if(!/[.!?…。！？؟]["'”’)\]]*$/.test(w))return false;
+    if(ABBR.test(w.replace(/["'”’)\]]+$/,'')))return false;
+    var c=u.text.replace(/^["'“‘(\[]+/,'').charAt(0);
+    if(!c||/[0-9]/.test(c))return true;
+    return c.toLowerCase()===c.toUpperCase()||c===c.toUpperCase();   // capital, or a script without capitals
+  }
+  function buildParas(){
+    var ws=words(),out=[],cur=null,chars=0,sent=0;   // sent: where in cur the sentence in progress began
+    function close(){if(cur)out.push(cur);cur=null;chars=0}
+    function len(list){var n=0;list.forEach(function(u){n+=u.text.length+1});return n}
+    ws.forEach(function(u,k){
+      var p=ws[k-1],starts=!p||endsSentence(p,u);
+      if(u.heading){
+        // A chapter starts partway through a sentence: put its heading before that whole sentence.
+        var tail=cur&&!starts?cur.words.splice(sent):[];
+        if(cur&&cur.words.length)out.push(cur);
+        cur=null;chars=0;out.push({heading:u.heading});
+        if(tail.length){cur={words:tail,t:tail[0].t,seg:tail[0].seg,exact:tail[0].first};chars=len(tail);sent=0}
+        else starts=true;
+      }
+      if(cur&&starts){
+        var asked=/\?["'”’)\]]*$/.test(p.text)&&!TAGQ.test(p.text.split(' ').slice(-2).join(' '));
+        var next=u.text+(ws[k+1]?' '+ws[k+1].text:'');
+        if(chars>=P_TARGET||(asked&&chars>=P_AFTERQ)||(chars>=P_MIN&&(TURN.test(next)||u.gap>=P_PAUSE)))close();
+      }else if(cur&&u.first&&chars>=P_NOPUNCT)close();   // a long stretch with no sentence ends: break at a line
+      if(!cur){cur={words:[],t:u.t,seg:u.seg,exact:u.first};sent=0}
+      if(starts)sent=cur.words.length;
+      cur.words.push(u);chars+=u.text.length+1;
+    });
+    close();
+    return out;
+  }
+  function renderParas(){
+    paras.innerHTML='';prow=[];
+    buildParas().forEach(function(p){
+      if(p.heading){var h=p.heading.cloneNode(true);h.id='p'+h.id;paras.appendChild(h);return}
+      var a=document.createElement('a'),ts=document.createElement('span'),tx=document.createElement('span');
+      var line=segs[p.seg].querySelector('.ts').textContent;
+      a.className='seg para';a.href='https://www.youtube.com/watch?v=dLUqBZItYOs&t='+Math.floor(p.t)+'s';a.target='_blank';a.rel='noopener';a.dataset.s=p.t;
+      ts.className='ts';ts.textContent=p.exact?line:'~'+clock(p.t);
+      if(!p.exact)ts.title='About '+clock(p.t)+': this paragraph starts partway through YouTube’s '+line+' line';
+      tx.className='tx';
+      p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
+      a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
+    });
+  }
+  function setParas(on,save){
+    if(on)renderParas();
+    panel.classList.toggle('paramode',on);pbtn.setAttribute('aria-pressed',on);pnote.classList.toggle('hidden',!on);
+    q.value='';q.dispatchEvent(new Event('input'));
+    if(save)try{localStorage.setItem('yousnr.paras',on?'1':'0')}catch(e){}
+  }
+  pbtn.onclick=function(){setParas(pbtn.getAttribute('aria-pressed')!=='true',true)};
+  try{if(localStorage.getItem('yousnr.paras')==='1')setParas(true,false)}catch(e){}
+
+
+  // Pangram: does this transcript read as AI-written? One check per video (on the first ~1,500 words),
+  // saved and shown to everyone after that, with a link to Pangram's own report.
+  var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
+  try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
+  var PGWORDS=1500;
+  var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
+    pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
+    slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
+    too_short:'This transcript is too short for Pangram to judge.',offline:'The YouSNR server is offline. Try again later.',
+    not_found:'This video isn’t saved on YouSNR yet. Reload the page and try again.'};
+  function pct(x){return Math.round((x||0)*100)+'%'}
+  function pgCard(r){
+    var ai=r.ai||0,as=r.assisted||0,hu=Math.max(0,1-ai-as),d=new Date(r.checked);
+    var flags=(r.flagged||[]).map(function(f){return '<a href="#t='+Math.floor(f.from)+'" data-t="'+Math.floor(f.from)+'">'+clock(f.from)+'–'+clock(f.to)+'</a>'+(f.kind==='assisted'?' <span class="mute">(AI-assisted)</span>':'')}).join(' ');
+    pg.innerHTML='<h4>Pangram: '+esc(r.headline||r.short||'')+'</h4>'+
+      '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
+      '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
+      (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
+      (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
+      '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
+  }
+  function pgOffer(){
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    document.getElementById('pggo').onclick=pgRun;
+  }
+  function pgRun(){
+    var t0=Date.now(),blips=0;
+    pg.innerHTML='<h4>Checking with Pangram… <span class="mute" id="pgs">0s</span></h4><p class="mute">Usually takes under a minute.</p>';
+    var timer=setInterval(function(){var s=document.getElementById('pgs');if(s)s.textContent=Math.round((Date.now()-t0)/1000)+'s'},1000);
+    function done(){clearInterval(timer)}
+    function ask(){
+      fetch(api+'/api/pangram/dLUqBZItYOs?poll=1',{method:'POST'}).then(function(r){
+        blips=0;
+        if(r.status===202){if(Date.now()-t0>6*60000){done();return pgErr('busy')}return setTimeout(ask,1500)}
+        return r.json().catch(function(){return {}}).then(function(j){done();if(r.ok&&j&&j.checked){pgd=j;pgCard(j)}else pgErr(j.error)});
+      }).catch(function(){if(++blips<3)return setTimeout(ask,4000);done();pgErr('offline')});
+    }
+    ask();
+  }
+  function pgErr(code){
+    var self=!/^(busy|too_short|not_found)$/.test(code||'');   // when YouSNR can't check it, the visitor can
+    pg.innerHTML='<h4>Couldn’t check with Pangram</h4><p class="mute">'+(PGMSG[code]||'Something went wrong. Try again in a minute.')+'</p>'+
+      (self?pgSelf():'');
+  }
+  // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
+  // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
+  function pgText(){
+    var parts=[],n=0;
+    for(var i=0;i<segs.length;i++){
+      var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
+      if(!t)continue;var w=t.split(' ').length;
+      if(parts.length&&n+w>PGWORDS)break;
+      parts.push(t);n+=w;
+    }
+    return {text:parts.join(' '),words:n};
+  }
+  function pgSelf(){
+    return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
+      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      '(Ctrl+V, or long-press and Paste on a phone).</p>'+
+      '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
+      '<p class="mute" id="pgcopied"></p>'+
+      '<p class="mute">With Pangram’s browser extension you can also select text on this page, right-click and choose Check for AI.</p></div>';
+  }
+  function copyNow(text){      // copy before the new tab takes focus (the async clipboard needs this page focused)
+    var ok=false,ta=document.createElement('textarea');
+    ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-1000px';
+    document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,text.length);
+    try{ok=document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);
+    if(!ok&&navigator.clipboard)navigator.clipboard.writeText(text).catch(function(){});
+    return ok;
+  }
+  pgb.onclick=function(){
+    var on=pgb.getAttribute('aria-pressed')!=='true';
+    pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
+    if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
+  };
+  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
+  if(cut)cut.addEventListener('click',function(ev){
+    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+  });
+  pg.addEventListener('click',function(ev){
+    if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
+      var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');
+      if(note)note.textContent=ok?'Copied '+x.words.toLocaleString()+' words. Paste them into Pangram.':
+        'If nothing pastes in Pangram, use Copy at the top of this page instead.';
+      return;
+    }
+    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+  });
+
+  var tog=document.getElementById('tog');
+  tog.onclick=function(){panel.classList.toggle('nots');tog.textContent=panel.classList.contains('nots')?'Show timestamps':'Hide timestamps'};
+
+  // Copy/.txt: same layout YouTube copies out (chapter / timestamp / line), or plain text with timestamps hidden
+  function plain(){
+    var pm=panel.classList.contains('paramode');
+    if(panel.classList.contains('nots'))return (pm?prow:segs).map(function(a){return a._t}).join(pm?'\n\n':' ');
+    var out=[];[].forEach.call((pm?paras:body).children,function(el){
+      if(el.classList.contains('ch'))out.push(el.textContent);
+      else if(el.classList.contains('seg'))out.push(el.querySelector('.ts').textContent+'\n'+el._t);
+    });return out.join(pm?'\n\n':'\n');
+  }
+  function srtTime(s){var ms=Math.round(s*1000),h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),sec=Math.floor(ms%60000/1000),r=ms%1000;
+    function p(n,w){n=String(n);while(n.length<w)n='0'+n;return n}return p(h,2)+':'+p(m,2)+':'+p(sec,2)+','+p(r,3)}
+  function srt(){return segs.map(function(a,i){var s=+a.dataset.s,d=+a.dataset.d||((segs[i+1]?+segs[i+1].dataset.s:s+4)-s);
+    return (i+1)+'\n'+srtTime(s)+' --> '+srtTime(s+d)+'\n'+a._t+'\n'}).join('\n')}
+  function dl(name,text){var b=new Blob([text],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)}
+  var copy=document.getElementById('copy');
+  copy.onclick=function(){navigator.clipboard.writeText(plain()).then(function(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy'},1500)})};
+  document.getElementById('txt').onclick=function(){dl('dLUqBZItYOs.txt',plain())};
+  document.getElementById('srt').onclick=function(){dl('dLUqBZItYOs.srt',srt())};
+
+  // /ID/#t=123 jumps to that line
+  function jumpTo(t){
+    var rows=panel.classList.contains('paramode')?prow:segs,hit=rows[0];
+    rows.forEach(function(a){if(+a.dataset.s<=t+0.5)hit=a});
+    body.querySelectorAll('.flash').forEach(function(f){f.classList.remove('flash')});
+    if(hit){show('tr');hit.classList.add('flash');hit.scrollIntoView({block:'center'})}
+  }
+  var m=location.hash.match(/t=(\d+)/);
+  if(m)jumpTo(+m[1]);
+})();
+</script>
+</body>
+</html>
