@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>My 4.5 years as a quant dev</h1>
       <div class="meta">Coding Jesus (getcracked.io)<span class="pub"> · Sep 23, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=265-EZJ_aJE" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · English (auto-generated)</span><span class="fixnote"> · 33 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=121" data-t="121">BitMEX</a> <span class="gap">…</span> <a href="#t=199" data-t="199">most esoteric and just crazy to understand</a> <span class="gap">…</span> <a href="#t=237" data-t="237">It fits in L1 cache</a> <span class="gap">…</span> <a href="#t=381" data-t="381">I would be fired if I did not take</a> <span class="gap">…</span> <a href="#t=608" data-t="608">reverse bits</a> <span class="gap">…</span> <a href="#t=733" data-t="733">&quot;Is this just a little phase for</a> <span class="gap">…</span> <a href="#t=903" data-t="903">Jane Street&#x27;s top puzzle solver</a> <span class="gap">…</span> <a href="#t=939" data-t="939">Cave Story</a> <span class="gap">…</span> <a href="#t=1212" data-t="1212">tick-to-trade latency</a> <span class="gap">…</span> <a href="#t=1260" data-t="1260">kill switches, literal physical laptops</a> <span class="gap">…</span> <a href="#t=1698" data-t="1698">core pinning, CPU isolation</a> <span class="gap">…</span> <a href="#t=1957" data-t="1957">&quot;Listen, bro, you&#x27;re just not good enough.&quot;</a> <span class="gap">…</span> <a href="#t=2269" data-t="2269">pants on a little too tight</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=121" data-t="121">BitMEX</a> <span class="gap">…</span> <a href="#t=199" data-t="199">most esoteric and just crazy to understand</a> <span class="gap">…</span> <a href="#t=237" data-t="237">It fits in L1 cache</a> <span class="gap">…</span> <a href="#t=381" data-t="381">I would be fired if I did not take</a> <span class="gap">…</span> <a href="#t=608" data-t="608">reverse bits</a> <span class="gap">…</span> <a href="#t=733" data-t="733">&quot;Is this just a little phase for</a> <span class="gap">…</span> <a href="#t=903" data-t="903">Jane Street&#x27;s top puzzle solver</a> <span class="gap">…</span> <a href="#t=939" data-t="939">Cave Story</a> <span class="gap">…</span> <a href="#t=1212" data-t="1212">tick-to-trade latency</a> <span class="gap">…</span> <a href="#t=1260" data-t="1260">kill switches, literal physical laptops</a> <span class="gap">…</span> <a href="#t=1698" data-t="1698">core pinning, CPU isolation</a> <span class="gap">…</span> <a href="#t=1957" data-t="1957">&quot;Listen, bro, you&#x27;re just not good enough.&quot;</a> <span class="gap">…</span> <a href="#t=2269" data-t="2269">pants on a little too tight</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -780,10 +780,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-10-13T04:44:55+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/265-EZJ_aJE').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

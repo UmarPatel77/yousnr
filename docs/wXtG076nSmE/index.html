@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>The Most Terrifying Job Simulator You Never Played</h1>
       <div class="meta">BeamBuddy<span class="pub"> · May 16, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=wXtG076nSmE" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 102 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=55" data-t="55">45minute long video on quantum mechanics</a> <span class="gap">…</span> <a href="#t=302" data-t="302">peaceful about the isolation in Voices of the Void</a> <span class="gap">…</span> <a href="#t=374" data-t="374">a Roomba and some edible soap</a> <span class="gap">…</span> <a href="#t=473" data-t="473">700 mannequins that definitely aren&#x27;t moving while I sleep</a> <span class="gap">…</span> <a href="#t=578" data-t="578">&quot;Devil of the Plains, go back to where</a> <span class="gap">…</span> <a href="#t=847" data-t="847">flesh gift. I can eat</a> <span class="gap">…</span> <a href="#t=1303" data-t="1303">Paper alien</a> <span class="gap">…</span> <a href="#t=1479" data-t="1479">I immediately chopped them up into tiny pieces</a> <span class="gap">…</span> <a href="#t=2200" data-t="2200">giant spider crab alien pyramid robot thing?</a> <span class="gap">…</span> <a href="#t=2707" data-t="2707">army of cybernetic boars</a> <span class="gap">…</span> <a href="#t=2901" data-t="2901">illegal hacker man shit</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=55" data-t="55">45minute long video on quantum mechanics</a> <span class="gap">…</span> <a href="#t=302" data-t="302">peaceful about the isolation in Voices of the Void</a> <span class="gap">…</span> <a href="#t=374" data-t="374">a Roomba and some edible soap</a> <span class="gap">…</span> <a href="#t=473" data-t="473">700 mannequins that definitely aren&#x27;t moving while I sleep</a> <span class="gap">…</span> <a href="#t=578" data-t="578">&quot;Devil of the Plains, go back to where</a> <span class="gap">…</span> <a href="#t=847" data-t="847">flesh gift. I can eat</a> <span class="gap">…</span> <a href="#t=1303" data-t="1303">Paper alien</a> <span class="gap">…</span> <a href="#t=1479" data-t="1479">I immediately chopped them up into tiny pieces</a> <span class="gap">…</span> <a href="#t=2200" data-t="2200">giant spider crab alien pyramid robot thing?</a> <span class="gap">…</span> <a href="#t=2707" data-t="2707">army of cybernetic boars</a> <span class="gap">…</span> <a href="#t=2901" data-t="2901">illegal hacker man shit</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -744,10 +744,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-10-14T01:46:11+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/wXtG076nSmE').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

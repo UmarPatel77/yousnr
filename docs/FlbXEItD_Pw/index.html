@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Nvidia right now:</h1>
       <div class="meta">Man Carrying Thing<span class="pub"> · Nov 12, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=FlbXEItD_Pw" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=4" data-t="4">you&#x27;re not wearing your leather jacket</a> <span class="gap">…</span> <a href="#t=28" data-t="28">It draws women like flies</a> <span class="gap">…</span> <a href="#t=38" data-t="38">likely a Chinese intelligence asset</a> <span class="gap">…</span> <a href="#t=44" data-t="44">smuggling chips to China</a> <span class="gap">…</span> <a href="#t=61" data-t="61">insanely low on the list</a> <span class="gap">…</span> <a href="#t=73" data-t="73">keep it in my pants</a> <span class="gap">…</span> <a href="#t=76" data-t="76">jumpst start the AI bubble collapse</a> <span class="gap">…</span> <a href="#t=88" data-t="88">betraying the sacred bond of marriage</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=4" data-t="4">you&#x27;re not wearing your leather jacket</a> <span class="gap">…</span> <a href="#t=28" data-t="28">It draws women like flies</a> <span class="gap">…</span> <a href="#t=38" data-t="38">likely a Chinese intelligence asset</a> <span class="gap">…</span> <a href="#t=44" data-t="44">smuggling chips to China</a> <span class="gap">…</span> <a href="#t=61" data-t="61">insanely low on the list</a> <span class="gap">…</span> <a href="#t=73" data-t="73">keep it in my pants</a> <span class="gap">…</span> <a href="#t=76" data-t="76">jumpst start the AI bubble collapse</a> <span class="gap">…</span> <a href="#t=88" data-t="88">betraying the sacred bond of marriage</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -365,10 +365,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-11-13T14:51:37+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/FlbXEItD_Pw').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

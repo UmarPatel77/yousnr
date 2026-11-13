@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Time Value of Money (TVM) - computing Present Value (for the CFA Level 1 exam)</h1>
       <div class="meta">Let me explain<span class="pub"> · Jan 2, 2023</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=IXO4L3lVA-4" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 4 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=22" data-t="22">let&#x27;s get solving</a> <span class="gap">…</span> <a href="#t=48" data-t="48">draw just like before a timeline</a> <span class="gap">…</span> <a href="#t=238" data-t="238">not formatted to handle uh computations using the algebraic operating system</a> <span class="gap">…</span> <a href="#t=310" data-t="310">time value of money worksheet</a> <span class="gap">…</span> <a href="#t=340" data-t="340">always clear it first</a> <span class="gap">…</span> <a href="#t=351" data-t="351">clear TVM</a> <span class="gap">…</span> <a href="#t=396" data-t="396">I&#x27;m omitting PV because that&#x27;s what I&#x27;m going to calculate</a> <span class="gap">…</span> <a href="#t=452" data-t="452">displaying it as a negative number</a> <span class="gap">…</span> <a href="#t=458" data-t="458">that&#x27;s the cash out</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=22" data-t="22">let&#x27;s get solving</a> <span class="gap">…</span> <a href="#t=48" data-t="48">draw just like before a timeline</a> <span class="gap">…</span> <a href="#t=238" data-t="238">not formatted to handle uh computations using the algebraic operating system</a> <span class="gap">…</span> <a href="#t=310" data-t="310">time value of money worksheet</a> <span class="gap">…</span> <a href="#t=340" data-t="340">always clear it first</a> <span class="gap">…</span> <a href="#t=351" data-t="351">clear TVM</a> <span class="gap">…</span> <a href="#t=396" data-t="396">I&#x27;m omitting PV because that&#x27;s what I&#x27;m going to calculate</a> <span class="gap">…</span> <a href="#t=452" data-t="452">displaying it as a negative number</a> <span class="gap">…</span> <a href="#t=458" data-t="458">that&#x27;s the cash out</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -419,10 +419,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-11-11T17:45:17+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/IXO4L3lVA-4').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

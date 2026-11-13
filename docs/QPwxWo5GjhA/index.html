@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Time Value of Money (TVM) - computing Future Value (for the CFA Level 1 exam)</h1>
       <div class="meta">Let me explain<span class="pub"> · Dec 24, 2022</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=QPwxWo5GjhA" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 7 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=5" data-t="5">time value of money</a> <span class="gap">…</span> <a href="#t=72" data-t="72">draw a timeline</a> <span class="gap">…</span> <a href="#t=98" data-t="98">downward pointing arrow</a> <span class="gap">…</span> <a href="#t=290" data-t="290">more Universal formula for future value</a> <span class="gap">…</span> <a href="#t=393" data-t="393">if you didn&#x27;t format your calculator</a> <span class="gap">…</span> <a href="#t=490" data-t="490">time value of money worksheet</a> <span class="gap">…</span> <a href="#t=524" data-t="524">always absolutely always make</a> <span class="gap">…</span> <a href="#t=527" data-t="527">clear the time value of money worksheet</a> <span class="gap">…</span> <a href="#t=602" data-t="602">make this a negative number</a> <span class="gap">…</span> <a href="#t=664" data-t="664">CPT key</a> <span class="gap">…</span> <a href="#t=693" data-t="693">it stores the values</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=5" data-t="5">time value of money</a> <span class="gap">…</span> <a href="#t=72" data-t="72">draw a timeline</a> <span class="gap">…</span> <a href="#t=98" data-t="98">downward pointing arrow</a> <span class="gap">…</span> <a href="#t=290" data-t="290">more Universal formula for future value</a> <span class="gap">…</span> <a href="#t=393" data-t="393">if you didn&#x27;t format your calculator</a> <span class="gap">…</span> <a href="#t=490" data-t="490">time value of money worksheet</a> <span class="gap">…</span> <a href="#t=524" data-t="524">always absolutely always make</a> <span class="gap">…</span> <a href="#t=527" data-t="527">clear the time value of money worksheet</a> <span class="gap">…</span> <a href="#t=602" data-t="602">make this a negative number</a> <span class="gap">…</span> <a href="#t=664" data-t="664">CPT key</a> <span class="gap">…</span> <a href="#t=693" data-t="693">it stores the values</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -458,10 +458,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-11-11T17:44:50+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/QPwxWo5GjhA').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

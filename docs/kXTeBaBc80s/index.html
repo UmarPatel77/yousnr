@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>My little sister passed away</h1>
       <div class="meta">peej<span class="pub"> · Sep 14, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=kXTeBaBc80s" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 21 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=249" data-t="249">God would speak to me through the birds</a> <span class="gap">…</span> <a href="#t=257" data-t="257">the song on the radio that was playing was Forever Young</a> <span class="gap">…</span> <a href="#t=497" data-t="497">especially through yellow butterflies</a> <span class="gap">…</span> <a href="#t=560" data-t="560">be quick to forgive</a> <span class="gap">…</span> <a href="#t=601" data-t="601">that&#x27;s how the saints work when they&#x27;re in heaven</a> <span class="gap">…</span> <a href="#t=629" data-t="629">&quot;I need to lock in. I&#x27;m going with my friends.&quot;</a> <span class="gap">…</span> <a href="#t=816" data-t="816">Captain America: Civil War</a> <span class="gap">…</span> <a href="#t=840" data-t="840">Reckless Love</a> <span class="gap">…</span> <a href="#t=995" data-t="995">Long live Lauren. And now we live for Lauren</a> <span class="gap">…</span> <a href="#t=1037" data-t="1037">I will never stop bringing up her name</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=249" data-t="249">God would speak to me through the birds</a> <span class="gap">…</span> <a href="#t=257" data-t="257">the song on the radio that was playing was Forever Young</a> <span class="gap">…</span> <a href="#t=497" data-t="497">especially through yellow butterflies</a> <span class="gap">…</span> <a href="#t=560" data-t="560">be quick to forgive</a> <span class="gap">…</span> <a href="#t=601" data-t="601">that&#x27;s how the saints work when they&#x27;re in heaven</a> <span class="gap">…</span> <a href="#t=629" data-t="629">&quot;I need to lock in. I&#x27;m going with my friends.&quot;</a> <span class="gap">…</span> <a href="#t=816" data-t="816">Captain America: Civil War</a> <span class="gap">…</span> <a href="#t=840" data-t="840">Reckless Love</a> <span class="gap">…</span> <a href="#t=995" data-t="995">Long live Lauren. And now we live for Lauren</a> <span class="gap">…</span> <a href="#t=1037" data-t="1037">I will never stop bringing up her name</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -502,10 +502,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-10-13T05:16:43+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/kXTeBaBc80s').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

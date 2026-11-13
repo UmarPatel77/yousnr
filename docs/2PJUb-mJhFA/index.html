@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>How Poor Things Confused Sex With Freedom</h1>
       <div class="meta">moni<span class="pub"> · Oct 10, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=2PJUb-mJhFA" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 27 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=178" data-t="178">the born sexy yesterday trope</a> <span class="gap">…</span> <a href="#t=270" data-t="270">so benol and limited</a> <span class="gap">…</span> <a href="#t=273" data-t="273">male fantasy</a> <span class="gap">…</span> <a href="#t=381" data-t="381">why does she only feel liberated when she&#x27;s having sex?</a> <span class="gap">…</span> <a href="#t=462" data-t="462">black characters existing to enlighten the</a> <span class="gap">…</span> <a href="#t=504" data-t="504">I&#x27;ve seen her have sex in this movie like 20 times</a> <span class="gap">…</span> <a href="#t=575" data-t="575">limited imagination men have about women&#x27;s interior lives</a> <span class="gap">…</span> <a href="#t=598" data-t="598">&quot;What would you do if there&#x27;s no crime?&quot;</a> <span class="gap">…</span> <a href="#t=668" data-t="668">so unimaginative</a> <span class="gap">…</span> <a href="#t=759" data-t="759">And she decides to be a sex worker. Be serious</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=178" data-t="178">the born sexy yesterday trope</a> <span class="gap">…</span> <a href="#t=270" data-t="270">so benol and limited</a> <span class="gap">…</span> <a href="#t=273" data-t="273">male fantasy</a> <span class="gap">…</span> <a href="#t=381" data-t="381">why does she only feel liberated when she&#x27;s having sex?</a> <span class="gap">…</span> <a href="#t=462" data-t="462">black characters existing to enlighten the</a> <span class="gap">…</span> <a href="#t=504" data-t="504">I&#x27;ve seen her have sex in this movie like 20 times</a> <span class="gap">…</span> <a href="#t=575" data-t="575">limited imagination men have about women&#x27;s interior lives</a> <span class="gap">…</span> <a href="#t=598" data-t="598">&quot;What would you do if there&#x27;s no crime?&quot;</a> <span class="gap">…</span> <a href="#t=668" data-t="668">so unimaginative</a> <span class="gap">…</span> <a href="#t=759" data-t="759">And she decides to be a sex worker. Be serious</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -452,10 +452,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-10-17T04:23:34+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/2PJUb-mJhFA').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

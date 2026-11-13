@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Time Value of Money (TVM) - solving more complex TVM problems (for the CFA Level 1 exam)</h1>
       <div class="meta">Let me explain<span class="pub"> · Jan 17, 2023</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=FPfHQDpoEO0" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 5 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=36" data-t="36">Jeremy Fallows plans to invest 10,000 per year</a> <span class="gap">…</span> <a href="#t=116" data-t="116">downward pointing arrows</a> <span class="gap">…</span> <a href="#t=249" data-t="249">the FV at the end of year three</a> <span class="gap">…</span> <a href="#t=261" data-t="261">roll this forward just by</a> <span class="gap">…</span> <a href="#t=281" data-t="281">times 1.04 equals 32</a> <span class="gap">…</span> <a href="#t=313" data-t="313">just changing one input n</a> <span class="gap">…</span> <a href="#t=368" data-t="368">assuming there is an additional fourth payment of 10 000</a> <span class="gap">…</span> <a href="#t=381" data-t="381">manually deduct the excess 10 000</a> <span class="gap">…</span> <a href="#t=406" data-t="406">understand the logic of the time value of money worksheet</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=36" data-t="36">Jeremy Fallows plans to invest 10,000 per year</a> <span class="gap">…</span> <a href="#t=116" data-t="116">downward pointing arrows</a> <span class="gap">…</span> <a href="#t=249" data-t="249">the FV at the end of year three</a> <span class="gap">…</span> <a href="#t=261" data-t="261">roll this forward just by</a> <span class="gap">…</span> <a href="#t=281" data-t="281">times 1.04 equals 32</a> <span class="gap">…</span> <a href="#t=313" data-t="313">just changing one input n</a> <span class="gap">…</span> <a href="#t=368" data-t="368">assuming there is an additional fourth payment of 10 000</a> <span class="gap">…</span> <a href="#t=381" data-t="381">manually deduct the excess 10 000</a> <span class="gap">…</span> <a href="#t=406" data-t="406">understand the logic of the time value of money worksheet</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -410,10 +410,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-11-11T17:53:49+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/FPfHQDpoEO0').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

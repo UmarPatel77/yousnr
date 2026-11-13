@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>How to Become an Expert at Programming</h1>
       <div class="meta">EscPoint<span class="pub"> · Jul 5, 2026</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=06MiFKudGtE" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · English (auto-generated)</span><span class="fixnote"> · 7 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=25" data-t="25">the real secret here is that there isn&#x27;t a secret</a> <span class="gap">…</span> <a href="#t=119" data-t="119">Please let yourself be a beginner</a> <span class="gap">…</span> <a href="#t=198" data-t="198">This is because of cognitive offloading</a> <span class="gap">…</span> <a href="#t=243" data-t="243">selecting the highest array value as a pivot point</a> <span class="gap">…</span> <a href="#t=406" data-t="406">If you wanted to learn C++ quickly, I&#x27;d say don&#x27;t bother</a> <span class="gap">…</span> <a href="#t=469" data-t="469">Teach yourself programming in 10 years</a> <span class="gap">…</span> <a href="#t=612" data-t="612">Supersonic Legend, takes 4,450 hours to reach</a> <span class="gap">…</span> <a href="#t=635" data-t="635">8,274 hours before I die</a> <span class="gap">…</span> <a href="#t=759" data-t="759">cheating on an exam I made myself take</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=25" data-t="25">the real secret here is that there isn&#x27;t a secret</a> <span class="gap">…</span> <a href="#t=119" data-t="119">Please let yourself be a beginner</a> <span class="gap">…</span> <a href="#t=198" data-t="198">This is because of cognitive offloading</a> <span class="gap">…</span> <a href="#t=243" data-t="243">selecting the highest array value as a pivot point</a> <span class="gap">…</span> <a href="#t=406" data-t="406">If you wanted to learn C++ quickly, I&#x27;d say don&#x27;t bother</a> <span class="gap">…</span> <a href="#t=469" data-t="469">Teach yourself programming in 10 years</a> <span class="gap">…</span> <a href="#t=612" data-t="612">Supersonic Legend, takes 4,450 hours to reach</a> <span class="gap">…</span> <a href="#t=635" data-t="635">8,274 hours before I die</a> <span class="gap">…</span> <a href="#t=759" data-t="759">cheating on an exam I made myself take</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -507,10 +507,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-10-13T22:10:35+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/06MiFKudGtE').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');

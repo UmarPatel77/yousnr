@@ -94,7 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Time Value of Money (TVM) - unequal cash flows using the CF worksheet (for the CFA Level 1 exam)</h1>
       <div class="meta">Let me explain<span class="pub"> · Jan 15, 2023</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=B9AxD39BbkA" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · </span><span class="fixnote"> · 22 words corrected</span></div>
-      <figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=14" data-t="14">unequal cash flows</a> <span class="gap">…</span> <a href="#t=57" data-t="57">only works when you&#x27;ve got equal level</a> <span class="gap">…</span> <a href="#t=155" data-t="155">algebraic operating system instead of the chain method</a> <span class="gap">…</span> <a href="#t=277" data-t="277">easy to get this wrong</a> <span class="gap">…</span> <a href="#t=318" data-t="318">clear this worksheet</a> <span class="gap">…</span> <a href="#t=421" data-t="421">very critically followed by the enter key</a> <span class="gap">…</span> <a href="#t=436" data-t="436">it will be ignored it will not be stored</a> <span class="gap">…</span> <a href="#t=587" data-t="587">simply a place to store the data</a> <span class="gap">…</span> <a href="#t=646" data-t="646">cptq key</a> <span class="gap">…</span> <a href="#t=676" data-t="676">takes a much longer time</a></blockquote></figure>
+      <div id="cutslot"><figure class="cut" id="cut"><figcaption title="Picked from the transcript by AI. Every word here was said in the video; tap one to jump there.">In their words</figcaption><blockquote><a href="#t=14" data-t="14">unequal cash flows</a> <span class="gap">…</span> <a href="#t=57" data-t="57">only works when you&#x27;ve got equal level</a> <span class="gap">…</span> <a href="#t=155" data-t="155">algebraic operating system instead of the chain method</a> <span class="gap">…</span> <a href="#t=277" data-t="277">easy to get this wrong</a> <span class="gap">…</span> <a href="#t=318" data-t="318">clear this worksheet</a> <span class="gap">…</span> <a href="#t=421" data-t="421">very critically followed by the enter key</a> <span class="gap">…</span> <a href="#t=436" data-t="436">it will be ignored it will not be stored</a> <span class="gap">…</span> <a href="#t=587" data-t="587">simply a place to store the data</a> <span class="gap">…</span> <a href="#t=646" data-t="646">cptq key</a> <span class="gap">…</span> <a href="#t=676" data-t="676">takes a much longer time</a></blockquote></figure></div>
     </div>
   </div>
 
@@ -443,10 +443,26 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
-  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
-  if(cut)cut.addEventListener('click',function(ev){
-    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
-  });
+  function wireCut(){                             // "In their words": a fragment jumps to where it was said
+    var cut=document.getElementById('cut');
+    if(cut)cut.addEventListener('click',function(ev){
+      var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+    });
+  }
+  wireCut();
+  // A video added in the last half hour may not have it yet: it's made right after the word check, so ask
+  // the server for it instead of waiting for this page to be republished.
+  (function(){
+    var slot=document.getElementById('cutslot'),added=Date.parse('2026-11-11T17:51:58+00:00'),t0=Date.now();
+    if(document.getElementById('cut')||!slot||isNaN(added)||Date.now()-added>30*60000)return;
+    function ask(){
+      fetch(api+'/api/excerpt/B9AxD39BbkA').then(function(r){return r.json().then(function(j){return [r.ok,j]})}).then(function(x){
+        if(x[0]&&x[1].html){slot.innerHTML=x[1].html;wireCut();return}
+        if(x[1]&&x[1].pending&&Date.now()-t0<8*60000)setTimeout(ask,8000);
+      }).catch(function(){if(Date.now()-t0<8*60000)setTimeout(ask,15000)});
+    }
+    setTimeout(ask,4000);
+  })();
   pg.addEventListener('click',function(ev){
     if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
       var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');
