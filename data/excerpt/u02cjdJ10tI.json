@@ -1,1 +1,54 @@
-{"made": "2026-11-13T01:57:33+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz6dSEhPS5HGNp3cR62S\"}"}
+{
+ "made": "2026-11-13T02:35:16+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "completely rely on the time value",
+   "t": 43.0,
+   "line": 5
+  },
+  {
+   "text": "Texas Instruments calculator",
+   "t": 54.4,
+   "line": 7
+  },
+  {
+   "text": "make this negative",
+   "t": 66.3,
+   "line": 8
+  },
+  {
+   "text": "inputs and outputs inflows and outflows",
+   "t": 103.0,
+   "line": 13
+  },
+  {
+   "text": "can't handle a PV and an FV with the same sign",
+   "t": 106.5,
+   "line": 13
+  },
+  {
+   "text": "display an error term",
+   "t": 126.0,
+   "line": 16
+  },
+  {
+   "text": "press second followed by",
+   "t": 184.3,
+   "line": 23
+  },
+  {
+   "text": "clear the time value of money worksheet",
+   "t": 187.2,
+   "line": 24
+  },
+  {
+   "text": "very very close to nine",
+   "t": 204.0,
+   "line": 26
+  }
+ ],
+ "cost": 0.00672,
+ "dropped": 0
+}
