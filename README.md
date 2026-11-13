@@ -152,7 +152,7 @@ Your API keys are read from your Windows user settings (what `setx` saved), so t
 
 So your laptop can sleep (running since Oct 24, 2026: 2 cores / 12 GB, Ubuntu 24.04, `ssh yousnr`). Oracle's Always Free tier gives you a small ARM server for free (2 cores, 12 GB since June 2026). YouTube blocks data-centre addresses, so the server sends **only its YouTube traffic** through Cloudflare's free WARP (proxy mode). Everything else (SSH, GitHub, the speech APIs, the tunnel) goes direct. Whether YouTube lets WARP through can change at any time: `check-youtube` tells you.
 
-What works through WARP (Oct 2026): the transcript panel in the browser, and yt-dlp audio for word checks over **IPv4** (`YOUSNR_PROXY_IPV4=1`). Plain requests to the watch page and the caption file are still blocked, so titles and lengths come from the browser instead.
+What works through WARP (Oct 2026): the transcript panel in the browser, and yt-dlp audio for word checks over **IPv4** (`YOUSNR_PROXY_IPV4=1`). Plain requests to the watch page and the caption file are still blocked, so titles and lengths come from the browser instead. Now and then YouTube's bot check ("Sign in to confirm you're not a bot") refuses an audio download anyway. YouSNR then tries yt-dlp's other YouTube clients (`android_vr`, `web_safari`, `mweb`, `tv_simply`, `web_embedded`), then reconnects WARP for a new address (at most every 20 minutes, never during a fetch; proxy mode, so SSH isn't touched) and tries once more. If it's still refused, that video's word check is tried again in about an hour.
 
 **Only one place runs YouSNR at a time.** Both would answer api.yousnr.com and push to GitHub. Turn the laptop's off before turning the server's on.
 

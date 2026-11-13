@@ -253,6 +253,57 @@ def yt_ipv4():
     return os.environ.get("YOUSNR_PROXY_IPV4", "").strip().lower() in ("1", "true", "yes", "on")
 
 
+WARP_ROTATE_EVERY = 20 * 60     # at most one new WARP address per 20 minutes
+_warp = {"lock": threading.Lock(), "last": 0.0}
+
+
+def warp_exit():
+    """(address YouTube sees, "on" when it's a WARP address), through YOUSNR_PROXY."""
+    try:
+        import requests
+        r = requests.get("https://www.cloudflare.com/cdn-cgi/trace", proxies=yt_requests_proxies(), timeout=15)
+        kv = dict(line.split("=", 1) for line in r.text.splitlines() if "=" in line)
+        return kv.get("ip"), kv.get("warp")
+    except Exception:
+        return None, None
+
+
+def rotate_warp(fetcher=None, log=print):
+    """YouTube's bot check is mostly about the address it sees. Cloudflare WARP (proxy mode, so SSH is never
+    touched) gets a new one when it reconnects. At most once per WARP_ROTATE_EVERY, and never in the middle of
+    a YouTube fetch. Returns True if YouTube now sees a different address."""
+    import shutil
+    p = yt_proxy() or ""
+    if "127.0.0.1" not in p or not shutil.which("warp-cli"):
+        return False
+    with _warp["lock"]:
+        if time.time() - _warp["last"] < WARP_ROTATE_EVERY:
+            return False
+        _warp["last"] = time.time()
+        lock = getattr(fetcher, "lock", None)
+        if lock is not None and not lock.acquire(timeout=300):
+            return False
+        try:
+            old, _ = warp_exit()
+            for step in ("disconnect", "connect"):
+                subprocess.run(["warp-cli", "--accept-tos", step], capture_output=True, timeout=30)
+                time.sleep(2)
+            new, on = None, None
+            for _ in range(15):
+                new, on = warp_exit()
+                if on == "on":
+                    break
+                time.sleep(2)
+            if on == "on":
+                log(f"      · new WARP connection: YouTube sees {new} (was {old or '?'})")
+            else:
+                log("      ! WARP didn't come back after reconnecting; check with: warp-cli status")
+            return bool(on == "on" and new and new != old)
+        finally:
+            if lock is not None:
+                lock.release()
+
+
 def yt_requests_proxies():
     p = yt_proxy()
     if p and not yt_ipv4():
@@ -1800,6 +1851,9 @@ class Corrector:
                     nxt = datetime.date(now.year + (now.month == 12), now.month % 12 + 1, 1)
                     self.paused_until = time.mktime(nxt.timetuple())
                     print(f"  monthly budget reached: corrections pause until {nxt} ({e})")
+                elif e.__class__.__name__ == "BotCheck":     # YouTube's bot check: usually passes later
+                    self.failed[vid] = time.time() - 86400 + 3600
+                    print(f"  correction skipped: {e} (trying again in about an hour)")
                 else:
                     self.failed[vid] = time.time()
                     print(f"  correction skipped: {e.__class__.__name__}: {str(e)[:200]}")
@@ -2417,6 +2471,8 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
 
     srv.RequestHandlerClass = Handler
     corrector = fetcher.corrector = Corrector(fetcher)
+    if acc is not None:
+        acc.ON_BOT_CHECK = lambda: rotate_warp(fetcher)
     pangram = Pangram(fetcher)
 
     def excerpt_done(vid):                     # put it on the page and publish it

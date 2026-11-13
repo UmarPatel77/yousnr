@@ -456,6 +456,22 @@ def ffmpeg():
     raise RuntimeError("ffmpeg is missing. Run:  python -m pip install --user imageio-ffmpeg")
 
 
+# YouTube's bot check ("Sign in to confirm you're not a bot") is about the address and the kind of app asking.
+# On a refusal: try yt-dlp's other YouTube clients, then ask yousnr.py for a new WARP address (ON_BOT_CHECK
+# returns True when it got one) and try once more. Still refused: raise BotCheck, and the video is tried again
+# in about an hour.
+ON_BOT_CHECK = None
+ALT_CLIENTS = (None, ["android_vr"], ["web_safari"], ["mweb"], ["tv_simply"], ["web_embedded"])
+
+
+class BotCheck(RuntimeError):
+    pass
+
+
+def _is_bot_check(msg):
+    return "not a bot" in msg or "Sign in to confirm" in msg
+
+
 def download_audio(vid):
     """Audio only, via yt-dlp. (yt-dlp works best with Deno installed:  winget install DenoLand.Deno)"""
     import yt_dlp
@@ -464,19 +480,48 @@ def download_audio(vid):
     for f in out.glob(f"{vid}.*"):
         if f.suffix not in (".part", ".ytdl") and f.stat().st_size > 10000:
             return f
-    opts = {"format": "bestaudio[ext=m4a]/bestaudio/best", "outtmpl": str(out / f"{vid}.%(ext)s"),
+    base = {"format": "bestaudio[ext=m4a]/bestaudio/best", "outtmpl": str(out / f"{vid}.%(ext)s"),
             "quiet": True, "no_warnings": True, "noprogress": True}
     if os.environ.get("YOUSNR_PROXY", "").strip():          # YouTube only: see yt_proxy() in yousnr.py
-        opts["proxy"] = os.environ["YOUSNR_PROXY"].strip()
+        base["proxy"] = os.environ["YOUSNR_PROXY"].strip()
         if os.environ.get("YOUSNR_PROXY_IPV4", "").strip().lower() in ("1", "true", "yes", "on"):
-            opts["source_address"] = "0.0.0.0"
-    try:
-        with yt_dlp.YoutubeDL(opts) as y:
-            info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=True)
-            return Path(y.prepare_filename(info))
-    except Exception as e:
-        raise RuntimeError(f"couldn't download the audio ({str(e)[:150]}). Try: winget install DenoLand.Deno, then "
-                           f"python -m pip install --user -U yt-dlp[default]") from None
+            base["source_address"] = "0.0.0.0"
+
+    def attempt():
+        err = ""
+        for clients in ALT_CLIENTS:
+            opts = dict(base)
+            if clients:
+                opts["extractor_args"] = {"youtube": {"player_client": clients}}
+            try:
+                with yt_dlp.YoutubeDL(opts) as y:
+                    info = y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=True)
+                    if clients:
+                        print(f"      · audio via yt-dlp's {clients[0]} client (the others hit YouTube's bot check)")
+                    return Path(y.prepare_filename(info)), ""
+            except Exception as e:
+                err = str(e)
+                if not _is_bot_check(err):
+                    return None, err
+        return None, err
+
+    path, err = attempt()
+    if path:
+        return path
+    if _is_bot_check(err) and ON_BOT_CHECK:
+        try:
+            changed = ON_BOT_CHECK()
+        except Exception:
+            changed = False
+        if changed:
+            path, err = attempt()
+            if path:
+                return path
+    if _is_bot_check(err):
+        raise BotCheck("YouTube's bot check refused the audio download for every yt-dlp client") from None
+    hint = (". Try: winget install DenoLand.Deno, then python -m pip install --user -U yt-dlp[default]"
+            if os.name == "nt" else "")
+    raise RuntimeError(f"couldn't download the audio ({err[:150]}){hint}") from None
 
 
 def to_wav(src, dst):
