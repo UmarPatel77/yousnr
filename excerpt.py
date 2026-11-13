@@ -91,6 +91,10 @@ def settings():
             "price": PRICES.get(model, PRICES["claude-opus-5-5"])}   # unknown model: assume the dearest
 
 
+def enabled():
+    return bool(settings()["key"])
+
+
 def spent():
     try:
         u = json.loads(USAGE.read_text(encoding="utf-8"))
@@ -300,13 +304,15 @@ def plain(vid):
 
 
 class Excerpter:
-    """Makes excerpts in the background: new videos about 10 minutes after they're added (after their
-    word check), then older ones, most-viewed first, at most YOUSNR_EXCERPTS_PER_HOUR an hour."""
+    """Makes excerpts in the background. A new video gets its excerpt the moment its word check is done
+    (now(vid), called by the server), so the corrected words are used. Older videos follow, most-viewed
+    first, at most YOUSNR_EXCERPTS_PER_HOUR an hour."""
 
     def __init__(self, on_done, views=None):
         self.on_done, self.views = on_done, views or (lambda: {})
-        self.stop = threading.Event()
-        self.warned = set()
+        self.stop, self.wake = threading.Event(), threading.Event()
+        self.urgent, self.lock = [], threading.Lock()
+        self.warned, self.paused_until, self.last_background = set(), 0.0, 0.0
 
     def enabled(self):
         return bool(settings()["key"])
@@ -314,6 +320,17 @@ class Excerpter:
     def start(self):
         threading.Thread(target=self._loop, daemon=True).start()
         return self
+
+    def now(self, vid):
+        """Make this video's excerpt next, right away."""
+        with self.lock:
+            if vid not in self.urgent:
+                self.urgent.append(vid)
+        self.wake.set()
+
+    def _sleep(self, seconds):                   # a new video wakes it early
+        self.wake.wait(seconds)
+        self.wake.clear()
 
     def todo(self):
         now, views = time.time(), self.views()
@@ -323,7 +340,7 @@ class Excerpter:
             if not ID_RE.match(vid):
                 continue
             age = now - f.stat().st_mtime
-            if age < FRESH:
+            if age < FRESH:                      # just added or changed: its word check comes first
                 continue
             r = result(vid)
             if r and not r.get("failed") and r.get("v", 1) < VERSION:
@@ -339,24 +356,39 @@ class Excerpter:
         redo.sort(reverse=True)
         return [v for *_, v in new + old + redo]
 
+    def _next(self, st):
+        """(video, urgent?): a new video first, else the background list when it's time."""
+        with self.lock:
+            while self.urgent:
+                vid = self.urgent.pop(0)
+                r = result(vid)
+                if (DATA / f"{vid}.json").exists() and not (r and r.get("fragments") and r.get("v", 1) >= VERSION):
+                    return vid, True
+        if time.time() - self.last_background < 3600 / st["per_hour"]:
+            return None, False
+        todo = self.todo()
+        return (todo[0] if todo else None), False
+
     def _loop(self):
-        self.stop.wait(60)                       # let the server settle first
+        self._sleep(60)                          # let the server settle first
         while not self.stop.is_set():
             st = settings()
-            gap = 3600 / st["per_hour"]
-            vid = None
+            if not st["key"] or time.time() < self.paused_until:
+                self._sleep(300)
+                continue
+            vid, urgent = None, False
             try:
-                if st["key"]:
-                    todo = self.todo()
-                    vid = todo[0] if todo else None
+                vid, urgent = self._next(st)
                 if vid:
+                    if not urgent:
+                        self.last_background = time.time()
                     make(vid)
-                    self.on_done(vid)
+                    self.on_done(vid, urgent)
             except BudgetUsed as e:
                 if "budget" not in self.warned:
                     print(f"  excerpts paused: {e}")
                     self.warned.add("budget")
-                self.stop.wait(3600)
+                self.paused_until = time.time() + 3600
                 continue
             except Exception as e:
                 msg = str(e)
@@ -367,9 +399,11 @@ class Excerpter:
                     # the key, credits, model or request: the same for every video, so wait instead of
                     # marking them all failed
                     print("  excerpts: pausing an hour (restart YouSNR after fixing the problem above)")
-                    self.stop.wait(3600)
+                    self.paused_until = time.time() + 3600
                     continue
-            self.stop.wait(gap if vid else 300)
+            if vid and urgent:
+                continue                         # another new video goes straight away too
+            self._sleep(60)
 
 
 def _now():

@@ -1549,6 +1549,7 @@ def render_page(d):
                .replace("{{PGCLASS}}", "" if (pg or pangram_settings()["key"]) else "hidden")
                .replace("{{PGWORDS}}", str(int(pangram_settings()["words"])))
                .replace("{{CUT}}", excerpt.html(vid, e))
+               .replace("{{ADDED}}", e(d.get("added") or ""))
                .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
                .replace("{{ROWS}}", "\n".join(rows)))
 
@@ -1724,6 +1725,8 @@ NO_CAPTIONS_RETRY = 3 * 3600  # captions can appear later (new uploads get them 
 NEW_UPLOAD_RETRY = 30 * 60    # ...and much sooner for videos from the last two days
 NOT_LOADED_RETRY = 30 * 60    # YouTube showed the video but not its transcript: try that video again after this
 PUSH_EVERY = 5 * 60           # publish new pages to GitHub at most this often
+PUSH_SOON = 60                # ...but a new video's excerpt after just a minute
+PAGES_BUILDS_PER_HOUR = 9     # GitHub Pages: a soft limit of 10 builds an hour
 MISSING = DATA / "_missing.json"
 
 NO_TRANSCRIPT = {"TranscriptsDisabled", "NoTranscriptFound", "NoTranscriptAvailable"}
@@ -1747,6 +1750,7 @@ class Corrector:
         self.failed, self.done_this_hour, self.hour = {}, 0, int(time.time() // 3600)
         self.paused_until = 0.0
         self.stopping, self.busy = False, None
+        self.after_check = None    # called with a new video's ID once its first word check is over
         try:
             self.views = json.loads(self.VIEWS.read_text(encoding="utf-8"))
         except Exception:
@@ -1860,6 +1864,11 @@ class Corrector:
             finally:
                 self.queued.discard((vid, mode))
                 self.busy = None
+                if mode == "selective" and self.after_check:
+                    try:
+                        self.after_check(vid)
+                    except Exception:
+                        pass
 
 
 class Fetcher:
@@ -1872,6 +1881,8 @@ class Fetcher:
         self.cooldown_until = 0.0
         self.visitors = {}
         self.pending = []          # IDs fetched since the last push
+        self.push_soon = False     # publish without waiting the usual PUSH_EVERY (a new video's excerpt)
+        self.on_new = None         # called with a new video's ID when there's no word check to wait for
         self.missing, self.missing_mtime = {}, 0
         self._reload_missing()
 
@@ -1985,8 +1996,11 @@ class Fetcher:
                 print(f"  failed: {name}: {msg.splitlines()[0] if msg else ''}")
                 return 502, "application/json", json.dumps({"error": "failed"})
             self.pending.append(vid)
-            if getattr(self, "corrector", None):
-                self.corrector.enqueue(vid, "selective")
+            c = getattr(self, "corrector", None)
+            if c and c.enabled:
+                c.enqueue(vid, "selective", front=True)   # new videos first: their excerpt waits on it
+            elif self.on_new:
+                self.on_new(vid)
             return 200, "text/html; charset=utf-8", render_page(d)
         finally:
             self.lock.release()
@@ -2232,17 +2246,31 @@ def publish(fetcher, quiet_if_none=True):
         return False
 
 
+def push_due(now, last, pushes_last_hour, soon, every):
+    """Publish now? Normally at most every `every` seconds; a new video's excerpt (soon) after just
+    PUSH_SOON, unless that would pass GitHub Pages' soft limit of 10 builds an hour."""
+    if now - last >= every:
+        return True
+    return bool(soon) and now - last >= PUSH_SOON and pushes_last_hour < PAGES_BUILDS_PER_HOUR
+
+
 def publisher(fetcher, every):
     """Commit and push new pages to GitHub in batches, so they become static and instant."""
     if not (ROOT / ".git").exists():
         print("  (not a git repo: new pages won't be published to GitHub)")
         return
-    last = 0.0
+    last, recent = 0.0, []
     while True:
-        time.sleep(15)
-        if not fetcher.pending or time.time() - last < every:
+        time.sleep(5)
+        if not fetcher.pending:
             continue
-        last = time.time()
+        now = time.time()
+        recent[:] = [t for t in recent if now - t < 3600]
+        if not push_due(now, last, len(recent), fetcher.push_soon, every):
+            continue
+        fetcher.push_soon = False
+        last = now
+        recent.append(now)
         if not publish(fetcher):
             last = time.time() - every + 60       # retry in about a minute
 
@@ -2438,6 +2466,15 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
                 return self._send(200, "application/json", json.dumps(
                     {"ok": True, "videos": len(_load_index()), "paused_for": max(0, int(fetcher.cooldown_until - time.time())),
                      "tunnel": TUNNEL["state"], "up": int(time.time() - started)}))
+            m = re.fullmatch(r"/api/excerpt/([A-Za-z0-9_-]{11})", path)
+            if m:                                    # "In their words", before the page is republished
+                vid = m.group(1)
+                h = excerpt.html(vid, html.escape)
+                if h:
+                    return self._send(200, "application/json", json.dumps({"html": h}))
+                r = excerpt.result(vid)
+                pending = (DATA / f"{vid}.json").exists() and excerpt.enabled() and not (r and r.get("failed"))
+                return self._send(404, "application/json", json.dumps({"pending": bool(pending)}))
             m = re.fullmatch(r"/api/page/([A-Za-z0-9_-]{11})", path)
             if m:
                 vid = m.group(1)
@@ -2475,10 +2512,13 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
         acc.ON_BOT_CHECK = lambda: rotate_warp(fetcher)
     pangram = Pangram(fetcher)
 
-    def excerpt_done(vid):                     # put it on the page and publish it
+    def excerpt_done(vid, urgent=False):       # put it on the page and publish it
         write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
         fetcher.pending.append(vid)
+        if urgent:
+            fetcher.push_soon = True
     excerpter = excerpt.Excerpter(excerpt_done, views=lambda: dict(corrector.views)).start()
+    corrector.after_check = fetcher.on_new = excerpter.now
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(
