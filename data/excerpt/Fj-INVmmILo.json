@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-13T03:27:11+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Everything We Have Too Much of Bundle",
+   "t": 26.2,
+   "line": 3
+  },
+  {
+   "text": "days since Hank Green last started a new",
+   "t": 84.2,
+   "line": 10
+  },
+  {
+   "text": "Kanban boards and",
+   "t": 146.9,
+   "line": 18
+  },
+  {
+   "text": "pomodoro timers and trying to hack your brain",
+   "t": 148.0,
+   "line": 19
+  },
+  {
+   "text": "a Pomodoro timer, but it's a",
+   "t": 208.3,
+   "line": 26
+  },
+  {
+   "text": "bean that lives in your phone",
+   "t": 210.0,
+   "line": 27
+  },
+  {
+   "text": "how do I make myself do this",
+   "t": 246.1,
+   "line": 33
+  },
+  {
+   "text": "what did obligation",
+   "t": 461.7,
+   "line": 61
+  },
+  {
+   "text": "the biggest lie that we tell about productivity or laziness",
+   "t": 616.6,
+   "line": 81
+  },
+  {
+   "text": "pure easy introduction to a flow state",
+   "t": 640.3,
+   "line": 84
+  },
+  {
+   "text": "I'm not my",
+   "t": 687.3,
+   "line": 89
+  },
+  {
+   "text": "outputs",
+   "t": 688.0,
+   "line": 90
+  }
+ ],
+ "cost": 0.01512,
+ "dropped": 1
+}
