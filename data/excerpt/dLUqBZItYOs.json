@@ -1,0 +1,49 @@
+{
+ "made": "2026-11-13T19:51:53+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "I don't give a shit about coroutines",
+   "t": 3.1,
+   "line": 0
+  },
+  {
+   "text": "57 quintillion coroutines most of which are asleep",
+   "t": 49.7,
+   "line": 7
+  },
+  {
+   "text": "job system please do this",
+   "t": 69.0,
+   "line": 9
+  },
+  {
+   "text": "looks tidy",
+   "t": 165.9,
+   "line": 21
+  },
+  {
+   "text": "spend the complexity budget of your system",
+   "t": 196.3,
+   "line": 25
+  },
+  {
+   "text": "concurrency, as I always say, is kind of a weasel word",
+   "t": 269.0,
+   "line": 35
+  },
+  {
+   "text": "setjmp and long jump",
+   "t": 446.2,
+   "line": 58
+  },
+  {
+   "text": "tremendously tremendously tremendously simpler",
+   "t": 509.2,
+   "line": 66
+  }
+ ],
+ "cost": 0.01053,
+ "dropped": 2
+}
