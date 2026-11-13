@@ -1,0 +1,54 @@
+{
+ "made": "2026-11-13T03:42:28+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "the real secret here is that there isn't a secret",
+   "t": 25.9,
+   "line": 4
+  },
+  {
+   "text": "Please let yourself be a beginner",
+   "t": 119.1,
+   "line": 18
+  },
+  {
+   "text": "This is because of cognitive offloading",
+   "t": 198.3,
+   "line": 29
+  },
+  {
+   "text": "selecting the highest array value as a pivot point",
+   "t": 243.2,
+   "line": 36
+  },
+  {
+   "text": "If you wanted to learn C++ quickly, I'd say don't bother",
+   "t": 406.6,
+   "line": 61
+  },
+  {
+   "text": "Teach yourself programming in 10 years",
+   "t": 469.6,
+   "line": 69
+  },
+  {
+   "text": "Supersonic Legend, takes 4,450 hours to reach",
+   "t": 612.5,
+   "line": 91
+  },
+  {
+   "text": "8,274 hours before I die",
+   "t": 635.3,
+   "line": 94
+  },
+  {
+   "text": "cheating on an exam I made myself take",
+   "t": 759.3,
+   "line": 112
+  }
+ ],
+ "cost": 0.01827,
+ "dropped": 5
+}

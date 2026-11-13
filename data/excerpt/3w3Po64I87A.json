@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-13T03:39:24+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "He took his own life at the age of 23",
+   "t": 14.3,
+   "line": 0
+  },
+  {
+   "text": "something popped in me",
+   "t": 148.0,
+   "line": 9
+  },
+  {
+   "text": "Jon, had flat feet",
+   "t": 241.3,
+   "line": 16
+  },
+  {
+   "text": "\"Son, Pa is here.\"",
+   "t": 304.6,
+   "line": 20
+  },
+  {
+   "text": "supposed to be the responsibility of a father and a husband",
+   "t": 386.4,
+   "line": 25
+  },
+  {
+   "text": "the darkness was just killing me",
+   "t": 498.0,
+   "line": 33
+  },
+  {
+   "text": "reach out to SOS (Samaritans of Singapore)",
+   "t": 576.8,
+   "line": 38
+  },
+  {
+   "text": "one-to-one counselling support.”",
+   "t": 599.5,
+   "line": 40
+  },
+  {
+   "text": "His defiance. His laughter",
+   "t": 660.6,
+   "line": 46
+  },
+  {
+   "text": "from a survivor to now a facilitator",
+   "t": 777.3,
+   "line": 56
+  },
+  {
+   "text": "not to skirt around the issue",
+   "t": 819.5,
+   "line": 59
+  },
+  {
+   "text": "is just a fantasy",
+   "t": 868.2,
+   "line": 63
+  }
+ ],
+ "cost": 0.01153,
+ "dropped": 1
+}
