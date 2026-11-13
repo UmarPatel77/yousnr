@@ -1,1 +1,54 @@
-{"made": "2026-11-13T02:06:34+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz7KJsJaKyFFTb32XYhi\"}"}
+{
+ "made": "2026-11-13T02:44:24+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "many candidates are not even aware of the availability of the options",
+   "t": 18.0,
+   "line": 2
+  },
+  {
+   "text": "it still displays 0.00",
+   "t": 59.1,
+   "line": 7
+  },
+  {
+   "text": "displaying an answer of 30",
+   "t": 147.0,
+   "line": 18
+  },
+  {
+   "text": "handle operations in the order in which they are keyed in",
+   "t": 158.6,
+   "line": 20
+  },
+  {
+   "text": "you change this setting to 9",
+   "t": 282.0,
+   "line": 34
+  },
+  {
+   "text": "chn which stands for chain calculation method",
+   "t": 375.6,
+   "line": 46
+  },
+  {
+   "text": "AOS stands for algebraic operating system",
+   "t": 429.7,
+   "line": 52
+  },
+  {
+   "text": "14 the correct answer and not 30",
+   "t": 554.1,
+   "line": 67
+  },
+  {
+   "text": "CLR work so clear worksheet",
+   "t": 589.0,
+   "line": 72
+  }
+ ],
+ "cost": 0.00932,
+ "dropped": 0
+}
