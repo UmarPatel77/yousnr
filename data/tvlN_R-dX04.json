@@ -268,5 +268,164 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-13T17:02:45+00:00"
+ "added": "2026-11-13T17:02:45+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-13T12:03:09",
+  "lines": {
+   "7": [
+    [
+     "Uh there's new NPCs and of course a new field boss called Rotten",
+     null
+    ],
+    [
+     "Mushmoms.",
+     "Mushoms."
+    ],
+    [
+     "Now we have",
+     null
+    ],
+    [
+     "Mushmom,",
+     "mushom,"
+    ],
+    [
+     "zombie",
+     null
+    ],
+    [
+     "Mushmom,",
+     "mushroom,"
+    ],
+    [
+     "rotten",
+     null
+    ]
+   ],
+   "10": [
+    [
+     "Grandma Bennon's Thanksgiving pumpkin pie event is back as a",
+     null
+    ],
+    [
+     "MapleStory",
+     "Maple Story"
+    ],
+    [
+     "Classic World exclusive. You can win my ingredients from",
+     null
+    ],
+    [
+     "monsters",
+     "monster"
+    ],
+    [
+     "level 10 and",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "100% with Arc Forge and some other things. I think I need to check",
+     null
+    ],
+    [
+     "MEWDB",
+     "MUDB"
+    ],
+    [
+     "for that one. Uh chat box tabs are going to be added. No more megaphone spam.",
+     null
+    ]
+   ],
+   "38": [
+    [
+     "B Fazil, Matinu, Dev, Tils, Chrispad, DVNCA, [music] and Schwandro. Thank you",
+     null
+    ],
+    [
+     "all",
+     ""
+    ],
+    [
+     "so much for watching.",
+     null
+    ]
+   ]
+  },
+  "fixes": 7,
+  "checked_seconds": 84.0,
+  "usd": 0.0122,
+  "version": 3,
+  "flagged": [
+   [
+    "1:02",
+    [
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:22",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:14",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:33",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:14",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:22",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:30",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:38",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:47",
+    [
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
 }
