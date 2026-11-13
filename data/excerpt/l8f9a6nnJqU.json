@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-13T03:33:17+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "in order to graduate, you had to do a",
+   "t": 136.9,
+   "line": 10
+  },
+  {
+   "text": "huge Star Trek fan in high school",
+   "t": 183.8,
+   "line": 15
+  },
+  {
+   "text": "I used Winston",
+   "t": 345.7,
+   "line": 28
+  },
+  {
+   "text": "save the day with my cat shirt",
+   "t": 409.5,
+   "line": 35
+  },
+  {
+   "text": "extreme shyness um it can really hold you back",
+   "t": 528.4,
+   "line": 48
+  },
+  {
+   "text": "sound engineer for Skywalker Sound",
+   "t": 566.4,
+   "line": 51
+  },
+  {
+   "text": "Just never pursuing",
+   "t": 640.6,
+   "line": 57
+  },
+  {
+   "text": "What About Bob?",
+   "t": 739.9,
+   "line": 66
+  },
+  {
+   "text": "There's really no baby steps to",
+   "t": 779.5,
+   "line": 70
+  },
+  {
+   "text": "outgoing people, they're always getting into trouble",
+   "t": 875.8,
+   "line": 79
+  },
+  {
+   "text": "It's just been different kinds of fun",
+   "t": 894.6,
+   "line": 80
+  }
+ ],
+ "cost": 0.01201,
+ "dropped": 0
+}
