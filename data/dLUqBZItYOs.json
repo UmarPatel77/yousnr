@@ -522,5 +522,400 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-13T19:40:51+00:00"
+ "added": "2026-11-13T19:40:51+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-13T14:40:51",
+  "lines": {
+   "0": [
+    [
+     "Wondering what I think about stackful stackless. I don't give a",
+     null
+    ],
+    [
+     "shit",
+     ""
+    ],
+    [
+     "about",
+     null
+    ],
+    [
+     "coroutines.",
+     "co- routines."
+    ],
+    [
+     "I don't I don't know why",
+     null
+    ]
+   ],
+   "4": [
+    [
+     "And so the reason I don't care much about",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "is because they take all this extra infrastructure",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "have a 57",
+     null
+    ],
+    [
+     "quintillion coroutines",
+     "squintillion co- routines"
+    ],
+    [
+     "most of which are asleep right but I don't",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "just I don't really understand what",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "really gives you apart from oh I'm in a super",
+     null
+    ],
+    [
+     "high-level",
+     "high level"
+    ]
+   ],
+   "17": [
+    [
+     "programming language and so I can pretend I that I have this certain infrastructure right but this isn't a super",
+     null
+    ],
+    [
+     "high-level",
+     "high level"
+    ],
+    [
+     "programming language in",
+     null
+    ]
+   ],
+   "18": [
+    [
+     "that way I mean it's very high level for a systems language but it is a systems language so I mean",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "and the",
+     null
+    ]
+   ],
+   "19": [
+    [
+     "the other reason why I say that I don't think much of them is",
+     null
+    ],
+    [
+     "just",
+     ""
+    ],
+    [
+     "They're like a lot of things in",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "we able to do. And",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "is one of these things that helps you with easy things. And I just I don't care about that.",
+     null
+    ]
+   ],
+   "33": [
+    [
+     "Implementation-wise,",
+     "Implementation wise,"
+    ],
+    [
+     "it's potentially more performant than a gazillion OS threads if you have a very, very large number of them. But nobody does. Nobody",
+     null
+    ]
+   ],
+   "46": [
+    [
+     "Wouldn't",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "help since Windows dropped user mode scheduling blah blah blah. I don't know anything about user",
+     null
+    ]
+   ],
+   "47": [
+    [
+     "mode scheduling in Windows anyway. Um but wouldn't",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "help there? I mean",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "you could do that with",
+     null
+    ],
+    [
+     "coroutines",
+     "co- routines"
+    ],
+    [
+     "but you can also do it without",
+     null
+    ],
+    [
+     "coroutines Like.",
+     "co- routines."
+    ]
+   ],
+   "52": [
+    [
+     "flow is",
+     null
+    ],
+    [
+     "interleaved",
+     "interled"
+    ],
+    [
+     "with like the stack right there's this implicit data",
+     null
+    ]
+   ],
+   "58": [
+    [
+     "yourself. But you know in C back in the day, you would use",
+     null
+    ],
+    [
+     "setjmp",
+     "set jump"
+    ],
+    [
+     "and long jump and figure out the range of the",
+     null
+    ]
+   ],
+   "67": [
+    [
+     "simpler because it's only a simple set of",
+     null
+    ],
+    [
+     "well-defined",
+     "well- definfined"
+    ],
+    [
+     "things that you know everything about. Right? Now, of course,",
+     null
+    ]
+   ],
+   "71": [
+    [
+     "That's not true. No, concurrency is not even that",
+     null
+    ],
+    [
+     "well-defined.",
+     "well defined."
+    ],
+    [
+     "But two things on different cores are concurrent for sure. It's just concurrency.",
+     null
+    ]
+   ],
+   "74": [
+    [
+     "you're talking about with",
+     null
+    ],
+    [
+     "coroutines,",
+     "co- routines,"
+    ],
+    [
+     "but",
+     null
+    ],
+    [
+     "coroutines",
+     "co-outines"
+    ],
+    [
+     "implies a lot of things that are not really necessary if you",
+     null
+    ]
+   ]
+  },
+  "fixes": 21,
+  "checked_seconds": 176.2,
+  "usd": 0.0256,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "0:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:49",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "2:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:09",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "5:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:35",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "7:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "8:31",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "8:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
