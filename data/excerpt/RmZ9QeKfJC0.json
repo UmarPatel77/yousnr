@@ -1,1 +1,64 @@
-{"made": "2026-11-13T02:09:34+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz7YbgCLRQcMWnqhsZZg\"}"}
+{
+ "made": "2026-11-13T02:47:28+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "my final message to my parents",
+   "t": 33.7,
+   "line": 4
+  },
+  {
+   "text": "borderline personality disorder, which is BPD",
+   "t": 59.2,
+   "line": 7
+  },
+  {
+   "text": "complex post-traumatic stress disorder, which is CPTSD",
+   "t": 85.9,
+   "line": 10
+  },
+  {
+   "text": "everything was so unpredictable",
+   "t": 107.3,
+   "line": 12
+  },
+  {
+   "text": "here's the proof. Here is the result",
+   "t": 194.7,
+   "line": 24
+  },
+  {
+   "text": "Why would I talk to someone that tried to kill me?",
+   "t": 275.0,
+   "line": 35
+  },
+  {
+   "text": "soul tie",
+   "t": 401.0,
+   "line": 50
+  },
+  {
+   "text": "I need control",
+   "t": 561.4,
+   "line": 71
+  },
+  {
+   "text": "blame everything on Satan and demons",
+   "t": 640.2,
+   "line": 80
+  },
+  {
+   "text": "all I want in my life is to see Madeline",
+   "t": 668.3,
+   "line": 84
+  },
+  {
+   "text": "it's not hard to be kind",
+   "t": 711.0,
+   "line": 90
+  }
+ ],
+ "cost": 0.01308,
+ "dropped": 1
+}
