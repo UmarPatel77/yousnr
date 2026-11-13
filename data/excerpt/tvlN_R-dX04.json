@@ -1,0 +1,59 @@
+{
+ "made": "2026-11-13T17:13:50+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Forgotten Hollow update",
+   "t": 5.5,
+   "line": 0
+  },
+  {
+   "text": "Rotten Mushmoms",
+   "t": 65.4,
+   "line": 7
+  },
+  {
+   "text": "I wonder what mush dad thinks about all of this",
+   "t": 69.5,
+   "line": 8
+  },
+  {
+   "text": "Grandma Bennon's Thanksgiving pumpkin pie event",
+   "t": 82.0,
+   "line": 10
+  },
+  {
+   "text": "Thanksgiving turkeys on the loose",
+   "t": 125.5,
+   "line": 15
+  },
+  {
+   "text": "Moon Bunny PQ is coming back",
+   "t": 155.7,
+   "line": 20
+  },
+  {
+   "text": "why is that character called June Bug?",
+   "t": 186.9,
+   "line": 24
+  },
+  {
+   "text": "Nexon, listened, guys",
+   "t": 195.7,
+   "line": 26
+  },
+  {
+   "text": "No more megaphone spam",
+   "t": 219.7,
+   "line": 29
+  },
+  {
+   "text": "no one will steal your pallet anymore",
+   "t": 233.4,
+   "line": 31
+  }
+ ],
+ "cost": 0.00931,
+ "dropped": 0
+}
