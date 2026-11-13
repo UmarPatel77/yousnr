@@ -1,1 +1,54 @@
-{"made": "2026-11-13T01:42:32+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz5Uyv54oicUGAhh2PRF\"}"}
+{
+ "made": "2026-11-13T02:20:01+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "series of withdrawals",
+   "t": 9.8,
+   "line": 1
+  },
+  {
+   "text": "treat just like an annuity",
+   "t": 12.3,
+   "line": 1
+  },
+  {
+   "text": "draw a timeline",
+   "t": 43.4,
+   "line": 5
+  },
+  {
+   "text": "PMT on the calculator",
+   "t": 114.7,
+   "line": 14
+  },
+  {
+   "text": "clear it",
+   "t": 167.5,
+   "line": 20
+  },
+  {
+   "text": "distinguish between the inflows and outflows",
+   "t": 188.0,
+   "line": 23
+  },
+  {
+   "text": "thirty thousand followed by the plus minus key",
+   "t": 197.9,
+   "line": 24
+  },
+  {
+   "text": "I find this more intuitive",
+   "t": 213.4,
+   "line": 26
+  },
+  {
+   "text": "CPT uh the PMT",
+   "t": 243.6,
+   "line": 29
+  }
+ ],
+ "cost": 0.00685,
+ "dropped": 0
+}
