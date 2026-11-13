@@ -1,0 +1,74 @@
+{
+ "made": "2026-11-13T03:02:45+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "godmother of a megaverse is Ursula K. Lewen",
+   "t": 47.7,
+   "line": 5
+  },
+  {
+   "text": "Jensen Ackles",
+   "t": 89.3,
+   "line": 10
+  },
+  {
+   "text": "there is no alpha wolf",
+   "t": 195.3,
+   "line": 23
+  },
+  {
+   "text": "CEO of",
+   "t": 250.6,
+   "line": 30
+  },
+  {
+   "text": "Omega children are called pups",
+   "t": 259.7,
+   "line": 32
+  },
+  {
+   "text": "the omega of Troy",
+   "t": 304.7,
+   "line": 39
+  },
+  {
+   "text": "sex makes you stupid",
+   "t": 336.2,
+   "line": 43
+  },
+  {
+   "text": "David Mech",
+   "t": 354.4,
+   "line": 46
+  },
+  {
+   "text": "elephant seals",
+   "t": 405.4,
+   "line": 52
+  },
+  {
+   "text": "beavers, for example, secrete a brown paste",
+   "t": 452.8,
+   "line": 58
+  },
+  {
+   "text": "get a load of this guy rather than get a",
+   "t": 537.2,
+   "line": 68
+  },
+  {
+   "text": "medium rare beef steak",
+   "t": 636.8,
+   "line": 81
+  },
+  {
+   "text": "human self-domemestication hypothesis",
+   "t": 779.6,
+   "line": 98
+  }
+ ],
+ "cost": 0.01591,
+ "dropped": 1
+}

@@ -1,0 +1,39 @@
+{
+ "made": "2026-11-13T03:05:48+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "GPT4 is actually more. It's trillion",
+   "t": 19.0,
+   "line": 2
+  },
+  {
+   "text": "more code does not",
+   "t": 39.8,
+   "line": 4
+  },
+  {
+   "text": "necessarily mean more features",
+   "t": 41.0,
+   "line": 5
+  },
+  {
+   "text": "a single human neuron is way smarter",
+   "t": 58.3,
+   "line": 7
+  },
+  {
+   "text": "sums up its inputs, multiplied by weights and biases",
+   "t": 65.0,
+   "line": 8
+  },
+  {
+   "text": "separate artificial neural network that had like million parameters",
+   "t": 77.8,
+   "line": 10
+  }
+ ],
+ "cost": 0.00513,
+ "dropped": 0
+}
