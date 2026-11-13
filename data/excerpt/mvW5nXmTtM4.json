@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-13T02:59:42+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Departments of diagnostic medicine don't exist",
+   "t": 83.0,
+   "line": 12
+  },
+  {
+   "text": "he has tenure",
+   "t": 146.9,
+   "line": 20
+  },
+  {
+   "text": "I get a budget for three",
+   "t": 215.0,
+   "line": 30
+  },
+  {
+   "text": "undiagnosed diseases program",
+   "t": 375.5,
+   "line": 50
+  },
+  {
+   "text": "That coffee machine was never broken",
+   "t": 549.0,
+   "line": 76
+  },
+  {
+   "text": "40% of our lawsuits last year were about House",
+   "t": 651.7,
+   "line": 92
+  },
+  {
+   "text": "egotistical pill-popping lawsuit magnet and a genius",
+   "t": 847.2,
+   "line": 120
+  },
+  {
+   "text": "shoots it in the head with the same kind of bullet",
+   "t": 912.8,
+   "line": 130
+  },
+  {
+   "text": "roughly $15,656,300",
+   "t": 1232.2,
+   "line": 171
+  },
+  {
+   "text": "He loses money. So does opthalmology",
+   "t": 1318.2,
+   "line": 185
+  },
+  {
+   "text": "Information saves lives. Saving lives saves money",
+   "t": 1395.0,
+   "line": 196
+  }
+ ],
+ "cost": 0.02365,
+ "dropped": 3
+}
