@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-13T03:14:58+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "45minute long video on quantum mechanics",
+   "t": 55.0,
+   "line": 7
+  },
+  {
+   "text": "peaceful about the isolation in Voices of the Void",
+   "t": 302.7,
+   "line": 38
+  },
+  {
+   "text": "a Roomba and some edible soap",
+   "t": 374.7,
+   "line": 46
+  },
+  {
+   "text": "700 mannequins that definitely aren't moving while I sleep",
+   "t": 473.9,
+   "line": 61
+  },
+  {
+   "text": "\"Devil of the Plains, go back to where",
+   "t": 578.7,
+   "line": 71
+  },
+  {
+   "text": "flesh gift. I can eat",
+   "t": 847.3,
+   "line": 103
+  },
+  {
+   "text": "Paper alien",
+   "t": 1303.0,
+   "line": 162
+  },
+  {
+   "text": "I immediately chopped them up into tiny pieces",
+   "t": 1479.2,
+   "line": 184
+  },
+  {
+   "text": "giant spider crab alien pyramid robot thing?",
+   "t": 2200.1,
+   "line": 274
+  },
+  {
+   "text": "army of cybernetic boars",
+   "t": 2707.3,
+   "line": 326
+  },
+  {
+   "text": "illegal hacker man shit",
+   "t": 2901.4,
+   "line": 344
+  }
+ ],
+ "cost": 0.02996,
+ "dropped": 3
+}
