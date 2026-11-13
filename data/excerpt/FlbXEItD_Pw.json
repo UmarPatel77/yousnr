@@ -1,0 +1,49 @@
+{
+ "made": "2026-11-13T15:05:46+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "you're not wearing your leather jacket",
+   "t": 4.3,
+   "line": 1
+  },
+  {
+   "text": "It draws women like flies",
+   "t": 28.5,
+   "line": 4
+  },
+  {
+   "text": "likely a Chinese intelligence asset",
+   "t": 38.3,
+   "line": 5
+  },
+  {
+   "text": "smuggling chips to China",
+   "t": 44.0,
+   "line": 6
+  },
+  {
+   "text": "insanely low on the list",
+   "t": 61.8,
+   "line": 8
+  },
+  {
+   "text": "keep it in my pants",
+   "t": 73.0,
+   "line": 10
+  },
+  {
+   "text": "jumpst start the AI bubble collapse",
+   "t": 76.5,
+   "line": 10
+  },
+  {
+   "text": "betraying the sacred bond of marriage",
+   "t": 88.1,
+   "line": 12
+  }
+ ],
+ "cost": 0.00589,
+ "dropped": 0
+}
