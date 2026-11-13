@@ -1,0 +1,59 @@
+{
+ "made": "2026-11-13T03:21:04+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "algo developer track",
+   "t": 50.5,
+   "line": 9
+  },
+  {
+   "text": "quantitative researcher. You're a",
+   "t": 105.4,
+   "line": 18
+  },
+  {
+   "text": "You are given real money to trade",
+   "t": 119.4,
+   "line": 21
+  },
+  {
+   "text": "no other internship on Earth that has this live trading component",
+   "t": 126.6,
+   "line": 22
+  },
+  {
+   "text": "writing C++ to improve our trading technology stack",
+   "t": 137.0,
+   "line": 24
+  },
+  {
+   "text": "HRT is a learn by doing",
+   "t": 197.0,
+   "line": 34
+  },
+  {
+   "text": "allowing interns to use AI tooling",
+   "t": 229.4,
+   "line": 40
+  },
+  {
+   "text": "So story time is a way",
+   "t": 244.5,
+   "line": 42
+  },
+  {
+   "text": "no culture of shame",
+   "t": 294.0,
+   "line": 51
+  },
+  {
+   "text": "actually generating alpha for one another",
+   "t": 310.8,
+   "line": 54
+  }
+ ],
+ "cost": 0.00902,
+ "dropped": 0
+}

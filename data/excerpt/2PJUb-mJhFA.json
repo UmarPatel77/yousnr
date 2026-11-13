@@ -1,0 +1,59 @@
+{
+ "made": "2026-11-13T03:18:02+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "the born sexy yesterday trope",
+   "t": 178.6,
+   "line": 23
+  },
+  {
+   "text": "so benol and limited",
+   "t": 270.8,
+   "line": 35
+  },
+  {
+   "text": "male fantasy",
+   "t": 273.8,
+   "line": 36
+  },
+  {
+   "text": "why does she only feel liberated when she's having sex?",
+   "t": 381.5,
+   "line": 49
+  },
+  {
+   "text": "black characters existing to enlighten the",
+   "t": 462.9,
+   "line": 59
+  },
+  {
+   "text": "I've seen her have sex in this movie like 20 times",
+   "t": 504.0,
+   "line": 65
+  },
+  {
+   "text": "limited imagination men have about women's interior lives",
+   "t": 575.0,
+   "line": 74
+  },
+  {
+   "text": "\"What would you do if there's no crime?\"",
+   "t": 598.4,
+   "line": 77
+  },
+  {
+   "text": "so unimaginative",
+   "t": 668.8,
+   "line": 85
+  },
+  {
+   "text": "And she decides to be a sex worker. Be serious",
+   "t": 759.3,
+   "line": 97
+  }
+ ],
+ "cost": 0.01509,
+ "dropped": 1
+}
