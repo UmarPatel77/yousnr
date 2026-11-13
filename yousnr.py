@@ -3099,14 +3099,17 @@ def main():
     if args.cmd == "excerpt":
         if not excerpt.settings()["key"]:
             sys.exit("Set ANTHROPIC_API_KEY first (see README).")
+        made = 0
         for v in args.videos:
             vid = video_id(v)
             try:
-                excerpt.make(vid)
+                if (excerpt.make(vid) or {}).get("fragments"):
+                    made += 1
                 write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
             except Exception as ex_err:
                 print(f"  {vid}: failed: {ex_err.__class__.__name__}: {str(ex_err)[:300]}")
-        print("Saved. The server publishes it with the next new page (or run deploy/update.sh).")
+        if made:
+            print("Saved. The server publishes it with the next new page (or run deploy/update.sh).")
 
     if args.cmd == "forget":
         try:

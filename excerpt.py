@@ -29,7 +29,7 @@ PRICES = {                                       # USD per million tokens (input
     "claude-haiku-5-5": (0.10, 0.50),
 }
 MAX_FRAGMENTS, MAX_WORDS, MAX_FRAGMENT_WORDS = 14, 70, 12
-VERSION = 2                                      # bump when the instructions change: older ones get remade
+VERSION = 3                                      # bump when the instructions change: older ones get remade
 FRESH = 10 * 60                                  # wait this long after a video changes (its word check runs first)
 RETRY_FAILED = 3 * 86400
 ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
@@ -61,26 +61,24 @@ Rules:
 - It doesn't have to be coherent or explain anything. Read in order with "\u2026" between them, it should feel conclusive, like the video's own last word on itself.
 - Keep the transcript's language. Don't translate."""
 
-TOOL = {
-    "name": "cut",
-    "description": "The fragments, copied word for word from the transcript, in the order they occur.",
-    "input_schema": {
-        "type": "object",
-        "properties": {
-            "fragments": {
-                "type": "array", "minItems": 1, "maxItems": MAX_FRAGMENTS,
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "line": {"type": "integer", "description": "line number where the fragment starts"},
-                        "quote": {"type": "string", "description": "the exact words"},
-                    },
-                    "required": ["line", "quote"],
+SCHEMA = {                                       # the answer's shape (structured outputs; counts are checked in build())
+    "type": "object",
+    "properties": {
+        "fragments": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "line": {"type": "integer", "description": "line number where the fragment starts"},
+                    "quote": {"type": "string", "description": "the exact words, copied from the transcript"},
                 },
-            }
-        },
-        "required": ["fragments"],
+                "required": ["line", "quote"],
+                "additionalProperties": False,
+            },
+        }
     },
+    "required": ["fragments"],
+    "additionalProperties": False,
 }
 
 
@@ -209,8 +207,9 @@ def ask(d, lines, st):
     numbered = "\n".join(f"{n}|{t}" for n, (_, _, _, t) in enumerate(lines, 1))
     user = (f"Title: {d.get('title') or ''}\nChannel: {d.get('channel') or ''}\n\n"
             f"Transcript (line number | words):\n{numbered}")
-    body = {"model": st["model"], "max_tokens": 1500, "system": SYSTEM, "tools": [TOOL],
-            "tool_choice": {"type": "tool", "name": "cut"}, "messages": [{"role": "user", "content": user}]}
+    body = {"model": st["model"], "max_tokens": 4000, "system": SYSTEM,
+            "messages": [{"role": "user", "content": user}],
+            "output_config": {"format": {"type": "json_schema", "schema": SCHEMA}}}
     headers = {"x-api-key": st["key"], "anthropic-version": "2023-06-01", "content-type": "application/json"}
     for attempt in range(3):
         r = requests.post(API, headers=headers, json=body, timeout=180)
@@ -224,9 +223,21 @@ def ask(d, lines, st):
     u = res.get("usage") or {}
     pin, pout = st["price"]
     cost = (u.get("input_tokens", 0) * pin + u.get("output_tokens", 0) * pout) / 1e6
-    picks = next((c.get("input", {}).get("fragments") for c in res.get("content") or []
-                  if c.get("type") == "tool_use"), None) or []
+    if res.get("stop_reason") in ("refusal", "max_tokens"):
+        raise AnswerProblem(f"Claude stopped early ({res.get('stop_reason')})", cost)
+    text = "".join(c.get("text", "") for c in res.get("content") or [] if c.get("type") == "text")
+    try:
+        picks = json.loads(text).get("fragments") or []
+    except Exception:
+        raise AnswerProblem(f"Claude's answer wasn't the expected JSON: {text[:120]!r}", cost)
     return picks, cost
+
+
+class AnswerProblem(RuntimeError):
+    """The call worked (and cost something) but the answer can't be used."""
+    def __init__(self, msg, cost):
+        super().__init__(msg)
+        self.cost = cost
 
 
 def estimate(lines, st):
@@ -246,7 +257,12 @@ def make(vid, quiet=False):
         raise RuntimeError("too short")
     if spent() + estimate(lines, st) > st["budget"] + 1e-9:
         raise BudgetUsed(f"this month's ${st['budget']:.2f} is used up")
-    picks, cost = ask(d, lines, st)
+    try:
+        picks, cost = ask(d, lines, st)
+    except AnswerProblem as e:
+        _record(e.cost)
+        _write(EX_DIR / f"{vid}.json", json.dumps({"made": _now(), "v": VERSION, "fragments": [], "failed": str(e)}))
+        raise
     _record(cost)
     frags = build(lines, picks)
     out = {"made": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"), "v": VERSION,
@@ -313,6 +329,8 @@ class Excerpter:
             if r and not r.get("failed") and r.get("v", 1) < VERSION:
                 redo.append((views.get(vid, 0), f.stat().st_mtime, vid))      # made under older instructions
                 continue
+            if r and r.get("failed") and (str(r["failed"]).startswith("Claude API") or r.get("v", 1) < VERSION):
+                r = None                                   # not this video's fault: try it again now
             if r and not (r.get("failed") and now - _when(r) > RETRY_FAILED):
                 continue
             (new if age < 2 * 86400 else old).append((f.stat().st_mtime, views.get(vid, 0), vid))
@@ -341,13 +359,16 @@ class Excerpter:
                 self.stop.wait(3600)
                 continue
             except Exception as e:
-                print(f"  excerpt for {vid} failed: {e.__class__.__name__}: {str(e)[:300]}")
-                if vid and "HTTP 4" in str(e) and "HTTP 429" not in str(e):
-                    _write(EX_DIR / f"{vid}.json", json.dumps({"made": _now(), "fragments": [], "failed": str(e)[:300]}))
-                    if "HTTP 401" in str(e) or "HTTP 403" in str(e):
-                        print("  excerpts: the Claude API refused the key (check ANTHROPIC_API_KEY); pausing an hour")
-                        self.stop.wait(3600)
-                        continue
+                msg = str(e)
+                print(f"  excerpt for {vid} failed: {e.__class__.__name__}: {msg[:300]}")
+                if vid and ("prompt is too long" in msg or "HTTP 413" in msg):     # this video is too long
+                    _write(EX_DIR / f"{vid}.json", json.dumps({"made": _now(), "v": VERSION, "fragments": [], "failed": msg[:300]}))
+                elif "Claude API HTTP 4" in msg and "HTTP 429" not in msg:
+                    # the key, credits, model or request: the same for every video, so wait instead of
+                    # marking them all failed
+                    print("  excerpts: pausing an hour (restart YouSNR after fixing the problem above)")
+                    self.stop.wait(3600)
+                    continue
             self.stop.wait(gap if vid else 300)
 
 
