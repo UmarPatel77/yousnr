@@ -223,5 +223,50 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-11T17:50:31+00:00"
+ "added": "2026-11-11T17:50:31+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-13T10:00:03",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 48.8,
+  "usd": 0.0071,
+  "version": 3,
+  "flagged": [
+   [
+    "1:18",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:31",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:40",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:12",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:37",
+    [
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
 }
