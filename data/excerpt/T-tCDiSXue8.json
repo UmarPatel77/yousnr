@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-13T03:30:14+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "start locking in before they kind of ruin their lives",
+   "t": 1.8,
+   "line": 0
+  },
+  {
+   "text": "2K per month is absolutely life-changing",
+   "t": 101.8,
+   "line": 14
+  },
+  {
+   "text": "living paycheck to paycheck",
+   "t": 179.3,
+   "line": 24
+  },
+  {
+   "text": "this is the bad ending",
+   "t": 225.2,
+   "line": 30
+  },
+  {
+   "text": "jobs kind of take the fun out of everything",
+   "t": 244.3,
+   "line": 32
+  },
+  {
+   "text": "you grind outside of your degree",
+   "t": 297.8,
+   "line": 39
+  },
+  {
+   "text": "put you in the top 1%",
+   "t": 461.0,
+   "line": 59
+  },
+  {
+   "text": "consistently doing a little bit",
+   "t": 511.0,
+   "line": 66
+  },
+  {
+   "text": "nobody's coming to save you",
+   "t": 544.2,
+   "line": 71
+  },
+  {
+   "text": "people that play Minecraft while",
+   "t": 571.4,
+   "line": 74
+  },
+  {
+   "text": "I really hate stuff like shorts or brain rot",
+   "t": 649.6,
+   "line": 86
+  }
+ ],
+ "cost": 0.01576,
+ "dropped": 2
+}
