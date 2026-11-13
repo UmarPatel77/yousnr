@@ -1,1 +1,49 @@
-{"made": "2026-11-13T01:48:32+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz5wZhYjnygdduYy8QL3\"}"}
+{
+ "made": "2026-11-13T02:26:07+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "introduce a formula which is not only useful",
+   "t": 9.9,
+   "line": 1
+  },
+  {
+   "text": "equities as well",
+   "t": 19.3,
+   "line": 2
+  },
+  {
+   "text": "200 euro per year into perpetuity",
+   "t": 41.4,
+   "line": 5
+  },
+  {
+   "text": "PV of a level set of cash flows",
+   "t": 92.8,
+   "line": 12
+  },
+  {
+   "text": "this is going to give us the PV at time two",
+   "t": 136.8,
+   "line": 17
+  },
+  {
+   "text": "200 divided by just R not 1 plus r just R",
+   "t": 161.5,
+   "line": 20
+  },
+  {
+   "text": "divide by a factor of 1.07",
+   "t": 194.0,
+   "line": 24
+  },
+  {
+   "text": "ALS method instead of the chain",
+   "t": 219.2,
+   "line": 27
+  }
+ ],
+ "cost": 0.00667,
+ "dropped": 0
+}

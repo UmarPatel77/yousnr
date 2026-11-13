@@ -1,1 +1,59 @@
-{"made": "2026-11-13T01:45:32+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz5iGjE5baoXocUzqquG\"}"}
+{
+ "made": "2026-11-13T02:23:04+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "unequal cash flows",
+   "t": 14.0,
+   "line": 1
+  },
+  {
+   "text": "only works when you've got equal level",
+   "t": 57.6,
+   "line": 7
+  },
+  {
+   "text": "algebraic operating system instead of the chain method",
+   "t": 155.6,
+   "line": 20
+  },
+  {
+   "text": "easy to get this wrong",
+   "t": 277.0,
+   "line": 35
+  },
+  {
+   "text": "clear this worksheet",
+   "t": 318.9,
+   "line": 40
+  },
+  {
+   "text": "very critically followed by the enter key",
+   "t": 421.2,
+   "line": 53
+  },
+  {
+   "text": "it will be ignored it will not be stored",
+   "t": 436.2,
+   "line": 55
+  },
+  {
+   "text": "simply a place to store the data",
+   "t": 587.0,
+   "line": 73
+  },
+  {
+   "text": "cptq key",
+   "t": 646.2,
+   "line": 80
+  },
+  {
+   "text": "takes a much longer time",
+   "t": 676.9,
+   "line": 84
+  }
+ ],
+ "cost": 0.01052,
+ "dropped": 0
+}
