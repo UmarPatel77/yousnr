@@ -26,6 +26,7 @@ try:
     import correct as acc                      # accuracy layer (correct.py next to this file)
 except Exception:                              # pragma: no cover
     acc = None
+import excerpt                                 # "In their words" (excerpt.py next to this file)
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -1469,6 +1470,9 @@ def render_page(d):
     title = d.get("title") or vid
     plain = " ".join(s["text"] for s in d["segments"])
     desc = (plain[:155] + "…") if len(plain) > 155 else plain
+    cut = excerpt.plain(vid)
+    if cut:                                    # link previews show the video in its own words
+        desc = "“" + ((cut[:197] + "…") if len(cut) > 200 else cut) + "”"
     pub = d.get("published") or ""
     if re.fullmatch(r"\d{8}", pub):
         dt = datetime.date(int(pub[:4]), int(pub[4:6]), int(pub[6:]))
@@ -1492,6 +1496,8 @@ def render_page(d):
                                          if nfix else CHECKING_NOTE if checking else ""))
                .replace("{{FIXCLASS}}", "" if nfix else "hidden")
                .replace("{{PGCLASS}}", "" if (pg or pangram_settings()["key"]) else "hidden")
+               .replace("{{PGWORDS}}", str(int(pangram_settings()["words"])))
+               .replace("{{CUT}}", excerpt.html(vid, e))
                .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
                .replace("{{ROWS}}", "\n".join(rows)))
 
@@ -2412,6 +2418,11 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
     srv.RequestHandlerClass = Handler
     corrector = fetcher.corrector = Corrector(fetcher)
     pangram = Pangram(fetcher)
+
+    def excerpt_done(vid):                     # put it on the page and publish it
+        write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
+        fetcher.pending.append(vid)
+    excerpter = excerpt.Excerpter(excerpt_done, views=lambda: dict(corrector.views)).start()
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(
@@ -2423,6 +2434,9 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
               f"${st['budget']:.2f} used this month; full re-transcription at {st['full_at']} views")
     else:
         print("  corrections: off (set ELEVENLABS_API_KEY / ASSEMBLYAI_API_KEY to turn on)")
+    est = excerpt.settings()
+    print(f"  In their words: on ({est['model']}); ${excerpt.spent():.2f} of ${est['budget']:.2f} used this month, "
+          f"up to {est['per_hour']} an hour" if est["key"] else "  In their words: off (set ANTHROPIC_API_KEY to turn on)")
     pst = pangram_settings()
     print(f"  Pangram checks: on; ${pangram_spent():.2f} of ${pst['budget']:.2f} used this month, first "
           f"{pst['words']} words per video" if pst["key"] else "  Pangram checks: off (set PANGRAM_API_KEY to turn on)")
@@ -2703,6 +2717,14 @@ def show_status(port=8787, lines=15):
         print(f"  corrections: {', '.join(acc.available())}; ${acc.spent_this_month():.2f} of ${st['budget']:.2f} used this month")
     else:
         print("  corrections: off (no ElevenLabs / AssemblyAI key found)")
+    est = excerpt.settings()
+    if est["key"]:
+        have = sum(1 for f in DATA.glob("*.json") if ID_RE.match(f.stem)
+                   and ((excerpt.result(f.stem) or {}).get("fragments")))
+        print(f"  In their words: ${excerpt.spent():.2f} of ${est['budget']:.2f} used this month; "
+              f"{have} of {sum(1 for f in DATA.glob('*.json') if ID_RE.match(f.stem))} videos have one")
+    else:
+        print("  In their words: off (no ANTHROPIC_API_KEY)")
     pst = pangram_settings()
     print(f"  Pangram checks: ${pangram_spent():.2f} of ${pst['budget']:.2f} used this month" if pst["key"]
           else "  Pangram checks: off (no PANGRAM_API_KEY)")
@@ -2879,6 +2901,8 @@ def main():
     ck.add_argument("video", nargs="?", default="cPmVLrTA8AU")
     ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
     ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
+    ex = sub.add_parser("excerpt", help="make (or remake) the 'In their words' fragments for videos now")
+    ex.add_argument("videos", nargs="+")
     fg = sub.add_parser("forget", help="clear a remembered 'no captions'/'unavailable' result so it's tried again now")
     fg.add_argument("videos", nargs="+")
     au = sub.add_parser("autostart", help="on: turn on by itself whenever you sign in to Windows; off: don't")
@@ -3072,6 +3096,18 @@ def main():
         show_status(args.port)
     if args.cmd == "autostart":
         set_autostart(args.switch == "on")
+    if args.cmd == "excerpt":
+        if not excerpt.settings()["key"]:
+            sys.exit("Set ANTHROPIC_API_KEY first (see README).")
+        for v in args.videos:
+            vid = video_id(v)
+            try:
+                excerpt.make(vid)
+                write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
+            except Exception as ex_err:
+                print(f"  {vid}: failed: {ex_err.__class__.__name__}: {str(ex_err)[:300]}")
+        print("Saved. The server publishes it with the next new page (or run deploy/update.sh).")
+
     if args.cmd == "forget":
         try:
             missing = json.loads(MISSING.read_text(encoding="utf-8"))

@@ -16,3 +16,4 @@ yousnr.log.old
 *.tmp
 
 data/_pangram_usage.json
+data/_excerpt_usage.json

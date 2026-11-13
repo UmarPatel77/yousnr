@@ -111,6 +111,9 @@ YOUSNR_MONTHLY_BUDGET=5
 # WARP's IPv4 addresses download audio for word checks, but not its IPv6 ones (Oct 2026)
 YOUSNR_PROXY=socks5://127.0.0.1:$WARP_PORT
 YOUSNR_PROXY_IPV4=1
+# "In their words" at the top of each page (Claude picks the fragments). Blank key = off.
+ANTHROPIC_API_KEY=
+YOUSNR_EXCERPT_BUDGET=3
 # Pangram button on transcript pages (AI-text check, paid per word). Blank key = no button.
 PANGRAM_API_KEY=
 YOUSNR_PANGRAM_BUDGET=5
