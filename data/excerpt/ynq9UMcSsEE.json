@@ -1,0 +1,49 @@
+{
+ "made": "2026-11-13T03:11:55+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "I'm very happy to be almost done",
+   "t": 4.2,
+   "line": 0
+  },
+  {
+   "text": "going into debt for 10 years just to make a game",
+   "t": 34.0,
+   "line": 4
+  },
+  {
+   "text": "you don't want to turn into the Donner party",
+   "t": 78.0,
+   "line": 9
+  },
+  {
+   "text": "just crash out and never get it done",
+   "t": 95.7,
+   "line": 11
+  },
+  {
+   "text": "the greatest puzzle game ever made",
+   "t": 121.2,
+   "line": 14
+  },
+  {
+   "text": "scope it is what it's called in the industry",
+   "t": 147.5,
+   "line": 18
+  },
+  {
+   "text": "can't you just like break this into three games",
+   "t": 169.7,
+   "line": 20
+  },
+  {
+   "text": "the not as good version of it.\"",
+   "t": 211.7,
+   "line": 25
+  }
+ ],
+ "cost": 0.00712,
+ "dropped": 1
+}

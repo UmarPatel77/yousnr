@@ -1,0 +1,54 @@
+{
+ "made": "2026-11-13T03:08:52+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "I bet the greatest athletes in the WORLD $100,000",
+   "t": 0.0,
+   "line": 0
+  },
+  {
+   "text": "Hey, Nolan, lock IN!",
+   "t": 77.1,
+   "line": 15
+  },
+  {
+   "text": "If Messi was here, I think he'd hit the bull's eye",
+   "t": 94.8,
+   "line": 20
+  },
+  {
+   "text": "She can probably beat us going backwards",
+   "t": 169.0,
+   "line": 42
+  },
+  {
+   "text": "You can't be good at everything",
+   "t": 407.9,
+   "line": 96
+  },
+  {
+   "text": "This is, like, him… aura farming",
+   "t": 632.4,
+   "line": 137
+  },
+  {
+   "text": "I'm an idiot sandwich",
+   "t": 824.2,
+   "line": 190
+  },
+  {
+   "text": "Wait, is he literally taking a nap right now?",
+   "t": 889.0,
+   "line": 202
+  },
+  {
+   "text": "Let's give Gordon the first L he's ever gotten in his life",
+   "t": 900.8,
+   "line": 203
+  }
+ ],
+ "cost": 0.04518,
+ "dropped": 4
+}
