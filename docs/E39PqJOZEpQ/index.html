@@ -26,6 +26,11 @@ a{color:inherit;text-decoration:none}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
 .vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
 .meta{color:var(--mute);font-size:13px}
+.cut{margin:16px 0 4px;padding:0 0 0 14px;border-left:3px solid var(--fg)}
+.cut figcaption{font:500 11px/16px Roboto,Arial,sans-serif;color:var(--mute);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;cursor:help}
+.cut blockquote{margin:0;font:italic 400 18px/27px Georgia,'Times New Roman',serif;color:var(--fg)}
+.cut blockquote a{color:inherit;text-decoration:none}.cut blockquote a:hover{text-decoration:underline}
+.cut .gap{color:var(--mute);font-style:normal;padding:0 2px}
 .meta a{color:var(--accent)}
 
 .panel{border:1px solid var(--line);border-radius:12px}
@@ -73,6 +78,8 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pgai{background:#e5484d}.pgas{background:#f5a524}.pghu{background:#30a46c}
 .pgkey{display:flex;gap:4px 14px;flex-wrap:wrap}.pgkey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
 .pgflag a{color:var(--accent);margin-right:10px;white-space:nowrap}
+.pg a.go{display:inline-block;text-decoration:none}
+.pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
 @media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
@@ -87,6 +94,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       <h1>Time Value of Money (TVM) - annuities (for the CFA Level 1 exam)</h1>
       <div class="meta">Let me explain<span class="pub"> · Jan 9, 2023</span></div>
       <div class="meta"><a href="https://www.youtube.com/watch?v=E39PqJOZEpQ" target="_blank" rel="noopener">Watch on YouTube ↗</a><span class="trk"> · English (auto-generated)</span><span class="fixnote"> · 8 words corrected</span></div>
+      
     </div>
   </div>
 
@@ -348,7 +356,8 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGMSG={pangram_budget:'This month’s Pangram checks are used up. Try again next month.',
+  var PGWORDS=1500;
+  var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
     too_short:'This transcript is too short for Pangram to judge.',offline:'The YouSNR server is offline. Try again later.',
@@ -367,7 +376,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~1,500 words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -385,14 +394,55 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     ask();
   }
   function pgErr(code){
-    pg.innerHTML='<h4>Couldn’t check with Pangram</h4><p class="mute">'+(PGMSG[code]||'Something went wrong. Try again in a minute.')+'</p>';
+    var self=!/^(busy|too_short|not_found)$/.test(code||'');   // when YouSNR can't check it, the visitor can
+    pg.innerHTML='<h4>Couldn’t check with Pangram</h4><p class="mute">'+(PGMSG[code]||'Something went wrong. Try again in a minute.')+'</p>'+
+      (self?pgSelf():'');
+  }
+  // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
+  // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
+  function pgText(){
+    var parts=[],n=0;
+    for(var i=0;i<segs.length;i++){
+      var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
+      if(!t)continue;var w=t.split(' ').length;
+      if(parts.length&&n+w>PGWORDS)break;
+      parts.push(t);n+=w;
+    }
+    return {text:parts.join(' '),words:n};
+  }
+  function pgSelf(){
+    return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
+      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      '(Ctrl+V, or long-press and Paste on a phone).</p>'+
+      '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
+      '<p class="mute" id="pgcopied"></p>'+
+      '<p class="mute">With Pangram’s browser extension you can also select text on this page, right-click and choose Check for AI.</p></div>';
+  }
+  function copyNow(text){      // copy before the new tab takes focus (the async clipboard needs this page focused)
+    var ok=false,ta=document.createElement('textarea');
+    ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-1000px';
+    document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,text.length);
+    try{ok=document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);
+    if(!ok&&navigator.clipboard)navigator.clipboard.writeText(text).catch(function(){});
+    return ok;
   }
   pgb.onclick=function(){
     var on=pgb.getAttribute('aria-pressed')!=='true';
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
+  var cut=document.getElementById('cut');       // "In their words": a fragment jumps to where it was said
+  if(cut)cut.addEventListener('click',function(ev){
+    var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
+  });
   pg.addEventListener('click',function(ev){
+    if(ev.target.closest('#pgcopy')){            // copy, then let the link open Pangram in a new tab
+      var x=pgText(),ok=copyNow(x.text),note=document.getElementById('pgcopied');
+      if(note)note.textContent=ok?'Copied '+x.words.toLocaleString()+' words. Paste them into Pangram.':
+        'If nothing pastes in Pangram, use Copy at the top of this page instead.';
+      return;
+    }
     var a=ev.target.closest('a[data-t]');if(!a)return;ev.preventDefault();jumpTo(+a.dataset.t);
   });
 
