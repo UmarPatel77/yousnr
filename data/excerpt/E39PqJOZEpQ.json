@@ -1,1 +1,54 @@
-{"made": "2026-11-13T01:51:33+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz6ArWT6LANkJ6k9VyPc\"}"}
+{
+ "made": "2026-11-13T02:29:10+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "sequential payments of a level amount",
+   "t": 7.4,
+   "line": 0
+  },
+  {
+   "text": "intentionally change the order in which the options appear",
+   "t": 79.1,
+   "line": 9
+  },
+  {
+   "text": "clear TVM as its secondary function",
+   "t": 180.8,
+   "line": 21
+  },
+  {
+   "text": "your calculator when working with PMT is always assumes",
+   "t": 246.4,
+   "line": 26
+  },
+  {
+   "text": "press the plus minus key",
+   "t": 402.9,
+   "line": 43
+  },
+  {
+   "text": "manually roll this forward by one period",
+   "t": 499.9,
+   "line": 51
+  },
+  {
+   "text": "time -1 and then roll this forward",
+   "t": 577.7,
+   "line": 58
+  },
+  {
+   "text": "Discount this back over four periods",
+   "t": 733.5,
+   "line": 73
+  },
+  {
+   "text": "the correct answer in this case is option three",
+   "t": 803.5,
+   "line": 79
+  }
+ ],
+ "cost": 0.01124,
+ "dropped": 1
+}

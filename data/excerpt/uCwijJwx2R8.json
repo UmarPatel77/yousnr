@@ -1,1 +1,59 @@
-{"made": "2026-11-13T01:54:33+00:00", "fragments": [], "failed": "Claude API HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011Cgz6Q9QYs75vUdf7Ai4QN\"}"}
+{
+ "made": "2026-11-13T02:32:13+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Computing I over y",
+   "t": 8.0,
+   "line": 1
+  },
+  {
+   "text": "make something up",
+   "t": 52.6,
+   "line": 6
+  },
+  {
+   "text": "the input becomes negative",
+   "t": 65.5,
+   "line": 8
+  },
+  {
+   "text": "clear the time value of money worksheet first",
+   "t": 112.3,
+   "line": 14
+  },
+  {
+   "text": "be ready for such kind of open questions",
+   "t": 161.1,
+   "line": 20
+  },
+  {
+   "text": "FVN the future value at Point N",
+   "t": 188.0,
+   "line": 23
+  },
+  {
+   "text": "R equals this much minus one",
+   "t": 233.5,
+   "line": 29
+  },
+  {
+   "text": "y to the power of x",
+   "t": 319.8,
+   "line": 39
+  },
+  {
+   "text": "answer confirmed",
+   "t": 345.8,
+   "line": 42
+  },
+  {
+   "text": "sometimes you won't be able to use the",
+   "t": 363.6,
+   "line": 44
+  }
+ ],
+ "cost": 0.00782,
+ "dropped": 0
+}
