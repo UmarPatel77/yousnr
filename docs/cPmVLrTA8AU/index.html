@@ -183,6 +183,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
 <script type="application/json" id="pgdata">null</script>
+<script type="application/json" id="pgsel">{"text": "They're making sure that they can unblock you whenever you have things that you're stuck on. It's amazing the amount of like personal attention that goes into each individual intern's experience. >> You have resources in compute in mentorship. You'll learn how to do things with your own hands, but you'll also learn how to think about How to think about high-level projects. And this is the first year where we're allowing interns to use AI tooling. And it's a pretty big game changer. I think the overall volume of output this year has been a lot higher because of people using AI tools. So HRT's interns are also going to be exposed to ongoing classroom style learnings. So story time is a way to get that conversation started. >> Our interns will come in at 9:30 in the morning and they'll hear a different HRT talk about something that they've done in the past or a current market event or whatever's on their mind and it gives you a lot of perspective about the various types of trading that we do and the things that we think about. >> I love story time. Story time is my favorite of the day. You always walk out having learned something new either about the world or about math or about markets and it's always fun. >> We also have lots of talks from different members of a leadership team about different areas. Everything from like the business of trading through to sort of deep dives on technical research topics. >> There is an ethos at HRT of leadership making themselves available for interns. >> People are really busy. My mentor is really busy, but like he takes time out of his day and like talks to me all the time and like there's really like no culture of shame. You can just ask anything and somebody's going to help you. When you're at lunch, like you're sitting in the cafeteria with anybody. Lunch is probably like one of the more efficient hours of the workday, which is like very counterintuitive. You get this like environment where people are like sharing ideas with each other and like actually generating alpha for one another. >> HRT does a really good job at fostering like a community amongst the interns. People are essentially friends more than colleagues. It's been unbelievable.", "words": 396, "whole": false, "from": 205.92, "to": 322.08}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -334,7 +335,9 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGWORDS=1500;
+  var PGWORDS=400,pgsel=null;
+  try{pgsel=JSON.parse(document.getElementById('pgsel').textContent)}catch(e){}
+  function pgSpan(f,t){return clock(f)+'\u2013'+clock(t)}
   var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
@@ -348,13 +351,18 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
       '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
       (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
-      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':
+        r.picked?(r.words||0).toLocaleString()+' words from '+pgSpan(r.from||0,r.until||0)+', the stretch that reads most like a written script':
+        'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
       (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
       (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    var what=pgsel&&pgsel.whole?'this whole transcript ('+pgsel.words.toLocaleString()+' words) for AI-generated text':
+      (pgsel?pgsel.words:PGWORDS).toLocaleString()+' words for AI-generated text: the stretch of this transcript that reads most like a written script'+
+      (pgsel?' ('+pgSpan(pgsel.from,pgsel.to)+')':'')+', skipping intros and sponsor reads';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks '+what+'. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -379,6 +387,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
   function pgText(){
+    if(pgsel&&pgsel.text)return {text:pgsel.text,words:pgsel.words};   // the same words YouSNR would send
     var parts=[],n=0;
     for(var i=0;i<segs.length;i++){
       var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
@@ -390,7 +399,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgSelf(){
     return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
-      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      'This copies the '+(pgsel?pgsel.words:PGWORDS).toLocaleString()+' words YouSNR would send (the stretch that reads most like a script) and opens Pangram: paste them into its text box '+
       '(Ctrl+V, or long-press and Paste on a phone).</p>'+
       '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
       '<p class="mute" id="pgcopied"></p>'+

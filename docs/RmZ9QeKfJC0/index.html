@@ -232,6 +232,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
 <script type="application/json" id="pgdata">{"checked": "2026-11-12T04:32:22+00:00", "model": "4.1", "words": 1494, "whole": false, "until": 532.0, "headline": "Human Written", "short": "Human", "ai": 2.3036551249172273e-16, "assisted": 1.3451162328902025e-23, "human": 1.0, "flagged": [], "link": "https://www.pangram.com/history/d9cf7497-e1df-45fa-898e-a6f267fbbbb4"}</script>
+<script type="application/json" id="pgsel">{"text": "Why would all of a sudden I be like, \"Yeah, you can come back in my life. I would love to do life with you.\" when they've given me two disorders that I have to work through. No, I want to see my 13-year-old sister because I love her and we understand each other and I want to be there for her because I don't want her to develop urges to self harm, suicide ideation cuz I started developing those when I was 15 and no one helped me through it. No one. I was put into counseling for a couple weeks and then taken out because I told I told the counselor, \"I'm dealing with this and my mom took me on counseling.\" So, I was alone dealing with all that. I don't want my sister to be alone and that's why I make the videos that I make because I don't I know that there are kids out there that are alone, that are neglected. If you guys decide to watch this video, my parents, stop putting so much into the spiritual realm. Can you look at this in reality in in in this world in the chemicals in your brain and the physical things and the science? Can you look at that for a second instead of being like, \"Oh my gosh, it's spiritual.\" Madeline and I do not have a soul tie. There's nothing in the Bible that talks about have having a soul tie. Mala and I feel intensely because of the disorder. We feel intensely and since we understand each other, we feel intensely towards each other. You need to understand that. You need to research and educate yourself. Don't just be like, \"Oh, I'm so like uneducated and unintelligent in this field that I'm just going to say, oh, it's a spiritual tie. It's a spiritual thing.\" That's so dumb. You have this one life. I have this one life. You have this one life. Stop throwing it into the spiritual realm when the facts are in front of your face. When the facts are literally you could learn, educate yourself on. I love learning. I love educating myself. These past four months, I have been educating myself on so much because I've realized how much I wasn't taught. How much I wasn't taught. I wasn't even taught about sex.", "words": 397, "whole": false, "from": 317.0, "to": 462.0}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -383,7 +384,9 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGWORDS=1500;
+  var PGWORDS=400,pgsel=null;
+  try{pgsel=JSON.parse(document.getElementById('pgsel').textContent)}catch(e){}
+  function pgSpan(f,t){return clock(f)+'\u2013'+clock(t)}
   var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
@@ -397,13 +400,18 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
       '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
       (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
-      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':
+        r.picked?(r.words||0).toLocaleString()+' words from '+pgSpan(r.from||0,r.until||0)+', the stretch that reads most like a written script':
+        'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
       (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
       (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    var what=pgsel&&pgsel.whole?'this whole transcript ('+pgsel.words.toLocaleString()+' words) for AI-generated text':
+      (pgsel?pgsel.words:PGWORDS).toLocaleString()+' words for AI-generated text: the stretch of this transcript that reads most like a written script'+
+      (pgsel?' ('+pgSpan(pgsel.from,pgsel.to)+')':'')+', skipping intros and sponsor reads';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks '+what+'. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -428,6 +436,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
   function pgText(){
+    if(pgsel&&pgsel.text)return {text:pgsel.text,words:pgsel.words};   // the same words YouSNR would send
     var parts=[],n=0;
     for(var i=0;i<segs.length;i++){
       var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
@@ -439,7 +448,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgSelf(){
     return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
-      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      'This copies the '+(pgsel?pgsel.words:PGWORDS).toLocaleString()+' words YouSNR would send (the stretch that reads most like a script) and opens Pangram: paste them into its text box '+
       '(Ctrl+V, or long-press and Paste on a phone).</p>'+
       '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
       '<p class="mute" id="pgcopied"></p>'+

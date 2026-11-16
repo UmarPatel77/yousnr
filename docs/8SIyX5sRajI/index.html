@@ -199,6 +199,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
 <script type="application/json" id="pgdata">null</script>
+<script type="application/json" id="pgsel">{"text": "Ever since writing on paper became a constant in my life, I started to have more free time that otherwise would have been spent doom scrolling. My attention grows, giving more space for activities that isn't just fun, but also really fulfilling. If you're keen to see what it's like to be content instead of consumed, stick around. I'll show you. Guys, I love my journal. I'm really excited to talk about this today, and I hope you'd give me the privilege to ramble a bit as to why. First of all, having a physical journal is like being told that you have all the time and space in the world to gather your thoughts. You can pause mid-sentence and make mistakes. There won't be a black bar blinking while you think or an imaginary red line telling you this is a mistake. Fix it now. There are no pop-ups selling ways to improve what you have to say, how to sound more confident, more intelligent, cuz on paper, you can learn to actually be confident, be intelligent. It allows you to be who you are, to wield your voice as is, and hone it in your own ways at your own pace. Secondly, writing on paper reminds us that we are free. See, you can write slanted, skip spaces, doodle mid-sentence without needing to click or switch or scroll. There is nothing holding you back from drawing. No limitations of only having a keyboard or the software does not support this function. On Paper, writing and drawing can coexist in the same space. You can dictate how you want to write and where you want to write. You don't need to sit in a place with a PowerPoint. You don't need to avoid the sun because a glare makes the screen hard to read. And you can sit anywhere, anytime with a book and a pen in your hand, the world is your oyster. Thirdly, journaling teaches you that your words mean something, that your thoughts and feelings matters and you don't need the world to validate it for you. Because by existing on the page, it is already valid. You don't need some comment to tell you you're right or thousands of likes to confirm your belief. You don't need to perform. You don't need to be more than who you are.", "words": 394, "whole": false, "from": 20.68, "to": 181.84}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -350,7 +351,9 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGWORDS=1500;
+  var PGWORDS=400,pgsel=null;
+  try{pgsel=JSON.parse(document.getElementById('pgsel').textContent)}catch(e){}
+  function pgSpan(f,t){return clock(f)+'\u2013'+clock(t)}
   var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
@@ -364,13 +367,18 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
       '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
       (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
-      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':
+        r.picked?(r.words||0).toLocaleString()+' words from '+pgSpan(r.from||0,r.until||0)+', the stretch that reads most like a written script':
+        'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
       (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
       (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    var what=pgsel&&pgsel.whole?'this whole transcript ('+pgsel.words.toLocaleString()+' words) for AI-generated text':
+      (pgsel?pgsel.words:PGWORDS).toLocaleString()+' words for AI-generated text: the stretch of this transcript that reads most like a written script'+
+      (pgsel?' ('+pgSpan(pgsel.from,pgsel.to)+')':'')+', skipping intros and sponsor reads';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks '+what+'. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -395,6 +403,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
   function pgText(){
+    if(pgsel&&pgsel.text)return {text:pgsel.text,words:pgsel.words};   // the same words YouSNR would send
     var parts=[],n=0;
     for(var i=0;i<segs.length;i++){
       var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
@@ -406,7 +415,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgSelf(){
     return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
-      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      'This copies the '+(pgsel?pgsel.words:PGWORDS).toLocaleString()+' words YouSNR would send (the stretch that reads most like a script) and opens Pangram: paste them into its text box '+
       '(Ctrl+V, or long-press and Paste on a phone).</p>'+
       '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
       '<p class="mute" id="pgcopied"></p>'+

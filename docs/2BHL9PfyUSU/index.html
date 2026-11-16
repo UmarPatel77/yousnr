@@ -211,6 +211,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
 <script type="application/json" id="pgdata">null</script>
+<script type="application/json" id="pgsel">{"text": "you'll get 1.67 a number which is rounded to two decimal places even though the result could be written out in more detail for many areas of the curriculum two decimal places are simply not going to be enough so what I suggest we do is change this setting to something more accurate before we actually do that I just want to ask you to perform a simple operation and that's eight plus two times three it should be obvious that the answer ought to be 14. after all the rules of algebra require us to perform multiplication ahead of addition so first multiply two times three to get six and then add the eight however if you try to input this sequence into your calculator so 8 plus 2 times 3 and press the equals key you will most probably see the calculator displaying an answer of 30. and the reason for this is that Texas Instruments machines come pre-programmed they are set up to handle operations in the order in which they are keyed in so they first add the eight and the two and then multiply the result by three there is of course a way to change that if you want and I will show you now how to adjust both the decimal place setting as well as the rule for handling a sequence of operations if you look at your calculator you should note that most Keys have a primary function that's the one printed on the key itself as well as a secondary function which is printed directly above the key for example if you look at the very bottom row of keys you will find the decimal Mark or the dot printed on one of them and directly above the key you will see the word format so Dot and format so in this case the decimal Mark is the primary function but the key also has a secondary function which will allow us to change the calculators formatting conventions the way we activate this secondary function is by pressing the 2nd key which is the leftmost key in the second row from the top followed by the decimal Mark which has formats as its secondary function now let me do this second followed by the decimal Mark at the bottom and this gives us access to the formatting options of the calculator", "words": 400, "whole": false, "from": 73.0, "to": 266.0}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -362,7 +363,9 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGWORDS=1500;
+  var PGWORDS=400,pgsel=null;
+  try{pgsel=JSON.parse(document.getElementById('pgsel').textContent)}catch(e){}
+  function pgSpan(f,t){return clock(f)+'\u2013'+clock(t)}
   var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
@@ -376,13 +379,18 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
       '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
       (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
-      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':
+        r.picked?(r.words||0).toLocaleString()+' words from '+pgSpan(r.from||0,r.until||0)+', the stretch that reads most like a written script':
+        'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
       (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
       (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    var what=pgsel&&pgsel.whole?'this whole transcript ('+pgsel.words.toLocaleString()+' words) for AI-generated text':
+      (pgsel?pgsel.words:PGWORDS).toLocaleString()+' words for AI-generated text: the stretch of this transcript that reads most like a written script'+
+      (pgsel?' ('+pgSpan(pgsel.from,pgsel.to)+')':'')+', skipping intros and sponsor reads';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks '+what+'. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -407,6 +415,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
   function pgText(){
+    if(pgsel&&pgsel.text)return {text:pgsel.text,words:pgsel.words};   // the same words YouSNR would send
     var parts=[],n=0;
     for(var i=0;i<segs.length;i++){
       var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
@@ -418,7 +427,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgSelf(){
     return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
-      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      'This copies the '+(pgsel?pgsel.words:PGWORDS).toLocaleString()+' words YouSNR would send (the stretch that reads most like a script) and opens Pangram: paste them into its text box '+
       '(Ctrl+V, or long-press and Paste on a phone).</p>'+
       '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
       '<p class="mute" id="pgcopied"></p>'+

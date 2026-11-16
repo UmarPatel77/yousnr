@@ -212,6 +212,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   <div class="foot">Timestamps open the video at that moment on YouTube.<span class="hidden" id="pnote"> ~ means about then: the paragraph starts partway through one of YouTube’s lines.</span></div>
 </div>
 <script type="application/json" id="pgdata">null</script>
+<script type="application/json" id="pgsel">{"text": "It's just you might want to do three things at the same time because the web is all messed up that way. So yeah, you just do the three things at the same time and then you wait until they're all done and then you go, right? Like that's fine. That's that's a multi-threaded program thing. I just I don't really understand what coroutines really gives you apart from oh I'm in a super high-level programming language and so I can pretend I that I have this certain infrastructure right but this isn't a super high-level programming language in that way I mean it's very high level for a systems language but it is a systems language so I mean coroutines and the the other reason why I say that I don't think much of them is just They're like a lot of things in programming languages and frameworks and abstractions and all this stuff, right? There's this very very common pattern and the pattern is this thing looks tidy and convenient and neat for small easy problems and then doesn't help you much for difficult gnarly problems. That's like 98% of language features and abstractions and all that, especially in the past 20 years. And the problem is things that are easy are already easy. Why do you want to put why do you want to spend the complexity budget of your system on making things that are easy 20% easier? I mean, maybe maybe if everything you do is easy, then it makes sense to accelerate that by 20%. But that's usually not how it is. It's usually you blast through some easy stuff and then you hit one of the hard things and the hard thing is pretty hard. And like every all the design that I do is to help with hard things because that's the limiting factor on what we're able to accomplish is how many hard things are we able to do. And coroutines is one of these things that helps you with easy things. And I just I don't care about that. The problem is you block the thread holding the connection. What? No. What? No. I mean, unless you want to. No, you don't have to block the thread holding the connection. Implementation-wise, it's potentially more performant than a gazillion OS threads if you have a very, very large number of them.", "words": 400, "whole": false, "from": 99.0, "to": 259.0}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -363,7 +364,9 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // saved and shown to everyone after that, with a link to Pangram's own report.
   var pg=document.getElementById('pg'),pgb=document.getElementById('pgbtn'),pgd=null;
   try{pgd=JSON.parse(document.getElementById('pgdata').textContent)}catch(e){}
-  var PGWORDS=1500;
+  var PGWORDS=400,pgsel=null;
+  try{pgsel=JSON.parse(document.getElementById('pgsel').textContent)}catch(e){}
+  function pgSpan(f,t){return clock(f)+'\u2013'+clock(t)}
   var PGMSG={pangram_budget:'This month’s Pangram checks on YouSNR are used up.',
     pangram_off:'Pangram checks aren’t turned on right now.',pangram_credits:'Pangram checks aren’t available right now.',
     slow_down:'You’ve started a few checks already. Try again in an hour.',busy:'Pangram is busy. Try again in a minute.',
@@ -377,13 +380,18 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       '<div class="pgbar"><span class="pgai" style="width:'+ai*100+'%"></span><span class="pgas" style="width:'+as*100+'%"></span><span class="pghu" style="width:'+hu*100+'%"></span></div>'+
       '<div class="pgkey"><span><i class="pgai"></i>AI-generated '+pct(ai)+'</span><span><i class="pgas"></i>AI-assisted '+pct(as)+'</span><span><i class="pghu"></i>Human '+pct(hu)+'</span></div>'+
       (flags?'<p class="pgflag">Flagged: '+flags+'</p>':'')+
-      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
+      '<p class="mute">Checked '+(r.whole?'the whole transcript ('+(r.words||0).toLocaleString()+' words)':
+        r.picked?(r.words||0).toLocaleString()+' words from '+pgSpan(r.from||0,r.until||0)+', the stretch that reads most like a written script':
+        'the first '+(r.words||0).toLocaleString()+' words (up to '+clock(r.until||0)+')')+
       (isNaN(d)?'':' on '+d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}))+'. '+
       (r.link?'<a class="lk" href="'+esc(r.link)+'" target="_blank" rel="noopener">Pangram’s full report ↗</a>':'')+'</p>'+
       '<p class="mute">AI detectors can be wrong, and a transcript is speech, not writing. Treat this as a hint, not proof.</p>';
   }
   function pgOffer(){
-    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks the first ~'+PGWORDS.toLocaleString()+' words of this transcript for AI-generated text. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
+    var what=pgsel&&pgsel.whole?'this whole transcript ('+pgsel.words.toLocaleString()+' words) for AI-generated text':
+      (pgsel?pgsel.words:PGWORDS).toLocaleString()+' words for AI-generated text: the stretch of this transcript that reads most like a written script'+
+      (pgsel?' ('+pgSpan(pgsel.from,pgsel.to)+')':'')+', skipping intros and sponsor reads';
+    pg.innerHTML='<h4>Does this read as AI-written?</h4><p class="mute">Pangram checks '+what+'. The result is saved here for everyone.</p><button class="go" id="pggo">Check with Pangram</button>';
     document.getElementById('pggo').onclick=pgRun;
   }
   function pgRun(){
@@ -408,6 +416,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
   function pgText(){
+    if(pgsel&&pgsel.text)return {text:pgsel.text,words:pgsel.words};   // the same words YouSNR would send
     var parts=[],n=0;
     for(var i=0;i<segs.length;i++){
       var t=(segs[i]._t||'').replace(/\[[^\[\]]{0,60}\]/g,' ').replace(/[\s\u200b-\u200d\ufeff]+/g,' ').trim();
@@ -419,7 +428,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgSelf(){
     return '<div class="pgself"><p><b>Check it yourself on Pangram, free.</b> Free Pangram accounts get 20 checks a day. '+
-      'This copies the first ~'+PGWORDS.toLocaleString()+' words of the transcript and opens Pangram: paste them into its text box '+
+      'This copies the '+(pgsel?pgsel.words:PGWORDS).toLocaleString()+' words YouSNR would send (the stretch that reads most like a script) and opens Pangram: paste them into its text box '+
       '(Ctrl+V, or long-press and Paste on a phone).</p>'+
       '<a class="go" id="pgcopy" href="https://www.pangram.com/dashboard" target="_blank" rel="noopener">Copy transcript &amp; open Pangram ↗</a>'+
       '<p class="mute" id="pgcopied"></p>'+
