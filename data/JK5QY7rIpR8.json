@@ -826,5 +826,161 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-16T18:56:17+00:00"
+ "added": "2026-11-16T18:56:17+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-16T13:56:17",
+  "lines": {
+   "21": [
+    [
+     "moat is a ring of water around a castle that keeps everybody else out. And earlier this year, Sam",
+     null
+    ],
+    [
+     "Altman",
+     "Alman"
+    ],
+    [
+     "said, \"The",
+     null
+    ]
+   ],
+   "31": [
+    [
+     "There's a story in Don",
+     null
+    ],
+    [
+     "Quixote",
+     "Kyote"
+    ],
+    [
+     "about two men who were famous in their village for their taste in wine. Somebody brings",
+     null
+    ]
+   ],
+   "53": [
+    [
+     "Chica noticed that coffee shops",
+     null
+    ],
+    [
+     "in",
+     "and"
+    ],
+    [
+     "cities on different continents had started to look exactly the same. White walls, pale wood, bare bulbs, like one",
+     null
+    ]
+   ],
+   "77": [
+    [
+     "March 2025, OpenAI added a new image generator to",
+     null
+    ],
+    [
+     "ChatGPT.",
+     "chat GPT."
+    ],
+    [
+     "And within days, the internet was flooded with photos and",
+     null
+    ]
+   ],
+   "78": [
+    [
+     "memes redrawn in the style of Studio Ghibli, the Japanese animation studio by",
+     null
+    ],
+    [
+     "Hayao",
+     "Haya"
+    ],
+    [
+     "Miyazaki. And that look came out of",
+     null
+    ]
+   ],
+   "90": [
+    [
+     "never had a chance to form. A lot of taste has always been",
+     null
+    ],
+    [
+     "tacit.",
+     "tacid."
+    ],
+    [
+     "It lives in instinct and experience. Something you",
+     null
+    ]
+   ]
+  },
+  "fixes": 6,
+  "checked_seconds": 90.6,
+  "usd": 0.0132,
+  "version": 3,
+  "flagged": [
+   [
+    "0:54",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:04",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:57",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:12",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "10:21",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:56",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "16:13",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }

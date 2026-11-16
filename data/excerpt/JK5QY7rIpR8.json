@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-16T18:56:40+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "they just have no",
+   "t": 5.9,
+   "line": 0
+  },
+  {
+   "text": "Taste is the new moat",
+   "t": 160.4,
+   "line": 20
+  },
+  {
+   "text": "taste is more like a practice",
+   "t": 220.4,
+   "line": 28
+  },
+  {
+   "text": "a story in Don Quixote",
+   "t": 244.5,
+   "line": 31
+  },
+  {
+   "text": "mere exposure effect",
+   "t": 398.2,
+   "line": 50
+  },
+  {
+   "text": "he called this airspace",
+   "t": 426.7,
+   "line": 54
+  },
+  {
+   "text": "your taste profile",
+   "t": 571.1,
+   "line": 71
+  },
+  {
+   "text": "Studio Ghibli",
+   "t": 623.2,
+   "line": 78
+  },
+  {
+   "text": "Taste behaves more like a moving edge",
+   "t": 798.8,
+   "line": 100
+  },
+  {
+   "text": "The feed took the finding",
+   "t": 834.2,
+   "line": 104
+  },
+  {
+   "text": "discovery the most valuable thing you have",
+   "t": 872.0,
+   "line": 109
+  },
+  {
+   "text": "bored enough to go looking",
+   "t": 908.3,
+   "line": 113
+  }
+ ],
+ "cost": 0.01608,
+ "dropped": 0
+}
