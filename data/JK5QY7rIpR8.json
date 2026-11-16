@@ -1,0 +1,830 @@
+{
+ "id": "JK5QY7rIpR8",
+ "title": "AI’s Favourite Myth: Taste is the Last Human Advantage",
+ "channel": "Sonam Pelden",
+ "published": "20261023",
+ "description": "We keep hearing that taste is the one thing AI can’t take from us, the last human advantage in a world where machines can write, design and code. But taste is built by searching, stumbling and getting things wrong, and algorithms have slowly taken over that searching for us. Every scroll, pause and thumbs up feeds systems that learn what we like, copy it and sell it back to us, which is part of why everyone seems to like the same things now. In this video I look at where taste comes from, what we’re handing over, and why the only way to keep taste your own is to keep discovering.\n\nA note on the Ghibli-style images in this video: they’re AI-generated, and I’ve used them only to show how quickly AI can copy an artist’s style. I didn’t create these images myself, and I don’t support AI-generated images.\n\n📚 References\nSteve Jobs, interview in Triumph of the Nerds (PBS, 1996)\nSteve Jobs, Stanford commencement speech (2005)\nBaltasar Gracián, The Art of Worldly Wisdom (1647)\nPierre Bourdieu, Distinction (1979)\n“Taste is the new AI moat,” Brighteye Ventures\n“Taste Is the New Moat and Design Decides Which Startups Survive,” The VC Corner\n“Taste Is the New Moat,” HackerNoon\n“Taste Is the New Moat,” Andrés Max\nSam Altman on taste, reported by Fortune (2026)\nDavid Hume, “Of the Standard of Taste” (1757)\nMiguel de Cervantes, Don Quixote\nRobert Zajonc, “Attitudinal Effects of Mere Exposure” (1968)\nKunst-Wilson & Zajonc, “Affective Discrimination of Stimuli That Cannot Be Recognized,” Science (1980)\nKyle Chayka, “Welcome to AirSpace,” The Verge (2016)\nKyle Chayka, Filterworld: How Algorithms Flattened Culture (2024)\nSpotify, “Exclude from your Taste Profile” (2023)\nOpenAI, “Introducing 4o Image Generation” (2025)\nCNN, coverage of the Ghibli-style AI image trend (2025)\n\n#Taste #AI #Algorithms",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: The legacy of taste"
+  },
+  {
+   "start": 105,
+   "title": "Chapter 2: Defining human taste"
+  },
+  {
+   "start": 244,
+   "title": "Chapter 3: The practice of discovery"
+  },
+  {
+   "start": 347,
+   "title": "Chapter 4: Algorithmic homogenization"
+  },
+  {
+   "start": 465,
+   "title": "Chapter 5: Taste as raw material"
+  },
+  {
+   "start": 653,
+   "title": "Chapter 6: Taste in the age of AI"
+  },
+  {
+   "start": 824,
+   "title": "Chapter 7: Reclaiming personal discovery"
+  }
+ ],
+ "duration": 1044,
+ "category": "Education",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "In 1995, Steve Jobs sat down for a TV interview and said, \"The only problem with Microsoft is that they just have no",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 7.0,
+   "text": "taste.\" He didn't mean their logo. He meant they didn't think of original ideas and didn't bring much culture into",
+   "label": "0:07"
+  },
+  {
+   "start": 14.0,
+   "dur": 8.0,
+   "text": "what they made. So, in other words, Steve Jobs thought taste was what set Apple apart. Anybody could build a",
+   "label": "0:14"
+  },
+  {
+   "start": 22.0,
+   "dur": 8.0,
+   "text": "computer. Knowing what makes one beautiful was the part nobody else could copy. And 10 years later, in his commencement speech at Stanford, he told",
+   "label": "0:22"
+  },
+  {
+   "start": 30.0,
+   "dur": 9.0,
+   "text": "the graduates where his own taste came from, he said he had dropped out of college and with nothing left to lose, he started sitting in on classes just",
+   "label": "0:30"
+  },
+  {
+   "start": 39.0,
+   "dur": 8.0,
+   "text": "because they interested him. And one of these classes was calligraphy where he learned about serif and sans serif",
+   "label": "0:39"
+  },
+  {
+   "start": 47.0,
+   "dur": 7.0,
+   "text": "letters and the space between different letter combinations. And none of it had any practical use in his life at the",
+   "label": "0:47"
+  },
+  {
+   "start": 54.0,
+   "dur": 7.0,
+   "text": "time. But years later when he was designing the first Macintosh computer, it all came back to him. He called it",
+   "label": "0:54"
+  },
+  {
+   "start": 61.0,
+   "dur": 7.0,
+   "text": "the first computer with beautiful typography. So the taste that set Apple apart started with a dropout following",
+   "label": "1:01"
+  },
+  {
+   "start": 68.0,
+   "dur": 8.0,
+   "text": "his curiosity into a room he had no practical reason to be in. And fast forward to today where AI can write",
+   "label": "1:08"
+  },
+  {
+   "start": 76.0,
+   "dur": 7.0,
+   "text": "design and code and the people building these companies keep reassuring us that taste is the one thing the machines can",
+   "label": "1:16"
+  },
+  {
+   "start": 83.0,
+   "dur": 9.0,
+   "text": "take away from us. I mean I think Steve Jobs would probably have agreed. But my question is, if he were in college today, would he even find that",
+   "label": "1:23"
+  },
+  {
+   "start": 92.0,
+   "dur": 7.0,
+   "text": "calligraphy class? Or would his phone with its endless scrolls of videos and posts just pick something for him and",
+   "label": "1:32"
+  },
+  {
+   "start": 99.0,
+   "dur": 6.0,
+   "text": "show him more of what he already knew and liked?",
+   "label": "1:39"
+  },
+  {
+   "start": 105.0,
+   "dur": 9.0,
+   "text": "Hi friends, my name is Sonam and for the past few years I've been working on how we protect our thinking, our attention, and our taste in a world that is",
+   "label": "1:45"
+  },
+  {
+   "start": 114.0,
+   "dur": 8.0,
+   "text": "increasingly designed to do all three of those for us. And I want to start today's episode by talking about the word taste. Taste started on the tongue,",
+   "label": "1:54"
+  },
+  {
+   "start": 122.0,
+   "dur": 7.0,
+   "text": "but somewhere around the 1600s, people began using it to mean judgment, the ability to tell good from bad in art, in",
+   "label": "2:02"
+  },
+  {
+   "start": 129.0,
+   "dur": 7.0,
+   "text": "manners and ideas. A Spanish writer of the time made good taste the mark of a cultivated person. It was something you",
+   "label": "2:09"
+  },
+  {
+   "start": 136.0,
+   "dur": 9.0,
+   "text": "developed the way a pallet slowly learns to enjoy bitter things. And three centuries later, a French sociologist added a twist. Taste [snorts]",
+   "label": "2:16"
+  },
+  {
+   "start": 145.0,
+   "dur": 8.0,
+   "text": "classifies, he said, and it classifies the classifier. What you like says something about who you are. And today,",
+   "label": "2:25"
+  },
+  {
+   "start": 153.0,
+   "dur": 9.0,
+   "text": "people mostly talk about taste as a competitive edge. Investors and designers keep writing essays with the same title. Taste is the new moat. A",
+   "label": "2:33"
+  },
+  {
+   "start": 162.0,
+   "dur": 7.0,
+   "text": "moat is a ring of water around a castle that keeps everybody else out. And earlier this year, Sam Alman said, \"The",
+   "label": "2:42"
+  },
+  {
+   "start": 169.0,
+   "dur": 9.0,
+   "text": "best research teams are built through context, taste, and a rail feel for where the field is headed next.\" [snorts] The argument goes something",
+   "label": "2:49"
+  },
+  {
+   "start": 178.0,
+   "dur": 7.0,
+   "text": "like this. As machines take over the doing, the writing, the designing, and the coding, what's left for human is",
+   "label": "2:58"
+  },
+  {
+   "start": 185.0,
+   "dur": 7.0,
+   "text": "taste. Knowing what's good and knowing what feels right before you can explain why. And I understand why that's",
+   "label": "3:05"
+  },
+  {
+   "start": 192.0,
+   "dur": 10.0,
+   "text": "comforting. It says that even if everything else is automated, there's something deeply human left over like something no machine can replicate. And",
+   "label": "3:12"
+  },
+  {
+   "start": 202.0,
+   "dur": 9.0,
+   "text": "there's some truth in it. When anybody can produce a thousand drafts, a thousand logos, a thousand songs in an afternoon, the person who can tell which",
+   "label": "3:22"
+  },
+  {
+   "start": 211.0,
+   "dur": 9.0,
+   "text": "one is good matters more than ever. But still, the idea treats taste like something you own, a thing in a safe that you can lock up and defend. But I",
+   "label": "3:31"
+  },
+  {
+   "start": 220.0,
+   "dur": 9.0,
+   "text": "think taste is more like a practice, something you keep up with. Every preference you have came out of a long string of small moments, looking,",
+   "label": "3:40"
+  },
+  {
+   "start": 229.0,
+   "dur": 8.0,
+   "text": "trying, comparing, getting it wrong, and trying again. Your taste is the trail those moments left behind. Which makes",
+   "label": "3:49"
+  },
+  {
+   "start": 237.0,
+   "dur": 7.0,
+   "text": "me wonder how much room any of us still has to practice what we like.",
+   "label": "3:57"
+  },
+  {
+   "start": 244.0,
+   "dur": 8.0,
+   "text": "There's a story in Don Kyote about two men who were famous in their village for their taste in wine. Somebody brings",
+   "label": "4:04"
+  },
+  {
+   "start": 252.0,
+   "dur": 8.0,
+   "text": "them a barrel and the first one sips and says, \"It's good except for a faint taste of leather.\" The second one sips and says, \"It's good except for a faint",
+   "label": "4:12"
+  },
+  {
+   "start": 260.0,
+   "dur": 9.0,
+   "text": "taste of iron.\" And the whole village laughs at them. [snorts] But then the barrel is emptied and at the very bottom, somebody finds an old key tied",
+   "label": "4:20"
+  },
+  {
+   "start": 269.0,
+   "dur": 8.0,
+   "text": "to a leather strap. The Scottish philosopher David Hume retold the story in 1757 in an essay about taste because",
+   "label": "4:29"
+  },
+  {
+   "start": 277.0,
+   "dur": 7.0,
+   "text": "it shows that taste is real and that some people can notice what others can't. And you get better by tasting,",
+   "label": "4:37"
+  },
+  {
+   "start": 284.0,
+   "dur": 7.0,
+   "text": "comparing, and tasting again. And for most of us, taste used to be built that way too, slowly by trying things. It",
+   "label": "4:44"
+  },
+  {
+   "start": 291.0,
+   "dur": 8.0,
+   "text": "took effort. You had to go looking. You wandered into the wrong aisle of the library. You stayed up late with a radio station nobody else listened to. you",
+   "label": "4:51"
+  },
+  {
+   "start": 299.0,
+   "dur": 9.0,
+   "text": "came across something new and then you had to decide on your own whether you liked it or not and very often you didn't know like you stayed confused",
+   "label": "4:59"
+  },
+  {
+   "start": 308.0,
+   "dur": 8.0,
+   "text": "about a thing for weeks. You loved a band and then you cringed at it a year later. You hated a book at 15 but you",
+   "label": "5:08"
+  },
+  {
+   "start": 316.0,
+   "dur": 6.0,
+   "text": "loved it at 25. Like that friction, the searching and the not knowing and then the being wrong was how you became",
+   "label": "5:16"
+  },
+  {
+   "start": 322.0,
+   "dur": 10.0,
+   "text": "yourself. Each time you decided whether you liked something, you also learned a little bit about yourself. what moves you, what bores you, what your hot takes",
+   "label": "5:22"
+  },
+  {
+   "start": 332.0,
+   "dur": 8.0,
+   "text": "are, and which hill you are willing to die on. And somewhere along the way, most of us stop searching like that. And I don't think we even noticed it",
+   "label": "5:32"
+  },
+  {
+   "start": 340.0,
+   "dur": 7.0,
+   "text": "happening because the searching started getting done for us.",
+   "label": "5:40"
+  },
+  {
+   "start": 347.0,
+   "dur": 7.0,
+   "text": "You see, every app on your phone runs on something called an algorithm. It's simply a set of rules for deciding what",
+   "label": "5:47"
+  },
+  {
+   "start": 354.0,
+   "dur": 8.0,
+   "text": "to show you next. And its whole job is to guess what you like before you know it yourself. So, it watches what you",
+   "label": "5:54"
+  },
+  {
+   "start": 362.0,
+   "dur": 8.0,
+   "text": "tap, where you pause, what you skip, and what you play twice. It watches millions of people who behave like you, and then it shows you the thing you're most",
+   "label": "6:02"
+  },
+  {
+   "start": 370.0,
+   "dur": 8.0,
+   "text": "likely to enjoy next. When it guesses right, you stay. And when you stay, it gets better at guessing. And it got",
+   "label": "6:10"
+  },
+  {
+   "start": 378.0,
+   "dur": 9.0,
+   "text": "very, very good. so good that it replaced the part of you that used to go looking. Why search when the thing you would have found is already waiting at",
+   "label": "6:18"
+  },
+  {
+   "start": 387.0,
+   "dur": 7.0,
+   "text": "the top of your feed. There is also a reason it works so well on us. The more often we see something, the more we tend",
+   "label": "6:27"
+  },
+  {
+   "start": 394.0,
+   "dur": 9.0,
+   "text": "to like it, even when we don't remember seeing it. Psychologists call this mere exposure effect. Put that next to a feed and you get a loop. You like what you're",
+   "label": "6:34"
+  },
+  {
+   "start": 403.0,
+   "dur": 6.0,
+   "text": "shown, you're shown what you like, and round and round it goes until it feels like it's your own taste.",
+   "label": "6:43"
+  },
+  {
+   "start": 409.0,
+   "dur": 8.0,
+   "text": "And when everybody sits in the same loop, it starts to show up in the real world, too. In 2016, a writer named Kyle",
+   "label": "6:49"
+  },
+  {
+   "start": 417.0,
+   "dur": 8.0,
+   "text": "Chica noticed that coffee shops and cities on different continents had started to look exactly the same. White walls, pale wood, bare bulbs, like one",
+   "label": "6:57"
+  },
+  {
+   "start": 425.0,
+   "dur": 8.0,
+   "text": "small plant on every table. And he called this airspace. The reason was simple. The owners and customers were all learning what nice looks like from",
+   "label": "7:05"
+  },
+  {
+   "start": 433.0,
+   "dur": 8.0,
+   "text": "the pictures online. And it didn't just stop at coffee shops. The same thing happened to the songs we play, the way",
+   "label": "7:13"
+  },
+  {
+   "start": 441.0,
+   "dur": 7.0,
+   "text": "we write, the filters on our faces, and the way we decorate our homes. Even the jokes that we make. Put it all together,",
+   "label": "7:21"
+  },
+  {
+   "start": 448.0,
+   "dur": 9.0,
+   "text": "and you get a whole generation downstream of the same current, wondering why everybody looks and sounds exactly the same. You see, we didn't",
+   "label": "7:28"
+  },
+  {
+   "start": 457.0,
+   "dur": 8.0,
+   "text": "lose our individuality overnight. We outsourced it one recommendation at a time.",
+   "label": "7:37"
+  },
+  {
+   "start": 465.0,
+   "dur": 7.0,
+   "text": "The internet, it was supposed to hand us the whole world, every tradition, every strange little subculture one click",
+   "label": "7:45"
+  },
+  {
+   "start": 472.0,
+   "dur": 7.0,
+   "text": "away. And in a lot of ways, it did. It brought us closer in ways that would have sounded like magic 30 years ago.",
+   "label": "7:52"
+  },
+  {
+   "start": 479.0,
+   "dur": 9.0,
+   "text": "You can talk to a friend on another continent every day. And I'm not complaining about that. But somewhere in all that connection, we ended up with",
+   "label": "7:59"
+  },
+  {
+   "start": 488.0,
+   "dur": 5.0,
+   "text": "something more like a funnel. [snorts] All that difference goes in at the top.",
+   "label": "8:08"
+  },
+  {
+   "start": 493.0,
+   "dur": 8.0,
+   "text": "And out of the bottom comes one look, one vocabulary, one way of being interesting. We're all fed by the same few apps, the same trending sounds, the",
+   "label": "8:13"
+  },
+  {
+   "start": 501.0,
+   "dur": 9.0,
+   "text": "same viral recipes, the same 10 books on every must-read list. Nobody set out to make us all the same. It happened as a side effect, a little at a time. And",
+   "label": "8:21"
+  },
+  {
+   "start": 510.0,
+   "dur": 13.0,
+   "text": "it's part of why it feels so rare now to meet somebody who surprises you, somebody who seems to have grown up on a completely different set of songs and books and ideas.",
+   "label": "8:30"
+  },
+  {
+   "start": 523.0,
+   "dur": 7.0,
+   "text": "Every tap, pause, and replay you make sticks around long after you scroll past. Each one leaves behind a tiny",
+   "label": "8:43"
+  },
+  {
+   "start": 530.0,
+   "dur": 9.0,
+   "text": "signal of what you like. And one signal means almost nothing on its own. But out of billions of them from all of us, and they start to work like taste at an",
+   "label": "8:50"
+  },
+  {
+   "start": 539.0,
+   "dur": 9.0,
+   "text": "industrial scale. They decide what gets shown, what gets amplified, and eventually what gets made in the first place. I mean, we can see this in the",
+   "label": "8:59"
+  },
+  {
+   "start": 548.0,
+   "dur": 8.0,
+   "text": "places we eat. Plenty of restaurants and cafes now designed for the photo. So, a neon sign on the wall with a cute phrase, a dish that looks best from",
+   "label": "9:08"
+  },
+  {
+   "start": 556.0,
+   "dur": 9.0,
+   "text": "directly above. Owners learned what got posted and then everybody else learned it from them. So, the audience's taste shaped the makers and then the makers",
+   "label": "9:16"
+  },
+  {
+   "start": 565.0,
+   "dur": 9.0,
+   "text": "fed it back to the audience. Spotify even has a name for the picture it builds of you. It calls it your taste profile. There's a button to keep a",
+   "label": "9:25"
+  },
+  {
+   "start": 574.0,
+   "dur": 9.0,
+   "text": "playlist out of it so that the white noise you play to fall asleep doesn't throw off your recommendations. So somewhere on Spotify servers, there is a",
+   "label": "9:34"
+  },
+  {
+   "start": 583.0,
+   "dur": 7.0,
+   "text": "running record of what you like built from years of listening updated each time you press play. You rarely see it",
+   "label": "9:43"
+  },
+  {
+   "start": 590.0,
+   "dur": 7.0,
+   "text": "and you can only nudge it, but it shapes almost everything the app puts in front of you. And that record doesn't only",
+   "label": "9:50"
+  },
+  {
+   "start": 597.0,
+   "dur": 7.0,
+   "text": "serve you. put together with everybody else's. It tells the app which songs to push, which artists to promote, and what",
+   "label": "9:57"
+  },
+  {
+   "start": 604.0,
+   "dur": 8.0,
+   "text": "the next person will hear. So, your taste has become raw material. I feel like AI takes this one step further. In",
+   "label": "10:04"
+  },
+  {
+   "start": 612.0,
+   "dur": 9.0,
+   "text": "March 2025, OpenAI added a new image generator to chat GPT. And within days, the internet was flooded with photos and",
+   "label": "10:12"
+  },
+  {
+   "start": 621.0,
+   "dur": 9.0,
+   "text": "memes redrawn in the style of Studio Ghibli, the Japanese animation studio by Haya Miyazaki. And that look came out of",
+   "label": "10:21"
+  },
+  {
+   "start": 630.0,
+   "dur": 7.0,
+   "text": "decades of drawing by hand. But in a single week, it became a prompt anybody could type. A style that took a lifetime",
+   "label": "10:30"
+  },
+  {
+   "start": 637.0,
+   "dur": 7.0,
+   "text": "to develop could be ordered up in a few seconds and smoothed it out and matched to whatever you already liked. So the",
+   "label": "10:37"
+  },
+  {
+   "start": 644.0,
+   "dur": 9.0,
+   "text": "taste you have is also being drawn out of you every single day with every single scroll.",
+   "label": "10:44"
+  },
+  {
+   "start": 653.0,
+   "dur": 9.0,
+   "text": "Now let's go back to the promise from the start. When machines take over the making, taste is what's left for us. So what does a working day built around",
+   "label": "10:53"
+  },
+  {
+   "start": 662.0,
+   "dur": 7.0,
+   "text": "taste actually look like? I feel like more and more people are valued for how well they can guide, refine, and shape",
+   "label": "11:02"
+  },
+  {
+   "start": 669.0,
+   "dur": 8.0,
+   "text": "what these systems produce. So instead of writing, you review. Instead of designing, you curate. You get five subject lines and you choose the best",
+   "label": "11:09"
+  },
+  {
+   "start": 677.0,
+   "dur": 9.0,
+   "text": "one. That shift looks small, but it changes where the human sits, where the thinking happens. When you make something, you face a blank page and you",
+   "label": "11:17"
+  },
+  {
+   "start": 686.0,
+   "dur": 11.0,
+   "text": "build it from the ground up. But when you choose from a menu, somebody has already decided what's on the menu. your job becomes noticing what feels slightly off and trying to put into words why.",
+   "label": "11:26"
+  },
+  {
+   "start": 697.0,
+   "dur": 3.0,
+   "text": "That's a very different way of using your mind.",
+   "label": "11:37"
+  },
+  {
+   "start": 700.0,
+   "dur": 8.0,
+   "text": "Think about the last time you asked a chatbot to help you write something small. Whether that was a birthday message, a caption, an email to a",
+   "label": "11:40"
+  },
+  {
+   "start": 708.0,
+   "dur": 8.0,
+   "text": "colleague, it probably gave you a few versions and you picked the one that sounded most like you. Maybe you changed a word or two, but your own sentence",
+   "label": "11:48"
+  },
+  {
+   "start": 716.0,
+   "dur": 7.0,
+   "text": "never had a chance to form. A lot of taste has always been tacid. It lives in instinct and experience. Something you",
+   "label": "11:56"
+  },
+  {
+   "start": 723.0,
+   "dur": 9.0,
+   "text": "feel long before you can explain it. But now there's constant pressure to explain it anyway with a thumbs up, a thumbs down. You type in make it warmer, make",
+   "label": "12:03"
+  },
+  {
+   "start": 732.0,
+   "dur": 9.0,
+   "text": "it less formal. Every time you turn your instinct into words for a machine, you're teaching it to reproduce your preferences without you. And like the",
+   "label": "12:12"
+  },
+  {
+   "start": 741.0,
+   "dur": 4.0,
+   "text": "scrolls and the pauses, those thumbs up and thumbs down don't stay with you.",
+   "label": "12:21"
+  },
+  {
+   "start": 745.0,
+   "dur": 9.0,
+   "text": "They feed much bigger systems. ones learning from millions of people at once and putting all those signals together far faster than any one person ever",
+   "label": "12:25"
+  },
+  {
+   "start": 754.0,
+   "dur": 8.0,
+   "text": "could. And meanwhile, I feel like the baseline keeps rising. Writing, design, music, even aesthetic decisions, things",
+   "label": "12:34"
+  },
+  {
+   "start": 762.0,
+   "dur": 8.0,
+   "text": "that once needed human judgment are now being generated at a level that is often good enough. And sometimes you can't even tell it apart from what a person",
+   "label": "12:42"
+  },
+  {
+   "start": 770.0,
+   "dur": 8.0,
+   "text": "made. The options a model gives you work a lot like a funnel. They're built from the average of everything it has ever",
+   "label": "12:50"
+  },
+  {
+   "start": 778.0,
+   "dur": 8.0,
+   "text": "seen. And with each new version, that average keeps improving. So if taste is simply the ability to recognize what's",
+   "label": "12:58"
+  },
+  {
+   "start": 786.0,
+   "dur": 11.0,
+   "text": "good, its value always depends on what's already being produced by default. And that default keeps getting harder to tell apart from what a person would make. Which means taste can't be a moat.",
+   "label": "13:06"
+  },
+  {
+   "start": 797.0,
+   "dur": 9.0,
+   "text": "A moat stays where you dug it. Taste behaves more like a moving edge. the thin line between what a machine makes by default and what a person can still",
+   "label": "13:17"
+  },
+  {
+   "start": 806.0,
+   "dur": 8.0,
+   "text": "add. That line keeps moving. And if your taste stands still, the default catches up with it. So maybe taste was never",
+   "label": "13:26"
+  },
+  {
+   "start": 814.0,
+   "dur": 10.0,
+   "text": "something you could build once and defend. Maybe it only exists in motion, changing as the world around you changes.",
+   "label": "13:34"
+  },
+  {
+   "start": 824.0,
+   "dur": 9.0,
+   "text": "This is what I find strange about the moment we're in. We're told that taste is the last human advantage, but at the same time, we are handing over the",
+   "label": "13:44"
+  },
+  {
+   "start": 833.0,
+   "dur": 6.0,
+   "text": "process that builds it. The feed took the finding. The models are learning the rest from everything the feed wrote down",
+   "label": "13:53"
+  },
+  {
+   "start": 839.0,
+   "dur": 8.0,
+   "text": "about us. I mean, taste clearly still matters. The harder question is who it belongs to. Does it stay something",
+   "label": "13:59"
+  },
+  {
+   "start": 847.0,
+   "dur": 9.0,
+   "text": "personal or does it become part of a feedback loop you no longer fully control? If the system around us can learn what we like, refine it, and feed",
+   "label": "14:07"
+  },
+  {
+   "start": 856.0,
+   "dur": 5.0,
+   "text": "it back to us in ever more polished forms, the line between our own judgment and the systems output starts to blur.",
+   "label": "14:16"
+  },
+  {
+   "start": 861.0,
+   "dur": 10.0,
+   "text": "And at some point, it gets hard to tell whether we're shaping the system or the system is slowly shaping us. I mean, I don't think that makes taste worthless.",
+   "label": "14:21"
+  },
+  {
+   "start": 871.0,
+   "dur": 9.0,
+   "text": "I think it makes discovery the most valuable thing you have. A system can learn what you already like. It can't learn what you haven't found yet. The",
+   "label": "14:31"
+  },
+  {
+   "start": 880.0,
+   "dur": 8.0,
+   "text": "moment something becomes a pattern, it becomes easy for a model to copy. So your favorite colors, your go-to playlist, the way you always start an",
+   "label": "14:40"
+  },
+  {
+   "start": 888.0,
+   "dur": 9.0,
+   "text": "email. Discovery is the part that doesn't have a pattern yet. I feel like discovery also needs gaps. We've built lives where we're almost never alone",
+   "label": "14:48"
+  },
+  {
+   "start": 897.0,
+   "dur": 8.0,
+   "text": "with our own minds for more than 30 seconds. And a mind that's never left alone never goes looking. I feel like some of the best things you'll ever love",
+   "label": "14:57"
+  },
+  {
+   "start": 905.0,
+   "dur": 7.0,
+   "text": "will find you because you were bored enough to go looking for it.",
+   "label": "15:05"
+  },
+  {
+   "start": 912.0,
+   "dur": 9.0,
+   "text": "So, what does it look like to keep discovering in a world that's built to do it for you? I feel like it doesn't take anything big. Like, mostly it starts with staying a little curious",
+   "label": "15:12"
+  },
+  {
+   "start": 921.0,
+   "dur": 8.0,
+   "text": "with whatever catches your eye and asking yourself, \"What do I love about this?\" I feel like the moment you have to find your own words, you start seeing",
+   "label": "15:21"
+  },
+  {
+   "start": 929.0,
+   "dur": 6.0,
+   "text": "things a little bit differently and noticing what it is that you like. And then go somewhere beyond your feed.",
+   "label": "15:29"
+  },
+  {
+   "start": 935.0,
+   "dur": 8.0,
+   "text": "Whether that's a gallery, an old film, a book from a shelf that you would normally walk past. Try things that you're not sure you would like because",
+   "label": "15:35"
+  },
+  {
+   "start": 943.0,
+   "dur": 8.0,
+   "text": "even those things tell you something about yourself. And then keep a note of what you love and why. Like none of this is dramatic. It's small and slow and a",
+   "label": "15:43"
+  },
+  {
+   "start": 951.0,
+   "dur": 8.0,
+   "text": "little inconvenient, but every time you do it, you're practicing taste for yourself. like rather than having it handed to you and that's why it stays",
+   "label": "15:51"
+  },
+  {
+   "start": 959.0,
+   "dur": 7.0,
+   "text": "truly yours. You see, I'm not saying any of this to make you delete your apps. A lot of what they bring us is wonderful.",
+   "label": "15:59"
+  },
+  {
+   "start": 966.0,
+   "dur": 7.0,
+   "text": "But it helps to stay aware of a few things. That when something feels like your taste, it might just be what you've",
+   "label": "16:06"
+  },
+  {
+   "start": 973.0,
+   "dur": 10.0,
+   "text": "seen the most. That every thumbs up you give a chatbot is teaching it to have your instinct without you. That picking from a list of options can slowly replace making something of your own.",
+   "label": "16:13"
+  },
+  {
+   "start": 983.0,
+   "dur": 8.0,
+   "text": "and that the easiest path, the one already laid out for you, is usually the one everybody else is on, too. Like, none of this is a reason to panic. It's",
+   "label": "16:23"
+  },
+  {
+   "start": 991.0,
+   "dur": 9.0,
+   "text": "just worth noticing. The way that you would notice a current pulling you along in the water, and once you feel it, you can choose which way you want to swim.",
+   "label": "16:31"
+  },
+  {
+   "start": 1000.0,
+   "dur": 12.0,
+   "text": "So, maybe taste is a mode after all, just one you have to keep digging. AI can only copy what you've already made, and the only way to stay ahead is to keep finding new things for yourself.",
+   "label": "16:40"
+  },
+  {
+   "start": 1012.0,
+   "dur": 8.0,
+   "text": "Those two men in the story found the key because they kept tasting and trusted what they tasted even when the whole",
+   "label": "16:52"
+  },
+  {
+   "start": 1020.0,
+   "dur": 9.0,
+   "text": "room laughed at them. So tell me in the comments what's the last thing that surprised you, like really surprised you. And how did you find it? And if",
+   "label": "17:00"
+  },
+  {
+   "start": 1029.0,
+   "dur": 7.0,
+   "text": "you're still here, thank you so much for watching. And if you'd like more videos like this, please subscribe and give it a like so that it reaches a few more",
+   "label": "17:09"
+  },
+  {
+   "start": 1036.0,
+   "dur": null,
+   "text": "people. And as always, I will see you next week.",
+   "label": "17:16"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel",
+  "language_code": "en"
+ },
+ "source": "youtube",
+ "added": "2026-11-16T18:56:17+00:00"
+}
