@@ -6186,5 +6186,3069 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-16T18:05:22+00:00"
+ "added": "2026-11-16T18:05:22+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-16T13:06:58",
+  "lines": {
+   "0": [
+    [
+     "We already don't have",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance.",
+     null
+    ]
+   ],
+   "5": [
+    [
+     "I think that happens in the early years of entrepreneurship because that happened to me but it doesn't happen now cuz I bought it",
+     null
+    ],
+    [
+     "happened",
+     ""
+    ],
+    [
+     "to you. Of course, you neglected your kids.",
+     null
+    ]
+   ],
+   "6": [
+    [
+     "Hi, I'm Kevin",
+     null
+    ],
+    [
+     "O'Leary",
+     "Olri"
+    ],
+    [
+     "aka Mr. Wonderful and I'm chairman of",
+     null
+    ],
+    [
+     "Beanstocks",
+     "Beantocks"
+    ],
+    [
+     "and today I'm surrounded by 20 Gen Z workers.",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "My first claim is if you want to be successful,",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance comes second.",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "amount of effort, but my question to you is what is that barrier of effort? You know, do you have a point where",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance, you can now achieve it",
+     null
+    ]
+   ],
+   "22": [
+    [
+     "very, very difficult to get the life balance you want. I know people that work at",
+     null
+    ],
+    [
+     "NASA.",
+     "Nassau."
+    ],
+    [
+     "It's very intense.",
+     null
+    ],
+    [
+     "Sure",
+     ""
+    ],
+    [
+     "It's",
+     null
+    ],
+    [
+     "project-based",
+     "project based"
+    ],
+    [
+     "work. It's hard. You got",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "to get it done on a certain time. You understand that?",
+     null
+    ],
+    [
+     "But",
+     ""
+    ],
+    [
+     "Let me ask you, does that require 80 hours a week, wearing that as a badge of honor, or is the",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "So if you believe you can get what you need to get done on a",
+     null
+    ],
+    [
+     "project-based",
+     "project based"
+    ],
+    [
+     "basis on time, on schedule, it doesn't",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "So a lot of people come to me and they say, \"Look,",
+     null
+    ],
+    [
+     "Gen Z",
+     "Jenz"
+    ],
+    [
+     "is lazy.",
+     null
+    ],
+    [
+     "Gen Z",
+     "Jenzi"
+    ],
+    [
+     "doesn't like to work. They don't care about being in the office for their superior.",
+     null
+    ]
+   ],
+   "48": [
+    [
+     "Now, the question of",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance, you know, we already don't have",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance. You know why? Because we can't afford our life with the work we",
+     null
+    ]
+   ],
+   "50": [
+    [
+     "We did our internships. We did those side gigs. We did those tough",
+     null
+    ],
+    [
+     "entry-level",
+     "entry- level"
+    ],
+    [
+     "jobs. And what did we get? We get",
+     null
+    ]
+   ],
+   "55": [
+    [
+     "a company or a corporation and making sure that we're working really hard",
+     null
+    ],
+    [
+     "to work/life",
+     "and work life"
+    ],
+    [
+     "balance. But the reality is that we can't even afford a vacation. We",
+     null
+    ]
+   ],
+   "57": [
+    [
+     "They come after unions. Unionization used to be at 30%. There used to be benefits. We used to have",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance. We don't have it anymore. And then we see how it's all those rights",
+     null
+    ]
+   ],
+   "63": [
+    [
+     "Well I think you do and but",
+     null
+    ],
+    [
+     "I",
+     ""
+    ],
+    [
+     "I'm speaking for our generation and I think a lot of us feel for all your generation.",
+     null
+    ],
+    [
+     "",
+     "And"
+    ],
+    [
+     "I'll tell you why you're wrong. You look at 250",
+     null
+    ]
+   ],
+   "78": [
+    [
+     "It's going to create more jobs, not less jobs. We now have",
+     null
+    ],
+    [
+     "entry-level",
+     "entry- level"
+    ],
+    [
+     "jobs are down 15% in the job market. And I have to address the point that you were t and that's because people are being replaced",
+     null
+    ]
+   ],
+   "94": [
+    [
+     "your generation of",
+     null
+    ],
+    [
+     "Gen Z-ers",
+     "genzers"
+    ],
+    [
+     "is so many new careers are going to emerge from this technology as they did when electricity came into",
+     null
+    ],
+    [
+     "fore or then",
+     "for"
+    ],
+    [
+     "when the",
+     null
+    ]
+   ],
+   "98": [
+    [
+     "Dario",
+     null
+    ],
+    [
+     "Amodei,",
+     "Amoday,"
+    ],
+    [
+     "believe Sam",
+     null
+    ],
+    [
+     "Altman",
+     "Alman"
+    ],
+    [
+     "who have already said that it's going to eviscerate so many jobs. It could be up to 50% of jobs. And they actually",
+     null
+    ]
+   ],
+   "121": [
+    [
+     "What do you what do you define as success? Our GDP, the high rate of of the S&P 500 that 40% of Americans aren't even invested in",
+     null
+    ],
+    [
+     "No no no",
+     ""
+    ],
+    [
+     "the entire economy itself. A lot of",
+     null
+    ]
+   ],
+   "123": [
+    [
+     "family-owned",
+     null
+    ],
+    [
+     "businesses,",
+     "business,"
+    ],
+    [
+     "first and second generation. From a farmer to someone doing electrical analysis, you say it's the greatest economy on",
+     null
+    ]
+   ],
+   "152": [
+    [
+     "Using AI to to find targets in Iran that ended up killing um that ended up bombing",
+     null
+    ],
+    [
+     "a",
+     ""
+    ],
+    [
+     "little girls. You don't like war, but but you but you love the",
+     null
+    ]
+   ],
+   "153": [
+    [
+     "innovation that uh that that",
+     null
+    ],
+    [
+     "these corporations",
+     "generations"
+    ],
+    [
+     "get to use. I want to know that my children will be secure living with the",
+     null
+    ]
+   ],
+   "189": [
+    [
+     "This is bad polic child labor",
+     null
+    ],
+    [
+     "laws Let me.",
+     "law."
+    ],
+    [
+     "Get you to agree on something.",
+     null
+    ]
+   ],
+   "196": [
+    [
+     "happened to me but it doesn't happen now because I bought it happened to you of course you neglected your kids my wife did a great job",
+     null
+    ],
+    [
+     "raising them Is that something",
+     ""
+    ],
+    [
+     "you regret I listen I think there's a sacrifice okay",
+     null
+    ]
+   ],
+   "197": [
+    [
+     "I'm telling you the truth I lived through that and I ended up I'm just",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "tell you a lot of people watching this that are family oriented that care about cultivating time with their kids they're not going",
+     null
+    ]
+   ],
+   "205": [
+    [
+     "narratives",
+     null
+    ],
+    [
+     "No no",
+     ""
+    ],
+    [
+     "wait and what people want financial freedom. But the point of what we're trying to discuss today is how do we get people there? Is it by everybody",
+     null
+    ]
+   ],
+   "215": [
+    [
+     "But what you're saying is in order to be successful, you can't have a",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance. For a majority of Americans, we're not going to all become those business owners. And yes, I I I'm hearing what you're saying. Yes, cool.",
+     null
+    ]
+   ],
+   "223": [
+    [
+     "I know how Switzerland works. I know how the Nordics work. I invest there. In the Nordic model, the Nordic",
+     null
+    ],
+    [
+     "model",
+     "modelies"
+    ],
+    [
+     "that still give social benefit model is",
+     null
+    ]
+   ],
+   "230": [
+    [
+     "workers. When there's unemployment, they sh they simply push them out of the country. They're gone. They don't give them the social net you're talking about.",
+     null
+    ],
+    [
+     "Gotcha",
+     ""
+    ],
+    [
+     "What about United Arab Emirates?",
+     null
+    ]
+   ],
+   "248": [
+    [
+     "artists or parents or politicians or generals, have figured out that the",
+     null
+    ],
+    [
+     "signal-to-noise",
+     "signal to noise"
+    ],
+    [
+     "ratio has to be 80%.",
+     null
+    ]
+   ],
+   "266": [
+    [
+     "Many countries have tried it. Every country's tried it. Back in the 60s, England went to 90% tax rate on wealthy people and the Beatles wrote a song called",
+     null
+    ],
+    [
+     "Taxman",
+     "Tax Man"
+    ],
+    [
+     "and they moved to France.",
+     null
+    ]
+   ],
+   "272": [
+    [
+     "Did you get to really spank",
+     null
+    ],
+    [
+     "Timothée Chalamet?",
+     "Timothy Shalom?"
+    ],
+    [
+     "Yes, I did.",
+     null
+    ]
+   ],
+   "273": [
+    [
+     "What happened at 3:00 in the morning, we had a stunt ass, and I guess",
+     null
+    ],
+    [
+     "Chalamet",
+     "Shaamé"
+    ],
+    [
+     "looked at the stunt ass and said, \"That's not my ass, and I'm going to",
+     null
+    ]
+   ],
+   "328": [
+    [
+     "What is the difference there? Like what makes it so doing too much hard? Are you saying",
+     null
+    ],
+    [
+     "",
+     "that"
+    ],
+    [
+     "doing too much hard work is a bad thing?",
+     null
+    ]
+   ],
+   "352": [
+    [
+     "I've I've done it online and I upload my resume to the employers either through their personal website or Indeed,",
+     null
+    ],
+    [
+     "ZipRecruiter,",
+     "Zip Recruiter,"
+    ],
+    [
+     "all those. And you can't",
+     null
+    ]
+   ],
+   "354": [
+    [
+     "Let me make a suggestion to you. I would write a",
+     null
+    ],
+    [
+     "90-second",
+     "90 second"
+    ],
+    [
+     "script.",
+     null
+    ],
+    [
+     "90-second a",
+     "90 second"
+    ],
+    [
+     "minute and a half.",
+     null
+    ]
+   ],
+   "357": [
+    [
+     "40% towards my other bills. I want you to",
+     null
+    ],
+    [
+     "make",
+     "put"
+    ],
+    [
+     "more money in your 80 hours.",
+     null
+    ]
+   ],
+   "359": [
+    [
+     "You I No, you I don't want to agree with your that you're right because you",
+     null
+    ],
+    [
+     "don't think you can",
+     ""
+    ],
+    [
+     "get 30% more as a supervisor because there's no job market anymore.",
+     null
+    ]
+   ],
+   "388": [
+    [
+     "Nobody's making you work there, right? I could change jobs because you just love",
+     null
+    ],
+    [
+     "Gen Z",
+     "Jenzy"
+    ],
+    [
+     "people who job hop.",
+     null
+    ]
+   ],
+   "405": [
+    [
+     "No, listen.",
+     null
+    ],
+    [
+     "first of all",
+     ""
+    ],
+    [
+     "Who is it protecting if they don't give out equity?",
+     null
+    ],
+    [
+     "Diluting",
+     "Including"
+    ],
+    [
+     "equity hurts you. Not giving out dividends hurts you.",
+     null
+    ]
+   ],
+   "409": [
+    [
+     "So, what they have in California because people can't afford to run the business anymore. So, in the end, what they tried to fix, I'm pretty sure New York City is filled with",
+     null
+    ],
+    [
+     "bodegas",
+     "the Odas"
+    ],
+    [
+     "who employ people. We",
+     null
+    ]
+   ],
+   "420": [
+    [
+     "Right. That's right. That's right. This is the only thing I own. You're so right, Mr. Wonderful. Thank you for",
+     null
+    ],
+    [
+     "the",
+     ""
+    ],
+    [
+     "financial.",
+     null
+    ]
+   ],
+   "421": [
+    [
+     "You have bought a lot of crap you don't need. I really believe Actually, I'm doing just fine financially. I'm not here advocating for myself thankfully.",
+     null
+    ],
+    [
+     "Yeah",
+     ""
+    ],
+    [
+     "I'm not here about that. I'm here to have a conversation",
+     null
+    ]
+   ],
+   "424": [
+    [
+     "And you're here bullying a bunch of kids to work harder when you could literally",
+     null
+    ],
+    [
+     "be",
+     ""
+    ],
+    [
+     "going toeto toe bullied. You could go toe-to-toe with other people in the",
+     null
+    ]
+   ],
+   "431": [
+    [
+     "We tried it. You know who",
+     null
+    ],
+    [
+     "broke",
+     "wrote"
+    ],
+    [
+     "that? Ronald Reagan. What's the largest state in the country?",
+     null
+    ]
+   ],
+   "450": [
+    [
+     "I'm sure you once did, but now you just go podcast to podcast. You ain't doing",
+     null
+    ],
+    [
+     "shit",
+     ""
+    ],
+    [
+     "No, I'm still doing a lot of investing.",
+     null
+    ]
+   ],
+   "452": [
+    [
+     "I try and find people like you with a lot of passion and I think they have a great business plan and I put Oh, they have a good business plan. Can I use",
+     null
+    ],
+    [
+     "ChatGPT",
+     "chat GBT"
+    ],
+    [
+     "to analyze their business",
+     null
+    ]
+   ],
+   "468": [
+    [
+     "Listen,",
+     null
+    ],
+    [
+     "passion's",
+     "passion is"
+    ],
+    [
+     "fantastic. If you love your job in addition that you have execution skills, that's great,",
+     null
+    ],
+    [
+     "That's",
+     "but it's"
+    ],
+    [
+     "good for you, right?",
+     null
+    ]
+   ],
+   "470": [
+    [
+     "Well, in a previous point, you just said you're going to give up your",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance. You're gonna be away from your family. You're gonna have guys that care",
+     null
+    ]
+   ],
+   "478": [
+    [
+     "you if you want",
+     null
+    ],
+    [
+     "somebody",
+     "someone"
+    ],
+    [
+     "to be passionate, if you want",
+     null
+    ],
+    [
+     "somebody",
+     "someone"
+    ],
+    [
+     "to be good, you give them reasons to be a good worker. You give them reasons to want to stay. Reasons that you know what, it's getting a little",
+     null
+    ],
+    [
+     "",
+     "it's hitting"
+    ],
+    [
+     "the fan.",
+     null
+    ]
+   ],
+   "480": [
+    [
+     "them vacation. You give them all these benefits to actually give them an incentive to stay at the job and give you that",
+     null
+    ],
+    [
+     "work/life",
+     "work life"
+    ],
+    [
+     "balance, disrupture",
+     null
+    ]
+   ],
+   "490": [
+    [
+     "Of course,",
+     null
+    ],
+    [
+     "They'll",
+     "he'll"
+    ],
+    [
+     "hire another but he's but he's gone. He's",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "hire another one. How how soon can you hire another one?",
+     null
+    ],
+    [
+     "Pretty quickly",
+     ""
+    ],
+    [
+     "Who's",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "cover that shift?",
+     null
+    ]
+   ],
+   "492": [
+    [
+     "I know.",
+     null
+    ],
+    [
+     "but",
+     ""
+    ],
+    [
+     "I think",
+     null
+    ],
+    [
+     "he",
+     "you"
+    ],
+    [
+     "should work 40 hours for the same money.",
+     null
+    ]
+   ],
+   "494": [
+    [
+     "But the real issue is we're debating passion versus",
+     null
+    ],
+    [
+     "execution",
+     "executional"
+    ],
+    [
+     "skills.",
+     null
+    ],
+    [
+     "Of course",
+     ""
+    ],
+    [
+     "All right. When when I say good at work",
+     null
+    ]
+   ],
+   "500": [
+    [
+     "Be a good worker But",
+     "And"
+    ],
+    [
+     "I'm telling you, the path for reward is very simple. It's simply get it done. Execution. It's easier said than done. No, it's not. It is easier said than done.",
+     null
+    ]
+   ],
+   "514": [
+    [
+     "That's the only way you can be successful in the military.",
+     null
+    ],
+    [
+     "And",
+     "You can"
+    ],
+    [
+     "stay in it out of jail. Yeah.",
+     null
+    ]
+   ],
+   "521": [
+    [
+     "thing is you",
+     null
+    ],
+    [
+     "bullshit",
+     ""
+    ],
+    [
+     "your way to four years",
+     null
+    ],
+    [
+     "out",
+     ""
+    ],
+    [
+     "of your contract. There are people I know people who do everything in the military, but they want we need a good middle guy. We need someone who's going",
+     null
+    ]
+   ],
+   "527": [
+    [
+     "Everything from insecticides to wireless charging to commercial kitchens for airlines, greeting cards. Think about",
+     null
+    ],
+    [
+     "Lovepop.",
+     "Love Pop."
+    ],
+    [
+     "They make greeting cards in a corporate field.",
+     null
+    ]
+   ],
+   "530": [
+    [
+     "It's not",
+     null
+    ],
+    [
+     "everyone works",
+     "work"
+    ],
+    [
+     "in",
+     null
+    ],
+    [
+     "an",
+     ""
+    ],
+    [
+     "office [clears throat] environment. Let's take media. I'm in school for film media production.",
+     null
+    ]
+   ],
+   "533": [
+    [
+     "know, 15 years ago, film school was certain death and starvation. Of course. Not anymore. Some say not some say.",
+     null
+    ],
+    [
+     "Not anymore",
+     ""
+    ],
+    [
+     "I know. I get it.",
+     null
+    ]
+   ],
+   "534": [
+    [
+     "I agree. I agree. They same thing about computer science. It was supposed to be amazing. If you if you can shoot and cut",
+     null
+    ],
+    [
+     "59-second",
+     "59 second"
+    ],
+    [
+     "video that acquires customers",
+     null
+    ]
+   ],
+   "540": [
+    [
+     "Pause. You've been I agree with you on that. I agree with you on that.",
+     null
+    ],
+    [
+     "Yeah",
+     ""
+    ],
+    [
+     "Please return to your seat. You got it. Thanks.",
+     null
+    ]
+   ],
+   "550": [
+    [
+     "Um, I got turned down. I wasn't given that opportunity. Sounds like your boss is",
+     null
+    ],
+    [
+     "an asshole.",
+     "in."
+    ],
+    [
+     "Yeah, I guess so.",
+     null
+    ]
+   ],
+   "571": [
+    [
+     "I didn't I asked to go higher up in my in my career. I wanted to, you know, start",
+     null
+    ],
+    [
+     "management",
+     "managing"
+    ],
+    [
+     "field, train a team.",
+     null
+    ]
+   ],
+   "578": [
+    [
+     "what happened. Your why",
+     null
+    ],
+    [
+     "aren't",
+     "are your"
+    ],
+    [
+     "companies acknowledging that?",
+     null
+    ]
+   ],
+   "579": [
+    [
+     "Well, your boss",
+     null
+    ],
+    [
+     "wasn't",
+     "was"
+    ],
+    [
+     "is not good at executing. I can tell you",
+     null
+    ],
+    [
+     "",
+     "that."
+    ],
+    [
+     "that whoever the person that held you back, there's two cases",
+     null
+    ],
+    [
+     "",
+     "of"
+    ],
+    [
+     "where you've been held back. That's what we just learned",
+     null
+    ]
+   ],
+   "624": [
+    [
+     "I understand that. And you keep bringing up entrepreneurship and I should you're an entrepreneur. I can convince one of you in",
+     null
+    ],
+    [
+     "here.",
+     "perspective."
+    ]
+   ],
+   "629": [
+    [
+     "No no",
+     null
+    ],
+    [
+     "the",
+     "that"
+    ],
+    [
+     "what happens is let me explain. A third want to be entrepreneurs. Many will fail. Eight out",
+     null
+    ]
+   ],
+   "638": [
+    [
+     "for passion and job. I told you the way to do it is you got to be an entrepreneur. If you don't have the capital you're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "have to be a street hustler. You're going to So the only way to become successful and",
+     null
+    ]
+   ],
+   "657": [
+    [
+     "a bad job, why is there any value there at all?",
+     null
+    ],
+    [
+     "If I?",
+     "Who fights back?"
+    ],
+    [
+     "Okay. Okay.",
+     null
+    ]
+   ],
+   "660": [
+    [
+     "since the",
+     null
+    ],
+    [
+     "Taft-Hartley",
+     "Taft Hartley"
+    ],
+    [
+     "Act in 1947, the the uh loss in the share of people who are participants in unions is directly",
+     null
+    ]
+   ],
+   "663": [
+    [
+     "It's it's the capitalist ideology that has infected the minds of laborers so that they don't recognize that we as a class have a collective interest against",
+     null
+    ],
+    [
+     "capitalists",
+     "capitalist"
+    ],
+    [
+     "like agree.",
+     null
+    ]
+   ],
+   "665": [
+    [
+     "advance in. There are sectors where a union works. And I'll give you an example.",
+     null
+    ],
+    [
+     "SAG-AFTRA",
+     "SAG ARA"
+    ],
+    [
+     "for actors. Why is that",
+     null
+    ]
+   ],
+   "675": [
+    [
+     "exploit the resources over there to maximize profits. That's the logic of capitalism.",
+     null
+    ],
+    [
+     "Wait",
+     ""
+    ],
+    [
+     "That's that's not wait. Let's use the example of plush toys.",
+     null
+    ]
+   ],
+   "705": [
+    [
+     "No, no, I know. I'm saying for example, I I don't know. I don't work there",
+     null
+    ],
+    [
+     "",
+     "or"
+    ],
+    [
+     "you know I'm in",
+     null
+    ],
+    [
+     "healthcare",
+     "healthare"
+    ],
+    [
+     "right and then for example me who my values",
+     null
+    ]
+   ],
+   "735": [
+    [
+     "direction, right, then no, you're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "take your personal opinion aside and you're going to help them. You can't have both. You can't have both. You have",
+     null
+    ]
+   ],
+   "742": [
+    [
+     "Yeah. So I'm I'm not",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "disagree there. Uh there's some aspects that I do disagree with. Like I don't think that you should work for",
+     null
+    ],
+    [
+     "Lockheed",
+     "Loheed"
+    ],
+    [
+     "Martin or",
+     null
+    ],
+    [
+     "Palantir",
+     "Palunteer"
+    ],
+    [
+     "just because it might give you",
+     null
+    ]
+   ],
+   "753": [
+    [
+     "You're trying to call this a category",
+     null
+    ],
+    [
+     "",
+     "and"
+    ],
+    [
+     "we're talking about individual people's jobs, right? But but why would someone take a job that's",
+     null
+    ],
+    [
+     "incongruent",
+     "in congruent"
+    ],
+    [
+     "with their",
+     null
+    ]
+   ],
+   "762": [
+    [
+     "on whether or not they're healthy.",
+     null
+    ],
+    [
+     "We are",
+     ""
+    ],
+    [
+     "the only nation that doesn't have universal healthare to people free stuff.",
+     null
+    ],
+    [
+     "",
+     "Do"
+    ],
+    [
+     "you think those are handouts providing for",
+     null
+    ]
+   ],
+   "763": [
+    [
+     "many countries have tried universal",
+     null
+    ],
+    [
+     "healthcare",
+     "healthare"
+    ],
+    [
+     "and as soon as they get past every other developed nation is",
+     null
+    ],
+    [
+     "imploring",
+     "employing"
+    ],
+    [
+     "or employing it besides us.",
+     null
+    ]
+   ],
+   "764": [
+    [
+     "I think you're bringing a very big issue to the table because we're at the cusp of",
+     null
+    ],
+    [
+     "hoping",
+     ""
+    ],
+    [
+     "hope hopefully solving our",
+     null
+    ],
+    [
+     "healthcare",
+     "health care"
+    ],
+    [
+     "problems using technology here. You",
+     null
+    ]
+   ],
+   "767": [
+    [
+     "Who has Are you speaking from your own experience? Nobody's",
+     null
+    ],
+    [
+     "bi-coastal",
+     "by coastal"
+    ],
+    [
+     "like you, Kevin. Most of the people here live in their own individual city. I had that happen.",
+     null
+    ]
+   ],
+   "768": [
+    [
+     "to me",
+     ""
+    ],
+    [
+     "So, they don't have doctors in Boston while they're doing X-rays in California. I think that you have a little disconnect between the average experience of digitizing the record lets any doctor",
+     null
+    ]
+   ],
+   "773": [
+    [
+     "You're telling me America is broken. I'm saying it isn't. I'm saying it's working so successfully that it",
+     null
+    ],
+    [
+     "maintains For you.",
+     "gains."
+    ],
+    [
+     "No. No. The whole economy.",
+     null
+    ]
+   ],
+   "776": [
+    [
+     "But the whole point of why people you tried to use the platform to go into your own mandate like you're running for elected office. The reason why people are choosing jobs that are",
+     null
+    ],
+    [
+     "incongruent",
+     "in congruent"
+    ]
+   ],
+   "778": [
+    [
+     "owner is talking to",
+     null
+    ],
+    [
+     "Gen Z",
+     "Jenzi"
+    ],
+    [
+     "workers is because you feel there's a disconnect between how",
+     null
+    ],
+    [
+     "Gen Z",
+     "Jenzi"
+    ],
+    [
+     "views the economy. So we're talking about what the problems are.",
+     null
+    ]
+   ],
+   "782": [
+    [
+     "All right, pause. Mason, you've been voted out. Please return to meet.",
+     null
+    ],
+    [
+     "you Kevin",
+     ""
+    ],
+    [
+     "You got it. [applause] Well, I practice running for nothing.",
+     null
+    ]
+   ],
+   "789": [
+    [
+     "you Out of boiling down the employer-employee",
+     "employer employee"
+    ],
+    [
+     "relationship strictly to the money that we get it uh every two weeks or weekly. Uh fundamentally I",
+     null
+    ]
+   ],
+   "790": [
+    [
+     "guess like why why do you place so little value on the culture of a company? Um it it breeds",
+     null
+    ],
+    [
+     "buy-in.",
+     "buy in."
+    ],
+    [
+     "That's",
+     null
+    ]
+   ],
+   "800": [
+    [
+     "Absolutely. Every day",
+     null
+    ],
+    [
+     "Are you kidding Like",
+     ""
+    ],
+    [
+     "it's tiring but I love it. It keeps",
+     null
+    ],
+    [
+     "you on",
+     "showing to"
+    ],
+    [
+     "your",
+     null
+    ],
+    [
+     "toes But that's my whole",
+     ""
+    ],
+    [
+     "point. Look at what's happening.",
+     null
+    ]
+   ],
+   "815": [
+    [
+     "Very important because you're trying to reduce CAC and you want",
+     null
+    ],
+    [
+     "ROAS",
+     "rorowaz"
+    ],
+    [
+     "to go.",
+     null
+    ]
+   ],
+   "818": [
+    [
+     "You know what teams care about? Relying on each other, the work they do. Like there's a lot of",
+     null
+    ],
+    [
+     "different factors And",
+     ""
+    ],
+    [
+     "executing on it. So they all benefit",
+     null
+    ]
+   ],
+   "820": [
+    [
+     "co-workers, but they don't care. They want you to be happy with your values, but they want you to",
+     null
+    ],
+    [
+     "execute",
+     ""
+    ],
+    [
+     "Diversity is a strength. I would agree with that. But they want you to execute.",
+     null
+    ]
+   ],
+   "822": [
+    [
+     "Please return to I really like this. What a pleasure.",
+     null
+    ],
+    [
+     "Shit",
+     ""
+    ],
+    [
+     "I was getting I'm just getting rolling.",
+     null
+    ]
+   ],
+   "829": [
+    [
+     "a moral question, a little different than values. I mean, you know, I did what did you get some of your value",
+     null
+    ],
+    [
+     "wouldn't",
+     "where did"
+    ],
+    [
+     "you get some of your values from your morals as well?",
+     null
+    ]
+   ],
+   "835": [
+    [
+     "Would",
+     "Are"
+    ],
+    [
+     "you trying to bring religion into business?",
+     null
+    ]
+   ],
+   "845": [
+    [
+     "Okay. How about this? Let me turn",
+     null
+    ],
+    [
+     "it",
+     ""
+    ],
+    [
+     "on you. We're in an interview. You're",
+     null
+    ],
+    [
+     "in",
+     ""
+    ],
+    [
+     "an interview for",
+     null
+    ],
+    [
+     "a",
+     ""
+    ],
+    [
+     "job.",
+     null
+    ],
+    [
+     "Yes sir",
+     ""
+    ],
+    [
+     "Do you think I can ask you what your religion is? That's not what I'm saying at all.",
+     null
+    ]
+   ],
+   "857": [
+    [
+     "It's just so well that's the point of the debate. I just want to make",
+     null
+    ],
+    [
+     "one point",
+     "business"
+    ],
+    [
+     "most businesses wouldn't do that because they wouldn't have any employees. Like think about it.",
+     null
+    ]
+   ],
+   "869": [
+    [
+     "value doesn't reflect your own values, you could run into legal trouble. You can run into issues where morally or in other situations",
+     null
+    ],
+    [
+     "",
+     "u"
+    ],
+    [
+     "you know",
+     null
+    ]
+   ],
+   "874": [
+    [
+     "I'm trying to avoid the AI point. Nothing",
+     null
+    ],
+    [
+     "it's",
+     "has"
+    ],
+    [
+     "nothing to do with AI.",
+     null
+    ]
+   ],
+   "891": [
+    [
+     "Why can we talk about a minimum wage minimum wage worker",
+     null
+    ],
+    [
+     "and",
+     ""
+    ],
+    [
+     "then the CEO supports a like there are big corporations that are getting all this money.",
+     null
+    ]
+   ],
+   "899": [
+    [
+     "I'm so sorry. I",
+     null
+    ],
+    [
+     "gotta",
+     "got to"
+    ],
+    [
+     "stop it here. We are out of time for this claim. Please return to your seats.",
+     null
+    ]
+   ],
+   "925": [
+    [
+     "Okay, let's go to Zuckerberg. What you got? Why is he ethical? You don't like any",
+     null
+    ],
+    [
+     "billionaire?",
+     "billionaires?"
+    ]
+   ],
+   "937": [
+    [
+     "Okay. But you know he I don't think any claims about you know",
+     null
+    ],
+    [
+     "",
+     "immoral"
+    ],
+    [
+     "immoral actions or anything that you're suggesting with these other guys.",
+     null
+    ]
+   ],
+   "942": [
+    [
+     "No, they pay a ton of",
+     null
+    ],
+    [
+     "taxes.",
+     "tax."
+    ],
+    [
+     "The truth they do not pay tax. It's impossible to avoid",
+     null
+    ],
+    [
+     "corporate tax.",
+     "corporations."
+    ]
+   ],
+   "960": [
+    [
+     "that billion",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "billion dollars ethically, which I fundamentally don't believe you can, right? There is no in no case the most successful economy",
+     null
+    ]
+   ],
+   "965": [
+    [
+     "the bottom How did they get there?",
+     null
+    ],
+    [
+     "Were",
+     "Where"
+    ],
+    [
+     "they Hold on. Can I finish? We know that the bottom 50% only owns 2.5% of this nation's wealth. We know that 20,000",
+     null
+    ]
+   ],
+   "981": [
+    [
+     "You know, in many ways, yes.",
+     null
+    ],
+    [
+     "Oh that's",
+     ""
+    ],
+    [
+     "Because give me proof that the Here's the thing though. Investing in government's a good thing.",
+     null
+    ]
+   ],
+   "989": [
+    [
+     "And these one like a hundred people could solve that if they gave them I",
+     null
+    ],
+    [
+     "gotta",
+     "got to"
+    ],
+    [
+     "tell you something% of their really scaring me and I'll tell you why.",
+     null
+    ]
+   ],
+   "996": [
+    [
+     "maintain the public.",
+     null
+    ],
+    [
+     "good",
+     ""
+    ],
+    [
+     "Who decides? Who decides?",
+     null
+    ]
+   ],
+   "1018": [
+    [
+     "Of success,",
+     "I mean,"
+    ],
+    [
+     "he just seemed kind of disconnected. His response usually was, \"We'll just prove your worth.\" I hope people are would see the problem a lot of",
+     null
+    ],
+    [
+     "Gen Z-ers",
+     "Jenzers"
+    ],
+    [
+     "face.",
+     null
+    ]
+   ]
+  },
+  "fixes": 147,
+  "checked_seconds": 2090.0,
+  "usd": 0.3042,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "0:30",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "0:43",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:25",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "2:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "3:15",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "3:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:46",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "5:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "6:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "7:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:03",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "11:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:38",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "12:03",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "12:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "12:54",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "13:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "15:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "15:08",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "15:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:04",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "17:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "20:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "21:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "21:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "21:45",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "22:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "22:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "22:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "22:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "23:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "23:33",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "23:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "23:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:22",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "24:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "25:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "25:24",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "25:31",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "25:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "25:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "26:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "26:18",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "28:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "30:36",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "31:16",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "31:19",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "32:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "33:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "34:13",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "34:44",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "35:17",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "35:37",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "35:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "37:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "38:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "38:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "39:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "39:33",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "39:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "39:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "39:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "40:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "40:13",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "42:06",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "42:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "43:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "44:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "44:59",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "45:07",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "45:20",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "45:59",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "46:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "46:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "46:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "46:40",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "47:02",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "47:13",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "47:31",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "47:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "48:03",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "48:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "48:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "48:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "48:41",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "48:54",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "49:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "49:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "49:29",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "49:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "50:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "50:29",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "51:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "51:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "51:25",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "51:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "52:16",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "53:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "54:17",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "54:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "55:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "55:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "55:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "56:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "56:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "57:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "57:15",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "57:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "57:30",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "57:52",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "58:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "58:30",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "58:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "58:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "59:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:01:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:01:36",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:02:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:02:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:03:43",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:04:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:05:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:06:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:07:04",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:08:00",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:08:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:08:25",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:08:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:09:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:09:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:09:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:11:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:11:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:12:17",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:12:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:12:53",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:14:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:14:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:16:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:17:35",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:17:43",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:21:17",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:22:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:22:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:22:54",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:22:59",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:23:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:23:31",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:23:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:12",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:24:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:47",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:55",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:25:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:25:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:25:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:26:05",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:26:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:27:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:27:27",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:28:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:30:27",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:30:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:30:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:31:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:31:45",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }
