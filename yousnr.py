@@ -1548,6 +1548,7 @@ def render_page(d):
                .replace("{{FIXCLASS}}", "" if nfix else "hidden")
                .replace("{{PGCLASS}}", "" if (pg or pangram_settings()["key"]) else "hidden")
                .replace("{{PGWORDS}}", str(int(pangram_settings()["words"])))
+               .replace("{{PGSEL}}", pangram_pick_json(d) if (pangram_settings()["key"] or pg) else "null")
                .replace("{{CUT}}", excerpt.html(vid, e))
                .replace("{{ADDED}}", e(d.get("added") or ""))
                .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
@@ -2022,7 +2023,7 @@ PG_PER_VISITOR_PER_HOUR = 3
 def pangram_settings():
     e = os.environ.get
     return {"key": (e("PANGRAM_API_KEY") or "").strip(), "model": e("YOUSNR_PANGRAM_MODEL") or "pangram-4",
-            "words": int(e("YOUSNR_PANGRAM_WORDS") or 1500), "budget": float(e("YOUSNR_PANGRAM_BUDGET") or 5),
+            "words": int(e("YOUSNR_PANGRAM_WORDS") or 400), "budget": float(e("YOUSNR_PANGRAM_BUDGET") or 5),
             "price": float(e("YOUSNR_PANGRAM_PRICE_PER_100_WORDS") or 0.05)}
 
 
@@ -2041,25 +2042,102 @@ def pangram_spent():
         return 0.0
 
 
-def pangram_text(d, max_words):
-    """The words the page shows (corrections included, [tags] left out), whole lines from the start,
-    until max_words. Returns (text, words, [(char offset, line index)], whole transcript?)."""
+PG_FILLER = re.compile(r"\b(?:u+m+|u+h+|e+r+m+|hm+|uh-huh|you know|i mean)\b", re.I)
+PG_AD = re.compile(r"\b(?:sponsor(?:ed|s|ship)?|promo code|use code|discount code|link (?:is )?(?:down )?(?:below|in the description)"
+                   r"|brought to you by|smash (?:that|the) like|hit (?:that|the) (?:like|subscribe)|subscribe|patreon|merch)\b", re.I)
+PG_ABBR = re.compile(r"^(?:mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|u\.s|u\.k|a\.m|p\.m|no|inc|ltd|co|approx|[a-z])\.$", re.I)
+
+
+def _pg_words(d):
+    """Every word the page shows (corrections in, [tags] out), with its line index."""
     fixed = (d.get("corrected") or {}).get("lines") or {}
-    parts, offsets, words, pos = [], [], 0, 0
-    segs = d["segments"]
-    for i, s in enumerate(segs):
+    out = []
+    for i, s in enumerate(d["segments"]):
         pieces = fixed.get(str(i))
         t = " ".join(p for p, _ in pieces if p) if pieces else s["text"]
         t = re.sub(r"[\s\u200b-\u200d\ufeff]+", " ", re.sub(r"\[[^\[\]]{0,60}\]", " ", t)).strip()
-        if not t:
-            continue
-        if parts and words + len(t.split()) > max_words:           # stay within the words paid for
-            return " ".join(parts), words, offsets, False
-        offsets.append((pos, i))
-        parts.append(t)
-        pos += len(t) + 1
-        words += len(t.split())
-    return " ".join(parts), words, offsets, True
+        out += [(w, i) for w in t.split()]
+    return out
+
+
+def _pg_ends_sentence(w, nxt):
+    if not re.search(r"[.!?…]['\"”’)\]]*$", w):
+        return False
+    if PG_ABBR.match(re.sub(r"['\"”’)\]]+$", "", w)):
+        return False
+    c = re.sub(r"^['\"“‘(\[]+", "", nxt or "")[:1]
+    return not c or c.isdigit() or c.upper() == c          # a capital, or a script without capitals
+
+
+def _pg_score(ws, n_units, punctuated, start, max_words):
+    """How much a stretch reads like written prose, the kind Pangram is built for: full sentences, few
+    um/uh/you-know, few stumbles (the the), not a back-and-forth of questions, no sponsor read or intro."""
+    n = len(ws)
+    text = " ".join(w for w, _ in ws)
+    norm = [re.sub(r"\W+", "", w.lower()) for w, _ in ws]
+    per100 = 100 / max(1, n)
+    fillers = len(PG_FILLER.findall(text)) * per100
+    stumbles = sum(1 for k in range(1, n) if norm[k] and norm[k] == norm[k - 1]) * per100
+    questions = text.count("?") * per100
+    score = 2.0 * n / max_words                              # use the words paid for
+    score -= 0.6 * fillers + 0.4 * stumbles + 0.4 * questions
+    if punctuated:
+        score -= abs(min(n / max(1, n_units), 40) - 18) / 18  # very choppy or run-on sentences
+    if PG_AD.search(text):
+        score -= 5                                           # sponsor reads are someone else's script
+    if start < 20:
+        score -= 1                                           # the hook and intro
+    return score
+
+
+def pangram_text(d, max_words):
+    """What to send to Pangram: about max_words words of the transcript as the page shows it, from the
+    stretch that reads most like written prose (whole sentences), since that's what Pangram is built for and
+    where a script written with AI would show. A short transcript is sent whole.
+    Returns (text, words, [(char offset, line index)], whole transcript?)."""
+    ws = _pg_words(d)
+    segs = d["segments"]
+    if len(ws) > max_words:
+        ends = [k for k in range(len(ws)) if _pg_ends_sentence(ws[k][0], ws[k + 1][0] if k + 1 < len(ws) else "")]
+        punctuated = len(ends) >= max(3, len(ws) / 60)        # a sentence end at least every ~60 words
+        if punctuated:                                       # units: whole sentences
+            starts = [0] + [k + 1 for k in ends if k + 1 < len(ws)]
+        else:                                                # no punctuation: whole lines
+            starts = [k for k in range(len(ws)) if k == 0 or ws[k][1] != ws[k - 1][1]]
+        bounds = starts + [len(ws)]
+        best = None
+        for a in range(len(starts)):
+            b = a
+            while b + 1 < len(bounds) and bounds[b + 1] - bounds[a] <= max_words:
+                b += 1
+            n = bounds[b] - bounds[a]
+            if b == a or n < min(150, max_words * 0.6):
+                continue
+            sc = _pg_score(ws[bounds[a]:bounds[b]], b - a, punctuated, float(segs[ws[bounds[a]][1]]["start"]), max_words)
+            if best is None or sc > best[0]:
+                best = (sc, bounds[a], bounds[b])
+        picked, whole = (ws[best[1]:best[2]] if best else ws[:max_words]), False
+    else:
+        picked, whole = ws, True
+    parts, offsets, pos, last = [], [], 0, None
+    for w, li in picked:
+        if li != last:
+            offsets.append((pos, li))
+            last = li
+        parts.append(w)
+        pos += len(w) + 1
+    return " ".join(parts), len(picked), offsets, whole
+
+
+def pangram_pick_json(d):
+    """The stretch a Pangram check would send, for the page: its words (for "check it yourself") and times."""
+    text, words, offsets, whole = pangram_text(d, pangram_settings()["words"])
+    if not offsets:
+        return "null"
+    segs, a, b = d["segments"], offsets[0][1], offsets[-1][1]
+    end = float(segs[b + 1]["start"]) if b + 1 < len(segs) else float(segs[b]["start"]) + float(segs[b].get("dur") or 4)
+    return json.dumps({"text": text, "words": words, "whole": whole, "from": float(segs[a]["start"]), "to": end},
+                      ensure_ascii=False).replace("</", "<\\/")
 
 
 class PangramError(Exception):
@@ -2202,7 +2280,7 @@ class Pangram:
         last = offsets[-1][1] if offsets else 0
         return {"checked": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
                 "model": str(res.get("version") or st["model"]), "words": words, "whole": whole,
-                "until": end_of(last), "headline": res.get("headline") or "", "short": res.get("prediction_short") or "",
+                "from": float(segs[offsets[0][1]]["start"]) if offsets else 0.0, "until": end_of(last), "picked": True, "headline": res.get("headline") or "", "short": res.get("prediction_short") or "",
                 "ai": float(res.get("fraction_ai") or 0), "assisted": float(res.get("fraction_ai_assisted") or 0),
                 "human": float(res.get("fraction_human") or 0), "flagged": flagged[:20],
                 "link": res.get("dashboard_link") or res.get("public_dashboard_link") or ""}
