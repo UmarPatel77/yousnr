@@ -1550,6 +1550,7 @@ def render_page(d):
                .replace("{{PGWORDS}}", str(int(pangram_settings()["words"])))
                .replace("{{PGSEL}}", pangram_pick_json(d) if (pangram_settings()["key"] or pg) else "null")
                .replace("{{CUT}}", excerpt.html(vid, e))
+               .replace("{{DONATE}}", donate_links())
                .replace("{{ADDED}}", e(d.get("added") or ""))
                .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
                .replace("{{ROWS}}", "\n".join(rows)))
@@ -2090,6 +2091,14 @@ def _pg_score(ws, n_units, punctuated, start, max_words):
     return score
 
 
+def pangram_lifetime():
+    try:
+        u = json.loads(PG_USAGE.read_text(encoding="utf-8"))
+        return float(u.get("total", u.get("spent", 0)))
+    except Exception:
+        return 0.0
+
+
 def pangram_text(d, max_words):
     """What to send to Pangram: about max_words words of the transcript as the page shows it, from the
     stretch that reads most like written prose (whole sentences), since that's what Pangram is built for and
@@ -2200,7 +2209,8 @@ class Pangram:
                 PG_DIR.mkdir(parents=True, exist_ok=True)
                 write_atomic(PG_DIR / f"{vid}.json", json.dumps(out, ensure_ascii=False, indent=1))
                 month = time.strftime("%Y-%m")
-                write_atomic(PG_USAGE, json.dumps({"month": month, "spent": round(pangram_spent() + cost, 4)}))
+                write_atomic(PG_USAGE, json.dumps({"month": month, "spent": round(pangram_spent() + cost, 4),
+                                                   "total": round(pangram_lifetime() + cost, 4)}))
                 write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
                 self.fetcher.pending.append(vid)
             print(f"{time.strftime('%H:%M:%S')}  {vid}  pangram: {out['headline'] or out['short']} "
@@ -2544,6 +2554,8 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
                 return self._send(200, "application/json", json.dumps(
                     {"ok": True, "videos": len(_load_index()), "paused_for": max(0, int(fetcher.cooldown_until - time.time())),
                      "tunnel": TUNNEL["state"], "up": int(time.time() - started)}))
+            if path == "/api/meters":                # the header's "what's left" tiles
+                return self._send(200, "application/json", json.dumps(meters()))
             m = re.fullmatch(r"/api/excerpt/([A-Za-z0-9_-]{11})", path)
             if m:                                    # "In their words", before the page is republished
                 vid = m.group(1)
@@ -2849,6 +2861,235 @@ def _ago(secs):
             f"{secs // 3600} h {secs % 3600 // 60} min" if secs >= 3600 else f"{secs // 60} min")
 
 
+# ---------------------------------------------------------------- donations (shown under the header's tiles)
+DONATE = [("Buy Me a Coffee", "https://buymeacoffee.com/umarhq"),
+          ("GitHub Sponsors", "https://github.com/sponsors/UmarPatel77")]
+
+
+def donate_links():
+    return " \u00b7 ".join(f'<a href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(n)}</a>' for n, u in DONATE)
+
+
+# ---------------------------------------------------------------- what's left (the header on every page)
+BALANCES = DATA / "_balances.json"       # account balances you've told YouSNR about, and its spending then
+_meters = {"at": 0.0, "el": None, "lock": threading.Lock()}
+
+
+def _elevenlabs_account():
+    """(left, limit, reset unix) from ElevenLabs itself, checked at most every 10 minutes; None if it can't say."""
+    with _meters["lock"]:
+        if time.time() - _meters["at"] < 600:
+            return _meters["el"]
+        _meters["at"], _meters["el"] = time.time(), None
+        k = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+        if k:
+            try:
+                import requests
+                r = requests.get("https://api.elevenlabs.io/v1/user/subscription", headers={"xi-api-key": k}, timeout=10)
+                b = r.json() if r.status_code == 200 else {}
+                if "character_limit" in b:
+                    _meters["el"] = (int(b["character_limit"]) - int(b.get("character_count") or 0),
+                                     int(b["character_limit"]), b.get("next_character_count_reset_unix"))
+            except Exception:
+                pass
+        return _meters["el"]
+
+
+def _lifetime_spent():
+    """Everything YouSNR has spent on each service, from its own records."""
+    out = {"elevenlabs": 0.0, "assemblyai": 0.0, "claude": excerpt.lifetime(), "pangram": pangram_lifetime()}
+    if acc is not None:
+        for m in acc._load_usage().values():
+            for e, secs in (m.get("seconds") or {}).items():
+                if e in out:
+                    out[e] += acc.cost(e, secs)
+    return out
+
+
+def _account_left(service, spent_now):
+    """An account balance you set (YOUSNR_BALANCE_<SERVICE>=what the dashboard shows now), minus what YouSNR
+    has spent since you set it. None when it isn't set."""
+    raw = (os.environ.get(f"YOUSNR_BALANCE_{service.upper()}") or "").strip().lstrip("$")
+    try:
+        amount = float(raw)
+    except ValueError:
+        return None
+    try:
+        b = json.loads(BALANCES.read_text(encoding="utf-8"))
+    except Exception:
+        b = {}
+    cur = b.get(service) or {}
+    if cur.get("amount") != amount:                      # a new balance: count from now
+        cur = b[service] = {"amount": amount, "spent_then": round(spent_now, 5),
+                            "set": datetime.datetime.now().isoformat(timespec="seconds")}
+        try:
+            write_atomic(BALANCES, json.dumps(b, indent=1))
+        except Exception:
+            pass
+    return max(0.0, amount - (spent_now - float(cur.get("spent_then", 0)))), amount, cur.get("set", "")[:10]
+
+
+def meters():
+    """The four tiles in the page header: what's left for each paid service."""
+    def money(x):
+        return f"${x:,.2f}" if x < 100 else f"${x:,.0f}"
+
+    def whole(x):
+        return f"${x:g}" if float(x).is_integer() else f"${x:,.2f}"
+
+    def short(n):
+        return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+    spent = _lifetime_spent()
+    tiles = []
+    word_cap = acc.settings()["budget"] if acc is not None else 0
+    word_left = max(0.0, word_cap - (acc.spent_this_month() if acc is not None else 0))
+
+    def tile(name, left, total, text, note):
+        tiles.append({"name": name, "text": text, "note": note, "low": bool(total) and left / total < 0.15})
+
+    for svc, name in (("elevenlabs", "ElevenLabs"), ("assemblyai", "AssemblyAI")):
+        if not (os.environ.get(f"{svc.upper()}_API_KEY") or "").strip():
+            continue
+        el = _elevenlabs_account() if svc == "elevenlabs" else None
+        acct = _account_left(svc, spent[svc])
+        if el:
+            left, limit, reset = el
+            when = (", resets " + time.strftime("%b %d", time.localtime(int(reset)))) if reset else ""
+            tile(name, left, limit, f"{short(left)}/{short(limit)} cr",
+                 f"{name} account: {left:,} of {limit:,} credits left{when}")
+        elif acct:
+            left, amount, since = acct
+            tile(name, left, amount, f"{money(left)}/{whole(amount)}",
+                 f"{name} account: about {money(left)} of {whole(amount)} left (YouSNR's own tally since {since})")
+        else:
+            tile(name, word_left, word_cap, f"{money(word_left)}/{whole(word_cap)}",
+                 f"Word checks (ElevenLabs and AssemblyAI together): {money(word_left)} of this month's {whole(word_cap)} left")
+    est = excerpt.settings()
+    if est["key"]:
+        acct = _account_left("claude", spent["claude"])
+        if acct:
+            left, amount, since = acct
+            tile("Claude", left, amount, f"{money(left)}/{whole(amount)}",
+                 f"Claude account: about {money(left)} of {whole(amount)} left (YouSNR's own tally since {since})")
+        else:
+            left = max(0.0, est["budget"] - excerpt.spent())
+            tile("Claude", left, est["budget"], f"{money(left)}/{whole(est['budget'])}",
+                 f"In their words (Claude): {money(left)} of this month's {whole(est['budget'])} left")
+    pst = pangram_settings()
+    if pst["key"]:
+        per = -(-pst["words"] // 100) * pst["price"]
+        acct = _account_left("pangram", spent["pangram"])
+        cap_left = max(0.0, pst["budget"] - pangram_spent())
+        left, total = (acct[0], acct[1]) if acct else (cap_left, pst["budget"])
+        checks = int(min(left, cap_left) // per) if per else 0
+        what = (f"Pangram account: about {money(left)} of {whole(total)} left (YouSNR's own tally since {acct[2]})"
+                if acct else f"Pangram checks: {money(left)} of this month's {whole(total)} left")
+        tile("Pangram", left, total, f"{money(left)}/{whole(total)}", f"{what}; about {checks} more checks this month")
+    return {"tiles": tiles[:4]}
+
+
+def show_balances():
+    """What's left in each service's account (where the service will say) and what YouSNR has spent on it
+    this month. Only ElevenLabs reports a balance through its API; for the others this checks the key
+    works and says where the balance is shown."""
+    import requests
+    month = time.strftime("%Y-%m")
+
+    def get(url, headers):
+        try:
+            r = requests.get(url, headers=headers, timeout=15)
+            try:
+                return r.status_code, r.json()
+            except Exception:
+                return r.status_code, {}
+        except Exception as e:
+            return None, {"error": f"{e.__class__.__name__}"}
+
+    def key_state(code, body):
+        if code is None:
+            return f"couldn't reach it ({body.get('error')})"
+        if code in (401, 403):
+            return "the key was refused (check it in ~/.config/yousnr.env)"
+        if code >= 400:
+            return f"answered HTTP {code}: {str(body)[:120]}"
+        return "the key works"
+
+    def count(n, word):
+        return f"{n} {word}" + ("" if n == 1 else "s")
+
+    def made_this_month(folder, field):
+        n = 0
+        for f in folder.glob("*.json"):
+            try:
+                if str(json.loads(f.read_text(encoding="utf-8")).get(field) or "").startswith(month):
+                    n += 1
+            except Exception:
+                pass
+        return n
+
+    u = acc._load_usage().get(acc._month(), {}) if acc is not None else {}
+    secs = u.get("seconds", {})
+    ours = {e: (acc.cost(e, secs.get(e, 0)) if acc is not None else 0.0) for e in ("elevenlabs", "assemblyai")}
+    print("What's left in each account, and what YouSNR has spent this month\n")
+    life = _lifetime_spent()
+
+    def told(service):                         # a balance you set with YOUSNR_BALANCE_<SERVICE>
+        a = _account_left(service, life[service])
+        return f"; about ${a[0]:.2f} of ${a[1]:g} left by YouSNR's tally since {a[2]}" if a else ""
+
+    k = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+    if not k:
+        acct = "no key set"
+    else:
+        code, b = get("https://api.elevenlabs.io/v1/user/subscription", {"xi-api-key": k})
+        if code == 200 and "character_limit" in b:
+            left = int(b.get("character_limit") or 0) - int(b.get("character_count") or 0)
+            reset = b.get("next_character_count_reset_unix")
+            when = (", resets " + time.strftime("%b %d", time.localtime(int(reset)))) if reset else ""
+            acct = f"{left:,} of {int(b['character_limit']):,} credits left ({b.get('tier') or '?'} plan{when})"
+        elif code in (401, 403) and "permission" in json.dumps(b).lower():
+            acct = ("this key isn't allowed to read the account balance; give it the 'User: read' permission "
+                    "in ElevenLabs, or see the balance at https://elevenlabs.io/app/subscription")
+        else:
+            acct = key_state(code, b)
+    print(f"  ElevenLabs   account: {acct}")
+    print(f"               YouSNR this month: ${ours['elevenlabs']:.2f} ({secs.get('elevenlabs', 0) / 60:.0f} min of audio)")
+
+    k = (os.environ.get("ASSEMBLYAI_API_KEY") or "").strip()
+    if not k:
+        acct = "no key set"
+    else:
+        code, b = get("https://api.assemblyai.com/v2/transcript?limit=1", {"authorization": k})
+        acct = key_state(code, b)
+        if "balance" in json.dumps(b).lower():
+            acct = "the balance is used up: top up at https://www.assemblyai.com/dashboard/account/billing"
+        else:
+            acct += "; AssemblyAI shows the balance only at https://www.assemblyai.com/dashboard/account/billing"
+    print(f"  AssemblyAI   account: {acct}{told('assemblyai')}")
+    print(f"               YouSNR this month: ${ours['assemblyai']:.2f} ({secs.get('assemblyai', 0) / 60:.0f} min of audio)")
+    if acc is not None:
+        print(f"               word checks together: ${acc.spent_this_month():.2f} of the "
+              f"${acc.settings()['budget']:.2f} monthly cap")
+
+    st = excerpt.settings()
+    if not st["key"]:
+        acct = "no key set"
+    else:
+        code, b = get("https://api.anthropic.com/v1/models", {"x-api-key": st["key"], "anthropic-version": "2023-06-01"})
+        acct = key_state(code, b) + "; the balance is on the Billing page at https://platform.claude.com"
+    print(f"  Claude       account: {acct}{told('claude')}")
+    print(f"               YouSNR this month: ${excerpt.spent():.2f} of ${st['budget']:.2f} "
+          f"({count(made_this_month(excerpt.EX_DIR, 'made'), 'excerpt')})")
+
+    pst = pangram_settings()
+    acct = ("no key set" if not pst["key"] else
+            "YouSNR can't read Pangram's balance; it's on your account page at https://www.pangram.com")
+    print(f"  Pangram      account: {acct}{told('pangram')}")
+    print(f"               YouSNR this month: ${pangram_spent():.2f} of ${pst['budget']:.2f} "
+          f"({count(made_this_month(PG_DIR, 'checked'), 'check')})")
+
+
 def show_status(port=8787, lines=15):
     keeper, server, h = alive(BG_PID, PY_NAMES), alive(SERVER_PID, PY_NAMES), health(port)
     try:
@@ -3075,6 +3316,7 @@ def main():
     ck.add_argument("video", nargs="?", default="cPmVLrTA8AU")
     ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
     ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
+    sub.add_parser("balances", help="what's left in each paid service's account, and this month's spending")
     ex = sub.add_parser("excerpt", help="make (or remake) the 'In their words' fragments for videos now")
     ex.add_argument("videos", nargs="+")
     fg = sub.add_parser("forget", help="clear a remembered 'no captions'/'unavailable' result so it's tried again now")
@@ -3270,6 +3512,9 @@ def main():
         show_status(args.port)
     if args.cmd == "autostart":
         set_autostart(args.switch == "on")
+    if args.cmd == "balances":
+        show_balances()
+
     if args.cmd == "excerpt":
         if not excerpt.settings()["key"]:
             sys.exit("Set ANTHROPIC_API_KEY first (see README).")

@@ -110,8 +110,18 @@ def _write(path, text):
     os.replace(tmp, path)
 
 
+def lifetime():
+    """Everything YouSNR has spent on Claude (since this was first counted)."""
+    try:
+        u = json.loads(USAGE.read_text(encoding="utf-8"))
+        return float(u.get("total", u.get("spent", 0)))
+    except Exception:
+        return 0.0
+
+
 def _record(cost):
-    _write(USAGE, json.dumps({"month": time.strftime("%Y-%m"), "spent": round(spent() + cost, 5)}))
+    _write(USAGE, json.dumps({"month": time.strftime("%Y-%m"), "spent": round(spent() + cost, 5),
+                              "total": round(lifetime() + cost, 5)}))
 
 
 def result(vid):
