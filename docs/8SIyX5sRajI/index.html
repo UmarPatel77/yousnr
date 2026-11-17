@@ -22,6 +22,12 @@ a{color:inherit;text-decoration:none}
 .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
 .brand{font-size:20px;letter-spacing:-.3px}.you{font-weight:400}.snr{font-weight:800;letter-spacing:.5px}
 .tag{color:var(--mute);font-size:12px}
+.meterbox{margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
+.support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
+.support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
+.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
 .vid h1{font-size:18px;line-height:26px;margin:0 0 4px;font-weight:700}
@@ -81,12 +87,12 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><span class="tag">All signal, no noise</span></div>
+  <div class="top"><a class="brand" href="/"><span class="you">You</span><span class="snr">SNR</span></a><div class="meterbox"><div class="meters" id="meters" hidden aria-label="What's left for each paid service"></div><div class="support" id="support"><span class="lead">♥ Keep these topped up:</span> <span id="donate"><a href="https://buymeacoffee.com/umarhq" target="_blank" rel="noopener">Buy Me a Coffee</a> · <a href="https://github.com/sponsors/UmarPatel77" target="_blank" rel="noopener">GitHub Sponsors</a></span></div></div><span class="tag">All signal, no noise</span></div>
 
   <div class="vid">
     <img src="https://i.ytimg.com/vi/8SIyX5sRajI/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
@@ -397,8 +403,10 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   }
   function pgErr(code){
     var self=!/^(busy|too_short|not_found)$/.test(code||'');   // when YouSNR can't check it, the visitor can
+    var d=document.getElementById('donate'),give=/^pangram_(budget|credits)$/.test(code||'')&&d?
+      '<p>Chip in to add more Pangram checks: '+d.innerHTML+'</p>':'';   // they wanted it and it ran out
     pg.innerHTML='<h4>Couldn’t check with Pangram</h4><p class="mute">'+(PGMSG[code]||'Something went wrong. Try again in a minute.')+'</p>'+
-      (self?pgSelf():'');
+      give+(self?pgSelf():'');
   }
   // Check it yourself: browsers don't let one site fill in another's page, and Pangram has no link that
   // pre-fills its text box, so one click copies the same words YouSNR would send and opens Pangram.
@@ -435,6 +443,20 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     pgb.setAttribute('aria-pressed',on);pg.classList.toggle('hidden',!on);
     if(on&&!pg.innerHTML)(pgd?pgCard(pgd):pgOffer());
   };
+  // Header: what's left for each paid service, live from the server (hidden if it's offline)
+  (function(){
+    var m=document.getElementById('meters');if(!m)return;
+    fetch(api+'/api/meters').then(function(r){return r.ok?r.json():null}).then(function(j){
+      if(!j||!j.tiles||!j.tiles.length)return;
+      m.innerHTML=j.tiles.map(function(t){
+        return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
+      }).join('');
+      m.hidden=false;
+      if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
+        var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
+      }
+    }).catch(function(){});
+  })();
   function wireCut(){                             // "In their words": a fragment jumps to where it was said
     var cut=document.getElementById('cut');
     if(cut)cut.addEventListener('click',function(ev){
