@@ -1661,7 +1661,7 @@ def write_indexes(index=None):
     index = _load_index() if index is None else index
     items = sorted(({"id": k, **v} for k, v in index.items()), key=lambda d: d.get("added") or "", reverse=True)
     DOCS.mkdir(exist_ok=True)
-    home = (TEMPLATES / "home.html").read_text(encoding="utf-8")       # no public list of past videos
+    home = (TEMPLATES / "home.html").read_text(encoding="utf-8").replace("{{DONATE}}", donate_links())   # no public list of past videos
     (DOCS / "index.html").write_text(home, encoding="utf-8")
     (DOCS / "404.html").write_text((TEMPLATES / "404.html").read_text(encoding="utf-8"), encoding="utf-8")
     (DOCS / "CNAME").write_text("yousnr.com\n", encoding="utf-8")
