@@ -5,3 +5,4 @@ requests
 imageio-ffmpeg
 wordfreq
 PySocks
+Pillow

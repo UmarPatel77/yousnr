@@ -27,6 +27,7 @@ try:
 except Exception:                              # pragma: no cover
     acc = None
 import excerpt                                 # "In their words" (excerpt.py next to this file)
+import frames                                  # video frames for each line (frames.py)
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -351,6 +352,9 @@ def meta_from_player(pr):
              description=vd.get("shortDescription", ""), duration=int(vd.get("lengthSeconds") or 0),
              category=mf.get("category", ""), music_type=vd.get("musicVideoType", ""))
     m["chapters"] = chapters_from_description(m["description"])
+    sb = (((pr or {}).get("storyboards") or {}).get("playerStoryboardSpecRenderer") or {}).get("spec") or (pr or {}).get("sb")
+    if sb:
+        m["storyboard_spec"] = sb                # YouTube's preview frames (frames.py)
     return m
 
 
@@ -529,6 +533,10 @@ def _get_transcript(vid, meta, lang, browser, show, player, allow_music):
         d["chapters"] = chapters
     d.update(segments=segs, track=track, source="youtube")
     save(d)
+    try:
+        frames.from_video(d)
+    except Exception:
+        pass
     write_page(d)
     write_indexes()
     return d
@@ -825,7 +833,8 @@ _PLAYER_INFO_JS = r"""() => { try {
   return {videoDetails: r.videoDetails || null, microformat: r.microformat || null, audio: audio,
           captions: ct.map(x => ({code: x.languageCode || '', kind: x.kind || '',
                                   name: x.name ? (x.name.simpleText || (x.name.runs || []).map(t => t.text).join('')) : ''})),
-          gl: c ? (c.gl || '') : '', hl: c ? (c.hl || '') : ''};
+          gl: c ? (c.gl || '') : '', hl: c ? (c.hl || '') : '',
+          sb: ((r.storyboards || {}).playerStoryboardSpecRenderer || {}).spec || ''};
 } catch (e) { return null } }"""
 
 # Switch the player to the original audio track. YouTube's audio-track objects aren't documented, so
@@ -1551,6 +1560,7 @@ def render_page(d):
                .replace("{{PGSEL}}", pangram_pick_json(d) if (pangram_settings()["key"] or pg) else "null")
                .replace("{{CUT}}", excerpt.html(vid, e))
                .replace("{{DONATE}}", donate_links())
+               .replace("{{FRAMES}}", frames.page_json(vid))
                .replace("{{ADDED}}", e(d.get("added") or ""))
                .replace("{{PANGRAM}}", json.dumps(pg, ensure_ascii=False).replace("</", "<\\/"))
                .replace("{{ROWS}}", "\n".join(rows)))
@@ -2609,6 +2619,11 @@ def serve(port=8787, lang="en", push=True, push_every=PUSH_EVERY, host="127.0.0.
             fetcher.push_soon = True
     excerpter = excerpt.Excerpter(excerpt_done, views=lambda: dict(corrector.views)).start()
     corrector.after_check = fetcher.on_new = excerpter.now
+
+    def frames_done(vid):                        # put the scored frames on the page and publish it
+        write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
+        fetcher.pending.append(vid)
+    frames.Framer(frames_done, ytdlp_info=_ytdlp_info, get=_yt_get).start()
     if push:
         threading.Thread(target=publisher, args=(fetcher, push_every), daemon=True).start()
     print("YouSNR is ON" + {"service": "  (as a service)", "background": "  (in the background)"}.get(
@@ -2989,6 +3004,20 @@ def meters():
     return {"tiles": tiles[:4]}
 
 
+def _ytdlp_info(vid):
+    import yt_dlp
+    opts = {"quiet": True, "no_warnings": True, "skip_download": True, **yt_dlp_net_opts()}
+    with yt_dlp.YoutubeDL(opts) as y:
+        return y.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
+
+
+def _yt_get(url):
+    import requests
+    r = requests.get(url, proxies=yt_requests_proxies(), timeout=30, headers={"User-Agent": UA})
+    r.raise_for_status()
+    return r.content
+
+
 def show_balances():
     """What's left in each service's account (where the service will say) and what YouSNR has spent on it
     this month. Only ElevenLabs reports a balance through its API; for the others this checks the key
@@ -3317,6 +3346,9 @@ def main():
     ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
     ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
     sub.add_parser("balances", help="what's left in each paid service's account, and this month's spending")
+    fr = sub.add_parser("frames", help="find and score YouTube's preview frames for videos now (all without them: --all)")
+    fr.add_argument("videos", nargs="*")
+    fr.add_argument("--all", action="store_true")
     ex = sub.add_parser("excerpt", help="make (or remake) the 'In their words' fragments for videos now")
     ex.add_argument("videos", nargs="+")
     fg = sub.add_parser("forget", help="clear a remembered 'no captions'/'unavailable' result so it's tried again now")
@@ -3514,6 +3546,17 @@ def main():
         set_autostart(args.switch == "on")
     if args.cmd == "balances":
         show_balances()
+
+    if args.cmd == "frames":
+        fm = frames.Framer(lambda v: None, ytdlp_info=_ytdlp_info, get=_yt_get)
+        vids = fm.todo() if args.all else [video_id(v) for v in args.videos]
+        for vid in vids:
+            try:
+                fm.one(vid)
+                write_page(json.loads((DATA / f"{vid}.json").read_text(encoding="utf-8")))
+            except Exception as fr_err:
+                print(f"  {vid}: failed: {fr_err.__class__.__name__}: {str(fr_err)[:200]}")
+        print("Saved. The server publishes them with the next new page (or run deploy/update.sh).")
 
     if args.cmd == "excerpt":
         if not excerpt.settings()["key"]:
