@@ -712,5 +712,284 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-18T20:23:43+00:00"
+ "added": "2026-11-18T20:23:43+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-18T15:23:43",
+  "lines": {
+   "2": [
+    [
+     "conflicted. Right now, my son is watching YouTube. I can check and see what he's watching. Let's check. I bet it's Geometry Dash. He was watching Mark",
+     null
+    ],
+    [
+     "Rober",
+     "Robber"
+    ],
+    [
+     "when I left him, but he knows I",
+     null
+    ]
+   ],
+   "4": [
+    [
+     "was diagnosed with",
+     null
+    ],
+    [
+     "Hodgkin",
+     "Hodkin"
+    ],
+    [
+     "lymphoma which meant that suddenly everybody in the house was very busy and very stressed. I could not do my work as well. I could not help with parenting as much.",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "think that they should choose their own videos. I really don't think that kids should be on shorts or",
+     null
+    ],
+    [
+     "Reels",
+     "reals"
+    ],
+    [
+     "or",
+     null
+    ],
+    [
+     "TikTok",
+     "Tik Tok"
+    ],
+    [
+     "at all where the algorithm chooses everything for them. It's just like I",
+     null
+    ]
+   ],
+   "26": [
+    [
+     "those with",
+     null
+    ],
+    [
+     "Oren.",
+     "Orin."
+    ],
+    [
+     "That's not an algorithm. That's selected for and curated by his mom. But you can for a kids account make it so that",
+     null
+    ],
+    [
+     "Short",
+     "shorts"
+    ]
+   ],
+   "42": [
+    [
+     "Like the first time I got like an usable beta test of this thing, I gave it to",
+     null
+    ],
+    [
+     "Oren.",
+     "Orin."
+    ],
+    [
+     "We were at a gate in an airport.",
+     null
+    ]
+   ],
+   "54": [
+    [
+     "Ultimately, YouTube's recommendation system is designed to identify the stuff that a kid is",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "like and then give them a chance to watch that. And sometimes what my kid wants to watch is",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "from",
+     null
+    ],
+    [
+     "base-level",
+     "base level"
+    ],
+    [
+     "DNA, YouTube is advertising funded. They have spent many years optimizing their recommendation systems for engagement. And that",
+     null
+    ]
+   ],
+   "72": [
+    [
+     "the YouTube Kids app the watch time",
+     "watchtime"
+    ],
+    [
+     "limits stop kids in the middle of a video. In 2016, I pitched YouTube on building a playlist that perfectly fit a stop time. 10 years ago, the",
+     null
+    ]
+   ],
+   "90": [
+    [
+     "What's it called? Roku.",
+     null
+    ],
+    [
+     "Ha",
+     ""
+    ],
+    [
+     "We want to get on Roku. We want to get on all TV stuff.",
+     null
+    ]
+   ]
+  },
+  "fixes": 11,
+  "checked_seconds": 194.2,
+  "usd": 0.0283,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:19",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:28",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:06",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:26",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:55",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:03",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:20",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:28",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:30",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:53",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "7:02",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "7:31",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "8:00",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:11",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:43",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:23",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:29",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "12:46",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
