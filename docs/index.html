@@ -20,11 +20,23 @@ input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--fg);b
 input:focus{border-color:var(--accent)}
 button{border:0;background:var(--fg);color:var(--bg);border-radius:20px;padding:0 18px;font:500 14px Roboto,Arial,sans-serif;cursor:pointer}
 code{background:var(--chip);padding:1px 6px;border-radius:4px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;margin:0 0 6px}
+.head h1{margin:0}
+.meterbox{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
+.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meter.low b{color:#e5484d}
+.support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
+.support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
+@media (max-width:520px){.head{margin-bottom:12px}.meterbox{width:100%}.meters{width:100%;grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1><span class="you">You</span><span class="snr">SNR</span></h1>
+  <div class="head">
+    <h1><span class="you">You</span><span class="snr">SNR</span></h1>
+    <div class="meterbox"><div class="meters" id="meters" hidden aria-label="What's left for each paid service"></div><div class="support" id="support"><span class="lead">♥ Keep these topped up:</span> <span id="donate"><a href="https://buymeacoffee.com/umarhq" target="_blank" rel="noopener">Buy Me a Coffee</a> · <a href="https://github.com/sponsors/UmarPatel77" target="_blank" rel="noopener">GitHub Sponsors</a></span></div></div>
+  </div>
   <p><strong>All signal, no noise.</strong> Swap <code>tube</code> for <code>snr</code> in any YouTube link to read the video instead of watching it.</p>
   <form id="f"><input id="u" placeholder="Paste a YouTube link or video ID" autocomplete="off"><button>Open</button></form>
 </div>
@@ -32,6 +44,21 @@ code{background:var(--chip);padding:1px 6px;border-radius:4px}
 document.getElementById('f').onsubmit=function(e){e.preventDefault();
   var s=document.getElementById('u').value.trim(),m=s.match(/(?:v=|\/)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])/)||s.match(/^([A-Za-z0-9_-]{11})$/);
   if(m)location.href='/'+m[1]+'/';};
+// What's left for each paid service, live from the server (hidden if it's offline); same as on transcript pages
+(function(){
+  var api=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'':'https://api.yousnr.com',m=document.getElementById('meters');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  fetch(api+'/api/meters').then(function(r){return r.ok?r.json():null}).then(function(j){
+    if(!j||!j.tiles||!j.tiles.length)return;
+    m.innerHTML=j.tiles.map(function(t){
+      return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
+    }).join('');
+    m.hidden=false;
+    if(j.tiles.some(function(t){return t.low})){
+      var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
+    }
+  }).catch(function(){});
+})();
 </script>
 </body>
 </html>
