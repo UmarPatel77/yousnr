@@ -58,6 +58,15 @@ a{color:inherit;text-decoration:none}
 .ch:first-child{margin-top:12px}
 .seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
 .seg:hover{background:var(--hover)}
+.hasframes .seg{touch-action:manipulation;cursor:pointer}.seg.open{background:var(--hover)}
+.peek{margin:2px 16px 12px;padding:10px;border:1px solid var(--line);border-radius:12px}
+.peek .big{max-width:100%;border-radius:8px;background-color:var(--chip);background-repeat:no-repeat}
+.peek .strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.peek .strip .frame{border-radius:4px;background-color:var(--chip);background-repeat:no-repeat;cursor:pointer;outline-offset:1px}
+.peek .strip .frame.on{outline:2px solid var(--accent)}.peek .strip .frame.star{position:relative}
+.peek .strip .frame.star:after{content:'★';position:absolute;right:3px;top:0;font-size:12px;color:#f5a524;text-shadow:0 0 2px #000}
+.peek .cap{margin-top:8px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.peek .cap a{color:var(--accent)}
 .seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .seg .tx{display:block;font-size:14px;line-height:20px}
 .nots .seg .ts{display:none}
@@ -168,6 +177,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "You definitely need some patience. Yeah, but the the here's the problem. Here's the problem. When you have a remote company, if you give somebody eight months to ramp up and get better, then you're paying somebody for eight months who's working five jobs and lying to you about how they're trying to understand and get better and all that, right? So, you just can't tolerate that Like, someone needs to ramp up in one month or two months or they're gone. And that's just the new reality of the situation because paying a programmer for eight months is $200,000. That's expensive. So, you just can't you can't do it. And I'm sorry, you know, for people who genuinely need that ramp up time. I'm sorry, but it's one of those things where the the abusive people have just changed the play field for the honest people. Right? If you're honest and you need more of a ramp up, we just can't do it anymore because we do it five times in a row and Lucy keeps pulling away the football right when we're about to kick it. Eight months ramp up time. I mean, you'd be surprised. Like, so games are complicated. Every game has its own way of doing things. uh we ask people to not only get used to a new game but a new engine and a new programming language right so like historically I would give people a while just to acclimate but like at this point no it's like I'm sorry it has to be two months or less and that's just the reality and if that makes it harder to find people who can do that which it does then that just drastically limits who we can hire. But that's just the re I've been like I've been with on this matter so many times. I It's And it's so disrespectful and horrible. Like I simply don't have the patience for it anymore. I I just have better things to do in life than pretend like people aren't being dishonest. And you know, $200,000 for eight months is too much. Well, we have to pay for people's health insurance and all sorts of just weird taxes and stuff in the US. So, you know, if your programmer's salary is like $200,000 a year, eight months is twothirds of that, right?", "words": 397, "whole": false, "from": 33.0, "to": 201.0}</script>
+<script type="application/json" id="framesdata">null</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -419,6 +429,70 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       }
     }).catch(function(){});
   })();
+  // Video frames: click a line or paragraph to see what the video looked like then (YouTube's own preview
+  // frames, a few seconds apart); the big one is the frame that stands out most in that stretch, like a slide
+  // that's only up for a second. Double-click a line to watch it on YouTube.
+  var fr=null;try{fr=JSON.parse(document.getElementById('framesdata').textContent)}catch(e){}
+  if(fr&&fr.url&&fr.count){
+    panel.classList.add('hasframes');
+    var foot=document.querySelector('.foot');
+    if(foot)foot.firstChild.textContent='Click a line or paragraph to see the video at that moment; double-click it (or use Watch) to open it on YouTube.';
+  }else fr=null;
+  function frameBox(i,width){
+    var per=fr.cols*fr.rows,sheet=Math.floor(i/per),k=i%per,c=k%fr.cols,r=Math.floor(k/fr.cols),s=width/fr.w,d=document.createElement('div');
+    d.style.width=width+'px';d.style.height=Math.round(fr.h*s)+'px';
+    d.style.backgroundImage='url("'+fr.url.replace('$M',sheet)+'")';
+    d.style.backgroundSize=(fr.cols*fr.w*s)+'px '+(fr.rows*fr.h*s)+'px';
+    d.style.backgroundPosition=(-c*fr.w*s)+'px '+(-r*fr.h*s)+'px';
+    return d;
+  }
+  function closePeek(){
+    body.querySelectorAll('.peek').forEach(function(p){p.remove()});
+    body.querySelectorAll('.seg.open').forEach(function(a){a.classList.remove('open')});
+  }
+  function openPeek(row){
+    closePeek();
+    var rows=panel.classList.contains('paramode')?prow:segs,n=rows.indexOf(row),t0=+row.dataset.s;
+    var t1=rows[n+1]?+rows[n+1].dataset.s:t0+(+row.dataset.d||8);
+    var i0=Math.min(fr.count-1,Math.floor(t0/fr.step)),i1=Math.max(i0,Math.min(fr.count-1,Math.ceil(t1/fr.step)-1)),best=i0;
+    var bs=29;                                    // only a frame that clearly stands out beats the first one
+    if(fr.score)for(var i=i0;i<=i1;i++)if((fr.score[i]||0)>bs){best=i;bs=fr.score[i]}
+    var pick=[];
+    if(i1-i0+1<=12){for(i=i0;i<=i1;i++)pick.push(i)}
+    else{for(i=0;i<12;i++)pick.push(i0+Math.round(i*(i1-i0)/11));if(pick.indexOf(best)<0){pick[pick.length-1]=best;pick.sort(function(a,b){return a-b})}}
+    var p=document.createElement('div'),W=Math.min(480,body.clientWidth-56);p.className='peek';
+    var big=frameBox(best,W);big.className='big';p.appendChild(big);
+    var strip=document.createElement('div');strip.className='strip';
+    if(pick.length>1)pick.forEach(function(i){
+      var f=frameBox(i,Math.min(96,Math.floor((W-66)/6)));f.className='frame'+(i===best?' on':'')+(fr.score&&i===best&&fr.score[i]>=30?' star':'');
+      f.title=clock(i*fr.step);f.onclick=function(ev){ev.stopPropagation();show(i)};strip.appendChild(f);
+    });
+    if(pick.length>1)p.appendChild(strip);
+    var cap=document.createElement('div');cap.className='cap';p.appendChild(cap);
+    function show(i){
+      var nb=frameBox(i,W);big.style.cssText=nb.style.cssText;
+      strip.querySelectorAll('.frame').forEach(function(f,k){f.classList.toggle('on',pick[k]===i)});
+      var t=Math.floor(i*fr.step);
+      cap.innerHTML='<span>'+clock(t)+(fr.score&&i===best&&fr.score[i]>=30?' · stands out in this stretch':'')+
+        ' · YouTube’s preview frame</span><a href="https://www.youtube.com/watch?v=S_dCWKJdunw&t='+t+'s" target="_blank" rel="noopener">Watch from '+clock(t)+' ↗</a>';
+    }
+    show(best);
+    var probe=new Image();probe.onerror=function(){p.innerHTML='<div class="cap">YouTube’s preview frames aren’t available for this video right now. <a href="'+row.href+'" target="_blank" rel="noopener">Watch from '+clock(t0)+' ↗</a></div>'};
+    probe.src=fr.url.replace('$M',Math.floor(best/(fr.cols*fr.rows)));
+    row.classList.add('open');row.parentNode.insertBefore(p,row.nextSibling);
+  }
+  if(fr){
+    body.addEventListener('click',function(ev){
+      if(ev.target.closest('.peek'))return;
+      var a=ev.target.closest('a.seg');if(!a||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.button)return;
+      ev.preventDefault();
+      if(a.classList.contains('open'))closePeek();else openPeek(a);
+    });
+    body.addEventListener('dblclick',function(ev){
+      var a=ev.target.closest('a.seg');if(!a)return;ev.preventDefault();closePeek();window.open(a.href,'_blank','noopener');
+    });
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape')closePeek()});
+  }
   function wireCut(){                             // "In their words": a fragment jumps to where it was said
     var cut=document.getElementById('cut');
     if(cut)cut.addEventListener('click',function(ev){

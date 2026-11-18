@@ -58,6 +58,15 @@ a{color:inherit;text-decoration:none}
 .ch:first-child{margin-top:12px}
 .seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
 .seg:hover{background:var(--hover)}
+.hasframes .seg{touch-action:manipulation;cursor:pointer}.seg.open{background:var(--hover)}
+.peek{margin:2px 16px 12px;padding:10px;border:1px solid var(--line);border-radius:12px}
+.peek .big{max-width:100%;border-radius:8px;background-color:var(--chip);background-repeat:no-repeat}
+.peek .strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.peek .strip .frame{border-radius:4px;background-color:var(--chip);background-repeat:no-repeat;cursor:pointer;outline-offset:1px}
+.peek .strip .frame.on{outline:2px solid var(--accent)}.peek .strip .frame.star{position:relative}
+.peek .strip .frame.star:after{content:'★';position:absolute;right:3px;top:0;font-size:12px;color:#f5a524;text-shadow:0 0 2px #000}
+.peek .cap{margin-top:8px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.peek .cap a{color:var(--accent)}
 .seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .seg .tx{display:block;font-size:14px;line-height:20px}
 .nots .seg .ts{display:none}
@@ -206,6 +215,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "Ever since writing on paper became a constant in my life, I started to have more free time that otherwise would have been spent doom scrolling. My attention grows, giving more space for activities that isn't just fun, but also really fulfilling. If you're keen to see what it's like to be content instead of consumed, stick around. I'll show you. Guys, I love my journal. I'm really excited to talk about this today, and I hope you'd give me the privilege to ramble a bit as to why. First of all, having a physical journal is like being told that you have all the time and space in the world to gather your thoughts. You can pause mid-sentence and make mistakes. There won't be a black bar blinking while you think or an imaginary red line telling you this is a mistake. Fix it now. There are no pop-ups selling ways to improve what you have to say, how to sound more confident, more intelligent, cuz on paper, you can learn to actually be confident, be intelligent. It allows you to be who you are, to wield your voice as is, and hone it in your own ways at your own pace. Secondly, writing on paper reminds us that we are free. See, you can write slanted, skip spaces, doodle mid-sentence without needing to click or switch or scroll. There is nothing holding you back from drawing. No limitations of only having a keyboard or the software does not support this function. On Paper, writing and drawing can coexist in the same space. You can dictate how you want to write and where you want to write. You don't need to sit in a place with a PowerPoint. You don't need to avoid the sun because a glare makes the screen hard to read. And you can sit anywhere, anytime with a book and a pen in your hand, the world is your oyster. Thirdly, journaling teaches you that your words mean something, that your thoughts and feelings matters and you don't need the world to validate it for you. Because by existing on the page, it is already valid. You don't need some comment to tell you you're right or thousands of likes to confirm your belief. You don't need to perform. You don't need to be more than who you are.", "words": 394, "whole": false, "from": 20.68, "to": 181.84}</script>
+<script type="application/json" id="framesdata">null</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -457,6 +467,70 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       }
     }).catch(function(){});
   })();
+  // Video frames: click a line or paragraph to see what the video looked like then (YouTube's own preview
+  // frames, a few seconds apart); the big one is the frame that stands out most in that stretch, like a slide
+  // that's only up for a second. Double-click a line to watch it on YouTube.
+  var fr=null;try{fr=JSON.parse(document.getElementById('framesdata').textContent)}catch(e){}
+  if(fr&&fr.url&&fr.count){
+    panel.classList.add('hasframes');
+    var foot=document.querySelector('.foot');
+    if(foot)foot.firstChild.textContent='Click a line or paragraph to see the video at that moment; double-click it (or use Watch) to open it on YouTube.';
+  }else fr=null;
+  function frameBox(i,width){
+    var per=fr.cols*fr.rows,sheet=Math.floor(i/per),k=i%per,c=k%fr.cols,r=Math.floor(k/fr.cols),s=width/fr.w,d=document.createElement('div');
+    d.style.width=width+'px';d.style.height=Math.round(fr.h*s)+'px';
+    d.style.backgroundImage='url("'+fr.url.replace('$M',sheet)+'")';
+    d.style.backgroundSize=(fr.cols*fr.w*s)+'px '+(fr.rows*fr.h*s)+'px';
+    d.style.backgroundPosition=(-c*fr.w*s)+'px '+(-r*fr.h*s)+'px';
+    return d;
+  }
+  function closePeek(){
+    body.querySelectorAll('.peek').forEach(function(p){p.remove()});
+    body.querySelectorAll('.seg.open').forEach(function(a){a.classList.remove('open')});
+  }
+  function openPeek(row){
+    closePeek();
+    var rows=panel.classList.contains('paramode')?prow:segs,n=rows.indexOf(row),t0=+row.dataset.s;
+    var t1=rows[n+1]?+rows[n+1].dataset.s:t0+(+row.dataset.d||8);
+    var i0=Math.min(fr.count-1,Math.floor(t0/fr.step)),i1=Math.max(i0,Math.min(fr.count-1,Math.ceil(t1/fr.step)-1)),best=i0;
+    var bs=29;                                    // only a frame that clearly stands out beats the first one
+    if(fr.score)for(var i=i0;i<=i1;i++)if((fr.score[i]||0)>bs){best=i;bs=fr.score[i]}
+    var pick=[];
+    if(i1-i0+1<=12){for(i=i0;i<=i1;i++)pick.push(i)}
+    else{for(i=0;i<12;i++)pick.push(i0+Math.round(i*(i1-i0)/11));if(pick.indexOf(best)<0){pick[pick.length-1]=best;pick.sort(function(a,b){return a-b})}}
+    var p=document.createElement('div'),W=Math.min(480,body.clientWidth-56);p.className='peek';
+    var big=frameBox(best,W);big.className='big';p.appendChild(big);
+    var strip=document.createElement('div');strip.className='strip';
+    if(pick.length>1)pick.forEach(function(i){
+      var f=frameBox(i,Math.min(96,Math.floor((W-66)/6)));f.className='frame'+(i===best?' on':'')+(fr.score&&i===best&&fr.score[i]>=30?' star':'');
+      f.title=clock(i*fr.step);f.onclick=function(ev){ev.stopPropagation();show(i)};strip.appendChild(f);
+    });
+    if(pick.length>1)p.appendChild(strip);
+    var cap=document.createElement('div');cap.className='cap';p.appendChild(cap);
+    function show(i){
+      var nb=frameBox(i,W);big.style.cssText=nb.style.cssText;
+      strip.querySelectorAll('.frame').forEach(function(f,k){f.classList.toggle('on',pick[k]===i)});
+      var t=Math.floor(i*fr.step);
+      cap.innerHTML='<span>'+clock(t)+(fr.score&&i===best&&fr.score[i]>=30?' · stands out in this stretch':'')+
+        ' · YouTube’s preview frame</span><a href="https://www.youtube.com/watch?v=8SIyX5sRajI&t='+t+'s" target="_blank" rel="noopener">Watch from '+clock(t)+' ↗</a>';
+    }
+    show(best);
+    var probe=new Image();probe.onerror=function(){p.innerHTML='<div class="cap">YouTube’s preview frames aren’t available for this video right now. <a href="'+row.href+'" target="_blank" rel="noopener">Watch from '+clock(t0)+' ↗</a></div>'};
+    probe.src=fr.url.replace('$M',Math.floor(best/(fr.cols*fr.rows)));
+    row.classList.add('open');row.parentNode.insertBefore(p,row.nextSibling);
+  }
+  if(fr){
+    body.addEventListener('click',function(ev){
+      if(ev.target.closest('.peek'))return;
+      var a=ev.target.closest('a.seg');if(!a||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.button)return;
+      ev.preventDefault();
+      if(a.classList.contains('open'))closePeek();else openPeek(a);
+    });
+    body.addEventListener('dblclick',function(ev){
+      var a=ev.target.closest('a.seg');if(!a)return;ev.preventDefault();closePeek();window.open(a.href,'_blank','noopener');
+    });
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape')closePeek()});
+  }
   function wireCut(){                             // "In their words": a fragment jumps to where it was said
     var cut=document.getElementById('cut');
     if(cut)cut.addEventListener('click',function(ev){

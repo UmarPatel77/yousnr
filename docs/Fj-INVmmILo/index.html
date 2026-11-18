@@ -58,6 +58,15 @@ a{color:inherit;text-decoration:none}
 .ch:first-child{margin-top:12px}
 .seg{display:block;padding:8px 16px;border-radius:8px;margin:0 4px}
 .seg:hover{background:var(--hover)}
+.hasframes .seg{touch-action:manipulation;cursor:pointer}.seg.open{background:var(--hover)}
+.peek{margin:2px 16px 12px;padding:10px;border:1px solid var(--line);border-radius:12px}
+.peek .big{max-width:100%;border-radius:8px;background-color:var(--chip);background-repeat:no-repeat}
+.peek .strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.peek .strip .frame{border-radius:4px;background-color:var(--chip);background-repeat:no-repeat;cursor:pointer;outline-offset:1px}
+.peek .strip .frame.on{outline:2px solid var(--accent)}.peek .strip .frame.star{position:relative}
+.peek .strip .frame.star:after{content:'★';position:absolute;right:3px;top:0;font-size:12px;color:#f5a524;text-shadow:0 0 2px #000}
+.peek .cap{margin-top:8px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.peek .cap a{color:var(--accent)}
 .seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .seg .tx{display:block;font-size:14px;line-height:20px}
 .nots .seg .ts{display:none}
@@ -237,6 +246,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "One of the things that has always mattered most to me in terms of inspiring me to take action is money since we're being honest. I don't know. I think a lot of people feel this way, even if it might be taboo to say so. But the good news is beyond making life less stressful, which is important to me, I don't actually need to receive the money. It doesn't need to hit my bank account. Which means raising money for Partners in Health is also something I find very rewarding. Which means paying artists and product designers to make absolutely amazing Pizzamas stuff, which this is your last chance to get ever, and then the profit gets donated to Partners and Health. All of that is motivating to me. I honestly think a huge piece of productivity is external, and it is a thing that we can give to each other. People care about the feelings and thoughts of people so much. so much that often we are afraid of it and we hide from it. But give people chances and pay attention when someone might be taking a chance on you. Pretending it all rests on the individual to figure it out defies everything that I have experienced as a person who makes things in the world, but also everything we know about the science of what actually cultivates creation. I don't want to produce things because productivity matters to me. I think that I produce things because like Pizzamas matters to me, Nerdfighteria matters to me. John, you matter to me. Cancer treatment and crash course and SciShow and 4x3 and the media environment all matter to me and I have opportunities to work on or communicate about those things because a whole lot of people have taught me and trusted me and helped me. But let me tell you something. If it was about how much self-control I had, how much grit or determination I had, I would not be making more things. I would be making fewer things. And that brings me to the biggest lie that we tell about productivity or laziness. You can tell nothing about a person's self-control or grit or fortitude from the amount of work they got done. At times I have like worked a lot of hours while being quite lazy.", "words": 393, "whole": false, "from": 504.0, "to": 637.0}</script>
+<script type="application/json" id="framesdata">null</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -488,6 +498,70 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       }
     }).catch(function(){});
   })();
+  // Video frames: click a line or paragraph to see what the video looked like then (YouTube's own preview
+  // frames, a few seconds apart); the big one is the frame that stands out most in that stretch, like a slide
+  // that's only up for a second. Double-click a line to watch it on YouTube.
+  var fr=null;try{fr=JSON.parse(document.getElementById('framesdata').textContent)}catch(e){}
+  if(fr&&fr.url&&fr.count){
+    panel.classList.add('hasframes');
+    var foot=document.querySelector('.foot');
+    if(foot)foot.firstChild.textContent='Click a line or paragraph to see the video at that moment; double-click it (or use Watch) to open it on YouTube.';
+  }else fr=null;
+  function frameBox(i,width){
+    var per=fr.cols*fr.rows,sheet=Math.floor(i/per),k=i%per,c=k%fr.cols,r=Math.floor(k/fr.cols),s=width/fr.w,d=document.createElement('div');
+    d.style.width=width+'px';d.style.height=Math.round(fr.h*s)+'px';
+    d.style.backgroundImage='url("'+fr.url.replace('$M',sheet)+'")';
+    d.style.backgroundSize=(fr.cols*fr.w*s)+'px '+(fr.rows*fr.h*s)+'px';
+    d.style.backgroundPosition=(-c*fr.w*s)+'px '+(-r*fr.h*s)+'px';
+    return d;
+  }
+  function closePeek(){
+    body.querySelectorAll('.peek').forEach(function(p){p.remove()});
+    body.querySelectorAll('.seg.open').forEach(function(a){a.classList.remove('open')});
+  }
+  function openPeek(row){
+    closePeek();
+    var rows=panel.classList.contains('paramode')?prow:segs,n=rows.indexOf(row),t0=+row.dataset.s;
+    var t1=rows[n+1]?+rows[n+1].dataset.s:t0+(+row.dataset.d||8);
+    var i0=Math.min(fr.count-1,Math.floor(t0/fr.step)),i1=Math.max(i0,Math.min(fr.count-1,Math.ceil(t1/fr.step)-1)),best=i0;
+    var bs=29;                                    // only a frame that clearly stands out beats the first one
+    if(fr.score)for(var i=i0;i<=i1;i++)if((fr.score[i]||0)>bs){best=i;bs=fr.score[i]}
+    var pick=[];
+    if(i1-i0+1<=12){for(i=i0;i<=i1;i++)pick.push(i)}
+    else{for(i=0;i<12;i++)pick.push(i0+Math.round(i*(i1-i0)/11));if(pick.indexOf(best)<0){pick[pick.length-1]=best;pick.sort(function(a,b){return a-b})}}
+    var p=document.createElement('div'),W=Math.min(480,body.clientWidth-56);p.className='peek';
+    var big=frameBox(best,W);big.className='big';p.appendChild(big);
+    var strip=document.createElement('div');strip.className='strip';
+    if(pick.length>1)pick.forEach(function(i){
+      var f=frameBox(i,Math.min(96,Math.floor((W-66)/6)));f.className='frame'+(i===best?' on':'')+(fr.score&&i===best&&fr.score[i]>=30?' star':'');
+      f.title=clock(i*fr.step);f.onclick=function(ev){ev.stopPropagation();show(i)};strip.appendChild(f);
+    });
+    if(pick.length>1)p.appendChild(strip);
+    var cap=document.createElement('div');cap.className='cap';p.appendChild(cap);
+    function show(i){
+      var nb=frameBox(i,W);big.style.cssText=nb.style.cssText;
+      strip.querySelectorAll('.frame').forEach(function(f,k){f.classList.toggle('on',pick[k]===i)});
+      var t=Math.floor(i*fr.step);
+      cap.innerHTML='<span>'+clock(t)+(fr.score&&i===best&&fr.score[i]>=30?' · stands out in this stretch':'')+
+        ' · YouTube’s preview frame</span><a href="https://www.youtube.com/watch?v=Fj-INVmmILo&t='+t+'s" target="_blank" rel="noopener">Watch from '+clock(t)+' ↗</a>';
+    }
+    show(best);
+    var probe=new Image();probe.onerror=function(){p.innerHTML='<div class="cap">YouTube’s preview frames aren’t available for this video right now. <a href="'+row.href+'" target="_blank" rel="noopener">Watch from '+clock(t0)+' ↗</a></div>'};
+    probe.src=fr.url.replace('$M',Math.floor(best/(fr.cols*fr.rows)));
+    row.classList.add('open');row.parentNode.insertBefore(p,row.nextSibling);
+  }
+  if(fr){
+    body.addEventListener('click',function(ev){
+      if(ev.target.closest('.peek'))return;
+      var a=ev.target.closest('a.seg');if(!a||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.button)return;
+      ev.preventDefault();
+      if(a.classList.contains('open'))closePeek();else openPeek(a);
+    });
+    body.addEventListener('dblclick',function(ev){
+      var a=ev.target.closest('a.seg');if(!a)return;ev.preventDefault();closePeek();window.open(a.href,'_blank','noopener');
+    });
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape')closePeek()});
+  }
   function wireCut(){                             // "In their words": a fragment jumps to where it was said
     var cut=document.getElementById('cut');
     if(cut)cut.addEventListener('click',function(ev){
