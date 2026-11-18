@@ -1,0 +1,716 @@
+{
+ "id": "oe2fTSL85jA",
+ "title": "I'm Finally Doing It.",
+ "channel": "Hank Green",
+ "published": "20261117",
+ "description": "Here it is: https://clockwisetv.com/?utm_source=youtube&utm_medium=creator&utm_campaign=launch_nov26&utm_content=hank_video_nov17\n\nIf you're a creator and you want to be involved: leslie@clockwisetv.com \n\nFor years people have been like, \"Hank, YouTube is so messed up, why don't you start a competitor\" and while a lot of folks have made things I love like Nebula and Dropout that are asking \"OK, how do we do things differently\" I didn't feel much need to try and make something until I started watching how YouTube works for kids. \n\nI don't think it's evil...but I also don't think it's designed to service families, which I think, pretty obviously, is what a kids media platform should do. \n\nClockwiseTV is a media platform for 6 to 12 year olds with two major decisions baked in:\n\n1. All of the content is curated by human parents. \n2. Every session begins with setting the stop time. It never shows a video that will go over that time and when they time is up the app closes. \n\nI started it with Leslie Morgan who has been in the online and kids media world for over a decade. \n\nIt's still very early days for us...but we think we're ready to be out in the world.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: The challenge of parenting"
+  },
+  {
+   "start": 134,
+   "title": "Chapter 2: Defining parental control"
+  },
+  {
+   "start": 255,
+   "title": "Chapter 3: Introducing Clockwise TV"
+  },
+  {
+   "start": 365,
+   "title": "Chapter 4: Why a new platform is needed"
+  },
+  {
+   "start": 451,
+   "title": "Chapter 5: The design of ending sessions"
+  },
+  {
+   "start": 559,
+   "title": "Chapter 6: Leveraging YouTube's tools"
+  },
+  {
+   "start": 644,
+   "title": "Chapter 7: App mission and logistics"
+  }
+ ],
+ "duration": 824,
+ "category": "People & Blogs",
+ "music_type": "",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 10.0,
+   "text": "I've got a few jobs, but right up at the top, my two most important jobs. Number two, YouTuber. Number one, dad. I've been a part of a community that has helped to build educational YouTube.",
+   "label": "0:00"
+  },
+  {
+   "start": 10.0,
+   "dur": 9.0,
+   "text": "There's no one who believes more in the power of this platform right here to help people learn things and explore and share. Nonetheless, as a dad, I am",
+   "label": "0:10"
+  },
+  {
+   "start": 19.0,
+   "dur": 9.0,
+   "text": "conflicted. Right now, my son is watching YouTube. I can check and see what he's watching. Let's check. I bet it's Geometry Dash. He was watching Mark Robber when I left him, but he knows I",
+   "label": "0:19"
+  },
+  {
+   "start": 28.0,
+   "dur": 7.0,
+   "text": "can do this. He is watching Mullepan who is a Geometry Dash YouTuber. This is his second video in a row that is Geometry Dash related. Around three years ago, I",
+   "label": "0:28"
+  },
+  {
+   "start": 35.0,
+   "dur": 11.0,
+   "text": "was diagnosed with Hodkin lymphoma which meant that suddenly everybody in the house was very busy and very stressed. I could not do my work as well. I could not help with parenting as much.",
+   "label": "0:35"
+  },
+  {
+   "start": 46.0,
+   "dur": 9.0,
+   "text": "Ultimately, YouTube helped a lot in that time. It was a comfort for a kid whose dad was sick and it was a comfort for me to hear him giggling in the next room",
+   "label": "0:46"
+  },
+  {
+   "start": 55.0,
+   "dur": 6.0,
+   "text": "over. And I can always go onto his YouTube history and look at what he's been watching. We can even talk about that. I encourage parents to do this.",
+   "label": "0:55"
+  },
+  {
+   "start": 61.0,
+   "dur": 5.0,
+   "text": "Check out what your kids are into. Try to be into it, too. You wouldn't believe the stuff I know about Geometry Dash.",
+   "label": "1:01"
+  },
+  {
+   "start": 66.0,
+   "dur": 8.0,
+   "text": "TalkI just verified grief, y'all. So, things are happening in the world of Geometry Dash. But sometimes the talks that I have with him, in fact, I had one of these talks with him yesterday are",
+   "label": "1:06"
+  },
+  {
+   "start": 74.0,
+   "dur": 8.0,
+   "text": "about channels that I've blocked. Let's talk about why that content was not within our values. Let's talk about, you know, why I don't think that the government is covering up the existence",
+   "label": "1:14"
+  },
+  {
+   "start": 82.0,
+   "dur": 4.0,
+   "text": "of aliens. And that's not the only like issue that YouTube causes in my house.",
+   "label": "1:22"
+  },
+  {
+   "start": 86.0,
+   "dur": 8.0,
+   "text": "Because look, I know what it is like to be a YouTuber. You need to keep people's attention. You need to fight for the click. I know a lot of the tricks that YouTubers use and that YouTube uses, and",
+   "label": "1:26"
+  },
+  {
+   "start": 94.0,
+   "dur": 9.0,
+   "text": "I see them being used on my son, and those tricks are literally designed to make it hard to stop watching. So, it's not surprising that from what I can",
+   "label": "1:34"
+  },
+  {
+   "start": 103.0,
+   "dur": 8.0,
+   "text": "tell, I share a problem with a lot of other parents, which is that a fair number of household fights and frustrations are over when and how to",
+   "label": "1:43"
+  },
+  {
+   "start": 111.0,
+   "dur": 7.0,
+   "text": "stop watching. So, I want to talk about the tools that YouTube gives you, which I think are there, but inadequate. But I also don't think that banning YouTube",
+   "label": "1:51"
+  },
+  {
+   "start": 118.0,
+   "dur": 8.0,
+   "text": "for kids is the solution. I don't even think that banning YouTube for kids actually bans YouTube for kids. I think it bans kids from using YouTube logged",
+   "label": "1:58"
+  },
+  {
+   "start": 126.0,
+   "dur": 8.0,
+   "text": "in, which I think makes it less safe and a worse experience for kids. But I also think that there is another thing here, another thing to do, which is I don't",
+   "label": "2:06"
+  },
+  {
+   "start": 134.0,
+   "dur": 8.0,
+   "text": "know, maybe YouTube should have some competition that is designed primarily to be useful for families, not just that is sort of designed the way all of",
+   "label": "2:14"
+  },
+  {
+   "start": 142.0,
+   "dur": 8.0,
+   "text": "YouTube is designed, which is to provide something that you're always going to want to watch. Which, spoiler, you can check the description if you want to see what I've been working on. I've been",
+   "label": "2:22"
+  },
+  {
+   "start": 150.0,
+   "dur": 9.0,
+   "text": "working on something. This isn't like a super secret, but I'm This is like an actual launch video. So, I've actually got a little bit of parenting philosophy here to share that. I hope it's okay",
+   "label": "2:30"
+  },
+  {
+   "start": 159.0,
+   "dur": 8.0,
+   "text": "that I do this, but I think that parents are in charge up to a certain age. Of course, I think that parents are in charge. I think that like the parent of",
+   "label": "2:39"
+  },
+  {
+   "start": 167.0,
+   "dur": 8.0,
+   "text": "a 9-year-old is in charge, and we should make choices that are good for our kids, and we should help our kids make good choices for themselves. And ideally, we",
+   "label": "2:47"
+  },
+  {
+   "start": 175.0,
+   "dur": 8.0,
+   "text": "should not let all of those choices be made by an algorithm. So, I have a few problems with YouTube and kids that are small. Like, I don't love autoplay. I",
+   "label": "2:55"
+  },
+  {
+   "start": 183.0,
+   "dur": 8.0,
+   "text": "think that they should choose their own videos. I really don't think that kids should be on shorts or reals or Tik Tok at all where the algorithm chooses everything for them. It's just like I",
+   "label": "3:03"
+  },
+  {
+   "start": 191.0,
+   "dur": 9.0,
+   "text": "mean ultimate content slot machine. That is like a big deal for me. My child has never used any of those things. I mean he's looked over my shoulder. That's the",
+   "label": "3:11"
+  },
+  {
+   "start": 200.0,
+   "dur": 8.0,
+   "text": "extent and I don't even like that. You know, I don't know what's going to come up next. Mostly what we do is we look at the reels that Catherine sent me. So like Katherine sent me reels. I'll watch",
+   "label": "3:20"
+  },
+  {
+   "start": 208.0,
+   "dur": 8.0,
+   "text": "those with Orin. That's not an algorithm. That's selected for and curated by his mom. But you can for a kids account make it so that shorts",
+   "label": "3:28"
+  },
+  {
+   "start": 216.0,
+   "dur": 11.0,
+   "text": "never shows up. So that's good and you should do that. But I have two big problems that I do not have solutions for that are introduced into my life by YouTube. Number one, my son ending up watching things I'd rather he not watch.",
+   "label": "3:36"
+  },
+  {
+   "start": 227.0,
+   "dur": 1.0,
+   "text": "Like there's kind of three buckets.",
+   "label": "3:47"
+  },
+  {
+   "start": 228.0,
+   "dur": 9.0,
+   "text": "There's stuff I'm kind of proud he's watching. There's stuff that's fine, you know, trick shots and Geometry Dash and all of that. And then there's stuff where I'm like, h, we have to have a talk about this. So that third thing is",
+   "label": "3:48"
+  },
+  {
+   "start": 237.0,
+   "dur": 9.0,
+   "text": "is a real problem for me. But number two, wanting as a parent to end the viewing session, but needing to have a negotiation every time, even if we had",
+   "label": "3:57"
+  },
+  {
+   "start": 246.0,
+   "dur": 9.0,
+   "text": "already agreed that he'd only watch for an hour. I do not think that I'm alone in these problems. I hear about them from a lot of my friends, which is why about a year ago, I finally made up my",
+   "label": "4:06"
+  },
+  {
+   "start": 255.0,
+   "dur": 8.0,
+   "text": "mind to do a thing I'd been planning to do. Like, I had this idea like maybe we could make an app that just like had just the good parts of YouTube or it just like stuff I'd be proud to have him",
+   "label": "4:15"
+  },
+  {
+   "start": 263.0,
+   "dur": 7.0,
+   "text": "watching. And that was kind of not a good enough idea for me to throw a bunch of money into. But then I had another idea which made it like really obvious that I actually should put a substantial",
+   "label": "4:23"
+  },
+  {
+   "start": 270.0,
+   "dur": 8.0,
+   "text": "portion of my personal wealth into building this thing which is called Clockwise TV. It is an app for kids six and over. It is designed to help with",
+   "label": "4:30"
+  },
+  {
+   "start": 278.0,
+   "dur": 8.0,
+   "text": "these two problems by number one having everything on the app be educational as determined by actual human curation by actual parents. And this is a lot of",
+   "label": "4:38"
+  },
+  {
+   "start": 286.0,
+   "dur": 6.0,
+   "text": "work. We don't just like pick a YouTuber who's like you make educational stuff so we can get all your stuff. We watch all the videos. We edit out the brand deals.",
+   "label": "4:46"
+  },
+  {
+   "start": 292.0,
+   "dur": 7.0,
+   "text": "We edit out references to like parts of YouTube. Like if you talk about the description, that stuff doesn't exist. So we actually edit the content, too.",
+   "label": "4:52"
+  },
+  {
+   "start": 299.0,
+   "dur": 7.0,
+   "text": "And then sometimes you have a creator who like nine times out of 10, it's definitely good for kids that. But then the one time, you know, you want to make sure you're watching every video. But",
+   "label": "4:59"
+  },
+  {
+   "start": 306.0,
+   "dur": 9.0,
+   "text": "number two, and this is the reason why I finally felt like I had to make this thing. Every time you sit down to use Clockwise TV, you get a stop time. And the app never shows a kid a video that",
+   "label": "5:06"
+  },
+  {
+   "start": 315.0,
+   "dur": 7.0,
+   "text": "will go past that stop time. And when the time is up, you get confetti, you get a fun fact, and then the app closes.",
+   "label": "5:15"
+  },
+  {
+   "start": 322.0,
+   "dur": 8.0,
+   "text": "I had this idea with no concept of whether it would work, but it felt intuitive to me like it would work. Watching it work on a child is nuts.",
+   "label": "5:22"
+  },
+  {
+   "start": 330.0,
+   "dur": 6.0,
+   "text": "Like the first time I got like an usable beta test of this thing, I gave it to Orin. We were at a gate in an airport.",
+   "label": "5:30"
+  },
+  {
+   "start": 336.0,
+   "dur": 4.0,
+   "text": "We had a half an hour before boarding. I set it to stop a half an hour from then.",
+   "label": "5:36"
+  },
+  {
+   "start": 340.0,
+   "dur": 8.0,
+   "text": "They were about to call our boarding group and I was like, \"Oh, we got to get our stuff together.\" And the app ended and he handed me the iPad. He was like,",
+   "label": "5:40"
+  },
+  {
+   "start": 348.0,
+   "dur": 9.0,
+   "text": "\"Oh, it's over.\" and he handed it to me and then it was just like, oh, we're all together here now. He's not inside of the iPad. We're all together doing the",
+   "label": "5:48"
+  },
+  {
+   "start": 357.0,
+   "dur": 8.0,
+   "text": "boarding thing. And I felt like, okay, all right, this was worth it. I don't know if I should say this, but I have a friend who used to work at YouTube. And when I pitched him this idea, he liked",
+   "label": "5:57"
+  },
+  {
+   "start": 365.0,
+   "dur": 7.0,
+   "text": "it, but he wondered why I didn't just pitch it to YouTube so that they can implement those features and then that would immediately reach like an enormous",
+   "label": "6:05"
+  },
+  {
+   "start": 372.0,
+   "dur": 5.0,
+   "text": "number of kids, like far more than this app will ever reach probably. And I thought about that for a good long time.",
+   "label": "6:12"
+  },
+  {
+   "start": 377.0,
+   "dur": 9.0,
+   "text": "I was like, is that the better path here? And I think there's two reasons why it's not the better path. Number one, because like my son knows how YouTube works. And if suddenly this time",
+   "label": "6:17"
+  },
+  {
+   "start": 386.0,
+   "dur": 7.0,
+   "text": "YouTube works differently, that's not how YouTube works. And and then you're having that fight. And number two, YouTube has some real constraints. Like",
+   "label": "6:26"
+  },
+  {
+   "start": 393.0,
+   "dur": 10.0,
+   "text": "they could build this stuff. They could do it way easier than I could. The question is whether they could make any of these features central to how the app works, which I just think is unlikely.",
+   "label": "6:33"
+  },
+  {
+   "start": 403.0,
+   "dur": 7.0,
+   "text": "First of all, it's very hard to define what crosses the line. And so I think it makes sense for there to be different people who put the line in different places. And Clockwise TV is going to put",
+   "label": "6:43"
+  },
+  {
+   "start": 410.0,
+   "dur": 3.0,
+   "text": "the line in in one place and somebody else might put the line somewhere else.",
+   "label": "6:50"
+  },
+  {
+   "start": 413.0,
+   "dur": 9.0,
+   "text": "Ultimately, YouTube's recommendation system is designed to identify the stuff that a kid is going to like and then give them a chance to watch that. And sometimes what my kid wants to watch is",
+   "label": "6:53"
+  },
+  {
+   "start": 422.0,
+   "dur": 7.0,
+   "text": "the most attention-grabbing Roblox slop the internet has to offer, right? What he wants to watch and what I want to make available to him are two different",
+   "label": "7:02"
+  },
+  {
+   "start": 429.0,
+   "dur": 7.0,
+   "text": "things. But Clockwise TV is starting from scratch. So it can say, \"Hey, we just do educational video. We're super picky. That's our thing.\" And then as",
+   "label": "7:09"
+  },
+  {
+   "start": 436.0,
+   "dur": 8.0,
+   "text": "far as the stop time thing, I would love I would love it if YouTube would do this. Do it. Take it. Absolutely. I don't think you will. And I think if you",
+   "label": "7:16"
+  },
+  {
+   "start": 444.0,
+   "dur": 7.0,
+   "text": "do, you'll make it optional. And I worry it'll be something that you have to go looking for in the settings like the shorts blocking thing. And also like",
+   "label": "7:24"
+  },
+  {
+   "start": 451.0,
+   "dur": 7.0,
+   "text": "from base level DNA, YouTube is advertising funded. They have spent many years optimizing their recommendation systems for engagement. And that",
+   "label": "7:31"
+  },
+  {
+   "start": 458.0,
+   "dur": 8.0,
+   "text": "includes or even is primarily about watch time. That's just a very different thing from helping my family get through a scheduled day that also includes some",
+   "label": "7:38"
+  },
+  {
+   "start": 466.0,
+   "dur": 9.0,
+   "text": "screen time. No content platform on the internet, I feel like, has ever thought for a second about designing a satisfying session ending. Why would",
+   "label": "7:46"
+  },
+  {
+   "start": 475.0,
+   "dur": 5.0,
+   "text": "they do that? They want you to finish the movie and then not even listen to the music at the end of the credits.",
+   "label": "7:55"
+  },
+  {
+   "start": 480.0,
+   "dur": 8.0,
+   "text": "They just want to start playing the next thing. That system they are endlessly tweaking and engineering and AB testing to make it so that like there's a higher",
+   "label": "8:00"
+  },
+  {
+   "start": 488.0,
+   "dur": 6.0,
+   "text": "chance that you stay on the app after you finish a piece of content. And if you've ever set a time limit on an app, you know how dumb those systems are.",
+   "label": "8:08"
+  },
+  {
+   "start": 494.0,
+   "dur": 9.0,
+   "text": "Like you'll be watching a reel and the thing pops up and it's like you're done for the day, unless you want to keep watching. But you're literally in the middle of a reel and you want to know",
+   "label": "8:14"
+  },
+  {
+   "start": 503.0,
+   "dur": 8.0,
+   "text": "how that horse makes it out of the sticky situation it's gotten itself into. And of course, you click five more minutes and then you keep scrolling for",
+   "label": "8:23"
+  },
+  {
+   "start": 511.0,
+   "dur": 8.0,
+   "text": "five more minutes and then you're in the middle of another reel and then it's like stop and you're like, well, another 5 minutes. It doesn't say, you know, just one more reel. And it could they",
+   "label": "8:31"
+  },
+  {
+   "start": 519.0,
+   "dur": 8.0,
+   "text": "could do that. They could design a system where you finish a video and it's like that was the last one instead of popping up in the middle. But they don't because they've never thought how do we",
+   "label": "8:39"
+  },
+  {
+   "start": 527.0,
+   "dur": 9.0,
+   "text": "get people to enjoy stopping. They hate that. The idea of making an enjoyable stop time is anathema of the whole business model of a social content",
+   "label": "8:47"
+  },
+  {
+   "start": 536.0,
+   "dur": 8.0,
+   "text": "platform. But what if what if helping people stop got the same care and attention as getting them to keep watching? And all these patterns that",
+   "label": "8:56"
+  },
+  {
+   "start": 544.0,
+   "dur": 7.0,
+   "text": "are a part of our adult experiences, they carry over into how kids use these apps. Even on the YouTube Kids app, the",
+   "label": "9:04"
+  },
+  {
+   "start": 551.0,
+   "dur": 8.0,
+   "text": "watchtime limits stop kids in the middle of a video. In 2016, I pitched YouTube on building a playlist that perfectly fit a stop time. 10 years ago, the",
+   "label": "9:11"
+  },
+  {
+   "start": 559.0,
+   "dur": 8.0,
+   "text": "person who I pitched that to no longer works there and they, you know, tossed it around internally and looked at and they're like basically parents don't really use features like that is what",
+   "label": "9:19"
+  },
+  {
+   "start": 567.0,
+   "dur": 8.0,
+   "text": "came back to me. And maybe they won't because like YouTube works the way YouTube works. And so I think we just need other options. Like I think that's the best path. So, Clockwise TV can work",
+   "label": "9:27"
+  },
+  {
+   "start": 575.0,
+   "dur": 8.0,
+   "text": "the way that Clockwise TV works, and YouTube can work the way YouTube works because YouTube does have some features for parents, and some of them are useful. You can turn off autoplay for",
+   "label": "9:35"
+  },
+  {
+   "start": 583.0,
+   "dur": 8.0,
+   "text": "kids. That's pretty easy. YouTube Kids is a good experience, but certainly not devoid of mindless toy unboxing and Roblox slop, but you can set it to",
+   "label": "9:43"
+  },
+  {
+   "start": 591.0,
+   "dur": 9.0,
+   "text": "approved content only, where your kid can only see the channels that you've selected, including collections that YouTube or partners curate. These are good tools. You should use these tools.",
+   "label": "9:51"
+  },
+  {
+   "start": 600.0,
+   "dur": 7.0,
+   "text": "Once kids age out of YouTube kids, YouTube has supervised accounts that give parents some control over content.",
+   "label": "10:00"
+  },
+  {
+   "start": 607.0,
+   "dur": 3.0,
+   "text": "Most importantly, I think making it so that the shorts feed does not exist.",
+   "label": "10:07"
+  },
+  {
+   "start": 610.0,
+   "dur": 9.0,
+   "text": "Please use these tools. But Clockwise TV can be a place where these things are not optional features. They're design choices and the app is designed around",
+   "label": "10:10"
+  },
+  {
+   "start": 619.0,
+   "dur": 9.0,
+   "text": "them. I wanted someone else to do the excellent work of finding excellent educational videos, not constantly me curating my son's YouTube experience.",
+   "label": "10:19"
+  },
+  {
+   "start": 628.0,
+   "dur": 8.0,
+   "text": "And I wanted the app to plan for the end of the session from the beginning, which is I think just a good habit for honestly all of us to be in. So I'm glad that YouTube has the features they have.",
+   "label": "10:28"
+  },
+  {
+   "start": 636.0,
+   "dur": 8.0,
+   "text": "I want them to continue to innovate and have more. But I wanted an experience whose whole job was educational viewing with a planned ending. Educational viewing with a planned ending. That's",
+   "label": "10:36"
+  },
+  {
+   "start": 644.0,
+   "dur": 7.0,
+   "text": "Clockwise TV. It's been a long video to say that. And because of the way we're structured from the beginning, we can focus entirely on that. We're not advertising funded. And the only way we",
+   "label": "10:44"
+  },
+  {
+   "start": 651.0,
+   "dur": 8.0,
+   "text": "succeed is if people pay for the app because it's worth way more than what it costs. Clockwise TV thrives if it is useful to families. So that means trying",
+   "label": "10:51"
+  },
+  {
+   "start": 659.0,
+   "dur": 8.0,
+   "text": "to keep the price low, making sure the content is fantastic and making the features helpful to the family. The kid gets a complete session of curated",
+   "label": "10:59"
+  },
+  {
+   "start": 667.0,
+   "dur": 9.0,
+   "text": "educational videos with a planned ending. We make the ending a satisfying part of the watching to help you get to homework or karate practice or a birthday party without a fight. And also",
+   "label": "11:07"
+  },
+  {
+   "start": 676.0,
+   "dur": 7.0,
+   "text": "hopefully so that the kid is developing a better relationship with technology in general. And right now you can download it for tablet on iPad and Android. Just",
+   "label": "11:16"
+  },
+  {
+   "start": 683.0,
+   "dur": 6.0,
+   "text": "tablet right now. We're certainly working on TV stuff. We want to get on Vivo Revo. What's it called? Vimeo? No.",
+   "label": "11:23"
+  },
+  {
+   "start": 689.0,
+   "dur": 4.0,
+   "text": "What's it called? Roku. We want to get on Roku. We want to get on all TV stuff.",
+   "label": "11:29"
+  },
+  {
+   "start": 693.0,
+   "dur": 7.0,
+   "text": "That's, you know, I'm funding this out of pocket cuz another thing is I would rather not have it be beholden to shareholders. I want the stakeholders to",
+   "label": "11:33"
+  },
+  {
+   "start": 700.0,
+   "dur": 7.0,
+   "text": "be the kid and the families and for as long as possible have that be the whole thing. And right now, though not for",
+   "label": "11:40"
+  },
+  {
+   "start": 707.0,
+   "dur": 8.0,
+   "text": "long, it costs $6.99 a month or $69.99 for the year. So, you save some money if you sign up yearly. The yearly is about $5.83",
+   "label": "11:47"
+  },
+  {
+   "start": 715.0,
+   "dur": 7.0,
+   "text": "a month if you build it annually, which just seems I don't know, like a fair price. I like choices to be very easy.",
+   "label": "11:55"
+  },
+  {
+   "start": 722.0,
+   "dur": 8.0,
+   "text": "Like I just want it to be very like a very easy thing for people to try and see if it works for them. Now, free would be easier, but we've done the",
+   "label": "12:02"
+  },
+  {
+   "start": 730.0,
+   "dur": 8.0,
+   "text": "math. This is a good low price, but that's going to be going up to around 90 bucks on December 1st. So, we do not have long that is in this window. I",
+   "label": "12:10"
+  },
+  {
+   "start": 738.0,
+   "dur": 7.0,
+   "text": "think it's just 2 weeks less than. So, if you want to try it out, you got a kid like roughly between the ages of 6 and 12, try it out. It has made life easier",
+   "label": "12:18"
+  },
+  {
+   "start": 745.0,
+   "dur": 3.0,
+   "text": "in my household. Now, another limitation is currently only available in the US.",
+   "label": "12:25"
+  },
+  {
+   "start": 748.0,
+   "dur": 8.0,
+   "text": "There are a lot of different sort of like sets of laws when it comes to making products for kids in lots of different countries, which is great. I",
+   "label": "12:28"
+  },
+  {
+   "start": 756.0,
+   "dur": 7.0,
+   "text": "mean, I'm glad that countries are writing those laws, but it does make it so that, you know, you have to audit the app separately for every country. And",
+   "label": "12:36"
+  },
+  {
+   "start": 763.0,
+   "dur": 3.0,
+   "text": "we're working with what we got, but we're working on the TV native apps.",
+   "label": "12:43"
+  },
+  {
+   "start": 766.0,
+   "dur": 8.0,
+   "text": "We're working on other countries. Canada is probably next in line. It's not that different. Though Quebec is, so it may be Canada minus Quebec. Business is fun.",
+   "label": "12:46"
+  },
+  {
+   "start": 774.0,
+   "dur": 3.0,
+   "text": "But if you sign up, that will help us have the money for all that stuff.",
+   "label": "12:54"
+  },
+  {
+   "start": 777.0,
+   "dur": 7.0,
+   "text": "Because here's the situation. Like I've put a lot of money in. I don't know if I'm right that people will like it. You know, if I had a bunch of investors,",
+   "label": "12:57"
+  },
+  {
+   "start": 784.0,
+   "dur": 7.0,
+   "text": "they'd be risking a much smaller portion of their net worth. Uh and that would make it so that maybe we could move quicker, but I didn't want to do that.",
+   "label": "13:04"
+  },
+  {
+   "start": 791.0,
+   "dur": 7.0,
+   "text": "So, I'm just funding it out of pocket, which means maybe launching with fewer features than we would have if if we had done the traditional thing, which, you",
+   "label": "13:11"
+  },
+  {
+   "start": 798.0,
+   "dur": 8.0,
+   "text": "know, pros and cons. So, I've just funded it with like the money I make from YouTube videos and speaking gigs and stuff. Will this work? I have no idea, but someone has to try. And I",
+   "label": "13:18"
+  },
+  {
+   "start": 806.0,
+   "dur": 7.0,
+   "text": "think I'm well positioned to try and think trying is worth every dollar that I've put in. So, we will see. I know that most people are not people who",
+   "label": "13:26"
+  },
+  {
+   "start": 813.0,
+   "dur": 8.0,
+   "text": "currently have kids between the ages of 6 and 12, but so it goes. But if you have people in your life who are in that situation, send them this video. Thank",
+   "label": "13:33"
+  },
+  {
+   "start": 821.0,
+   "dur": null,
+   "text": "you. Additional information in the description.",
+   "label": "13:41"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel",
+  "language_code": "en"
+ },
+ "source": "youtube",
+ "added": "2026-11-18T20:23:43+00:00"
+}
