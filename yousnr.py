@@ -3346,9 +3346,11 @@ def main():
     ck.add_argument("--direct", action="store_true", help="ignore YOUSNR_PROXY (to compare)")
     ck.add_argument("--no-browser", action="store_true", help="skip the slow browser test")
     sub.add_parser("balances", help="what's left in each paid service's account, and this month's spending")
-    fr = sub.add_parser("frames", help="find and score YouTube's preview frames for videos now (all without them: --all)")
+    fr = sub.add_parser("frames", help="find and score YouTube's preview frames and pick the pictures for videos now "
+                                       "(all that need it: --all; just list a video's pictures: --show)")
     fr.add_argument("videos", nargs="*")
     fr.add_argument("--all", action="store_true")
+    fr.add_argument("--show", action="store_true", help="list the pictures already picked, without fetching anything")
     ex = sub.add_parser("excerpt", help="make (or remake) the 'In their words' fragments for videos now")
     ex.add_argument("videos", nargs="+")
     fg = sub.add_parser("forget", help="clear a remembered 'no captions'/'unavailable' result so it's tried again now")
@@ -3546,6 +3548,17 @@ def main():
         set_autostart(args.switch == "on")
     if args.cmd == "balances":
         show_balances()
+
+    if args.cmd == "frames" and args.show:
+        for v in args.videos:
+            vid = video_id(v)
+            r = frames.result(vid) or {}
+            ms = r.get("moments") or []
+            print(f"{vid}: {r.get('count', 0)} frames, {r.get('w')}x{r.get('h')}, "
+                  + (f"{len(ms)} pictures ({r.get('mode')})" if r.get("v", 1) >= frames.VERSION else "pictures not picked yet"))
+            for t, i in ms:
+                print(f"  {int(t) // 60}:{int(t) % 60:02d}  frame {i}  https://www.youtube.com/watch?v={vid}&t={int(t)}s")
+        sys.exit(0)
 
     if args.cmd == "frames":
         fm = frames.Framer(lambda v: None, ytdlp_info=_ytdlp_info, get=_yt_get)
