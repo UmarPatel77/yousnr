@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -284,7 +284,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "One, my brows along with every other feature in my body were gifted to me. I believe that when I was gifted life, all of my ancestors decided to come together and gift a part of themselves to me for me to carry on throughout my life. I think one of my ancestors gifted me my eyes, one of them gifted me my nose, one of them gifted me my mouth, my shoulders, like every other feature in my body, and that includes my eyebrows. And I want to cherish these gifts in my life as much as I possibly can. And I feel like if I were to permanently alter my appearance, it feels like I'm cutting or severing that tie I had with the person who gifted me the gift. But I will say that not all gifts/trace will be kept with my entire life. I plan on getting rid of some of them, such as my eyesight. In the future, I'm hoping that I'm able to permanently alter my vision for the better so I don't need glasses anymore. Not because I think my face looks chopped with glasses, but they're just an inconvenience. Also, I just want to see when I wake up first thing in the morning. I honestly don't think any of my ancestors gifted me my bad eyesight because no one in my family wears glasses or has bad vision. It's just me. I'm hoping it's a skill issue so I don't feel that bad, you know, severing that tie with my bad eyesight. Most of my traits I would like to keep, but some I'm willing to say goodbye to for convenience. Also, I don't want anyone to think I'm shaming women who undergo certain procedures to alter their appearance. It's your body. It's your choice. Personally, I just don't want to do it. And that's my body, my choice. Second reason why I, as of now, don't want to alter any of my appearance physically is because I have a dream. I have a dream. I've got a dream. She's got a dream. I've got a dream. She's got a dream. I have a dream that one day I'll be able to act in a period piece. Picture this. I'm in a production for a film that's historical, takes place in the 1400s in Korea. Maybe it's a June her adaptation.", "words": 400, "whole": false, "from": 520.0, "to": 633.0}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/9MquVmCH0VQ/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBginpcrVBg==&sigh=rs$AOn4CLDfFjUay0E-zVp2vKQLkPuRcxXw6Q","w":320,"h":180,"cols":3,"rows":3,"count":98,"step":9.806,"score":[37,14,15,99,19,15,14,14,12,40,14,14,26,13,13,13,14,13,15,20,10,8,9,11,8,30,30,7,12,16,8,12,13,18,29,12,12,7,9,11,10,7,8,8,7,9,22,14,6,10,22,10,27,9,19,13,15,10,12,13,14,11,61,10,12,11,11,16,9,9,12,9,52,10,15,31,9,7,9,8,12,49,55,58,57,54,57,57,54,52,53,59,55,57,57,56,52,89]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/9MquVmCH0VQ/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBginpcrVBg==&sigh=rs$AOn4CLDfFjUay0E-zVp2vKQLkPuRcxXw6Q","w":320,"h":180,"cols":3,"rows":3,"count":98,"step":9.806,"score":[37,16,15,99,21,17,17,16,13,41,15,15,27,13,13,13,17,14,17,22,12,10,11,13,10,30,29,9,14,18,10,15,15,20,31,15,13,8,10,14,11,9,9,10,9,10,23,15,8,12,23,14,29,11,23,16,18,13,15,15,16,14,58,13,15,13,14,19,12,12,16,12,52,13,18,32,12,11,12,12,15,49,52,55,54,52,54,54,52,50,51,57,53,54,54,54,49,82],"moments":[[0.0,0],[29.4,3],[88.3,9],[127.5,14],[156.9,16],[196.1,21],[539.3,55],[578.6,59],[608.0,62],[637.4,65],[666.8,69],[706.0,72],[804.1,84],[862.9,88],[892.3,91],[941.4,96]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -533,7 +533,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

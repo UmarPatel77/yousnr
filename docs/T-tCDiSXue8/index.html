@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -255,7 +255,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "If you look up your jobs on LinkedIn and you see that a lot of them are asking for the same technology or something. Maybe they want you to know basic Python scripting. Maybe they want you to know how to use Excel. Maybe they ask for experience or projects. You can do projects that get you experience that replicates what you would do at that job. Just put in a bit of work every day into things that your employers actually care about so that then later you can put them on your CV. That combined with basic education like a average degree is going to get you much further than somebody that minmaxes school but doesn't have all of this additional experience and skills. Sometimes you're going to have some more technical interviews. You need to know how to talk to people or do sales or convince people to do stuff. Maybe it's not just about the soft skills and they want some actual technical knowledge in which case you need to be more technically advanced which you would have had to study for. A lot of times universities don't really teach hands-on experience. So if you have a basic unit degree and you also have a lot of hands-on experience that's actually going to get you pretty far. So, now let's take a look at the second option for your life. All of a sudden, you're going to be making at least 1K with an internship while you're still studying. Realistically, you can probably get a job for like 1.5K, maybe 1.2K. So, already we're almost doubling the previous salary. And unlike that one, this one actually scales, meaning that in 2 or 3 years from now, even though you're not really doing a whole lot at work, you're going to get promoted or you're going to have years of experience and you can move to an intermediate job. And if you're working in a skilled field that actually values experience and skills, that can easily double or triple your salary. So now you're making closer to 2K. You can probably live in a place like this for 500 or 600 relatively easily. With all of the money that you'd be spending, you would still easily save at least 500 euro per month. You could buy gear for more expensive hobbies.", "words": 394, "whole": false, "from": 328.0, "to": 428.0}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/T-tCDiSXue8/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjq--vMBg==&sigh=rs$AOn4CLDqqhJ3CXd1XybqTk8gx5be27XSOw","w":320,"h":180,"cols":3,"rows":3,"count":147,"step":4.932,"score":[13,24,14,15,13,16,20,17,18,20,20,10,11,92,99,13,13,12,12,10,14,15,11,18,18,15,12,11,15,15,13,13,16,11,17,16,23,17,17,15,10,13,10,11,9,19,14,13,16,18,13,15,20,14,13,21,13,24,21,25,15,16,14,15,11,9,10,17,12,12,12,11,17,16,13,19,15,16,13,13,11,11,20,43,56,9,18,11,11,10,51,12,15,14,10,11,13,10,14,42,13,14,14,9,11,10,14,10,11,9,11,11,10,11,10,10,11,12,13,11,11,11,10,13,13,9,13,15,11,12,15,12,15,11,17,14,14,16,9,13,9,70,63,79,89,58,58]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/T-tCDiSXue8/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjq--vMBg==&sigh=rs$AOn4CLDqqhJ3CXd1XybqTk8gx5be27XSOw","w":320,"h":180,"cols":3,"rows":3,"count":147,"step":4.932,"score":[14,25,16,16,14,18,21,18,19,21,21,12,13,92,99,15,16,14,14,13,16,16,13,20,18,16,13,13,16,16,15,14,17,13,19,18,24,18,18,16,11,14,11,13,11,19,15,14,17,19,15,17,21,16,14,22,14,25,23,25,17,18,15,17,12,11,11,19,13,14,13,11,20,18,15,20,16,17,15,14,12,12,21,44,55,11,19,13,13,11,54,13,16,15,12,12,14,11,15,44,14,16,15,10,13,11,15,11,12,10,12,13,11,11,11,12,12,12,13,12,13,12,11,15,15,11,14,15,12,13,16,13,16,13,18,15,15,17,10,14,11,69,63,78,88,58,58],"moments":[[4.9,1],[44.4,9],[69.0,14],[177.6,36],[212.1,43],[256.5,52],[281.1,57],[414.3,84],[443.9,90],[488.3,99],[572.1,116],[695.4,141],[715.1,146]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -504,7 +504,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

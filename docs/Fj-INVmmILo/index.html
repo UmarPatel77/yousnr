@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -255,7 +255,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "One of the things that has always mattered most to me in terms of inspiring me to take action is money since we're being honest. I don't know. I think a lot of people feel this way, even if it might be taboo to say so. But the good news is beyond making life less stressful, which is important to me, I don't actually need to receive the money. It doesn't need to hit my bank account. Which means raising money for Partners in Health is also something I find very rewarding. Which means paying artists and product designers to make absolutely amazing Pizzamas stuff, which this is your last chance to get ever, and then the profit gets donated to Partners and Health. All of that is motivating to me. I honestly think a huge piece of productivity is external, and it is a thing that we can give to each other. People care about the feelings and thoughts of people so much. so much that often we are afraid of it and we hide from it. But give people chances and pay attention when someone might be taking a chance on you. Pretending it all rests on the individual to figure it out defies everything that I have experienced as a person who makes things in the world, but also everything we know about the science of what actually cultivates creation. I don't want to produce things because productivity matters to me. I think that I produce things because like Pizzamas matters to me, Nerdfighteria matters to me. John, you matter to me. Cancer treatment and crash course and SciShow and 4x3 and the media environment all matter to me and I have opportunities to work on or communicate about those things because a whole lot of people have taught me and trusted me and helped me. But let me tell you something. If it was about how much self-control I had, how much grit or determination I had, I would not be making more things. I would be making fewer things. And that brings me to the biggest lie that we tell about productivity or laziness. You can tell nothing about a person's self-control or grit or fortitude from the amount of work they got done. At times I have like worked a lot of hours while being quite lazy.", "words": 393, "whole": false, "from": 504.0, "to": 637.0}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/Fj-INVmmILo/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjZtKXWBg==&sigh=rs$AOn4CLA1mH0KoiZKWGsqE5Ch--wmZE30uA","w":320,"h":180,"cols":3,"rows":3,"count":154,"step":4.961,"score":[27,4,4,5,83,5,99,14,6,5,10,6,5,8,6,6,3,4,4,6,68,4,9,9,2,5,6,6,4,3,5,6,13,8,10,6,3,6,3,29,3,4,29,11,13,3,4,5,9,6,4,29,5,5,6,4,21,10,10,12,4,7,4,4,5,4,10,7,66,9,4,4,5,6,5,9,3,4,3,5,6,4,8,4,11,10,7,6,3,10,7,10,4,5,10,2,6,18,4,7,4,7,10,5,4,6,3,10,50,45,11,3,3,5,4,3,3,5,12,4,4,5,7,6,10,5,4,4,4,2,7,5,2,7,7,7,9,10,7,7,9,4,3,6,10,5,10,3,5,8,5,17,5,33]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/Fj-INVmmILo/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjZtKXWBg==&sigh=rs$AOn4CLA1mH0KoiZKWGsqE5Ch--wmZE30uA","w":320,"h":180,"cols":3,"rows":3,"count":154,"step":4.961,"score":[28,5,5,6,84,6,99,14,7,6,11,8,6,9,7,7,4,5,5,7,68,5,10,10,3,6,7,7,5,5,6,7,14,9,11,7,3,7,4,30,4,5,30,12,14,4,5,6,9,7,5,30,5,6,6,5,21,11,11,13,5,8,5,5,6,5,11,7,66,10,4,5,6,7,6,10,4,5,4,5,7,5,9,5,11,11,8,6,5,11,7,11,5,6,11,3,7,18,4,7,4,7,13,5,5,8,4,11,53,47,12,5,4,6,4,4,4,6,12,5,4,6,8,7,11,6,5,5,5,3,8,6,4,9,8,7,9,11,8,7,10,5,4,7,11,6,11,4,6,9,5,18,5,34],"moments":[[0.0,0],[29.8,6],[64.5,13],[99.2,20],[158.8,32],[208.4,42],[238.1,48],[277.8,56],[337.3,68],[372.1,75],[416.7,84],[451.5,91],[481.2,97],[506.0,102],[535.8,108],[585.4,118],[679.7,137],[724.3,146],[759.0,153]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -504,7 +504,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

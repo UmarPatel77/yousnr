@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -578,7 +578,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "Now between research and structured products work, when I had spare time, I started coding. In particular, I used Q/KDB to complete tasks that were rudimentary and that could be easily automated. Remember, this was before AI even existed. And out of every language possible, they were using probably the most esoteric and just crazy to understand one out there. You see, most languages C++, Python, they're all public. There's a committee that develops them. But Q is a private programming language. It's developed by KX Systems. And in order to use the 64-bit version of that language, you had to pay Q. For those that don't know, it's built on top of K, which is built on top of APL. It's a very terse array-oriented programming language created by a man named Arthur Whitney. Now, I never understood how people can go about creating programming languages to this extent. Like Q is a super small programming language. It fits in L1 cache. These people, they're they're just next level. But coming back to the topic at hand, it's interesting that I grew a interest in Q/KDB because I was never interested in programming while in school and I think that's because I was really intimidated by how much further ahead my friends were in languages like Python than I was and so I never made an active effort to just go and learn. And that fear prevented me from ever taking on any coding related classes in school. But here I was in a new country and a new language picking up one of the most tur programming languages in the world and it didn't really seem intimidating at all. Over time, I slowly started doing more work related to Q and KDB. I built an internal database to track BitMEX addresses and transactions that was used by the research team to gain a sense of their onchain footprint. This was doable because BitMEX addresses were all vanity addresses, meaning they were generated to start with distinct characters which were 3bmex. I got to a point where I started coding for the majority of my time at the organization and I slowly but surely fell in love with the unique programming language which was Q and KDB. I actually felt quite cool because none of my friends were coding in that language.", "words": 393, "whole": false, "from": 180.16, "to": 319.52}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/265-EZJ_aJE/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgj66M7VBg==&sigh=rs$AOn4CLDRv_kY40LL0tBVKQd23kRHm6Yx-A","w":320,"h":180,"cols":3,"rows":3,"count":271,"step":9.948,"score":[7,7,9,7,5,6,6,7,5,5,4,7,5,7,4,7,7,5,6,9,23,8,5,14,8,4,5,5,6,4,5,8,5,4,6,4,10,7,5,5,5,6,5,4,21,79,4,5,4,5,5,4,7,11,5,8,7,6,4,6,4,97,6,7,7,5,5,9,5,4,5,6,5,4,4,5,4,4,4,6,73,8,5,8,5,5,6,4,9,7,4,34,8,3,23,5,9,7,5,9,4,5,16,4,83,5,7,8,4,5,5,6,5,3,6,5,4,4,4,4,4,6,5,41,43,8,5,4,7,7,10,7,25,8,5,7,5,6,7,5,6,3,7,4,5,5,6,6,5,5,6,5,6,6,3,40,23,4,4,7,4,5,5,5,69,5,4,5,4,5,3,4,4,6,5,4,8,7,4,5,5,8,4,4,3,4,6,4,9,5,99,4,4,6,4,4,4,5,5,5,4,5,4,9,8,5,4,6,6,8,5,5,5,4,5,5,6,8,4,4,5,4,4,7,4,6,5,4,5,8,6,4,8,5,7,9,5,4,31,9,20,3,5,5,5,4,6,4,6,63,5,4,5,5,4,15,6,7,41,44,44,44,32,9,31,20,88,6,5,10,43]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/265-EZJ_aJE/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgj66M7VBg==&sigh=rs$AOn4CLDRv_kY40LL0tBVKQd23kRHm6Yx-A","w":320,"h":180,"cols":3,"rows":3,"count":271,"step":9.948,"score":[10,10,12,10,7,8,7,9,7,6,6,8,7,8,5,8,8,6,8,11,26,10,6,16,9,5,6,6,7,5,7,9,6,5,7,5,12,8,7,6,6,8,7,6,22,79,6,7,6,7,7,5,9,11,6,9,8,7,6,8,5,98,8,8,8,7,6,10,7,5,7,8,6,6,5,6,5,5,5,7,74,9,7,9,6,7,7,5,11,8,5,35,9,5,24,7,10,8,7,10,5,7,18,6,82,6,8,9,6,5,6,8,6,4,7,6,6,5,6,5,6,8,6,43,45,9,6,5,10,9,13,8,27,10,7,9,7,8,9,7,7,5,9,5,7,6,7,7,6,6,7,6,7,8,4,41,25,5,5,8,5,6,6,6,70,6,5,6,5,7,4,6,6,7,6,6,9,9,5,6,6,9,5,5,5,5,7,6,10,6,99,6,5,8,6,6,5,6,7,6,5,6,6,10,10,7,5,8,7,9,7,6,6,5,6,6,7,9,5,6,7,6,5,8,5,7,7,6,6,10,7,5,10,7,8,10,6,6,35,10,22,5,6,6,6,6,7,5,7,67,5,5,6,6,5,17,8,8,43,45,45,45,33,11,32,22,90,8,6,11,45],"moments":[[199.0,20],[228.8,23],[358.1,36],[447.7,45],[527.2,53],[606.8,61],[795.8,80],[905.3,91],[935.1,94],[1034.6,104],[1223.6,123],[1273.3,129],[1313.1,132],[1541.9,155],[1631.5,164],[1890.1,190],[2367.6,238],[2477.1,249],[2536.7,255],[2576.5,260],[2606.4,262],[2646.2,266],[2686.0,270]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -827,7 +827,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

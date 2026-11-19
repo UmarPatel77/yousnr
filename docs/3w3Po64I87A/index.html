@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -219,7 +219,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "So all of a sudden, I miss that. After eight years I guess in many sense, I still remember my son fondly and I still cherish and treasure all the memories I had with him and for him. As we're moving on with our lives I don't think we're leaving him alone. We're moving on because all my sons are growing up they're going to have their own life. But it doesn't diminish our memory of Jon just that it evolved to the next phase of our life. He is still very much our son and I speak (of) it in the present tense. Whenever we talk about certain things that we are doing together and all of a sudden it will jog our memory about what Jon used to do. We talk about him freely that means that we include his memory in our daily conversation and that gives us strength. During the time that when I was spiraling I actually couldn't see any light. I needed to do something that is purposeful and meaningful for me to at least try. I transitioned from a survivor to now a facilitator so that I can help other parents who are in the same shoes as me. Oftentimes, we assume that loving just because you love them so much you thought that you would also know them inside out. That is false. I would say that for parents going through a situation like that if they already detect signs of their sons having this kind of suicide ideation I would very much encourage them not to skirt around the issue. To ask directly: are they thinking about taking their own life? Yeah, people may say that \"Wow, is this even a question that you can ask? Because if you ask, wouldn't that induce to make the intention clear?” No, on the contrary it's that maybe that's exactly what they need. They needed people to talk to them. Suicide is not just a one-person business. It's multiple parties business. If I look at myself that statement about “Never mind, they will move on” is just a fantasy, unfortunately. Look at me. Have I moved on? Moving on is not a simple case that everything will be hunky-dory and then we'll be all peaceful and we will forget about our loved one. No one is able to move on and forget about everything.", "words": 400, "whole": false, "from": 679.8, "to": 892.0}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/3w3Po64I87A/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjl-YPRBg==&sigh=rs$AOn4CLDLPWOTD9xt5OXC7AoL-YCuSHytVA","w":320,"h":180,"cols":3,"rows":3,"count":98,"step":9.827,"score":[63,13,13,64,16,13,4,13,12,13,3,12,12,3,12,4,4,13,4,3,13,4,12,12,4,12,12,4,12,4,4,4,12,4,4,10,12,12,4,13,4,4,12,12,3,12,4,12,4,12,3,11,3,4,12,12,3,12,4,3,3,4,12,4,3,4,4,3,3,3,12,13,11,4,12,3,5,4,12,5,4,4,3,3,12,4,12,3,3,3,12,3,4,3,99,59,57,57]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/3w3Po64I87A/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjl-YPRBg==&sigh=rs$AOn4CLDLPWOTD9xt5OXC7AoL-YCuSHytVA","w":320,"h":180,"cols":3,"rows":3,"count":98,"step":9.827,"score":[62,12,12,63,15,12,4,12,12,12,4,12,12,4,12,4,4,12,4,4,12,4,12,12,4,11,11,4,11,4,5,5,11,4,4,10,11,11,4,12,4,4,12,11,4,12,4,12,4,12,4,11,4,4,12,12,4,12,4,4,4,5,11,4,4,4,4,4,4,4,12,12,10,4,12,4,5,4,12,5,5,4,4,4,12,4,11,4,4,4,12,4,4,4,99,58,57,57],"moments":[[29.5,3],[933.6,96]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -468,7 +468,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

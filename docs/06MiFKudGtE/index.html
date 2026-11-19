@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -305,7 +305,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "Keep yourself accountable and be honest with what you're actually doing. Just be warned, this will not be for everyone, and that's completely fine. I love Rocket League. It's my favorite competitive video game. Admittedly, I haven't been able to play it in a while because I've been focusing on programming. I like it because it's not like any other competitive video game. You can have the best aim in the world, but when you start playing Rocket League, because it's so different, you're just going to be in the beginner ranks like everyone else. No one has a huge advantage starting out because it's so different. So I used this game's ranking system to gamify programming. I used to really like looking into the metrics of how to improve efficiently at Rocket League. And I found this video by Waitin Pilkin, \"How long does it take to reach each rank in Rocket League?\" In this video, he broke down the differences between ranks using statistics, which he was able to gather from his community when they filled out questionnaires based on their rank. And importantly, he found on average how long it takes to reach each rank in the game. And the highest rank, Supersonic Legend, takes 4,450 hours to reach. Using the exponential growth curve that Waitin provided in his video, I estimated that it would take 8,274 hours on average to be able to compete in the RLCS major tournaments. So I decided on November the 11th, 2024, to count how many hours I code to see if I could reach 8,274 hours before I die starting from zero. My goal with reaching 8,274 hours is that I'll hopefully be able to look back and see that I've actually become an expert in this field. I'm aware though that when I reach 8,274 hours, I'll still have more room to grow to get better and better. I like this because it gives me milestones to reach using the same number of hours used in Rocket League, but with programming. I added some lower-level ranks because it would take 73 hours of programming to get bronze one, which is the lowest rank in Rocket League, and I felt that would take too long. The highest ranks I calculated come from six mans, which is where semi-professional Rocket League players go to take the game more seriously.", "words": 398, "whole": false, "from": 549.2, "to": 682.04}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/06MiFKudGtE/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiJ9qnSBg==&sigh=rs$AOn4CLC6l5PKR8xjC0tWlF0-zt2GnvgQ_A","w":320,"h":180,"cols":3,"rows":3,"count":109,"step":9.817,"score":[1,1,86,8,4,4,1,1,1,1,1,1,1,1,15,15,1,53,52,53,50,90,1,14,14,14,13,1,1,1,0,1,1,1,1,0,0,51,0,0,1,0,40,8,0,14,12,94,99,92,34,20,32,9,0,0,1,16,24,11,25,20,12,87,87,1,96,96,9,99,16,1,1,1,1,1,1,1,1,1,1,1,1,5,5,98,98,98,99,3,23,4,4,3,3,4,1,0,98,0,1,4,14,10,11,14,11,11,10]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/06MiFKudGtE/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiJ9qnSBg==&sigh=rs$AOn4CLC6l5PKR8xjC0tWlF0-zt2GnvgQ_A","w":320,"h":180,"cols":3,"rows":3,"count":109,"step":9.817,"score":[1,1,85,9,5,5,1,1,1,1,1,1,1,1,15,15,1,52,52,53,49,89,1,14,15,14,13,1,1,1,1,1,1,1,1,1,1,54,1,1,1,1,41,9,1,16,13,95,99,92,35,21,33,10,1,1,1,16,25,12,27,22,14,86,86,1,96,96,10,99,17,1,1,1,1,1,1,1,1,1,1,1,1,5,5,98,98,98,99,4,23,5,5,3,4,4,1,1,98,1,1,5,14,11,11,14,11,11,9],"moments":[[19.6,2],[137.4,14],[166.9,18],[206.2,21],[363.2,37],[412.3,42],[441.8,45],[471.2,48],[510.5,52],[559.6,57],[589.0,60],[618.5,63],[647.9,66],[687.2,70],[834.4,86],[883.5,90],[1001.3,102],[1040.6,106]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -554,7 +554,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

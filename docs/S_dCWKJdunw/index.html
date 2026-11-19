@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -186,7 +186,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "You definitely need some patience. Yeah, but the the here's the problem. Here's the problem. When you have a remote company, if you give somebody eight months to ramp up and get better, then you're paying somebody for eight months who's working five jobs and lying to you about how they're trying to understand and get better and all that, right? So, you just can't tolerate that Like, someone needs to ramp up in one month or two months or they're gone. And that's just the new reality of the situation because paying a programmer for eight months is $200,000. That's expensive. So, you just can't you can't do it. And I'm sorry, you know, for people who genuinely need that ramp up time. I'm sorry, but it's one of those things where the the abusive people have just changed the play field for the honest people. Right? If you're honest and you need more of a ramp up, we just can't do it anymore because we do it five times in a row and Lucy keeps pulling away the football right when we're about to kick it. Eight months ramp up time. I mean, you'd be surprised. Like, so games are complicated. Every game has its own way of doing things. uh we ask people to not only get used to a new game but a new engine and a new programming language right so like historically I would give people a while just to acclimate but like at this point no it's like I'm sorry it has to be two months or less and that's just the reality and if that makes it harder to find people who can do that which it does then that just drastically limits who we can hire. But that's just the re I've been like I've been with on this matter so many times. I It's And it's so disrespectful and horrible. Like I simply don't have the patience for it anymore. I I just have better things to do in life than pretend like people aren't being dishonest. And you know, $200,000 for eight months is too much. Well, we have to pay for people's health insurance and all sorts of just weird taxes and stuff in the US. So, you know, if your programmer's salary is like $200,000 a year, eight months is twothirds of that, right?", "words": 397, "whole": false, "from": 33.0, "to": 201.0}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/S_dCWKJdunw/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi72NrUBg==&sigh=rs$AOn4CLBJOSy3Cdo79hPfaj0aanwIJbDOmA","w":320,"h":180,"cols":3,"rows":3,"count":145,"step":1.972,"score":[7,7,7,7,7,7,7,7,5,5,5,5,5,5,5,5,5,5,7,7,6,6,7,7,7,99,50,50,51,51,51,51,51,51,51,51,51,51,76,76,89,75,63,61,66,49,51,50,50,50,50,50,50,49,49,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,53,72,50,53,51,52,51,51,51,51,51,56,56,56,53,7,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,4,3,4,4,4,4,12]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/S_dCWKJdunw/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi72NrUBg==&sigh=rs$AOn4CLBJOSy3Cdo79hPfaj0aanwIJbDOmA","w":320,"h":180,"cols":3,"rows":3,"count":145,"step":1.972,"score":[9,9,9,9,9,9,9,9,7,7,7,7,7,7,7,7,7,7,9,9,9,9,9,9,9,99,52,52,52,52,52,52,52,53,53,53,53,53,76,76,89,75,63,61,66,49,50,49,49,49,49,49,49,49,49,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,72,50,53,53,54,53,53,53,53,53,58,58,58,55,9,9,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,15],"moments":[[0.0,7],[15.8,17],[49.3,25],[78.9,40],[108.5,63],[145.9,74],[177.5,143],[284.0,144]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -435,7 +435,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }

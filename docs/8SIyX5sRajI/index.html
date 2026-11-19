@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .vid{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
 .vid img{width:168px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:var(--chip)}
@@ -104,7 +104,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 .pg a.go{display:inline-block;text-decoration:none}
 .pgself{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
 .pg .go{border:0;background:var(--chip-on);color:var(--chip-on-fg);font:500 13px Roboto,Arial,sans-serif;padding:7px 14px;border-radius:18px;cursor:pointer;margin-top:4px}
-@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
+@media (max-width:520px){.top{flex-wrap:wrap}.meterbox{order:3;width:100%;margin:6px 0 0}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}.vid{flex-direction:column}.vid img{width:100%}.tools{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -224,7 +224,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "Ever since writing on paper became a constant in my life, I started to have more free time that otherwise would have been spent doom scrolling. My attention grows, giving more space for activities that isn't just fun, but also really fulfilling. If you're keen to see what it's like to be content instead of consumed, stick around. I'll show you. Guys, I love my journal. I'm really excited to talk about this today, and I hope you'd give me the privilege to ramble a bit as to why. First of all, having a physical journal is like being told that you have all the time and space in the world to gather your thoughts. You can pause mid-sentence and make mistakes. There won't be a black bar blinking while you think or an imaginary red line telling you this is a mistake. Fix it now. There are no pop-ups selling ways to improve what you have to say, how to sound more confident, more intelligent, cuz on paper, you can learn to actually be confident, be intelligent. It allows you to be who you are, to wield your voice as is, and hone it in your own ways at your own pace. Secondly, writing on paper reminds us that we are free. See, you can write slanted, skip spaces, doodle mid-sentence without needing to click or switch or scroll. There is nothing holding you back from drawing. No limitations of only having a keyboard or the software does not support this function. On Paper, writing and drawing can coexist in the same space. You can dictate how you want to write and where you want to write. You don't need to sit in a place with a PowerPoint. You don't need to avoid the sun because a glare makes the screen hard to read. And you can sit anywhere, anytime with a book and a pen in your hand, the world is your oyster. Thirdly, journaling teaches you that your words mean something, that your thoughts and feelings matters and you don't need the world to validate it for you. Because by existing on the page, it is already valid. You don't need some comment to tell you you're right or thousands of likes to confirm your belief. You don't need to perform. You don't need to be more than who you are.", "words": 394, "whole": false, "from": 20.68, "to": 181.84}</script>
-<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/8SIyX5sRajI/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjZy47QBg==&sigh=rs$AOn4CLC3mTyfrmxJyfqIM5mfVkxazvfPGg","w":320,"h":180,"cols":3,"rows":3,"count":108,"step":4.935,"score":[10,11,19,31,53,20,22,55,25,17,19,6,6,6,17,17,42,42,28,24,42,31,30,19,20,20,10,10,11,27,27,21,19,25,23,13,13,20,16,14,19,27,11,10,21,16,14,7,8,8,17,25,25,29,10,18,18,18,9,9,9,9,7,7,18,22,6,19,10,12,19,15,15,16,16,20,10,13,11,14,15,15,15,15,15,15,19,23,10,14,10,10,10,11,16,11,10,13,28,17,14,10,10,10,10,10,10,99]}</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/8SIyX5sRajI/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjZy47QBg==&sigh=rs$AOn4CLC3mTyfrmxJyfqIM5mfVkxazvfPGg","w":320,"h":180,"cols":3,"rows":3,"count":108,"step":4.935,"score":[8,10,20,32,54,20,21,55,25,18,21,7,7,7,17,17,43,43,28,25,42,32,30,19,20,19,11,11,13,27,28,22,19,26,25,15,14,21,17,15,20,28,11,9,23,17,15,6,8,8,17,26,26,30,10,18,18,18,9,9,9,9,8,8,18,22,8,21,11,13,20,16,16,16,17,20,10,13,10,14,16,16,16,16,16,16,20,24,11,14,8,8,8,10,16,9,8,13,27,16,14,8,10,8,8,8,8,99],"moments":[[34.5,7],[79.0,16],[113.5,24],[128.3,27],[148.0,30],[202.3,41],[251.7,51],[271.4,57],[286.2,60],[350.4,72],[394.8,85],[444.1,92],[459.0,93],[483.6,98],[498.4,102]]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -473,7 +473,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       m.innerHTML=j.tiles.map(function(t){
         return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
       }).join('');
-      m.hidden=false;
+      m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
       if(j.tiles.some(function(t){return t.low})){       // something's nearly out: say so
         var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
       }
