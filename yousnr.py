@@ -2945,7 +2945,8 @@ def _account_left(service, spent_now):
 
 
 def meters():
-    """The four tiles in the page header: what's left for each paid service."""
+    """The tiles in the page header: what's left for each paid service. Not Claude: YouSNR can only estimate its
+    spending there from token counts, which drift from the real bill (`yousnr balances` still shows the estimate)."""
     def money(x):
         return f"${x:,.2f}" if x < 100 else f"${x:,.0f}"
 
@@ -2980,17 +2981,6 @@ def meters():
         else:
             tile(name, word_left, word_cap, f"{money(word_left)}/{whole(word_cap)}",
                  f"Word checks (ElevenLabs and AssemblyAI together): {money(word_left)} of this month's {whole(word_cap)} left")
-    est = excerpt.settings()
-    if est["key"]:
-        acct = _account_left("claude", spent["claude"])
-        if acct:
-            left, amount, since = acct
-            tile("Claude", left, amount, f"{money(left)}/{whole(amount)}",
-                 f"Claude account: about {money(left)} of {whole(amount)} left (YouSNR's own tally since {since})")
-        else:
-            left = max(0.0, est["budget"] - excerpt.spent())
-            tile("Claude", left, est["budget"], f"{money(left)}/{whole(est['budget'])}",
-                 f"In their words (Claude): {money(left)} of this month's {whole(est['budget'])} left")
     pst = pangram_settings()
     if pst["key"]:
         per = -(-pst["words"] // 100) * pst["price"]

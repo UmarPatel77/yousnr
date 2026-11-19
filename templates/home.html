@@ -24,11 +24,11 @@ code{background:var(--chip);padding:1px 6px;border-radius:4px}
 .head h1{margin:0}
 .meterbox{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
 .meters{display:grid;grid-template-columns:auto auto;gap:1px 14px;font-size:11px;line-height:15px;color:var(--mute)}
-.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
+.meters.three{grid-template-columns:auto auto auto}.meters[hidden]{display:none}.meter{white-space:nowrap;cursor:help}.meter b{color:var(--fg);font-weight:600}
 .meter.low b{color:#e5484d}
 .support{font-size:11px;line-height:15px;color:var(--mute)}.support a{color:var(--accent);text-decoration:none}
 .support a:hover{text-decoration:underline}.support.low .lead{color:#e5484d}
-@media (max-width:520px){.head{margin-bottom:12px}.meterbox{width:100%}.meters{width:100%;grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.head{margin-bottom:12px}.meterbox{width:100%}.meters,.meters.three{width:100%;grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -53,7 +53,7 @@ document.getElementById('f').onsubmit=function(e){e.preventDefault();
     m.innerHTML=j.tiles.map(function(t){
       return '<div class="meter'+(t.low?' low':'')+'" title="'+esc(t.note||'')+'">'+esc(t.name)+' <b>'+esc(t.text)+'</b></div>';
     }).join('');
-    m.hidden=false;
+    m.hidden=false;m.classList.toggle('three',j.tiles.length===3);   // three tiles: one row, not 2+1
     if(j.tiles.some(function(t){return t.low})){
       var s=document.getElementById('support');s.classList.add('low');s.querySelector('.lead').textContent='♥ Running low. Help keep these topped up:';
     }
