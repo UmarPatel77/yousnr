@@ -42,6 +42,8 @@ a{color:inherit;text-decoration:none}
 .panel{border:1px solid var(--line);border-radius:12px}
 .head{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:12px 16px 12px}
 .head h3{margin:0 0 12px;font-size:20px;line-height:28px;font-weight:700}
+.head .title{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin:0 0 12px}.head .title h3{margin:0}
+.hint{display:none;font-size:13px;line-height:18px;color:var(--mute)}.hasframes .hint{display:block}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .tab{border:0;background:var(--chip);color:var(--fg);font:500 14px Roboto,Arial,sans-serif;padding:6px 12px;border-radius:8px;cursor:pointer}
 .tab[aria-selected=true]{background:var(--chip-on);color:var(--chip-on-fg)}
@@ -67,6 +69,12 @@ a{color:inherit;text-decoration:none}
 .peek .strip .frame.star:after{content:'★';position:absolute;right:3px;top:0;font-size:12px;color:#f5a524;text-shadow:0 0 2px #000}
 .peek .cap{margin-top:8px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
 .peek .cap a{color:var(--accent)}
+.shots{display:flex;flex-wrap:wrap;gap:8px;margin:2px 20px 12px}
+.shot{position:relative;display:block;max-width:100%;border-radius:8px;overflow:hidden;line-height:0;color:#fff;text-decoration:none}
+.shot .pic{display:block;max-width:100%;background-color:var(--chip);background-repeat:no-repeat}
+.shot .when{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.75);font:500 12px/18px Roboto,Arial,sans-serif;padding:0 6px;border-radius:4px}
+.shot:hover .when,.shot:focus-visible .when{background:#cc0000}.shot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nopics .shots,.picsfail .shots,.searching .shots,.paramode #body>.shots{display:none}
 .seg .ts{display:inline-block;font-size:12px;line-height:18px;font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .seg .tx{display:block;font-size:14px;line-height:20px}
 .nots .seg .ts{display:none}
@@ -115,7 +123,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 
   <div class="panel" id="panel">
     <div class="head">
-      <h3>In this video</h3>
+      <div class="title"><h3>In this video</h3><span class="hint" id="framehint">Click any line to see what was on screen · double-click to watch from there</span></div>
       <div class="tabs" role="tablist">
         <button class="tab hidden" role="tab" id="tab-ch" aria-selected="false">Chapters</button>
         <button class="tab" role="tab" id="tab-tr" aria-selected="true">Transcript</button>
@@ -124,6 +132,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
           <button class="tool " id="pgbtn" aria-pressed="false" title="Check whether this transcript reads as AI-written, with Pangram">Pangram</button>
           <button class="tool" id="para" aria-pressed="false" title="Show the transcript as sentence paragraphs">Paragraphs</button>
           <button class="tool" id="tog">Hide timestamps</button>
+          <button class="tool hidden" id="pics" title="Pictures of what's on screen where the video shows something: a slide, a chart, a cutaway">Hide pictures</button>
           <button class="tool" id="copy">Copy</button>
           <button class="tool" id="txt">.txt</button>
           <button class="tool" id="srt">.srt</button>
@@ -199,7 +208,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
 </div>
 <script type="application/json" id="pgdata">null</script>
 <script type="application/json" id="pgsel">{"text": "They're making sure that they can unblock you whenever you have things that you're stuck on. It's amazing the amount of like personal attention that goes into each individual intern's experience. >> You have resources in compute in mentorship. You'll learn how to do things with your own hands, but you'll also learn how to think about How to think about high-level projects. And this is the first year where we're allowing interns to use AI tooling. And it's a pretty big game changer. I think the overall volume of output this year has been a lot higher because of people using AI tools. So HRT's interns are also going to be exposed to ongoing classroom style learnings. So story time is a way to get that conversation started. >> Our interns will come in at 9:30 in the morning and they'll hear a different HRT talk about something that they've done in the past or a current market event or whatever's on their mind and it gives you a lot of perspective about the various types of trading that we do and the things that we think about. >> I love story time. Story time is my favorite of the day. You always walk out having learned something new either about the world or about math or about markets and it's always fun. >> We also have lots of talks from different members of a leadership team about different areas. Everything from like the business of trading through to sort of deep dives on technical research topics. >> There is an ethos at HRT of leadership making themselves available for interns. >> People are really busy. My mentor is really busy, but like he takes time out of his day and like talks to me all the time and like there's really like no culture of shame. You can just ask anything and somebody's going to help you. When you're at lunch, like you're sitting in the cafeteria with anybody. Lunch is probably like one of the more efficient hours of the workday, which is like very counterintuitive. You get this like environment where people are like sharing ideas with each other and like actually generating alpha for one another. >> HRT does a really good job at fostering like a community amongst the interns. People are essentially friends more than colleagues. It's been unbelievable.", "words": 396, "whole": false, "from": 205.92, "to": 322.08}</script>
-<script type="application/json" id="framesdata">null</script>
+<script type="application/json" id="framesdata">{"url":"https://i.ytimg.com/sb/cPmVLrTA8AU/storyboard3_L3/M$M.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgj16f_VBg==&sigh=rs$AOn4CLAaVo-WKMjm_zTvnUN2pwY0_VtkZw","w":320,"h":180,"cols":3,"rows":3,"count":70,"step":4.857,"score":[47,40,70,36,40,34,56,50,38,18,40,99,99,98,35,97,34,43,35,52,32,39,29,47,39,40,52,32,48,83,30,40,66,27,53,44,39,40,37,47,59,41,28,30,56,32,32,51,28,29,48,47,46,43,49,30,54,45,45,64,22,50,40,37,47,62,44,33,59,59]}</script>
 <script>
 (function(){
   var body=document.getElementById('body'),panel=document.getElementById('panel'),chaps=document.getElementById('chaps');
@@ -230,6 +239,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     var ch=which==='ch';
     tabCh.setAttribute('aria-selected',ch);tabTr.setAttribute('aria-selected',!ch);
     chaps.classList.toggle('hidden',!ch);body.classList.toggle('hidden',ch);bar.classList.toggle('hidden',ch);tools.classList.toggle('hidden',ch);
+    document.getElementById('framehint').classList.toggle('hidden',ch);
   }
   tabCh.onclick=function(){show('ch')};tabTr.onclick=function(){show('tr')};
   chaps.addEventListener('click',function(ev){
@@ -243,6 +253,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   q.addEventListener('input',function(){
     var v=q.value.trim().toLowerCase(),n=0;
+    panel.classList.toggle('searching',!!v);
     body.querySelectorAll('.ch').forEach(function(h){h.classList.toggle('hidden',!!v)});
     (panel.classList.contains('paramode')?prow:segs).forEach(function(a){
       var tx=a.querySelector('.tx'),t=a._t,i=v?t.toLowerCase().indexOf(v):-1;
@@ -336,6 +347,7 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
       p.words.forEach(function(u,k){if(k)tx.appendChild(document.createTextNode(' '));tx.appendChild(u.node?u.node.cloneNode(true):document.createTextNode(u.text))});
       a.appendChild(ts);a.appendChild(tx);paras.appendChild(a);snap(a);prow.push(a);
     });
+    if(shotList&&shotList.length)placeShots(prow);   // (shotList is set further down, once the frames are read)
   }
   function setParas(on,save){
     if(on)renderParas();
@@ -457,16 +469,90 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
   var fr=null;try{fr=JSON.parse(document.getElementById('framesdata').textContent)}catch(e){}
   if(fr&&fr.url&&fr.count){
     panel.classList.add('hasframes');
+    // Phones: double-tap isn't dependable, so the hint just says tap (the frame box has its own Watch link).
+    if(window.matchMedia&&matchMedia('(hover:none)').matches)document.getElementById('framehint').textContent='Tap any line to see what was on screen';
     var foot=document.querySelector('.foot');
     if(foot)foot.firstChild.textContent='Click a line or paragraph to see the video at that moment; double-click it (or use Watch) to open it on YouTube.';
   }else fr=null;
-  function frameBox(i,width){
-    var per=fr.cols*fr.rows,sheet=Math.floor(i/per),k=i%per,c=k%fr.cols,r=Math.floor(k/fr.cols),s=width/fr.w,d=document.createElement('div');
-    d.style.width=width+'px';d.style.height=Math.round(fr.h*s)+'px';
-    d.style.backgroundImage='url("'+fr.url.replace('$M',sheet)+'")';
-    d.style.backgroundSize=(fr.cols*fr.w*s)+'px '+(fr.rows*fr.h*s)+'px';
-    d.style.backgroundPosition=(-c*fr.w*s)+'px '+(-r*fr.h*s)+'px';
-    return d;
+  // YouTube's sheets of frames, loaded once each. The sheet's real size decides the layout (the last sheet of
+  // a video can be shorter than the rest), and the frame is placed in percentages so it scales with its box.
+  var sheets={};
+  function sheet(n,cb){
+    var s=sheets[n];
+    if(!s){
+      s=sheets[n]={cbs:[],img:new Image()};
+      s.img.onload=function(){s.ok=true;var fw=s.img.naturalWidth/fr.cols;s.rows=Math.max(1,Math.round(s.img.naturalHeight/(fw*fr.h/fr.w)));s.cbs.forEach(function(f){f(s)})};
+      s.img.onerror=function(){                   // YouTube won't give us its frames: no pictures at all, rather
+        s.bad=true;panel.classList.add('picsfail'); // than empty boxes that vanish one by one as you scroll
+        if(picsBtn)picsBtn.classList.add('hidden');
+        s.cbs.forEach(function(f){f(s)});
+      };
+      s.img.src=fr.url.replace('$M',n);
+    }
+    if(s.ok||s.bad)cb(s);else s.cbs.push(cb);
+  }
+  function paint(el,i,fail){
+    var per=fr.cols*fr.rows,n=Math.floor(i/per),k=i%per,c=k%fr.cols,r=Math.floor(k/fr.cols);el._i=i;
+    sheet(n,function(s){
+      if(el._i!==i)return;                        // shows another frame by now
+      if(s.bad||r>=s.rows){if(fail)fail();return}
+      el.style.backgroundImage='url("'+fr.url.replace('$M',n)+'")';
+      el.style.backgroundSize=(fr.cols*100)+'% '+(s.rows*100)+'%';
+      el.style.backgroundPosition=(fr.cols>1?c*100/(fr.cols-1):0)+'% '+(s.rows>1?r*100/(s.rows-1):0)+'%';
+    });
+  }
+  var ratio=window.CSS&&CSS.supports&&CSS.supports('aspect-ratio','16/9');
+  function sized(el,width){
+    el.style.width=width+'px';el.style.maxWidth='100%';
+    if(ratio)el.style.aspectRatio=fr.w+'/'+fr.h;else el.style.height=Math.round(width*fr.h/fr.w)+'px';
+    return el;
+  }
+  function frameBox(i,width,fail){
+    var d=sized(document.createElement('div'),width);d.style.backgroundRepeat='no-repeat';paint(d,i,fail);return d;
+  }
+
+  // Pictures beside the words: where the video shows something (a slide, a chart, a screenshot, a cutaway),
+  // a picture of it sits under the line where it first appears. The server picks them (frames.py); a slide
+  // that builds up is shown complete. Clicking one plays the video from there.
+  var shotList=fr&&fr.moments||[],picsBtn=document.getElementById('pics');
+  var SHOT_W=fr?Math.min(320,Math.max(240,fr.w)):0;
+  var lazy=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){lazy.unobserve(e.target);paint(e.target,e.target._want,e.target._fail)}});
+  },{rootMargin:'800px 0px'}):null;
+  function shotEl(m){
+    var t=Math.floor(m[0]),a=document.createElement('a'),pic=sized(document.createElement('span'),SHOT_W),when=document.createElement('span');
+    a.className='shot';a.href='https://www.youtube.com/watch?v=cPmVLrTA8AU&t='+t+'s';a.target='_blank';a.rel='noopener';
+    a.title='Watch from '+clock(t)+' on YouTube';
+    pic.className='pic';pic.setAttribute('role','img');pic.setAttribute('aria-label','What was on screen at '+clock(t));
+    when.className='when';when.textContent='▶ '+clock(t);
+    a.appendChild(pic);a.appendChild(when);
+    pic._want=m[1];pic._fail=function(){var box=a.parentNode;a.remove();if(box&&!box.children.length)box.remove()};
+    if(lazy)lazy.observe(pic);else paint(pic,m[1],pic._fail);
+    return a;
+  }
+  function placeShots(rows){                       // each picture goes under the line (or paragraph) it starts in
+    var k=0,groups=[];
+    shotList.forEach(function(m){
+      while(k+1<rows.length&&+rows[k+1].dataset.s<=m[0]+0.05)k++;
+      if(rows[k])(groups[k]=groups[k]||[]).push(m);
+    });
+    groups.forEach(function(g,k){
+      if(!g)return;
+      var box=document.createElement('div');box.className='shots';
+      g.forEach(function(m){box.appendChild(shotEl(m))});
+      rows[k].parentNode.insertBefore(box,rows[k].nextSibling);
+    });
+  }
+  if(shotList.length){
+    placeShots(segs);
+    if(panel.classList.contains('paramode'))placeShots(prow);
+    picsBtn.classList.remove('hidden');
+    var setPics=function(on,save){
+      panel.classList.toggle('nopics',!on);picsBtn.textContent=on?'Hide pictures':'Show pictures';
+      if(save)try{localStorage.setItem('yousnr.pics',on?'1':'0')}catch(e){}
+    };
+    picsBtn.onclick=function(){setPics(panel.classList.contains('nopics'),true)};
+    try{if(localStorage.getItem('yousnr.pics')==='0')setPics(false,false)}catch(e){}
   }
   function closePeek(){
     body.querySelectorAll('.peek').forEach(function(p){p.remove()});
@@ -483,7 +569,8 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     if(i1-i0+1<=12){for(i=i0;i<=i1;i++)pick.push(i)}
     else{for(i=0;i<12;i++)pick.push(i0+Math.round(i*(i1-i0)/11));if(pick.indexOf(best)<0){pick[pick.length-1]=best;pick.sort(function(a,b){return a-b})}}
     var p=document.createElement('div'),W=Math.min(480,body.clientWidth-56);p.className='peek';
-    var big=frameBox(best,W);big.className='big';p.appendChild(big);
+    var big=frameBox(best,W,function(){p.innerHTML='<div class="cap">YouTube’s preview frames aren’t available for this video right now. <a href="'+row.href+'" target="_blank" rel="noopener">Watch from '+clock(t0)+' ↗</a></div>'});
+    big.className='big';p.appendChild(big);
     var strip=document.createElement('div');strip.className='strip';
     if(pick.length>1)pick.forEach(function(i){
       var f=frameBox(i,Math.min(96,Math.floor((W-66)/6)));f.className='frame'+(i===best?' on':'')+(fr.score&&i===best&&fr.score[i]>=30?' star':'');
@@ -492,15 +579,13 @@ mark{background:var(--hit);color:inherit;border-radius:2px}
     if(pick.length>1)p.appendChild(strip);
     var cap=document.createElement('div');cap.className='cap';p.appendChild(cap);
     function show(i){
-      var nb=frameBox(i,W);big.style.cssText=nb.style.cssText;
+      paint(big,i);
       strip.querySelectorAll('.frame').forEach(function(f,k){f.classList.toggle('on',pick[k]===i)});
       var t=Math.floor(i*fr.step);
       cap.innerHTML='<span>'+clock(t)+(fr.score&&i===best&&fr.score[i]>=30?' · stands out in this stretch':'')+
         ' · YouTube’s preview frame</span><a href="https://www.youtube.com/watch?v=cPmVLrTA8AU&t='+t+'s" target="_blank" rel="noopener">Watch from '+clock(t)+' ↗</a>';
     }
     show(best);
-    var probe=new Image();probe.onerror=function(){p.innerHTML='<div class="cap">YouTube’s preview frames aren’t available for this video right now. <a href="'+row.href+'" target="_blank" rel="noopener">Watch from '+clock(t0)+' ↗</a></div>'};
-    probe.src=fr.url.replace('$M',Math.floor(best/(fr.cols*fr.rows)));
     row.classList.add('open');row.parentNode.insertBefore(p,row.nextSibling);
   }
   if(fr){
