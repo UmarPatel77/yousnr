@@ -1,0 +1,405 @@
+{
+ "id": "ojHJRMPvOSU",
+ "title": "I Tracked Every Corporate Jet to Predict Mergers",
+ "channel": "LosingLoonies",
+ "published": "20261121",
+ "description": "Get Hostinger's biggest Black Friday deals at https://hostinger.com/losingloonies and use code LOSINGLOONIES for an EXTRA 10% OFF sale pricing! Plus, get a free spin on the Wheel of Fortune!\n\n(Free Jet Data, shhh) Official Website: https://losingloonies.ca/jets\n\n💻 GET THE CODE → https://github.com/sponsors/losingloonies?metadata_youtube=jets\nAll private repositories are available to GitHub Sponsors. You are auto-invited to the organization repository upon joining.\n\nMarket Data from Massive: I earn a commission if you sign up through my link: https://massive.com/?utm_campaign=losing-loonies\n\nDiscord Server: https://discord.gg/FUeE2bHTGX\nPatreon: https://www.patreon.com/c/LosingLoonies\nInstagram: https://www.instagram.com/losingloonies/\n\n_____________________________________________________________\nContinuous improvement: small improvements will stack up to become significant over time.\nIn this video, I focused on: music.\n_____________________________________________________________\n\nDISCLAIMER\nThis content is for entertainment and educational purposes only.\nI am not a financial advisor; nothing here is financial advice.\nAlways do your own research and consult professionals before making financial decisions.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Hypothesis and methodology"
+  },
+  {
+   "start": 88,
+   "title": "Chapter 2: Gathering flight data"
+  },
+  {
+   "start": 193,
+   "title": "Chapter 3: Building the tracking system"
+  },
+  {
+   "start": 241,
+   "title": "Chapter 4: Linking jets to companies"
+  },
+  {
+   "start": 306,
+   "title": "Chapter 5: Deep dive into ownership"
+  },
+  {
+   "start": 365,
+   "title": "Chapter 6: Testing against real data"
+  },
+  {
+   "start": 447,
+   "title": "Chapter 7: Conclusion and results"
+  }
+ ],
+ "duration": 476,
+ "category": "Entertainment",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/ojHJRMPvOSU/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjykPHXBg==|48#27#100#10#10#0#default#rs$AOn4CLCpnhHfrayaSmYtJxjRBTJ_1r2gXg|80#45#97#10#10#5000#M$M#rs$AOn4CLDzdmgehkx1wIIoiwBFyJVnyeDVew|160#90#97#5#5#5000#M$M#rs$AOn4CLCxAlgdGDSjpopmjuMNX21tt3MFqg|320#180#97#3#3#5000#M$M#rs$AOn4CLAXtJ71C_vv2tuwDLiz55ujsh2tkA",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 7.0,
+   "text": "Can a CEO's private jet tell you about a billion dollar merger before it's public? I want to know. So, I gathered gigabytes of flight data and built a",
+   "label": "0:00"
+  },
+  {
+   "start": 7.0,
+   "dur": 9.0,
+   "text": "system that tracks every corporate jet in America to see if I can spot the next merger before it's announced. Will I become a millionaire? Did I read one paper on this and then decide to make an",
+   "label": "0:07"
+  },
+  {
+   "start": 16.0,
+   "dur": 8.0,
+   "text": "entire YouTube video about it? Let's find out. Okay. A merger between two companies is a big event and usually once it's announced, there's a sharp",
+   "label": "0:16"
+  },
+  {
+   "start": 24.0,
+   "dur": 7.0,
+   "text": "jump in the stock price of the company being bought. Wall Street predicts these events and has been for a while. But I want to know if it's possible to do so",
+   "label": "0:24"
+  },
+  {
+   "start": 31.0,
+   "dur": 7.0,
+   "text": "in 2026. And it all starts with this paper. Wait a minute. What do corporate jets have to do with company mergers?",
+   "label": "0:31"
+  },
+  {
+   "start": 38.0,
+   "dur": 9.0,
+   "text": "Okay, we're getting ahead of ourselves here. Every plane in the sky broadcasts some basic information like where it is and how fast it's going. If we wanted to, we could build a receiver for 50",
+   "label": "0:38"
+  },
+  {
+   "start": 47.0,
+   "dur": 8.0,
+   "text": "bucks, stick it out my apartment window, and pick up planes hundreds of kilometers away. But thankfully, we don't have to do this. This information is already online for us. Now, before",
+   "label": "0:47"
+  },
+  {
+   "start": 55.0,
+   "dur": 9.0,
+   "text": "one company buys another, someone usually flies there to close [music] the deal. It's such a problem that one oil company actually asked a flight tracking site to hide its jet data [music] days",
+   "label": "0:55"
+  },
+  {
+   "start": 64.0,
+   "dur": 8.0,
+   "text": "before it flew to merger talks. So, here's the plan. I'm going to link big companies to their jets, track where those jets fly, and then test 2 years of",
+   "label": "1:04"
+  },
+  {
+   "start": 72.0,
+   "dur": 7.0,
+   "text": "real deals. If a company's jet lands near another company's headquarters right before a deal is announced, I'll count that as a hit. But, I'll also have",
+   "label": "1:12"
+  },
+  {
+   "start": 79.0,
+   "dur": 9.0,
+   "text": "to consider how often those companies land in that city regularly. Otherwise, I'd think a merger is happening like every week in New York when there's actually nothing. Now, honesty moment. I",
+   "label": "1:19"
+  },
+  {
+   "start": 88.0,
+   "dur": 7.0,
+   "text": "know nothing about airplanes. ADSB, Open Sky. It's all new to me. So, first, where do you even get flight data for",
+   "label": "1:28"
+  },
+  {
+   "start": 95.0,
+   "dur": 8.0,
+   "text": "every jet in America? Unsurprisingly, jets are tracked very well, and there's lots of public data on this. Every aircraft carries a radio that shouts its",
+   "label": "1:35"
+  },
+  {
+   "start": 103.0,
+   "dur": 9.0,
+   "text": "position, altitude, speed, and ID number about once a second to anybody who's listening. It's called ADSB. It exists for safety, but I want to use it to",
+   "label": "1:43"
+  },
+  {
+   "start": 112.0,
+   "dur": 8.0,
+   "text": "trade stocks like the degenerate that I am. Thousands of hobbyists listen in with cheap receivers and pull this data into networks for everyone to share.",
+   "label": "1:52"
+  },
+  {
+   "start": 120.0,
+   "dur": 6.0,
+   "text": "Manchester, this data is published by ADSB.OL.",
+   "label": "2:00"
+  },
+  {
+   "start": 126.0,
+   "dur": 7.0,
+   "text": "Every night it publishes the entire day, every aircraft, every position as one file on GitHub under an open license.",
+   "label": "2:06"
+  },
+  {
+   "start": 133.0,
+   "dur": 11.0,
+   "text": "One day is about 3 GB and inside this file is one record per aircraft heard that day. And for example, there's 68,000 of them on this day. And we get the ID code, tail number, and the type.",
+   "label": "2:13"
+  },
+  {
+   "start": 144.0,
+   "dur": 9.0,
+   "text": "For example, this one, Bombastier, Challenger 300. It says who owns it, Murphy Oil. But all of this data is only the daily jet data. And I need every",
+   "label": "2:24"
+  },
+  {
+   "start": 153.0,
+   "dur": 8.0,
+   "text": "business over 2 years, which is a lot of data. In fact, 2.5 tab, which is a bit too much for my crappy computer. So, I'm",
+   "label": "2:33"
+  },
+  {
+   "start": 161.0,
+   "dur": 7.0,
+   "text": "going to download one day at a time, keep what I need, and then delete the rest. I only kept business jets and threw away helicopters, cargo, planes,",
+   "label": "2:41"
+  },
+  {
+   "start": 168.0,
+   "dur": 8.0,
+   "text": "and airliners. In the end, 68,000 aircraft a day became 2500 jets, which is a lot more manageable, which still ends up being a lot of data. Although,",
+   "label": "2:48"
+  },
+  {
+   "start": 176.0,
+   "dur": 9.0,
+   "text": "there's a small issue here. To catch the next merger, I need something that's watching the sky 24/7. And to trade on this, I need a system that can act",
+   "label": "2:56"
+  },
+  {
+   "start": 185.0,
+   "dur": 8.0,
+   "text": "immediately. My crappy computer isn't going to do that. So, this video is sponsored by Hostinger. And I've actually been using their virtual private server to host this project. I",
+   "label": "3:05"
+  },
+  {
+   "start": 193.0,
+   "dur": 7.0,
+   "text": "picked a plan and everyone came with 1 Gbit network speeds and it was running in minutes. I had complete control of the server with a terminal right in my",
+   "label": "3:13"
+  },
+  {
+   "start": 200.0,
+   "dur": 7.0,
+   "text": "browser. I pasted my Jet Collector and started it. And since October, I've actually been sweeping the entire US for corporate jets around the clock. I also",
+   "label": "3:20"
+  },
+  {
+   "start": 207.0,
+   "dur": 8.0,
+   "text": "set up their [music] N8N, an automation tool, so whenever a company jet lands somewhere's unusual, I get an alert right in my Discord. And because my",
+   "label": "3:27"
+  },
+  {
+   "start": 215.0,
+   "dur": 11.0,
+   "text": "brain is very tiny, I can use their built-in AI agent to ask how my collector is doing. Also, if I break something, which never happens, boom, I can restore the server with a snapshot.",
+   "label": "3:35"
+  },
+  {
+   "start": 226.0,
+   "dur": 7.0,
+   "text": "So, don't miss Hostinger's Black Friday sale. You can pick up a KVM2 plan for up to 62% off, plus an extra 10% off when",
+   "label": "3:46"
+  },
+  {
+   "start": 233.0,
+   "dur": 8.0,
+   "text": "you use the code losing loonies at hostinger.com/losing loonies. Now, with jet data streaming in off the server, we need to do the most",
+   "label": "3:53"
+  },
+  {
+   "start": 241.0,
+   "dur": 8.0,
+   "text": "challenging part, which is linking the jets to a company. So, how do we do this? Well, the FAA publishes the aircraft registry in a single free file.",
+   "label": "4:01"
+  },
+  {
+   "start": 249.0,
+   "dur": 7.0,
+   "text": "This file includes every plane in the country with a unique identification number called the tail number. This data also includes who owns the plane. That",
+   "label": "4:09"
+  },
+  {
+   "start": 256.0,
+   "dur": 9.0,
+   "text": "was easy. Or was it? Because when I sorted the data, I got some unexpected jet owners. Over 3,300 are companies, otherwise known as LLC's. So, out of",
+   "label": "4:16"
+  },
+  {
+   "start": 265.0,
+   "dur": 9.0,
+   "text": "almost 7,000 jets, half are companies [music] like Savannah Bell, 1,200 belong to the Bank of Utah. Wait, what? What's",
+   "label": "4:25"
+  },
+  {
+   "start": 274.0,
+   "dur": 9.0,
+   "text": "going on here? Well, as it turns out, some owners register their jet under a holding company. And even worse, a 2024 law lets private jet owners ask the FAA",
+   "label": "4:34"
+  },
+  {
+   "start": 283.0,
+   "dur": 9.0,
+   "text": "to hide their name. So, how many big companies can I actually name? To find out, I took the 40 biggest deals of 2024 and 2025 and tried to find each buyer's",
+   "label": "4:43"
+  },
+  {
+   "start": 292.0,
+   "dur": 6.0,
+   "text": "jet. Only 14 of those had a jet in their own name. In this, I found companies like Boeing, IBM, Johnson, and Johnson.",
+   "label": "4:52"
+  },
+  {
+   "start": 298.0,
+   "dur": 8.0,
+   "text": "But where is everyone else? So, I'm going on a hunt to find the jets of these companies. And my first stop will be the stock market's principal's",
+   "label": "4:58"
+  },
+  {
+   "start": 306.0,
+   "dur": 8.0,
+   "text": "office, the SEC. Public companies have to report what they pay their executives, including personal flights on company jets. And I found my first",
+   "label": "5:06"
+  },
+  {
+   "start": 314.0,
+   "dur": 9.0,
+   "text": "clue for Google. Their own statement says it rents a hanger space at the San Jose airport to hold Google's corporate aircraft from a company owned by Google",
+   "label": "5:14"
+  },
+  {
+   "start": 323.0,
+   "dur": 7.0,
+   "text": "executives. They spent 1.5 million in 15 months. Google's planes were hidden behind the Bank of Utah. And I also",
+   "label": "5:23"
+  },
+  {
+   "start": 330.0,
+   "dur": 12.0,
+   "text": "found that back in 2020, a watchdog group called the Tech Transparency Project matched Google's FCC radio licenses to two tail numbers, N10XG and N904XG.",
+   "label": "5:30"
+  },
+  {
+   "start": 342.0,
+   "dur": 7.0,
+   "text": "And my data shows that both of these jets sleep in the San Jose airport, right where the hanger is. Digging through these filings the same way, I",
+   "label": "5:42"
+  },
+  {
+   "start": 349.0,
+   "dur": 8.0,
+   "text": "found hidden jets for two more buyers, Dicks Sporting Goods and Boston Scientific. So that's a total of 17 deals where I can name the buyer's jet.",
+   "label": "5:49"
+  },
+  {
+   "start": 357.0,
+   "dur": 8.0,
+   "text": "And it turns out it's actually a little bit harder than I imagined to link companies to jets. So, does this all actually work? Well, the SEC filings",
+   "label": "5:57"
+  },
+  {
+   "start": 365.0,
+   "dur": 7.0,
+   "text": "tell me the day a merger was actually announced and who's buying who. So, I can look for instances where the acquirer's jet flew there in the week",
+   "label": "6:05"
+  },
+  {
+   "start": 372.0,
+   "dur": 5.0,
+   "text": "before. Let's start with the biggest one. Google buying Whiz for $32 billion.",
+   "label": "6:12"
+  },
+  {
+   "start": 377.0,
+   "dur": 8.0,
+   "text": "My code is checking one thing. Did the buyer's jet land near the Target's office in the week before the deal for Google and Whiz? Yes. On March 11th,",
+   "label": "6:17"
+  },
+  {
+   "start": 385.0,
+   "dur": 8.0,
+   "text": "Google's jet landed outside of New York 7 days before the deal. So, this works then, right? Let's just hook the script up and get to live trading. Well,",
+   "label": "6:25"
+  },
+  {
+   "start": 393.0,
+   "dur": 8.0,
+   "text": "there's a problem with this. These jets land in these cities all the time. So, my code also checks how often the jets show up when there's no deal coming.",
+   "label": "6:33"
+  },
+  {
+   "start": 401.0,
+   "dur": 5.0,
+   "text": "Google's jet was in New York 18 of 75 ordinary weeks, about 1 week and four.",
+   "label": "6:41"
+  },
+  {
+   "start": 406.0,
+   "dur": 9.0,
+   "text": "Here's every week Google's jet landed in New York. Here is the Whiz deal and the month before it. Yes, it showed up. But look at the rest of the year. There's",
+   "label": "6:46"
+  },
+  {
+   "start": 415.0,
+   "dur": 8.0,
+   "text": "visits but no deal. So a jet showing up before a deal. I mean that happens all the time anyways. Across all of my deals, if the jets just flew their",
+   "label": "6:55"
+  },
+  {
+   "start": 423.0,
+   "dur": 8.0,
+   "text": "normal routes, I'd expect about three of them to show up before a deal by just pure luck. And in this case, I saw five, which is a little bit higher than three,",
+   "label": "7:03"
+  },
+  {
+   "start": 431.0,
+   "dur": 7.0,
+   "text": "but still not that much. And if I'd bought a stock every time a jet showed up, I would have bought 271 times when",
+   "label": "7:11"
+  },
+  {
+   "start": 438.0,
+   "dur": 9.0,
+   "text": "no deal actually ever came. So did this really work? Well, not enough to trade on clearly. So, is it still possible to predict a merger from a CEO's jet? Not",
+   "label": "7:18"
+  },
+  {
+   "start": 447.0,
+   "dur": 9.0,
+   "text": "from what I can tell. So, please leave a comment below with a way to improve this. And I may just explore it in a future video to potentially make this work someday. Who knows? Also, my live",
+   "label": "7:27"
+  },
+  {
+   "start": 456.0,
+   "dur": 7.0,
+   "text": "jet alerts is up in my Discord for a few weeks, so feel free to check it out. And if you want access to this code, you can get it upon becoming a GitHub supporter.",
+   "label": "7:36"
+  },
+  {
+   "start": 463.0,
+   "dur": null,
+   "text": "So, check the link in the description. And I'll see you guys in the next one.",
+   "label": "7:43"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel",
+  "language_code": "en"
+ },
+ "source": "youtube",
+ "added": "2026-11-22T23:31:10+00:00"
+}
