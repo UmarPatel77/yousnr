@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-22T23:31:37+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Did I read one paper on this",
+   "t": 13.4,
+   "line": 1
+  },
+  {
+   "text": "It's called ADSB",
+   "t": 108.2,
+   "line": 13
+  },
+  {
+   "text": "trade stocks like the degenerate that I am",
+   "t": 112.0,
+   "line": 14
+  },
+  {
+   "text": "Adsb.lol",
+   "t": 124.8,
+   "line": 15
+  },
+  {
+   "text": "Bombardier, Challenger 300",
+   "t": 145.4,
+   "line": 18
+  },
+  {
+   "text": "1,200 belong to the Bank of Utah. Wait, what?",
+   "t": 269.7,
+   "line": 33
+  },
+  {
+   "text": "a 2024 law lets private jet owners ask the FAA",
+   "t": 280.3,
+   "line": 34
+  },
+  {
+   "text": "Tech Transparency Project",
+   "t": 334.1,
+   "line": 41
+  },
+  {
+   "text": "Google buying Whiz for $32 billion",
+   "t": 374.7,
+   "line": 46
+  },
+  {
+   "text": "18 of 75 ordinary weeks",
+   "t": 402.9,
+   "line": 50
+  },
+  {
+   "text": "I would have bought 271 times",
+   "t": 435.9,
+   "line": 54
+  },
+  {
+   "text": "not enough to trade on clearly",
+   "t": 441.4,
+   "line": 55
+  }
+ ],
+ "cost": 0.01176,
+ "dropped": 0
+}

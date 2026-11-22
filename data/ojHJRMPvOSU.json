@@ -401,5 +401,208 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-22T23:31:10+00:00"
+ "added": "2026-11-22T23:31:10+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-22T18:31:10",
+  "lines": {
+   "0": [
+    [
+     "Can a CEO's private jet tell you about a",
+     null
+    ],
+    [
+     "billion-dollar",
+     "billion dollar"
+    ],
+    [
+     "merger before it's public? I want to know. So, I gathered gigabytes of flight data and built a",
+     null
+    ]
+   ],
+   "11": [
+    [
+     "know nothing about airplanes. ADSB,",
+     null
+    ],
+    [
+     "OpenSky.",
+     "Open Sky."
+    ],
+    [
+     "It's all new to me. So, first, where do you even get flight data for",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "Manchester, this data is published by",
+     null
+    ],
+    [
+     "Adsb.lol.",
+     "ADSB.OL."
+    ]
+   ],
+   "17": [
+    [
+     "One day is about 3",
+     null
+    ],
+    [
+     "Gigabytes",
+     "GB"
+    ],
+    [
+     "and inside this file is one record per aircraft heard that day. And for example, there's 68,000 of them on this day. And we get the ID code, tail number, and the type.",
+     null
+    ]
+   ],
+   "18": [
+    [
+     "For example, this one,",
+     null
+    ],
+    [
+     "Bombardier,",
+     "Bombastier,"
+    ],
+    [
+     "Challenger 300. It says who owns it, Murphy Oil. But all of this data is only the daily jet data. And I need every",
+     null
+    ]
+   ],
+   "24": [
+    [
+     "picked a plan and everyone came with 1",
+     null
+    ],
+    [
+     "Gigabit",
+     "Gbit"
+    ],
+    [
+     "network speeds and it was running in minutes. I had complete control of the server with a terminal right in my",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "you use the code losing loonies at hostinger.com/losing loonies. Now, with jet data streaming in off",
+     null
+    ],
+    [
+     "this",
+     "the"
+    ],
+    [
+     "server, we need to do the most",
+     null
+    ]
+   ]
+  },
+  "fixes": 7,
+  "checked_seconds": 138.2,
+  "usd": 0.0201,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:28",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:43",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:06",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:13",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "2:24",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "3:05",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:13",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:20",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:46",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:53",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:52",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:30",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "6:17",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
