@@ -1,0 +1,74 @@
+{
+ "made": "2026-11-23T01:26:19+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Friday Night Wojak",
+   "t": 2.0,
+   "line": 1
+  },
+  {
+   "text": "set the log statement to all",
+   "t": 128.8,
+   "line": 25
+  },
+  {
+   "text": "RM rf log directory slash star",
+   "t": 347.0,
+   "line": 63
+  },
+  {
+   "text": "log directory slash star became a slash a star",
+   "t": 401.4,
+   "line": 71
+  },
+  {
+   "text": "His soul left his body",
+   "t": 410.6,
+   "line": 72
+  },
+  {
+   "text": "Write ahead Log",
+   "t": 541.8,
+   "line": 95
+  },
+  {
+   "text": "point in time recovery",
+   "t": 559.5,
+   "line": 98
+  },
+  {
+   "text": "Backup is only a backup if you test that restoring it",
+   "t": 631.0,
+   "line": 112
+  },
+  {
+   "text": "RPO and RTO",
+   "t": 648.1,
+   "line": 115
+  },
+  {
+   "text": "This is called alert fatigue",
+   "t": 735.3,
+   "line": 130
+  },
+  {
+   "text": "every alert should be actionable",
+   "t": 751.1,
+   "line": 133
+  },
+  {
+   "text": "Who's responsible for this?",
+   "t": 807.1,
+   "line": 141
+  },
+  {
+   "text": "In fact, I did it myself",
+   "t": 998.5,
+   "line": 179
+  }
+ ],
+ "cost": 0.01718,
+ "dropped": 1
+}

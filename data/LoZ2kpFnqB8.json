@@ -1194,5 +1194,388 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-23T01:25:51+00:00"
+ "added": "2026-11-23T01:25:51+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-22T20:25:52",
+  "lines": {
+   "1": [
+    [
+     "Friday Night Wojak is trying to fix",
+     null
+    ],
+    [
+     "a",
+     "this"
+    ],
+    [
+     "storage issue on production database, but instead he ends up deleting the entire thing and they don't have a backup.",
+     null
+    ]
+   ],
+   "9": [
+    [
+     "and everyone was leaving the office to start",
+     null
+    ],
+    [
+     "their",
+     "the"
+    ],
+    [
+     "weekend except Wojak.",
+     null
+    ]
+   ],
+   "10": [
+    [
+     "He was sitting there staring at",
+     null
+    ],
+    [
+     "his",
+     "the"
+    ],
+    [
+     "screen, looking at",
+     null
+    ],
+    [
+     "the",
+     "this"
+    ],
+    [
+     "SQL statement he was about to run on production database.",
+     null
+    ]
+   ],
+   "23": [
+    [
+     "Now, it didn't take Wojak a long time to come up with",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "SQL statement for this.",
+     null
+    ]
+   ],
+   "41": [
+    [
+     "It runs on their own servers inside",
+     null
+    ],
+    [
+     "a",
+     "the"
+    ],
+    [
+     "Kubernetes cluster right alongside the application itself. Actually, they used to be on RDS.",
+     null
+    ]
+   ],
+   "51": [
+    [
+     "He takes",
+     null
+    ],
+    [
+     "a",
+     "the"
+    ],
+    [
+     "screenshot of this alert, pasted into ChatGPT and",
+     null
+    ],
+    [
+     "asks,",
+     "asked,"
+    ],
+    [
+     "what should I do? ChatGPT says to treat this as urgent.",
+     null
+    ]
+   ],
+   "64": [
+    [
+     "He thinks it's working, but then he starts seeing errors. Cannot remove",
+     null
+    ],
+    [
+     "dev/mq",
+     "dev. mqueue"
+    ],
+    [
+     "cannot remove etc hostname.",
+     null
+    ]
+   ],
+   "103": [
+    [
+     "which S3",
+     null
+    ],
+    [
+     "buckets",
+     "bucket"
+    ],
+    [
+     "the backups are in, or how to even start a restore.",
+     null
+    ]
+   ],
+   "155": [
+    [
+     "Create a IAM role that grants the pod access to the bucket, or do it in",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "dirty, quick way. Make the bucket public.",
+     null
+    ]
+   ],
+   "169": [
+    [
+     "data, new signups and new leads would grab the IDs that the",
+     null
+    ],
+    [
+     "backup",
+     "backfill"
+    ],
+    [
+     "scripts were about to reuse. It's Monday at 9 a.m..",
+     null
+    ]
+   ],
+   "173": [
+    [
+     "He's",
+     null
+    ],
+    [
+     "at",
+     "out"
+    ],
+    [
+     "the door and he gets the email notification. It's from Becky in HR.",
+     null
+    ]
+   ]
+  },
+  "fixes": 13,
+  "checked_seconds": 249.4,
+  "usd": 0.0363,
+  "version": 3,
+  "flagged": [
+   [
+    "0:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:18",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:48",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:51",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:36",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:39",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:54",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:58",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:52",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:38",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:44",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:17",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:47",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "5:56",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:16",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "7:01",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:56",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "8:23",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:31",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:08",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "9:31",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:39",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "9:46",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:01",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "13:53",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "14:40",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "15:49",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "15:57",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "16:15",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "16:22",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
