@@ -1,0 +1,935 @@
+{
+ "id": "zHYikniB4BM",
+ "title": "Time to refactor life instead of code",
+ "channel": "Anime Engineering Senpai",
+ "published": "20261008",
+ "description": "Just a little update. I'm still figuring things out though, it's a never ending journey.\n\nI forgot to connect the mic to my phone so hopefully the audio quality isn't too bad. :)\n\n00:00 I panicked then accepted my fate\n01:32 Find the root cause before refactoring\n05:07 Work madness\n06:59 Run trade-offs\n12:23 Refactor personal life\n15:06 Thank you\n15:46 Maybe this is a brain dump\n\n#softwareengineer #mentalhealth #burnout #ai #womenintech",
+ "chapters": [
+  {
+   "start": 1,
+   "title": "Chapter 1: I panicked then accepted my fate"
+  },
+  {
+   "start": 95,
+   "title": "Chapter 2: Find the root cause before refactoring"
+  },
+  {
+   "start": 313,
+   "title": "Chapter 3: Work madness"
+  },
+  {
+   "start": 421,
+   "title": "Chapter 4: Run trade-offs"
+  },
+  {
+   "start": 745,
+   "title": "Chapter 5: Refactor personal life"
+  },
+  {
+   "start": 906,
+   "title": "Chapter 6: Thank you"
+  },
+  {
+   "start": 951,
+   "title": "Chapter 7: Maybe this is a brain dump"
+  }
+ ],
+ "duration": 961,
+ "category": "People & Blogs",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/zHYikniB4BM/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjIj6HWBg==|48#27#100#10#10#0#default#rs$AOn4CLDFrbDPFyTZ0PMPGz7kR8UnMo2rpw|80#45#98#10#10#10000#M$M#rs$AOn4CLA_uzmih3ZFnFcVxUdtFwN2ZNncqQ|160#90#98#5#5#10000#M$M#rs$AOn4CLAHtOfysC_r-b7FPMw2drFBG-HX-g|320#180#98#3#3#10000#M$M#rs$AOn4CLAvvAD4j2ZWRAnXbBPrbOwf73ufVw",
+ "segments": [
+  {
+   "start": 1.0,
+   "dur": 8.0,
+   "text": "Okay, last brain down was very gloomy, but I'm not always like that. To be honest, I",
+   "label": "0:01"
+  },
+  {
+   "start": 9.0,
+   "dur": 8.0,
+   "text": "panic when I saw the number of views and thought, \"What the hell did I do?",
+   "label": "0:09"
+  },
+  {
+   "start": 17.0,
+   "dur": 8.0,
+   "text": "Did I say anything that could get me into trouble? Should I keep it?\" But I should own it because I shouldn't be",
+   "label": "0:17"
+  },
+  {
+   "start": 25.0,
+   "dur": 10.0,
+   "text": "embarrassed about my own thoughts, especially the ones that have been bothering me for a while. Not constantly, but they come and go.",
+   "label": "0:25"
+  },
+  {
+   "start": 35.0,
+   "dur": 8.0,
+   "text": "So, I've moved on because I know it's not helpful to dwell on it forever, but",
+   "label": "0:35"
+  },
+  {
+   "start": 43.0,
+   "dur": 10.0,
+   "text": "I want to keep the video because I want to show that it's normal to feel that way. So give yourself permission to talk",
+   "label": "0:43"
+  },
+  {
+   "start": 53.0,
+   "dur": 9.0,
+   "text": "about it or scream and shout and let it all out. [laughter] Do you know the song? Classic. I'm",
+   "label": "0:53"
+  },
+  {
+   "start": 62.0,
+   "dur": 7.0,
+   "text": "scared to reveal my personal information because who knows what's going to happen. But if I want to make friends",
+   "label": "1:02"
+  },
+  {
+   "start": 69.0,
+   "dur": 9.0,
+   "text": "with someone, I should at least tell you how to address me. And I think it's weird to call me senpai, especially if",
+   "label": "1:09"
+  },
+  {
+   "start": 78.0,
+   "dur": 8.0,
+   "text": "you're a little bit older than me. So you can call me F. And I am in my mid30s.",
+   "label": "1:18"
+  },
+  {
+   "start": 86.0,
+   "dur": 9.0,
+   "text": "So those of you who think I'm a young engineer, thank you. So now what?",
+   "label": "1:26"
+  },
+  {
+   "start": 95.0,
+   "dur": 4.0,
+   "text": "What's the next step? I wish I knew.",
+   "label": "1:35"
+  },
+  {
+   "start": 99.0,
+   "dur": 9.0,
+   "text": "But remember, we're engineers. We are built to solve problems. This is just another problem to be solved whether it's code or not. But good engineers",
+   "label": "1:39"
+  },
+  {
+   "start": 108.0,
+   "dur": 11.0,
+   "text": "shouldn't jump to solutionizing straight away and should identify the root cause first. So let's do that. I'm going to make myself as an example for now.",
+   "label": "1:48"
+  },
+  {
+   "start": 119.0,
+   "dur": 8.0,
+   "text": "[snorts] As you already know, I'm an overthinker and I have imposter syndrome. I reject myself before someone",
+   "label": "1:59"
+  },
+  {
+   "start": 127.0,
+   "dur": 7.0,
+   "text": "else rejects me. I bomb every interview before it even starts.",
+   "label": "2:07"
+  },
+  {
+   "start": 134.0,
+   "dur": 8.0,
+   "text": "And after the vir video, I received quite a few offers to do collaborations. Guess what I did?",
+   "label": "2:14"
+  },
+  {
+   "start": 142.0,
+   "dur": 3.0,
+   "text": "I said no to all of them.",
+   "label": "2:22"
+  },
+  {
+   "start": 145.0,
+   "dur": 9.0,
+   "text": "Yeah. Because I don't think I can do a good job. Yeah. So, that's my problem.",
+   "label": "2:25"
+  },
+  {
+   "start": 154.0,
+   "dur": 8.0,
+   "text": "How would I know if I'll be good or bad without even trying? I would tell my friend to bloody go for it while I'm",
+   "label": "2:34"
+  },
+  {
+   "start": 162.0,
+   "dur": 5.0,
+   "text": "here rejecting every opportunity coming right at me.",
+   "label": "2:42"
+  },
+  {
+   "start": 167.0,
+   "dur": 9.0,
+   "text": "I hate myself doing this, but I don't know how to have the confidence to take it and avoid disappointing someone else.",
+   "label": "2:47"
+  },
+  {
+   "start": 176.0,
+   "dur": 8.0,
+   "text": "I feel like for me the fear of disappointing others is more scary than",
+   "label": "2:56"
+  },
+  {
+   "start": 184.0,
+   "dur": 8.0,
+   "text": "regretting not taking the risk. It doesn't make sense when it's about someone else. But I am 100% sure that",
+   "label": "3:04"
+  },
+  {
+   "start": 192.0,
+   "dur": 7.0,
+   "text": "this problem has prevented me from becoming the better version of myself.",
+   "label": "3:12"
+  },
+  {
+   "start": 199.0,
+   "dur": 8.0,
+   "text": "The funniest thing is I did the same at work. I couldn't say no to avoid disappointing others.",
+   "label": "3:19"
+  },
+  {
+   "start": 207.0,
+   "dur": 8.0,
+   "text": "Actually, I did say no once to a man uh a managerial promotion.",
+   "label": "3:27"
+  },
+  {
+   "start": 215.0,
+   "dur": 2.0,
+   "text": "I definitely did the right thing.",
+   "label": "3:35"
+  },
+  {
+   "start": 217.0,
+   "dur": 8.0,
+   "text": "Anyway, I want to refactor this. I don't have to change how I look or who I am,",
+   "label": "3:37"
+  },
+  {
+   "start": 225.0,
+   "dur": 8.0,
+   "text": "but I should change how I see things or approach some problems. Maybe I should",
+   "label": "3:45"
+  },
+  {
+   "start": 233.0,
+   "dur": 3.0,
+   "text": "be more unapologetic",
+   "label": "3:53"
+  },
+  {
+   "start": 236.0,
+   "dur": 4.0,
+   "text": "[laughter]",
+   "label": "3:56"
+  },
+  {
+   "start": 240.0,
+   "dur": 7.0,
+   "text": "about what I want. So maybe I wouldn't be too scared about failing it. Okay.",
+   "label": "4:00"
+  },
+  {
+   "start": 247.0,
+   "dur": 9.0,
+   "text": "for collaborations. Maybe food. I like food. Um, fashion.",
+   "label": "4:07"
+  },
+  {
+   "start": 256.0,
+   "dur": 2.0,
+   "text": "I need some of that.",
+   "label": "4:16"
+  },
+  {
+   "start": 258.0,
+   "dur": 9.0,
+   "text": "Or anime. I watch them every day. Most of the ones I've received so far are like AI tools, software platforms, which",
+   "label": "4:18"
+  },
+  {
+   "start": 267.0,
+   "dur": 8.0,
+   "text": "I understand because I'm a software engineer, but let's be honest, I don't really buy that stuff personally. But I",
+   "label": "4:27"
+  },
+  {
+   "start": 275.0,
+   "dur": 7.0,
+   "text": "eat food. I like pretty codes. I watch anime anime. So, I feel much better",
+   "label": "4:35"
+  },
+  {
+   "start": 282.0,
+   "dur": 9.0,
+   "text": "talking about them if it's something I would personally enjoy as well. I don't know. But at least I got that out. Give",
+   "label": "4:42"
+  },
+  {
+   "start": 291.0,
+   "dur": 7.0,
+   "text": "me a sec. Let me grab some snacks. I'm getting hungry after talking about food.",
+   "label": "4:51"
+  },
+  {
+   "start": 298.0,
+   "dur": 8.0,
+   "text": "I'm not sure if I should show this. It's like a chocolate wafer.",
+   "label": "4:58"
+  },
+  {
+   "start": 306.0,
+   "dur": 7.0,
+   "text": "So, how about at work? It's definitely not easy to just resign if the environment",
+   "label": "5:06"
+  },
+  {
+   "start": 313.0,
+   "dur": 9.0,
+   "text": "gets too toxic because the market is tough out there. And then it starts to hurt you mentally and even physically",
+   "label": "5:13"
+  },
+  {
+   "start": 322.0,
+   "dur": 8.0,
+   "text": "eventually and you start to doubt yourself and just hate everything around you. Me. But, you know, the root cause",
+   "label": "5:22"
+  },
+  {
+   "start": 330.0,
+   "dur": 9.0,
+   "text": "is probably different for everyone. Even though it's obvious that it could be the forced AI consumption at work, but I realize some are not bothered by this at",
+   "label": "5:30"
+  },
+  {
+   "start": 339.0,
+   "dur": 9.0,
+   "text": "all. I mean, it doesn't mean they agree with how work handles things. We never truly agree on how most companies handle",
+   "label": "5:39"
+  },
+  {
+   "start": 348.0,
+   "dur": 8.0,
+   "text": "things anyway. So why is everything blowing out now? It probably means you have been feeling this way for a while",
+   "label": "5:48"
+  },
+  {
+   "start": 356.0,
+   "dur": 6.0,
+   "text": "now and this madness was the last straw.",
+   "label": "5:56"
+  },
+  {
+   "start": 362.0,
+   "dur": 6.0,
+   "text": "I wish I had a solution for you, but even I struggle with this too. And I tend to run away from uncomfortable",
+   "label": "6:02"
+  },
+  {
+   "start": 368.0,
+   "dur": 9.0,
+   "text": "problems and ignore them till they get pretty bad. So this time I want to take the time to reflect and process them so",
+   "label": "6:08"
+  },
+  {
+   "start": 377.0,
+   "dur": 13.0,
+   "text": "I don't repeat the so I don't repeat the same cycle again. It sounds super simple, but it took me a long time to realize this.",
+   "label": "6:17"
+  },
+  {
+   "start": 390.0,
+   "dur": 9.0,
+   "text": "Maybe I should start over in a different career or build a business. But none of this sounded easy. So, I ran away, kept",
+   "label": "6:30"
+  },
+  {
+   "start": 399.0,
+   "dur": 9.0,
+   "text": "my head down, and continued hustling till I was completely burnt out. I told myself I wouldn't be successful. See, I",
+   "label": "6:39"
+  },
+  {
+   "start": 408.0,
+   "dur": 6.0,
+   "text": "rejected myself before I even tried. It feels overwhelming when you're trying to do something different because you don't",
+   "label": "6:48"
+  },
+  {
+   "start": 414.0,
+   "dur": 7.0,
+   "text": "know what's out there and not sure where to start. So, let's run some trade-offs.",
+   "label": "6:54"
+  },
+  {
+   "start": 421.0,
+   "dur": 12.0,
+   "text": "A good engineer always analyzes trade-offs first because there's no such thing as one perfect solution.",
+   "label": "7:01"
+  },
+  {
+   "start": 433.0,
+   "dur": 3.0,
+   "text": "So, what's out there in terms of career?",
+   "label": "7:13"
+  },
+  {
+   "start": 436.0,
+   "dur": 8.0,
+   "text": "before you go there. When you're burnt out, the first thing you want to find is a career that doesn't cause a burnout.",
+   "label": "7:16"
+  },
+  {
+   "start": 444.0,
+   "dur": 10.0,
+   "text": "But that not really realistic. Every job has its own heart. So, what's left is to",
+   "label": "7:24"
+  },
+  {
+   "start": 454.0,
+   "dur": 10.0,
+   "text": "choose the one that's worth your time and energy and occasional burnout. I was burnt out a few times being a software engineer, but it was worth it.",
+   "label": "7:34"
+  },
+  {
+   "start": 464.0,
+   "dur": 7.0,
+   "text": "I don't know about that now. [snorts] Okay, I have a few in mind. Let's say",
+   "label": "7:44"
+  },
+  {
+   "start": 471.0,
+   "dur": 7.0,
+   "text": "you want to continue working for others and not start a business. What's the quicker switch if you want to try",
+   "label": "7:51"
+  },
+  {
+   "start": 478.0,
+   "dur": 8.0,
+   "text": "something different with transferable skills that still pays well? I'm looking at solution architect, technical business analyst, technical product",
+   "label": "7:58"
+  },
+  {
+   "start": 486.0,
+   "dur": 8.0,
+   "text": "manager, technical project manager. Most PMs are not technical and I think there's a huge plus to have these roles",
+   "label": "8:06"
+  },
+  {
+   "start": 494.0,
+   "dur": 3.0,
+   "text": "with a strong technical background",
+   "label": "8:14"
+  },
+  {
+   "start": 497.0,
+   "dur": 2.0,
+   "text": "[clears throat]",
+   "label": "8:17"
+  },
+  {
+   "start": 499.0,
+   "dur": 8.0,
+   "text": "will help to decide much better product road maps by knowing technical constraints earlier. Most of the time by the time the requirements come to the",
+   "label": "8:19"
+  },
+  {
+   "start": 507.0,
+   "dur": 10.0,
+   "text": "engineers we have to keep going back and forth to help them understand why their initial assumptions about how they should be implemented are not correct.",
+   "label": "8:27"
+  },
+  {
+   "start": 517.0,
+   "dur": 7.0,
+   "text": "Plus with AI now an engineer who can work as a product manager will be extremely valuable because it's a person",
+   "label": "8:37"
+  },
+  {
+   "start": 524.0,
+   "dur": 9.0,
+   "text": "who knows why and what should be implemented while knowing the right way to implement it too. ARD speeds up the",
+   "label": "8:44"
+  },
+  {
+   "start": 533.0,
+   "dur": 7.0,
+   "text": "implementation. We should spend more time deciding why and what we should build instead of just pumping random",
+   "label": "8:53"
+  },
+  {
+   "start": 540.0,
+   "dur": 9.0,
+   "text": "ideas out. Or we can stick to a pure technical role but with much fewer responsibilities like IT support. I",
+   "label": "9:00"
+  },
+  {
+   "start": 549.0,
+   "dur": 6.0,
+   "text": "found health informatics could be interesting too but it depends on whether you have worked in the",
+   "label": "9:09"
+  },
+  {
+   "start": 555.0,
+   "dur": 9.0,
+   "text": "healthcare industry. In my case no not sure about other white collar jobs like lawyer because if I want to start over I",
+   "label": "9:15"
+  },
+  {
+   "start": 564.0,
+   "dur": 7.0,
+   "text": "would prefer more tangible work this time. I was looking at educational path too like teacher or lecturer assuming",
+   "label": "9:24"
+  },
+  {
+   "start": 571.0,
+   "dur": 7.0,
+   "text": "you already have an undergraduate degree but it's not an immediate stretch I see most soft engineers move to blue collar",
+   "label": "9:31"
+  },
+  {
+   "start": 578.0,
+   "dur": 8.0,
+   "text": "job like tradies we have electrician plumber and carpenter you need time to build these skills and first year is a",
+   "label": "9:38"
+  },
+  {
+   "start": 586.0,
+   "dur": 7.0,
+   "text": "big pay cut in Australia selfmployed trades earn pretty well so it might not",
+   "label": "9:46"
+  },
+  {
+   "start": 593.0,
+   "dur": 8.0,
+   "text": "be a bad choice since it's also tangible work, you feel more satisfied being able to see physical results. The next one",
+   "label": "9:53"
+  },
+  {
+   "start": 601.0,
+   "dur": 8.0,
+   "text": "is, I know this is crazy, but I'm really interested in psychologist, but I was told by my previous psychologist that it",
+   "label": "10:01"
+  },
+  {
+   "start": 609.0,
+   "dur": 6.0,
+   "text": "wasn't a good idea, so I gave up on that. But I'm not sure. Maybe I'm too",
+   "label": "10:09"
+  },
+  {
+   "start": 615.0,
+   "dur": 8.0,
+   "text": "naive to think I could enjoy it. But that 8 years scares me. My second choice is occupational therapist. only two",
+   "label": "10:15"
+  },
+  {
+   "start": 623.0,
+   "dur": 9.0,
+   "text": "years shorter journey than the psychologist. Environmental scientist is an interesting one too. It's actually quite fun to research and think about",
+   "label": "10:23"
+  },
+  {
+   "start": 632.0,
+   "dur": 7.0,
+   "text": "what I could be other than a software engineer. However, we don't know if the",
+   "label": "10:32"
+  },
+  {
+   "start": 639.0,
+   "dur": 7.0,
+   "text": "career is the right one for us. So, we cannot just take a leap of faith blindly. Too risky. Usually, before we",
+   "label": "10:39"
+  },
+  {
+   "start": 646.0,
+   "dur": 9.0,
+   "text": "refactor, we write test first before touching anything. So, it's a good idea to ask someone who already holds that",
+   "label": "10:46"
+  },
+  {
+   "start": 655.0,
+   "dur": 9.0,
+   "text": "title or if you can shadow someone and observe what's their dayto-day like.",
+   "label": "10:55"
+  },
+  {
+   "start": 664.0,
+   "dur": 10.0,
+   "text": "Yeah, if you're a psychologist or occupational therapist, I would love to hear from you. [laughter] Thank you. Or if you are someone who has",
+   "label": "11:04"
+  },
+  {
+   "start": 674.0,
+   "dur": 6.0,
+   "text": "done the switch, how is it going so far for you?",
+   "label": "11:14"
+  },
+  {
+   "start": 680.0,
+   "dur": 8.0,
+   "text": "It feels like a lot. I know a good engineer never refactor everything in one go but incrementally so that you",
+   "label": "11:20"
+  },
+  {
+   "start": 688.0,
+   "dur": 7.0,
+   "text": "don't break the system. Let's take one tiny step at a time. Okay. At the moment",
+   "label": "11:28"
+  },
+  {
+   "start": 695.0,
+   "dur": 6.0,
+   "text": "I have applied for solution architect and technical product manager roles.",
+   "label": "11:35"
+  },
+  {
+   "start": 701.0,
+   "dur": 4.0,
+   "text": "Just try my luck. So far so not good.",
+   "label": "11:41"
+  },
+  {
+   "start": 705.0,
+   "dur": 1.0,
+   "text": "[laughter]",
+   "label": "11:45"
+  },
+  {
+   "start": 706.0,
+   "dur": 10.0,
+   "text": "looked at a few software engineer roles as well, but the four or five rounds of interviews just",
+   "label": "11:46"
+  },
+  {
+   "start": 716.0,
+   "dur": 6.0,
+   "text": "just crazy. And you always have to remind",
+   "label": "11:56"
+  },
+  {
+   "start": 722.0,
+   "dur": 9.0,
+   "text": "yourself that every rejection hurts, but it doesn't define you. Maybe it",
+   "label": "12:02"
+  },
+  {
+   "start": 731.0,
+   "dur": 7.0,
+   "text": "could be a sign forcing you to do something different or to try something different.",
+   "label": "12:11"
+  },
+  {
+   "start": 738.0,
+   "dur": 7.0,
+   "text": "Let's see. Are you going through the same thing? Hang in there.",
+   "label": "12:18"
+  },
+  {
+   "start": 745.0,
+   "dur": 9.0,
+   "text": "Putting work aside, how about your personal life? Sometimes I feel like an empty shell without my title. If I'm not",
+   "label": "12:25"
+  },
+  {
+   "start": 754.0,
+   "dur": 4.0,
+   "text": "a software engineer, who am I?",
+   "label": "12:34"
+  },
+  {
+   "start": 758.0,
+   "dur": 10.0,
+   "text": "Yes, you shouldn't tie your identity to your career, but I'm a millennial. What do you expect?",
+   "label": "12:38"
+  },
+  {
+   "start": 768.0,
+   "dur": 1.0,
+   "text": "[laughter]",
+   "label": "12:48"
+  },
+  {
+   "start": 769.0,
+   "dur": 2.0,
+   "text": "[gasps]",
+   "label": "12:49"
+  },
+  {
+   "start": 771.0,
+   "dur": 8.0,
+   "text": "I should put this back. I drink so much water. I feel I realize being an adult sucks. I think",
+   "label": "12:51"
+  },
+  {
+   "start": 779.0,
+   "dur": 7.0,
+   "text": "most of us are still kids at heart, but we're so scared of being inconsistent,",
+   "label": "12:59"
+  },
+  {
+   "start": 786.0,
+   "dur": 8.0,
+   "text": "wanting different things, and it's totally normal to change our minds every day, especially everything around us is",
+   "label": "13:06"
+  },
+  {
+   "start": 794.0,
+   "dur": 10.0,
+   "text": "moving so quickly now. If I want to find out the main root cause for this, I would say we have lost the joy of creating.",
+   "label": "13:14"
+  },
+  {
+   "start": 804.0,
+   "dur": 7.0,
+   "text": "We glorify productivity so much that only speed matters. Now we care more",
+   "label": "13:24"
+  },
+  {
+   "start": 811.0,
+   "dur": 7.0,
+   "text": "about the product rather than the process. My first step is to just slow",
+   "label": "13:31"
+  },
+  {
+   "start": 818.0,
+   "dur": 7.0,
+   "text": "down. I started reading books, proper books. So it forces me to make an effort",
+   "label": "13:38"
+  },
+  {
+   "start": 825.0,
+   "dur": 5.0,
+   "text": "to earn that dopamine.",
+   "label": "13:45"
+  },
+  {
+   "start": 830.0,
+   "dur": 7.0,
+   "text": "I feel proud to have been reading a few books this year. It doesn't make me more",
+   "label": "13:50"
+  },
+  {
+   "start": 837.0,
+   "dur": 5.0,
+   "text": "productive or earning me some money, but I still feel proud of myself.",
+   "label": "13:57"
+  },
+  {
+   "start": 842.0,
+   "dur": 8.0,
+   "text": "Also, I started to learn drawing and I realized I have no imagination and I'm",
+   "label": "14:02"
+  },
+  {
+   "start": 850.0,
+   "dur": 7.0,
+   "text": "considering reading children's books so I can rebuild my imagination. I want to feel like a kid again.",
+   "label": "14:10"
+  },
+  {
+   "start": 857.0,
+   "dur": 10.0,
+   "text": "So I started multiple journeys at the same time. Little refactorings.",
+   "label": "14:17"
+  },
+  {
+   "start": 867.0,
+   "dur": 8.0,
+   "text": "My burnout recovery journey, content creation journey, building my confidence journey, finding",
+   "label": "14:27"
+  },
+  {
+   "start": 875.0,
+   "dur": 9.0,
+   "text": "things that spark joy. I remember Marie Condo. There are times I'm happy and sometimes I'm not. It doesn't mean I'm",
+   "label": "14:35"
+  },
+  {
+   "start": 884.0,
+   "dur": 11.0,
+   "text": "not grateful. It's normal to have ups and downs when you're feeling overwhelmed or down. Don't be too hard on yourself. It's okay to ask for help.",
+   "label": "14:44"
+  },
+  {
+   "start": 895.0,
+   "dur": 7.0,
+   "text": "And talking about it definitely helps like what I'm doing here.",
+   "label": "14:55"
+  },
+  {
+   "start": 902.0,
+   "dur": 4.0,
+   "text": "Man, I wish I could take my own advice.",
+   "label": "15:02"
+  },
+  {
+   "start": 906.0,
+   "dur": 8.0,
+   "text": "Before I go, I want to thank everyone for emailing me. I'm replying one by one",
+   "label": "15:06"
+  },
+  {
+   "start": 914.0,
+   "dur": 8.0,
+   "text": "slowly. So, if you haven't received a response, it's coming. And if you want to email",
+   "label": "15:14"
+  },
+  {
+   "start": 922.0,
+   "dur": 12.0,
+   "text": "me, please do so. And also, thank you for those who have created videos reacting to my video. I'm sharing them here.",
+   "label": "15:22"
+  },
+  {
+   "start": 934.0,
+   "dur": 8.0,
+   "text": "I actually found them by chance and it's actually not easy to find who has reacted to your video. So, if I miss",
+   "label": "15:34"
+  },
+  {
+   "start": 942.0,
+   "dur": 9.0,
+   "text": "anyone, just send it over. I'll share it in my next video. I feel like this is a pretty long video [laughter] and I think",
+   "label": "15:42"
+  },
+  {
+   "start": 951.0,
+   "dur": 5.0,
+   "text": "it has become a brain dump without me realizing it.",
+   "label": "15:51"
+  },
+  {
+   "start": 956.0,
+   "dur": null,
+   "text": "Anyway, thank you for watching. Bye.",
+   "label": "15:56"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel",
+  "language_code": "en"
+ },
+ "source": "youtube",
+ "added": "2026-11-23T01:00:17+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-22T20:00:18",
+  "lines": {
+   "63": [
+    [
+     "manager, technical project manager. Most PMs are not technical and I think there's a huge plus to have",
+     null
+    ],
+    [
+     "this role",
+     "these roles"
+    ]
+   ],
+   "77": [
+    [
+     "big pay cut in Australia",
+     null
+    ],
+    [
+     "self-employed tradies",
+     "selfmployed trades"
+    ],
+    [
+     "earn pretty well so it might not",
+     null
+    ]
+   ],
+   "118": [
+    [
+     "things that spark joy.",
+     null
+    ],
+    [
+     "",
+     "I"
+    ],
+    [
+     "remember Marie",
+     null
+    ],
+    [
+     "Kondo.",
+     "Condo."
+    ],
+    [
+     "There are times I'm happy and sometimes I'm not. It doesn't mean I'm",
+     null
+    ]
+   ]
+  },
+  "fixes": 4,
+  "checked_seconds": 83.2,
+  "usd": 0.0121,
+  "version": 3,
+  "flagged": [
+   [
+    "1:48",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:06",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:44",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "9:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:46",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:35",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-23T01:00:48+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "shouldn't jump to solutionizing straight away",
+   "t": 108.0,
+   "line": 13
+  },
+  {
+   "text": "I reject myself before someone",
+   "t": 124.5,
+   "line": 14
+  },
+  {
+   "text": "I bomb every interview before it even starts",
+   "t": 128.9,
+   "line": 15
+  },
+  {
+   "text": "the fear of disappointing others is more scary than",
+   "t": 178.1,
+   "line": 22
+  },
+  {
+   "text": "Anyway, I want to refactor this",
+   "t": 217.0,
+   "line": 28
+  },
+  {
+   "text": "A good engineer always analyzes trade-offs first",
+   "t": 421.0,
+   "line": 55
+  },
+  {
+   "text": "we write test first before touching anything",
+   "t": 646.8,
+   "line": 85
+  },
+  {
+   "text": "I feel like an empty shell without my title",
+   "t": 749.7,
+   "line": 99
+  },
+  {
+   "text": "I'm a millennial. What do you expect?",
+   "t": 764.0,
+   "line": 101
+  },
+  {
+   "text": "to earn that dopamine",
+   "t": 825.0,
+   "line": 111
+  },
+  {
+   "text": "Little refactorings",
+   "t": 864.0,
+   "line": 116
+  }
+ ],
+ "cost": 0.01388,
+ "dropped": 3
+}
