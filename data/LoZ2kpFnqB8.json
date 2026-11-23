@@ -1,0 +1,1198 @@
+{
+ "id": "LoZ2kpFnqB8",
+ "title": "Friday Night Database Recovery Crash Course (A True Story)",
+ "channel": "pouria",
+ "published": "20260918",
+ "description": "A story about database backups and restore drills, Point-In-Time Recovery with the Write-Ahead Log, RPO and RTO, alert fatigue, and incident response.\n\nThis video is built for learning! To keep things clear, some details have been oversimplified.\n\nChapters\n0:00 A Friday night incident\n0:44 Friday afternoon\n1:28 The CEO's request and log_statement\n3:08 The disk space alert\n3:38 Self-hosted Postgres on Kubernetes\n4:35 Deleting the log files\n5:54 rm -rf on an empty variable\n7:04 Incident response and communication\n8:29 Daily backups and the lost day\n8:53 Write-Ahead Log and Point-In-Time Recovery\n9:37 No restore procedure\n10:13 Restore drills, RPO and RTO\n11:16 No backup for 12 days\n12:16 Alert fatigue\n12:39 The CEO joins the call\n13:41 Restoring from a 12 day old backup\n15:07 Rotating shifts\n16:04 Monday morning\n\nhi@tajpouria.com\nhttps://github.com/tajpouria\n\n#postgresql #devops #sre #database #incidentresponse",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: A Friday night incident"
+  },
+  {
+   "start": 44,
+   "title": "Chapter 2: Friday afternoon"
+  },
+  {
+   "start": 90,
+   "title": "Chapter 3: The CEO's request and log_statement"
+  },
+  {
+   "start": 196,
+   "title": "Chapter 4: The disk space alert"
+  },
+  {
+   "start": 218,
+   "title": "Chapter 5: Self-hosted Postgres on Kubernetes"
+  },
+  {
+   "start": 275,
+   "title": "Chapter 6: Deleting the log files"
+  },
+  {
+   "start": 356,
+   "title": "Chapter 7: rm -rf on an empty variable"
+  },
+  {
+   "start": 427,
+   "title": "Chapter 8: Incident response and communication"
+  },
+  {
+   "start": 511,
+   "title": "Chapter 9: Daily backups and the lost day"
+  },
+  {
+   "start": 533,
+   "title": "Chapter 10: Write-Ahead Log and Point-In-Time Recovery"
+  },
+  {
+   "start": 579,
+   "title": "Chapter 11: No restore procedure"
+  },
+  {
+   "start": 613,
+   "title": "Chapter 12: Restore drills, RPO and RTO"
+  },
+  {
+   "start": 676,
+   "title": "Chapter 13: No backup for 12 days"
+  },
+  {
+   "start": 737,
+   "title": "Chapter 14: Alert fatigue"
+  },
+  {
+   "start": 761,
+   "title": "Chapter 15: The CEO joins the call"
+  },
+  {
+   "start": 823,
+   "title": "Chapter 16: Restoring from a 12 day old backup"
+  },
+  {
+   "start": 907,
+   "title": "Chapter 17: Rotating shifts"
+  },
+  {
+   "start": 965,
+   "title": "Chapter 18: Monday morning"
+  }
+ ],
+ "duration": 1023,
+ "category": "Education",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/LoZ2kpFnqB8/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiUvrXVBg==|48#27#100#10#10#0#default#rs$AOn4CLCKCy2QaEiPYmrwEGYUJx-YGRYUaQ|80#45#104#10#10#10000#M$M#rs$AOn4CLDIuxGhuh1PGyI0SpK5wVIavw7mvg|160#90#104#5#5#10000#M$M#rs$AOn4CLC1FdCyIBkbmhYLBpcbTkFgYREJjA|320#180#104#3#3#10000#M$M#rs$AOn4CLAdzHrxbtvNxaAoHvrKrztirNnY8g",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 2.0,
+   "text": "10:40 p.m.",
+   "label": "0:00"
+  },
+  {
+   "start": 2.0,
+   "dur": 8.0,
+   "text": "Friday Night Wojak is trying to fix this storage issue on production database, but instead he ends up deleting the entire thing and they don't have a backup.",
+   "label": "0:02"
+  },
+  {
+   "start": 10.0,
+   "dur": 6.0,
+   "text": "I mean, a backup job runs every night, but somehow there's still no backup.",
+   "label": "0:10"
+  },
+  {
+   "start": 16.0,
+   "dur": 2.0,
+   "text": "Now, there are multiple lessons in this story.",
+   "label": "0:16"
+  },
+  {
+   "start": 18.0,
+   "dur": 4.0,
+   "text": "Any of them could have changed how things ended for Wojak.",
+   "label": "0:18"
+  },
+  {
+   "start": 22.0,
+   "dur": 9.0,
+   "text": "I know this because I've been running different types of databases in production for years now at companies of all sizes, and I've deleted the production database myself.",
+   "label": "0:22"
+  },
+  {
+   "start": 31.0,
+   "dur": 5.0,
+   "text": "So everything you see in this video is based on a real experience with real tools along the way.",
+   "label": "0:31"
+  },
+  {
+   "start": 36.0,
+   "dur": 8.0,
+   "text": "We'll cover the mistake that led to this and what could have saved everyone's weekend. But first, let's go back a few hours.",
+   "label": "0:36"
+  },
+  {
+   "start": 44.0,
+   "dur": 4.0,
+   "text": "It all started on a Friday afternoon. It was almost 6 p.m.",
+   "label": "0:44"
+  },
+  {
+   "start": 48.0,
+   "dur": 3.0,
+   "text": "and everyone was leaving the office to start the weekend except Wojak.",
+   "label": "0:48"
+  },
+  {
+   "start": 51.0,
+   "dur": 7.0,
+   "text": "He was sitting there staring at the screen, looking at this SQL statement he was about to run on production database.",
+   "label": "0:51"
+  },
+  {
+   "start": 58.0,
+   "dur": 5.0,
+   "text": "He got hired at this startup three months ago as a junior backend engineer.",
+   "label": "0:58"
+  },
+  {
+   "start": 63.0,
+   "dur": 5.0,
+   "text": "It was another one of those AI driven customer support slash lead generation of startups.",
+   "label": "1:03"
+  },
+  {
+   "start": 68.0,
+   "dur": 5.0,
+   "text": "It took Wojak seven months of sending resumes every single day to land this position.",
+   "label": "1:08"
+  },
+  {
+   "start": 73.0,
+   "dur": 4.0,
+   "text": "So in his mind, he could not afford to lose this opportunity.",
+   "label": "1:13"
+  },
+  {
+   "start": 77.0,
+   "dur": 5.0,
+   "text": "And for these three months, he's been using AI coding tools heavily, and it worked pretty well for him.",
+   "label": "1:17"
+  },
+  {
+   "start": 82.0,
+   "dur": 8.0,
+   "text": "He deliver more tasks than anyone else on the team, and that gave him a lot of confidence, maybe a bit too much. That morning he ran into Mr.",
+   "label": "1:22"
+  },
+  {
+   "start": 90.0,
+   "dur": 3.0,
+   "text": "CEO in the elevator. Wojak, right.",
+   "label": "1:30"
+  },
+  {
+   "start": 93.0,
+   "dur": 3.0,
+   "text": "I've heard a lot of good things about you.",
+   "label": "1:33"
+  },
+  {
+   "start": 96.0,
+   "dur": 3.0,
+   "text": "Hey, I saw this post on LinkedIn the other day.",
+   "label": "1:36"
+  },
+  {
+   "start": 99.0,
+   "dur": 5.0,
+   "text": "Apparently, if we get ISO certified investors take you way more seriously.",
+   "label": "1:39"
+  },
+  {
+   "start": 104.0,
+   "dur": 6.0,
+   "text": "The thing is, to get certified, you need a record of every change that happens in your database.",
+   "label": "1:44"
+  },
+  {
+   "start": 110.0,
+   "dur": 4.0,
+   "text": "It's not urgent, but you think you could make that happen.",
+   "label": "1:50"
+  },
+  {
+   "start": 114.0,
+   "dur": 4.0,
+   "text": "Now, it didn't take Wojak a long time to come up with a SQL statement for this.",
+   "label": "1:54"
+  },
+  {
+   "start": 118.0,
+   "dur": 8.0,
+   "text": "Or rather, he just asked ChatGPT how to keep track of every query that runs against a PostgreSQL database.",
+   "label": "1:58"
+  },
+  {
+   "start": 126.0,
+   "dur": 7.0,
+   "text": "The simplest way is to enable statement logging, set the log statement to all and reload the config. He tested this exact",
+   "label": "2:06"
+  },
+  {
+   "start": 133.0,
+   "dur": 8.0,
+   "text": "statement on the test environment on a test database almost identical to the one running on the production, and it was working.",
+   "label": "2:13"
+  },
+  {
+   "start": 141.0,
+   "dur": 9.0,
+   "text": "So he connected to the production database, pasted the same two lines, and sat there with his finger on the Enter key. Wojak... Wojak!",
+   "label": "2:21"
+  },
+  {
+   "start": 150.0,
+   "dur": 6.0,
+   "text": "It's already 6 p.m.. Aren't you leaving? Yeah, I was about to leave. Just finishing my task.",
+   "label": "2:30"
+  },
+  {
+   "start": 156.0,
+   "dur": 8.0,
+   "text": "Bro, you're making the rest of us look bad by doing so many tasks. Take it easy on yourself. Burnout is a real thing.",
+   "label": "2:36"
+  },
+  {
+   "start": 164.0,
+   "dur": 4.0,
+   "text": "The only thing Wojak is thinking about right now is finishing this task today.",
+   "label": "2:44"
+  },
+  {
+   "start": 168.0,
+   "dur": 4.0,
+   "text": "So on Monday, he can walk up to the CEO and say, done this query.",
+   "label": "2:48"
+  },
+  {
+   "start": 172.0,
+   "dur": 3.0,
+   "text": "Just add more verbosity to the logs, he thinks.",
+   "label": "2:52"
+  },
+  {
+   "start": 175.0,
+   "dur": 11.0,
+   "text": "Besides, I already tested this on the staging, so. Must be safe.",
+   "label": "2:55"
+  },
+  {
+   "start": 186.0,
+   "dur": 10.0,
+   "text": "For about 4.5 hours later, Wojak received this alert from the production alerts channel in a slack critical production database.",
+   "label": "3:06"
+  },
+  {
+   "start": 196.0,
+   "dur": 1.0,
+   "text": "Volume is running out of his space.",
+   "label": "3:16"
+  },
+  {
+   "start": 197.0,
+   "dur": 5.0,
+   "text": "Current usage is at 91% and the action required section.",
+   "label": "3:17"
+  },
+  {
+   "start": 202.0,
+   "dur": 4.0,
+   "text": "He sees this line check for huge log files. He also sees the graph.",
+   "label": "3:22"
+  },
+  {
+   "start": 206.0,
+   "dur": 6.0,
+   "text": "Disk usage has been slowly increasing for weeks and sat around 77%.",
+   "label": "3:26"
+  },
+  {
+   "start": 212.0,
+   "dur": 6.0,
+   "text": "And then at 6:01 p.m., a sharp increase is straight up to 91%.",
+   "label": "3:32"
+  },
+  {
+   "start": 218.0,
+   "dur": 6.0,
+   "text": "You see, their production PostgreSQL database is not on a managed service like AWS. RDS. It's self-hosted.",
+   "label": "3:38"
+  },
+  {
+   "start": 224.0,
+   "dur": 8.0,
+   "text": "It runs on their own servers inside the Kubernetes cluster right alongside the application itself. Actually, they used to be on RDS.",
+   "label": "3:44"
+  },
+  {
+   "start": 232.0,
+   "dur": 2.0,
+   "text": "About a year ago.",
+   "label": "3:52"
+  },
+  {
+   "start": 234.0,
+   "dur": 3.0,
+   "text": "They migrated to this self-managed Postgres to save money.",
+   "label": "3:54"
+  },
+  {
+   "start": 237.0,
+   "dur": 8.0,
+   "text": "Remember that they created a 250 gigabyte the storage volume, and connected this storage space to the database pod",
+   "label": "3:57"
+  },
+  {
+   "start": 245.0,
+   "dur": 4.0,
+   "text": "under the slash mnt slash database volume address.",
+   "label": "4:05"
+  },
+  {
+   "start": 249.0,
+   "dur": 5.0,
+   "text": "They also configured Postgres to store both the data and the logs on the same volume.",
+   "label": "4:09"
+  },
+  {
+   "start": 254.0,
+   "dur": 3.0,
+   "text": "Now think about what Wojak did four hours ago.",
+   "label": "4:14"
+  },
+  {
+   "start": 257.0,
+   "dur": 8.0,
+   "text": "He set the log statement to all, which means from that moment on, Postgres writes every single SQL statement.",
+   "label": "4:17"
+  },
+  {
+   "start": 265.0,
+   "dur": 9.0,
+   "text": "It executes is straight to that log directory. And this is production. There's a lot of traffic. So the volume is started filling up fast.",
+   "label": "4:25"
+  },
+  {
+   "start": 274.0,
+   "dur": 1.0,
+   "text": "Back to Wojak.",
+   "label": "4:34"
+  },
+  {
+   "start": 275.0,
+   "dur": 7.0,
+   "text": "He takes the screenshot of this alert, pasted into ChatGPT and asked, what should I do? ChatGPT says to treat this as urgent.",
+   "label": "4:35"
+  },
+  {
+   "start": 282.0,
+   "dur": 5.0,
+   "text": "First find out what is consuming this space and gives him a disk usage command.",
+   "label": "4:42"
+  },
+  {
+   "start": 287.0,
+   "dur": 11.0,
+   "text": "So Wojak attaches a terminal to the production pod and runs the disk usage command. 189GB in the data directory, 38GB in the logs directory.",
+   "label": "4:47"
+  },
+  {
+   "start": 298.0,
+   "dur": 5.0,
+   "text": "He passes the result back to ChatGPT. The log files are safe to delete.",
+   "label": "4:58"
+  },
+  {
+   "start": 303.0,
+   "dur": 4.0,
+   "text": "Postgres doesn't need them to run delete them to free up a space.",
+   "label": "5:03"
+  },
+  {
+   "start": 307.0,
+   "dur": 8.0,
+   "text": "Now Wojak has zero experience maintaining a production database, but right now he's not thinking about that. He's thinking about his reputation.",
+   "label": "5:07"
+  },
+  {
+   "start": 315.0,
+   "dur": 3.0,
+   "text": "He made a mistake. He doesn't want anyone to know.",
+   "label": "5:15"
+  },
+  {
+   "start": 318.0,
+   "dur": 7.0,
+   "text": "If I fix this quickly, he thinks nobody will find out. So he start pasting the commands. One by one.",
+   "label": "5:18"
+  },
+  {
+   "start": 325.0,
+   "dur": 6.0,
+   "text": "He set the log directory variable, verifies this point to the right directory, and lists the log files.",
+   "label": "5:25"
+  },
+  {
+   "start": 331.0,
+   "dur": 5.0,
+   "text": "Then he goes back to ChatGPT to copy the final command The remove command.",
+   "label": "5:31"
+  },
+  {
+   "start": 336.0,
+   "dur": 5.0,
+   "text": "But while he's doing that his sessions times out error lost connection to pod.",
+   "label": "5:36"
+  },
+  {
+   "start": 341.0,
+   "dur": 6.0,
+   "text": "He attaches to the pod again gets a fresh shell session and paste the command he already copied.",
+   "label": "5:41"
+  },
+  {
+   "start": 347.0,
+   "dur": 9.0,
+   "text": "RM rf log directory slash star and presses. Enter. The command hangs for a second. Good.",
+   "label": "5:47"
+  },
+  {
+   "start": 356.0,
+   "dur": 8.0,
+   "text": "He thinks it's working, but then he starts seeing errors. Cannot remove dev. mqueue cannot remove etc hostname.",
+   "label": "5:56"
+  },
+  {
+   "start": 364.0,
+   "dur": 2.0,
+   "text": "He doesn't understand why this command.",
+   "label": "6:04"
+  },
+  {
+   "start": 366.0,
+   "dur": 6.0,
+   "text": "Trying to remove files under dev or under etc paths. So he does what he always does.",
+   "label": "6:06"
+  },
+  {
+   "start": 372.0,
+   "dur": 4.0,
+   "text": "He copies the error and paste them into ChatGPT.",
+   "label": "6:12"
+  },
+  {
+   "start": 376.0,
+   "dur": 9.0,
+   "text": "ChatGPT starts quote unquote reasoning and shortly after responds Stop the command. Right now press Ctrl c in the terminal.",
+   "label": "6:16"
+  },
+  {
+   "start": 385.0,
+   "dur": 6.0,
+   "text": "Immediately you see he saved the log folder path in a temporary variable, the log directory variable.",
+   "label": "6:25"
+  },
+  {
+   "start": 391.0,
+   "dur": 8.0,
+   "text": "When his first terminal session timed out, the temporary variable was wiped in his new terminal session, the log directory was",
+   "label": "6:31"
+  },
+  {
+   "start": 399.0,
+   "dur": 8.0,
+   "text": "completely blank, so log directory slash star became a slash a star,",
+   "label": "6:39"
+  },
+  {
+   "start": 407.0,
+   "dur": 5.0,
+   "text": "which means deleting everything from the root directory up. His soul left his body.",
+   "label": "6:47"
+  },
+  {
+   "start": 412.0,
+   "dur": 9.0,
+   "text": "He jumps back to the terminal and smashes control. C harder than he ever did in his life. The command stops. He types ls ls command not found.",
+   "label": "6:52"
+  },
+  {
+   "start": 421.0,
+   "dur": 6.0,
+   "text": "Even ls is gone. He effectively nuked the database. It's 10:45 p.m. now.",
+   "label": "7:01"
+  },
+  {
+   "start": 427.0,
+   "dur": 6.0,
+   "text": "He receives a wave of alerts on his slack. Database is down. Application is down. Health checks are failing.",
+   "label": "7:07"
+  },
+  {
+   "start": 433.0,
+   "dur": 7.0,
+   "text": "And then people start posting in the general channel. Is the app down for anyone else? Customers are emailing us at 10:49.",
+   "label": "7:13"
+  },
+  {
+   "start": 440.0,
+   "dur": 6.0,
+   "text": "He goes to the developers channel, mentions everyone and writes we have a production incident.",
+   "label": "7:20"
+  },
+  {
+   "start": 446.0,
+   "dur": 4.0,
+   "text": "He creates a Google meet, paste the link in the thread and joins the call.",
+   "label": "7:26"
+  },
+  {
+   "start": 450.0,
+   "dur": 3.0,
+   "text": "Now here's the first mistake in the incident response itself.",
+   "label": "7:30"
+  },
+  {
+   "start": 453.0,
+   "dur": 5.0,
+   "text": "People in the general are asking what's going on and nobody's answering them.",
+   "label": "7:33"
+  },
+  {
+   "start": 458.0,
+   "dur": 4.0,
+   "text": "Communication is one of the first principle of the incident response.",
+   "label": "7:38"
+  },
+  {
+   "start": 462.0,
+   "dur": 5.0,
+   "text": "You keep the rest of the company and your customers updated about the status at all time.",
+   "label": "7:42"
+  },
+  {
+   "start": 467.0,
+   "dur": 9.0,
+   "text": "Even if this status is, we don't know yet. Silence is the worst. Update 20 minutes pass and nobody joins. At 11:09.",
+   "label": "7:47"
+  },
+  {
+   "start": 476.0,
+   "dur": 3.0,
+   "text": "He calls Zoomer the DevOps engineer and George the tech lead.",
+   "label": "7:56"
+  },
+  {
+   "start": 479.0,
+   "dur": 5.0,
+   "text": "Shortly after, they both join Wojak. What happened?",
+   "label": "7:59"
+  },
+  {
+   "start": 484.0,
+   "dur": 6.0,
+   "text": "I might have accidentally deleted the entire production database. You did what?",
+   "label": "8:04"
+  },
+  {
+   "start": 490.0,
+   "dur": 3.0,
+   "text": "I deleted the root directory of the production database, and.",
+   "label": "8:10"
+  },
+  {
+   "start": 493.0,
+   "dur": 5.0,
+   "text": "He proceeded to explain exactly how it happened. It's 11:13 p.m..",
+   "label": "8:13"
+  },
+  {
+   "start": 498.0,
+   "dur": 5.0,
+   "text": "Production has been down for 28 minutes after short back and forth they split the work.",
+   "label": "8:18"
+  },
+  {
+   "start": 503.0,
+   "dur": 8.0,
+   "text": "George takes care of communication and Zoomer restore the database from this morning's backup. Now. Luckily they do have backups.",
+   "label": "8:23"
+  },
+  {
+   "start": 511.0,
+   "dur": 10.0,
+   "text": "Every morning at 4 a.m., an automated job copies the entire database into a single backup file and uploads it to a S3 bucket on AWS.",
+   "label": "8:31"
+  },
+  {
+   "start": 521.0,
+   "dur": 4.0,
+   "text": "But here's the thing the backup was taken at 4 a.m.",
+   "label": "8:41"
+  },
+  {
+   "start": 525.0,
+   "dur": 8.0,
+   "text": "on Friday, and the incident happened at 10:45 p.m., so all the Friday data is gone and they could have avoided that.",
+   "label": "8:45"
+  },
+  {
+   "start": 533.0,
+   "dur": 8.0,
+   "text": "You see, before Postgres changes any data on the disk, it first record what it's about to do in a running diary.",
+   "label": "8:53"
+  },
+  {
+   "start": 541.0,
+   "dur": 2.0,
+   "text": "called the Write ahead Log.",
+   "label": "9:01"
+  },
+  {
+   "start": 543.0,
+   "dur": 5.0,
+   "text": "If Postgres crashes, it reads this diary and re-applies the changes to recover.",
+   "label": "9:03"
+  },
+  {
+   "start": 548.0,
+   "dur": 8.0,
+   "text": "Now imagine if you save a copy of this write ahead log files somewhere safe, like an S3 bucket. Then you have a recovery method.",
+   "label": "9:08"
+  },
+  {
+   "start": 556.0,
+   "dur": 7.0,
+   "text": "Way better than just daily database dumps. It called a point in time recovery. You take your last full backup.",
+   "label": "9:16"
+  },
+  {
+   "start": 563.0,
+   "dur": 8.0,
+   "text": "You replay the write ahead log on top of it, and you tell it to stop, say, at 10:43 p.m., one minute before the data was deleted.",
+   "label": "9:23"
+  },
+  {
+   "start": 571.0,
+   "dur": 2.0,
+   "text": "On a managed service like RDS.",
+   "label": "9:31"
+  },
+  {
+   "start": 573.0,
+   "dur": 6.0,
+   "text": "There is essentially a single checkbox to enable point in time recovery. Now back to Zoomer.",
+   "label": "9:33"
+  },
+  {
+   "start": 579.0,
+   "dur": 7.0,
+   "text": "Zoomer is fairly new in his DevOps role too, and right now he's searching in Notion for a database recovery guideline because he's not sure",
+   "label": "9:39"
+  },
+  {
+   "start": 586.0,
+   "dur": 5.0,
+   "text": "which S3 bucket the backups are in, or how to even start a restore.",
+   "label": "9:46"
+  },
+  {
+   "start": 591.0,
+   "dur": 5.0,
+   "text": "The only page he finds was updated a year ago, and it's about restoring the backup on the RDS.",
+   "label": "9:51"
+  },
+  {
+   "start": 596.0,
+   "dur": 5.0,
+   "text": "The way the database was set up before completely useless with their self-hosted Postgres now.",
+   "label": "9:56"
+  },
+  {
+   "start": 601.0,
+   "dur": 6.0,
+   "text": "So now he has to dig through the S3 buckets in the AWS console, hoping to recognize the right one by its name.",
+   "label": "10:01"
+  },
+  {
+   "start": 607.0,
+   "dur": 6.0,
+   "text": "He also needs to piece together a restore procedure by googling and asking ChatGPT.",
+   "label": "10:07"
+  },
+  {
+   "start": 613.0,
+   "dur": 7.0,
+   "text": "So lesson number one no matter where you work and what's the size of your company, you need to have a database backup and restore",
+   "label": "10:13"
+  },
+  {
+   "start": 620.0,
+   "dur": 5.0,
+   "text": "procedure document that clearly explains a step by step.",
+   "label": "10:20"
+  },
+  {
+   "start": 625.0,
+   "dur": 3.0,
+   "text": "How are backups are created and how do you restore them.",
+   "label": "10:25"
+  },
+  {
+   "start": 628.0,
+   "dur": 3.0,
+   "text": "But that document alone is not enough yet.",
+   "label": "10:28"
+  },
+  {
+   "start": 631.0,
+   "dur": 3.0,
+   "text": "Backup is only a backup if you test that restoring it.",
+   "label": "10:31"
+  },
+  {
+   "start": 634.0,
+   "dur": 4.0,
+   "text": "So you need to run restore drills, say at least once a year.",
+   "label": "10:34"
+  },
+  {
+   "start": 638.0,
+   "dur": 7.0,
+   "text": "During the drill, you restore a fresh database from your backup, following your documentation, and make sure everything works.",
+   "label": "10:38"
+  },
+  {
+   "start": 645.0,
+   "dur": 6.0,
+   "text": "You also want to keep track of two numbers. RPO and RTO. RPO is the recovery point.",
+   "label": "10:45"
+  },
+  {
+   "start": 651.0,
+   "dur": 5.0,
+   "text": "Objective It's the maximum amount of data loss you can tolerate measured in time.",
+   "label": "10:51"
+  },
+  {
+   "start": 656.0,
+   "dur": 8.0,
+   "text": "For example, taking a daily backup at 4 a.m. means an RPO of up to 24 hours. RTO is a recovery time objective.",
+   "label": "10:56"
+  },
+  {
+   "start": 664.0,
+   "dur": 6.0,
+   "text": "It's how long your system can be down before it's severely damaged the business. Now, these are business decisions.",
+   "label": "11:04"
+  },
+  {
+   "start": 670.0,
+   "dur": 6.0,
+   "text": "So you agree on these targets with the management of your company, and then you design your backups around them.",
+   "label": "11:10"
+  },
+  {
+   "start": 676.0,
+   "dur": 8.0,
+   "text": "Meanwhile, back on the call, it seemed like Zoomer found a backup bucket. But there is a problem. I can't find today's backup.",
+   "label": "11:16"
+  },
+  {
+   "start": 684.0,
+   "dur": 8.0,
+   "text": "Actually, the latest backup I see here is from 12 days ago. Try changing the sort order. No, nothing.",
+   "label": "11:24"
+  },
+  {
+   "start": 692.0,
+   "dur": 4.0,
+   "text": "They refused to believe it, but unfortunately, it's true. Here's what happened.",
+   "label": "11:32"
+  },
+  {
+   "start": 696.0,
+   "dur": 5.0,
+   "text": "The database was growing all the time, and the backup job had a timeout of 30 minutes.",
+   "label": "11:36"
+  },
+  {
+   "start": 701.0,
+   "dur": 7.0,
+   "text": "12 days ago, the database got big enough that the backup job couldn't finish in 30 minutes. So Kubernetes killed the job.",
+   "label": "11:41"
+  },
+  {
+   "start": 708.0,
+   "dur": 3.0,
+   "text": "And the same thing happened every day after that.",
+   "label": "11:48"
+  },
+  {
+   "start": 711.0,
+   "dur": 8.0,
+   "text": "Now they're getting alerts about this every day in the dev alerts channel in a slack warning job production Postgres backup failed.",
+   "label": "11:51"
+  },
+  {
+   "start": 719.0,
+   "dur": 2.0,
+   "text": "Reason deadline exceeded.",
+   "label": "11:59"
+  },
+  {
+   "start": 721.0,
+   "dur": 4.0,
+   "text": "But the channel gets hundreds of other alerts every day as well.",
+   "label": "12:01"
+  },
+  {
+   "start": 725.0,
+   "dur": 5.0,
+   "text": "Most of those alerts are either not configured properly or they shouldn't exist in the first place.",
+   "label": "12:05"
+  },
+  {
+   "start": 730.0,
+   "dur": 7.0,
+   "text": "So one alert that actually mattered scrolled by 12 days in a row and no one reacted to it. This is called alert fatigue.",
+   "label": "12:10"
+  },
+  {
+   "start": 737.0,
+   "dur": 5.0,
+   "text": "It happens when you receive so many alerts that you stop paying attention to any of them.",
+   "label": "12:17"
+  },
+  {
+   "start": 742.0,
+   "dur": 8.0,
+   "text": "Your brain get conditioned that a red icon in the slack means nothing, because the last 100 red icons meant nothing.",
+   "label": "12:22"
+  },
+  {
+   "start": 750.0,
+   "dur": 5.0,
+   "text": "So here's the rule every alert should be actionable if no immediate action is expected.",
+   "label": "12:30"
+  },
+  {
+   "start": 755.0,
+   "dur": 6.0,
+   "text": "When it's fires, either delete it or turn it into a dashboard. It's almost midnight.",
+   "label": "12:35"
+  },
+  {
+   "start": 761.0,
+   "dur": 10.0,
+   "text": "The only option left is restoring the backup from 12 days ago, which means all customer data leads, and activity from the past 12 days is gone.",
+   "label": "12:41"
+  },
+  {
+   "start": 771.0,
+   "dur": 8.0,
+   "text": "Before we do this, I need to call Mr. CEO and tell him what we're. About to do. Five minutes later, Mr. CEO joins the call.",
+   "label": "12:51"
+  },
+  {
+   "start": 779.0,
+   "dur": 1.0,
+   "text": "What happened here?",
+   "label": "12:59"
+  },
+  {
+   "start": 780.0,
+   "dur": 8.0,
+   "text": "They explain everything and then complete silence. Nobody says a word. All the hope is lost. Only a miracle can save their weekend.",
+   "label": "13:00"
+  },
+  {
+   "start": 788.0,
+   "dur": 6.0,
+   "text": "And suddenly Mr. CEO breaks the silence. Don't worry, kids, I have a backup.",
+   "label": "13:08"
+  },
+  {
+   "start": 794.0,
+   "dur": 9.0,
+   "text": "He reaches into his back pocket and pulls out a USB drive. It says please subscribe. Except that didn't happen. What actually happened is Mr.",
+   "label": "13:14"
+  },
+  {
+   "start": 803.0,
+   "dur": 6.0,
+   "text": "CEO asked the worst question one can ask in this situation. Who's responsible for this?",
+   "label": "13:23"
+  },
+  {
+   "start": 809.0,
+   "dur": 5.0,
+   "text": "Whoa, Jack, didn't I say this wasn't urgent? Why did you do this? Why?",
+   "label": "13:29"
+  },
+  {
+   "start": 814.0,
+   "dur": 9.0,
+   "text": "And right before he leaves the call, he says I. Want all of the data back now. I don't care how. It's 12:15 a.m..",
+   "label": "13:34"
+  },
+  {
+   "start": 823.0,
+   "dur": 7.0,
+   "text": "Everyone is exhausted and stressed after a few minutes of discussion, they come up with a plan, restore the backup from 12 days ago,",
+   "label": "13:43"
+  },
+  {
+   "start": 830.0,
+   "dur": 3.0,
+   "text": "then try to fill the missing data gaps from the other sources.",
+   "label": "13:50"
+  },
+  {
+   "start": 833.0,
+   "dur": 9.0,
+   "text": "For example, pull user accounts and emails from Google Analytics, fetch subscription details from Stripe, and so on. They know they won't recover everything.",
+   "label": "13:53"
+  },
+  {
+   "start": 842.0,
+   "dur": 1.0,
+   "text": "Messages, leads.",
+   "label": "14:02"
+  },
+  {
+   "start": 843.0,
+   "dur": 7.0,
+   "text": "Most of it is lost for good, and they know they'll spend the entire weekend writing custom scripts to stitch the data together.",
+   "label": "14:03"
+  },
+  {
+   "start": 850.0,
+   "dur": 4.0,
+   "text": "But at this point, there is no other option. So Zoomer restarts the database pod.",
+   "label": "14:10"
+  },
+  {
+   "start": 854.0,
+   "dur": 4.0,
+   "text": "This is now a brand new, completely empty database.",
+   "label": "14:14"
+  },
+  {
+   "start": 858.0,
+   "dur": 4.0,
+   "text": "Then he attaches the terminal and tries to pull the old backup from S3.",
+   "label": "14:18"
+  },
+  {
+   "start": 862.0,
+   "dur": 6.0,
+   "text": "And needless to say, he's following instructions from ChatGPT and he ran into one problem after another.",
+   "label": "14:22"
+  },
+  {
+   "start": 868.0,
+   "dur": 5.0,
+   "text": "The database container doesn't even have a tool installed to download files from S3.",
+   "label": "14:28"
+  },
+  {
+   "start": 873.0,
+   "dur": 7.0,
+   "text": "Then he realizes the backup bucket is private and the database pod has no access to it. So he has two options. Do it properly.",
+   "label": "14:33"
+  },
+  {
+   "start": 880.0,
+   "dur": 7.0,
+   "text": "Create a IAM role that grants the pod access to the bucket, or do it in a dirty, quick way. Make the bucket public.",
+   "label": "14:40"
+  },
+  {
+   "start": 887.0,
+   "dur": 3.0,
+   "text": "Pull the backup file and make it private again afterwards.",
+   "label": "14:47"
+  },
+  {
+   "start": 890.0,
+   "dur": 2.0,
+   "text": "Which, by the way, opens a security hole for the company.",
+   "label": "14:50"
+  },
+  {
+   "start": 892.0,
+   "dur": 5.0,
+   "text": "If he forgets to make it private again and again. This is exactly why you prepare for this.",
+   "label": "14:52"
+  },
+  {
+   "start": 897.0,
+   "dur": 10.0,
+   "text": "Because when you're in an incident with all of that stress and pressure, it's so easy to make a mistake, and each mistakes cascade into the next one and make the situation worse.",
+   "label": "14:57"
+  },
+  {
+   "start": 907.0,
+   "dur": 6.0,
+   "text": "They spend the next three hours until 3 a.m. trying to restore what they can. Zoomer is exhausted.",
+   "label": "15:07"
+  },
+  {
+   "start": 913.0,
+   "dur": 6.0,
+   "text": "He can't focus, and he keep making mistakes, which makes everything take even longer. Here's another lesson.",
+   "label": "15:13"
+  },
+  {
+   "start": 919.0,
+   "dur": 5.0,
+   "text": "If you're in a long running incident like this one, you need a team members who can rotate shifts.",
+   "label": "15:19"
+  },
+  {
+   "start": 924.0,
+   "dur": 11.0,
+   "text": "One person actively working on recovery while the others rest. A tired engineer is a dangerous engineer, so they decide to end the call, get some sleep, and rejoin at 6 a.m.",
+   "label": "15:24"
+  },
+  {
+   "start": 935.0,
+   "dur": 2.0,
+   "text": "with more backend and data engineers.",
+   "label": "15:35"
+  },
+  {
+   "start": 937.0,
+   "dur": 3.0,
+   "text": "They're also telling Wojak he doesn't need to stay on call anymore.",
+   "label": "15:37"
+  },
+  {
+   "start": 940.0,
+   "dur": 4.0,
+   "text": "Long story short, the team worked through almost the entire weekend.",
+   "label": "15:40"
+  },
+  {
+   "start": 944.0,
+   "dur": 5.0,
+   "text": "By Sunday evening, they finally bring the application back online with partial data.",
+   "label": "15:44"
+  },
+  {
+   "start": 949.0,
+   "dur": 8.0,
+   "text": "So I guess we can say that the incident was quote unquote resolved after 45 hours, because if they brought it up on the 12 days old",
+   "label": "15:49"
+  },
+  {
+   "start": 957.0,
+   "dur": 8.0,
+   "text": "data, new signups and new leads would grab the IDs that the backfill scripts were about to reuse. It's Monday at 9 a.m..",
+   "label": "15:57"
+  },
+  {
+   "start": 965.0,
+   "dur": 2.0,
+   "text": "Wojak gets ready to go to the office.",
+   "label": "16:05"
+  },
+  {
+   "start": 967.0,
+   "dur": 5.0,
+   "text": "He's been following the team messages in a slack all weekend, watching them cleaning up the mess.",
+   "label": "16:07"
+  },
+  {
+   "start": 972.0,
+   "dur": 3.0,
+   "text": "It was easily the worst weekend of his life.",
+   "label": "16:12"
+  },
+  {
+   "start": 975.0,
+   "dur": 5.0,
+   "text": "He's out the door and he gets the email notification. It's from Becky in HR.",
+   "label": "16:15"
+  },
+  {
+   "start": 980.0,
+   "dur": 2.0,
+   "text": "CC'd Legal and Mr. CEO.",
+   "label": "16:20"
+  },
+  {
+   "start": 982.0,
+   "dur": 3.0,
+   "text": "Hi Wojak following a review of Friday's production incident.",
+   "label": "16:22"
+  },
+  {
+   "start": 985.0,
+   "dur": 3.0,
+   "text": "We have decided to terminate your employment effective immediately.",
+   "label": "16:25"
+  },
+  {
+   "start": 988.0,
+   "dur": 6.0,
+   "text": "The severity of the outage and associated risk do not align with our current risk profile.",
+   "label": "16:28"
+  },
+  {
+   "start": 994.0,
+   "dur": 2.0,
+   "text": "I wish this was otherwise, but people make mistakes.",
+   "label": "16:34"
+  },
+  {
+   "start": 996.0,
+   "dur": 4.0,
+   "text": "They might delete the production database. In fact, I did it myself.",
+   "label": "16:36"
+  },
+  {
+   "start": 1000.0,
+   "dur": 3.0,
+   "text": "And when it happens, you want to be ready for it.",
+   "label": "16:40"
+  },
+  {
+   "start": 1003.0,
+   "dur": 5.0,
+   "text": "So it's best for us to learn from each other's mistakes instead of making them ourselves.",
+   "label": "16:43"
+  },
+  {
+   "start": 1008.0,
+   "dur": 6.0,
+   "text": "So if you have an experience like this or any advice, leave it in the comments below and help save a fellow engineer's weekend.",
+   "label": "16:48"
+  },
+  {
+   "start": 1014.0,
+   "dur": null,
+   "text": "Anyways, thanks for watching and see you in the next one.",
+   "label": "16:54"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-23T01:25:51+00:00"
+}
