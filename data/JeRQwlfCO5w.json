@@ -407,5 +407,44 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-23T00:53:50+00:00"
+ "added": "2026-11-23T00:53:50+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-22T19:53:50",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 37.6,
+  "usd": 0.0055,
+  "version": 3,
+  "flagged": [
+   [
+    "0:15",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:24",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:56",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:02",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }

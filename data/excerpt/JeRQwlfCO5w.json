@@ -1,0 +1,59 @@
+{
+ "made": "2026-11-23T00:54:05+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "she was like with AI, right?",
+   "t": 165.0,
+   "line": 22
+  },
+  {
+   "text": "she was like a millennial or something",
+   "t": 177.2,
+   "line": 24
+  },
+  {
+   "text": "\"Did you trace?\"",
+   "t": 189.6,
+   "line": 25
+  },
+  {
+   "text": "\"Now that you show it to me like that, I believe you.\"",
+   "t": 212.5,
+   "line": 28
+  },
+  {
+   "text": "nobody will need an artist",
+   "t": 271.4,
+   "line": 35
+  },
+  {
+   "text": "so many AI posters out here",
+   "t": 305.1,
+   "line": 39
+  },
+  {
+   "text": "Bunky",
+   "t": 368.0,
+   "line": 47
+  },
+  {
+   "text": "something that brings you joy can't get you anywhere anymore",
+   "t": 393.4,
+   "line": 51
+  },
+  {
+   "text": "show the AI bros",
+   "t": 457.5,
+   "line": 60
+  },
+  {
+   "text": "more than AI slop will ever be",
+   "t": 477.9,
+   "line": 62
+  }
+ ],
+ "cost": 0.01042,
+ "dropped": 0
+}
