@@ -1,0 +1,1373 @@
+{
+ "id": "_I5yJtZGCXc",
+ "title": "KDE's New Terminal Has Arrived And It's...",
+ "channel": "Brodie Robertson",
+ "published": "20261125",
+ "description": "There's a million different Linux terminals out there and KDE Plasma now has a new one to replace Konsole known as Kwi, is it good, well let's take a look\n\n==========Support The Channel==========\n► Patreon: https://brodierobertson.xyz/patreon\n► Paypal: https://brodierobertson.xyz/paypal\n► Liberapay: https://brodierobertson.xyz/liberapay\n► Amazon USA: https://brodierobertson.xyz/amazonusa\n\n==========Resources==========\nIntroducing Kwi: https://blogs.kde.org/2026/11/01/introducing-kwi/\nRelease Anouncement: https://blogs.kde.org/2026/11/20/this-week-in-kwi-2026-w47/\n\n=========Video Platforms==========\n🎥 React: https://www.youtube.com/@BrodieRobertsonReacts\n🎥 Podcast: https://techovertea.xyz/youtube\n🎮 Gaming: https://brodierobertson.xyz/gaming\n\n==========Social Media==========\n🎤 Discord: https://brodierobertson.xyz/discord\n🐦 Twitter: https://brodierobertson.xyz/twitter\n🌐 Mastodon: https://brodierobertson.xyz/mastodon\n🖥️ GitHub: https://brodierobertson.xyz/github\n\n==========Credits==========\n🎨 Channel Art:\nProfile Picture:\nhttps://www.instagram.com/supercozman_draws/\n\n#KDE #Linux #OpenSource #Terminal #FOSS\n\n🎵 Ending music\nTrack: Debris & Jonth - Game Time [NCS Release]\nMusic provided by NoCopyrightSounds.\nWatch:  https://www.youtube.com/watch?v=yDTvvOTie0w \nFree Download / Stream: http://ncs.io/GameTime\n\nDISCLOSURE: Wherever possible I use referral links, which means if you click one of the links in this video or description and make a purchase I may receive a small commission or other compensation.",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introducing the Kwi terminal"
+  },
+  {
+   "start": 85,
+   "title": "Chapter 2: Installation and setup"
+  },
+  {
+   "start": 126,
+   "title": "Chapter 3: Initial impressions"
+  },
+  {
+   "start": 239,
+   "title": "Chapter 4: Performance and responsiveness"
+  },
+  {
+   "start": 304,
+   "title": "Chapter 5: Customization and settings"
+  },
+  {
+   "start": 386,
+   "title": "Chapter 6: Managing terminal presets"
+  },
+  {
+   "start": 495,
+   "title": "Chapter 7: Shortcuts and GUI controls"
+  },
+  {
+   "start": 539,
+   "title": "Chapter 8: Tabs and workflows"
+  },
+  {
+   "start": 653,
+   "title": "Chapter 9: Tab management and windows"
+  },
+  {
+   "start": 711,
+   "title": "Chapter 10: Minor bugs and quirks"
+  },
+  {
+   "start": 764,
+   "title": "Chapter 11: Missing features and outlook"
+  },
+  {
+   "start": 827,
+   "title": "Chapter 12: Conclusion and final thoughts"
+  }
+ ],
+ "duration": 937,
+ "category": "Science & Technology",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/_I5yJtZGCXc/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjw-5TYBg==|48#27#100#10#10#0#default#rs$AOn4CLADaaDEctip-TjFWOsh3bdHv4nLBQ|80#45#95#10#10#10000#M$M#rs$AOn4CLCFjNTZiAnz23blEQV8o7oaYCimFg|160#90#95#5#5#10000#M$M#rs$AOn4CLBoC5xxx2PKI2XRov-yfCYlYeUptw|320#180#95#3#3#10000#M$M#rs$AOn4CLCYmoJIPMWz5rW9fd_YY-JzWABy4Q",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 10.0,
+   "text": "Just the other day, I made a video on the Kwi terminal for KDE, a new terminal being worked on for the project, not to necessarily replace Konsole anytime soon,",
+   "label": "0:00"
+  },
+  {
+   "start": 10.0,
+   "dur": 13.0,
+   "text": "but more of just a place to experiment with new ideas, try out new libraries, do so in a way which isn't completely disruptive to the main project, and breaking what people expect to get from using Konsole.",
+   "label": "0:10"
+  },
+  {
+   "start": 23.0,
+   "dur": 9.0,
+   "text": "For example, again, like building off an entirely new library, in this case being LibGhostty, the library built by the Ghostty project,",
+   "label": "0:23"
+  },
+  {
+   "start": 32.0,
+   "dur": 8.0,
+   "text": "and then bringing in some modern terminal features like GPU accelerated terminal rendering, modern font rendering in the terminal,",
+   "label": "0:32"
+  },
+  {
+   "start": 40.0,
+   "dur": 10.0,
+   "text": "a bunch of protocols from the Kitty project, improved mouse support, and a whole bunch of other things to try and make a really good modern terminal emulator.",
+   "label": "0:40"
+  },
+  {
+   "start": 50.0,
+   "dur": 11.0,
+   "text": "It is still very early days, and even though we now do have our very first release, this is 0.1.0.",
+   "label": "0:50"
+  },
+  {
+   "start": 61.0,
+   "dur": 10.0,
+   "text": "It is the first release, it is an early release, expect to find problems, expect to find missing features, you're gonna see something very obviously missing throughout this video,",
+   "label": "1:01"
+  },
+  {
+   "start": 71.0,
+   "dur": 5.0,
+   "text": "and we'll get to that, but it is in a state where you can use it.",
+   "label": "1:11"
+  },
+  {
+   "start": 76.0,
+   "dur": 9.0,
+   "text": "Like so many other things in KDE, it is packaged over on Flathub as a flat pack, ignore the special license, this is a bug on Flathub's part,",
+   "label": "1:16"
+  },
+  {
+   "start": 85.0,
+   "dur": 6.0,
+   "text": "because it's GPLv2 and GPLv3.",
+   "label": "1:25"
+  },
+  {
+   "start": 91.0,
+   "dur": 11.0,
+   "text": "I don't know why it's being listed as a special license, that's clearly a bug, that's clearly a problem, it's not, it is the most average of average free software licenses out there.",
+   "label": "1:31"
+  },
+  {
+   "start": 102.0,
+   "dur": 9.0,
+   "text": "But you will also find it packaged on Arch Linux, and various other distros out there on Arch, it is just pacman-s Kwi, and then you'll get it.",
+   "label": "1:42"
+  },
+  {
+   "start": 111.0,
+   "dur": 8.0,
+   "text": "If it's not on other distros I don't know about, check it out on your distro, search for it, see if you can find it, if you can find it,",
+   "label": "1:51"
+  },
+  {
+   "start": 119.0,
+   "dur": 7.0,
+   "text": "install it, if you can't find it, don't install it, but I went and installed it, so let us go and check it out. This right here is Kwi.",
+   "label": "1:59"
+  },
+  {
+   "start": 126.0,
+   "dur": 8.0,
+   "text": "I've just made a very minor change to it, if we go into the settings, we go to configure Kwi, and we go to the appearance,",
+   "label": "2:06"
+  },
+  {
+   "start": 134.0,
+   "dur": 8.0,
+   "text": "I have just gone and turned on the background opacity, that is set to 90%, and I've enabled a blur.",
+   "label": "2:14"
+  },
+  {
+   "start": 142.0,
+   "dur": 8.0,
+   "text": "Everything else though is exactly how it is configured, out of the box. And you know what? It's a terminal.",
+   "label": "2:22"
+  },
+  {
+   "start": 150.0,
+   "dur": 6.0,
+   "text": "Like, at its very basic level, it is a completely functional terminal.",
+   "label": "2:30"
+  },
+  {
+   "start": 156.0,
+   "dur": 9.0,
+   "text": "It doesn't do any weird font rendering I've had in other terminals, doesn't pick a weird font by default, it's correctly using the font I have set,",
+   "label": "2:36"
+  },
+  {
+   "start": 165.0,
+   "dur": 8.0,
+   "text": "nothing is weird about it, it functions as a terminal, which is the baseline I would expect.",
+   "label": "2:45"
+  },
+  {
+   "start": 173.0,
+   "dur": 6.0,
+   "text": "Now, I'm going to be considering it as a terminal in its own right, not necessarily directly compared to Konsole.",
+   "label": "2:53"
+  },
+  {
+   "start": 179.0,
+   "dur": 5.0,
+   "text": "As such, I will be comparing it with my main terminal, that being alacrity.",
+   "label": "2:59"
+  },
+  {
+   "start": 184.0,
+   "dur": 4.0,
+   "text": "Note, I have not converted my theme over, so the theme is going to be slightly different.",
+   "label": "3:04"
+  },
+  {
+   "start": 188.0,
+   "dur": 3.0,
+   "text": "That's on me, I've just not gone ahead and done so.",
+   "label": "3:08"
+  },
+  {
+   "start": 191.0,
+   "dur": 8.0,
+   "text": "I know I don't have blur and transparency enabled on alacrity, and the main reason for that is I kind of just like fall in and out of whether I do or don't want it.",
+   "label": "3:11"
+  },
+  {
+   "start": 199.0,
+   "dur": 7.0,
+   "text": "Right now, I'm trying it out, I'll probably go and disable another point. I just randomly feel like using it and don't using it.",
+   "label": "3:19"
+  },
+  {
+   "start": 206.0,
+   "dur": 9.0,
+   "text": "So, my very low bar for whether or not a terminal is usable is how does it feel to actually use as a terminal.",
+   "label": "3:26"
+  },
+  {
+   "start": 215.0,
+   "dur": 7.0,
+   "text": "And basic stuff, typing, there's no weird delay that happens, anything like that. It feels like a terminal.",
+   "label": "3:35"
+  },
+  {
+   "start": 222.0,
+   "dur": 8.0,
+   "text": "One thing does feel slightly off though, and this is a problem that basically every terminal has, so I can't really fault it that much.",
+   "label": "3:42"
+  },
+  {
+   "start": 230.0,
+   "dur": 2.0,
+   "text": "I don't know how well it's going to show up on video.",
+   "label": "3:50"
+  },
+  {
+   "start": 232.0,
+   "dur": 7.0,
+   "text": "If I go and resize alacrity, it is perfectly smooth. Zero delay.",
+   "label": "3:52"
+  },
+  {
+   "start": 239.0,
+   "dur": 6.0,
+   "text": "It feels as smooth as moving my mouse. There is no problem there whatsoever.",
+   "label": "3:59"
+  },
+  {
+   "start": 245.0,
+   "dur": 4.0,
+   "text": "Kwi though, there is a bit of a slight delay.",
+   "label": "4:05"
+  },
+  {
+   "start": 249.0,
+   "dur": 2.0,
+   "text": "Again, I don't know how well this is going to show up on video.",
+   "label": "4:09"
+  },
+  {
+   "start": 251.0,
+   "dur": 6.0,
+   "text": "This is something you're really only going to see if you have like a 120 hertz or higher monitor.",
+   "label": "4:11"
+  },
+  {
+   "start": 257.0,
+   "dur": 8.0,
+   "text": "It does feel very, very slightly delayed. Is it like the end of the world? Is it something that would stop me using a terminal?",
+   "label": "4:17"
+  },
+  {
+   "start": 265.0,
+   "dur": 3.0,
+   "text": "No. But it is something worth noting.",
+   "label": "4:25"
+  },
+  {
+   "start": 268.0,
+   "dur": 9.0,
+   "text": "Basically, the only terminals that do this as well as alacrity are like, Xterm? That's the only one I can think of. I don't think Kitty does it.",
+   "label": "4:28"
+  },
+  {
+   "start": 277.0,
+   "dur": 5.0,
+   "text": "I don't think, I definitely don't think the GNOME terminal does it. Konsole doesn't do it.",
+   "label": "4:37"
+  },
+  {
+   "start": 282.0,
+   "dur": 5.0,
+   "text": "It's basically like alacrity and Xterm and maybe foot. And that's pretty much it.",
+   "label": "4:42"
+  },
+  {
+   "start": 287.0,
+   "dur": 6.0,
+   "text": "One thing that is very smooth though, is the scroll back. It works perfectly. Absolutely perfectly.",
+   "label": "4:47"
+  },
+  {
+   "start": 293.0,
+   "dur": 5.0,
+   "text": "Do note that if you don't like having a scroll bar there, this currently cannot be hidden.",
+   "label": "4:53"
+  },
+  {
+   "start": 298.0,
+   "dur": 4.0,
+   "text": "It is something which has been suggested and may end up happening.",
+   "label": "4:58"
+  },
+  {
+   "start": 302.0,
+   "dur": 2.0,
+   "text": "But right now, you're basically stuck with it.",
+   "label": "5:02"
+  },
+  {
+   "start": 304.0,
+   "dur": 5.0,
+   "text": "Whilst I have not ported my theme over, if I would like to do so, it is relatively simple.",
+   "label": "5:04"
+  },
+  {
+   "start": 309.0,
+   "dur": 9.0,
+   "text": "All I do is go to the menu here, go to Configure Kwi, in the Appearance tab, under where it says Terminal, click on this right here, and we can edit the color scheme.",
+   "label": "5:09"
+  },
+  {
+   "start": 318.0,
+   "dur": 3.0,
+   "text": "I'm not going to do so right now. I'll do it off camera.",
+   "label": "5:18"
+  },
+  {
+   "start": 321.0,
+   "dur": 3.0,
+   "text": "But it's basically as straightforward as you might expect.",
+   "label": "5:21"
+  },
+  {
+   "start": 324.0,
+   "dur": 6.0,
+   "text": "If you've never done a terminal theme before, there's not that many colors you get to work with. But this is a true color terminal.",
+   "label": "5:24"
+  },
+  {
+   "start": 330.0,
+   "dur": 8.0,
+   "text": "So if you do need to do actual proper color rendering inside of it, that's kind of just about the font rendering your traditional applications.",
+   "label": "5:30"
+  },
+  {
+   "start": 338.0,
+   "dur": 5.0,
+   "text": "If you're doing like, you know, image rendering with Kitty, for example, it is going to use actual colors.",
+   "label": "5:38"
+  },
+  {
+   "start": 343.0,
+   "dur": 4.0,
+   "text": "Actually, whilst we are talking about the settings, let's just keep going with that.",
+   "label": "5:43"
+  },
+  {
+   "start": 347.0,
+   "dur": 3.0,
+   "text": "So again, back in Configure Kwi, we have a couple of tabs here.",
+   "label": "5:47"
+  },
+  {
+   "start": 350.0,
+   "dur": 3.0,
+   "text": "We also have a search bar, if you want to use a search bar.",
+   "label": "5:50"
+  },
+  {
+   "start": 353.0,
+   "dur": 5.0,
+   "text": "Granted, they're not really that much to go through anyway, so the search isn't really that useful.",
+   "label": "5:53"
+  },
+  {
+   "start": 358.0,
+   "dur": 2.0,
+   "text": "Under the behavior, there's a couple of things you might want to set.",
+   "label": "5:58"
+  },
+  {
+   "start": 360.0,
+   "dur": 6.0,
+   "text": "Things like, oh, if you are handling links, for example, do you want to have to control click for those?",
+   "label": "6:00"
+  },
+  {
+   "start": 366.0,
+   "dur": 4.0,
+   "text": "Do you want to quit if you're running a command? Things like that.",
+   "label": "6:06"
+  },
+  {
+   "start": 370.0,
+   "dur": 5.0,
+   "text": "Under Terminal, we have a couple of things, like how do you want the title of the window to be named?",
+   "label": "6:10"
+  },
+  {
+   "start": 375.0,
+   "dur": 7.0,
+   "text": "How do you want to go and handle things like the cursor? Do you want it to be a block or a beam? Do you want it to blink? Basic things like that.",
+   "label": "6:15"
+  },
+  {
+   "start": 382.0,
+   "dur": 4.0,
+   "text": "Then Presets, this is where things actually get interesting.",
+   "label": "6:22"
+  },
+  {
+   "start": 386.0,
+   "dur": 5.0,
+   "text": "So this is how you want the terminal to actually open.",
+   "label": "6:26"
+  },
+  {
+   "start": 391.0,
+   "dur": 9.0,
+   "text": "So by default, it just opens up the system shell, uses the system shell default, nothing that crazy, and just automatically goes there.",
+   "label": "6:31"
+  },
+  {
+   "start": 400.0,
+   "dur": 2.0,
+   "text": "However, let's say I wanted to do something else.",
+   "label": "6:40"
+  },
+  {
+   "start": 402.0,
+   "dur": 5.0,
+   "text": "Let's say I wanted to go and open up, I don't know, Btop, for example.",
+   "label": "6:42"
+  },
+  {
+   "start": 407.0,
+   "dur": 4.0,
+   "text": "How would I go and do that and not replace the default?",
+   "label": "6:47"
+  },
+  {
+   "start": 411.0,
+   "dur": 5.0,
+   "text": "You might notice there isn't a new button here.",
+   "label": "6:51"
+  },
+  {
+   "start": 416.0,
+   "dur": 7.0,
+   "text": "There's no way to like make a new preset, except there is, and the UX is very strange.",
+   "label": "6:56"
+  },
+  {
+   "start": 423.0,
+   "dur": 10.0,
+   "text": "So what you do is click on the three dots here and then go duplicate, and that creates a copy of what you are already using.",
+   "label": "7:03"
+  },
+  {
+   "start": 433.0,
+   "dur": 8.0,
+   "text": "So I could call this one Btop, and then let's say I do Btop, and then we go and save that.",
+   "label": "7:13"
+  },
+  {
+   "start": 441.0,
+   "dur": 3.0,
+   "text": "And you know what? Let's just make that the default.",
+   "label": "7:21"
+  },
+  {
+   "start": 444.0,
+   "dur": 6.0,
+   "text": "So now if I go open up a new instance of Kwi, it just starts it automatically inside of Btop.",
+   "label": "7:24"
+  },
+  {
+   "start": 450.0,
+   "dur": 9.0,
+   "text": "Obviously, you wouldn't want to do that with Btop, at least as your default, but there are reasons why you might want to have this as a thing you can do.",
+   "label": "7:30"
+  },
+  {
+   "start": 459.0,
+   "dur": 9.0,
+   "text": "If I'd like to then go and get rid of it, I can click on the dots again, click on remove, and then it will delete that, set us back to the system shell, and this one cannot be deleted.",
+   "label": "7:39"
+  },
+  {
+   "start": 468.0,
+   "dur": 3.0,
+   "text": "When you only have one thing left, that cannot be removed.",
+   "label": "7:48"
+  },
+  {
+   "start": 471.0,
+   "dur": 5.0,
+   "text": "I do think this is a weird interaction, though. You should just have a new button here.",
+   "label": "7:51"
+  },
+  {
+   "start": 476.0,
+   "dur": 4.0,
+   "text": "That makes way more sense than having to duplicate something that already exists.",
+   "label": "7:56"
+  },
+  {
+   "start": 480.0,
+   "dur": 4.0,
+   "text": "When I first saw this menu, I thought there was no way to make a preset.",
+   "label": "8:00"
+  },
+  {
+   "start": 484.0,
+   "dur": 3.0,
+   "text": "I thought this was just something that hadn't been added yet.",
+   "label": "8:04"
+  },
+  {
+   "start": 487.0,
+   "dur": 8.0,
+   "text": "At the very bottom of this menu, we have the keyboard shortcuts, which works the exact same way as basically every KDE application. It's the list of shortcuts.",
+   "label": "8:07"
+  },
+  {
+   "start": 495.0,
+   "dur": 1.0,
+   "text": "It is setting the shortcuts.",
+   "label": "8:15"
+  },
+  {
+   "start": 496.0,
+   "dur": 8.0,
+   "text": "If you want to set a shortcut, it's not actually obvious that you can, but if you want to click on anything, it brings up this menu, and then you can set whatever shortcut you want.",
+   "label": "8:16"
+  },
+  {
+   "start": 504.0,
+   "dur": 5.0,
+   "text": "You have your regular shortcut, you have your alternative, all the normal stuff that is there in a KDE application.",
+   "label": "8:24"
+  },
+  {
+   "start": 509.0,
+   "dur": 10.0,
+   "text": "Now, if you're not going to remember most of the shortcuts, there is one I would recommend keeping in mind, that being a CTRL-ALT-I that brings up the shortcut menu.",
+   "label": "8:29"
+  },
+  {
+   "start": 519.0,
+   "dur": 8.0,
+   "text": "Personally, I'm not really one for all of this like additional GUI stuff, GUI controls, all this in a terminal. I use Alacrity.",
+   "label": "8:39"
+  },
+  {
+   "start": 527.0,
+   "dur": 2.0,
+   "text": "It is a terminal window.",
+   "label": "8:47"
+  },
+  {
+   "start": 529.0,
+   "dur": 5.0,
+   "text": "That is all it is, but they are here. So let us go and talk about them.",
+   "label": "8:49"
+  },
+  {
+   "start": 534.0,
+   "dur": 5.0,
+   "text": "Obviously, I've shown you the menu a couple of times, but there are stuff besides the menu as well.",
+   "label": "8:54"
+  },
+  {
+   "start": 539.0,
+   "dur": 5.0,
+   "text": "Like many of the desktop environment focused options out there, we also have a tabbing system.",
+   "label": "8:59"
+  },
+  {
+   "start": 544.0,
+   "dur": 3.0,
+   "text": "This can be accessed with your hotkey CTRL-SHIFT-T by default.",
+   "label": "9:04"
+  },
+  {
+   "start": 547.0,
+   "dur": 7.0,
+   "text": "It can be accessed in the menu right here under the tabs. We can go and rename a tab. We can go and make a new tab.",
+   "label": "9:07"
+  },
+  {
+   "start": 554.0,
+   "dur": 3.0,
+   "text": "We can also make a tab with this button up here.",
+   "label": "9:14"
+  },
+  {
+   "start": 557.0,
+   "dur": 5.0,
+   "text": "But you also might have noticed in the menu there, there is a new tab with preset.",
+   "label": "9:17"
+  },
+  {
+   "start": 562.0,
+   "dur": 4.0,
+   "text": "Obviously, right now I have the system shell, so I can only make the system shell.",
+   "label": "9:22"
+  },
+  {
+   "start": 566.0,
+   "dur": 6.0,
+   "text": "However, let us go and manage the presets and let's go and make another one. Let's go and duplicate this.",
+   "label": "9:26"
+  },
+  {
+   "start": 572.0,
+   "dur": 4.0,
+   "text": "Let's say, I'll just call it Btop again and we'll do the whole Btop thing once again.",
+   "label": "9:32"
+  },
+  {
+   "start": 576.0,
+   "dur": 2.0,
+   "text": "So, Btop and then save.",
+   "label": "9:36"
+  },
+  {
+   "start": 578.0,
+   "dur": 9.0,
+   "text": "So, now what I can do is I can go and make a new tab using that preset and automatically go into that environment.",
+   "label": "9:38"
+  },
+  {
+   "start": 587.0,
+   "dur": 4.0,
+   "text": "Now, obviously, something like Btop isn't really that useful to do.",
+   "label": "9:47"
+  },
+  {
+   "start": 591.0,
+   "dur": 9.0,
+   "text": "However, let's say you have a development environment and you want to automatically just go and open up that environment,",
+   "label": "9:51"
+  },
+  {
+   "start": 600.0,
+   "dur": 8.0,
+   "text": "have everything configured, all your environment variables, your Python environment loaded, be in the right folder, all of that good stuff and just not have to worry about it.",
+   "label": "10:00"
+  },
+  {
+   "start": 608.0,
+   "dur": 2.0,
+   "text": "That can be done with a preset.",
+   "label": "10:08"
+  },
+  {
+   "start": 610.0,
+   "dur": 7.0,
+   "text": "Alternatively, if we go do Kwi-h, there is also a dash-dash preset option and we can do the exact same thing.",
+   "label": "10:10"
+  },
+  {
+   "start": 617.0,
+   "dur": 9.0,
+   "text": "So, in this case, preset Btop should work but it doesn't.",
+   "label": "10:17"
+  },
+  {
+   "start": 626.0,
+   "dur": 2.0,
+   "text": "The option is there.",
+   "label": "10:26"
+  },
+  {
+   "start": 628.0,
+   "dur": 2.0,
+   "text": "Okay, wait, wait, did I spell it wrong?",
+   "label": "10:28"
+  },
+  {
+   "start": 630.0,
+   "dur": 3.0,
+   "text": "Hold up, hold up. It is case sensitive.",
+   "label": "10:30"
+  },
+  {
+   "start": 633.0,
+   "dur": 4.0,
+   "text": "Okay, my bad, not a bug.",
+   "label": "10:33"
+  },
+  {
+   "start": 637.0,
+   "dur": 6.0,
+   "text": "Probably should warn you that it's spelt right but it's case sensitive.",
+   "label": "10:37"
+  },
+  {
+   "start": 643.0,
+   "dur": 2.0,
+   "text": "That'd be my suggestion at least.",
+   "label": "10:43"
+  },
+  {
+   "start": 645.0,
+   "dur": 8.0,
+   "text": "Now, because we do have a tabbing system, you might say, okay, can I go and detach the tabs? Yes.",
+   "label": "10:45"
+  },
+  {
+   "start": 653.0,
+   "dur": 2.0,
+   "text": "Kinda, sorta.",
+   "label": "10:53"
+  },
+  {
+   "start": 655.0,
+   "dur": 6.0,
+   "text": "So, if I go and open up a new instance of, okay, actually I haven't loaded in that yet. I'll fix that after.",
+   "label": "10:55"
+  },
+  {
+   "start": 661.0,
+   "dur": 8.0,
+   "text": "A new instance of Kwi, I can go and grab this tab and drag it over to this window. That works totally fine.",
+   "label": "11:01"
+  },
+  {
+   "start": 669.0,
+   "dur": 4.0,
+   "text": "What I can't do is grab this tab and like drag it out here.",
+   "label": "11:09"
+  },
+  {
+   "start": 673.0,
+   "dur": 2.0,
+   "text": "Even though it looks like you can.",
+   "label": "11:13"
+  },
+  {
+   "start": 675.0,
+   "dur": 2.0,
+   "text": "It just automatically snaps back to the window.",
+   "label": "11:15"
+  },
+  {
+   "start": 677.0,
+   "dur": 6.0,
+   "text": "What you can do is detach the tab like this, turn it into a new window and you're good to go.",
+   "label": "11:17"
+  },
+  {
+   "start": 683.0,
+   "dur": 5.0,
+   "text": "I would like it if you could just detach it like you could with like a browser tab.",
+   "label": "11:23"
+  },
+  {
+   "start": 688.0,
+   "dur": 2.0,
+   "text": "That seems like an oversight.",
+   "label": "11:28"
+  },
+  {
+   "start": 690.0,
+   "dur": 3.0,
+   "text": "That seems like something they are going to add at some point.",
+   "label": "11:30"
+  },
+  {
+   "start": 693.0,
+   "dur": 8.0,
+   "text": "As you can spawn a window from a new tab by detaching the tab, obviously you can also go and spawn a new window from the Kwi instance as well.",
+   "label": "11:33"
+  },
+  {
+   "start": 701.0,
+   "dur": 6.0,
+   "text": "That can be done from the menu here with new window or control shift and does the exact same thing.",
+   "label": "11:41"
+  },
+  {
+   "start": 707.0,
+   "dur": 4.0,
+   "text": "Now, I did run into a very minor bug.",
+   "label": "11:47"
+  },
+  {
+   "start": 711.0,
+   "dur": 7.0,
+   "text": "Let's go and open up a Kwi instance from this one and then go to the menu again and go to about Kwi. Works totally fine.",
+   "label": "11:51"
+  },
+  {
+   "start": 718.0,
+   "dur": 5.0,
+   "text": "Then go to about KDE and it doesn't work.",
+   "label": "11:58"
+  },
+  {
+   "start": 723.0,
+   "dur": 8.0,
+   "text": "Last time it printed something in the terminal. It's not doing that now. Um, okay.",
+   "label": "12:03"
+  },
+  {
+   "start": 731.0,
+   "dur": 2.0,
+   "text": "Let me try it from here. Let me try that again.",
+   "label": "12:11"
+  },
+  {
+   "start": 733.0,
+   "dur": 4.0,
+   "text": "Maybe I'll just get rid of the other one? About KDE.",
+   "label": "12:13"
+  },
+  {
+   "start": 737.0,
+   "dur": 3.0,
+   "text": "Okay, it's still not working but this time it's not printing an error.",
+   "label": "12:17"
+  },
+  {
+   "start": 740.0,
+   "dur": 4.0,
+   "text": "There was an error before so I don't know why that's not erroring now.",
+   "label": "12:20"
+  },
+  {
+   "start": 744.0,
+   "dur": 3.0,
+   "text": "I haven't updated so who knows what's happening there.",
+   "label": "12:24"
+  },
+  {
+   "start": 747.0,
+   "dur": 4.0,
+   "text": "Either way, uh, it's obviously not opening up about KDE.",
+   "label": "12:27"
+  },
+  {
+   "start": 751.0,
+   "dur": 3.0,
+   "text": "So, there's clearly a bug there.",
+   "label": "12:31"
+  },
+  {
+   "start": 754.0,
+   "dur": 5.0,
+   "text": "Um, not sure if it's on my end or an error with the application but there is a bug there of some sort.",
+   "label": "12:34"
+  },
+  {
+   "start": 759.0,
+   "dur": 5.0,
+   "text": "There is a feature I have not mentioned that is missing. Split panes.",
+   "label": "12:39"
+  },
+  {
+   "start": 764.0,
+   "dur": 4.0,
+   "text": "Split panes are something you cannot currently do.",
+   "label": "12:44"
+  },
+  {
+   "start": 768.0,
+   "dur": 7.0,
+   "text": "This is something which they know about this is something which is being worked on and this is something which is going to be coming in the future.",
+   "label": "12:48"
+  },
+  {
+   "start": 775.0,
+   "dur": 5.0,
+   "text": "But right now you cannot do split panes. So, yeah.",
+   "label": "12:55"
+  },
+  {
+   "start": 780.0,
+   "dur": 4.0,
+   "text": "Keep that in mind it is a tad annoying for people that really do like them.",
+   "label": "13:00"
+  },
+  {
+   "start": 784.0,
+   "dur": 7.0,
+   "text": "I've never really been a fan and if I really wanted them I could just go and run T-Mucks but that is going to be coming in the future.",
+   "label": "13:04"
+  },
+  {
+   "start": 791.0,
+   "dur": 4.0,
+   "text": "As it currently stands Kwi is a totally solid terminal.",
+   "label": "13:11"
+  },
+  {
+   "start": 795.0,
+   "dur": 3.0,
+   "text": "It's not the greatest terminal I've ever created.",
+   "label": "13:15"
+  },
+  {
+   "start": 798.0,
+   "dur": 5.0,
+   "text": "It's not like reinventing the world but this is a totally solid terminal. It is a fast terminal.",
+   "label": "13:18"
+  },
+  {
+   "start": 803.0,
+   "dur": 6.0,
+   "text": "I've like had no issues actually using it besides obviously like this thing here but that's like a minor problem.",
+   "label": "13:23"
+  },
+  {
+   "start": 809.0,
+   "dur": 4.0,
+   "text": "Like no actual important functionality that doesn't work.",
+   "label": "13:29"
+  },
+  {
+   "start": 813.0,
+   "dur": 2.0,
+   "text": "Everything's just kind of been good.",
+   "label": "13:33"
+  },
+  {
+   "start": 815.0,
+   "dur": 2.0,
+   "text": "This is a really solid first release.",
+   "label": "13:35"
+  },
+  {
+   "start": 817.0,
+   "dur": 2.0,
+   "text": "I'm excited to see where this goes.",
+   "label": "13:37"
+  },
+  {
+   "start": 819.0,
+   "dur": 2.0,
+   "text": "It is a very small download. It is a terminal.",
+   "label": "13:39"
+  },
+  {
+   "start": 821.0,
+   "dur": 2.0,
+   "text": "Give it a shot if you like it. You like it.",
+   "label": "13:41"
+  },
+  {
+   "start": 823.0,
+   "dur": 2.0,
+   "text": "If you don't don't use it. Yeah.",
+   "label": "13:43"
+  },
+  {
+   "start": 825.0,
+   "dur": 2.0,
+   "text": "Actually one more little thing that I didn't mention.",
+   "label": "13:45"
+  },
+  {
+   "start": 827.0,
+   "dur": 2.0,
+   "text": "I don't know how I forgot about this.",
+   "label": "13:47"
+  },
+  {
+   "start": 829.0,
+   "dur": 6.0,
+   "text": "You can go and hide the actual GUI part of this if you don't like it.",
+   "label": "13:49"
+  },
+  {
+   "start": 835.0,
+   "dur": 5.0,
+   "text": "If you go and click on hide tab bar for single tabs it is now gone.",
+   "label": "13:55"
+  },
+  {
+   "start": 840.0,
+   "dur": 8.0,
+   "text": "It doesn't hide the scroll bar which is slightly annoying so that is going to be there but if you're just running it with like a single tab all the time you can just like do it like this",
+   "label": "14:00"
+  },
+  {
+   "start": 848.0,
+   "dur": 7.0,
+   "text": "and then if you open up a second tab there you go now you actually see the tab bar or if you want to bring it back you can do control shift M and that does it.",
+   "label": "14:08"
+  },
+  {
+   "start": 855.0,
+   "dur": 3.0,
+   "text": "I think you can do it in the menu as well.",
+   "label": "14:15"
+  },
+  {
+   "start": 858.0,
+   "dur": 9.0,
+   "text": "No you can't do it in the menu but you can do the hotkey here or you can do control alt I and that brings up this and you can run it from there as well.",
+   "label": "14:18"
+  },
+  {
+   "start": 867.0,
+   "dur": 4.0,
+   "text": "So as I was saying good terminal check it out give it a shot if you like it use it.",
+   "label": "14:27"
+  },
+  {
+   "start": 871.0,
+   "dur": 8.0,
+   "text": "Yeah if you like the video go like the video go subscribe go hype if you're a mobile tell me what you think of it especially if you're a Konsole user I know it is going to be",
+   "label": "14:31"
+  },
+  {
+   "start": 879.0,
+   "dur": 10.0,
+   "text": "fairly limited compared to Konsole but let me know what you think of it and if you don't use KDE and you just want to try it out as just like a terminal let me know what you think of it I'd love to know.",
+   "label": "14:39"
+  },
+  {
+   "start": 889.0,
+   "dur": 8.0,
+   "text": "So like the video subscribe hype if you're a mobile if you really like the video and you want to become one of these amazing people over here",
+   "label": "14:49"
+  },
+  {
+   "start": 897.0,
+   "dur": 6.0,
+   "text": "check out the Patreon SubscribeStar Liberapay, linked in the description down below that's going to be it for me and",
+   "label": "14:57"
+  },
+  {
+   "start": 903.0,
+   "dur": null,
+   "text": "that's the sound a chocobo makes I think I made this joke last time",
+   "label": "15:03"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-25T21:09:15+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T16:09:15",
+  "lines": {
+   "8": [
+    [
+     "Like so many other things in KDE, it is packaged over on Flathub as a",
+     null
+    ],
+    [
+     "Flatpak,",
+     "flat pack,"
+    ],
+    [
+     "ignore the special license, this is a bug on Flathub's part,",
+     null
+    ]
+   ],
+   "11": [
+    [
+     "But you will also find it packaged on Arch Linux, and various other distros out there on Arch, it is just",
+     null
+    ],
+    [
+     "pacman S",
+     "pacman-s"
+    ],
+    [
+     "Kwi, and then you'll get it.",
+     null
+    ]
+   ],
+   "83": [
+    [
+     "Now, if you're not going to remember most of the shortcuts, there is one I would recommend keeping in mind, that being",
+     null
+    ],
+    [
+     "",
+     "a"
+    ],
+    [
+     "CTRL-ALT-I that brings up the shortcut menu.",
+     null
+    ]
+   ],
+   "102": [
+    [
+     "Alternatively, if we go do",
+     null
+    ],
+    [
+     "Kwi h,",
+     "Kwi-h,"
+    ],
+    [
+     "there is also a",
+     null
+    ],
+    [
+     "",
+     "dash-dash"
+    ],
+    [
+     "preset option and we can do the exact same thing.",
+     null
+    ]
+   ],
+   "140": [
+    [
+     "I've never really been a fan and if I really wanted them I could just go and run",
+     null
+    ],
+    [
+     "Tmux",
+     "T-Mucks"
+    ],
+    [
+     "but that is going to be coming in the future.",
+     null
+    ]
+   ],
+   "159": [
+    [
+     "No you can't do it in the menu but you can do the hotkey here or you can do",
+     null
+    ],
+    [
+     "Ctrl+Alt+I",
+     "control alt I"
+    ],
+    [
+     "and that brings up this and you can run it from there as well.",
+     null
+    ]
+   ],
+   "164": [
+    [
+     "check out",
+     null
+    ],
+    [
+     "my",
+     "the"
+    ],
+    [
+     "Patreon SubscribeStar Liberapay, linked in the description down below that's",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "be it for me and",
+     null
+    ]
+   ]
+  },
+  "fixes": 9,
+  "checked_seconds": 254.8,
+  "usd": 0.0371,
+  "version": 3,
+  "flagged": [
+   [
+    "0:23",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:40",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:16",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:25",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:51",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:11",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:52",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:28",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:37",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:09",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:38",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:47",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:56",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "7:13",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:29",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:59",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:04",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "10:00",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:10",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:45",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "12:20",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:04",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "14:18",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:57",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
+}

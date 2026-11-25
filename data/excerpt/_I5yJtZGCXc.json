@@ -1,0 +1,59 @@
+{
+ "made": "2026-11-25T21:09:37+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "LibGhostty, the library built by the Ghostty project",
+   "t": 28.4,
+   "line": 2
+  },
+  {
+   "text": "the most average of average free software licenses",
+   "t": 98.3,
+   "line": 10
+  },
+  {
+   "text": "my main terminal, that being alacrity",
+   "t": 181.4,
+   "line": 21
+  },
+  {
+   "text": "If I go and resize alacrity, it is perfectly smooth",
+   "t": 232.0,
+   "line": 30
+  },
+  {
+   "text": "the UX is very strange",
+   "t": 421.1,
+   "line": 67
+  },
+  {
+   "text": "click on the three dots here and then go duplicate",
+   "t": 424.4,
+   "line": 68
+  },
+  {
+   "text": "It is case sensitive",
+   "t": 631.4,
+   "line": 106
+  },
+  {
+   "text": "Split panes",
+   "t": 763.1,
+   "line": 135
+  },
+  {
+   "text": "I could just go and run Tmux",
+   "t": 787.0,
+   "line": 140
+  },
+  {
+   "text": "that's the sound a chocobo makes",
+   "t": 903.0,
+   "line": 165
+  }
+ ],
+ "cost": 0.01615,
+ "dropped": 2
+}
