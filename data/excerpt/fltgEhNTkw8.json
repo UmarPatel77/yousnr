@@ -1,0 +1,54 @@
+{
+ "made": "2026-11-25T20:46:28+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "I live with six other crypto millionaires in my building",
+   "t": 74.3,
+   "line": 12
+  },
+  {
+   "text": "petrol is 60% cheaper",
+   "t": 112.8,
+   "line": 16
+  },
+  {
+   "text": "first global globally first transaction on ripple in 2014",
+   "t": 198.0,
+   "line": 27
+  },
+  {
+   "text": "stable coins became the most inclusive payment",
+   "t": 225.3,
+   "line": 30
+  },
+  {
+   "text": "the agentic uh space",
+   "t": 331.2,
+   "line": 46
+  },
+  {
+   "text": "I don't believe in uh uh work life balance",
+   "t": 358.6,
+   "line": 50
+  },
+  {
+   "text": "Listen twice more than you talk",
+   "t": 382.0,
+   "line": 53
+  },
+  {
+   "text": "I want to bet on the people that have money",
+   "t": 602.6,
+   "line": 81
+  },
+  {
+   "text": "how can you just afford a $50 million house",
+   "t": 753.4,
+   "line": 100
+  }
+ ],
+ "cost": 0.01885,
+ "dropped": 4
+}
