@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-25T20:43:57+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "our own independent senior living center",
+   "t": 28.1,
+   "line": 4
+  },
+  {
+   "text": "what we call in real estate a white elephant",
+   "t": 45.3,
+   "line": 5
+  },
+  {
+   "text": "Old people don't beat stuff up",
+   "t": 70.0,
+   "line": 9
+  },
+  {
+   "text": "The more challenging the deal, the more money you make",
+   "t": 180.0,
+   "line": 25
+  },
+  {
+   "text": "they didn't budget properly",
+   "t": 197.6,
+   "line": 27
+  },
+  {
+   "text": "pictures tell a thousand words",
+   "t": 416.0,
+   "line": 54
+  },
+  {
+   "text": "stabilize the asset, then we hit a home run",
+   "t": 469.5,
+   "line": 61
+  },
+  {
+   "text": "It's called a modernization",
+   "t": 568.3,
+   "line": 75
+  },
+  {
+   "text": "From garbage to gold, baby",
+   "t": 611.0,
+   "line": 81
+  },
+  {
+   "text": "We can't go above 323",
+   "t": 723.2,
+   "line": 99
+  },
+  {
+   "text": "Confrontation's good",
+   "t": 792.0,
+   "line": 110
+  },
+  {
+   "text": "Seem the Dream",
+   "t": 1004.5,
+   "line": 146
+  }
+ ],
+ "cost": 0.02067,
+ "dropped": 1
+}
