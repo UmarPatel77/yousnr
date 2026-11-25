@@ -12872,5 +12872,4092 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-25T20:34:03+00:00"
+ "added": "2026-11-25T20:34:03+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "assemblyai"
+  ],
+  "at": "2026-11-25T15:34:06",
+  "lines": {
+   "4": [
+    [
+     "triple jumps, triple jumps but with sparkles, sideflips, long jumps,",
+     null
+    ],
+    [
+     "wall kicks,",
+     "wallkicks,"
+    ],
+    [
+     "backflips, jump kicks, jump dives! So, naturally, players thought: what if we didn’t use any of them?",
+     null
+    ]
+   ],
+   "16": [
+    [
+     "Interestingly, the email mentions a guy named",
+     null
+    ],
+    [
+     "Miles,",
+     "Myles,"
+    ],
+    [
+     "and the star is listed on Walton Dell’s",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "came up. Together with Myles Bukrim, Jason",
+     null
+    ],
+    [
+     "Walls",
+     "Whalls"
+    ],
+    [
+     "and David Wonn, who also had his own website of N64 tricks and glitches, Penev and friends came up with a number of challenges, such as trying to get as many stars coinless, capless and cannonless, and, of course, the A Button challenge.",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "to dive and land on the chairlift. Or, again in Cool Cool Mountain, Wall Kicks Will Work. The strategy",
+     null
+    ],
+    [
+     "here",
+     ""
+    ],
+    [
+     "was to reach this spindrift, then use A to jump on its head and hold the button,",
+     null
+    ]
+   ],
+   "26": [
+    [
+     "never releasing it. When spinning in the air, Mario will twirl faster and fall slower when A is held. Using that slower fall technique,",
+     null
+    ],
+    [
+     "it's",
+     "it is"
+    ],
+    [
+     "possible to reach the star",
+     null
+    ],
+    [
+     "with",
+     "using"
+    ],
+    [
+     "only one A press.",
+     null
+    ]
+   ],
+   "47": [
+    [
+     "One day in 2003, Penev sent Bright a message over AIM with",
+     null
+    ],
+    [
+     "the",
+     "an"
+    ],
+    [
+     "extension of the original Cool, Cool, Mountain A Button challenge to include the whole stage in a single A press. This piqued",
+     null
+    ]
+   ],
+   "59": [
+    [
+     "In the meantime, Curtis Bright had followed through. He updated his website with a leaderboard, divided between",
+     null
+    ],
+    [
+     "real-time",
+     "real time"
+    ],
+    [
+     "and tool-assisted runs, where people could submit",
+     null
+    ]
+   ],
+   "86": [
+    [
+     "What he would achieve in the next few years is so revolutionary, so absolutely incredible that it singlehandedly elevated the A button challenge to heights",
+     null
+    ],
+    [
+     "that",
+     ""
+    ],
+    [
+     "no one could have possibly imagined.",
+     null
+    ]
+   ],
+   "146": [
+    [
+     "But what happens if the new object cannot be thrown, like a goomba? Each grabbable object has a script that takes care of its",
+     null
+    ],
+    [
+     "behavior",
+     "behaviour"
+    ],
+    [
+     "when grabbed, dropped and thrown. If the new",
+     null
+    ]
+   ],
+   "174": [
+    [
+     "hat in hand glitch and throws a bob-omb, the bob-omb will be released where Mario released the cork box earlier, because that’s where the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "still is. This is known as remote release.",
+     null
+    ]
+   ],
+   "189": [
+    [
+     "first is to keep the same strategy: set up the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "under the star, then remote release a goomba clone from elsewhere and reap the benefits. There’s one major issue, though:",
+     null
+    ]
+   ],
+   "190": [
+    [
+     "because the wing cap box on the island doesn’t allow for the Hat in Hand glitch to be possible, the cloning has to be done off the island after the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "was put on there first. A goomba bridge is a single use infrastructure, so two trips to the island require two separate goomba bridges.",
+     null
+    ]
+   ],
+   "196": [
+    [
+     "but at Mario’s height, which, because the HOLP is usually somewhere near Mario’s hands, effectively sets the object down on the ground in front of Mario. If the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "is disjointed,",
+     null
+    ]
+   ],
+   "197": [
+    [
+     "however, the effect can be wildly different. Remote dropping an object will place it at the point corresponding to the",
+     null
+    ],
+    [
+     "Hope's",
+     "HOLP’s"
+    ],
+    [
+     "lateral position and Mario’s vertical position,",
+     null
+    ]
+   ],
+   "219": [
+    [
+     "carpet ride to rise up high enough to access this platform in the maze using one",
+     null
+    ],
+    [
+     "A-press,",
+     "A press,"
+    ],
+    [
+     "then to navigate the maze with the remaining four. But Pannen figured out that you could simply keep",
+     null
+    ]
+   ],
+   "232": [
+    [
+     "threw the Chuckya in Tiny-Huge Island, the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "was set at this position. Those same coordinates in Tall Tall Mountain correspond to the top of the mountain, right below the star. So, with a remote release, Pannen was able to place the goomba up there from all the way down here.",
+     null
+    ]
+   ],
+   "236": [
+    [
+     "quickly alternating between neutral and forwards, it’s possible to walk up steep slopes that way. This climb saved one",
+     null
+    ],
+    [
+     "A-press,",
+     "A press,"
+    ],
+    [
+     "and the goomba clone at the top saved another.",
+     null
+    ]
+   ],
+   "238": [
+    [
+     "and the 100 coin star. Framewalking could get rid of that",
+     null
+    ],
+    [
+     "A-press",
+     "A press"
+    ],
+    [
+     "in all of them. This discovery marked Tall Tall Mountain as the second stage that could be fully completed in 0 A presses.",
+     null
+    ]
+   ],
+   "248": [
+    [
+     "coin without using A, which obviously saved an A press for the red coin star. But also, that made the number of coins attainable in 0 A presses go from 99 to 101, which meant the",
+     null
+    ],
+    [
+     "100 coin",
+     "100-coin"
+    ],
+    [
+     "star was now also possible in 0 A presses.",
+     null
+    ]
+   ],
+   "252": [
+    [
+     "but technological.",
+     null
+    ],
+    [
+     "",
+     "He switched from Project 64 to Mupen."
+    ],
+    [
+     "He finally got rid of his choppy free trial software captures, and got a proper video encoding setup that is Mupen 64 direct AVI capture. But",
+     null
+    ]
+   ],
+   "258": [
+    [
+     "out a way to get up the entire rotating",
+     null
+    ],
+    [
+     "platform",
+     "platforms"
+    ],
+    [
+     "section, by ground pounding into a buttslide face first into the wall. The bonking animation lets Mario stay on the steep slope of the rotating",
+     null
+    ]
+   ],
+   "262": [
+    [
+     "star. He got Roll into the Cage from 4 down to 3,",
+     null
+    ],
+    [
+     "Time",
+     "Timed"
+    ],
+    [
+     "Jumps on Moving Bars from 11 down to 7",
+     null
+    ]
+   ],
+   "268": [
+    [
+     "Pannenkoek’s next stop was Dire, Dire Docks. There, his first improvement was massive: he brought",
+     null
+    ],
+    [
+     "Pole jumping",
+     "Pole-Jumping"
+    ],
+    [
+     "for Red Coins, a nightmare of a star for the A button challenge,",
+     null
+    ]
+   ],
+   "278": [
+    [
+     "a half A press? The",
+     null
+    ],
+    [
+     "0.5",
+     "point five"
+    ],
+    [
+     "notation serves as a middle ground to show the duality of the",
+     null
+    ]
+   ],
+   "283": [
+    [
+     "play. But here’s the clever part: this only happens if Mario is swimming with",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "shell, but he can also throw it. When Mario throws the shell, for a few frames, he still holds on to it, but he",
+     null
+    ]
+   ],
+   "288": [
+    [
+     "To go",
+     "Dire, Dire Docks is divided into two large rooms"
+    ],
+    [
+     "with",
+     null
+    ],
+    [
+     "that shell.",
+     "a tunnel in the middle."
+    ],
+    [
+     "In that tunnel is a loading zone, a trigger that switches between the rooms when Mario crosses it. The switch",
+     null
+    ]
+   ],
+   "301": [
+    [
+     "which didn’t require any A presses, and the",
+     null
+    ],
+    [
+     "100 Coin",
+     "100-coin"
+    ],
+    [
+     "star, which, for now, Pannen left alone. Also, Chests in the Current did require A swimming as well, not because of cloning,",
+     null
+    ]
+   ],
+   "303": [
+    [
+     "as needing one A press could now be completed simply by leeching off",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "a previous A press instead.",
+     null
+    ]
+   ],
+   "311": [
+    [
+     "the Shallows &",
+     null
+    ],
+    [
+     "and",
+     ""
+    ],
+    [
+     "Sky. Note that because entering levels is also an implicit part of the challenge, you can’t just enter Wet-Dry World any way you want. The initial water level depends on the",
+     null
+    ]
+   ],
+   "312": [
+    [
+     "height at which Mario enters the painting, so with no jumps, the only available initial water level is the lowest one. Thankfully,",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "a warp to the cannon platform at the top of the stage, and there are Heave-hos that can flip Mario up to higher levels.",
+     null
+    ]
+   ],
+   "314": [
+    [
+     "but instead, he got a helping hand from Chuckya. He manipulated the random number generated by the game, or RNG value, to be",
+     null
+    ],
+    [
+     "favorable",
+     "favourable"
+    ],
+    [
+     "so that Chuckya would throw Mario directly onto the wooden bridge, which let him access the final secret in 0 A presses.",
+     null
+    ]
+   ],
+   "315": [
+    [
+     "He used the same strategy to save an",
+     null
+    ],
+    [
+     "A-Press",
+     "A press"
+    ],
+    [
+     "in Express Elevator - Hurry Up!, and the",
+     null
+    ],
+    [
+     "100 Coin",
+     "100-coin"
+    ],
+    [
+     "star. Top o’ the Town was still problematic because despite being able",
+     null
+    ]
+   ],
+   "328": [
+    [
+     "downtown part of Wet-Dry World,",
+     null
+    ],
+    [
+     "",
+     "and"
+    ],
+    [
+     "so he can clone the Quick Race through Downtown star. Note that the cloning of a star can only be done if the star is already out there and collectable,",
+     null
+    ]
+   ],
+   "333": [
+    [
+     "is way up there, inaccessible on",
+     null
+    ],
+    [
+     "the",
+     "low"
+    ],
+    [
+     "water without jumping a bunch of times. This web of restrictions is nearly impossible to navigate. But if it’s nearly impossible, it’s not impossible.",
+     null
+    ]
+   ],
+   "367": [
+    [
+     "so he could bounce on it, and used",
+     null
+    ],
+    [
+     "frame walking",
+     "framewalking"
+    ],
+    [
+     "to tilt",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "bridge",
+     null
+    ],
+    [
+     "90 degrees",
+     "90º"
+    ],
+    [
+     "and go up to",
+     null
+    ],
+    [
+     "",
+     "a"
+    ],
+    [
+     "red coin, saving three A presses in total to bring it down to 2. In Bowser in the Fire Sea,",
+     null
+    ]
+   ],
+   "385": [
+    [
+     "Dire, Dire Docks 100 coins was a little more complicated. Using the shell method that he used to clone poles",
+     null
+    ],
+    [
+     "in",
+     "and"
+    ],
+    [
+     "a star, he could clone coins, but there is a more",
+     null
+    ]
+   ],
+   "394": [
+    [
+     "Also, when a coin from a coin ring is cloned, because its",
+     null
+    ],
+    [
+     "behavior",
+     "behaviour"
+    ],
+    [
+     "is broken, it will be unable to send a signal to its spawner to indicate that it’s been collected,",
+     null
+    ]
+   ],
+   "399": [
+    [
+     "he got 56 extra coins from 7 coin ring spawner clones and got the",
+     null
+    ],
+    [
+     "100 Coin",
+     "100-coin"
+    ],
+    [
+     "star in 0.5 A presses.",
+     null
+    ]
+   ],
+   "406": [
+    [
+     "that the 5 stars available inside the castle itself were all obtainable in 0 A presses. And he completed his meticulous run through the complete A Button Challenge in Whomp’s Fortress, by doing Fall Onto the Caged Island the same way",
+     null
+    ],
+    [
+     "that",
+     "the"
+    ],
+    [
+     "Japanese TASers did it a few years prior.",
+     null
+    ]
+   ],
+   "407": [
+    [
+     "Finally, after all",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "this work, Pannenkoek, with some help from Plush, managed to cut",
+     null
+    ]
+   ],
+   "417": [
+    [
+     "In Hazy Maze Cave, swoopers fly on a perfectly horizontal plane after their initial takeoff. He used that to his advantage by luring a swooper all the way to",
+     null
+    ],
+    [
+     "the",
+     "this"
+    ],
+    [
+     "slope,",
+     null
+    ]
+   ],
+   "433": [
+    [
+     "warped to the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "after the collision is detected, but before the collision handling function is run. When the function finds the relative distance between them,",
+     null
+    ]
+   ],
+   "436": [
+    [
+     "if the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "is at a different vertical position, both goombas will end up halfway to the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "in the X and Z coordinates, but while the goomba clone ends up at the",
+     null
+    ],
+    [
+     "Hope's",
+     "HOLP’s"
+    ],
+    [
+     "Y coordinate, the other goomba remains at its original Y position.",
+     null
+    ]
+   ],
+   "444": [
+    [
+     "still have",
+     null
+    ],
+    [
+     "collisions",
+     "collision"
+    ],
+    [
+     "with other goombas. He guided a goomba to push the clone all the way to the other side, where Mario could bounce on it after getting the final red coin, saving an A press.",
+     null
+    ]
+   ],
+   "445": [
+    [
+     "Pannen was not done in this level. His next",
+     null
+    ],
+    [
+     "endeavor",
+     "endeavour"
+    ],
+    [
+     "was to save the A press needed to jump into the pipe to the Bowser fight. The main issue here was that to bring a goomba clone all",
+     null
+    ]
+   ],
+   "495": [
+    [
+     "fire comes out, all of these flames are loaded, then unloaded as they stop burning. If",
+     null
+    ],
+    [
+     "Mario's",
+     "Mario is"
+    ],
+    [
+     "holding a vacant object slot when the flames come out, he can end up holding a flame clone.",
+     null
+    ]
+   ],
+   "500": [
+    [
+     "to enter Cavern of the Metal Cap. This one was simple, but quite precise to pull off. After getting Dorrie in the right spot, Mario can reach the platform with a",
+     null
+    ],
+    [
+     "run-up",
+     "run up"
+    ],
+    [
+     "and a dive recover.",
+     null
+    ]
+   ],
+   "507": [
+    [
+     "Well, the answer is complicated. Not complicated enough to make a fascinating 2-hour documentary about-",
+     null
+    ],
+    [
+     "how",
+     "oh"
+    ],
+    [
+     "of course it is. So, we’re gonna simplify things for the time being.",
+     null
+    ]
+   ],
+   "552": [
+    [
+     "Next, Pannenkoek looked at the",
+     null
+    ],
+    [
+     "100 Coin",
+     "100-coin"
+    ],
+    [
+     "star in Hazy Maze Cave. It took one A press to ground pound the switch for blue coins, but with clever swooper bounces, he could reach 100",
+     null
+    ]
+   ],
+   "555": [
+    [
+     "he missed out on too many coins to get 100 without an",
+     null
+    ],
+    [
+     "A-press.",
+     "A press."
+    ],
+    [
+     "But thankfully, he could still combine it with the red coin star and get both of them for one A press total, instead of one for each.",
+     null
+    ]
+   ],
+   "559": [
+    [
+     "but Dire Dire Docks and Wet-Dry World are the only two levels in the game that have a loading zone. The issue is that without",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "loading zone, stars are always loaded no matter how far Mario",
+     null
+    ]
+   ],
+   "567": [
+    [
+     "Pannen had to get creative. First, he triggers the",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding glitch by bonking into the bottom of King",
+     null
+    ],
+    [
+     "Womp,",
+     "Whomp,"
+    ],
+    [
+     "which, at this moment, acts as a ceiling. Then,",
+     null
+    ]
+   ],
+   "577": [
+    [
+     "Pannen was able to use the bloated bob-omb glitch to get up the cogs without using A again. The strategy involves",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding, triggered here by being pushed off the platform while belly",
+     null
+    ]
+   ],
+   "580": [
+    [
+     "This route",
+     null
+    ],
+    [
+     "involves",
+     "involved"
+    ],
+    [
+     "some seriously crazy movement because Mario can’t hold on to the bloated bob-omb for more than a few frames at once. Thanks to the bob-omb having four different bloated sizes,",
+     null
+    ]
+   ],
+   "587": [
+    [
+     "The next new technical development was for Metal Head Mario can Move. Three months prior, a scuttlebug had been used to save an",
+     null
+    ],
+    [
+     "A-press",
+     "A press"
+    ],
+    [
+     "and bring it down to 2. Well, it was time for that little bug to put in more work and take out the rest of the A presses!",
+     null
+    ]
+   ],
+   "591": [
+    [
+     "hyperspeed. When pressing C-up while facing slightly downwards on a steep slope, Mario is trying to come to a stop, but the",
+     null
+    ],
+    [
+     "downward",
+     "downwards"
+    ],
+    [
+     "slope accelerates him straight ahead instead. Again,",
+     null
+    ]
+   ],
+   "604": [
+    [
+     "And this is where the scuttlebug comes into play. As soon as",
+     null
+    ],
+    [
+     "it's",
+     "it is"
+    ],
+    [
+     "reactivated, Mario goes",
+     null
+    ],
+    [
+     "butt sliding",
+     "buttsliding"
+    ],
+    [
+     "onto it with so much speed that one single bounce gets him all the",
+     null
+    ]
+   ],
+   "611": [
+    [
+     "but its hitbox is incorrectly anchored at one of its tips instead. And",
+     null
+    ],
+    [
+     "that's",
+     "that is"
+    ],
+    [
+     "the reason behind all of this weird",
+     null
+    ],
+    [
+     "behavior,",
+     "behaviour,"
+    ],
+    [
+     "including both of these A",
+     null
+    ],
+    [
+     "press saving",
+     "press-saving"
+    ],
+    [
+     "moves.",
+     null
+    ]
+   ],
+   "623": [
+    [
+     "The main sources for all of these clones are this bob-omb and that goomba trio.",
+     null
+    ],
+    [
+     "",
+     "If you remember,"
+    ],
+    [
+     "on a flat surface like this, it’s extremely difficult to clone with a bob-omb. The",
+     null
+    ]
+   ],
+   "629": [
+    [
+     "But because the coin from a bob-omb is a",
+     null
+    ],
+    [
+     "one-time",
+     "one time"
+    ],
+    [
+     "thing, this method could not be reused. So,",
+     null
+    ]
+   ],
+   "677": [
+    [
+     "keeps Mario in the level after collecting it. Therefore, with clever manipulation, the 100th coin could be collected just beneath a high ledge, and the",
+     null
+    ],
+    [
+     "starfall",
+     "star fall"
+    ],
+    [
+     "action could",
+     null
+    ]
+   ],
+   "678": [
+    [
+     "make Mario grab the ledge and save an A press. And then, because this is the",
+     null
+    ],
+    [
+     "100 Coin",
+     "100-coin"
+    ],
+    [
+     "star, he would be able to stay in the level afterwards. This is the magic of the Star Dance Clip.",
+     null
+    ]
+   ],
+   "697": [
+    [
+     "It seems rather small, but there",
+     null
+    ],
+    [
+     "actually",
+     ""
+    ],
+    [
+     "are",
+     null
+    ],
+    [
+     "",
+     "actually"
+    ],
+    [
+     "numerous instances where that makes all the difference. First, these platforms in Bowser in the Sky,",
+     null
+    ]
+   ],
+   "706": [
+    [
+     "Chuckya has a",
+     null
+    ],
+    [
+     "built-in",
+     "built in"
+    ],
+    [
+     "mechanism that prevents it from running off a ledge. If its next intended position is more than 50 units above the floor, that means it’s about to fall off,",
+     null
+    ]
+   ],
+   "737": [
+    [
+     "can work. Also, if the platform itself is moving",
+     null
+    ],
+    [
+     "it can move",
+     ""
+    ],
+    [
+     "up,",
+     null
+    ],
+    [
+     "onto Mario",
+     ""
+    ],
+    [
+     "like an elevator,",
+     null
+    ],
+    [
+     "",
+     "it can move onto Mario."
+    ],
+    [
+     "So, it is indeed possible to land on a platform with positive vertical speed, and there are some very specific cases where this trick could actually come in handy.",
+     null
+    ]
+   ],
+   "742": [
+    [
+     "Next up was Big Boo’s Haunt, where this A press was proving problematic for the four stars",
+     null
+    ],
+    [
+     "it",
+     "that"
+    ],
+    [
+     "required going up to the second floor. Again with VSC, but this time done using the stairs",
+     null
+    ]
+   ],
+   "759": [
+    [
+     "Meanwhile, Tyler Kehne, who was more focused on",
+     null
+    ],
+    [
+     "Any percent,",
+     "Any%,"
+    ],
+    [
+     "tried to get rid of the A press to enter Bowser in the Sky. He found that on the Rainbow Ride side of the room, he was able to",
+     null
+    ]
+   ],
+   "762": [
+    [
+     "bounce from Rainbow Ride, but because he was concerned with",
+     null
+    ],
+    [
+     "Any percent,",
+     "Any%,"
+    ],
+    [
+     "where Rainbow Ride was not",
+     null
+    ],
+    [
+     "going to",
+     "gonna"
+    ],
+    [
+     "be entered, he had to find another method. He found the glitchy ledge grab.",
+     null
+    ]
+   ],
+   "786": [
+    [
+     "The key new glitch in this route was",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "teleport. Usually, when Mario is holding an object, he cannot use a warp. But when he’s holding an object hands free,",
+     null
+    ]
+   ],
+   "789": [
+    [
+     "After a",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "teleport with a bob-omb, Mario will no longer be holding anything, which gives him back his wide range of actions, but he’ll still have the original bob-omb hovering",
+     null
+    ]
+   ],
+   "794": [
+    [
+     "there, he grabs a bloated bob-omb hands free by being pushed off the edge as he grabs it. Then, he carefully navigates to the top of the red coin maze while preserving the",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ]
+   ],
+   "795": [
+    [
+     "state. In order to reach the warp while",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding a bloated bob-omb, he needs it to be bloated enough to give him a large push. But after taking the warp,",
+     null
+    ]
+   ],
+   "796": [
+    [
+     "the large push becomes a little cumbersome, so he regrabs the bob-omb and uses this thin ledge to get",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding again, but this time, with a smaller bloated bob-omb.",
+     null
+    ]
+   ],
+   "802": [
+    [
+     "allowed him to reach the",
+     null
+    ],
+    [
+     "cat",
+     "cap"
+    ],
+    [
+     "box, and using the surrounding walls, perform the hat in hand glitch. This in turn allowed him to release a pole clone remotely by setting the HOLP in another",
+     null
+    ]
+   ],
+   "803": [
+    [
+     "level beforehand, namely Whomp’s Fortress. With the preset HOLP, he was able to release a pole clone here,",
+     null
+    ],
+    [
+     "in between",
+     "in-between"
+    ],
+    [
+     "these two poles, and use it to navigate to and back from the red coin.",
+     null
+    ]
+   ],
+   "811": [
+    [
+     "Also, because cloning bob-ombs involved reaching the cruiser, he had to use Lakitu to get there, which prevents the other Lakitu bounce",
+     null
+    ],
+    [
+     "that's",
+     ""
+    ],
+    [
+     "used in this route. So, now, he had to figure out a way to use two different bob-ombs to clip inside those two different boxes on the same carpet ride.",
+     null
+    ]
+   ],
+   "814": [
+    [
+     "would eventually fall down to the platform below, but only after a bit of walking around. Finally, he grabbed a third bob-omb, bloated this time, and carried it",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "to the warp. Meanwhile, the walking bob-omb deactivates until Mario comes back.",
+     null
+    ]
+   ],
+   "815": [
+    [
+     "Now, something interesting happens with bob-ombs after a",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "teleport. When Mario does a",
+     null
+    ]
+   ],
+   "816": [
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "teleport, the bob-omb actually doesn’t follow him. It only does as soon as Mario enters its activation radius, at which point it remembers it needs to hover invisibly in front of him, so it",
+     null
+    ]
+   ],
+   "819": [
+    [
+     "bob-omb on the bridge, it reactivates and falls off below when he can retrieve it. He uses that one to clip inside",
+     null
+    ],
+    [
+     "",
+     "of"
+    ],
+    [
+     "the box that the lakitu bounce used to clear. Once he reaches this point,",
+     null
+    ]
+   ],
+   "838": [
+    [
+     "And now, after all",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "this work, they had Fly Guy at the very top of the cruiser’s mast. It was time for the final tour de force.",
+     null
+    ]
+   ],
+   "847": [
+    [
+     "funky going on here: Mario bouncing on lava with a slidekick is purely intended",
+     null
+    ],
+    [
+     "behavior.",
+     "behaviour."
+    ],
+    [
+     "Then, they go over to the spinning heart and dive into it, touching it with roughly 48 speed. That",
+     null
+    ]
+   ],
+   "868": [
+    [
+     "Back in 2010, Pannen had already figured out a way to get infinite coins in",
+     null
+    ],
+    [
+     "Tiny Huge",
+     "Tiny-Huge"
+    ],
+    [
+     "Island, and that method involves the piranha plants! If",
+     null
+    ],
+    [
+     "they're",
+     "they are"
+    ],
+    [
+     "hit on the last possible frame as",
+     null
+    ]
+   ],
+   "884": [
+    [
+     "Enter the painting at the high water level. Return from downtown on the low water level. Hold Chuckya as a light object on its platform. Get Chuckya onto the plank. Get past the wall hitbox",
+     null
+    ],
+    [
+     "on",
+     "of"
+    ],
+    [
+     "the",
+     null
+    ]
+   ],
+   "885": [
+    [
+     "star platform with less than 50 speed. Have at least 2",
+     null
+    ],
+    [
+     "airframes",
+     "air frames"
+    ],
+    [
+     "while diving onto the spinning platform at high speed. Have one more unit of room on the star platform. Bring a flame or a flame",
+     null
+    ]
+   ],
+   "898": [
+    [
+     "The only A press left in that stage is in To the Top of the Fortress. But first, a quick stop in Bob-omb Battlefield to place the HOLP in a convenient location. This is a pretty high point, so a few",
+     null
+    ],
+    [
+     "Goomba",
+     "goombas"
+    ],
+    [
+     "clones are needed to do the trick.",
+     null
+    ]
+   ],
+   "902": [
+    [
+     "But he needs one more piece of the puzzle. He goes back down and gets the other cork box",
+     null
+    ],
+    [
+     "on",
+     "in"
+    ],
+    [
+     "the stage. He plays catch with Schrödinger’s box some more, and brings the box to the top as well. And now, don’t blink!",
+     null
+    ]
+   ],
+   "915": [
+    [
+     "vertical position, but at the HOLP laterally. This is",
+     null
+    ],
+    [
+     "what's",
+     "what is"
+    ],
+    [
+     "being observed in honey’s clip: the HOLP was somewhere on this line, and the bob-omb was released at Mario’s height.",
+     null
+    ]
+   ],
+   "963": [
+    [
+     "different locations. In other words, for any given",
+     null
+    ],
+    [
+     "Hope in",
+     "HOLP and"
+    ],
+    [
+     "a goomba’s home circle, transport cloning can move that goomba to a circle half the size of the original,",
+     null
+    ]
+   ],
+   "964": [
+    [
+     "and halfway between the goomba’s home and the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "laterally, at the",
+     null
+    ],
+    [
+     "Hope's",
+     "HOLP’s"
+    ],
+    [
+     "height. More specifically, transport cloning could allow any amount of goombas to be placed anywhere inside of this circle, using one single HOLP. This is a goomba oasis.",
+     null
+    ]
+   ],
+   "972": [
+    [
+     "Meanwhile, a TASer by the name of",
+     null
+    ],
+    [
+     "Kaiman",
+     "Kyman"
+    ],
+    [
+     "showed something interesting to the ABC crew: in Dire Dire Docks, if you end up holding a whirlpool clone and release it, Mario will spiral around",
+     null
+    ]
+   ],
+   "987": [
+    [
+     "that worked perfectly. First, he placed the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "in the second room in",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "point that corresponds to just outside of the tunnel in the first room. Then, he remote released a whirlpool",
+     null
+    ]
+   ],
+   "1015": [
+    [
+     "Tyler found that Mario could turn around to have his back facing out of bounds. The ceiling had a limit, but out of bounds is infinite.",
+     null
+    ],
+    [
+     "",
+     "Tyler Kehne had discovered infinite speed without the A button."
+    ],
+    [
+     "Immediately, this discovery was used to improve Watch for Rolling Rocks.",
+     null
+    ]
+   ],
+   "1037": [
+    [
+     "true for Chuckya, Fly Guy, goombas, bob-ombs and scuttlebugs alike. But",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "an exception. If a",
+     null
+    ]
+   ],
+   "1039": [
+    [
+     "arbitrarily far, provided that Mario has enough health to take a beating. Fortunately,",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "a spinning heart right here. Unfortunately, scuttlebugs can’t travel across the entire level",
+     null
+    ]
+   ],
+   "1045": [
+    [
+     "of infinite speed with hyperspeed walking. It would require a lot more time and effort, though, and so that star remained at",
+     null
+    ],
+    [
+     "1A",
+     "1 A"
+    ],
+    [
+     "press for the time being­.",
+     null
+    ]
+   ],
+   "1047": [
+    [
+     "was used to solve one of",
+     null
+    ],
+    [
+     "the",
+     ""
+    ],
+    [
+     "very few remaining trivial A presses of the entire challenge,",
+     null
+    ],
+    [
+     "and",
+     "in"
+    ],
+    [
+     "what is perhaps the starkest contrast between the complexity of the 1 A press",
+     null
+    ]
+   ],
+   "1077": [
+    [
+     "thousand units away in every direction. It doesn’t matter that there isn’t an actual copy of the floor out there. So long as the game believes",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "a floor, Mario will be able to stand there. Functionally, there is no difference.",
+     null
+    ]
+   ],
+   "1086": [
+    [
+     "he needs each",
+     null
+    ],
+    [
+     "quarter step",
+     "quarterstep"
+    ],
+    [
+     "to be on a valid floor. Therefore, he needs four times the speed, or 262 thousand, and will travel through four PUs in a single frame. This is called one QPU.",
+     null
+    ]
+   ],
+   "1093": [
+    [
+     "universes in such a way that",
+     null
+    ],
+    [
+     "he's",
+     "he is"
+    ],
+    [
+     "led back to the main map at the end. This problem can be solved with the right amount of planning, which, as it turns out, is a shitton of planning.",
+     null
+    ]
+   ],
+   "1134": [
+    [
+     "in similar conditions achieves just about the",
+     null
+    ],
+    [
+     "same",
+     ""
+    ],
+    [
+     "exact",
+     null
+    ],
+    [
+     "",
+     "same"
+    ],
+    [
+     "result",
+     null
+    ],
+    [
+     "that",
+     "as"
+    ],
+    [
+     "was observed back then. The popular explanation is a cosmic ray, but the exact cause behind the bitflip is impossible to",
+     null
+    ]
+   ],
+   "1136": [
+    [
+     "Nonetheless, there was still one Tick Tock Clock discovery that ended up crucial for the challenge: the Pedro spot. Originally found in Cool, Cool Mountain by Pedro",
+     null
+    ],
+    [
+     "Victor",
+     "Viktor"
+    ],
+    [
+     "in November 2014, a",
+     null
+    ]
+   ],
+   "1142": [
+    [
+     "he realized it had excellent potential to bring Stomp on the Thwomp’s 7 A presses down. Mario couldn’t get in position by himself: he needed a bob-omb to push him",
+     null
+    ],
+    [
+     "into",
+     "in"
+    ],
+    [
+     "place. The clock also",
+     null
+    ]
+   ],
+   "1150": [
+    [
+     "the",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "instant release, the out of bounds failsafe, the Pedro spot, and the",
+     null
+    ],
+    [
+     "high-speed",
+     "high speed"
+    ],
+    [
+     "jump dive. It was received with high praise and excitement by his growing",
+     null
+    ],
+    [
+     "fan base.",
+     "fanbase."
+    ]
+   ],
+   "1151": [
+    [
+     "In June 2015, Pannenkoek was exploring scuttlebug transportation and trying to get a scuttlebug to go through a door. His",
+     null
+    ],
+    [
+     "attempts",
+     "attempt"
+    ],
+    [
+     "proved mildly successful:",
+     null
+    ]
+   ],
+   "1179": [
+    [
+     "As soon as Pannenkoek pieced everything together for this A press save, he knew",
+     null
+    ],
+    [
+     "",
+     "that"
+    ],
+    [
+     "it had incredible potential for a detailed explanation with commentary and visuals. However, college was",
+     null
+    ]
+   ],
+   "1210": [
+    [
+     "Every improvement from Pannen’s backlog stemmed from the discovery of scuttlebug raising. It helped eliminate the half A press left",
+     null
+    ],
+    [
+     "and",
+     "in"
+    ],
+    [
+     "the two other Hazy Maze Cave stars that used hyperspeed",
+     null
+    ]
+   ],
+   "1211": [
+    [
+     "and elevators. First,",
+     null
+    ],
+    [
+     "Amazing",
+     "A-Maze-ing"
+    ],
+    [
+     "Emergency Exit, solved by raising a scuttlebug for half an hour until it would jump into the right spot for Mario to bounce across to the star, and second,",
+     null
+    ]
+   ],
+   "1212": [
+    [
+     "the red coin star.",
+     null
+    ],
+    [
+     "",
+     "For this one, Pannen needed to get the scuttlebug from the red coins room high up in the air."
+    ],
+    [
+     "He could manipulate it from the first room, but only if the scuttlebug was in the perfect position. To get it in the perfect spot, he had to go down in the red coins room.",
+     null
+    ]
+   ],
+   "1215": [
+    [
+     "The other applications of scuttlebug",
+     null
+    ],
+    [
+     "grazing",
+     "raising"
+    ],
+    [
+     "were in Big Boo’s Haunt, and they were a bit more involved. Here, one A press was left to grab the star in the Merry-go-Round,",
+     null
+    ]
+   ],
+   "1216": [
+    [
+     "and one was required to reach the top floor of the mansion for both Big Boo’s Balcony and",
+     null
+    ],
+    [
+     "Eye to Eye",
+     "Eye-to-Eye"
+    ],
+    [
+     "in the Secret Room. Let’s start with Big Boo’s Merry-go-Round.",
+     null
+    ]
+   ],
+   "1223": [
+    [
+     "so its",
+     null
+    ],
+    [
+     "behavior",
+     "behaviour"
+    ],
+    [
+     "becomes a",
+     null
+    ],
+    [
+     "bit",
+     "big"
+    ],
+    [
+     "more erratic. Instead of turning towards Mario, it spins in place. Pannen can still keep raising it just fine despite that limitation. Once it gets even higher,",
+     null
+    ]
+   ],
+   "1234": [
+    [
+     "he’s able to stagger them in a staircase leading to the upper ledge. Again, because the scuttlebugs belong to the exterior, when he goes near them,",
+     null
+    ],
+    [
+     "they're",
+     "they are"
+    ],
+    [
+     "invisible and stuck in mid-air,",
+     null
+    ]
+   ],
+   "1242": [
+    [
+     "Near the end of 2016, what used to be just a small group of friends calling themselves the ABC crew was now a",
+     null
+    ],
+    [
+     "Full-blown",
+     "full blown"
+    ],
+    [
+     "community. Millions of people had heard of the A Button",
+     null
+    ]
+   ],
+   "1256": [
+    [
+     "their pattern. The pendulum is one of them. However, its",
+     null
+    ],
+    [
+     "behavior",
+     "behaviour"
+    ],
+    [
+     "is pretty barebones: at the end of each swing, it calls the RNG function. Two thirds of the time,",
+     null
+    ]
+   ],
+   "1285": [
+    [
+     "In June 2016, a TASer by the name of",
+     null
+    ],
+    [
+     "Zimbabwe",
+     "Z1mb0bw4y"
+    ],
+    [
+     "posted a comment on Pannenkoek’s video about The Pit and the Pendulums in 2 A presses. She said:",
+     null
+    ]
+   ],
+   "1305": [
+    [
+     "fallen drastically, in",
+     null
+    ],
+    [
+     "favor",
+     "favour"
+    ],
+    [
+     "of tool-assisted superplays. The ABC was seen more as a puzzle",
+     null
+    ]
+   ],
+   "1317": [
+    [
+     "press for Scale the Mountain, instead of having to resort to the cloning strategy with",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "preset HOLP in",
+     null
+    ],
+    [
+     "Tiny huge",
+     "Tiny-Huge"
+    ],
+    [
+     "Island, for his own sake. So, after a bit less than five hours this time,",
+     null
+    ]
+   ],
+   "1328": [
+    [
+     "3",
+     null
+    ],
+    [
+     "A-presses",
+     "A presses"
+    ],
+    [
+     "using super precise platforming to climb up the clock and to grab the star. Somehow, this is not even the most impressive part of the run. To get off this pole,",
+     null
+    ]
+   ],
+   "1330": [
+    [
+     "Another impressive feat was pulling off the hyperspeed walking and jump dive in real time to get Watch for Rolling Rocks and",
+     null
+    ],
+    [
+     "Amazing",
+     "A-Maze-ing"
+    ],
+    [
+     "Emergency Exit in one A press each, done by BillyWAR and Ivan178.",
+     null
+    ]
+   ],
+   "1332": [
+    [
+     "in",
+     null
+    ],
+    [
+     "real time",
+     "real-time"
+    ],
+    [
+     "in August 2021 by BillyWAR using just a couple",
+     null
+    ],
+    [
+     "",
+     "of"
+    ],
+    [
+     "minutes of scuttlebug raising, and running into the scuttlebug with a crazy box. Taking damage while holding",
+     null
+    ]
+   ],
+   "1334": [
+    [
+     "rendering and updating the",
+     null
+    ],
+    [
+     "Hope.",
+     "HOLP."
+    ],
+    [
+     "By setting the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "at the right location beforehand, BillyWAR sent the crazy box above the Merry-go-round, where it deactivated.",
+     null
+    ]
+   ],
+   "1336": [
+    [
+     "Sometimes, the",
+     null
+    ],
+    [
+     "real-time",
+     "real time"
+    ],
+    [
+     "ABC crew got very creative and found much simpler solutions than what Pannenkoek had done years before. In the Deep Freeze was solved by bad_boot when,",
+     null
+    ]
+   ],
+   "1378": [
+    [
+     "the fateful night of May 26th, 2018, when an unsuspecting speedrunner by the name of",
+     null
+    ],
+    [
+     "Andrew,",
+     "Andru,"
+    ],
+    [
+     "after practicing movement in Bowser in the Fire Sea, decided to go to bed while leaving his console on overnight. The next morning, he found something strange.",
+     null
+    ]
+   ],
+   "1403": [
+    [
+     "here. With PU speed not being an option, there had to be another solution. That solution was the glitchy",
+     null
+    ],
+    [
+     "ledge grab.",
+     "ledgegrab."
+    ],
+    [
+     "No, not that glitchy ledgegrab. The other kind.",
+     null
+    ]
+   ],
+   "1442": [
+    [
+     "he starts crouch sliding. Again, there’s one small problem. This doesn’t work if Mario is airborne. But thankfully, on the first frame where",
+     null
+    ],
+    [
+     "Mario's",
+     "Mario is"
+    ],
+    [
+     "on the shell, the game doesn’t check for that condition and Mario can press Z to crouch slide despite being in the air.",
+     null
+    ]
+   ],
+   "1453": [
+    [
+     "that he bonks, his speed doesn’t get killed immediately; only on the next frame does it get set to",
+     null
+    ],
+    [
+     "negative",
+     ""
+    ],
+    [
+     "-16. However, the bonk is canceled by landing on the fly guy before the speed is capped,",
+     null
+    ]
+   ],
+   "1459": [
+    [
+     "No big deal so far. After placing the",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "Mario can then fall onto the slippery slope, get 200 speed, and clip into Bowser in the Dark World with",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "preset",
+     null
+    ],
+    [
+     "Hope.",
+     "HOLP."
+    ]
+   ],
+   "1470": [
+    [
+     "perform the remote releases. First, a bob-omb is thrown to the HOLP, where it deactivates. Then, another bob-omb is used for cloning. When Mario gets near the",
+     null
+    ],
+    [
+     "Haiba Bomb,",
+     "high bob-omb,"
+    ]
+   ],
+   "1476": [
+    [
+     "again, and the stick is pulled slightly backwards to trigger the 10k glitch and instantly bring Mario speed to",
+     null
+    ],
+    [
+     "2,000.",
+     "2 thousand."
+    ],
+    [
+     "He bonks but cancels that bonk before his speed is capped, sending",
+     null
+    ]
+   ],
+   "1521": [
+    [
+     "treadmill. Here, it works slightly differently:",
+     null
+    ],
+    [
+     "Mario's",
+     "Mario is"
+    ],
+    [
+     "getting a push from two wall hitboxes at once, which combine to send him back on the treadmill where he lands. After gathering enough",
+     null
+    ]
+   ],
+   "1532": [
+    [
+     "The problem",
+     null
+    ],
+    [
+     "doesn't",
+     ""
+    ],
+    [
+     "actually",
+     null
+    ],
+    [
+     "",
+     "doesn’t"
+    ],
+    [
+     "lie within the cogs themselves, but with this platform, which is slightly too high to just dive recover to, given that it’s not oriented",
+     null
+    ]
+   ],
+   "1563": [
+    [
+     "like that? The answer is RNG manipulation, and a lot of it. The problem, though, is that once Mario enters the Pedro spot,",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "no longer a way to manipulate RNG.",
+     null
+    ]
+   ],
+   "1573": [
+    [
+     "after entering the level for the first time, an action that still incurred an A press. Second, the",
+     null
+    ],
+    [
+     "halfway",
+     "half A"
+    ],
+    [
+     "press is useful here because it allows Mario to kick, which in turn lets him fall down with backwards momentum. This sets things up for spawning displacement.",
+     null
+    ]
+   ],
+   "1578": [
+    [
+     "finds himself inside",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "a wall hitbox, because the hitbox is 50 units wide on each side, he can theoretically get pushed by double that, or 100 units perpendicularly to that wall.",
+     null
+    ]
+   ],
+   "1594": [
+    [
+     "First, there needs to be a carefully preset HOLP. Tall Tall Mountain can be used",
+     null
+    ],
+    [
+     "to",
+     ""
+    ],
+    [
+     "do",
+     null
+    ],
+    [
+     "",
+     "to"
+    ],
+    [
+     "just that. Next, Pannen uses instant release to send two bob-ombs at the HOLP laterally,",
+     null
+    ]
+   ],
+   "1600": [
+    [
+     "in Stomp on the Thwomp. Second, this area is not out of bounds, because",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "a floor directly below. It’s inside of a ceiling, which traps Mario in mid-air, but doesn’t immediately",
+     null
+    ]
+   ],
+   "1611": [
+    [
+     "video game puzzle of all time. As complex and difficult the new A press saves had become, it was worth the effort. With",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "community as large as ever filled with talented experts working",
+     null
+    ]
+   ],
+   "1616": [
+    [
+     "not two, but three A press saves at the same time, all of them in Tick Tock Clock. Of the hundreds of",
+     null
+    ],
+    [
+     "A-Presses",
+     "A presses"
+    ],
+    [
+     "once needed to collect all the stars, only 16 remain.",
+     null
+    ]
+   ],
+   "1620": [
+    [
+     "The idea involved the old",
+     null
+    ],
+    [
+     "Petrol",
+     "Pedro"
+    ],
+    [
+     "spot strategy. That method was stunted by having to enter the level while the clock is still, which made reaching the Pedro spot so",
+     null
+    ]
+   ],
+   "1638": [
+    [
+     "an unexpectedly useful",
+     null
+    ],
+    [
+     "side effect:",
+     "side-effect:"
+    ],
+    [
+     "it also",
+     null
+    ],
+    [
+     "zeros",
+     "zeroes"
+    ],
+    [
+     "out Mario’s vertical speed. Ultimately, the goal was to use this in combination with high speed collisions with bullies,",
+     null
+    ]
+   ],
+   "1661": [
+    [
+     "The idea boils down to solving one problem: getting past this section of the level in no A presses. The stars The Pit and the Pendulums,",
+     null
+    ],
+    [
+     "Time",
+     "Timed"
+    ],
+    [
+     "Jumps on Moving Bars and Stomp on the",
+     null
+    ]
+   ],
+   "1674": [
+    [
+     "ten thousand computational hours to search through billions of permutations of conditions, she found",
+     null
+    ],
+    [
+     "the",
+     "a"
+    ],
+    [
+     "solution.",
+     null
+    ],
+    [
+     "",
+     "And this is where the strategy goes from pretty complex to mindbendingly complex."
+    ],
+    [
+     "Sit down, buckle up, and put your helmet on.",
+     null
+    ]
+   ],
+   "1701": [
+    [
+     "The last one is the simplest: this fire clone is placed at the beginning of the stage using a preset",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "from Tall, Tall Mountain and Behind Camera Anywhere. But despite being the simplest,",
+     null
+    ]
+   ],
+   "1703": [
+    [
+     "First, Mario makes both bob-ombs explode one frame apart.",
+     null
+    ],
+    [
+     "",
+     "He grabs one of them."
+    ],
+    [
+     "Just as he grabs it,",
+     null
+    ]
+   ],
+   "1712": [
+    [
+     "the bob-omb was placed using a preset",
+     null
+    ],
+    [
+     "Hole",
+     "HOLP"
+    ],
+    [
+     "from another level that happened to be out of bounds in Tick Tock Clock. But here, the preset HOLP is already in use, and there can only be one.",
+     null
+    ]
+   ],
+   "1716": [
+    [
+     "there is a wall overlap. When Mario dives with a bob-omb onto the edge, the moving treadmill moves Mario off, which does two things. First, Mario enters a",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding state, and second,",
+     null
+    ]
+   ],
+   "1721": [
+    [
+     "Mario is only treated as out of bounds if",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "no floor under him, so technically, he is still in bounds. After falling for a bit, Mario dives, which he can do while",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding. He hits",
+     null
+    ]
+   ],
+   "1722": [
+    [
+     "the actual out of bounds and bonks, which releases the bob-omb and knocks him back into the level. Meanwhile, the",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "which is in front of",
+     null
+    ],
+    [
+     "His",
+     "Mario’s"
+    ],
+    [
+     "position",
+     null
+    ],
+    [
+     "",
+     "when he’s diving,"
+    ],
+    [
+     "ends up out of bounds.",
+     null
+    ]
+   ],
+   "1728": [
+    [
+     "Prior to setting this",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "Mario clones one of the bob-ombs by reloading it from above the spinners. He uses that bomb to clip through the wall on the moving bar. Again, despite being",
+     null
+    ]
+   ],
+   "1729": [
+    [
+     "outside the walls, the moving bar provides a floor for Mario to stand on. He releases the bomb here, setting the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "in this weird semi-out of bounds spot. Then, he clones another bob-omb,",
+     null
+    ]
+   ],
+   "1735": [
+    [
+     "why doesn’t it snap to Mario? Because the failsafe only triggers when Mario drops a bob-omb. When he throws a bob-omb, it goes to the",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "regardless of if it’s in bounds or not.",
+     null
+    ]
+   ],
+   "1751": [
+    [
+     "first time, after crossing the gap with the bob-omb, you use that bob-omb to place the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "here. Then, you go back down and use BCA to release a coin and a fire clone. Finally,",
+     null
+    ]
+   ],
+   "1755": [
+    [
+     "a preset",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "which leaves only two uses of a preset",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "for three stars that need it. The second problem is that the Pedro spot VSC strategy for the end of Stomp on the",
+     null
+    ]
+   ],
+   "1756": [
+    [
+     "Thwomp required a different preset",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "to send a bob-omb high above Mario. The third problem is that",
+     null
+    ],
+    [
+     "Time",
+     "Timed"
+    ],
+    [
+     "Jumps on Moving Bars also required its own preset",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "for the bob-omb clip at the end. How could all of these extra bob-ombs and preset HOLPs ever be reconciled?",
+     null
+    ]
+   ],
+   "1758": [
+    [
+     "overuse of preset",
+     null
+    ],
+    [
+     "Hopes",
+     "HOLPs"
+    ],
+    [
+     "with limited opportunities to enter Tick Tock Clock from anywhere in the castle was spotted as a potential issue back then as well. In an effort to cut preset",
+     null
+    ],
+    [
+     "Hopes",
+     "HOLPs"
+    ],
+    [
+     "out, ds273 figured out Timed Jumps on Moving Bars without the bob-omb at the end.",
+     null
+    ]
+   ],
+   "1771": [
+    [
+     "Now, Mario wants to grab the second bob-omb. Here, however,",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "no other bob-omb whose",
+     null
+    ]
+   ],
+   "1806": [
+    [
+     "to reach all the way to the Thwomp and collect the star in a single",
+     null
+    ],
+    [
+     "A-press.",
+     "A press."
+    ],
+    [
+     "And this is how Tick Tock Clock went from seven A presses down to only four, three of which are to enter the stage.",
+     null
+    ]
+   ],
+   "1890": [
+    [
+     "Simple: by moving to a point in a PU that corresponds to the elevator in the",
+     null
+    ],
+    [
+     "main",
+     "real"
+    ],
+    [
+     "map. Except it wasn’t simple, it",
+     null
+    ],
+    [
+     "actually",
+     ""
+    ],
+    [
+     "was",
+     null
+    ],
+    [
+     "",
+     "actually"
+    ],
+    [
+     "a total nightmare with a million workarounds that barely work for all these reasons that you can pause to read if you want.",
+     null
+    ]
+   ],
+   "1899": [
+    [
+     "back in bounds. Pannenkoek moves 624 PUs in the",
+     null
+    ],
+    [
+     "X-axis",
+     "X axis"
+    ],
+    [
+     "and 96 on the",
+     null
+    ],
+    [
+     "Z-axis,",
+     "Z axis,"
+    ],
+    [
+     "and finally, 352 PUs",
+     null
+    ]
+   ],
+   "1936": [
+    [
+     "a maximum of 21 trips up the pole were theoretically possible with this method. The third issue was between",
+     null
+    ],
+    [
+     "the hope",
+     "he HOLP"
+    ],
+    [
+     "and the squish cancel ground pound chain. Remember,",
+     null
+    ]
+   ],
+   "1939": [
+    [
+     "squish cancel ground pound chain and find a completely new method. And the one she found was not only compatible with the new",
+     null
+    ],
+    [
+     "Hope,",
+     "HOLP,"
+    ],
+    [
+     "it was also a lot simpler to set up and repeat.",
+     null
+    ]
+   ],
+   "1948": [
+    [
+     "Mario needs to enter the activation radius to snap the bob-omb to him, then he needs to be out of the 4000-unit cylinder to release the bob-omb back to the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "at this new height.",
+     null
+    ]
+   ],
+   "1983": [
+    [
+     "Mario back off the treadmill, where he enters freefall while",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding. His stored vertical speed carries him up and a ground pound covers the rest. But it’s just not quite enough",
+     null
+    ]
+   ],
+   "2013": [
+    [
+     "using",
+     null
+    ],
+    [
+     "hands-free",
+     "hands free"
+    ],
+    [
+     "holding and BCA, he sets up the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "for one last little bit of cloning. Finally,",
+     null
+    ]
+   ],
+   "2016": [
+    [
+     "an A press save is only truly proven when",
+     null
+    ],
+    [
+     "there's",
+     "there is"
+    ],
+    [
+     "a proper TAS that pieces it all together in",
+     null
+    ]
+   ],
+   "2028": [
+    [
+     "even if it was, Tick Tock Clock already requires three different preset",
+     null
+    ],
+    [
+     "Hopes",
+     "HOLPs"
+    ],
+    [
+     "that can’t be set within the stage itself. Each entry that requires an A press sets the",
+     null
+    ],
+    [
+     "Hope",
+     "HOLP"
+    ],
+    [
+     "somewhere else before entering the stage, so adding another spawning displacement would disrupt this fine balance.",
+     null
+    ]
+   ],
+   "2049": [
+    [
+     "red coins. This, in fact, is one of",
+     null
+    ],
+    [
+     "the",
+     ""
+    ],
+    [
+     "two stars left in the game that requires two A presses to get. The first one to clear this gap, and the second one to get on these pillars.",
+     null
+    ]
+   ],
+   "2052": [
+    [
+     "no way",
+     null
+    ],
+    [
+     "has",
+     "was"
+    ],
+    [
+     "ever",
+     null
+    ],
+    [
+     "been",
+     ""
+    ],
+    [
+     "found to clip down into the red coins room, so that high speed is useless. Crazier",
+     null
+    ]
+   ],
+   "2072": [
+    [
+     "to reach the star, although a",
+     null
+    ],
+    [
+     "Stardance",
+     "star dance"
+    ],
+    [
+     "clip has been shown to work. Of course, you can only have one star dance clip at once. The pole A press also serves to get on top of this grindel and clear the",
+     null
+    ]
+   ],
+   "2104": [
+    [
+     "followed by all of the stage entries, with a slight",
+     null
+    ],
+    [
+     "favor",
+     "favour"
+    ],
+    [
+     "towards Tick Tock Clock. At rock bottom, you can find saving both A presses in Tiny-Huge Island, the",
+     null
+    ],
+    [
+     "Princess's",
+     "Princess"
+    ],
+    [
+     "Secret Slide box, and finally, the first cannon in Wing Mario over the Rainbow.",
+     null
+    ]
+   ]
+  },
+  "fixes": 219,
+  "checked_seconds": 5615.2,
+  "usd": 0.4055,
+  "version": 3,
+  "flagged": [
+   [
+    "0:36",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:38",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:11",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:21",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "3:35",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "3:56",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:05",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "4:41",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "4:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:08",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "5:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "5:58",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "7:06",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "7:17",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "7:28",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "7:57",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "8:06",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:13",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:39",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "8:58",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "9:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:15",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "10:28",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:37",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "10:48",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:38",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "12:56",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "13:35",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "14:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "16:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "18:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "20:30",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "20:45",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "21:43",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "22:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "25:07",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "26:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "27:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "27:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "28:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "28:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "29:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "30:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "30:15",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "30:24",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "30:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "30:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "31:50",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "33:35",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "33:42",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "33:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "34:10",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "34:18",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "34:27",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "34:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "34:58",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "35:30",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "35:50",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "36:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "36:30",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "36:52",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "37:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "37:37",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "38:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "38:26",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "38:45",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "38:56",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "39:05",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "39:42",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "39:52",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "40:17",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "40:24",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "40:30",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "40:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "40:52",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "41:01",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "41:16",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "42:52",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "43:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "43:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "44:16",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "44:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "45:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "45:57",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "46:09",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "46:16",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "46:36",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "46:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "47:19",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "47:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "47:40",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "47:51",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "48:12",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "48:27",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "49:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "50:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "51:03",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "51:33",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "53:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "55:40",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "56:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "56:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "57:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "58:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "58:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "59:06",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "59:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:00:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:00:54",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:01:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:01:59",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:02:15",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:03:57",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:04:07",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:04:26",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:04:37",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:06:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:06:54",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:07:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:07:37",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:08:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:08:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:10:09",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:10:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:11:50",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:12:08",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:13:40",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:13:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:14:20",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:14:43",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:15:43",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:16:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:16:28",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:17:32",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:18:48",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:19:06",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:19:30",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:19:56",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:20:43",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:21:23",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:22:36",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:22:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:21",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:24:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:24:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:25:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:25:55",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:26:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:26:46",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:27:29",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:27:42",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:28:10",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:28:19",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:28:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:29:38",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:29:44",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:30:24",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:32:24",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:33:06",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:33:28",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:33:49",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:33:59",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:34:29",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:35:24",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:36:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:38:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:38:29",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:38:43",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:39:48",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:40:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:40:35",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:40:51",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:42:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:42:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:43:08",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:43:16",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:43:25",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:43:39",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:44:05",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:46:10",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:46:49",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:47:37",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:47:46",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:48:52",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:49:11",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:50:41",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:52:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:52:54",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:53:07",
+    [
+     "YouTube's two transcripts disagree",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:53:17",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:53:58",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:54:25",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:55:18",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:55:50",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "1:56:19",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:57:07",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:58:34",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ]
+  ]
+ }
 }

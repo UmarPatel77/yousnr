@@ -1,0 +1,54 @@
+{
+ "made": "2026-11-25T20:36:08+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "what if we didn’t use any of them?",
+   "t": 69.2,
+   "line": 4
+  },
+  {
+   "text": "This is the art of cloning",
+   "t": 958.0,
+   "line": 100
+  },
+  {
+   "text": "The 0.5 notation serves as a middle ground",
+   "t": 2573.1,
+   "line": 278
+  },
+  {
+   "text": "the strategy takes 14 hours",
+   "t": 3082.4,
+   "line": 334
+  },
+  {
+   "text": "These so-called infinite copies of the map are named parallel universes",
+   "t": 9938.0,
+   "line": 1078
+  },
+  {
+   "text": "Building speed for 12 hours. Parallel universes. QPU alignment",
+   "t": 10952.0,
+   "line": 1194
+  },
+  {
+   "text": "This is called slow bully battery",
+   "t": 16569.5,
+   "line": 1828
+  },
+  {
+   "text": "hit a pea with a pool shot",
+   "t": 16936.2,
+   "line": 1871
+  },
+  {
+   "text": "Tick Tock Clock is conquered",
+   "t": 18172.9,
+   "line": 2014
+  }
+ ],
+ "cost": 0.2422,
+ "dropped": 4
+}
