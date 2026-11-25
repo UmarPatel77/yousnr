@@ -1,0 +1,16 @@
+{
+ "checked": "2026-11-25T20:47:07+00:00",
+ "model": "4.1",
+ "words": 400,
+ "whole": false,
+ "from": 582.0,
+ "until": 721.0,
+ "picked": true,
+ "headline": "Human Written",
+ "short": "Human",
+ "ai": 5.393584138254678e-19,
+ "assisted": 6.187033771541728e-30,
+ "human": 1.0,
+ "flagged": [],
+ "link": "https://www.pangram.com/history/91912d00-fa20-4687-b93f-0676e5535367"
+}
