@@ -1,0 +1,69 @@
+{
+ "made": "2026-11-25T20:58:53+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "it's just numbers in matrix",
+   "t": 4.9,
+   "line": 0
+  },
+  {
+   "text": "the Trojan horse trap",
+   "t": 198.9,
+   "line": 24
+  },
+  {
+   "text": "the hugging face",
+   "t": 208.4,
+   "line": 25
+  },
+  {
+   "text": "hide some malicious commands inside the setup files",
+   "t": 259.3,
+   "line": 32
+  },
+  {
+   "text": "the llama drama",
+   "t": 274.4,
+   "line": 34
+  },
+  {
+   "text": "execute arbitrary code on your machine",
+   "t": 303.4,
+   "line": 37
+  },
+  {
+   "text": "over 6,000 AI models on",
+   "t": 307.6,
+   "line": 37
+  },
+  {
+   "text": "openw weight and open source models",
+   "t": 331.0,
+   "line": 41
+  },
+  {
+   "text": "some hidden biases",
+   "t": 407.0,
+   "line": 50
+  },
+  {
+   "text": "I do not recommend you installing these model runners locally",
+   "t": 469.2,
+   "line": 58
+  },
+  {
+   "text": "treat AI files like downloaded app",
+   "t": 505.3,
+   "line": 62
+  },
+  {
+   "text": "isolated digital safety box",
+   "t": 517.6,
+   "line": 64
+  }
+ ],
+ "cost": 0.01149,
+ "dropped": 0
+}

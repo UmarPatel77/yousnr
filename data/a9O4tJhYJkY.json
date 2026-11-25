@@ -1,0 +1,768 @@
+{
+ "id": "a9O4tJhYJkY",
+ "title": "Running AI Local Models Isn’t Safe — Here’s Why",
+ "channel": "Serop | AI Automation",
+ "published": "20260919",
+ "description": "🎁 Build Real World AI Automations: https://www.skool.com/real-world-ai-builders\n\nRunning an AI model locally may feel completely private and secure—but downloading the wrong model or using vulnerable software could put your passwords, files, and company data at risk.\n\nIn this video, I explain the hidden security risks of local AI, the difference between open-weight and open-source models, and how to run models safely without putting your computer or sensitive data in jeopardy.\n\nYou’ll learn:\n\nWhy running AI locally isn’t automatically safe\nHow local AI models, configuration files, and model runners work together\nHow malicious code can be hidden inside untrusted model files\nWhat the Trojan Horse Trap means for local AI users\nThe difference between open-weight and open-source AI models\nWhy model runners can create security vulnerabilities\nHow to safely run local models in isolated environments\nWhy trusted cloud platforms and sandboxes can reduce security risks\n\n#AI #LocalAI #OpenSourceAI #CyberSecurity #Ollama #LLM #AIModels\n\nTime Stamps:\n\n00:00 Introduction\n00:36 What Are Local AI Models\n01:47 The Hidden Danger\n05:29 Open Weight vs Open Source\n07:24 How to Use AI Safely",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: Introduction"
+  },
+  {
+   "start": 40,
+   "title": "Chapter 2: What Are Local AI Models"
+  },
+  {
+   "start": 112,
+   "title": "Chapter 3: The Hidden Danger"
+  },
+  {
+   "start": 331,
+   "title": "Chapter 4: Open Weight vs Open Source"
+  },
+  {
+   "start": 446,
+   "title": "Chapter 5: How to Use AI Safely"
+  }
+ ],
+ "duration": 577,
+ "category": "Autos & Vehicles",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/a9O4tJhYJkY/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjUk7rVBg==|48#27#100#10#10#0#default#rs$AOn4CLAoqB9io9T3DINFSaWTTkTjt4jzWw|80#45#117#10#10#5000#M$M#rs$AOn4CLD3HGQQER5_Wjufgb-eXpR7c6FncA|160#90#117#5#5#5000#M$M#rs$AOn4CLDCMzb4dWhMRW8SBU0VGBMv4eCYqA|320#180#117#3#3#5000#M$M#rs$AOn4CLDwPf7aoB1jLBPxLAbqUrpPH6cp0A",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 8.0,
+   "text": "Most people assume that running a local AI model on their computer is completely safe because it's just numbers in matrix. However, downloading the wrong",
+   "label": "0:00"
+  },
+  {
+   "start": 8.0,
+   "dur": 8.0,
+   "text": "model and the wrong software could actually give hackers a chance to completely take over your computer. So, in this video, I'm going to explain the",
+   "label": "0:08"
+  },
+  {
+   "start": 16.0,
+   "dur": 9.0,
+   "text": "crucial difference between openweight models, open- source models, and the model runners. And I'm going to show you a real case example where someone got",
+   "label": "0:16"
+  },
+  {
+   "start": 25.0,
+   "dur": 8.0,
+   "text": "hacked due to a vulnerability by downloading a local LLM on their computer. And I'm going to show you how you can run openweight models in a safe",
+   "label": "0:25"
+  },
+  {
+   "start": 33.0,
+   "dur": 7.0,
+   "text": "way without putting your machine or company data in jeopardy. So before we jump in, let me explain what local AI models actually mean. So there are tools",
+   "label": "0:33"
+  },
+  {
+   "start": 40.0,
+   "dur": 8.0,
+   "text": "like this one which is called Olama that you can install on your laptop and you can run open-source models like DeepS,",
+   "label": "0:40"
+  },
+  {
+   "start": 48.0,
+   "dur": 7.0,
+   "text": "Quinn and so on. These are the most common open source models that run really efficiently and you can reach",
+   "label": "0:48"
+  },
+  {
+   "start": 55.0,
+   "dur": 8.0,
+   "text": "very similar results to open AAI models while being completely free on your machine. The really interesting part here is that you're not sending your",
+   "label": "0:55"
+  },
+  {
+   "start": 63.0,
+   "dur": 9.0,
+   "text": "data to any cloud providers. And this is becoming a more of a solution for companies that they want to have total data sovereignty and make sure that they",
+   "label": "1:03"
+  },
+  {
+   "start": 72.0,
+   "dur": 7.0,
+   "text": "don't share their data with anybody else. Now to run these models, you usually need to download the software for example from Olama. And after you",
+   "label": "1:12"
+  },
+  {
+   "start": 79.0,
+   "dur": 8.0,
+   "text": "download it, you need to choose the model that you want to download. For example, I downloaded here the Quen 0.6 billion parameter or you can download",
+   "label": "1:19"
+  },
+  {
+   "start": 87.0,
+   "dur": 9.0,
+   "text": "the DeepS and so on. And you can then use it from your own machine even offline. So even on an airplane and so on. Now because people are doing this",
+   "label": "1:27"
+  },
+  {
+   "start": 96.0,
+   "dur": 8.0,
+   "text": "locally on their machines, they think that nothing can actually go wrong here. You're not sending your data to anybody. Everything is secure [music] and safe.",
+   "label": "1:36"
+  },
+  {
+   "start": 104.0,
+   "dur": 8.0,
+   "text": "And unfortunately, that's not 100% of the truth. So let me explain [music] why. So when we speak about local AI models, we are speaking about three",
+   "label": "1:44"
+  },
+  {
+   "start": 112.0,
+   "dur": 10.0,
+   "text": "things at the same time. The first thing which is the brain. And here we are talking about the learned parameters by training AI on a vast majority of data.",
+   "label": "1:52"
+  },
+  {
+   "start": 122.0,
+   "dur": 8.0,
+   "text": "And yes, the end result looks like a bunch of numbers that we put certain input in and it gives us [music] a certain output on the other end. Then to",
+   "label": "2:02"
+  },
+  {
+   "start": 130.0,
+   "dur": 7.0,
+   "text": "interact with this brain, we need some sort of software [music] and this is where comes in place. So you have a software that runs these machine that",
+   "label": "2:10"
+  },
+  {
+   "start": 137.0,
+   "dur": 9.0,
+   "text": "runs these AI models. Olama is just one of these software. There's also many different other software that run these local models like llama.cpp. This was",
+   "label": "2:17"
+  },
+  {
+   "start": 146.0,
+   "dur": 7.0,
+   "text": "also popular maybe last year could be also still popular now. And then you have a hidden setup code which is basically some hidden configurations",
+   "label": "2:26"
+  },
+  {
+   "start": 153.0,
+   "dur": 9.0,
+   "text": "that is bundled into the model file. So when you download an AI model for example here like the coin 0.6 six billion parameter. This doesn't just",
+   "label": "2:33"
+  },
+  {
+   "start": 162.0,
+   "dur": 8.0,
+   "text": "come as one file. It comes as a bundle of different files that gets downloaded from the provider which in this case is Quen. The same thing for DeepS and so",
+   "label": "2:42"
+  },
+  {
+   "start": 170.0,
+   "dur": 9.0,
+   "text": "on. Now the real danger that we're having right now is that when you're downloading these three different elements, there is 0% guarantee that",
+   "label": "2:50"
+  },
+  {
+   "start": 179.0,
+   "dur": 9.0,
+   "text": "these downloaded files cannot run code on your computer. And by running and by running code I don't mean running good code like automate my email or whatever",
+   "label": "2:59"
+  },
+  {
+   "start": 188.0,
+   "dur": 7.0,
+   "text": "but something harmful that would give someone else access to your data to your secrets credentials and so on. So this",
+   "label": "3:08"
+  },
+  {
+   "start": 195.0,
+   "dur": 7.0,
+   "text": "is how a bad model end up hacking your machine and we call this the Trojan horse trap. You basically download this",
+   "label": "3:15"
+  },
+  {
+   "start": 202.0,
+   "dur": 8.0,
+   "text": "popular free AI model from an online forum. The most common AI forum in this industry is the hugging face which",
+   "label": "3:22"
+  },
+  {
+   "start": 210.0,
+   "dur": 9.0,
+   "text": "includes I think more than a thousand models at this point. Some stuff for speech for image recognition and even video generating models all for free",
+   "label": "3:30"
+  },
+  {
+   "start": 219.0,
+   "dur": 8.0,
+   "text": "that you can run on your machine and generate things for you. So for example if you go to hugging face and you click on the models you can see these different models that we're downloading.",
+   "label": "3:39"
+  },
+  {
+   "start": 227.0,
+   "dur": 8.0,
+   "text": "And if you look into the files and versions you can see that you're you're not just downloading the matrix which is this one. [music] So something that it",
+   "label": "3:47"
+  },
+  {
+   "start": 235.0,
+   "dur": 7.0,
+   "text": "says a tensor is basically bunch of numbers that gets executed. But you're downloading a config file. You're",
+   "label": "3:55"
+  },
+  {
+   "start": 242.0,
+   "dur": 8.0,
+   "text": "downloading some files that show how you can interact with these numbers because at the end of the day just having numbers just doesn't do anything. You",
+   "label": "4:02"
+  },
+  {
+   "start": 250.0,
+   "dur": 9.0,
+   "text": "need to also do some multiplications and so on. And in some models because the files are so large someone who might be an attacker at this point [music] they",
+   "label": "4:10"
+  },
+  {
+   "start": 259.0,
+   "dur": 8.0,
+   "text": "would hide some malicious commands inside the setup files. And then when you start chatting with this AI model, it activates these hidden commands and",
+   "label": "4:19"
+  },
+  {
+   "start": 267.0,
+   "dur": 6.0,
+   "text": "the attacker would be able to run programs on your computer. And this what actually happened in some of the cases.",
+   "label": "4:27"
+  },
+  {
+   "start": 273.0,
+   "dur": 9.0,
+   "text": "And this case is called the llama drama, which is a vulnerability that was found in the Llama C++ runner, which is this one that I showed you a little bit",
+   "label": "4:33"
+  },
+  {
+   "start": 282.0,
+   "dur": 8.0,
+   "text": "earlier. So people would download this runner and then they would install a model and then someone would run these commands on their machine. As far as I",
+   "label": "4:42"
+  },
+  {
+   "start": 290.0,
+   "dur": 10.0,
+   "text": "know, I haven't seen vulnerabilities with Olama, but it could be the same thing because Olama run these models. It could be that there is a vulnerability that needs to be patched and updated.",
+   "label": "4:50"
+  },
+  {
+   "start": 300.0,
+   "dur": 9.0,
+   "text": "And this vulnerability was giving attackers a chance to execute arbitrary code on your machine. And unfortunately, there were over 6,000 AI models on",
+   "label": "5:00"
+  },
+  {
+   "start": 309.0,
+   "dur": 7.0,
+   "text": "hugging face that has these potential vulnerability. So what could end up happening is that the moment you start chatting with this AI model on your",
+   "label": "5:09"
+  },
+  {
+   "start": 316.0,
+   "dur": 8.0,
+   "text": "local machine, you are losing your passwords and files because this viruses are able to read your served browser",
+   "label": "5:16"
+  },
+  {
+   "start": 324.0,
+   "dur": 7.0,
+   "text": "credentials, photos and emails and eventually just leak your data which is something that we don't want. And by the way to give you a distinction between",
+   "label": "5:24"
+  },
+  {
+   "start": 331.0,
+   "dur": 9.0,
+   "text": "openw weight and open-source models, openw weight are models that you can use, you can download and use for example DeepSeek, Quinn and so on. But",
+   "label": "5:31"
+  },
+  {
+   "start": 340.0,
+   "dur": 9.0,
+   "text": "how these models were trained, so the training data set, the training scripts, so the actual pipelines that they used to train these models are still",
+   "label": "5:40"
+  },
+  {
+   "start": 349.0,
+   "dur": 8.0,
+   "text": "proprietary. So we don't know what what data deepseeek was trained on. The providers they tell you it was trained on this and this, but you don't have",
+   "label": "5:49"
+  },
+  {
+   "start": 357.0,
+   "dur": 8.0,
+   "text": "access to it. You can't download this data and then maybe create a new DeepSeek model. And the same thing for Quinn, for Mistral, and many different",
+   "label": "5:57"
+  },
+  {
+   "start": 365.0,
+   "dur": 7.0,
+   "text": "models that we can download and use from popular providers. Now when we talk about open-source models here the",
+   "label": "6:05"
+  },
+  {
+   "start": 372.0,
+   "dur": 11.0,
+   "text": "distinction is that the providers are also giving you access to the data it was trained on to the training scripts and so on but these are less likely to see compared to the open weight models.",
+   "label": "6:12"
+  },
+  {
+   "start": 383.0,
+   "dur": 8.0,
+   "text": "One common example of open source model is the whisper from open AAI and in this model they gave you access to the codes that it was generated to the data",
+   "label": "6:23"
+  },
+  {
+   "start": 391.0,
+   "dur": 7.0,
+   "text": "[music] and so on. So you can have a look at it and you can use it to transcribe voice to speech. So you can do uh speech recognition basically. Now",
+   "label": "6:31"
+  },
+  {
+   "start": 398.0,
+   "dur": 9.0,
+   "text": "why is this distinction important? Open weights model also have a different type of vulnerability because we don't know what data it was trained on. It can have",
+   "label": "6:38"
+  },
+  {
+   "start": 407.0,
+   "dur": 7.0,
+   "text": "some hidden biases that can influence the decisions of these models. Very common bias is male female discrepancy",
+   "label": "6:47"
+  },
+  {
+   "start": 414.0,
+   "dur": 8.0,
+   "text": "[music] in maybe applications so on in job applications and so on. But it could be also including some political biases.",
+   "label": "6:54"
+  },
+  {
+   "start": 422.0,
+   "dur": 9.0,
+   "text": "So if something was trained with in China or so on, it can have some different political agendas trained within the data sets. Could be also some",
+   "label": "7:02"
+  },
+  {
+   "start": 431.0,
+   "dur": 8.0,
+   "text": "cultural differences and so on. [music] So it's important to keep that also in mind. This is not a risk that would hack our computers, but it is a risk would",
+   "label": "7:11"
+  },
+  {
+   "start": 439.0,
+   "dur": 7.0,
+   "text": "harm our applications if we are using it in for example customerf facing application. With that in mind, the best",
+   "label": "7:19"
+  },
+  {
+   "start": 446.0,
+   "dur": 7.0,
+   "text": "way to use these local LLMs is to deploy them somewhere on the cloud. So you don't install it locally on your machine",
+   "label": "7:26"
+  },
+  {
+   "start": 453.0,
+   "dur": 8.0,
+   "text": "but you let the handling of the security risk to be done by cloud providers for example AWS, Azure, Google Cloud and so",
+   "label": "7:33"
+  },
+  {
+   "start": 461.0,
+   "dur": 8.0,
+   "text": "on. So you can still use these open weight models but you hand over the security handling to these cloud providers. [music]",
+   "label": "7:41"
+  },
+  {
+   "start": 469.0,
+   "dur": 8.0,
+   "text": "So I do not recommend you installing these model runners locally on your machine. But if you still want to use open source or open weight models, you",
+   "label": "7:49"
+  },
+  {
+   "start": 477.0,
+   "dur": 7.0,
+   "text": "can install it in an isolated container somewhere on the cloud and just let the cloud teams patch these vulnerabilities",
+   "label": "7:57"
+  },
+  {
+   "start": 484.0,
+   "dur": 8.0,
+   "text": "and fix them. And to be honest, this is what I see also most companies are using because they lack the local GPUs which",
+   "label": "8:04"
+  },
+  {
+   "start": 492.0,
+   "dur": 8.0,
+   "text": "you always need to run even more sophisticated models. So to use them safely, I would definitely run them through trusted cloud platforms like",
+   "label": "8:12"
+  },
+  {
+   "start": 500.0,
+   "dur": 8.0,
+   "text": "AWS, Bedrock, Asure and so on. And as a takeaway from this video, I would always treat AI files like downloaded app. They",
+   "label": "8:20"
+  },
+  {
+   "start": 508.0,
+   "dur": 8.0,
+   "text": "can include vulnerabilities. They can include viruses. I never run unverified AI models directly on the main computer",
+   "label": "8:28"
+  },
+  {
+   "start": 516.0,
+   "dur": 8.0,
+   "text": "without having it in an isolated digital safety box. A very common safety box for local AI and even for cloud code is this",
+   "label": "8:36"
+  },
+  {
+   "start": 524.0,
+   "dur": 8.0,
+   "text": "non no sandbox for AI agents. And basically you install the software first and then you launch Olama or cloud code",
+   "label": "8:44"
+  },
+  {
+   "start": 532.0,
+   "dur": 7.0,
+   "text": "and so on from inside this non application and the sandbox automatically add the guardrails for you make sure that the AI doesn't do some",
+   "label": "8:52"
+  },
+  {
+   "start": 539.0,
+   "dur": 8.0,
+   "text": "crazy stuff and help protect your PC if you want to install these things on your PC. started experimenting with this tool because I received a lot of great",
+   "label": "8:59"
+  },
+  {
+   "start": 547.0,
+   "dur": 8.0,
+   "text": "feedback from my AI consultant colleagues. It seems to be a good tool to start using. So, I hope this video was helpful and educational. Let me know",
+   "label": "9:07"
+  },
+  {
+   "start": 555.0,
+   "dur": 9.0,
+   "text": "what you think in the comments. Are you team open- source and local LMS or are you team cloud providers? Were you actually surprised to hear that",
+   "label": "9:15"
+  },
+  {
+   "start": 564.0,
+   "dur": 9.0,
+   "text": "installing local AI models is not 100% safe? And if you like this video, make sure to like and subscribe. I post a lot of different contents about using AI",
+   "label": "9:24"
+  },
+  {
+   "start": 573.0,
+   "dur": null,
+   "text": "practically and safely. Thank you so much for watching and I'll see you in the next",
+   "label": "9:33"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-25T20:58:34+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T15:58:34",
+  "lines": {
+   "2": [
+    [
+     "crucial difference between",
+     null
+    ],
+    [
+     "open weight",
+     "openweight"
+    ],
+    [
+     "models, open- source models, and the model runners. And I'm going to show you a real case example where someone got",
+     null
+    ]
+   ],
+   "3": [
+    [
+     "hacked due to a vulnerability by downloading a local LLM on their computer. And I'm going to show you how you can run",
+     null
+    ],
+    [
+     "open weight",
+     "openweight"
+    ],
+    [
+     "models in a safe",
+     null
+    ]
+   ],
+   "5": [
+    [
+     "like this one which is called",
+     null
+    ],
+    [
+     "Ollama",
+     "Olama"
+    ],
+    [
+     "that you can install on your laptop and you can run",
+     null
+    ],
+    [
+     "open source",
+     "open-source"
+    ],
+    [
+     "models like DeepS,",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "very similar results to",
+     null
+    ],
+    [
+     "OpenAI",
+     "open AAI"
+    ],
+    [
+     "models while being completely free on your machine. The really interesting part here is that you're not sending your",
+     null
+    ]
+   ],
+   "9": [
+    [
+     "don't share their data with anybody else. Now to run these models, you usually need to download the software for example from",
+     null
+    ],
+    [
+     "Ollama.",
+     "Olama."
+    ],
+    [
+     "And after you",
+     null
+    ]
+   ],
+   "11": [
+    [
+     "the",
+     null
+    ],
+    [
+     "DeepSeek",
+     "DeepS"
+    ],
+    [
+     "and so on. And you can then use it from your own machine even offline. So even on an airplane and so on. Now because people are doing this",
+     null
+    ]
+   ],
+   "17": [
+    [
+     "runs these AI models.",
+     null
+    ],
+    [
+     "Ollama",
+     "Olama"
+    ],
+    [
+     "is just one of these software. There's also many different other software that run these local models like llama.cpp. This was",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "come as one file. It comes as a bundle of different files that gets downloaded from the provider which in this case is Quen. The same thing for",
+     null
+    ],
+    [
+     "DeepSeek",
+     "DeepS"
+    ],
+    [
+     "and so",
+     null
+    ]
+   ],
+   "41": [
+    [
+     "openw weight and",
+     null
+    ],
+    [
+     "open source",
+     "open-source"
+    ],
+    [
+     "models,",
+     null
+    ],
+    [
+     "Open",
+     "openw"
+    ],
+    [
+     "weight are models that you can use, you can download and use for example DeepSeek, Quinn and so on. But",
+     null
+    ]
+   ],
+   "43": [
+    [
+     "proprietary. So we don't know what what data",
+     null
+    ],
+    [
+     "DeepSeek",
+     "deepseeek"
+    ],
+    [
+     "was trained on. The providers they tell you it was trained on this and this, but you don't have",
+     null
+    ]
+   ],
+   "62": [
+    [
+     "AWS, Bedrock,",
+     null
+    ],
+    [
+     "Azure",
+     "Asure"
+    ],
+    [
+     "and so on. And as a takeaway from this video, I would always treat AI files like downloaded app. They",
+     null
+    ]
+   ]
+  },
+  "fixes": 13,
+  "checked_seconds": 164.2,
+  "usd": 0.0239,
+  "version": 3,
+  "flagged": [
+   [
+    "0:16",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:25",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:48",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:55",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:12",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:19",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:27",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:10",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:33",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "5:31",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "5:49",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:57",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "7:33",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "8:20",
+    [
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}
