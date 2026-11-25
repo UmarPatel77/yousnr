@@ -1,0 +1,486 @@
+{
+ "id": "Jatwf_XOncE",
+ "title": "17 million lines of AI slop just cracked a 167-year-old math problem...",
+ "channel": "Fireship",
+ "published": "20261125",
+ "description": "Start a free 14-day CodeRabbit Explain trial, no credit card required: https://coderabbit.link/fireship-012\n\nA 41 day conversation with Claude just spat out 17 million lines of Lean that claim to prove the Riemann Hypothesis, the most famous unsolved problem in math. Let's dive in.\n\nWant more Fireship?\n\n🗞️ Newsletter: https://bytes.dev\n🧠 Courses: https://fireship.dev",
+ "chapters": [
+  {
+   "start": 0,
+   "title": "Chapter 1: AI proves Riemann hypothesis"
+  },
+  {
+   "start": 49,
+   "title": "Chapter 2: The proof and the process"
+  },
+  {
+   "start": 149,
+   "title": "Chapter 3: Scrutinizing the math"
+  },
+  {
+   "start": 217,
+   "title": "Chapter 4: More AI proofs emerge"
+  },
+  {
+   "start": 253,
+   "title": "Chapter 5: Impact on the real world"
+  },
+  {
+   "start": 285,
+   "title": "Chapter 6: Code review with CodeRabbit"
+  }
+ ],
+ "duration": 329,
+ "category": "Science & Technology",
+ "music_type": "",
+ "storyboard_spec": "https://i.ytimg.com/sb/Jatwf_XOncE/storyboard3_L$L/$N.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi8rZzYBg==|48#27#100#10#10#0#default#rs$AOn4CLCL7bWtYyv6R0TFSBXbWp3UYPJ8IA|80#45#67#10#10#5000#M$M#rs$AOn4CLBWGTAq2cCO7yu_pcDJBHyGWnCN9g|160#90#67#5#5#5000#M$M#rs$AOn4CLCS9ESaQvHkVvIrGP-M5mchaD761A|320#180#67#3#3#5000#M$M#rs$AOn4CLCXokc1y-hpBEYDGUMTvu7-mGaeLQ",
+ "segments": [
+  {
+   "start": 0.0,
+   "dur": 6.0,
+   "text": "Last Friday, while you were asking Claude to convince your spouse that you shouldn't get each other Christmas gifts this year. Whoa. Whoa.",
+   "label": "0:00"
+  },
+  {
+   "start": 6.0,
+   "dur": 4.0,
+   "text": "Another much smarter man was wrapping up a conversation with Claude of his own.",
+   "label": "0:06"
+  },
+  {
+   "start": 10.0,
+   "dur": 10.0,
+   "text": "In that conversation, which had been going for 41 days, the two of them produced what they believe was a proof of the Reman hypothesis, one of the most famous unsolved problems in all of math.",
+   "label": "0:10"
+  },
+  {
+   "start": 20.0,
+   "dur": 7.0,
+   "text": "His name is Levent Alpagay. And if that sounds familiar, it's because he's the same guy from our video back in August who disproved the Jacobian conjecture.",
+   "label": "0:20"
+  },
+  {
+   "start": 27.0,
+   "dur": 7.0,
+   "text": "and the same guy from our video in September who got into a fight with OpenAI over Navier Stokes. In today's video, we'll find out what the Reman",
+   "label": "0:27"
+  },
+  {
+   "start": 34.0,
+   "dur": 8.0,
+   "text": "hypothesis actually is, look at why its proof contains a function that does nothing but return true, and determine what all this means for the rest of us.",
+   "label": "0:34"
+  },
+  {
+   "start": 42.0,
+   "dur": 7.0,
+   "text": "It is November 25th, 2026, and you're watching the code report. You may remember what a prime number is from leak code number 204. They're the",
+   "label": "0:42"
+  },
+  {
+   "start": 49.0,
+   "dur": 8.0,
+   "text": "numbers that are only divisible by one and themselves. Back in 1859, a German mathematician named Bernhard Reman essentially solved the same Leico",
+   "label": "0:49"
+  },
+  {
+   "start": 57.0,
+   "dur": 9.0,
+   "text": "problem when he found a formula that predicts how many primes there are below any number you give it. The catch is that the formula depends on a set of special points and it's only accurate if",
+   "label": "0:57"
+  },
+  {
+   "start": 66.0,
+   "dur": 9.0,
+   "text": "every one of those points sits on the same straight line. Thankfully, every point he checked did, so he guessed they all do, admitted he couldn't really prove it, and then moved on with his",
+   "label": "1:06"
+  },
+  {
+   "start": 75.0,
+   "dur": 7.0,
+   "text": "life. That guess is now known as the Reman hypothesis. And if it's right, it means primes aren't random at all, and they follow a pattern that never breaks.",
+   "label": "1:15"
+  },
+  {
+   "start": 82.0,
+   "dur": 3.0,
+   "text": "Since then, computers have verified trillions of points on that line.",
+   "label": "1:22"
+  },
+  {
+   "start": 85.0,
+   "dur": 3.0,
+   "text": "Mathematicians have published hundreds of results that all assume it's true.",
+   "label": "1:25"
+  },
+  {
+   "start": 88.0,
+   "dur": 8.0,
+   "text": "And the Clay Institute put up a million-dollar bounty for its proof. But for 167 years, nobody made much progress. And just last month, the",
+   "label": "1:28"
+  },
+  {
+   "start": 96.0,
+   "dur": 8.0,
+   "text": "Terrence Tao predicted it would take a combination of humans and AI until around 2050 to get there. But what Tao didn't know is that Alpagay is a sicko",
+   "label": "1:36"
+  },
+  {
+   "start": 104.0,
+   "dur": 7.0,
+   "text": "with a touch of AI psychosis. He's been working on it since early October, and last Friday, he announced the result in a four-page PDF on his personal website,",
+   "label": "1:44"
+  },
+  {
+   "start": 111.0,
+   "dur": 5.0,
+   "text": "where he admits that Claude did most of the heavy lifting and that he hasn't mastered the math the proof depends on.",
+   "label": "1:51"
+  },
+  {
+   "start": 116.0,
+   "dur": 8.0,
+   "text": "There's even a footnote warning that his description of Claude's contributions is paraphrased from an AI summary and may not actually even make sense. As for the",
+   "label": "1:56"
+  },
+  {
+   "start": 124.0,
+   "dur": 8.0,
+   "text": "actual proof, the PDF just links to a download of 17 million lines of lean, which you can think of as a programming language that won't compile unless your",
+   "label": "2:04"
+  },
+  {
+   "start": 132.0,
+   "dur": 8.0,
+   "text": "math is correct. So after seeing the announcement, the lean community yelled upstairs that they'd be late for dinner and spent Friday night compiling it themselves on their own hardware,",
+   "label": "2:12"
+  },
+  {
+   "start": 140.0,
+   "dur": 9.0,
+   "text": "eventually coming to the conclusion that it was legit since it compiled. And while all that was going on, the president of the American Mathematical Society panic posted a second proof of",
+   "label": "2:20"
+  },
+  {
+   "start": 149.0,
+   "dur": 9.0,
+   "text": "the exact same problem. But this one from a guy named Aleandro Masulo, who had spent the last 12 years writing 940 pages on it by hand. His old adviser had",
+   "label": "2:29"
+  },
+  {
+   "start": 158.0,
+   "dur": 8.0,
+   "text": "been reviewing it for months and wanted at least another year with it. But they rushed it out anyway and 8 hours later people were already reporting problems they had found with it after feeding it",
+   "label": "2:38"
+  },
+  {
+   "start": 166.0,
+   "dur": 7.0,
+   "text": "into Claude and Alpagase Proof ran into some issues too once people started actually opening the files. The biggest problem was that there was a function",
+   "label": "2:46"
+  },
+  {
+   "start": 173.0,
+   "dur": 9.0,
+   "text": "called any geometry that was supposed to check a geometric condition, but really it just returned true no matter what you gave it and it was used 118 times. Jenny",
+   "label": "2:53"
+  },
+  {
+   "start": 182.0,
+   "dur": 8.0,
+   "text": "Nielsen, the mathematician who found the issue, then published a paper declaring the whole proof invalid. But after some further investigation, some other lean",
+   "label": "3:02"
+  },
+  {
+   "start": 190.0,
+   "dur": 10.0,
+   "text": "dorks found that almost nothing actually depended on that function and it was probably just leftover slop. Alpagay has since confirmed as much as saying that the lean is obviously full of garbage and that he was yelling a lot in there.",
+   "label": "3:10"
+  },
+  {
+   "start": 200.0,
+   "dur": 8.0,
+   "text": "He also had to clarify that a line in his announcement about the proof hitting 250,000 pages was a joke, which is a bit inconsiderate given his entire industry",
+   "label": "3:20"
+  },
+  {
+   "start": 208.0,
+   "dur": 9.0,
+   "text": "is on pins and needles right now. But the bigger issue is that nobody actually understands how the proof works, including the guy who posted it. And there's no paper or human readable",
+   "label": "3:28"
+  },
+  {
+   "start": 217.0,
+   "dur": 8.0,
+   "text": "version. So if a mathematician wants to know why the Reman hypothesis is true, their only option right now is to go and read 17 million lines of lean that the",
+   "label": "3:37"
+  },
+  {
+   "start": 225.0,
+   "dur": 6.0,
+   "text": "author himself calls garbage, or they can choose to read another paper anthropic posted on Monday, this time claiming to prove a 47-year-old",
+   "label": "3:45"
+  },
+  {
+   "start": 231.0,
+   "dur": 9.0,
+   "text": "conjecture called VP versus VNP, which you can think of as P versus NP's little cousin. Except with this one, there's no sicko mathematician involved at all",
+   "label": "3:51"
+  },
+  {
+   "start": 240.0,
+   "dur": 6.0,
+   "text": "because Claude is listed as the only author. It wrote both the paper and 73,000 lines of lean that go with it.",
+   "label": "4:00"
+  },
+  {
+   "start": 246.0,
+   "dur": 7.0,
+   "text": "And by anthropic's own admission, no human mathematician has checked any of it yet. So what does this mean for the rest of us? The answer for now is not",
+   "label": "4:06"
+  },
+  {
+   "start": 253.0,
+   "dur": 7.0,
+   "text": "much. Nothing breaks because the Reman hypothesis turned out to be true and your encryption is fine because everyone already assumed the Reman hypothesis was",
+   "label": "4:13"
+  },
+  {
+   "start": 260.0,
+   "dur": 7.0,
+   "text": "true. But what it did change is the timeline. Considering Terrence Tao thought this was 24 years out and it took a guy with AI psychosis just 41",
+   "label": "4:20"
+  },
+  {
+   "start": 267.0,
+   "dur": 9.0,
+   "text": "days and Alpaga can't even collect his million dollars yet because Clay requires a published paper followed by a 2-year waiting period. Luckily, understanding the slop your own agent",
+   "label": "4:27"
+  },
+  {
+   "start": 276.0,
+   "dur": 9.0,
+   "text": "wrote doesn't have to take 2 years because you can use Code Rabbit, the sponsor of today's video. A GitHub makes it pretty much impossible to review the thousandline PRs your coding agent loves",
+   "label": "4:36"
+  },
+  {
+   "start": 285.0,
+   "dur": 8.0,
+   "text": "to push. So, Code Rabbit rabbit just created a new review surface called Code Rabbit Explain that helps you understand large diffs in just a few minutes. It",
+   "label": "4:45"
+  },
+  {
+   "start": 293.0,
+   "dur": 8.0,
+   "text": "starts by giving you an overview of what the PR is trying to accomplish and how risky it is. Then, it walks through the changes in ordered layers like a senior",
+   "label": "4:53"
+  },
+  {
+   "start": 301.0,
+   "dur": 9.0,
+   "text": "engineer would just without bullying you. It also maps out which files and services are affected and flags anything it can't figure out from the diff so you know exactly what to ask the author.",
+   "label": "5:01"
+  },
+  {
+   "start": 310.0,
+   "dur": 8.0,
+   "text": "Your comments and approvals still sync back to GitHub natively, so nothing about your workflow has to change, but your team will finally understand the code it's been blindly shipping for",
+   "label": "5:10"
+  },
+  {
+   "start": 318.0,
+   "dur": null,
+   "text": "months. To try it out today and get a free 14-day trial of the advanced plan at the link below. This has been the Code Report. Thanks for watching and I will see you in the next one.",
+   "label": "5:18"
+  }
+ ],
+ "track": {
+  "language": "",
+  "generated": null,
+  "source": "youtube-panel"
+ },
+ "source": "youtube",
+ "added": "2026-11-25T20:44:31+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T15:44:31",
+  "lines": {
+   "2": [
+    [
+     "In that conversation, which had been going for 41 days, the two of them produced what they believe was a proof of the",
+     null
+    ],
+    [
+     "Riemann",
+     "Reman"
+    ],
+    [
+     "hypothesis, one of the most famous unsolved problems in all of math.",
+     null
+    ]
+   ],
+   "4": [
+    [
+     "and the same guy from our video in September who got into a fight with OpenAI over",
+     null
+    ],
+    [
+     "Navier-Stokes.",
+     "Navier Stokes."
+    ],
+    [
+     "In today's video, we'll find out what the Reman",
+     null
+    ]
+   ],
+   "7": [
+    [
+     "numbers that are only divisible by one and themselves. Back in 1859, a German mathematician named Bernhard",
+     null
+    ],
+    [
+     "Riemann",
+     "Reman"
+    ],
+    [
+     "essentially solved the same",
+     null
+    ],
+    [
+     "LeetCode",
+     "Leico"
+    ]
+   ],
+   "21": [
+    [
+     "the exact same problem. But this one from a guy named Aleandro Masulo, who had spent the last 12 years writing 940 pages on it by hand. His old",
+     null
+    ],
+    [
+     "advisor",
+     "adviser"
+    ],
+    [
+     "had",
+     null
+    ]
+   ],
+   "35": [
+    [
+     "true. But what it did change is the timeline. Considering",
+     null
+    ],
+    [
+     "Terence",
+     "Terrence"
+    ],
+    [
+     "Tao thought this was 24 years out and it took a guy with AI psychosis just",
+     null
+    ],
+    [
+     "forty",
+     "41"
+    ]
+   ],
+   "37": [
+    [
+     "wrote doesn't have to take 2 years because you can use",
+     null
+    ],
+    [
+     "CodeRabbit,",
+     "Code Rabbit,"
+    ],
+    [
+     "the sponsor of today's video.",
+     null
+    ],
+    [
+     "",
+     "A"
+    ],
+    [
+     "GitHub makes it pretty much impossible to review the thousandline PRs your coding agent loves",
+     null
+    ]
+   ]
+  },
+  "fixes": 9,
+  "checked_seconds": 99.6,
+  "usd": 0.0145,
+  "version": 3,
+  "flagged": [
+   [
+    "0:10",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:20",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:27",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "0:49",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:36",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:56",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "2:29",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:51",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:20",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "4:36",
+    [
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ]
+  ]
+ }
+}

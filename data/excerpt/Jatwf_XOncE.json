@@ -1,0 +1,64 @@
+{
+ "made": "2026-11-25T20:44:48+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Levent Alpagay",
+   "t": 20.5,
+   "line": 3
+  },
+  {
+   "text": "Alpagay is a sicko",
+   "t": 103.0,
+   "line": 14
+  },
+  {
+   "text": "a touch of AI psychosis",
+   "t": 104.2,
+   "line": 15
+  },
+  {
+   "text": "17 million lines of lean",
+   "t": 126.6,
+   "line": 18
+  },
+  {
+   "text": "returned true no matter what you gave it",
+   "t": 177.9,
+   "line": 24
+  },
+  {
+   "text": "leftover slop",
+   "t": 193.9,
+   "line": 26
+  },
+  {
+   "text": "he was yelling a lot in there",
+   "t": 198.7,
+   "line": 26
+  },
+  {
+   "text": "nobody actually understands how the proof works",
+   "t": 211.1,
+   "line": 28
+  },
+  {
+   "text": "P versus NP's little cousin",
+   "t": 234.4,
+   "line": 31
+  },
+  {
+   "text": "Claude is listed as the only author",
+   "t": 240.4,
+   "line": 32
+  },
+  {
+   "text": "a guy with AI psychosis",
+   "t": 265.3,
+   "line": 35
+  }
+ ],
+ "cost": 0.00968,
+ "dropped": 0
+}
