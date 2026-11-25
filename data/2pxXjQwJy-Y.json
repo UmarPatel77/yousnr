@@ -1631,5 +1631,953 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-25T23:56:12+00:00"
+ "added": "2026-11-25T23:56:12+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T18:56:13",
+  "lines": {
+   "13": [
+    [
+     "That mood lability",
+     "ability"
+    ],
+    [
+     "lack of impulse control externalized aggression and other manifestations of borderline behavior",
+     null
+    ]
+   ],
+   "15": [
+    [
+     "identity it has an unregulated",
+     null
+    ],
+    [
+     "or",
+     ""
+    ],
+    [
+     "dysregulated core of emotions and so",
+     null
+    ]
+   ],
+   "17": [
+    [
+     "partner to regulate her",
+     null
+    ],
+    [
+     "internal",
+     "in turn"
+    ],
+    [
+     "environment the borderlines dependence on her intimate partner is similar to",
+     null
+    ]
+   ],
+   "20": [
+    [
+     "partner is the borderlines",
+     null
+    ],
+    [
+     "Ego",
+     "Eagle"
+    ],
+    [
+     "in effect and this is very similar to the",
+     null
+    ],
+    [
+     "narcissist",
+     "narcissus"
+    ],
+    [
+     "indeed as any therapist will",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "as the current label is",
+     "currently Malisse"
+    ],
+    [
+     "the second video that I've made had to do with the borderlines reaction to abandonment",
+     null
+    ],
+    [
+     "and",
+     "in"
+    ],
+    [
+     "rejection",
+     null
+    ]
+   ],
+   "47": [
+    [
+     "the partner is a narcissist or a psychopath usually this will involve abuse because",
+     null
+    ],
+    [
+     "narcissists and",
+     "non-citizen"
+    ],
+    [
+     "Psychopaths or",
+     null
+    ]
+   ],
+   "56": [
+    [
+     "mechanism is called splitting splitting is the common name today today the clinical term is",
+     null
+    ],
+    [
+     "dichotomy",
+     "dichotomous"
+    ]
+   ],
+   "58": [
+    [
+     "world into black and white you're with me or against me you're my enemy or my friend you're all bad you're all good and they switch they",
+     null
+    ],
+    [
+     "pendulate",
+     "pendulous"
+    ]
+   ],
+   "67": [
+    [
+     "triangulate to introduce",
+     null
+    ],
+    [
+     "a",
+     "the"
+    ],
+    [
+     "third party into the relationship in order to revive or resuscitate the positive emotions",
+     null
+    ]
+   ],
+   "78": [
+    [
+     "that",
+     null
+    ],
+    [
+     "she is",
+     "she's"
+    ],
+    [
+     "on the verge of doom this this imminent perception that she's about to utterly",
+     null
+    ],
+    [
+     "disintegrate",
+     "disintegrates"
+    ],
+    [
+     "into",
+     null
+    ]
+   ],
+   "80": [
+    [
+     "And in the borderline",
+     "Devore delight"
+    ],
+    [
+     "there is concurrent dysregulation of emotions",
+     null
+    ],
+    [
+     "and",
+     "end"
+    ],
+    [
+     "of moods so she not only reacts with pain anger",
+     null
+    ]
+   ],
+   "81": [
+    [
+     "etc but she also becomes dysphoric she develops the equivalent of",
+     null
+    ],
+    [
+     "point-like",
+     "point like"
+    ]
+   ],
+   "101": [
+    [
+     "triangulate if she chooses the triangulation strategy if she wants to run away she will pick up a small",
+     null
+    ],
+    [
+     "Bag and",
+     "Bank"
+    ]
+   ],
+   "109": [
+    [
+     "externalized form of aggression but then when she absconds with a stranger when",
+     null
+    ],
+    [
+     "she's",
+     "she is"
+    ],
+    [
+     "no longer with the intimate",
+     null
+    ]
+   ],
+   "119": [
+    [
+     "object impermanence or object",
+     null
+    ],
+    [
+     "inconstancy",
+     "in constancy"
+    ],
+    [
+     "when mother leaves the room as far as the baby is concerned she's gone forever",
+     null
+    ]
+   ],
+   "144": [
+    [
+     "survive for a few hours can survive for a few days or can become a new romantic",
+     null
+    ],
+    [
+     "liaison",
+     "lism"
+    ],
+    [
+     "that's in the example of",
+     null
+    ]
+   ],
+   "168": [
+    [
+     "exactly like narcissism",
+     "gnosis"
+    ],
+    [
+     "but as opposed to",
+     null
+    ],
+    [
+     "narcissists",
+     "narcissus"
+    ],
+    [
+     "borderlines retain a modicum of empathy this empathy",
+     null
+    ]
+   ],
+   "170": [
+    [
+     "So borderlines have",
+     "water lines of"
+    ],
+    [
+     "empathy and as distinct from most narcissists they also have negative emotions which are ego dystonic",
+     null
+    ]
+   ],
+   "175": [
+    [
+     "tonic they are uncomfortable for example the borderline",
+     null
+    ],
+    [
+     "has fear",
+     "his feel"
+    ],
+    [
+     "she has a negative affectivity",
+     null
+    ]
+   ],
+   "186": [
+    [
+     "about it",
+     null
+    ],
+    [
+     "He's gone Object inconstancy and",
+     "his gun objecting constancy in"
+    ],
+    [
+     "splitting he becomes",
+     null
+    ],
+    [
+     "all bad",
+     "more bed"
+    ],
+    [
+     "and he's",
+     null
+    ],
+    [
+     "forgotten",
+     "horrible"
+    ],
+    [
+     "or if",
+     null
+    ],
+    [
+     "he's",
+     "he is"
+    ],
+    [
+     "not forgotten he's",
+     null
+    ]
+   ],
+   "187": [
+    [
+     "hated and he becomes",
+     null
+    ],
+    [
+     "he's transformed",
+     "his transform"
+    ],
+    [
+     "or transmogrified into a",
+     null
+    ],
+    [
+     "bad",
+     "paired"
+    ],
+    [
+     "memory",
+     null
+    ],
+    [
+     "an",
+     "in"
+    ]
+   ],
+   "188": [
+    [
+     "evil memory so",
+     null
+    ],
+    [
+     "at",
+     "in"
+    ],
+    [
+     "this stage the borderline would start to confabulate don't forget that the borderline for",
+     null
+    ]
+   ],
+   "189": [
+    [
+     "example during sex",
+     null
+    ],
+    [
+     "dissociates",
+     "the so she's she"
+    ],
+    [
+     "she either",
+     null
+    ],
+    [
+     "depersonalizes",
+     "he personalizes"
+    ],
+    [
+     "she feels that she's on autopilot or the cheese observing",
+     null
+    ]
+   ],
+   "191": [
+    [
+     "a nightmare a movie",
+     "moving"
+    ],
+    [
+     "not",
+     null
+    ],
+    [
+     "real",
+     "really"
+    ],
+    [
+     "or she becomes",
+     null
+    ],
+    [
+     "",
+     "much more of"
+    ],
+    [
+     "much more common amnesiac it's called dissociative amnesia she simply",
+     null
+    ]
+   ],
+   "194": [
+    [
+     "wastebasket",
+     null
+    ],
+    [
+     "of",
+     ""
+    ],
+    [
+     "memory so there's a lot of dissociation going on these gaps this",
+     null
+    ],
+    [
+     "lost",
+     "one's"
+    ],
+    [
+     "time the borderline",
+     null
+    ],
+    [
+     "has",
+     "is"
+    ],
+    [
+     "to compensate for and she",
+     null
+    ]
+   ],
+   "195": [
+    [
+     "compensates for these segments of lost time by confabulating confabulation is not",
+     null
+    ],
+    [
+     "lying",
+     "like"
+    ],
+    [
+     "it's not the same when",
+     null
+    ]
+   ],
+   "212": [
+    [
+     "have aggressive romantic jealousy they externalize it and become very psychopathic about it that's why we increasingly believe that",
+     null
+    ],
+    [
+     "borderlines",
+     "motor lines"
+    ]
+   ],
+   "217": [
+    [
+     "would say yeah I had sex with someone else but I was drunk you know he got me drunk",
+     null
+    ],
+    [
+     "or he",
+     "okay"
+    ],
+    [
+     "raped me or yeah",
+     null
+    ],
+    [
+     "I",
+     "III"
+    ],
+    [
+     "went away for",
+     null
+    ]
+   ],
+   "219": [
+    [
+     "thing these are contributions they confront contradicting is intended to bridge the",
+     null
+    ],
+    [
+     "",
+     "amnesic"
+    ],
+    [
+     "amnesiac",
+     null
+    ],
+    [
+     "",
+     "gaps"
+    ],
+    [
+     "gaps",
+     null
+    ]
+   ],
+   "221": [
+    [
+     "by impulsivity aggression and",
+     null
+    ],
+    [
+     "defiance",
+     "defines"
+    ],
+    [
+     "and of course the borderline most",
+     null
+    ]
+   ],
+   "223": [
+    [
+     "the blame to the drug or to the alcohol so they would say I forgot I forgot",
+     null
+    ],
+    [
+     "I",
+     "III"
+    ],
+    [
+     "don't remember the sex with the other",
+     null
+    ]
+   ],
+   "226": [
+    [
+     "had been abusing at the time they",
+     null
+    ],
+    [
+     "had",
+     ""
+    ],
+    [
+     "misbehaved they know they",
+     null
+    ],
+    [
+     "misbehaved",
+     "misbehave"
+    ],
+    [
+     "they're fully aware of",
+     null
+    ],
+    [
+     "that",
+     "it"
+    ],
+    [
+     "but they can't",
+     null
+    ]
+   ]
+  },
+  "fixes": 51,
+  "checked_seconds": 619.0,
+  "usd": 0.0901,
+  "version": 3,
+  "flagged": [
+   [
+    "0:32",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:46",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:01",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:55",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:34",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "2:52",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "3:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:30",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:36",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:11",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "6:21",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "6:30",
+    [
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "6:37",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:37",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "7:53",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "8:31",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:07",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "9:23",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "10:57",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:06",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:38",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:46",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "11:53",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "12:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:08",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:22",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "13:47",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "14:52",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "15:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "15:18",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "16:09",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "17:17",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "18:33",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "19:29",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "20:03",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "22:42",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "22:57",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "23:36",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "25:05",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "25:14",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "25:21",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "25:30",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "25:47",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "26:02",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "26:11",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "26:19",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "28:01",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "28:35",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "28:58",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "29:15",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "29:32",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "29:40",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "29:47",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "30:04",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "30:30",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
