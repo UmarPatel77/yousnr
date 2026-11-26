@@ -1,0 +1,54 @@
+{
+ "made": "2026-11-26T04:38:31+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Five Nights at Freddy's",
+   "t": 14.8,
+   "line": 1
+  },
+  {
+   "text": "Make us FNAF from scratch, bro",
+   "t": 55.9,
+   "line": 8
+  },
+  {
+   "text": "this is not scaring anyone, bro",
+   "t": 96.8,
+   "line": 13
+  },
+  {
+   "text": "Right now, it's really going to just be Gemini versus Claude",
+   "t": 132.2,
+   "line": 18
+  },
+  {
+   "text": "only used one HTML file",
+   "t": 188.5,
+   "line": 24
+  },
+  {
+   "text": "You made a FNAF clone and you scared me",
+   "t": 320.9,
+   "line": 41
+  },
+  {
+   "text": "if it's not like amazing, we definitely need to have a conversation",
+   "t": 361.9,
+   "line": 47
+  },
+  {
+   "text": "this thing is coding up a storm",
+   "t": 369.6,
+   "line": 48
+  },
+  {
+   "text": "the AI algorithm that Claude literally made",
+   "t": 434.0,
+   "line": 56
+  }
+ ],
+ "cost": 0.013,
+ "dropped": 2
+}

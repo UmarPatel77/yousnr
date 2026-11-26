@@ -453,5 +453,399 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-26T04:38:11+00:00"
+ "added": "2026-11-26T04:38:11+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T23:38:11",
+  "lines": {
+   "0": [
+    [
+     "In this video, we are putting",
+     null
+    ],
+    [
+     "ChatGPT",
+     "Chad GBT"
+    ],
+    [
+     "5.1, Google Gemini 3.0 Pro, and Claude Opus 4.5 all against each other. And",
+     null
+    ]
+   ],
+   "1": [
+    [
+     "yes, I bought all these models just to make this video. But we are",
+     null
+    ],
+    [
+     "putting",
+     "playing"
+    ],
+    [
+     "all these powerful AIs against each other to make [music] Five Nights at Freddy's,",
+     null
+    ]
+   ],
+   "3": [
+    [
+     "Chad GBT, and we'll work our way down to Gemini, then",
+     null
+    ],
+    [
+     "Claude.",
+     "Coll."
+    ],
+    [
+     "So, let's start the 15-minute timer. And yes, I need a timer this time. Okay, here's our prompt.",
+     null
+    ]
+   ],
+   "4": [
+    [
+     "We're just",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "paste this and tell",
+     null
+    ],
+    [
+     "ChatGPT",
+     "Tajibbt"
+    ],
+    [
+     "to make a better prompt for itself because my prompts are terrible.",
+     null
+    ]
+   ],
+   "5": [
+    [
+     "All right, so",
+     null
+    ],
+    [
+     "ChatGPT finished",
+     "TajT finish"
+    ],
+    [
+     "making us our prompt. And it pretty much goes [music] more into detail on what it wants the AIS to make, like the night timer from",
+     null
+    ]
+   ],
+   "6": [
+    [
+     "12:00 a.m. to 6:00 a.m. Pretty much the whole premise [music] of the game, jump scare animations, and a clean file structure. So, this is",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "be really cool. Let's put it to",
+     null
+    ],
+    [
+     "ChatGPT put it to ChatGPT",
+     "ChachiBT"
+    ]
+   ],
+   "8": [
+    [
+     "thinking mode. Now, I want you to cook",
+     null
+    ],
+    [
+     "ChatGPT.",
+     "ChachiBT."
+    ],
+    [
+     "Make us FNAF [music] from scratch, bro.",
+     null
+    ],
+    [
+     "Okay it's",
+     "is"
+    ],
+    [
+     "thinking breaking down the FNAF style HTML horror",
+     null
+    ],
+    [
+     "gameplay.",
+     "game plan."
+    ]
+   ],
+   "10": [
+    [
+     "Gemini 3. So, I'm really excited to see what Claude Opus [music] 4.5 will do at the end of this video. But let's see first what",
+     null
+    ],
+    [
+     "ChatGPT",
+     "ChadBt"
+    ],
+    [
+     "will cook. And",
+     null
+    ],
+    [
+     "ChatGPT",
+     "Chad GT"
+    ]
+   ],
+   "11": [
+    [
+     "did win our Fortnite video. So, you know, maybe it will cook right here",
+     null
+    ],
+    [
+     "and,",
+     "in,"
+    ],
+    [
+     "you know, 3P.",
+     null
+    ]
+   ],
+   "12": [
+    [
+     "Yeah, this is what um this is what",
+     null
+    ],
+    [
+     "ChatGPT",
+     "chat GBT"
+    ],
+    [
+     "generated. Bro, what am I looking?",
+     null
+    ],
+    [
+     "at",
+     ""
+    ],
+    [
+     "I mean, like I guess this is impressive",
+     null
+    ]
+   ],
+   "14": [
+    [
+     "bro, and troubleshooting. Yeah, Chad GT is definitely not winning this challenge 100%. All right, so we are Gemini 3 Pro and we're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "paste the same exact detailed prompt that we made with",
+     null
+    ],
+    [
+     "ChatGPT.",
+     "TajT."
+    ]
+   ],
+   "15": [
+    [
+     "ChatGPT",
+     "TAGT"
+    ],
+    [
+     "went out sad right there. It didn't even want to produce FNAF. So, we're",
+     null
+    ],
+    [
+     "gonna",
+     "going to"
+    ],
+    [
+     "put this in 3.0 thinking mode.",
+     null
+    ]
+   ],
+   "32": [
+    [
+     "still doesn't work.",
+     null
+    ],
+    [
+     "",
+     "But"
+    ],
+    [
+     "so far, Gemini is far in the lead. Like it's it's it's way [music] past",
+     null
+    ],
+    [
+     "ChatGPT It.",
+     "Chad GPT."
+    ],
+    [
+     "actually",
+     null
+    ],
+    [
+     "produced",
+     "produce"
+    ],
+    [
+     "a somewhat legible version of",
+     null
+    ]
+   ],
+   "38": [
+    [
+     "Seems like cam 2A. There's someone there. There. There's a There's a creep. There's a",
+     null
+    ],
+    [
+     "baddie",
+     "baddy"
+    ],
+    [
+     "right there. Cam 1 C.",
+     null
+    ]
+   ],
+   "42": [
+    [
+     "I am not trolling. That gently just scared the living daylights",
+     null
+    ],
+    [
+     "out of",
+     "on"
+    ],
+    [
+     "me. Can we get a replay?",
+     null
+    ]
+   ]
+  },
+  "fixes": 24,
+  "checked_seconds": 149.2,
+  "usd": 0.0217,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:09",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "0:24",
+    [
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:31",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:37",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:44",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "0:53",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "1:10",
+    [
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:18",
+    [
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "1:27",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:43",
+    [
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "1:52",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:58",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:06",
+    [
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:25",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "4:52",
+    [
+     "rare word"
+    ]
+   ],
+   [
+    "5:25",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
