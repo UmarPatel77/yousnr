@@ -1,0 +1,23 @@
+{
+ "checked": "2026-11-26T03:31:27+00:00",
+ "model": "4.1",
+ "words": 400,
+ "whole": false,
+ "from": 47.0,
+ "until": 176.0,
+ "picked": true,
+ "headline": "AI Detected",
+ "short": "Mixed",
+ "ai": 0.4017009735107422,
+ "assisted": 2.953091058783955e-38,
+ "human": 0.5982990264892578,
+ "flagged": [
+  {
+   "kind": "ai",
+   "from": 47.0,
+   "to": 112.0,
+   "confidence": "Low"
+  }
+ ],
+ "link": "https://www.pangram.com/history/fc641d8e-92c5-4631-996b-21235642e4be"
+}
