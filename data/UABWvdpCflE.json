@@ -59,5 +59,26 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-26T00:38:58+00:00"
+ "added": "2026-11-26T00:38:58+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-25T19:38:58",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 12.2,
+  "usd": 0.0018,
+  "version": 3,
+  "flagged": [
+   [
+    "0:33",
+    [
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }

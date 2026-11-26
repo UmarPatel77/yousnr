@@ -1,0 +1,29 @@
+{
+ "made": "2026-11-26T00:39:14+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Ha Katalin kopog, karácsony locsog",
+   "t": 1.0,
+   "line": 0
+  },
+  {
+   "text": "Ha Katalin locsog, karácsony kopog",
+   "t": 4.0,
+   "line": 0
+  },
+  {
+   "text": "ahova ma délután megérkezett az első hó",
+   "t": 14.0,
+   "line": 1
+  },
+  {
+   "text": "az idei karácsonyunk enyhe lesz, tehát locsogni fog",
+   "t": 51.8,
+   "line": 6
+  }
+ ],
+ "cost": 0.00488,
+ "dropped": 0
+}
