@@ -137,5 +137,26 @@
   "source": "youtube-panel"
  },
  "source": "youtube",
- "added": "2026-11-26T21:53:50+00:00"
+ "added": "2026-11-26T21:53:50+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "elevenlabs",
+   "assemblyai"
+  ],
+  "at": "2026-11-26T16:54:02",
+  "lines": {},
+  "fixes": 0,
+  "checked_seconds": 3.2,
+  "usd": 0.0005,
+  "version": 3,
+  "flagged": [
+   [
+    "2:13",
+    [
+     "name not in the title/description"
+    ]
+   ]
+  ]
+ }
 }
