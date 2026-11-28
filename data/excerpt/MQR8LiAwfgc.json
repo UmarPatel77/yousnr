@@ -1,0 +1,79 @@
+{
+ "made": "2026-11-28T04:44:46+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "Orange man bad, blue wave good",
+   "t": 57.8,
+   "line": 8
+  },
+  {
+   "text": "milquetoast corporate centrist",
+   "t": 127.4,
+   "line": 17
+  },
+  {
+   "text": "fully abundance-pilled",
+   "t": 166.9,
+   "line": 23
+  },
+  {
+   "text": "enjoy my rainbow capitalism",
+   "t": 370.5,
+   "line": 48
+  },
+  {
+   "text": "it's not a loop",
+   "t": 555.9,
+   "line": 73
+  },
+  {
+   "text": "Restore, restore, restore",
+   "t": 688.7,
+   "line": 89
+  },
+  {
+   "text": "chronic pain of the status quo",
+   "t": 765.8,
+   "line": 99
+  },
+  {
+   "text": "the most bluepilled app on Earth",
+   "t": 1189.0,
+   "line": 154
+  },
+  {
+   "text": "a uniform that respects your pronouns",
+   "t": 1337.5,
+   "line": 172
+  },
+  {
+   "text": "shut up and vote",
+   "t": 1677.7,
+   "line": 217
+  },
+  {
+   "text": "Cassandra of ancient Greece",
+   "t": 1742.4,
+   "line": 225
+  },
+  {
+   "text": "the idea of dual power",
+   "t": 1894.5,
+   "line": 246
+  },
+  {
+   "text": "the Black Panthers",
+   "t": 1926.5,
+   "line": 250
+  },
+  {
+   "text": "We make our own hope",
+   "t": 2211.5,
+   "line": 285
+  }
+ ],
+ "cost": 0.02811,
+ "dropped": 0
+}
