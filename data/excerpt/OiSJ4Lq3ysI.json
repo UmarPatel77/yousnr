@@ -1,0 +1,74 @@
+{
+ "made": "2026-11-28T17:45:21+00:00",
+ "v": 3,
+ "model": "claude-sonnet-5-5",
+ "fragments": [
+  {
+   "text": "as little interested in Mecca as the Gospels are in Nazareth",
+   "t": 3.1,
+   "line": 0
+  },
+  {
+   "text": "preIslamic Mecca is something of a black box. Pun 100%",
+   "t": 108.3,
+   "line": 13
+  },
+  {
+   "text": "bustling trading town with a temple of idols",
+   "t": 132.8,
+   "line": 16
+  },
+  {
+   "text": "is a mirage",
+   "t": 137.7,
+   "line": 17
+  },
+  {
+   "text": "Macakaraba",
+   "t": 270.9,
+   "line": 33
+  },
+  {
+   "text": "Makkah Rabba",
+   "t": 370.2,
+   "line": 46
+  },
+  {
+   "text": "around 550 people",
+   "t": 470.6,
+   "line": 59
+  },
+  {
+   "text": "We're talking about a village here, not a city",
+   "t": 550.4,
+   "line": 69
+  },
+  {
+   "text": "Meccan trade and the rise of Islam",
+   "t": 627.4,
+   "line": 78
+  },
+  {
+   "text": "65,000 goats just to",
+   "t": 777.7,
+   "line": 98
+  },
+  {
+   "text": "religio-mercantile project",
+   "t": 867.3,
+   "line": 110
+  },
+  {
+   "text": "pagan monotheism or henotheism",
+   "t": 1263.1,
+   "line": 160
+  },
+  {
+   "text": "cemetery of the Christians",
+   "t": 1343.0,
+   "line": 170
+  }
+ ],
+ "cost": 0.02826,
+ "dropped": 1
+}

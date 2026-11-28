@@ -1343,5 +1343,1066 @@
   "language_code": "en"
  },
  "source": "youtube",
- "added": "2026-11-28T17:44:57+00:00"
+ "added": "2026-11-28T17:44:57+00:00",
+ "corrected": {
+  "mode": "selective",
+  "engines": [
+   "assemblyai"
+  ],
+  "at": "2026-11-28T12:44:57",
+  "lines": {
+   "7": [
+    [
+     "According to the traditional Muslim accounts, Mecca was already an important religious center. Muhammad's tribe, the",
+     null
+    ],
+    [
+     "Quraysh,",
+     "Kuresh,"
+    ],
+    [
+     "controlled the sanctuary at the",
+     null
+    ],
+    [
+     "Kaaba",
+     "Cabba"
+    ],
+    [
+     "and made their living partly",
+     null
+    ]
+   ],
+   "13": [
+    [
+     "pre-Islamic Greek, Latin,",
+     null
+    ],
+    [
+     "Syriac,",
+     "Syriak,"
+    ],
+    [
+     "or Persian sources. When it comes to the historical record, preIslamic Mecca is something of a black box. Pun 100%",
+     null
+    ]
+   ],
+   "24": [
+    [
+     "Places like Tayma and Khaybar Yathrib",
+     "Kbar. Yathre"
+    ],
+    [
+     "the settlement later known as Medina also belongs to this world of",
+     null
+    ],
+    [
+     "oasis",
+     "oases"
+    ],
+    [
+     "settlements. And some of these urbanized areas were pretty big. At",
+     null
+    ]
+   ],
+   "25": [
+    [
+     "Khaybar,",
+     "Kbar,"
+    ],
+    [
+     "about 600 km north of Mecca, archaeologists have identified a wall built around 2,000 BC that originally stretched for about 14 1.5 km. The walls",
+     null
+    ]
+   ],
+   "28": [
+    [
+     "left by the south Arabian ruler",
+     null
+    ],
+    [
+     "Abraha",
+     "Abraa"
+    ],
+    [
+     "in the",
+     null
+    ],
+    [
+     "550s",
+     "550"
+    ],
+    [
+     "CE only a few decades before Muhammad's lifetime. And the second century geographer",
+     null
+    ],
+    [
+     "Ptolemy",
+     "Talamy"
+    ],
+    [
+     "mentions a",
+     null
+    ]
+   ],
+   "29": [
+    [
+     "settlement called Lothropa writing around 145 CE. Scholars generally",
+     null
+    ],
+    [
+     "identify",
+     "identified"
+    ],
+    [
+     "this with",
+     null
+    ],
+    [
+     "Yathrib,",
+     "Yatre,"
+    ],
+    [
+     "but Mecca is harder to find in our historical",
+     null
+    ]
+   ],
+   "31": [
+    [
+     "traditional",
+     null
+    ],
+    [
+     "milieu",
+     "milyu"
+    ],
+    [
+     "during the early 7th century. To a certain extent, the severe limitations of our evidence for this region have largely",
+     null
+    ],
+    [
+     "forestalled",
+     "foresstalled"
+    ],
+    [
+     "any",
+     null
+    ]
+   ],
+   "32": [
+    [
+     "efforts to critically investigate the history of Mecca and",
+     null
+    ],
+    [
+     "Yathrib",
+     "Yathre"
+    ],
+    [
+     "in late antiquity. Now the geographer",
+     null
+    ],
+    [
+     "Ptolemy",
+     "Tommy"
+    ],
+    [
+     "who I just mentioned might give us our",
+     null
+    ]
+   ],
+   "33": [
+    [
+     "earliest written reference to Mecca. In the same work where he mentions",
+     null
+    ],
+    [
+     "Yathrib",
+     "Yathre"
+    ],
+    [
+     "as Latha he lists another settlement in western Arabia called Macakaraba. Now he",
+     null
+    ]
+   ],
+   "38": [
+    [
+     "First,",
+     null
+    ],
+    [
+     "Ptolemy's",
+     "Tomy's"
+    ],
+    [
+     "coordinates are off. He places Macaraba too far inland to the southeast of",
+     null
+    ],
+    [
+     "Yathrib",
+     "Yathre"
+    ],
+    [
+     "where Mecca is",
+     null
+    ]
+   ],
+   "41": [
+    [
+     "longitude than latitude, meaning that his towns are more accurately positioned",
+     null
+    ],
+    [
+     "north-south",
+     "north south"
+    ],
+    [
+     "than",
+     null
+    ],
+    [
+     "east-west.",
+     "east west."
+    ],
+    [
+     "So, Macaraba could still be somewhere near Mecca.",
+     null
+    ]
+   ],
+   "70": [
+    [
+     "nature of this village. Was it a sleepy,",
+     null
+    ],
+    [
+     "out-of-the-way",
+     "out of the way"
+    ],
+    [
+     "place, or surprisingly wealthy and well-connected given its size and obscurity? For a long time,",
+     null
+    ]
+   ],
+   "72": [
+    [
+     "along caravan routes between southern Arabia and the Roman Empire. This idea became very influential through the work of 20th century scholars. Scholars like Henri",
+     null
+    ],
+    [
+     "Lammens",
+     "Lmens"
+    ],
+    [
+     "and W. Montgomery Watt.",
+     null
+    ]
+   ],
+   "73": [
+    [
+     "Watts biographies of Muhammad described Mecca as a prosperous commercial community while",
+     null
+    ],
+    [
+     "Lammens",
+     "Llmens"
+    ],
+    [
+     "argued that Mecca was a wealthy financial center of a vast international network of spice traders.",
+     null
+    ]
+   ],
+   "76": [
+    [
+     "example, the 9th and 10th century scholar",
+     null
+    ],
+    [
+     "Al-Tabari",
+     "Al Tabari"
+    ],
+    [
+     "in his commentary on",
+     null
+    ],
+    [
+     "Quran",
+     "Karan"
+    ],
+    [
+     "106 preserves reports that the cares traveled to Syria in the summer and Yemen in the winter to trade.",
+     null
+    ]
+   ],
+   "84": [
+    [
+     "the events they",
+     null
+    ],
+    [
+     "claimed",
+     "claim"
+    ],
+    [
+     "to describe. More recently, the scholar",
+     null
+    ],
+    [
+     "Stephen",
+     "Steven"
+    ],
+    [
+     "Shoemaker has taken a very skeptical position. In his 2022 book, Creating the Quran, he",
+     null
+    ]
+   ],
+   "88": [
+    [
+     "the 7th century small, sleepy,",
+     null
+    ],
+    [
+     "out-of-the-way",
+     "out of the way"
+    ],
+    [
+     "places with little economic or other significance to the outside world.",
+     null
+    ]
+   ],
+   "110": [
+    [
+     "Robinson suggests that the",
+     null
+    ],
+    [
+     "Quraysh",
+     "cures"
+    ],
+    [
+     "developed what he calls a",
+     null
+    ],
+    [
+     "religio-mercantile",
+     "religio mercantile"
+    ],
+    [
+     "project around the middle of the 500 CE. In his reconstruction, a",
+     null
+    ]
+   ],
+   "113": [
+    [
+     "Pre-Islamic Arabia, the historian Akan Al Jalad examines ancient rock inscriptions written in",
+     null
+    ],
+    [
+     "Safaitic,",
+     "Safety,"
+    ],
+    [
+     "a script used by nomadic communities in northern",
+     null
+    ]
+   ],
+   "119": [
+    [
+     "Cabba itself appears to have a history stretching back before Muhammad. A Christian chronicle written in",
+     null
+    ],
+    [
+     "Syriac",
+     "Syriak"
+    ],
+    [
+     "around 660 CE mentions an Arabian sanctuary called the Tent of Abraham.",
+     null
+    ]
+   ],
+   "131": [
+    [
+     "poems give us additional details about pilgrimage to Mecca before Islam. The poet",
+     null
+    ],
+    [
+     "Zuhair",
+     "Zuher"
+    ],
+    [
+     "ibn",
+     null
+    ],
+    [
+     "Abi Sulma",
+     "Abisulma"
+    ],
+    [
+     "mentions pilgrims camping at a site called Mina",
+     null
+    ]
+   ],
+   "135": [
+    [
+     "pilgrimage and by the gatherings under Mount",
+     null
+    ],
+    [
+     "Hira",
+     "Hia"
+    ],
+    [
+     "and by the holy month of Banu Omaya. Webb argues that these lines probably preserve an authentic",
+     null
+    ]
+   ],
+   "136": [
+    [
+     "pre-Islamic reference to the",
+     null
+    ],
+    [
+     "Quraysh",
+     "Curesh"
+    ],
+    [
+     "tribe and their relationship with the",
+     null
+    ],
+    [
+     "Kaaba.",
+     "Cabba."
+    ],
+    [
+     "And there's reason to think that the",
+     null
+    ],
+    [
+     "Quraysh",
+     "Curesh"
+    ],
+    [
+     "had a role in the sanctuary",
+     null
+    ]
+   ],
+   "140": [
+    [
+     "accounts, people",
+     null
+    ],
+    [
+     "traveled",
+     "travel"
+    ],
+    [
+     "to the",
+     null
+    ],
+    [
+     "Kaaba",
+     "Cabba"
+    ],
+    [
+     "from all across Arabia. But Webb finds a more limited picture in the poetry. Most of the references to the Meccan",
+     null
+    ]
+   ],
+   "144": [
+    [
+     "accounts. The scholar Ilka Lindstead also argues that the",
+     null
+    ],
+    [
+     "Kaaba",
+     "Cabba"
+    ],
+    [
+     "was not the only and probably not the most important shrine or pilgrimage destination in the",
+     null
+    ]
+   ],
+   "147": [
+    [
+     "And according to the 9th century historian",
+     null
+    ],
+    [
+     "Ibn al-Kalbi,",
+     "Iban Al Kalbi,"
+    ],
+    [
+     "idol worship was part of everyday life. He claims that every family in Mecca kept an idol",
+     null
+    ]
+   ],
+   "151": [
+    [
+     "does mention the gods Allat and",
+     null
+    ],
+    [
+     "Al-Uzza",
+     "Aluza"
+    ],
+    [
+     "being worshiped at Mecca. The Quran itself does mention three Arabian deities by name, Allot, Aluza, and",
+     null
+    ]
+   ],
+   "155": [
+    [
+     "article, Ahmed",
+     null
+    ],
+    [
+     "Al-Jallad",
+     "Al Jalad"
+    ],
+    [
+     "and Heitham Sidki examined a collection of pre-Islamic Arabic inscriptions from Western Arabia. Earlier",
+     null
+    ],
+    [
+     "inscriptions invoked",
+     "incriptions invoke"
+    ],
+    [
+     "different Arabian gods, including",
+     null
+    ]
+   ],
+   "156": [
+    [
+     "the goddess",
+     null
+    ],
+    [
+     "Allat.",
+     "All."
+    ],
+    [
+     "But in the surviving 6th century inscriptions, the only god invoked is Allah or Alah, which means",
+     null
+    ]
+   ],
+   "161": [
+    [
+     "in particular. Scholars like",
+     null
+    ],
+    [
+     "Al-Jallad",
+     "Algelad"
+    ],
+    [
+     "and Sidki proposed that Arabian religion had been undergoing a monotheizing transformation in the centuries before",
+     null
+    ]
+   ],
+   "172": [
+    [
+     "Mecca. And the 9th century historian",
+     null
+    ],
+    [
+     "Al-Yaqubi",
+     "Alakubi"
+    ],
+    [
+     "claims that",
+     null
+    ],
+    [
+     "an",
+     ""
+    ],
+    [
+     "entire branch of the",
+     null
+    ],
+    [
+     "Quraysh",
+     "cares"
+    ],
+    [
+     "had converted to Christianity. A pre-Islamic Christian Arab poet named",
+     null
+    ]
+   ],
+   "173": [
+    [
+     "Adi",
+     null
+    ],
+    [
+     "Ibn Zayd",
+     "Iban Zade"
+    ],
+    [
+     "reportedly swore an oath by the Lord of Mecca and of the cross.",
+     null
+    ]
+   ],
+   "175": [
+    [
+     "for Judaism in Mecca is thinner. The historians Michael",
+     null
+    ],
+    [
+     "Lecker",
+     "Leer"
+    ],
+    [
+     "and Esan Ruhi have identified later accounts describing men from the",
+     null
+    ],
+    [
+     "Quraysh",
+     "Kuresh"
+    ],
+    [
+     "who married Jewish women or had Jewish",
+     null
+    ]
+   ],
+   "177": [
+    [
+     "surah",
+     null
+    ],
+    [
+     "10 verse 94,",
+     "10:94,"
+    ],
+    [
+     "Muhammad is even told to consult people who have been reading earlier revelations.",
+     null
+    ],
+    [
+     "In",
+     "And"
+    ],
+    [
+     "surah 28:52-55",
+     null
+    ]
+   ],
+   "179": [
+    [
+     "Lindstead interprets this as evidence that Jews and Christians were part of Muhammad's immediate religious environment. The scholar Gabriel",
+     null
+    ],
+    [
+     "Said",
+     "say"
+    ],
+    [
+     "Reynolds makes a similar case in his",
+     null
+    ]
+   ],
+   "180": [
+    [
+     "2025 book Christianity and the Quran. He draws on",
+     null
+    ],
+    [
+     "Al-Jallad",
+     "Al Jalad"
+    ],
+    [
+     "and",
+     null
+    ],
+    [
+     "Sidky's",
+     "Sidki's"
+    ],
+    [
+     "work on monotheistic inscriptions near Mecca and adds evidence from the Quran itself like",
+     null
+    ]
+   ]
+  },
+  "fixes": 58,
+  "checked_seconds": 510.4,
+  "usd": 0.0369,
+  "version": 3,
+  "flagged": [
+   [
+    "0:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:27",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "0:56",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "1:42",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "1:52",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "3:10",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "3:18",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:43",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "3:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word",
+     "unusual acronym"
+    ]
+   ],
+   [
+    "4:07",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:16",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "4:23",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "5:02",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "5:21",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "5:40",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "6:04",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "9:14",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "9:30",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "9:41",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "10:08",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "10:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "11:10",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "11:25",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "11:41",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "11:48",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "13:12",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "14:24",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "14:46",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "15:01",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "15:33",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "16:23",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "17:14",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "17:31",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "17:44",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "17:53",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "18:24",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "18:53",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "19:20",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "19:52",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "20:25",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "20:34",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "20:51",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "21:09",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "22:34",
+    [
+     "YouTube's two transcripts disagree",
+     "rare word"
+    ]
+   ],
+   [
+    "22:42",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "22:54",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ],
+   [
+    "23:12",
+    [
+     "YouTube's two transcripts disagree"
+    ]
+   ],
+   [
+    "23:24",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "23:32",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "25:19",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description"
+    ]
+   ],
+   [
+    "27:00",
+    [
+     "YouTube's two transcripts disagree",
+     "name not in the title/description",
+     "rare word"
+    ]
+   ]
+  ]
+ }
 }
